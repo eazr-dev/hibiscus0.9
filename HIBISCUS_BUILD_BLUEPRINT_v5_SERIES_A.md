@@ -254,9 +254,13 @@ hibiscus/
 │
 ├── api/                                # HTTP endpoints
 │   ├── __init__.py
-│   ├── router.py                       # FastAPI APIRouter aggregation (chat + health + analyze)
+│   ├── router.py                       # FastAPI APIRouter aggregation (chat + health + analyze + portfolio)
 │   ├── chat.py                         # POST /hibiscus/chat (main endpoint + SSE streaming)
 │   ├── analyze.py                      # POST /hibiscus/analyze (direct policy analysis)
+│   ├── portfolio.py                    # GET/POST/DELETE /hibiscus/portfolio (user insurance portfolio)
+│   │                                   #   GET: fetch all policies (PG + doc memory fallback)
+│   │                                   #   POST: add policy (PolicyEntry schema, returns policy_id)
+│   │                                   #   DELETE: remove by policy_id
 │   ├── health.py                       # GET /hibiscus/health + GET /hibiscus/metrics
 │   ├── middleware/
 │   │   ├── __init__.py
@@ -320,8 +324,14 @@ hibiscus/
 │   │
 │   ├── knowledge/                     # Knowledge Graph tools
 │   │   ├── __init__.py
-│   │   ├── insurer_lookup.py          # get_insurer_profile(name) → CSR, solvency, complaints
-│   │   ├── product_lookup.py          # get_product_details(name) → features, premium, coverage
+│   │   ├── insurer_lookup.py          # lookup_insurer(name) / compare_insurers(names)
+│   │   │                              #   get_insurer_benchmarks(id) → CSR/ICR vs industry avg
+│   │   ├── product_lookup.py          # lookup_product(name) / search_products(category, filters)
+│   │   │                              #   compare_products(names) / get_products_by_insurer(name)
+│   │   ├── product_compare.py         # compare_products_table(names) → formatted markdown table
+│   │   │                              #   compare_products_summary(names) → structured dict
+│   │   │                              #   Wraps product_lookup.compare_products with ₹ formatting,
+│   │   │                              #   gap highlights, and best/worst summary per metric
 │   │   ├── benchmark_lookup.py        # get_benchmarks(category, params) → market averages
 │   │   └── regulation_lookup.py       # get_regulation(topic) → applicable circulars
 │   │
@@ -440,8 +450,19 @@ hibiscus/
 │   └── prompts/
 │       ├── system/
 │       │   └── hibiscus_core.txt      # Core identity + IRDAI rules + language rules
-│       ├── agents/
-│       │   └── policy_analyzer.txt    # PolicyAnalyzer system prompt
+│       ├── agents/                    # Agent-specific system prompts (12 total)
+│       │   ├── policy_analyzer.txt    # Agent 1 — output structure, zero-hallucination rules
+│       │   ├── surrender_calculator.txt  # Agent 2 — GSV explanation rules, SSV caveat
+│       │   ├── recommender.txt        # Agent 3 — recommendation output format, IRDAI disclaimer
+│       │   ├── claims_guide.txt       # Agent 4 — step-by-step claims structure, IRDAI timelines
+│       │   ├── calculator.txt         # Agent 5 — formula display format, assumption labelling
+│       │   ├── researcher.txt         # Agent 6 — source citation format, recency caveats
+│       │   ├── regulation_engine.txt  # Agent 7 — regulation cite format, escalation path
+│       │   ├── risk_detector.txt      # Agent 8 — severity rating, evidence-based flag format
+│       │   ├── educator.txt           # Agent 9 — plain-language format, ₹ example structure
+│       │   ├── portfolio_optimizer.txt # Agent 10 — portfolio score format, priority action plan
+│       │   ├── tax_advisor.txt        # Agent 11 — tax section output format, regime comparison
+│       │   └── grievance_navigator.txt # Agent 12 — escalation ladder format, empathy opening
 │       └── orchestrator/
 │           └── intent_classifier.txt  # Intent classification prompt
 │
@@ -490,7 +511,11 @@ hibiscus/
     │   ├── __init__.py
     │   ├── test_intent_classifier.py  # Category + intent + complexity classification
     │   ├── test_model_router.py       # Correct model selected per task
-    │   └── test_guardrails.py         # Hallucination, compliance, financial, emotional, PII guards
+    │   ├── test_guardrails.py         # Hallucination, compliance, financial, emotional, PII guards
+    │   ├── test_confidence_scoring.py # AgentResult clamping, source weighting, to_dict() keys (14 tests)
+    │   ├── test_formulas.py           # All 8 formula modules: surrender, IRR, inflation, compound,
+    │   │                              #   premium_adequacy, EMI, opportunity_cost, EAZR score (37 tests)
+    │   └── test_memory_assembler.py   # assemble_context() structure, graceful fallback, TOKEN_BUDGET (11 tests)
     ├── integration/
     │   ├── __init__.py
     │   ├── test_agent_pipeline.py     # Intent routing → agent selection → response format
