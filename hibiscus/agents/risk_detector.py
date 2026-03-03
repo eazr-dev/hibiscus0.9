@@ -171,11 +171,41 @@ class RiskDetectorAgent(BaseAgent):
             gap_list = self._detect_coverage_gaps(policies_to_analyze, user_profile)
             over_insurance = self._detect_over_insurance(policies_to_analyze)
             urgency_level = self._compute_urgency(risk_flags, gap_list)
+
+            # ── Step 2.5: Fraud/anomaly detection ────────────────────────
+            fraud_alerts = []
+            try:
+                from hibiscus.services.fraud_alert import fraud_detector
+                doc_context = state.get("document_context")
+                if doc_context:
+                    extraction = doc_context.get("extraction") or {}
+                    if extraction:
+                        fraud_alerts = fraud_detector.check_document(extraction, state)
+                        # Behavioral checks
+                        fraud_alerts.extend(
+                            fraud_detector.check_behavioral(state.get("session_history", []))
+                        )
+                        if fraud_alerts:
+                            # Merge fraud alerts into risk_flags
+                            for alert in fraud_alerts:
+                                risk_flags.append({
+                                    "category": "fraud",
+                                    "flag": alert.alert_type,
+                                    "severity": alert.severity.value if hasattr(alert.severity, 'value') else alert.severity,
+                                    "description": alert.evidence,
+                                    "recommendation": alert.recommendation,
+                                })
+                            if any(a.severity.value in ("HIGH", "CRITICAL") for a in fraud_alerts):
+                                urgency_level = "high"
+            except Exception as e:
+                plog.warning("fraud_detection_failed", error=str(e))
+
             plog.step_complete(
                 "run_risk_checks",
                 risk_flags=len(risk_flags),
                 gaps=len(gap_list),
                 urgency=urgency_level,
+                fraud_alerts=len(fraud_alerts),
             )
 
             # ── Step 3: LLM synthesis ──────────────────────────────────────
@@ -241,6 +271,7 @@ class RiskDetectorAgent(BaseAgent):
                     "risk_flags": risk_flags,
                     "gap_list": gap_list,
                     "mis_selling_flags": [f for f in risk_flags if f.get("category") == "mis_selling"],
+                    "fraud_alerts": [a.to_dict() for a in fraud_alerts] if fraud_alerts else [],
                     "over_insurance": over_insurance,
                     "urgency_level": urgency_level,
                     "policies_analyzed": len(policies_to_analyze),

@@ -137,6 +137,15 @@ async def run(state: HibiscusState) -> dict:
             plog.warning("renewal_tracker_unavailable", error=str(e))
         return ""
 
+    async def _fetch_outcome_followups():
+        """Fetch pending outcome follow-ups for returning users."""
+        try:
+            from hibiscus.services.outcome_collector import outcome_collector
+            return await outcome_collector.get_pending_followups(user_id)
+        except Exception as e:
+            plog.warning("outcome_followups_unavailable", error=str(e))
+        return ""
+
     (
         session_history,
         document_context,
@@ -145,6 +154,7 @@ async def run(state: HibiscusState) -> dict:
         relevant_memories,
         relevant_conversations,
         renewal_alerts,
+        outcome_followups,
     ) = await asyncio.gather(
         _fetch_session(),
         _fetch_document(),
@@ -153,6 +163,7 @@ async def run(state: HibiscusState) -> dict:
         _fetch_knowledge(),
         _fetch_conversations(),
         _fetch_renewal_alerts(),
+        _fetch_outcome_followups(),
     )
 
     latency_ms = int((time.time() - start) * 1000)
@@ -166,6 +177,7 @@ async def run(state: HibiscusState) -> dict:
         knowledge_count=len(relevant_memories),
         conversation_count=len(relevant_conversations),
         has_renewal_alerts=bool(renewal_alerts),
+        has_outcome_followups=bool(outcome_followups),
     )
 
     return {
@@ -176,4 +188,5 @@ async def run(state: HibiscusState) -> dict:
         "relevant_memories": relevant_memories,
         "relevant_conversations": relevant_conversations,
         "renewal_alerts": renewal_alerts,
+        "outcome_followups": outcome_followups,
     }

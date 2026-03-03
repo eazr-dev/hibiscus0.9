@@ -11,12 +11,22 @@ from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
 
+def _get_language_rule(language: str) -> str:
+    """Return language synthesis rule if non-English."""
+    if language == "en":
+        return ""
+    from hibiscus.utils.language_detect import get_language_instruction
+    instruction = get_language_instruction(language)
+    return f"9. {instruction}" if instruction else ""
+
+
 def _build_aggregation_prompt(
     message: str,
     agent_outputs: List[Dict[str, Any]],
     category: str,
     intent: str,
     user_profile: Dict | None,
+    language: str = "en",
 ) -> str:
     """Build the prompt for response aggregation."""
     agent_sections = []
@@ -54,7 +64,7 @@ SYNTHESIS RULES:
 6. Keep all IRDAI disclaimers intact
 7. Add 3 follow-up question suggestions at the end (JSON list)
 8. Use Indian formats: ₹, lakhs/crores, DD/MM/YYYY
-
+{_get_language_rule(language)}
 OUTPUT FORMAT:
 [Your synthesized response here]
 
@@ -98,7 +108,8 @@ async def run(state: HibiscusState) -> dict:
     # Multiple agents → synthesize with LLM
     try:
         from hibiscus.llm.router import call_llm
-        prompt = _build_aggregation_prompt(message, agent_outputs, category, intent, user_profile)
+        language = state.get("language", "en")
+        prompt = _build_aggregation_prompt(message, agent_outputs, category, intent, user_profile, language)
 
         llm_response = await call_llm(
             messages=[

@@ -46,10 +46,26 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.warning("cache_warmup_schedule_failed", error=str(e))
 
+    # ── Start KG enrichment flush loop (background) ────────────────
+    try:
+        from hibiscus.services.kg_enrichment import kg_enrichment
+        asyncio.create_task(kg_enrichment.start_flush_loop())
+        logger.info("kg_enrichment_loop_scheduled")
+    except Exception as e:
+        logger.warning("kg_enrichment_schedule_failed", error=str(e))
+
     yield
 
     # ── Shutdown ─────────────────────────────────────────────────
     logger.info("hibiscus_shutting_down")
+
+    # Stop KG enrichment (drain queue)
+    try:
+        from hibiscus.services.kg_enrichment import kg_enrichment
+        await kg_enrichment.stop()
+    except Exception:
+        pass
+
     from hibiscus.memory.layers.session import close_redis
     from hibiscus.memory.layers.document import close_mongo
     await close_redis()

@@ -302,6 +302,11 @@ RECENT CONTEXT: {session_context or 'None'}
     # Prometheus: record conversation start with complexity + category
     _metric_conversation(complexity=complexity, category=category)
 
+    # ── Step 5: Language detection (pure computation — no LLM) ────────
+    from hibiscus.utils.language_detect import detect_language
+    lang_result = detect_language(message)
+    language = lang_result["language"]
+
     return {
         "category": category,
         "intent": intent,
@@ -312,4 +317,5 @@ RECENT CONTEXT: {session_context or 'None'}
         "agents_needed": agents_needed,
         "requires_calculation": requires_calculation,
         "primary_model": tier.value,
+        "language": language,
     }

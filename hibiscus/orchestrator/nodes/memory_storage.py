@@ -75,6 +75,57 @@ async def _do_store(state: HibiscusState, plog: PipelineLogger) -> None:
             except Exception as e:
                 plog.warning("document_storage_failed", error=str(e))
 
+    # ── Enqueue KG enrichment from policy extractions ────────────────────
+    for output in agent_outputs:
+        if output.get("agent") == "policy_analyzer" and output.get("success"):
+            extraction = output.get("structured_data", {}).get("extraction") or {}
+            confidence = output.get("confidence", 0.0)
+            if extraction and confidence >= 0.85:
+                try:
+                    from hibiscus.services.kg_enrichment import kg_enrichment
+                    kg_enrichment.enqueue(extraction, confidence, state["user_id"])
+                except Exception as e:
+                    plog.warning("kg_enrichment_enqueue_failed", error=str(e))
+
+    # ── Log fraud alerts if present ────────────────────────────────────
+    fraud_alerts = state.get("fraud_alerts", [])
+    if fraud_alerts:
+        for alert in fraud_alerts:
+            severity = alert.get("severity", "LOW")
+            log_fn = plog.error if severity == "CRITICAL" else plog.warning
+            log_fn(
+                "fraud_alert",
+                alert_type=alert.get("alert_type"),
+                severity=severity,
+                evidence=alert.get("evidence", "")[:200],
+            )
+        try:
+            from hibiscus.observability.metrics import record_fraud_alert
+            for alert in fraud_alerts:
+                record_fraud_alert(alert.get("severity", "LOW"), alert.get("alert_type", "unknown"))
+        except Exception:
+            pass
+
+    # ── Record outcomes for advice-giving agents ─────────────────────────
+    _ADVICE_AGENTS = {"recommender", "surrender_calculator", "claims_guide",
+                      "tax_advisor", "calculator", "risk_detector", "portfolio_optimizer"}
+    for output in agent_outputs:
+        agent_name = output.get("agent", "")
+        if agent_name in _ADVICE_AGENTS and output.get("success") and output.get("response"):
+            try:
+                from hibiscus.services.outcome_collector import outcome_collector
+                await outcome_collector.record_advice_outcome(
+                    user_id=state["user_id"],
+                    session_id=state["session_id"],
+                    conversation_id=state.get("conversation_id"),
+                    agent_name=agent_name,
+                    response_text=output["response"],
+                    policy_type=state.get("category"),
+                    insurer=state.get("document_context", {}).get("extraction", {}).get("insurer") if state.get("document_context") else None,
+                )
+            except Exception as e:
+                plog.warning("outcome_record_failed", agent=agent_name, error=str(e))
+
     # ── Trigger async memory extraction (L2-L4 updates) ───────────────────
     try:
         from hibiscus.memory.extraction.memory_extractor import schedule_extraction

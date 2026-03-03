@@ -90,6 +90,14 @@ async def run(state: HibiscusState) -> dict:
     if context:
         user_content = f"{context}\n\nUser question: {message}"
 
+    # ── Language instruction (for non-English queries) ──────────────────
+    language = state.get("language", "en")
+    if language != "en":
+        from hibiscus.utils.language_detect import get_language_instruction
+        lang_instruction = get_language_instruction(language)
+        if lang_instruction:
+            user_content = f"{lang_instruction}\n\n{user_content}"
+
     try:
         from hibiscus.llm.router import call_llm
         # Cap tokens for L1/L2 — concise answers; users don't need 4096-token essays.

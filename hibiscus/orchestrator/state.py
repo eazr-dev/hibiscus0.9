@@ -50,8 +50,10 @@ class HibiscusState(TypedDict, total=False):
     relevant_memories: List[Dict[str, Any]]    # Semantic search results (insights)
     relevant_conversations: List[Dict[str, Any]]  # Past relevant conversations
     renewal_alerts: str                           # Formatted renewal alert string (empty = none)
+    outcome_followups: str                         # Pending outcome follow-ups (empty = none)
 
     # ── CLASSIFICATION ────────────────────────────────────────────────────
+    language: str               # en|hi|hinglish|ta|te|mr (detected from user message)
     category: str           # health|life|motor|travel|pa|cross|general
     intent: str             # analyze|recommend|claim|calculate|surrender|...
     complexity: str         # L1|L2|L3|L4 (Complexity enum value)
@@ -84,6 +86,7 @@ class HibiscusState(TypedDict, total=False):
     total_latency_ms: int
     agents_invoked: List[str]
     guardrail_results: Dict[str, bool]  # {hallucination: True, compliance: True}
+    fraud_alerts: List[Dict[str, Any]]  # From fraud detector [{alert_type, severity, evidence}]
     errors: List[str]
 
 
@@ -111,6 +114,8 @@ def initial_state(
         relevant_memories=[],
         relevant_conversations=[],
         renewal_alerts="",
+        outcome_followups="",
+        language="en",
         category="general",
         intent="general_chat",
         complexity=Complexity.L1.value,
@@ -134,5 +139,6 @@ def initial_state(
         total_latency_ms=0,
         agents_invoked=[],
         guardrail_results={},
+        fraud_alerts=[],
         errors=[],
     )

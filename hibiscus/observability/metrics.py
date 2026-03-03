@@ -135,6 +135,13 @@ if _PROMETHEUS_AVAILABLE:
         "Total response cache misses (Redis response cache)",
     )
 
+    # -- Fraud --
+    fraud_alerts_total = Counter(
+        "hibiscus_fraud_alerts_total",
+        "Total fraud/anomaly alerts detected",
+        labelnames=["severity", "alert_type"],
+    )
+
 else:
     # Placeholder so module-level names are defined even without the library.
     conversations_total = None
@@ -147,6 +154,7 @@ else:
     confidence_score = None
     cache_hits_total = None
     cache_misses_total = None
+    fraud_alerts_total = None
 
 
 # ── Helper functions ──────────────────────────────────────────────────────────
@@ -287,6 +295,16 @@ def record_cache_miss() -> None:
         cache_misses_total.inc()
     except Exception as exc:  # pragma: no cover
         logger.warning("metrics_record_cache_miss_error", error=str(exc))
+
+
+def record_fraud_alert(severity: str, alert_type: str) -> None:
+    """Increment the fraud alerts counter."""
+    if not _PROMETHEUS_AVAILABLE or fraud_alerts_total is None:
+        return
+    try:
+        fraud_alerts_total.labels(severity=severity, alert_type=alert_type).inc()
+    except Exception as exc:  # pragma: no cover
+        logger.warning("metrics_record_fraud_alert_error", error=str(exc))
 
 
 def get_metrics_text() -> str:

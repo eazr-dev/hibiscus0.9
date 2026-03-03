@@ -170,6 +170,27 @@ class RecommenderAgent(BaseAgent):
                 except Exception as e:
                     plog.warning("compare_quotes_failed", error=str(e))
 
+            # ── Step 2.7: Fetch live quotes from insurer integrations ────
+            try:
+                from hibiscus.integrations.registry import get_integration
+                age = merged_profile.get("age", 30)
+                category = state.get("category", "health")
+                for insurer_name in ["Star Health", "HDFC ERGO", "ICICI Lombard"]:
+                    integration = get_integration(insurer_name)
+                    if integration:
+                        quote = await integration.get_quote(
+                            age=age,
+                            sum_insured=merged_profile.get("recommended_si", 1000000),
+                            product_type=category,
+                            city=merged_profile.get("city", "Mumbai"),
+                            family_size=merged_profile.get("family_size", 1),
+                        )
+                        if quote and not compare_table:
+                            # Append to compare_table if no comparison table yet
+                            compare_table += f"\n- **{quote.insurer}** — {quote.product_name}: ~₹{quote.premium_annual:,.0f}/yr for ₹{quote.sum_insured/100000:.0f}L (source: {quote.source})"
+            except Exception as e:
+                plog.warning("insurer_integration_failed", error=str(e))
+
             # ── Step 3: Map gaps to product recommendations ────────────────
             plog.step_start("map_gaps_to_products")
             product_recommendations = self._map_gaps_to_products(gaps, merged_profile)
@@ -177,6 +198,15 @@ class RecommenderAgent(BaseAgent):
 
             # ── Step 4: Compute coverage adequacy numbers ──────────────────
             adequacy_analysis = self._compute_coverage_adequacy(merged_profile, policy_portfolio)
+
+            # ── Step 4.5: Fetch outcome stats (non-blocking) ───────────────
+            outcome_context = ""
+            try:
+                from hibiscus.services.outcome_analyzer import outcome_analyzer
+                stats = await outcome_analyzer.get_recommendation_stats("recommend")
+                outcome_context = outcome_analyzer.format_stats_for_prompt(stats)
+            except Exception:
+                pass  # Graceful — outcome data is supplementary
 
             # ── Step 5: Build LLM synthesis prompt ────────────────────────
             plog.step_start("llm_synthesis")
@@ -188,6 +218,7 @@ class RecommenderAgent(BaseAgent):
                 adequacy_analysis=adequacy_analysis,
                 message=message,
                 compare_table=compare_table,
+                outcome_context=outcome_context,
             )
 
             llm_response = await call_llm(
@@ -486,6 +517,7 @@ class RecommenderAgent(BaseAgent):
         adequacy_analysis: Dict[str, Any],
         message: str,
         compare_table: str = "",
+        outcome_context: str = "",
     ) -> str:
         """Build prompt for LLM with all pre-computed analysis."""
         profile_text = json.dumps(user_profile, indent=2, ensure_ascii=False) if user_profile else "Not provided — use general guidance"
@@ -516,6 +548,7 @@ PRE-COMPUTED COVERAGE ADEQUACY:
 
 PRODUCT RECOMMENDATIONS (based on gap analysis — present these):
 {recommendations_text}{compare_section}
+{outcome_context}
 INSTRUCTIONS FOR RESPONSE:
 1. Open with a brief assessment of the user's current situation (1-2 sentences)
 2. Present Top 3 recommendations (or fewer if gaps < 3) in this format:

@@ -280,6 +280,35 @@ class ClaimsGuideAgent(BaseAgent):
             # ── Step 2: Extract insurer if mentioned ───────────────────────
             insurer = self._extract_insurer(message)
 
+            # ── Step 2.5: Check claims status via insurer integration ─────
+            claims_status_info = ""
+            if insurer:
+                try:
+                    from hibiscus.config import settings as _cfg
+                    if getattr(_cfg, "insurer_api_enabled", False):
+                        from hibiscus.integrations.registry import get_integration
+                        integration = get_integration(insurer)
+                        if integration and "claims_status" in integration.supported_features:
+                            # Extract policy number if available
+                            policy_number = ""
+                            if state.get("document_context"):
+                                extraction = state["document_context"].get("extraction", {})
+                                policy_number = extraction.get("policy_number", "")
+                            if policy_number:
+                                result = await integration.get_claims_status(policy_number)
+                                if result:
+                                    d = result.to_dict()
+                                    claims_status_info = (
+                                        f"\nLive Claims Status (from {insurer}):\n"
+                                        f"  Claim ID: {d.get('claim_id', 'N/A')}\n"
+                                        f"  Status: {d.get('status', 'N/A')}\n"
+                                        f"  Amount Claimed: ₹{d.get('amount_claimed', 'N/A')}\n"
+                                        f"  Next Steps: {', '.join(d.get('next_steps', []))}\n"
+                                    )
+                                    plog.step_complete("integration_claims_status", insurer=insurer, status=d.get("status"))
+                except Exception as e:
+                    plog.log("integration_claims_status_skipped", error=str(e))
+
             # ── Step 3: Load structured claim process guide ────────────────
             plog.step_start("load_claim_guide")
             claim_guide = CLAIMS_PROCESS.get(claim_type, CLAIMS_PROCESS["reimbursement_health"])
@@ -300,6 +329,7 @@ class ClaimsGuideAgent(BaseAgent):
                 insurer=insurer,
                 is_distressed=is_distressed,
                 doc_context=state.get("document_context"),
+                claims_status_info=claims_status_info,
             )
 
             llm_response = await call_llm(
@@ -425,6 +455,7 @@ class ClaimsGuideAgent(BaseAgent):
         insurer: Optional[str],
         is_distressed: bool,
         doc_context: Optional[Dict[str, Any]],
+        claims_status_info: str = "",
     ) -> str:
         """Build synthesis prompt with all structured data pre-loaded."""
         tone_instruction = ""
@@ -478,7 +509,7 @@ IRDAI RIGHTS (always present in a "Your Rights" section):
 PRO TIPS:
 {tips_text}
 {escalation_text}
-
+{claims_status_info}
 INSTRUCTIONS FOR RESPONSE:
 1. Address the user's specific situation — not generic advice
 2. Present steps as a clear numbered list

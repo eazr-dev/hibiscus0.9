@@ -367,7 +367,62 @@ Run `make seed-rag` to re-ingest with GLM embeddings (Qdrant will be recreated f
 | HibiscusBench emotional | `hibiscus/evaluation/test_cases/emotional/` (20 files) |
 | HibiscusBench IPF/SVF | `hibiscus/evaluation/test_cases/ipf_svf/` (20 files) |
 
-- [ ] Phase 4: Moat
+- [x] Phase 4: Moat — "Nobody Can Catch Us" — BUILT (2026-03-04)
+  - [x] Multi-Language Support: script-based detection (Hindi, Hinglish, Tamil, Telugu, Marathi), bilingual glossary (100 terms), language injection in direct_llm + response_aggregation
+  - [x] Outcome Memory Loop: outcome_collector.py (follow-ups after 7 days), outcome_analyzer.py (conversion stats), wired into memory_storage → context_assembly → recommender
+  - [x] Auto-KG Enrichment: kg_enrichment.py (queue-and-flush, 5-min interval, max 1000 items), kg_enrichment_validator.py (fuzzy match, numeric range validation), confidence >= 0.85 threshold
+  - [x] Fraud/Anomaly Detection: fraud_alert.py (5 document checks + behavioral), wired into risk_detector agent, Prometheus fraud_alerts_total counter
+  - [x] Insurer API Integrations: ABC framework (base.py), registry.py, 3 mock implementations (Star Health, HDFC ERGO, ICICI Lombard), wired into recommender (quotes) + claims_guide (claims status)
+  - [x] Self-Hosted DeepSeek Evaluation: docs/self_hosted_evaluation.md — stay on API (break-even ~60K conv/day)
+  - [x] Config: insurer_api_enabled, insurer_api_timeout added to HibiscusSettings
+
+### Phase 4 Build Summary (2026-03-04)
+
+#### Multi-Language Support
+| Component | File | Description |
+|-----------|------|-------------|
+| Language detector | `hibiscus/utils/language_detect.py` | Script-based (Unicode ranges), Hinglish keyword heuristic, Marathi distinction |
+| Bilingual glossary | `hibiscus/knowledge/rag/corpus/bilingual_glossary/bilingual_glossary.json` | 100 insurance terms (English/Hindi/Hinglish) |
+| State field | `orchestrator/state.py` | `language: str` (default "en") |
+| Intent wiring | `orchestrator/nodes/intent_classification.py` | Step 5: detect_language() after classification |
+| Direct LLM | `orchestrator/nodes/direct_llm.py` | Language instruction injection |
+| Response aggregation | `orchestrator/nodes/response_aggregation.py` | Language rule in synthesis prompt |
+
+#### Outcome Memory Loop
+| Component | File | Description |
+|-----------|------|-------------|
+| Outcome collector | `hibiscus/services/outcome_collector.py` | get_pending_followups(), record_advice_outcome() |
+| Outcome analyzer | `hibiscus/services/outcome_analyzer.py` | get_recommendation_stats(), format_stats_for_prompt() |
+| Memory storage | `orchestrator/nodes/memory_storage.py` | Records outcomes for 7 advice-giving agents |
+| Context assembly | `orchestrator/nodes/context_assembly.py` | 8th parallel fetch: _fetch_outcome_followups() |
+| Recommender | `agents/recommender.py` | Injects outcome stats into synthesis prompt |
+
+#### Auto-KG Enrichment
+| Component | File | Description |
+|-----------|------|-------------|
+| Enrichment service | `hibiscus/services/kg_enrichment.py` | Queue-and-flush, 5-min interval, MERGE queries |
+| Validator | `hibiscus/services/kg_enrichment_validator.py` | Fuzzy insurer match (Jaccard 0.7), category/range validation |
+| Memory storage | `orchestrator/nodes/memory_storage.py` | Enqueues extractions with confidence >= 0.85 |
+| Main lifespan | `hibiscus/main.py` | start_flush_loop() on startup, stop() on shutdown |
+
+#### Fraud/Anomaly Detection
+| Component | File | Description |
+|-----------|------|-------------|
+| Fraud detector | `hibiscus/services/fraud_alert.py` | 5 document checks + behavioral check, 4 severity levels |
+| Risk detector | `agents/risk_detector.py` | Step 2.5: fraud detection, merges into risk_flags |
+| Metrics | `observability/metrics.py` | fraud_alerts_total counter + record_fraud_alert() |
+
+#### Insurer API Integrations
+| Component | File | Description |
+|-----------|------|-------------|
+| ABC + dataclasses | `hibiscus/integrations/base.py` | InsurerIntegration, QuoteResult, ClaimsStatusResult, etc. |
+| Registry | `hibiscus/integrations/registry.py` | get_integration(), list_integrations(), fuzzy name match |
+| Star Health mock | `hibiscus/integrations/star_health.py` | KG-backed quotes + hardcoded claims/policy/renewal |
+| HDFC ERGO mock | `hibiscus/integrations/hdfc_ergo.py` | Same pattern |
+| ICICI Lombard mock | `hibiscus/integrations/icici_lombard.py` | Same pattern |
+| Config | `hibiscus/config.py` | insurer_api_enabled, insurer_api_timeout |
+| Recommender | `agents/recommender.py` | Step 2.7: live quote fetching |
+| Claims guide | `agents/claims_guide.py` | Step 2.5: claims status from integration |
 
 ## KEY FILE REFERENCES
 
