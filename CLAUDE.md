@@ -424,6 +424,47 @@ Run `make seed-rag` to re-ingest with GLM embeddings (Qdrant will be recreated f
 | Recommender | `agents/recommender.py` | Step 2.7: live quote fetching |
 | Claims guide | `agents/claims_guide.py` | Step 2.5: claims status from integration |
 
+### Blueprint Gap Closure (2026-03-04)
+
+All files specified in the blueprint directory structure now exist:
+
+#### Tool Wrappers (existing API)
+| File | Wraps |
+|------|-------|
+| `tools/existing_api/extraction.py` | `client.py → upload_and_analyze_policy()` |
+| `tools/existing_api/scoring.py` | `client.py → get_protection_score()` |
+| `tools/existing_api/reporting.py` | `client.py → get_policy_detail()` |
+| `tools/existing_api/compliance.py` | `client.py → get_claim_guidance()` |
+| `tools/existing_api/billing.py` | `client.py → upload_bill(), get_bill_audit_result()` |
+
+#### Calculator Tools
+| File | Wraps |
+|------|-------|
+| `tools/calculators/surrender_value.py` | `formulas/surrender_value.py` |
+| `tools/calculators/irr.py` | `formulas/irr.py` |
+| `tools/calculators/premium_adequacy.py` | `formulas/premium_adequacy.py` |
+| `tools/calculators/tax_benefit.py` | `formulas/tax_benefit.py` |
+| `tools/calculators/inflation_adjust.py` | `formulas/inflation.py` |
+| `tools/calculators/emi.py` | `formulas/emi.py` |
+| `tools/calculators/opportunity_cost.py` | `formulas/opportunity_cost.py` |
+
+#### Orchestrator Routing
+| File | Purpose |
+|------|---------|
+| `orchestrator/routing/complexity_router.py` | L1/L2 → direct_llm, L3/L4 → agent pipeline |
+| `orchestrator/routing/model_router.py` | Tier 1/2/3 model selection |
+| `orchestrator/routing/emotional_router.py` | Distress detection → tone + model adjustment |
+
+#### API & Infrastructure
+| File | Purpose |
+|------|---------|
+| `api/websocket.py` | WS /hibiscus/ws streaming endpoint |
+| `api/middleware/cors.py` | CORS configuration (dev: all, prod: EAZR domains) |
+| `llm/prompts/orchestrator/task_decomposer.txt` | Execution planning prompt |
+| `llm/prompts/orchestrator/response_aggregator.txt` | Response synthesis prompt |
+
+**Blueprint coverage: 100%** — All files in the directory structure (lines 243-960) now exist on disk.
+
 ## KEY FILE REFERENCES
 
 When building a specific component, re-read the relevant section of the blueprint:

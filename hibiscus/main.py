@@ -8,7 +8,6 @@ import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
 
 from hibiscus.config import settings
@@ -85,16 +84,8 @@ def create_app() -> FastAPI:
     )
 
     # ── CORS ─────────────────────────────────────────────────────
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"] if not settings.is_production else [
-            "https://app.eazr.in",
-            "https://eazr.in",
-        ],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+    from hibiscus.api.middleware.cors import configure_cors
+    configure_cors(app)
 
     # ── Request ID middleware ─────────────────────────────────────
     from hibiscus.api.middleware.request_id import RequestIdMiddleware
