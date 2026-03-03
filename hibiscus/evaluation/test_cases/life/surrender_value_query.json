@@ -1,0 +1,21 @@
+{
+  "test_id": "life_002",
+  "name": "Surrender value calculation — LIC policy year 5",
+  "description": "User wants to know surrender value of their LIC endowment policy",
+  "category": "life",
+  "intent": "calculate",
+  "complexity": "L3",
+  "input": {
+    "message": "I have a LIC Jeevan Anand policy. Annual premium is ₹50,000, sum assured ₹5 lakhs. I have paid for 5 years. What will I get if I surrender now? Should I surrender?",
+    "session_id": "test_session_life_002",
+    "user_id": "test_user_life_002"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_contain": ["surrender", "50%", "lakh"],
+    "must_not_contain": ["I cannot calculate", "please contact"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Year 5 GSV = 50% of premiums paid = 50% × (50000×5) = ₹1.25 lakh. Should flag significant loss vs premiums paid (₹2.5L paid, get ₹1.25L back)"
+}

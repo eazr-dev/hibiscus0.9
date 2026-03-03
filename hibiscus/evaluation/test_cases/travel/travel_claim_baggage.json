@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_002",
+  "name": "Travel insurance baggage loss claim",
+  "description": "User's baggage was lost on flight — needs claim guidance",
+  "category": "travel",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "I was travelling from Delhi to London and my checked-in baggage was lost by the airline. I have travel insurance. How do I claim for the lost baggage?",
+    "session_id": "test_session_travel_002",
+    "user_id": "test_user_travel_002"
+  },
+  "expected_response_criteria": {
+    "must_have_steps": true,
+    "must_contain": ["PIR", "property irregularity", "airline", "documents"],
+    "must_not_contain": ["I cannot help"],
+    "min_confidence": 0.7
+  },
+  "notes": "Key steps: 1. File PIR at airport before leaving, 2. Get airline acknowledgment, 3. List items and values, 4. Contact insurer within 24-48 hrs, 5. Submit documents. Also: airline has liability (Montreal Convention $1,131 SDR for checked baggage). Claim from airline first, insurer covers the gap."
+}

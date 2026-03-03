@@ -1,0 +1,19 @@
+{
+  "test_id": "travel_003",
+  "name": "Schengen visa travel insurance requirements",
+  "description": "User applying for Schengen visa needs to know insurance requirements",
+  "category": "travel",
+  "intent": "explain",
+  "complexity": "L2",
+  "input": {
+    "message": "I am applying for a Schengen visa to visit France and Germany. What are the travel insurance requirements? What should the policy cover and what amount?",
+    "session_id": "test_session_travel_003",
+    "user_id": "test_user_travel_003"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["€30,000", "Schengen", "medical", "repatriation"],
+    "must_have_numbers": true,
+    "min_confidence": 0.8
+  },
+  "notes": "Schengen requirements: minimum €30,000 (₹27+ lakh) medical coverage including emergency repatriation. Must be valid for all Schengen countries. Must cover entire trip duration. Many Indian insurers offer Schengen-compliant plans. Policy must be in English and show coverage dates."
+}

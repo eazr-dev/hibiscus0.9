@@ -1,0 +1,531 @@
+"""
+Market Benchmark Seed Data
+===========================
+Indian insurance market benchmarks — premiums, coverage recommendations,
+IRR comparisons, mis-selling detection thresholds.
+
+All premium figures are approximate annual premiums in INR for the stated coverage.
+Sources: IRDAI Annual Reports, public insurer data, industry averages.
+
+Run via: python -m hibiscus.knowledge.graph.seed
+"""
+from typing import Any, Dict, List
+
+from hibiscus.knowledge.graph.client import Neo4jClient
+from hibiscus.observability.logger import get_logger
+
+logger = get_logger("hibiscus.kg.seed.benchmarks")
+
+
+BENCHMARKS: List[Dict[str, Any]] = [
+
+    # ── Health Insurance Benchmarks — by Age Group ────────────────────────────
+
+    {
+        "id": "health_age_25_35_individual",
+        "category": "health_insurance",
+        "subcategory": "individual",
+        "metric": "avg_annual_premium_5L_cover",
+        "age_group": "25-35",
+        "value": 8000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 8000,
+        "percentile_25": 6500,
+        "percentile_75": 11000,
+        "source": "IRDAI Annual Report 2022-23 + Industry Average",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹5 lakh individual health policy, age 25-35, no pre-existing conditions",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "Minimum ₹5L cover for age 25-35 in Tier 1 cities",
+            "Prefer zero copay, no room rent limit plans",
+            "EAZR score 7.5+ is the threshold for a good plan",
+        ],
+        "good_plan_threshold": "eazr_score >= 7.5",
+        "red_flags": [
+            "Room rent sub-limit below ₹3000/day is inadequate",
+            "Copay > 10% is unfavourable for young buyers",
+            "Exclusion count > 15 signals restrictive policy",
+        ],
+    },
+    {
+        "id": "health_age_25_35_si_recommendation",
+        "category": "health_insurance",
+        "subcategory": "coverage_adequacy",
+        "metric": "recommended_sum_insured",
+        "age_group": "25-35",
+        "value": 500000,
+        "value_unit": "INR",
+        "percentile_50": 500000,
+        "percentile_25": 300000,
+        "percentile_75": 1000000,
+        "source": "EAZR Coverage Adequacy Model v1.0",
+        "date": "2024-01-01",
+        "context": "Minimum recommended SI for age 25-35. Hospitalisation in private hospitals in Tier 1 cities can cost ₹3-7L for surgery.",
+        "benchmark_type": "coverage",
+        "recommendations": [
+            "Minimum ₹5L; prefer ₹10L for comprehensive coverage",
+            "Consider restore/refill benefit for chronic conditions",
+            "Family floater: minimum ₹10L for a couple with a child",
+        ],
+    },
+    {
+        "id": "health_age_35_45_individual",
+        "category": "health_insurance",
+        "subcategory": "individual",
+        "metric": "avg_annual_premium_5L_cover",
+        "age_group": "35-45",
+        "value": 12000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 12000,
+        "percentile_25": 9500,
+        "percentile_75": 16000,
+        "source": "IRDAI Annual Report 2022-23 + Industry Average",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹5 lakh individual health policy, age 35-45",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "Minimum ₹10L cover recommended for age 35-45",
+            "Consider Super Top-Up to extend coverage economically",
+            "Check waiting periods for lifestyle diseases at this age",
+        ],
+        "good_plan_threshold": "eazr_score >= 7.5",
+    },
+    {
+        "id": "health_age_35_45_si_recommendation",
+        "category": "health_insurance",
+        "subcategory": "coverage_adequacy",
+        "metric": "recommended_sum_insured",
+        "age_group": "35-45",
+        "value": 1000000,
+        "value_unit": "INR",
+        "percentile_50": 1000000,
+        "percentile_25": 500000,
+        "percentile_75": 2000000,
+        "source": "EAZR Coverage Adequacy Model v1.0",
+        "date": "2024-01-01",
+        "context": "Recommended SI for age 35-45. Risk of lifestyle diseases increases.",
+        "benchmark_type": "coverage",
+        "recommendations": [
+            "Minimum ₹10L recommended; ₹15-25L preferred",
+            "Include critical illness cover as add-on",
+            "Restore benefit becomes important at this age",
+        ],
+    },
+    {
+        "id": "health_age_45_55_individual",
+        "category": "health_insurance",
+        "subcategory": "individual",
+        "metric": "avg_annual_premium_5L_cover",
+        "age_group": "45-55",
+        "value": 22000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 22000,
+        "percentile_25": 17000,
+        "percentile_75": 29000,
+        "source": "IRDAI Annual Report 2022-23 + Industry Average",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹5 lakh individual health policy, age 45-55",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "₹15L minimum cover for age 45-55",
+            "Avoid copay policies — future claim amounts will be large",
+            "Watch for sub-limits on cardiac / orthopaedic procedures",
+        ],
+        "good_plan_threshold": "eazr_score >= 7.5 AND copay = 0%",
+        "red_flags": [
+            "Any copay is a significant liability at this age",
+            "Room rent capped below ₹5000/day is a risk",
+        ],
+    },
+    {
+        "id": "health_age_45_55_si_recommendation",
+        "category": "health_insurance",
+        "subcategory": "coverage_adequacy",
+        "metric": "recommended_sum_insured",
+        "age_group": "45-55",
+        "value": 1500000,
+        "value_unit": "INR",
+        "percentile_50": 1500000,
+        "percentile_25": 1000000,
+        "percentile_75": 3000000,
+        "source": "EAZR Coverage Adequacy Model v1.0",
+        "date": "2024-01-01",
+        "context": "Recommended SI for age 45-55. Higher probability of hospitalisation.",
+        "benchmark_type": "coverage",
+        "recommendations": [
+            "Minimum ₹15L; prefer ₹25-50L with Super Top-Up",
+            "Critical illness cover essential",
+            "Check network hospital coverage for specialist hospitals",
+        ],
+    },
+    {
+        "id": "health_age_55_plus_individual",
+        "category": "health_insurance",
+        "subcategory": "individual",
+        "metric": "avg_annual_premium_5L_cover",
+        "age_group": "55+",
+        "value": 40000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 40000,
+        "percentile_25": 30000,
+        "percentile_75": 60000,
+        "source": "IRDAI Annual Report 2022-23 + Industry Average",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹5 lakh individual health policy, age 55+. Premiums rise sharply.",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "Buy before age 60 — premiums and acceptance easier",
+            "Choose senior-specific plans with lower copay if budget-constrained",
+            "Pre-existing disease waiting period completion is critical",
+        ],
+        "red_flags": [
+            "Copay > 20% is excessive",
+            "Many plans have sub-limits or caps for seniors — check carefully",
+            "Limited network hospitals for senior specialist care is a risk",
+        ],
+    },
+    {
+        "id": "health_family_floater_30s",
+        "category": "health_insurance",
+        "subcategory": "family_floater",
+        "metric": "avg_annual_premium_10L_family_cover",
+        "age_group": "25-40_family",
+        "value": 18000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 18000,
+        "percentile_25": 14000,
+        "percentile_75": 24000,
+        "source": "IRDAI + Market Survey 2023",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹10L family floater (couple + 1 child, primary insured age 30-35)",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "₹10L family floater minimum for a family in Tier 1 city",
+            "Add individual top-up for primary earner",
+            "Maternity benefit adds 15-25% to premium — weigh against expected use",
+        ],
+    },
+    {
+        "id": "health_eazr_score_threshold",
+        "category": "health_insurance",
+        "subcategory": "quality",
+        "metric": "minimum_acceptable_eazr_score",
+        "age_group": "all",
+        "value": 7.5,
+        "value_unit": "score",
+        "percentile_50": 7.5,
+        "percentile_25": 6.5,
+        "percentile_75": 8.5,
+        "source": "EAZR Scoring Model v1.0",
+        "date": "2024-01-01",
+        "context": "EAZR score 7.5+ indicates a good policy. Below 7.0 warrants detailed review.",
+        "benchmark_type": "quality_threshold",
+        "scoring_criteria": {
+            "eazr_score_9_plus": "Excellent — recommend confidently",
+            "eazr_score_8_to_9": "Good — suitable for most buyers",
+            "eazr_score_7_5_to_8": "Adequate — flag any sub-limits",
+            "eazr_score_7_to_7_5": "Below average — identify specific gaps",
+            "eazr_score_below_7": "Poor — strongly consider alternatives",
+        },
+    },
+
+    # ── Life Term Insurance Benchmarks ────────────────────────────────────────
+
+    {
+        "id": "term_age_25_1cr",
+        "category": "life_term_insurance",
+        "subcategory": "premium_benchmark",
+        "metric": "avg_annual_premium_1cr_cover",
+        "age_group": "25",
+        "value": 9000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 9000,
+        "percentile_25": 7500,
+        "percentile_75": 11000,
+        "source": "Term Premium Survey 2023 — IRDAI registered policies",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹1 crore term plan, age 25, 30-year term, non-smoker male",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "Recommended coverage = 10-15x annual income",
+            "Buy earliest for lowest premiums",
+            "Prefer online term plans — lower premium due to direct channel",
+        ],
+    },
+    {
+        "id": "term_age_30_1cr",
+        "category": "life_term_insurance",
+        "subcategory": "premium_benchmark",
+        "metric": "avg_annual_premium_1cr_cover",
+        "age_group": "30",
+        "value": 11000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 11000,
+        "percentile_25": 9000,
+        "percentile_75": 13500,
+        "source": "Term Premium Survey 2023 — IRDAI registered policies",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹1 crore term plan, age 30, 25-year term, non-smoker male",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "For ₹10L annual income at age 30: recommended SI = ₹1Cr to ₹1.5Cr",
+            "Include accidental death rider for high-risk professions",
+            "Consider waiver of premium on disability rider",
+        ],
+    },
+    {
+        "id": "term_age_35_1cr",
+        "category": "life_term_insurance",
+        "subcategory": "premium_benchmark",
+        "metric": "avg_annual_premium_1cr_cover",
+        "age_group": "35",
+        "value": 15000,
+        "value_unit": "INR_per_year",
+        "percentile_50": 15000,
+        "percentile_25": 12500,
+        "percentile_75": 18000,
+        "source": "Term Premium Survey 2023 — IRDAI registered policies",
+        "date": "2023-04-01",
+        "context": "Annual premium for ₹1 crore term plan, age 35, 20-year term, non-smoker male",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "At age 35 with ₹15L income: recommended SI = ₹1.5Cr to ₹2Cr",
+            "If dependents include elderly parents, increase SI",
+            "Check claims settlement ratio — choose CSR 97%+",
+        ],
+    },
+    {
+        "id": "term_coverage_adequacy_rule",
+        "category": "life_term_insurance",
+        "subcategory": "coverage_adequacy",
+        "metric": "recommended_si_multiplier",
+        "age_group": "all",
+        "value": 12,
+        "value_unit": "times_annual_income",
+        "percentile_50": 12,
+        "percentile_25": 10,
+        "percentile_75": 15,
+        "source": "EAZR Coverage Adequacy Model v1.0",
+        "date": "2024-01-01",
+        "context": "Recommended life cover = 10-15x annual income. Factor in liabilities (home loan, etc.).",
+        "benchmark_type": "coverage_rule",
+        "formula": "recommended_SI = max(10 * annual_income, outstanding_liabilities + 3 * annual_expenses)",
+        "recommendations": [
+            "Minimum: 10x annual income",
+            "Ideal: 15x annual income + outstanding liabilities",
+            "Add ₹50L for each dependent parent or child",
+        ],
+        "example": "Age 30, ₹10L income, ₹30L home loan: Recommended SI = ₹1Cr + ₹30L = ₹1.3Cr minimum",
+    },
+
+    # ── LIC Endowment / ULIP — Mis-selling Detection Benchmarks ─────────────
+
+    {
+        "id": "lic_endowment_irr_benchmark",
+        "category": "life_endowment",
+        "subcategory": "returns_comparison",
+        "metric": "irr_range",
+        "age_group": "all",
+        "value": 4.75,
+        "value_unit": "percent_irr",
+        "percentile_50": 4.75,
+        "percentile_25": 4.0,
+        "percentile_75": 5.5,
+        "source": "LIC policy analysis — published bonus rates + actuarial estimates 2023",
+        "date": "2023-04-01",
+        "context": "LIC endowment plans typically yield 4-5.5% IRR. Compare with PPF (7.1%), Bank FD (7-7.5%), Nifty50 CAGR (12-14%)",
+        "benchmark_type": "returns_benchmark",
+        "comparison_returns": {
+            "ppf_rate": 7.1,
+            "bank_fd_rate": 7.25,
+            "nifty50_10yr_cagr": 13.5,
+            "sensex_20yr_cagr": 14.1,
+            "lic_endowment_irr": "4-5.5%",
+        },
+        "mis_selling_flag": "If sold as investment with 'guaranteed returns' exceeding 6% without disclosing IRR, flag as potential mis-selling",
+        "recommendations": [
+            "LIC endowment is NOT an investment product — it is insurance with low returns",
+            "Better alternative: Term plan (pure protection) + PPF/MF (pure investment)",
+            "If already held for 3+ years, evaluate surrender value vs continuation",
+        ],
+    },
+    {
+        "id": "ulip_charges_benchmark",
+        "category": "ulip",
+        "subcategory": "cost_structure",
+        "metric": "total_effective_charges_first_5_years",
+        "age_group": "all",
+        "value": 2.5,
+        "value_unit": "percent_of_fund_per_year",
+        "percentile_50": 2.5,
+        "percentile_25": 1.5,
+        "percentile_75": 4.0,
+        "source": "IRDAI ULIP Disclosure Data 2022-23",
+        "date": "2023-04-01",
+        "context": "Average total ULIP charges in years 1-5 including fund management, mortality, policy admin. Post-2010 ULIPs are better than pre-2010.",
+        "benchmark_type": "cost_benchmark",
+        "charge_breakdown": {
+            "fund_management_charge_max": 1.35,
+            "premium_allocation_charge_yr1": "up to 5% (varies)",
+            "policy_admin_charge": "up to ₹500/month",
+            "mortality_charge": "varies by age and SI",
+        },
+        "comparison": {
+            "direct_mutual_fund_expense_ratio": "0.05-1.5% depending on fund type",
+            "ulip_net_yield_vs_mf": "MF typically better by 0.5-2% per year after charges",
+        },
+        "mis_selling_flag": "ULIP sold as 'better than FD with life cover' without disclosing charges and lock-in is mis-selling",
+        "surrender_value_year_5": "Typically 30-50% of premiums paid for older plans; better for post-2019 plans",
+    },
+    {
+        "id": "ulip_surrender_year_5",
+        "category": "ulip",
+        "subcategory": "surrender_value",
+        "metric": "surrender_value_pct_premiums_paid_year_5",
+        "age_group": "all",
+        "value": 40,
+        "value_unit": "percent",
+        "percentile_50": 40,
+        "percentile_25": 30,
+        "percentile_75": 55,
+        "source": "Industry average from IRDAI product filings 2022-23",
+        "date": "2023-04-01",
+        "context": "Typical surrender value at 5 years = 30-50% of total premiums paid, after charges. Lock-in is 5 years mandatorily.",
+        "benchmark_type": "surrender_benchmark",
+        "recommendations": [
+            "If surrendering in year 1-5, expect significant losses",
+            "After year 5, evaluate fund performance vs alternatives",
+            "If fund value < premiums paid, seriously consider exiting",
+        ],
+        "tax_note": "ULIPs with annual premium > ₹2.5L — gains taxable at 10% LTCG post Feb 2021 Budget",
+    },
+
+    # ── Super Top-Up Benchmarks ───────────────────────────────────────────────
+
+    {
+        "id": "super_topup_cost_benefit",
+        "category": "health_insurance",
+        "subcategory": "super_topup",
+        "metric": "avg_premium_per_lakh_additional_cover",
+        "age_group": "30-45",
+        "value": 400,
+        "value_unit": "INR_per_lakh_per_year",
+        "percentile_50": 400,
+        "percentile_25": 300,
+        "percentile_75": 600,
+        "source": "Market survey of super top-up plans 2023",
+        "date": "2023-04-01",
+        "context": "Super top-up plans provide additional cover over a deductible at ~₹300-600 per lakh per year — extremely cost effective",
+        "benchmark_type": "premium",
+        "recommendations": [
+            "A ₹20L super top-up with ₹5L deductible costs ~₹5000-8000/yr for age 30-35",
+            "Ideal combination: ₹5L base + ₹20L super top-up is more economical than ₹25L base",
+            "Super top-up is aggregate — single year claims across multiple hospitalisations",
+        ],
+    },
+
+    # ── Claim Settlement Ratio Benchmarks ─────────────────────────────────────
+
+    {
+        "id": "life_csr_threshold",
+        "category": "life_insurance",
+        "subcategory": "insurer_quality",
+        "metric": "minimum_acceptable_csr",
+        "age_group": "all",
+        "value": 97.0,
+        "value_unit": "percent",
+        "percentile_50": 98.5,
+        "percentile_25": 97.0,
+        "percentile_75": 99.5,
+        "source": "IRDAI Annual Report 2022-23",
+        "date": "2023-04-01",
+        "context": "Life insurer CSR below 97% warrants caution. Industry average is 98.5%.",
+        "benchmark_type": "quality_threshold",
+        "recommendations": [
+            "Choose life insurer with CSR >= 97%",
+            "CSR 99%+ is excellent",
+            "CSR alone is not sufficient — check repudiation reasons",
+        ],
+    },
+    {
+        "id": "health_icr_threshold",
+        "category": "health_insurance",
+        "subcategory": "insurer_quality",
+        "metric": "acceptable_icr_range",
+        "age_group": "all",
+        "value": 65,
+        "value_unit": "percent",
+        "percentile_50": 65,
+        "percentile_25": 55,
+        "percentile_75": 80,
+        "source": "IRDAI Annual Report 2022-23",
+        "date": "2023-04-01",
+        "context": "ICR (Incurred Claims Ratio) of 55-80% for health insurers is healthy. Too low may indicate claims rejection issues; too high (>90%) indicates financial stress.",
+        "benchmark_type": "quality_threshold",
+        "recommendations": [
+            "ICR 55-80% is the acceptable range",
+            "ICR < 50% — insurer may be rejecting too many claims",
+            "ICR > 90% — insurer is financially stressed, may hike premiums",
+        ],
+    },
+]
+
+
+# ── Cypher ─────────────────────────────────────────────────────────────────────
+
+_MERGE_BENCHMARK = """
+MERGE (b:Benchmark {id: $id})
+SET
+  b.category          = $category,
+  b.subcategory       = $subcategory,
+  b.metric            = $metric,
+  b.age_group         = $age_group,
+  b.value             = $value,
+  b.value_unit        = $value_unit,
+  b.percentile_50     = $percentile_50,
+  b.percentile_25     = $percentile_25,
+  b.percentile_75     = $percentile_75,
+  b.source            = $source,
+  b.date              = $date,
+  b.context           = $context,
+  b.benchmark_type    = $benchmark_type,
+  b.recommendations   = $recommendations,
+  b.updated_at        = datetime()
+RETURN b.id AS id
+"""
+
+
+async def seed_benchmarks(client: Neo4jClient) -> None:
+    """
+    MERGE all Benchmark nodes into Neo4j. Idempotent — safe to re-run.
+    """
+    logger.info("seed_benchmarks_start", count=len(BENCHMARKS))
+
+    bm_params = []
+    for bm in BENCHMARKS:
+        params = {
+            "id": bm["id"],
+            "category": bm["category"],
+            "subcategory": bm.get("subcategory", ""),
+            "metric": bm["metric"],
+            "age_group": bm.get("age_group", "all"),
+            "value": bm["value"],
+            "value_unit": bm.get("value_unit", ""),
+            "percentile_50": bm.get("percentile_50", bm["value"]),
+            "percentile_25": bm.get("percentile_25", 0),
+            "percentile_75": bm.get("percentile_75", 0),
+            "source": bm.get("source", "EAZR"),
+            "date": bm.get("date", "2024-01-01"),
+            "context": bm.get("context", ""),
+            "benchmark_type": bm.get("benchmark_type", "general"),
+            "recommendations": bm.get("recommendations", []),
+        }
+        bm_params.append(params)
+
+    succeeded = await client.execute_batch(
+        _MERGE_BENCHMARK,
+        param_list=bm_params,
+        query_name="seed_benchmarks",
+    )
+    logger.info("seed_benchmarks_complete", succeeded=succeeded, total=len(BENCHMARKS))

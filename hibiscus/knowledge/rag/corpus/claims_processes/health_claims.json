@@ -1,0 +1,273 @@
+[
+  {
+    "insurer": "Star Health",
+    "claim_type": "cashless",
+    "process": [
+      "Step 1: Go to a Star Health network hospital. Check network: starhealth.in or call 044-28288800. Network: 14,000+ hospitals across India.",
+      "Step 2: At admission, go to the hospital's Insurance/TPA desk. Present your Star Health policy card (physical or digital on app) and government photo ID (Aadhaar preferred).",
+      "Step 3: Hospital staff fills pre-authorization form with: diagnosis, proposed treatment, estimated cost, admitting doctor's details.",
+      "Step 4: Hospital sends pre-authorization request to Star Health's in-house TPA.",
+      "Step 5: Star Health responds: Emergency within 60 minutes, Planned within 2 hours. Response may be Approval (full or partial amount), Query (requesting more info), or Denial (written reason).",
+      "Step 6: On receiving approval, proceed with treatment. Star Health sets an approved limit (can be enhanced later if treatment escalates).",
+      "Step 7: During hospitalization: keep all prescriptions, test reports, daily treatment summary. If treatment changes significantly, hospital should send enhancement request.",
+      "Step 8: At discharge: review final bill carefully. Sign discharge summary only when accurate. Hospital submits final claim to Star Health.",
+      "Step 9: You pay only non-covered items: attendant charges, personal consumables, items outside policy coverage. Star Health settles with hospital within 48-72 hours."
+    ],
+    "documents_needed": [
+      "Star Health policy card (physical or digital from Star Health app)",
+      "Aadhaar card or valid government photo ID",
+      "Referral letter from family physician (if referred case)",
+      "Previous hospitalization records for same/related condition",
+      "Any pre-existing condition documentation if relevant"
+    ],
+    "tpa": "Star Health in-house TPA (no external TPA)",
+    "toll_free": "1800-425-2255 (24x7)",
+    "app": "Star Health mobile app available on iOS and Android",
+    "timeline_cashless_auth": "60 minutes for emergency, 2 hours for planned hospitalization",
+    "final_authorization_timeline": "3 hours after receiving final bill at discharge",
+    "reimbursement_timeline": "30 days from complete document submission",
+    "network_size": "14,000+ hospitals as of 2025",
+    "common_issues": [
+      "Pre-auth delays: escalate to 1800-425-2255 immediately if no response in 2 hours",
+      "Partial approval: insurer may approve less than hospital estimated — balance may be claimed via reimbursement",
+      "Cashless denied: collect written denial reason, proceed with treatment, file reimbursement"
+    ]
+  },
+  {
+    "insurer": "Star Health",
+    "claim_type": "reimbursement",
+    "process": [
+      "Step 1: Get hospitalized at any hospital (network or non-network). Keep all original bills, receipts, and medical documents from Day 1.",
+      "Step 2: Intimate Star Health within 24 hours of hospitalization: call 1800-425-2255 or email claims@starhealth.in.",
+      "Step 3: After discharge, collect: Original hospital bills (itemized), Discharge summary, All test reports and diagnostic reports, Prescriptions, Pharmacy bills, Consulting doctor's bills.",
+      "Step 4: Download and fill Star Health Reimbursement Claim Form from starhealth.in.",
+      "Step 5: Submit within 30 days of discharge. Submit to nearest Star Health branch or via courier to Star Health Head Office, Chennai.",
+      "Step 6: Star Health assigns a claims assessor. May request additional documents within 7 days.",
+      "Step 7: Settlement within 30 days of receiving all documents. Payment via NEFT to registered bank account.",
+      "Step 8: If claim partially settled, insurer provides Claim Settlement Statement showing accepted/rejected items with reasons."
+    ],
+    "documents_needed": [
+      "Original hospital bill (itemized)",
+      "Discharge summary",
+      "All investigation reports (blood reports, X-ray, CT scan, MRI, ECG)",
+      "Prescriptions for all medicines",
+      "Pharmacy bills (original)",
+      "Consulting doctor bills",
+      "Completed Star Health claim form",
+      "NEFT details (bank account, IFSC)",
+      "Cancelled cheque",
+      "PAN card photocopy",
+      "Pre and post hospitalization bills (for 30 days pre, 60 days post)"
+    ],
+    "tpa": "Star Health in-house TPA",
+    "toll_free": "1800-425-2255 (24x7)",
+    "email": "claims@starhealth.in",
+    "timeline_cashless_auth": "Not applicable",
+    "reimbursement_timeline": "30 days from complete document submission",
+    "pre_post_hospitalization_cover": "30 days pre-hospitalization, 60 days post-hospitalization expenses covered"
+  },
+  {
+    "insurer": "Niva Bupa",
+    "claim_type": "cashless",
+    "process": [
+      "Step 1: Go to any Niva Bupa network hospital. Check at nibubupa.com or call 1860-500-8888. Network: 10,000+ hospitals.",
+      "Step 2: At hospital insurance desk, show Niva Bupa health card and Aadhaar.",
+      "Step 3: Hospital sends digital pre-authorization via Niva Bupa's ClaimPro portal.",
+      "Step 4: Niva Bupa responds within 60 minutes (emergency) or 2 hours (planned). Digital approval sent directly to hospital system.",
+      "Step 5: For enhanced approval (if treatment scope expands): hospital sends enhancement request. Niva Bupa responds within 60 minutes.",
+      "Step 6: At discharge: verify bill. Hospital submits final claim to Niva Bupa.",
+      "Step 7: Niva Bupa settles with hospital within 48 hours of receiving final documents."
+    ],
+    "documents_needed": [
+      "Niva Bupa health card",
+      "Aadhaar card",
+      "Doctor's referral if applicable",
+      "Previous medical records for related condition"
+    ],
+    "tpa": "Niva Bupa in-house claims",
+    "toll_free": "1860-500-8888 (24x7)",
+    "app": "Niva Bupa app (iOS and Android) for cashless requests",
+    "timeline_cashless_auth": "60 minutes emergency, 2 hours planned",
+    "reimbursement_timeline": "30 days from complete documents",
+    "network_size": "10,000+ hospitals as of 2025",
+    "digital_features": "Digital cashless pre-auth initiation via app. Real-time claim tracking. WhatsApp claim updates on +91-9643961234."
+  },
+  {
+    "insurer": "Niva Bupa",
+    "claim_type": "reimbursement",
+    "process": [
+      "Step 1: Intimate Niva Bupa within 24 hours of hospitalization: call 1860-500-8888 or use app.",
+      "Step 2: Collect all documents from hospital at discharge.",
+      "Step 3: Submit within 30 days of discharge. Digital submission via Niva Bupa app or portal preferred.",
+      "Step 4: Track claim status on app. Assessor may call for additional docs.",
+      "Step 5: Settlement within 30 days. NEFT to registered bank account.",
+      "Step 6: For any deficiency in documents, Niva Bupa informs within 7 working days."
+    ],
+    "documents_needed": [
+      "Hospital bills (itemized)",
+      "Discharge summary",
+      "Investigation reports",
+      "Prescriptions and pharmacy bills",
+      "Completed reimbursement claim form",
+      "NEFT details",
+      "KYC documents (Aadhaar + PAN)"
+    ],
+    "tpa": "Niva Bupa in-house claims",
+    "toll_free": "1860-500-8888",
+    "email": "customersupport@nivabupa.com",
+    "reimbursement_timeline": "30 days from complete document submission"
+  },
+  {
+    "insurer": "HDFC Ergo",
+    "claim_type": "cashless",
+    "process": [
+      "Step 1: Go to HDFC Ergo network hospital. Check at hdfcergo.com or call 022-62346234. Network: 13,000+ hospitals.",
+      "Step 2: At hospital insurance desk, present HDFC Ergo health card + Aadhaar.",
+      "Step 3: Hospital submits pre-authorization request to Medi Assist or Health India TPA (HDFC Ergo uses external TPAs for some plans).",
+      "Step 4: TPA responds within 2 hours (planned) or 60 minutes (emergency). Approval sent to hospital.",
+      "Step 5: Treatment proceeds. For large claim escalation, hospital sends enhancement request.",
+      "Step 6: At discharge, verify bill. Hospital submits final documents to TPA/HDFC Ergo.",
+      "Step 7: Settlement with hospital within 48-72 hours."
+    ],
+    "documents_needed": [
+      "HDFC Ergo health card",
+      "Aadhaar card",
+      "Doctor's referral letter",
+      "Previous medical records"
+    ],
+    "tpa": "Medi Assist or Health India TPA (varies by product)",
+    "toll_free": "022-62346234 (24x7)",
+    "app": "HDFC Ergo app",
+    "timeline_cashless_auth": "60 minutes emergency, 2 hours planned",
+    "reimbursement_timeline": "30 days from complete documents",
+    "network_size": "13,000+ hospitals as of 2025"
+  },
+  {
+    "insurer": "HDFC Ergo",
+    "claim_type": "reimbursement",
+    "process": [
+      "Step 1: Intimate within 48 hours of hospitalization: call 022-62346234.",
+      "Step 2: Collect all documents at discharge.",
+      "Step 3: Submit within 30 days of discharge to: HDFC ERGO General Insurance, 1st Floor, HDFC House, Backbay Reclamation, H.T. Parekh Marg, Churchgate, Mumbai - 400020 or via email to healthclaims@hdfcergo.com.",
+      "Step 4: Claim processing by TPA within 30 days.",
+      "Step 5: NEFT payment to registered account."
+    ],
+    "documents_needed": [
+      "Duly filled claim form",
+      "Hospital discharge summary",
+      "All hospital bills (original, itemized)",
+      "Investigation reports",
+      "Prescriptions and pharmacy bills",
+      "KYC documents",
+      "NEFT details"
+    ],
+    "tpa": "Medi Assist or Health India TPA",
+    "toll_free": "022-62346234",
+    "email": "healthclaims@hdfcergo.com",
+    "reimbursement_timeline": "30 days from complete document submission"
+  },
+  {
+    "insurer": "ICICI Lombard",
+    "claim_type": "cashless",
+    "process": [
+      "Step 1: Locate ICICI Lombard network hospital. Check at icicilombard.com or call 1800-2666. Network: 10,000+ hospitals.",
+      "Step 2: At hospital TPA desk, show ICICI Lombard health card and Aadhaar.",
+      "Step 3: Hospital sends pre-authorization to Medi Assist TPA (ICICI Lombard's TPA for health claims).",
+      "Step 4: Authorization within 2 hours planned, 60 minutes emergency.",
+      "Step 5: Treatment proceeds under approved limit.",
+      "Step 6: Discharge: hospital submits claim to Medi Assist. Settlement within 48 hours."
+    ],
+    "documents_needed": [
+      "ICICI Lombard health card",
+      "Aadhaar / government ID",
+      "Doctor's referral",
+      "Previous treatment records"
+    ],
+    "tpa": "Medi Assist TPA",
+    "toll_free": "1800-2666 (24x7)",
+    "app": "ICICI Lombard mobile app",
+    "timeline_cashless_auth": "60 minutes emergency, 2 hours planned",
+    "reimbursement_timeline": "30 days from complete documents",
+    "network_size": "10,000+ hospitals as of 2025"
+  },
+  {
+    "insurer": "Bajaj Allianz",
+    "claim_type": "cashless",
+    "process": [
+      "Step 1: Visit Bajaj Allianz network hospital. Check at bajajallianz.com or call 1800-209-0144. Network: 8,500+ hospitals.",
+      "Step 2: Show Bajaj Allianz health card at hospital insurance desk.",
+      "Step 3: Hospital contacts Bajaj Allianz TPA (in-house) for pre-authorization.",
+      "Step 4: Authorization response within 2 hours (planned) or 60 minutes (emergency).",
+      "Step 5: Treatment under approved amount. Enhance if needed via hospital desk.",
+      "Step 6: Discharge and claim settlement with hospital."
+    ],
+    "documents_needed": [
+      "Bajaj Allianz health card",
+      "Valid ID proof",
+      "Referral letter",
+      "Previous medical records if related condition"
+    ],
+    "tpa": "Bajaj Allianz in-house TPA",
+    "toll_free": "1800-209-0144 (24x7)",
+    "timeline_cashless_auth": "60 minutes emergency, 2 hours planned",
+    "reimbursement_timeline": "30 days from complete documents",
+    "network_size": "8,500+ hospitals as of 2025"
+  },
+  {
+    "insurer": "New India Assurance",
+    "claim_type": "cashless",
+    "process": [
+      "Step 1: Go to New India network hospital. Check at newindia.co.in or call 1800-209-1415. Network: 8,000+ hospitals. Public sector insurer.",
+      "Step 2: Show New India health card at hospital insurance desk.",
+      "Step 3: Hospital contacts Medi Assist or Health India TPA for pre-authorization.",
+      "Step 4: Authorization within 2-4 hours (New India, being PSU, may take slightly longer).",
+      "Step 5: Treatment proceeds under approval.",
+      "Step 6: Hospital submits final claim to TPA."
+    ],
+    "documents_needed": [
+      "New India policy card",
+      "Aadhaar",
+      "Previous medical records",
+      "Referral letter"
+    ],
+    "tpa": "Medi Assist or Health India TPA",
+    "toll_free": "1800-209-1415",
+    "timeline_cashless_auth": "Emergency 60 min (mandated), planned 2-4 hours in practice",
+    "reimbursement_timeline": "30 days mandated; actual 45-60 days at some offices",
+    "network_size": "8,000+ hospitals as of 2025",
+    "notes": "New India is a Public Sector Undertaking (PSU). Service timelines may be slower than private insurers. But claim settlement is reliable. Branch office network is extensive — useful for tier 2/3 cities."
+  },
+  {
+    "insurer": "All Insurers",
+    "claim_type": "general_guidance",
+    "process": [
+      "General Rule 1: Intimation — Inform your insurer as soon as possible after hospitalization. Most policies require within 24-48 hours.",
+      "General Rule 2: Documents — Collect ALL original documents at discharge: itemized bills, discharge summary, investigation reports, prescriptions, pharmacy bills.",
+      "General Rule 3: Submission timeline — Most policies require document submission within 30 days of discharge. Missing this can result in rejection.",
+      "General Rule 4: PAN card — Always include PAN card copy for claims above ₹1 lakh. Required for TDS compliance.",
+      "General Rule 5: Bank account — Provide correct NEFT details. Claims paid to account on record. Update bank details if changed.",
+      "General Rule 6: Pre and post hospitalization — Most comprehensive policies cover 30-60 days pre-hospitalization (tests, consultations) and 60-90 days post-hospitalization expenses. Submit these bills with main hospitalization claim.",
+      "General Rule 7: Rejection notice — If claim rejected, insurer must give written reason citing specific policy clause. Challenge if reason is vague.",
+      "General Rule 8: Escalation path: Level 1 = Insurer claims team → Level 2 = Insurer grievance cell (14-day SLA) → Level 3 = Insurance Ombudsman (ecoi.co.in) → Level 4 = Consumer Forum"
+    ],
+    "documents_needed": [
+      "Completed claim form (from insurer website)",
+      "Original itemized hospital bill",
+      "Discharge summary",
+      "All diagnostic and investigation reports",
+      "Prescriptions for all medicines prescribed",
+      "Pharmacy bills",
+      "Pre-authorization approval letter (for cashless that converted to reimbursement)",
+      "NEFT details (cancelled cheque or bank statement)",
+      "PAN card (for claims above ₹1 lakh)",
+      "Aadhaar card",
+      "Pre-hospitalization bills (30-60 days)",
+      "Post-hospitalization bills (60-90 days)"
+    ],
+    "tpa": "Varies by insurer",
+    "toll_free": "IRDAI Helpline: 155255 or 1800-4254-732",
+    "escalation_path": "Insurer Grievance → IGMS (igms.irda.gov.in) → Insurance Ombudsman (ecoi.co.in) → Consumer Forum",
+    "timeline_cashless_auth": "IRDAI mandates: emergency 60 min, planned 2 hours",
+    "reimbursement_timeline": "IRDAI mandates: 30 days from complete document receipt"
+  }
+]

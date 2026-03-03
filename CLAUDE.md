@@ -126,7 +126,7 @@ The blueprint defines 4 deliverable-gated phases. No timelines — move to next 
 
 ## CURRENT STATUS
 
-<!-- Updated: 2026-03-03 — Phase 1 Foundation build complete -->
+<!-- Updated: 2026-03-03 — Phase 2 Intelligence build complete -->
 - [x] Phase 1: Foundation — BUILD COMPLETE (pending integration test)
   - [x] API Discovery completed — `hibiscus/tools/existing_api/discovery.py` (78 endpoints, 13 services)
   - [x] Project scaffolding done — full directory structure, pyproject.toml, Dockerfile, docker-compose.hibiscus.yml, Makefile
@@ -140,33 +140,59 @@ The blueprint defines 4 deliverable-gated phases. No timelines — move to next 
   - [x] Chat endpoint live — `POST /hibiscus/chat` with streaming SSE support
   - [x] Observability — structured JSON logging at every pipeline step
   - [x] 10 test cases — 8 health + 2 adversarial cases
-  - [ ] Phase 1 exit criteria: Deploy + integration test against botproject API
 
-### Phase 1 Key Files Built
+- [x] Phase 2: Intelligence — BUILD COMPLETE
+  - [x] All 12 agents fully implemented (surrender, recommender, claims, calculator, researcher, regulation, risk, educator, portfolio, tax, grievance + policy_analyzer)
+  - [x] Knowledge Graph built — `hibiscus/knowledge/graph/` (Neo4j: 32 insurers, 47+ products, 15 regulations, 19 benchmarks, 10 tax rules, 17 ombudsman offices)
+  - [x] KG tools — `hibiscus/tools/knowledge/` (insurer_lookup, product_lookup, benchmark_lookup, regulation_lookup)
+  - [x] RAG pipeline — `hibiscus/knowledge/rag/` (Qdrant: hybrid search dense+BM25, RRF fusion)
+  - [x] RAG corpus — `hibiscus/knowledge/rag/corpus/` (glossary 75+ terms, 20 IRDAI circulars, claims processes, tax rules, insurer benchmarks)
+  - [x] RAG search tools — `hibiscus/tools/rag/search.py` (8 search functions)
+  - [x] Full 6-layer memory — L1 Redis, L2 Qdrant conversations, L3 PostgreSQL profile, L3b portfolio, L4 Qdrant knowledge, L5 PostgreSQL outcomes, L6 MongoDB docs
+  - [x] Memory extractor — `hibiscus/memory/extraction/memory_extractor.py`
+  - [x] Financial formulas — `hibiscus/knowledge/formulas/` (surrender_value.py, irr.py, tax_benefit.py)
+  - [x] LangSmith tracing — `hibiscus/observability/langsmith.py` (wired into run_graph)
+  - [x] Emotional routing — graph routes distressed/urgent users to Tier 3 (Claude Sonnet)
+  - [x] Web search tool — `hibiscus/tools/web/search.py` (Tavily integration)
+  - [x] HibiscusBench — `hibiscus/evaluation/` (bench.py, metrics.py, evaluator.py + 45+ test cases)
+  - [x] Test cases — health (14), life (10), motor (5), travel (3), cross (6), adversarial (7) = 45 total
+
+### Phase 2 Key Files Built
 | Component | File |
 |-----------|------|
-| Config | `hibiscus/config.py` |
-| Main | `hibiscus/main.py` |
-| LLM Router | `hibiscus/llm/router.py`, `model_selector.py` |
-| Graph | `hibiscus/orchestrator/graph.py` |
-| State | `hibiscus/orchestrator/state.py` |
-| Nodes | `hibiscus/orchestrator/nodes/` (8 nodes) |
-| Agents | `hibiscus/agents/` (12 agents: policy_analyzer + 11 stubs) |
-| Memory | `hibiscus/memory/layers/session.py`, `document.py`, `assembler.py` |
-| Guardrails | `hibiscus/guardrails/hallucination.py`, `compliance.py`, `financial.py` |
-| API | `hibiscus/api/chat.py`, `health.py` |
-| Logger | `hibiscus/observability/logger.py`, `cost_tracker.py` |
-| Tests | `hibiscus/tests/unit/` (3 test files), `hibiscus/evaluation/test_cases/` (10 cases) |
+| All 12 Agents | `hibiscus/agents/` (fully implemented) |
+| KG Client | `hibiscus/knowledge/graph/client.py` |
+| KG Schema | `hibiscus/knowledge/graph/schema.py` |
+| KG Seed | `hibiscus/knowledge/graph/seed/` (6 seed files) |
+| KG Tools | `hibiscus/tools/knowledge/` (4 lookup tools) |
+| RAG Client | `hibiscus/knowledge/rag/client.py` (hybrid search) |
+| RAG Embeddings | `hibiscus/knowledge/rag/embeddings.py` |
+| RAG Ingestion | `hibiscus/knowledge/rag/ingestion.py` |
+| RAG Corpus | `hibiscus/knowledge/rag/corpus/` (5 JSON corpus files) |
+| RAG Search Tool | `hibiscus/tools/rag/search.py` |
+| Formulas | `hibiscus/knowledge/formulas/` (surrender_value, irr, tax_benefit) |
+| Memory L2 | `hibiscus/memory/layers/conversation.py` (Qdrant) |
+| Memory L3 | `hibiscus/memory/layers/profile.py` (PostgreSQL) |
+| Memory L3b | `hibiscus/memory/layers/portfolio.py` (PostgreSQL) |
+| Memory L4 | `hibiscus/memory/layers/knowledge.py` (Qdrant) |
+| Memory L5 | `hibiscus/memory/layers/outcome.py` (PostgreSQL) |
+| Memory Extractor | `hibiscus/memory/extraction/memory_extractor.py` |
+| Assembler | `hibiscus/memory/assembler.py` (all 6 layers wired) |
+| LangSmith | `hibiscus/observability/langsmith.py` |
+| Web Search | `hibiscus/tools/web/search.py` (Tavily) |
+| HibiscusBench | `hibiscus/evaluation/bench.py`, `metrics.py`, `evaluator.py` |
+| Test Cases | `hibiscus/evaluation/test_cases/` (45 test cases across 6 categories) |
 
-### Phase 1 → Phase 2 Blockers
-1. Full 12-agent implementation (only policy_analyzer has full logic — rest are stubs)
-2. RAG pipeline (Qdrant) not yet seeded
-3. Knowledge Graph (Neo4j) not yet seeded
-4. PostgreSQL user profile + portfolio tables not created
-5. Integration test: upload real PDF → verify end-to-end extraction + analysis
+### Phase 2 → Phase 3 Readiness
+- [ ] Deploy Hibiscus + infrastructure (Neo4j, Qdrant, PostgreSQL) via docker-compose
+- [ ] Seed KG: `python -m hibiscus.knowledge.graph`
+- [ ] Ingest RAG corpus: `python -m hibiscus.knowledge.rag.ingestion`
+- [ ] Integration test: POST /hibiscus/chat with real policy PDF → verify all agents respond
+- [ ] Run HibiscusBench: `python -m hibiscus.evaluation.bench --dry-run` → check 45 cases load
+- [ ] Measure baseline DQ score (target: > 0.70 for Phase 2 complete, > 0.80 for Phase 3)
 
-- [ ] Phase 2: Intelligence — Next phase
-- [ ] Phase 3: Scale
+- [ ] Phase 3: Scale — "It's World-Class"
+- [ ] Phase 4: Moat
 - [ ] Phase 4: Moat
 
 ## KEY FILE REFERENCES

@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_001",
+  "name": "IDV explanation for motor insurance",
+  "description": "User doesn't understand IDV and how it affects their premium",
+  "category": "motor",
+  "intent": "explain",
+  "complexity": "L2",
+  "input": {
+    "message": "When renewing my car insurance they asked me to select IDV. What is IDV and how do I choose the right value? My car is a 3-year-old Maruti Swift.",
+    "session_id": "test_session_motor_001",
+    "user_id": "test_user_motor_001"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["insured declared value", "depreciation", "market value"],
+    "must_have_numbers": true,
+    "must_not_contain": ["I cannot explain"],
+    "min_confidence": 0.75
+  },
+  "notes": "IDV = current market value = ex-showroom price × depreciation factor. 3-year-old car: ~50% depreciation. Higher IDV = higher premium but better claim payout. Should recommend market IDV, not artificially low."
+}

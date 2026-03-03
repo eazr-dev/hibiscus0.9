@@ -63,6 +63,26 @@ async def run(state: HibiscusState) -> dict:
             except Exception as e:
                 plog.warning("document_storage_failed", error=str(e))
 
+    # ── Trigger async memory extraction (L2-L4 updates) ───────────────────
+    # Fire-and-forget: does not block the response
+    try:
+        from hibiscus.memory.extraction.memory_extractor import schedule_extraction
+        messages = state.get("conversation_history", [])
+        if not messages:
+            messages = [
+                {"role": "user", "content": state.get("message", "")},
+                {"role": "assistant", "content": state.get("response", "")},
+            ]
+        schedule_extraction(
+            user_id=state["user_id"],
+            session_id=state["session_id"],
+            conversation_id=state.get("request_id", state["session_id"]),
+            messages=messages,
+            context={"category": state.get("category", ""), "intent": state.get("intent", "")},
+        )
+    except Exception as e:
+        plog.warning("memory_extraction_schedule_failed", error=str(e))
+
     latency_ms = int((time.time() - start) * 1000)
     plog.step_complete("memory_storage", latency_ms=latency_ms)
 

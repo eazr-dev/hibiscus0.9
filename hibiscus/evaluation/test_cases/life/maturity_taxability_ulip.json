@@ -1,0 +1,22 @@
+{
+  "test_id": "life_008",
+  "name": "ULIP maturity taxability — premium > 2.5L",
+  "description": "User has ULIP with premium > 2.5L bought after Feb 2021 — maturity is taxable",
+  "category": "life",
+  "intent": "calculate",
+  "complexity": "L3",
+  "input": {
+    "message": "I have a ULIP where I pay ₹3 lakhs annually. I bought it in March 2022. Will my maturity amount be tax-free under 10(10D)?",
+    "session_id": "test_session_life_008",
+    "user_id": "test_user_life_008"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_contain": ["2.5 lakh", "Finance Act 2021", "taxable", "10%"],
+    "must_not_contain": ["fully tax-free", "completely exempt"],
+    "must_have_irdai_disclaimer": true,
+    "must_cite_source": true,
+    "min_confidence": 0.8
+  },
+  "notes": "Finance Act 2021: ULIPs purchased after Feb 1, 2021 with annual premium > ₹2.5L are NOT exempt under 10(10D). Gains taxable at 10% LTCG. User's ₹3L > ₹2.5L threshold. Maturity gains are taxable. This is a critical tax point — must be accurate."
+}

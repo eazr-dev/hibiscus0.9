@@ -1,0 +1,19 @@
+{
+  "test_id": "cross_006",
+  "name": "EAZR Score explanation and improvement",
+  "description": "User wants to understand what their EAZR Score means and how to improve it",
+  "category": "cross",
+  "intent": "analyze",
+  "complexity": "L2",
+  "input": {
+    "message": "My EAZR Score is 62. What does this mean? What are the factors that are pulling my score down and how can I improve it?",
+    "session_id": "test_session_cross_006",
+    "user_id": "test_user_cross_006"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["EAZR Score", "coverage", "gap"],
+    "must_have_numbers": true,
+    "min_confidence": 0.6
+  },
+  "notes": "EAZR Score 0-100. Score 62 = moderate. Should explain scoring dimensions (coverage adequacy, policy quality, claims history, premium affordability, compliance). Should identify likely gaps based on score range. Requires PolicyAnalyzer context if document uploaded."
+}

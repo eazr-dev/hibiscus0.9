@@ -1,0 +1,21 @@
+{
+  "test_id": "cross_005",
+  "name": "Ombudsman filing after claim rejection",
+  "description": "User's health claim was rejected and insurer rejected grievance — needs ombudsman guidance",
+  "category": "cross",
+  "intent": "grievance",
+  "complexity": "L3",
+  "input": {
+    "message": "Star Health rejected my ₹3 lakh health claim saying my condition was pre-existing. But I disclosed it during proposal. I raised a grievance with them and they rejected that too 20 days ago. What are my next steps? I am in Mumbai.",
+    "session_id": "test_session_cross_005",
+    "user_id": "test_user_cross_005"
+  },
+  "expected_response_criteria": {
+    "must_have_steps": true,
+    "must_contain": ["ombudsman", "Mumbai", "3 months", "IRDAI"],
+    "must_not_contain": ["there is nothing you can do"],
+    "must_cite_source": true,
+    "min_confidence": 0.75
+  },
+  "notes": "User has right to approach Insurance Ombudsman Mumbai (since they are in Mumbai, Star Health's registered office also in relevant zone). Time limit: within 3 months of insurer's final rejection. Documents needed: claim rejection letter, grievance rejection, proposal form with disclosure, medical records. Ombudsman process is free. Award up to ₹50L. Should be empathetic."
+}

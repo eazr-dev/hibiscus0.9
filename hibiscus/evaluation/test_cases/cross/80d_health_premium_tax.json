@@ -1,0 +1,20 @@
+{
+  "test_id": "cross_004",
+  "name": "80D tax benefit for health + parent premium",
+  "description": "User asks about 80D deduction for self and senior parents",
+  "category": "cross",
+  "intent": "calculate",
+  "complexity": "L2",
+  "input": {
+    "message": "I am 38 and pay ₹22,000 for my family health insurance and ₹35,000 for my parents' health insurance (they are 65+). How much 80D deduction can I claim and how much tax will I save? I am in 30% tax bracket.",
+    "session_id": "test_session_cross_004",
+    "user_id": "test_user_cross_004"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_contain": ["80D", "₹22,000", "₹35,000", "50,000"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.8
+  },
+  "notes": "Self (< 60): limit ₹25K → deductible ₹22K. Parents (≥ 60): limit ₹50K → deductible ₹35K. Total deduction = ₹57K. Tax saved = ₹57,000 × 30% = ₹17,100. Must mention new regime has no 80D benefit."
+}

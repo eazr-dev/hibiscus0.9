@@ -1,0 +1,19 @@
+{
+  "test_id": "health_014",
+  "name": "Mental health coverage in health insurance",
+  "description": "User asks if mental health treatment is covered under their health policy",
+  "category": "health",
+  "intent": "explain",
+  "complexity": "L2",
+  "input": {
+    "message": "I am undergoing therapy for depression and anxiety. Can I claim this under my health insurance? Is mental health covered in India?",
+    "session_id": "test_session_h_014",
+    "user_id": "test_user_h_014"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["mental health", "Mental Healthcare Act", "covered", "hospitalization"],
+    "must_cite_source": true,
+    "min_confidence": 0.75
+  },
+  "notes": "Mental Healthcare Act 2017 + IRDAI circular mandates mental health coverage at par with physical health. In-patient hospitalization for mental health must be covered. OPD therapy coverage varies by policy. Should be sensitive and supportive in tone."
+}

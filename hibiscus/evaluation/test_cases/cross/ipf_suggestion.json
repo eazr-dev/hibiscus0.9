@@ -1,0 +1,20 @@
+{
+  "test_id": "cross_002",
+  "name": "IPF suggestion when premium payment at risk",
+  "description": "User mentions financial stress and difficulty paying premium — IPF should be suggested",
+  "category": "cross",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "I have a ₹2 crore term plan with HDFC with annual premium of ₹28,000. My job situation is uncertain right now and I might not be able to pay the premium next month. I don't want to lose this policy. What can I do?",
+    "session_id": "test_session_cross_002",
+    "user_id": "test_user_cross_002"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["grace period", "lapse", "premium"],
+    "must_have_irdai_disclaimer": false,
+    "must_not_contain": ["I cannot help"],
+    "min_confidence": 0.7
+  },
+  "notes": "Should mention: 1) 30-day grace period for annual premium, 2) Policy lapse consequences (lose coverage, 2-year revival window), 3) Premium financing option (EAZR IPF — this is a key product mention opportunity), 4) Reduced paid-up option if applicable. High emotional sensitivity required."
+}

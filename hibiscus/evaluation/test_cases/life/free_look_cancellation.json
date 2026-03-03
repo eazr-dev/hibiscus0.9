@@ -1,0 +1,20 @@
+{
+  "test_id": "life_006",
+  "name": "Free look period cancellation — within 15 days",
+  "description": "User received policy and wants to cancel within free look period",
+  "category": "life",
+  "intent": "rights",
+  "complexity": "L2",
+  "input": {
+    "message": "I received a life insurance policy document 10 days ago but I don't want it anymore. Can I cancel it? Will I get a full refund?",
+    "session_id": "test_session_life_006",
+    "user_id": "test_user_life_006"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["free look", "15 days", "refund"],
+    "must_cite_source": true,
+    "must_not_contain": ["you cannot cancel"],
+    "min_confidence": 0.75
+  },
+  "notes": "15-day free look period (30 for online/distance policies). Refund = premium paid minus risk premium for days covered + stamp duty. This is a consumer right under IRDAI regulations."
+}

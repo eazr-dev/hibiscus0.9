@@ -1,0 +1,20 @@
+{
+  "test_id": "life_009",
+  "name": "Revival of lapsed life insurance policy",
+  "description": "User missed premium payments and policy lapsed — wants to revive",
+  "category": "life",
+  "intent": "rights",
+  "complexity": "L2",
+  "input": {
+    "message": "I missed paying my LIC term plan premium for 8 months and the policy has lapsed. I want to revive it. Is that possible and how do I do it?",
+    "session_id": "test_session_life_009",
+    "user_id": "test_user_life_009"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["revival", "2 years", "arrears", "interest"],
+    "must_have_steps": true,
+    "must_not_contain": ["cannot be revived", "too late"],
+    "min_confidence": 0.75
+  },
+  "notes": "LIC revival: possible within 2 years from lapse date. Steps: Pay all arrears + interest (LIC charges 8-9% on outstanding premiums). For term plans: may require medical certificate if substantial lapse. For plans lapsed < 30 days = grace period (not lapsed). After 2 years = full reinstatement requires insurer approval + health declaration."
+}

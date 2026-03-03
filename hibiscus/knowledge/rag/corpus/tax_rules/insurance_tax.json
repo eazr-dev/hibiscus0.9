@@ -1,0 +1,309 @@
+[
+  {
+    "section": "80C",
+    "title": "Deduction for Life Insurance Premiums and Specified Investments",
+    "category": "tax_rules",
+    "description": "Section 80C of the Income Tax Act 1961 allows deduction up to ₹1.5 lakh per financial year for specified investments and payments, including life insurance premiums. Available to individuals and HUFs. Deduction is from Gross Total Income (GTI).",
+    "conditions": [
+      "Only for individual and HUF taxpayers",
+      "For life insurance premiums: policy must be in own name, spouse's name, or children's name (any dependent child, not just minor children)",
+      "Premium must not exceed 10% of sum assured for policies issued on or after 01/04/2012 (for older policies: 20%)",
+      "If premium exceeds 10% of sum assured: only 10% of sum assured is deductible (proportionate restriction)",
+      "Premium must be for qualifying life insurance (not premium for motor, health, or general insurance)",
+      "Section 80D handles health insurance premiums separately",
+      "Available only in Old Tax Regime (NOT available in New Tax Regime under Section 115BAC)"
+    ],
+    "limits": {
+      "maximum_deduction": "₹1,50,000 per year (aggregate of all 80C investments)",
+      "life_insurance_sub_limit": "No separate sub-limit within ₹1.5 lakh — competes with PPF, ELSS, NPS, NSC, home loan principal, school fees, etc."
+    },
+    "included_investments": [
+      "Life insurance premiums (LIC or private insurer)",
+      "Public Provident Fund (PPF)",
+      "ELSS (Equity Linked Savings Scheme) — mutual funds",
+      "NSC (National Savings Certificates)",
+      "5-year bank FD (fixed deposit)",
+      "Home loan principal repayment",
+      "Tuition fees for 2 children",
+      "Sukanya Samriddhi Yojana",
+      "Senior Citizens Savings Scheme (SCSS)",
+      "NPS Tier 1 contributions",
+      "ULIP premiums"
+    ],
+    "examples": [
+      "Annual LIC premium ₹40,000 (sum assured ₹6 lakh = 15× premium, qualifies). Add PPF ₹80,000. Add ELSS ₹30,000. Total ₹1,50,000 = full ₹1.5 lakh deduction.",
+      "LIC premium ₹2 lakh, sum assured ₹10 lakh (premium = 20% of SA, exceeds 10% limit). Eligible deduction = 10% × ₹10 lakh = ₹1 lakh only. Balance ₹1 lakh from premium is not deductible.",
+      "Tax saving at 30% bracket: ₹1.5 lakh deduction × 30% × 1.04 (surcharge) = ₹46,800 saved."
+    ],
+    "notes": [
+      "This deduction is available ONLY in Old Tax Regime. Under New Tax Regime (default from AY 2024-25), no 80C deductions.",
+      "Amount paid as premium in excess of 10% of sum assured (or 20% for pre-2012 policies) is NEITHER deductible under 80C NOR tax-free at maturity under 10(10D).",
+      "ULIP premiums qualify under 80C. But if ULIP annual premium > ₹2.5 lakh, maturity is taxable even if within 80C limit.",
+      "Single premium life insurance: 20% of sum assured OR actual premium, whichever is less, is deductible. Subject to the ₹1.5 lakh aggregate limit.",
+      "Premium for keyman insurance (employer paying on employee's life) is NOT eligible for 80C deduction."
+    ],
+    "documents_for_tax_filing": [
+      "Premium payment receipts (issued by insurer)",
+      "Policy document",
+      "Form 26AS to verify TDS if applicable"
+    ]
+  },
+  {
+    "section": "80D",
+    "title": "Deduction for Health Insurance Premiums",
+    "category": "tax_rules",
+    "description": "Section 80D allows deduction for premiums paid for health insurance policies for self, spouse, dependent children, and parents. Available to individuals and HUFs. This is OVER AND ABOVE the ₹1.5 lakh 80C limit.",
+    "conditions": [
+      "Premium must be for health insurance or critical illness rider",
+      "Payment must be by any mode EXCEPT cash (cheque, credit card, UPI, NEFT accepted)",
+      "Preventive health checkup (up to ₹5,000 within the main limit): cash payment allowed",
+      "Policy must be from IRDAI-registered insurer",
+      "Deduction available under both Old Tax Regime and partially under New Tax Regime (only for senior citizen parents)",
+      "Group health insurance premium paid by employer is NOT eligible for 80D by employee"
+    ],
+    "limits": {
+      "self_spouse_children_below_60": "₹25,000 per year",
+      "self_spouse_children_senior_citizen": "₹50,000 per year (if any of them is a senior citizen)",
+      "parents_below_60": "₹25,000 per year (additional)",
+      "parents_senior_citizen": "₹50,000 per year (additional, if parents are 60+)",
+      "maximum_deduction_all_senior": "₹1,00,000 (if both self and parents are senior citizens)",
+      "maximum_deduction_mixed": "₹75,000 (if only parents are senior, self is not)",
+      "maximum_deduction_no_senior": "₹50,000 (if no senior citizens)",
+      "preventive_health_checkup": "₹5,000 within the respective limit (can be for self or family member)"
+    },
+    "examples": [
+      "Age 35. Health premium self+spouse+kids = ₹18,000. Parents (60+) premium = ₹30,000. Total deduction = ₹18,000 + ₹30,000 = ₹48,000. (₹18,000 < ₹25,000 limit; ₹30,000 < ₹50,000 limit).",
+      "Age 50 (senior citizen). Own health premium = ₹35,000. Parents (75+) premium = ₹45,000. Deduction = ₹35,000 + ₹45,000 = ₹80,000. (₹35,000 < ₹50,000 senior limit; ₹45,000 < ₹50,000 senior limit).",
+      "Maximum deduction: both you (62) and parents (85+) are senior citizens. Your premium ₹50,000 + parents ₹50,000 = ₹1,00,000 deduction. Tax saving at 30% = ₹31,200."
+    ],
+    "notes": [
+      "GST on health insurance premium is also included in the deductible amount.",
+      "80D deduction for senior citizen parents is available under New Tax Regime (Section 115BAC) also. This is an exception to the general rule.",
+      "Multi-year health insurance: deduction available only for the proportionate premium for the year being assessed.",
+      "Critical illness riders and disease-specific health plans also qualify under 80D.",
+      "Contribution to Central Government Health Scheme (CGHS) qualifies under 80D for government employees."
+    ],
+    "documents_for_tax_filing": [
+      "Health insurance premium receipts",
+      "Premium paid certificate from insurer (if annual receipt not available)",
+      "Form 16/salary slip showing health insurance deduction (if employer pays)"
+    ]
+  },
+  {
+    "section": "10(10D)",
+    "title": "Exemption for Life Insurance Maturity and Death Benefits",
+    "category": "tax_rules",
+    "description": "Section 10(10D) exempts life insurance maturity proceeds and death benefits from income tax. Death benefit is ALWAYS fully exempt. Maturity proceeds have conditions based on policy type and premium amount.",
+    "conditions": [
+      "DEATH BENEFIT: Always fully exempt under 10(10D) — no conditions, no limits",
+      "MATURITY BENEFIT (standard policies): Exempt IF annual premium does not exceed 10% of sum assured",
+      "MATURITY BENEFIT (policies issued before 01/04/2012): Exempt if premium ≤ 20% of sum assured",
+      "MATURITY BENEFIT (ULIPs issued after 01/02/2021): Exempt ONLY IF annual premium ≤ ₹2,50,000",
+      "MATURITY BENEFIT (ULIPs with premium > ₹2.5 lakh/year): Subject to 10% LTCG tax (like equity mutual funds). ₹1 lakh exemption applies.",
+      "MATURITY BENEFIT (traditional endowment/money back issued after 01/04/2023): Exempt only if premium ≤ ₹5,00,000/year. Above ₹5 lakh: fully taxable as income.",
+      "If premium condition fails: entire maturity amount (not just gains) is added to income and taxed at applicable slab rate"
+    ],
+    "limits": {
+      "ulip_exemption_threshold": "₹2,50,000 annual premium",
+      "traditional_policy_exemption_threshold": "₹5,00,000 annual premium (for policies from FY 2023-24)",
+      "standard_premium_to_sa_ratio": "Premium must be ≤ 10% of sum assured",
+      "ltcg_exemption": "₹1,00,000 per year on equity ULIP gains (same as equity mutual fund)"
+    },
+    "examples": [
+      "Term plan ₹1 crore, annual premium ₹12,000. Death benefit = ₹1 crore. Fully exempt. (Premium/SA = 1.2%, well below 10%)",
+      "Endowment plan: annual premium ₹50,000, SA ₹5 lakh (premium = 10% of SA = borderline case). Maturity proceeds = ₹18 lakh. Fully exempt under 10(10D).",
+      "ULIP: annual premium ₹3 lakh (exceeds ₹2.5 lakh threshold). Fund value at maturity ₹50 lakh, cost ₹42 lakh, LTCG = ₹8 lakh. Tax = 10% × (₹8 lakh - ₹1 lakh exemption) = 10% × ₹7 lakh = ₹70,000.",
+      "High-premium endowment (FY 2023-24+): annual premium ₹6 lakh, SA ₹60 lakh. Premium > ₹5 lakh limit. Maturity ₹1.2 crore: ENTIRE ₹1.2 crore is added to income (not just gains)."
+    ],
+    "notes": [
+      "Budget 2021 change: ULIPs with premium > ₹2.5 lakh/year are taxed like equity mutual funds from maturity year.",
+      "Budget 2023 change: Traditional policies (endowment, money back) with premium > ₹5 lakh/year are fully taxable at maturity.",
+      "If multiple policies: aggregate annual premium of all non-ULIP policies matters. If total > ₹5 lakh, all above ₹5 lakh threshold is taxable.",
+      "Death benefit remains 100% tax-free in ALL cases — including ULIPs with high premiums.",
+      "These changes DO NOT affect existing policies bought before the respective budget dates.",
+      "TDS implications: insurers deduct 5% TDS on maturity if PAN provided, 20% if PAN not provided, for taxable policies."
+    ],
+    "documents_for_tax_filing": [
+      "Policy document showing sum assured and premium amount",
+      "Maturity payment receipt/letter from insurer",
+      "Form 16A if TDS deducted by insurer",
+      "Surrender or maturity proceeds statement"
+    ]
+  },
+  {
+    "section": "GST",
+    "title": "Goods and Services Tax on Insurance Premiums",
+    "category": "tax_rules",
+    "description": "GST is levied on insurance premiums as these constitute supply of services. Rate varies by insurance type. GST is charged over and above the base premium.",
+    "conditions": [
+      "GST is included in the invoice/receipt issued by the insurer",
+      "For 80C and 80D deduction purposes, premium including GST is eligible for deduction",
+      "Life insurance (term, endowment, money back): different GST rates apply",
+      "Health insurance: uniform 18% GST",
+      "No input tax credit available to individual policyholders"
+    ],
+    "limits": {
+      "health_insurance": "18% GST on premium",
+      "life_insurance_term": "18% GST on premium",
+      "life_insurance_endowment_first_year": "4.5% GST on premium",
+      "life_insurance_endowment_renewal": "2.25% GST on renewal premiums",
+      "ulip_charges": "18% GST on insurance-related charges (mortality, policy admin charges); fund management charge is exempt"
+    },
+    "examples": [
+      "Health insurance premium ₹10,000. GST 18% = ₹1,800. Total payable = ₹11,800. Eligible for 80D deduction: ₹11,800 (including GST).",
+      "Term insurance premium ₹12,000. GST 18% = ₹2,160. Total = ₹14,160. Eligible for 80C deduction: ₹14,160 (including GST, subject to 80C aggregate limit).",
+      "LIC endowment first year: base premium ₹50,000, GST 4.5% = ₹2,250. Total ₹52,250. Renewal year: GST 2.25% = ₹1,125, total ₹51,125."
+    ],
+    "notes": [
+      "The industry and consumer groups have lobbied for reducing health insurance GST from 18% to 0% (exempt). This remains an ongoing policy debate.",
+      "GST Council has not yet granted exemption to health insurance as of 2025.",
+      "For group health insurance bought by employer: company can claim input tax credit on GST paid.",
+      "Bima Sugam transactions may eventually get GST simplification."
+    ],
+    "documents_for_tax_filing": [
+      "Premium receipts showing GST amount separately",
+      "GSTIN of insurer (for business policyholders claiming ITC)"
+    ]
+  },
+  {
+    "section": "ULIP_TAX",
+    "title": "ULIP Tax Treatment — Complete Guide",
+    "category": "tax_rules",
+    "description": "ULIPs have complex tax treatment across purchase, holding period, and maturity/redemption. Tax rules changed significantly in Budget 2021. This guide covers the complete ULIP tax lifecycle.",
+    "conditions": [
+      "PREMIUM (entry): Eligible for 80C deduction up to ₹1.5 lakh aggregate",
+      "FUND SWITCHES: Switching between funds within ULIP is NOT a taxable event (unlike MF switching)",
+      "PARTIAL WITHDRAWAL (after lock-in): Exempt from tax if policy qualifies under 10(10D)",
+      "MATURITY (pre-Feb 2021 policies): Fully exempt under 10(10D) regardless of premium amount",
+      "MATURITY (policies from Feb 2021+): Exempt only if annual premium ≤ ₹2.5 lakh",
+      "MATURITY (policies from Feb 2021+, premium > ₹2.5 lakh): Taxed as LTCG at 10% with ₹1 lakh exemption",
+      "DEATH BENEFIT: Always fully exempt under 10(10D)",
+      "SURRENDER (after 5 years lock-in): Same tax treatment as maturity"
+    ],
+    "limits": {
+      "lock_in_period": "5 years (mandatory) — partial withdrawal not allowed before 5 years",
+      "premium_exemption_threshold": "₹2,50,000 annual premium for policies from Feb 2021",
+      "ltcg_rate": "10% on gains above ₹1,00,000 per year",
+      "minimum_death_benefit": "10× annual premium for policyholders aged 18-45"
+    },
+    "examples": [
+      "ULIP bought 2022: annual premium ₹1.5 lakh. After 15 years, fund value ₹45 lakh. 10(10D) fully exempt because premium ≤ ₹2.5 lakh. Zero tax on ₹45 lakh maturity.",
+      "ULIP bought 2022: annual premium ₹3 lakh. After 10 years, fund value ₹50 lakh. Premium > ₹2.5 lakh, taxable. Gains = ₹50L - (₹3L × 10 years) = ₹20 lakh. Tax = 10% × (₹20L - ₹1L exemption) = 10% × ₹19L = ₹1.9 lakh.",
+      "Multiple ULIPs: ULIP A premium ₹2L, ULIP B premium ₹1L. Total = ₹3L > ₹2.5L threshold. Both ULIPs become taxable at maturity."
+    ],
+    "notes": [
+      "The ₹2.5 lakh threshold applies to AGGREGATE premium across all ULIPs bought from Feb 2021.",
+      "Pre-Feb 2021 ULIPs are grandfathered — they remain fully exempt under old rules.",
+      "ULIP vs Mutual Fund: ULIP has higher charges (mortality) but fund switches are not taxable, while MF switches are taxable. For very long term (20+ years) with moderate switching, ULIPs with low premium (<₹2.5L) can be competitive.",
+      "ULIP partial withdrawals after 5 years: allowed (minimum 2 times per year usually). Tax-free if policy qualifies."
+    ],
+    "documents_for_tax_filing": [
+      "Annual fund statement from insurer",
+      "Maturity/surrender statement with gain calculations",
+      "Form 16A if TDS deducted",
+      "Original policy document"
+    ]
+  },
+  {
+    "section": "80CCD",
+    "title": "NPS Contribution Deduction — Comparison with Insurance",
+    "category": "tax_rules",
+    "description": "Section 80CCD allows additional deduction for NPS (National Pension System) contributions. Often compared with insurance for tax planning. NPS + Insurance together can maximize tax deductions.",
+    "conditions": [
+      "80CCD(1): Employee/voluntary contribution to NPS — within the ₹1.5 lakh 80C aggregate limit",
+      "80CCD(1B): Additional ₹50,000 deduction for own NPS contribution — OVER AND ABOVE ₹1.5 lakh 80C limit",
+      "80CCD(2): Employer NPS contribution — exempt up to 14% of basic salary for government, 10% for private sector employees",
+      "NPS Tier 1 is eligible; Tier 2 is NOT eligible for deduction",
+      "On maturity (60 years): 60% of corpus is tax-free; 40% must be used to buy annuity (taxable income)"
+    ],
+    "limits": {
+      "within_80c_limit": "₹1,50,000 (shared with life insurance, PPF, ELSS, etc.)",
+      "additional_80ccd_1b": "₹50,000 extra deduction (exclusive to NPS)",
+      "total_maximum_with_nps": "₹2,00,000 (₹1.5L under 80C + ₹50K under 80CCD(1B))"
+    },
+    "examples": [
+      "Maximum tax saving with insurance + NPS: 80C (LIC ₹50K + PPF ₹1L = ₹1.5L) + 80D (health ₹25K) + 80CCD(1B) NPS ₹50K = ₹2.25 lakh total deduction. At 30% bracket = ₹70,200 tax saving.",
+      "Employer NPS ₹60,000 (10% of ₹6L basic salary) under 80CCD(2): fully exempt from income tax, no limit applicable."
+    ],
+    "notes": [
+      "NPS is better than insurance for pure retirement savings: lower costs, market returns, more transparent.",
+      "Insurance + NPS combo: use term insurance for protection (80C), NPS for retirement (80CCD), health insurance for medical (80D).",
+      "NPS annuity at retirement is fully taxable — plan this in your retirement tax strategy.",
+      "For complete tax optimization: term plan (minimal premium but qualifies for 80C) + maxed 80D (health insurance) + NPS ₹50K (80CCD 1B)."
+    ],
+    "documents_for_tax_filing": [
+      "NPS contribution receipt from CRA (NSDL or CAMS)",
+      "Form 24G if employer NPS contribution",
+      "Annual account statement from NPS"
+    ]
+  },
+  {
+    "section": "TDS_INSURANCE",
+    "title": "TDS on Insurance Payouts",
+    "category": "tax_rules",
+    "description": "Tax Deducted at Source applicable on certain insurance payouts. Insurers are required to deduct TDS before disbursing proceeds in specified cases.",
+    "conditions": [
+      "Section 194DA: TDS on life insurance maturity proceeds if NOT exempt under 10(10D)",
+      "TDS rate with PAN: 5% on the income (gain = proceeds minus premiums paid)",
+      "TDS rate without PAN: 20% on full payment",
+      "Health insurance reimbursements: No TDS",
+      "Death benefit: No TDS (fully exempt under 10(10D))",
+      "Survival benefits (money back): No TDS if within 10(10D) exemption",
+      "Taxable ULIP maturity (premium > ₹2.5L): TDS at 5% on gain portion"
+    ],
+    "limits": {
+      "tds_threshold": "If net payment (gross payout minus premiums paid) does not exceed ₹1 lakh, no TDS applicable",
+      "tds_rate_with_pan": "5%",
+      "tds_rate_without_pan": "20%"
+    },
+    "examples": [
+      "Taxable endowment maturity: gross ₹30 lakh, premiums paid ₹18 lakh, gain = ₹12 lakh. TDS = 5% × ₹12 lakh = ₹60,000 deducted by insurer. File ITR to account for this TDS.",
+      "Small policy maturity: gross ₹2.5 lakh, premiums paid ₹2 lakh, net = ₹50,000 (< ₹1 lakh threshold). No TDS applicable."
+    ],
+    "notes": [
+      "Always provide PAN to your insurer — prevents 20% TDS.",
+      "TDS deducted appears in Form 26AS. Claim credit in your ITR.",
+      "If TDS deducted exceeds your actual tax liability, you can claim refund in ITR.",
+      "Insurer issues Form 16A for TDS deducted on insurance payouts."
+    ],
+    "documents_for_tax_filing": [
+      "Form 16A from insurer",
+      "Form 26AS (download from income tax portal)",
+      "Policy document and premium payment receipts to calculate actual gains"
+    ]
+  },
+  {
+    "section": "NEW_TAX_REGIME",
+    "title": "New Tax Regime Impact on Insurance Tax Benefits",
+    "category": "tax_rules",
+    "description": "Budget 2020 introduced the New Tax Regime (lower slab rates, no deductions). Default from FY 2024-25. Impact on insurance deductions is significant — most insurance-related deductions are NOT available under the New Tax Regime.",
+    "conditions": [
+      "New Tax Regime: Lower slab rates (5% → 25% max) but MOST deductions disallowed",
+      "Deductions NOT available under New Tax Regime: 80C (insurance premium, PPF, ELSS), 80D (most health insurance)",
+      "Deductions STILL AVAILABLE under New Tax Regime: 80CCD(2) (employer NPS), 80D for senior citizen parents (limited)",
+      "Tax exemption 10(10D) for insurance maturity: Still applies under New Tax Regime",
+      "Section 80CCD(1B) own NPS contribution: NOT available under New Tax Regime from FY 2023-24",
+      "Standard deduction ₹75,000 available under New Tax Regime from FY 2024-25"
+    ],
+    "limits": {
+      "80C_new_regime": "NOT available",
+      "80D_new_regime": "Only for senior citizen parents (partial availability)",
+      "10_10D_exemption": "STILL available in New Tax Regime"
+    },
+    "examples": [
+      "Old Regime: Income ₹15L, save ₹46,800 via 80C + ₹15,600 via 80D = ₹62,400 total. Net tax on ₹15L = ₹1,87,100.",
+      "New Regime: Income ₹15L, no 80C/80D deductions. But slab rates lower. Net tax on ₹15L = ₹1,50,000. New regime better for this income level if deductions are fewer.",
+      "Decision tip: If your 80C + 80D + other deductions > ₹3-4 lakh, Old Regime is usually better. Below that threshold, New Regime may save more."
+    ],
+    "notes": [
+      "The 10(10D) exemption (life insurance maturity) applies regardless of which tax regime you choose.",
+      "Buying life insurance or health insurance is still a GOOD DECISION even under New Tax Regime — for protection value, not tax benefit.",
+      "Under New Regime, health insurance and term insurance still provide essential financial protection even without the 80D/80C benefit.",
+      "If you switch from Old to New Regime: accumulated 80C investments (PPF, ULIP) don't need to be liquidated — just new deductions stop."
+    ],
+    "documents_for_tax_filing": [
+      "Form 10-IE if opting for New Tax Regime (for business income)",
+      "Declaration to employer for TDS calculation under chosen regime"
+    ]
+  }
+]

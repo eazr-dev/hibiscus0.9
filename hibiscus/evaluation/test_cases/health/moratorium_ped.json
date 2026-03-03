@@ -1,0 +1,20 @@
+{
+  "test_id": "health_013",
+  "name": "Moratorium period and PED after 5 years",
+  "description": "User asks if their pre-existing disease will be covered after 5 years",
+  "category": "health",
+  "intent": "explain",
+  "complexity": "L2",
+  "input": {
+    "message": "I have diabetes and I've had a health policy for 5 years with continuous renewal. The policy initially excluded diabetes. Is my diabetes covered now? I heard there's a 5-year rule.",
+    "session_id": "test_session_h_013",
+    "user_id": "test_user_h_013"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["moratorium", "5 years", "pre-existing", "continuous"],
+    "must_cite_source": true,
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.8
+  },
+  "notes": "IRDAI 2024 amendment: after 5 years of continuous coverage, no pre-existing disease can be rejected EVEN if not disclosed at inception (moratorium). User's diabetes should now be covered. This is a major consumer right. Should cite IRDAI Health Insurance Amendment 2024 / Master Circular."
+}

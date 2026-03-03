@@ -1,0 +1,19 @@
+{
+  "test_id": "motor_002",
+  "name": "Third party vs comprehensive motor insurance",
+  "description": "User asks difference between third party only and comprehensive motor insurance",
+  "category": "motor",
+  "intent": "explain",
+  "complexity": "L1",
+  "input": {
+    "message": "What is the difference between third party motor insurance and comprehensive insurance? Which one should I buy?",
+    "session_id": "test_session_motor_002",
+    "user_id": "test_user_motor_002"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["third party", "own damage", "compulsory", "comprehensive"],
+    "must_have_irdai_disclaimer": false,
+    "min_confidence": 0.8
+  },
+  "notes": "Third party: mandatory by law, covers damage to others only. Comprehensive: OD + TP, covers own damage too. Recommendation should consider: car age, loan status (bank requires comprehensive), frequency of use."
+}

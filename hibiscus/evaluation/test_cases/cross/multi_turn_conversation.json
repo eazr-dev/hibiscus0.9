@@ -1,0 +1,20 @@
+{
+  "test_id": "cross_003",
+  "name": "Multi-turn conversation continuity test",
+  "description": "Tests that Hibiscus remembers context across turns in the same session",
+  "category": "cross",
+  "intent": "analyze",
+  "complexity": "L3",
+  "input": {
+    "message": "Earlier you told me my health insurance has a room rent limit. Now tell me what this means for my next hospitalization. Also, what should I do about it?",
+    "session_id": "test_session_cross_003",
+    "user_id": "test_user_cross_003"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["room rent", "sublimit", "proportionate"],
+    "must_not_contain": ["I don't have context", "what policy"],
+    "must_have_irdai_disclaimer": false,
+    "min_confidence": 0.55
+  },
+  "notes": "This is a context-dependency test. If the session memory (L1 Redis) is working, Hibiscus should reference the earlier context. If not, it should ask for the policy details again (acceptable fallback). Should NOT say 'I don't have any previous conversation context'."
+}

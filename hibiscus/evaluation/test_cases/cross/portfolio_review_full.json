@@ -1,0 +1,20 @@
+{
+  "test_id": "cross_001",
+  "name": "Full portfolio review — health + life + motor",
+  "description": "User wants comprehensive review of their insurance portfolio",
+  "category": "cross",
+  "intent": "analyze",
+  "complexity": "L4",
+  "input": {
+    "message": "I am 40 years old, married, 2 kids aged 10 and 7. Income ₹25 lakhs. I have: 1) Star Health family floater ₹5L for family of 4. 2) LIC endowment ₹10L sum assured, ₹45,000 annual premium, 8 years old. 3) Maruti car comprehensive. Is my coverage adequate?",
+    "session_id": "test_session_cross_001",
+    "user_id": "test_user_cross_001"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_have_irdai_disclaimer": true,
+    "must_contain": ["health", "life", "gap", "adequate"],
+    "min_confidence": 0.65
+  },
+  "notes": "Should identify: 1) Health underinsured — ₹5L for family of 4 in metro insufficient (₹15-25L recommended). 2) LIC endowment IRR ~4-5% — may not be optimal. 3) No term insurance — significant gap (should have ₹2-3.75 crore term plan). 4) Motor OK. Multiple agents should run: PolicyAnalyzer + PortfolioOptimizer + RiskDetector."
+}

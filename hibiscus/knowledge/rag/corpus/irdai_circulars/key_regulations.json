@@ -1,0 +1,504 @@
+[
+  {
+    "circular_no": "IRDAI/HLT/REG/CIR/113/04/2024",
+    "date": "01/04/2024",
+    "subject": "IRDAI (Health Insurance) Regulations 2024",
+    "category": "health_insurance",
+    "effective_date": "01/04/2024",
+    "key_points": [
+      "Insurers must settle or reject claims within 30 days of receiving all documents",
+      "Cashless authorization must be given within 60 minutes of request for planned hospitalization",
+      "Emergency cashless must be activated within 60 minutes",
+      "No sub-limit on room rent is allowed for policies issued after April 2024",
+      "All insurers must offer restoration of sum insured benefit",
+      "Pre-existing diseases must be covered after 36 months waiting period",
+      "AYUSH (Ayurveda, Yoga, Unani, Siddha, Homeopathy) treatment must be covered at government and NABH-accredited hospitals",
+      "Domiciliary hospitalization must be covered",
+      "Day care procedures (all IRDAI-listed procedures) must be covered",
+      "No policy can be denied at renewal solely due to claims history",
+      "Portability rights are guaranteed — new insurer must accept with accrued benefits",
+      "Mental illness treatment must be covered on par with physical illness"
+    ],
+    "consumer_rights": [
+      "Right to cashless treatment at network hospitals within prescribed timelines",
+      "Right to portability without losing accumulated No Claim Bonus and waiting period credits",
+      "Right to grievance redressal within 15 days (insurer's internal grievance cell)",
+      "Right to approach Insurance Ombudsman for disputes up to ₹30 lakh",
+      "Right to free look cancellation within 15 days (30 days for distance marketing)",
+      "Right to AYUSH treatment coverage",
+      "Right to no-room-rent-limit coverage in new policies"
+    ],
+    "impact_summary": "Most significant health insurance reform in India's regulatory history. Removes major customer pain points: room rent limits, delayed cashless, PED exclusions beyond 36 months.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/REG/CIR/205/09/2020",
+    "date": "28/09/2020",
+    "subject": "COVID-19 Coverage Mandates",
+    "category": "health_insurance",
+    "effective_date": "28/09/2020",
+    "key_points": [
+      "All standard health insurance policies must cover COVID-19 hospitalization",
+      "Domiciliary (at-home) COVID treatment covered where hospitalization not possible",
+      "Specific COVID-19 Indemnity Policy (Corona Kavach) mandated for all health insurers",
+      "Corona Kavach: sum insured ₹50,000 to ₹5 lakh for COVID hospitalization",
+      "Corona Rakshak: lump sum benefit policy for COVID diagnosis",
+      "Waiting period of 15 days for both Corona products",
+      "Hospital daily cash benefit available for COVID hospitalization under health policies",
+      "No rejection of COVID claims citing 'epidemic/pandemic exclusion'"
+    ],
+    "consumer_rights": [
+      "Right to COVID hospitalization coverage under existing health policy",
+      "Right to domiciliary treatment coverage for COVID",
+      "Right to short-term specific COVID policy (Corona Kavach, Corona Rakshak)"
+    ],
+    "impact_summary": "Ensured no health insurer could deny COVID-19 claims using epidemic exclusion clauses. Created two specific affordable COVID products.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/CIR/001/01/2011",
+    "date": "10/01/2011",
+    "subject": "Health Insurance Portability",
+    "category": "health_insurance",
+    "effective_date": "01/10/2011",
+    "key_points": [
+      "Health insurance portability right guaranteed for all individual and family health policies",
+      "New insurer must give credit for waiting period already served with old insurer",
+      "No Claim Bonus accrued with old insurer must be honored",
+      "Pre-existing disease waiting period credit must be transferred",
+      "No fresh initial waiting period to be imposed by new insurer",
+      "Application for portability must be made 45 days before renewal",
+      "New insurer must inform of porting decision within 15 days of application",
+      "New insurer can reject porting but must give written reasons",
+      "Grievance available with IRDAI if porting rejected without valid reason"
+    ],
+    "consumer_rights": [
+      "Right to switch insurer without losing accumulated benefits",
+      "Right to carry forward waiting period credit",
+      "Right to carry forward No Claim Bonus",
+      "Right to written reason if porting rejected"
+    ],
+    "impact_summary": "Eliminated the 'insurance trap' where customers couldn't switch due to fear of losing waiting period credits. Increased competition among health insurers.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDA/Life/CIRC/Misc/249/11/2011",
+    "date": "09/11/2011",
+    "subject": "Free Look Period — Mandatory 15 Days",
+    "category": "life_health_insurance",
+    "effective_date": "09/11/2011",
+    "key_points": [
+      "All life and health insurance policies must offer minimum 15-day free look period",
+      "Policies sold through distance marketing (online, telephone): 30 days free look",
+      "Free look period starts from date of receipt of policy documents",
+      "During free look: policyholder can cancel for full refund minus proportionate risk premium",
+      "Proportionate deductions allowed: risk premium for days on cover, stamp duty",
+      "No other charges deductible during free look cancellation",
+      "Insurer must process free look refund within 15 days of receipt",
+      "For ULIPs: fund value at cancellation date refunded (not premium paid)"
+    ],
+    "consumer_rights": [
+      "Right to review policy document for 15-30 days after receipt",
+      "Right to cancel without penalty if policy doesn't match what was sold",
+      "Right to full refund minus proportionate risk premium",
+      "Right to protect against mis-selling by exercising free look right"
+    ],
+    "impact_summary": "Protects against mis-selling by giving customers time to review the actual policy document and cancel if misled. Critical consumer protection.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/REG/REG/003/07/2016",
+    "date": "19/07/2016",
+    "subject": "IRDAI (Health Insurance) Regulations 2016",
+    "category": "health_insurance",
+    "effective_date": "01/09/2016",
+    "key_points": [
+      "Maximum pre-existing disease waiting period: 48 months (later reduced to 36 by 2024 regulations)",
+      "Initial waiting period maximum: 30 days for accidental hospitalization (no waiting period)",
+      "Specific disease waiting period: 1-4 years for listed diseases",
+      "Day care procedure coverage mandated for all IRDAI-listed procedures",
+      "Portability must be offered by all health insurers",
+      "Annual renewal cannot be denied solely on claims history",
+      "Lifetime renewal guarantee mandated",
+      "Standard definition of pre-existing conditions must be followed",
+      "All exclusions must be prominently disclosed at time of sale",
+      "Premium loading for pre-existing conditions must be disclosed"
+    ],
+    "consumer_rights": [
+      "Right to lifetime renewal",
+      "Right to know all exclusions at time of purchase",
+      "Right to maximum 48-month PED waiting period",
+      "Right to day care procedure coverage"
+    ],
+    "impact_summary": "Foundation regulation for health insurance consumer protection. Standardized definitions and established key rights.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDA/ACTL/ULIP/176/07/2010",
+    "date": "24/07/2010",
+    "subject": "ULIP Charge Caps — Reformed Framework",
+    "category": "life_insurance",
+    "effective_date": "01/09/2010",
+    "key_points": [
+      "Premium Allocation Charge (PAC): maximum 3% in first year, 0% thereafter",
+      "Policy Administration Charge: maximum ₹500/month",
+      "Fund Management Charge: maximum 1.35% per annum of fund value",
+      "Mortality Charge: as per standard age-wise table",
+      "No surrender charge after 5 years",
+      "Minimum insurance cover: 10× annual premium for working age (46-55 years: 7×)",
+      "Net reduction in yield (total charges) must not exceed 4% for 10-year policies",
+      "Benefit Illustrations must show IRR after all charges",
+      "All charges must be disclosed upfront in policy document"
+    ],
+    "consumer_rights": [
+      "Right to capped charges on ULIP (FMC max 1.35%)",
+      "Right to benefit illustration showing net returns after all charges",
+      "Right to surrender after 5 years without exit charge",
+      "Right to know IRR at the time of purchase"
+    ],
+    "impact_summary": "Transformed ULIPs from high-charge products to reasonably-priced investment+insurance. Pre-2010 ULIPs had 60-80% first year charges; now capped at 3%.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/CIROIRDAI/MISC/CIR/004/01/2021",
+    "date": "11/01/2021",
+    "subject": "Standard Individual Term Life Insurance — Saral Jeevan Bima",
+    "category": "life_insurance",
+    "effective_date": "01/01/2021",
+    "key_points": [
+      "All life insurers must offer Saral Jeevan Bima — standard term insurance product",
+      "Sum assured: ₹5 lakh to ₹25 lakh",
+      "Policy term: 5-40 years",
+      "Entry age: 18-65 years",
+      "Maturity age: maximum 70 years",
+      "Death benefit: sum assured in lump sum",
+      "Suicide exclusion only in first 12 months",
+      "No other exclusions allowed except suicide exclusion",
+      "No sub-limits, conditions, or loadings for pre-existing conditions beyond what's disclosed"
+    ],
+    "consumer_rights": [
+      "Right to a simple, no-frills term insurance without complicated conditions",
+      "Right to transparent product with no hidden exclusions",
+      "Right to affordable life cover from all authorized insurers"
+    ],
+    "impact_summary": "Democratized access to term insurance with a standardized, comparable product. Eliminated complicated exclusions that often led to claim rejection.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/REG/CIR/210/08/2020",
+    "date": "20/08/2020",
+    "subject": "Arogya Sanjeevani — Standard Individual Health Insurance",
+    "category": "health_insurance",
+    "effective_date": "01/04/2020",
+    "key_points": [
+      "All health insurers must offer Arogya Sanjeevani — standard health insurance product",
+      "Sum insured: ₹1 lakh to ₹10 lakh",
+      "Co-payment: 5% of each claim",
+      "Room rent: 2% of sum insured per day; ICU 5% of sum insured per day",
+      "Coverage: hospitalization, day care, AYUSH, cataract, pre/post hospitalization",
+      "Waiting periods: 30-day initial, 2-4 years for PED and listed diseases",
+      "Standard exclusions list — no additional exclusions allowed",
+      "Policy available for individuals and family floater",
+      "Annual and multi-year (2-3 year) options available",
+      "No limit on maximum entry age"
+    ],
+    "consumer_rights": [
+      "Right to a standard, comparable health insurance product",
+      "Right to coverage from all authorized health insurers",
+      "Right to transparent terms with IRDAI-mandated standard features"
+    ],
+    "impact_summary": "Created a benchmark product enabling easy price comparison. Useful for underinsured segments and as a base comparison tool when evaluating comprehensive plans.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDA/Life/ORD/Misc/020/01/2014",
+    "date": "23/01/2014",
+    "subject": "Policyholder Protection — Surrender Value Rules",
+    "category": "life_insurance",
+    "effective_date": "01/10/2014",
+    "key_points": [
+      "Guaranteed Surrender Value (GSV) mandatory after 2 years premium payment",
+      "GSV after 2 years: 30% of premiums paid excluding first-year premium",
+      "GSV after 3-7 years: minimum 50% of premiums paid",
+      "GSV after 7+ years: 50% or higher as per product design",
+      "Special Surrender Value (SSV) may be higher based on fund performance",
+      "Insurer must pay higher of GSV or SSV",
+      "Surrender value calculation must be transparent and disclosed",
+      "Paid-up policy option must be available after 3 years"
+    ],
+    "consumer_rights": [
+      "Right to minimum guaranteed surrender value after 2 years",
+      "Right to paid-up policy option after 3 years",
+      "Right to transparent surrender value calculation"
+    ],
+    "impact_summary": "Protected policyholders who need to exit long-term policies. Set minimum floor for surrender payments.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/GEN/CIR/MOT/001/03/2021",
+    "date": "01/03/2021",
+    "subject": "Motor Insurance — Own Damage Claim Settlement",
+    "category": "motor_insurance",
+    "effective_date": "01/04/2021",
+    "key_points": [
+      "Survey for motor claims must be completed within 72 hours of intimation",
+      "Settlement must be made within 30 days of survey completion",
+      "For total loss or theft: settlement within 45 days after police NOC",
+      "Cashless motor repair available at empaneled garages",
+      "Insurer cannot demand repair at specific garage unless it's their empaneled garage",
+      "Pre-inspection of vehicle required only for annual policy issuance, not for claims",
+      "IDV cannot be unilaterally reduced by insurer — must be agreed at policy issuance",
+      "Depreciation rates standardized by IRDAI for claim settlement",
+      "Compulsory deductible: ₹1,000 for private cars, ₹2,000 for commercial vehicles"
+    ],
+    "consumer_rights": [
+      "Right to prompt survey within 72 hours",
+      "Right to settlement within 30 days",
+      "Right to cashless repair at network garages",
+      "Right to agreed IDV at policy issuance"
+    ],
+    "impact_summary": "Standardized motor claim timelines and prevented insurer abuse in IDV valuation at claim time.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/CIR/002/01/2014",
+    "date": "09/01/2014",
+    "subject": "Mental Health Coverage Mandate",
+    "category": "health_insurance",
+    "effective_date": "01/04/2018",
+    "key_points": [
+      "Following enactment of Mental Healthcare Act 2017, health insurers must cover mental illness",
+      "Mental illness hospitalization: covered on par with physical illness",
+      "No separate higher premium or exclusion allowed for mental illness",
+      "Coverage includes: severe depression requiring hospitalization, psychosis, severe anxiety disorders, addiction treatment",
+      "IRDAI issued guidance in 2019 mandating compliance",
+      "Discrimination against mental illness in insurance is illegal under Mental Healthcare Act 2017"
+    ],
+    "consumer_rights": [
+      "Right to mental illness coverage on par with physical illness",
+      "Right against discrimination in premium or exclusion on mental health grounds"
+    ],
+    "impact_summary": "Historic reform breaking the stigma in insurance for mental health. Mandatory coverage for serious mental illness in all health policies.",
+    "source": "irdai.gov.in and Ministry of Health"
+  },
+  {
+    "circular_no": "IRDAI/BROK/ORD/001/01/2018",
+    "date": "01/01/2018",
+    "subject": "Insurance Ombudsman Rules 2017",
+    "category": "grievance_redressal",
+    "effective_date": "01/01/2018",
+    "key_points": [
+      "Insurance Ombudsman jurisdiction increased to claims up to ₹30 lakh",
+      "Ombudsman can investigate: claim rejection, partial settlement, delay, policy servicing issues",
+      "Process: policyholder must first exhaust insurer's internal grievance (wait 30 days), then approach Ombudsman",
+      "17 Ombudsman offices across India",
+      "Filing: online at ecoi.co.in or physical form",
+      "No fee for filing complaint",
+      "Award binding on insurer if up to ₹30 lakh",
+      "Ombudsman decision within 3 months",
+      "Policyholder can approach Consumer Forum for claims above ₹30 lakh",
+      "Ombudsman can also award interest and costs against insurer"
+    ],
+    "consumer_rights": [
+      "Free grievance redressal for disputes up to ₹30 lakh",
+      "Binding award against insurer",
+      "Right to interest on delayed settlement"
+    ],
+    "impact_summary": "Accessible, fast, and free dispute resolution for insurance policyholders. Reduced need for costly litigation.",
+    "source": "irdai.gov.in and ecoi.co.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/CIR/MISC/184/10/2019",
+    "date": "01/10/2019",
+    "subject": "Senior Citizen Health Insurance — Restrictions on Refusal",
+    "category": "health_insurance",
+    "effective_date": "01/10/2019",
+    "key_points": [
+      "Insurers cannot refuse health insurance solely on grounds of age",
+      "No upper age limit for insurance renewal for existing policyholders",
+      "New senior citizen policies must be offered without blanket age exclusions",
+      "Copay for senior citizens: maximum 30% per hospitalization",
+      "Pre-existing disease waiting period: maximum 48 months even for senior citizens",
+      "Annual health check required and covered for senior citizens on renewal",
+      "Premium increases for seniors must be reasonable and actuarially justified",
+      "Senior citizens have right to switch insurer (portability) even for first-time buyers above 65"
+    ],
+    "consumer_rights": [
+      "Right to health insurance regardless of age",
+      "Right to lifetime renewal",
+      "Right to portability as senior citizen",
+      "Right to annual health check coverage"
+    ],
+    "impact_summary": "Addressed India's senior citizen health insurance gap. Senior citizens (65+) can now access individual health insurance without blanket exclusions.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/LIFE/CIR/MISC/200/09/2020",
+    "date": "14/09/2020",
+    "subject": "Life Insurance Claim Settlement — 30-Day Rule",
+    "category": "life_insurance",
+    "effective_date": "14/09/2020",
+    "key_points": [
+      "Life insurance death claims: insurer must investigate and settle within 30 days of receiving all documents",
+      "Claims pending investigation: maximum extension of 90 days with written communication to nominee",
+      "After 90 days, insurer must pay interest on delayed claim at 2% above bank rate",
+      "Early claim (death within 3 years of policy): insurer can investigate but must complete within 90 days",
+      "Non-early claim (death after 3 years): no investigation allowed unless fraud evidence — must settle within 30 days",
+      "Repudiation of claim must give written reason with specific policy clause cited",
+      "Nominee has right to written rejection with grounds",
+      "Grievance available at IRDAI, Ombudsman, and Consumer Courts"
+    ],
+    "consumer_rights": [
+      "Right to claim settlement within 30 days",
+      "Right to interest on delayed settlement (2% above bank rate)",
+      "Right to written rejection with specific grounds cited",
+      "Right to speedy settlement for non-early claims (post-3-years)"
+    ],
+    "impact_summary": "Eliminated indefinite claim delays. Mandatory timelines with interest penalties for insurers.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/GEN/CIR/MISC/003/01/2022",
+    "date": "20/01/2022",
+    "subject": "Travel Insurance — COVID and Overseas Medical Coverage",
+    "category": "travel_insurance",
+    "effective_date": "01/03/2022",
+    "key_points": [
+      "Travel insurance must cover COVID-19 hospitalization during international travel",
+      "Medical evacuation/repatriation coverage mandated",
+      "Overseas emergency medical expenses: minimum coverage thresholds set",
+      "Trip cancellation due to medical emergency: covered",
+      "Passport loss: covered",
+      "Travel delay (8+ hours): daily cash benefit mandated",
+      "Pre-existing disease coverage during travel: available as add-on",
+      "Claims settlement for overseas claims: 30 days from document receipt"
+    ],
+    "consumer_rights": [
+      "Right to COVID coverage during overseas travel",
+      "Right to emergency medical evacuation coverage",
+      "Right to trip cancellation for medical emergencies"
+    ],
+    "impact_summary": "Standardized travel insurance during and post-COVID era. Ensures travelers have meaningful coverage.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/CIR/MISC/050/03/2023",
+    "date": "15/03/2023",
+    "subject": "Cashless Claim Processing — Enhanced Timelines",
+    "category": "health_insurance",
+    "effective_date": "01/04/2023",
+    "key_points": [
+      "Cashless pre-authorization for planned hospitalization: within 2 hours",
+      "Emergency cashless: within 60 minutes of request",
+      "Final authorization at discharge: within 3 hours",
+      "If authorization delayed beyond mandated time: insurer must allow reimbursement claim",
+      "Network hospital cannot refuse to process cashless due to insurer delay",
+      "In case of cashless denial: written reason with policy clause must be given",
+      "TPA performance standards monitored by IRDAI",
+      "Insurer/TPA helpline must be available 24×7",
+      "Digital pre-authorization forms accepted"
+    ],
+    "consumer_rights": [
+      "Right to cashless authorization within 2 hours (planned) or 60 minutes (emergency)",
+      "Right to reimbursement if cashless delayed due to insurer",
+      "Right to 24×7 helpline access",
+      "Right to written denial with specific grounds"
+    ],
+    "impact_summary": "Addressed the biggest cashless pain point: authorization delays causing patients to pay upfront at network hospitals.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/ACT/CIR/MISC/120/06/2021",
+    "date": "10/06/2021",
+    "subject": "Prohibition of Life Insurance Mis-selling",
+    "category": "life_insurance",
+    "effective_date": "01/07/2021",
+    "key_points": [
+      "Insurers and agents cannot use misleading illustrations to sell policies",
+      "Benefit Illustration at 4% and 8% scenario mandatory for traditional policies",
+      "IRR must be disclosed in benefit illustration",
+      "For ULIPs: return scenarios at 4%, 8% must be shown; actual returns not guaranteed",
+      "Agents cannot promise guaranteed returns on market-linked products (ULIPs)",
+      "Complaints about mis-selling: can approach IRDAI, Ombudsman",
+      "Agents/insurers found mis-selling face license cancellation and monetary penalty",
+      "Cooling-off period enhanced to strengthen free look rights"
+    ],
+    "consumer_rights": [
+      "Right to accurate benefit illustration with realistic return scenarios",
+      "Right to IRR disclosure",
+      "Right to file mis-selling complaint with IRDAI",
+      "Right to free look cancellation if policy misrepresented"
+    ],
+    "impact_summary": "Strengthened consumer protection against the rampant mis-selling of ULIPs and traditional policies in India.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/GEN/CIR/MISC/058/03/2019",
+    "date": "22/03/2019",
+    "subject": "Multi-Year Motor Insurance — Third Party",
+    "category": "motor_insurance",
+    "effective_date": "01/09/2018",
+    "key_points": [
+      "Third party insurance for new private cars: mandatory 3-year policy from inception",
+      "Third party insurance for new two-wheelers: mandatory 5-year policy from inception",
+      "Own damage insurance: annual policy continues (separate from TP)",
+      "Bundled product: TP (3 or 5 years) + OD (1 year) sold together for new vehicles",
+      "Premium for multi-year TP cannot be revised during the term",
+      "On total loss/theft, refund of pro-rated TP premium",
+      "Separate renewal of OD and TP allowed after initial bundled period"
+    ],
+    "consumer_rights": [
+      "Right to locked-in third-party premium for 3-5 years",
+      "Right to separate own damage renewal",
+      "Right to pro-rated TP refund on total loss"
+    ],
+    "impact_summary": "Eliminated the problem of lapsed TP insurance on new vehicles. Reduced road accidents caused by uninsured vehicles.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/LIFE/CIR/MISC/110/05/2022",
+    "date": "01/05/2022",
+    "subject": "Bima Sugam — Insurance Digital Marketplace",
+    "category": "industry_regulation",
+    "effective_date": "01/01/2023",
+    "key_points": [
+      "Bima Sugam: IRDAI's digital marketplace for buying, servicing, and claiming insurance",
+      "Single platform for comparing and buying life, health, and general insurance",
+      "Electronic Insurance Account (e-IA) for all policyholders",
+      "All policies stored in digital repository (Insurance Repository)",
+      "Claims initiation and tracking on Bima Sugam",
+      "Integration with DigiLocker for KYC",
+      "IRDAI's vision: 'Insurance for All by 2047'"
+    ],
+    "consumer_rights": [
+      "Right to transparent product comparison on single platform",
+      "Right to digital policy repository",
+      "Right to digital claims processing"
+    ],
+    "impact_summary": "IRDAI's flagship initiative to digitize and democratize insurance access. Long-term transformation of how Indians buy and manage insurance.",
+    "source": "irdai.gov.in"
+  },
+  {
+    "circular_no": "IRDAI/HLT/REG/CIR/051/02/2013",
+    "date": "20/02/2013",
+    "subject": "Health Insurance — Standardization of Common Definitions",
+    "category": "health_insurance",
+    "effective_date": "01/04/2013",
+    "key_points": [
+      "Standard definition of 'Pre-existing Disease': any condition for which treatment/advice received in 48 months before policy start",
+      "Standard definition of 'Hospitalization': minimum 24 hours admission; exceptions for day care procedures",
+      "Standard definition of 'Day Care Treatment': IRDAI-listed 408+ procedures covered without 24-hour requirement",
+      "Standard definition of 'Reasonable and Customary Charges': expenses not exceeding standard charges for same service in same geography",
+      "Standard definition of 'Co-payment': fixed percentage of each claim borne by policyholder",
+      "Standard definition of 'Network Hospital': hospital with direct billing agreement with insurer/TPA",
+      "All health policies must use these standardized definitions — no deviations allowed"
+    ],
+    "consumer_rights": [
+      "Right to standardized policy terms",
+      "Right to clear definition of pre-existing disease",
+      "Right to day care procedure coverage per IRDAI list"
+    ],
+    "impact_summary": "Eliminated definitional ambiguity that insurers exploited to reject claims. Created level playing field for policyholders.",
+    "source": "irdai.gov.in"
+  }
+]

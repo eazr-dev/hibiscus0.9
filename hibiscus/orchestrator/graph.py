@@ -126,5 +126,35 @@ async def run_graph(
     if hibiscus_graph is None:
         raise RuntimeError("Hibiscus graph failed to compile. Check startup logs.")
 
-    final_state = await hibiscus_graph.ainvoke(state, config=config)
-    return final_state
+    # ── LangSmith distributed tracing ─────────────────────────────────────
+    try:
+        from hibiscus.observability.langsmith import tracer
+        async with tracer.pipeline_run(
+            session_id=state.get("session_id", "unknown"),
+            user_message=state.get("message", ""),
+        ) as run:
+            final_state = await hibiscus_graph.ainvoke(state, config=config)
+
+            for output in final_state.get("agent_outputs", []):
+                run.record_agent(
+                    agent_name=output.get("agent", "unknown"),
+                    confidence=output.get("confidence", 0.0),
+                    latency_ms=output.get("latency_ms", 0.0),
+                    sources=output.get("sources", []),
+                    error=output.get("error"),
+                )
+
+            run.add_metadata({
+                "complexity": final_state.get("complexity", ""),
+                "intent": final_state.get("intent", ""),
+                "category": final_state.get("category", ""),
+                "emotional_state": final_state.get("emotional_state", ""),
+                "agents_invoked": final_state.get("agents_invoked", []),
+            })
+
+            return final_state
+
+    except Exception as e:
+        logger.warning("langsmith_tracing_failed", error=str(e))
+        final_state = await hibiscus_graph.ainvoke(state, config=config)
+        return final_state

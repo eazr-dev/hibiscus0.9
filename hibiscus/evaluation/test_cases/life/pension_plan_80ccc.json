@@ -1,0 +1,20 @@
+{
+  "test_id": "life_007",
+  "name": "Pension plan and 80CCC deduction",
+  "description": "User asks about tax benefits on pension plan under 80CCC",
+  "category": "life",
+  "intent": "calculate",
+  "complexity": "L2",
+  "input": {
+    "message": "I pay ₹60,000 per year to LIC Jeevan Akshay pension plan and also have PPF of ₹1 lakh. What is my 80CCC and 80C deduction? My income is ₹18 lakhs.",
+    "session_id": "test_session_life_007",
+    "user_id": "test_user_life_007"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_contain": ["80CCC", "80C", "1.5 lakh", "combined"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.75
+  },
+  "notes": "80CCC is within the ₹1.5L 80C limit, not additional. PPF ₹1L + Pension ₹60K = ₹1.6L, but capped at ₹1.5L. Full ₹1.5L deductible. At 20% bracket (₹15-20L slab): tax saving ~₹30K."
+}

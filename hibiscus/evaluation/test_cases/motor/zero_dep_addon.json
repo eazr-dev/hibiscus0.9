@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_004",
+  "name": "Zero depreciation add-on explanation",
+  "description": "User asks if zero depreciation add-on is worth it",
+  "category": "motor",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "My motor insurance company offered a zero depreciation add-on for extra ₹2,000. My car is 2 years old and worth about ₹8 lakhs. Is this add-on worth buying?",
+    "session_id": "test_session_motor_004",
+    "user_id": "test_user_motor_004"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_have_irdai_disclaimer": false,
+    "must_contain": ["depreciation", "claim", "new car"],
+    "min_confidence": 0.7
+  },
+  "notes": "Zero dep covers full cost of replacement parts without depreciation deduction. For a 2-year-old ₹8L car, parts depreciate at 50%. Any major claim — the user saves thousands. ₹2K premium for this cover is typically worth it for cars < 5 years."
+}

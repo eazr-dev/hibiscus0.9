@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_003",
+  "name": "NCB impact after motor claim",
+  "description": "User filed a motor claim and wants to know NCB impact",
+  "category": "motor",
+  "intent": "calculate",
+  "complexity": "L2",
+  "input": {
+    "message": "I had 25% NCB on my car insurance and filed one claim this year for ₹30,000 damage. Will I lose all my NCB? My premium was ₹12,000 before. What will it be next year?",
+    "session_id": "test_session_motor_003",
+    "user_id": "test_user_motor_003"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_contain": ["NCB", "claim", "premium"],
+    "must_not_contain": ["I cannot calculate"],
+    "min_confidence": 0.65
+  },
+  "notes": "Filing a claim resets NCB to 0%. Next year premium: ₹12,000 / (1-0.25) × (1-0) = ~₹16,000. Should explain NCB protection add-on as alternative. Also mention: for small claims (₹30K), may be better to self-pay vs losing NCB."
+}

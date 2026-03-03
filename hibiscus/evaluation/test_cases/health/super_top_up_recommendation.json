@@ -1,0 +1,20 @@
+{
+  "test_id": "health_011",
+  "name": "Super top-up recommendation for existing policy",
+  "description": "User has ₹5L base policy and asks about super top-up",
+  "category": "health",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "I have a ₹5 lakh company health insurance. But I am worried it won't be enough. Should I buy a super top-up? How does it work and what's the cost?",
+    "session_id": "test_session_h_011",
+    "user_id": "test_user_h_011"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["super top-up", "deductible", "₹"],
+    "must_have_numbers": true,
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Super top-up: activates after deductible (= base cover). ₹20L super top-up with ₹5L deductible costs ~₹4,000-8,000/year for 35-year-old. Total effective cover = ₹25L at much lower cost vs ₹25L independent policy."
+}

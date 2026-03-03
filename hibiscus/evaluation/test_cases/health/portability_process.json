@@ -1,0 +1,20 @@
+{
+  "test_id": "health_012",
+  "name": "Health insurance portability process",
+  "description": "User wants to port their health policy to a new insurer",
+  "category": "health",
+  "intent": "rights",
+  "complexity": "L2",
+  "input": {
+    "message": "I have a Star Health policy for 3 years. I am unhappy with their service. I want to move to Niva Bupa. How do I port and will I lose my waiting period benefits?",
+    "session_id": "test_session_h_012",
+    "user_id": "test_user_h_012"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["portability", "waiting period", "45 days", "IRDAI"],
+    "must_have_steps": true,
+    "must_cite_source": true,
+    "min_confidence": 0.8
+  },
+  "notes": "Portability right: IRDAI Health Insurance Portability 2011. Apply 45 days before renewal. Waiting period credit: new insurer must give credit for years already served. NCB should also be portable. Process: fill portability form, submit to new insurer, they process and accept/reject in 15 days."
+}

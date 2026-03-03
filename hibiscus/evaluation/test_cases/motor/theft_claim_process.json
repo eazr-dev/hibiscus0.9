@@ -1,0 +1,19 @@
+{
+  "test_id": "motor_005",
+  "name": "Motor insurance theft claim process",
+  "description": "User's car was stolen — needs to know the claim process",
+  "category": "motor",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "My car was stolen last night. I have comprehensive car insurance. What do I do? What is the process to claim insurance? I am very stressed.",
+    "session_id": "test_session_motor_005",
+    "user_id": "test_user_motor_005"
+  },
+  "expected_response_criteria": {
+    "must_have_steps": true,
+    "must_contain": ["FIR", "police", "insurance company", "RC"],
+    "min_confidence": 0.75
+  },
+  "notes": "Steps: 1. File FIR immediately at nearest police station, 2. Inform insurer within 24 hours, 3. Inform RTO (Regional Transport Office), 4. Submit: FIR copy, RC book, policy document, original keys (both sets), driver's license. Insurer investigates for 30 days. Claim = IDV minus depreciation. Should be empathetic to stress."
+}

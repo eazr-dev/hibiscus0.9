@@ -8,9 +8,9 @@ ASSEMBLY PRIORITY ORDER (blueprint spec):
 2. Document memory (always if doc uploaded)
 3. User profile (always if exists)
 4. Policy portfolio (always if exists)
-5. Knowledge memories (semantic search — relevant past insights) [Phase 2]
-6. Conversation history (semantic search — past relevant convos) [Phase 2]
-7. Outcome memories [Phase 2]
+5. Knowledge memories (semantic search — relevant past insights)
+6. Conversation history (semantic search — past relevant convos)
+7. Outcome memories [Phase 2 — stats only, not full records]
 
 TOKEN BUDGET:
 128K context - 4K system prompt - 2K tools - 4K response reserve = ~118K available
@@ -23,13 +23,13 @@ logger = get_logger(__name__)
 
 # Max tokens to allocate per memory layer
 TOKEN_BUDGET = {
-    "session_history": 8000,     # ~40 turns at 200 tokens/turn
-    "document_context": 20000,   # Large extractions can be detailed
+    "session_history": 8000,      # ~40 turns at 200 tokens/turn
+    "document_context": 20000,    # Large extractions can be detailed
     "user_profile": 500,
     "policy_portfolio": 3000,
-    "knowledge_memories": 5000,  # Phase 2
-    "conversation_history": 5000, # Phase 2
-    "outcome_memories": 2000,    # Phase 2
+    "knowledge_memories": 5000,
+    "conversation_history": 5000,
+    "outcome_memories": 2000,
 }
 
 
@@ -39,8 +39,7 @@ async def assemble_context(
     query: str,
     uploaded_files: Optional[List[Dict[str, Any]]] = None,
 ) -> Dict[str, Any]:
-    """
-    Build full context for a request by pulling from all available memory layers.
+    """Build full context for a request by pulling from all available memory layers.
 
     Returns dict that populates HibiscusState context fields.
     """
@@ -53,7 +52,7 @@ async def assemble_context(
         "relevant_conversations": [],
     }
 
-    # ── Layer 1: Session Memory (Redis) ──────────────────────────────────
+    # ── Layer 1: Session Memory (Redis) ──────────────────────────────────────
     try:
         from hibiscus.memory.layers.session import get_session_messages
         messages = await get_session_messages(session_id, limit=10)
@@ -62,7 +61,7 @@ async def assemble_context(
     except Exception as e:
         logger.warning("context_session_failed", error=str(e))
 
-    # ── Layer 6: Document Memory (MongoDB) ───────────────────────────────
+    # ── Layer 6: Document Memory (MongoDB) ───────────────────────────────────
     has_doc = bool(uploaded_files) or _references_document(query)
     if has_doc:
         try:
@@ -78,15 +77,61 @@ async def assemble_context(
         except Exception as e:
             logger.warning("context_document_failed", error=str(e))
 
-    # ── Layer 3: User Profile (PostgreSQL) ── Phase 2 ────────────────────
-    # context["user_profile"] = await get_user_profile(user_id)
+    # ── Layer 3: User Profile (PostgreSQL) ───────────────────────────────────
+    try:
+        from hibiscus.memory.layers.profile import get_user_profile
+        profile = await get_user_profile(user_id)
+        if profile:
+            context["user_profile"] = profile
+            logger.info(
+                "context_profile_loaded",
+                user_id=user_id,
+                age=profile.get("age"),
+                city=profile.get("city"),
+            )
+        else:
+            logger.info("context_profile_not_found", user_id=user_id)
+    except Exception as e:
+        logger.warning("context_profile_failed", user_id=user_id, error=str(e))
 
-    # ── Layer 3b: Policy Portfolio (PostgreSQL) ── Phase 2 ───────────────
-    # context["policy_portfolio"] = await get_policy_portfolio(user_id)
+    # ── Layer 3b: Policy Portfolio (PostgreSQL) ───────────────────────────────
+    try:
+        from hibiscus.memory.layers.portfolio import get_user_portfolio
+        portfolio = await get_user_portfolio(user_id)
+        context["policy_portfolio"] = portfolio
+        logger.info(
+            "context_portfolio_loaded",
+            user_id=user_id,
+            policy_count=len(portfolio),
+        )
+    except Exception as e:
+        logger.warning("context_portfolio_failed", user_id=user_id, error=str(e))
 
-    # ── Layers 4, 5, 7: Qdrant semantic search ── Phase 2 ────────────────
-    # context["relevant_memories"] = await search_knowledge(user_id, query)
-    # context["relevant_conversations"] = await search_conversations(user_id, query)
+    # ── Layer 4: Knowledge Memory — Semantic insights (Qdrant) ───────────────
+    try:
+        from hibiscus.memory.layers.knowledge import get_relevant_insights
+        insights = await get_relevant_insights(user_id, query, top_k=10)
+        context["relevant_memories"] = insights
+        logger.info(
+            "context_knowledge_loaded",
+            user_id=user_id,
+            insight_count=len(insights),
+        )
+    except Exception as e:
+        logger.warning("context_knowledge_failed", user_id=user_id, error=str(e))
+
+    # ── Layer 2: Conversation History — Semantic search (Qdrant) ─────────────
+    try:
+        from hibiscus.memory.layers.conversation import search_conversation_history
+        past_convos = await search_conversation_history(user_id, query, top_k=5)
+        context["relevant_conversations"] = past_convos
+        logger.info(
+            "context_conversations_loaded",
+            user_id=user_id,
+            conv_count=len(past_convos),
+        )
+    except Exception as e:
+        logger.warning("context_conversations_failed", user_id=user_id, error=str(e))
 
     return context
 
@@ -109,13 +154,15 @@ def format_context_for_prompt(context: Dict[str, Any]) -> str:
     """Format assembled context as a string for injection into prompts."""
     parts = []
 
+    # ── Session history ───────────────────────────────────────────────────────
     if context.get("session_history"):
         parts.append("## Recent Conversation History")
-        for msg in context["session_history"][-6:]:  # Last 6 for context
+        for msg in context["session_history"][-6:]:   # Last 6 for context
             role = "User" if msg.get("role") == "user" else "Hibiscus"
-            content = msg.get("content", "")[:300]  # Truncate long messages
+            content = msg.get("content", "")[:300]     # Truncate long messages
             parts.append(f"{role}: {content}")
 
+    # ── Document context ──────────────────────────────────────────────────────
     if context.get("document_context"):
         doc = context["document_context"]
         parts.append("\n## User's Policy Document")
@@ -126,11 +173,72 @@ def format_context_for_prompt(context: Dict[str, Any]) -> str:
             parts.append(f"Policy Type: {extraction.get('policy_type', 'Insurance Policy')}")
             parts.append(f"Insurer: {extraction.get('insurer', 'Unknown')}")
             if extraction.get("sum_insured"):
-                parts.append(f"Sum Insured: {extraction['sum_insured']}")
+                parts.append(f"Sum Insured: ₹{extraction['sum_insured']:,}")
 
+    # ── User profile ──────────────────────────────────────────────────────────
     if context.get("user_profile"):
         profile = context["user_profile"]
         parts.append("\n## User Profile")
-        parts.append(f"Age: {profile.get('age', 'Unknown')}, Location: {profile.get('city', 'India')}")
+        profile_parts = []
+        if profile.get("age"):
+            profile_parts.append(f"Age: {profile['age']}")
+        if profile.get("city"):
+            city_str = profile["city"]
+            if profile.get("state"):
+                city_str += f", {profile['state']}"
+            if profile.get("city_tier"):
+                city_str += f" (Tier {profile['city_tier']})"
+            profile_parts.append(f"Location: {city_str}")
+        if profile.get("income_band"):
+            profile_parts.append(f"Income: {profile['income_band']}")
+        if profile.get("family_structure"):
+            fam = profile["family_structure"].replace("_", " ").title()
+            if profile.get("num_dependents"):
+                fam += f" ({profile['num_dependents']} dependents)"
+            profile_parts.append(f"Family: {fam}")
+        if profile.get("risk_tolerance"):
+            profile_parts.append(f"Risk tolerance: {profile['risk_tolerance']}")
+        if profile.get("health_conditions_categories"):
+            cats = ", ".join(profile["health_conditions_categories"])
+            profile_parts.append(f"Health categories: {cats}")
+        if profile_parts:
+            parts.append(", ".join(profile_parts))
+
+    # ── Policy portfolio ──────────────────────────────────────────────────────
+    if context.get("policy_portfolio"):
+        portfolio = context["policy_portfolio"]
+        parts.append("\n## Known Policies")
+        for p in portfolio[:5]:   # Cap at 5 to guard token budget
+            line_parts = []
+            if p.get("policy_type"):
+                line_parts.append(p["policy_type"].replace("_", " ").title())
+            if p.get("insurer"):
+                line_parts.append(f"by {p['insurer']}")
+            if p.get("sum_insured"):
+                line_parts.append(f"SI: ₹{int(p['sum_insured']):,}")
+            if p.get("annual_premium"):
+                line_parts.append(f"Premium: ₹{int(p['annual_premium']):,}/yr")
+            if p.get("payment_status"):
+                line_parts.append(f"[{p['payment_status']}]")
+            parts.append("  - " + ", ".join(line_parts))
+
+    # ── Knowledge insights ────────────────────────────────────────────────────
+    if context.get("relevant_memories"):
+        parts.append("\n## User Insights (from past conversations)")
+        for ins in context["relevant_memories"][:5]:
+            itype = ins.get("type", "fact").upper()
+            content = ins.get("content", "")[:200]
+            parts.append(f"  [{itype}] {content}")
+
+    # ── Relevant past conversations ───────────────────────────────────────────
+    if context.get("relevant_conversations"):
+        parts.append("\n## Relevant Past Sessions")
+        for conv in context["relevant_conversations"][:3]:
+            content = conv.get("content", "")[:200]
+            intent = conv.get("intent", "")
+            if intent:
+                parts.append(f"  [{intent}] {content}")
+            else:
+                parts.append(f"  {content}")
 
     return "\n".join(parts) if parts else ""

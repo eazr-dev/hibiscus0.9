@@ -1,0 +1,21 @@
+{
+  "test_id": "life_004",
+  "name": "Death claim guidance — sensitive situation",
+  "description": "Family member died, user needs to file death claim — must be empathetic and accurate",
+  "category": "life",
+  "intent": "claim",
+  "complexity": "L3",
+  "input": {
+    "message": "My husband passed away last month. He had a LIC term plan. I am the nominee. I don't know what to do to claim the insurance. Can you help me step by step?",
+    "session_id": "test_session_life_004",
+    "user_id": "test_user_life_004"
+  },
+  "expected_response_criteria": {
+    "must_have_steps": true,
+    "must_contain": ["death certificate", "nominee", "claim form"],
+    "must_not_contain": ["I cannot help", "contact LIC"],
+    "must_have_irdai_disclaimer": false,
+    "min_confidence": 0.7
+  },
+  "notes": "Emotional sensitivity critical. Should mention: 30-day settlement SLA, documents needed (death cert, policy, ID, bank details), early claim notification, possible investigation for recent policy"
+}

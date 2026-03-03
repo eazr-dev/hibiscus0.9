@@ -1,0 +1,272 @@
+[
+  {
+    "id": "cp_health_cashless",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Health Cashless",
+    "title": "Health Insurance Cashless Claim Process",
+    "process": [
+      "Step 1 — Identify Network Hospital: Visit insurer's app/website or call helpline to find a network hospital. For planned treatments, check network at least 2 weeks in advance. Tip: Download the insurer app and save TPA helpline in phone contacts.",
+      "Step 2 — Inform TPA/Insurer: For planned hospitalization, inform TPA at least 72 hours in advance. For emergencies, inform within 24 hours of admission. Provide: policy number, member ID, patient name, treating doctor, diagnosis, and estimated treatment cost.",
+      "Step 3 — Cashless Authorization Request: Hospital insurance desk will fill the pre-authorization form on your behalf. TPA reviews and responds within 1 hour (planned) or 30 minutes (emergency) as per IRDAI mandate. Authorization mentions the approved amount.",
+      "Step 4 — Treatment: Undergo treatment at the network hospital. The cashless authorization covers the approved medical expenses. Personal consumables (toiletries, TV, phone charges, attendant food) and non-medical items are not covered — pay these separately.",
+      "Step 5 — Final Bill Review at Discharge: Before discharge, review the final hospital bill. Hospital sends final bill to TPA. TPA may take 1–3 hours to settle after discharge. You pay only the non-covered amounts (copay, deductible, non-medical items).",
+      "Step 6 — Get Discharge Summary: Collect discharge summary, investigation reports, and prescription. Even for cashless, keep all original documents — needed if any future claim dispute arises."
+    ],
+    "documents_needed": [
+      "Health insurance card (physical or digital)",
+      "Photo ID proof (Aadhaar, PAN, passport)",
+      "Doctor's prescription/recommendation for admission",
+      "Policy number and member ID",
+      "Pre-existing disease certificate if applicable",
+      "Referral letter (if referred by another doctor)"
+    ],
+    "timeline_cashless_auth": "1 hour (planned), 30 minutes (emergency) for initial pre-auth. Final settlement: 3 hours post-discharge.",
+    "reimbursement_timeline": "N/A for cashless (direct hospital settlement)",
+    "tpa": "Depends on insurer. Common TPAs: Medi Assist, Vidal Health, MD India, Heritage Health. Some insurers (Star Health, Care Health) have in-house TPA.",
+    "toll_free": "Star Health: 1800-425-2255. HDFC ERGO: 1800-2666. Care Health: 1800-102-4488. Bajaj Allianz: 1800-209-0144. New India: 1800-209-1415",
+    "common_rejection_reasons": [
+      "PED waiting period not completed — disease excluded during waiting period",
+      "Non-network hospital — cashless not available",
+      "Pre-authorization not taken — patient walked in without informing TPA",
+      "Treatment not covered under policy — cosmetic, dental, vision, self-inflicted injury",
+      "Documents incomplete — missing investigation reports or discharge summary",
+      "Room rent exceeded policy sublimit — proportionate deduction applied"
+    ],
+    "escalation_path": "Hospital Insurance Desk → TPA Helpline → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_health_reimbursement",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Health Reimbursement",
+    "title": "Health Insurance Reimbursement Claim Process",
+    "process": [
+      "Step 1 — Get Treatment: Undergo treatment at any hospital (network or non-network). Pay all bills from your pocket. Keep ALL original documents — do not lose them.",
+      "Step 2 — Intimate Claim: Intimate your insurer/TPA about the hospitalization within 24 hours of emergency admission or 72 hours of planned admission. Even for reimbursement, timely intimation is mandatory — late intimation can lead to rejection.",
+      "Step 3 — Collect Documents: Before leaving hospital, collect: discharge summary, final itemized bill, all investigation/lab reports, prescription for medicines purchased outside, payment receipts for all amounts paid.",
+      "Step 4 — Download Claim Form: Download the reimbursement claim form from insurer's website or collect from their branch. Fill completely — attach all supporting documents as per checklist in the form.",
+      "Step 5 — Submit Claim: Submit within 15–30 days of discharge (check your policy for exact timeline). Submit via: online portal upload, insurer's app, courier to insurer/TPA office, or drop at branch. Get acknowledgment with claim number.",
+      "Step 6 — Claim Processing: Insurer/TPA scrutinizes documents. They may request additional documents within 7 days of claim receipt. Respond within the stipulated time (usually 15 days) — non-response leads to claim closure.",
+      "Step 7 — Settlement: Valid claims must be settled within 30 days of receiving complete documents (IRDAI mandate). Amount is credited to registered bank account. If rejected, written reasons must be provided."
+    ],
+    "documents_needed": [
+      "Completed claim form (insurer-specific)",
+      "Original hospital discharge summary",
+      "Original itemized hospital bill",
+      "Original payment receipts for all amounts paid",
+      "All investigation reports (blood tests, X-ray, MRI, CT scan, etc.)",
+      "Original pharmacy bills (for medicines purchased outside hospital)",
+      "Doctor's prescription for medicines",
+      "Pre-hospitalization documents (3 months prior): consultation bills, prescription, diagnostic reports",
+      "Post-hospitalization documents (60–90 days): follow-up consultation bills and prescriptions",
+      "Copy of photo ID (Aadhaar, PAN)",
+      "Cancelled cheque or bank account details for NEFT",
+      "FIR (if accident-related claim)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of complete documents (IRDAI mandate). Pre-hospitalization: 30 days before admission. Post-hospitalization: 60–90 days after discharge (varies by policy).",
+    "tpa": "Submit to TPA if your insurer uses TPA, or directly to insurer",
+    "toll_free": "Star Health: 1800-425-2255. HDFC ERGO: 1800-2666. Care Health: 1800-102-4488. Bajaj Allianz: 1800-209-0144",
+    "common_rejection_reasons": [
+      "Claim submitted after deadline (15–30 days post-discharge)",
+      "Documents missing — original bills not submitted, only photocopies",
+      "PED not completed waiting period",
+      "Treatment not covered (dental, vision, cosmetic, self-inflicted)",
+      "Hospital not recognized/registered (not in insurer's system)",
+      "Pre-hospitalization/post-hospitalization period exceeded (claim for consultation 4 months later)"
+    ],
+    "escalation_path": "TPA Helpline → Insurer Grievance Cell (30-day resolution mandate) → IRDAI Bima Bharosa → Ombudsman → Consumer Forum → Civil Court"
+  },
+  {
+    "id": "cp_life_death_claim",
+    "insurer": "All Life Insurers — Standard Process",
+    "claim_type": "Life Death Claim",
+    "title": "Life Insurance Death Claim Process",
+    "process": [
+      "Step 1 — Intimate the Insurer: Nominee informs the life insurer of the death as soon as possible. Call insurer's helpline or visit nearest branch. Provide: policy number, name of deceased, date of death, cause of death.",
+      "Step 2 — Collect Claim Form: Download or collect life insurance death claim form from insurer. Fill in details of deceased, nominee, and circumstances of death.",
+      "Step 3 — Gather Documents: Compile all required documents (see document list). Certified copies are usually acceptable but some insurers require originals for specific documents.",
+      "Step 4 — Submit Claim: Submit at insurer's branch or through online portal. Get acknowledgment with claim reference number. Insurer should acknowledge within 3 working days.",
+      "Step 5 — Investigation (if required): Insurer may investigate if: death within 3 years of policy inception; suspicious circumstances; claim amount is large. Investigation should be completed within 90 days.",
+      "Step 6 — Settlement: IRDAI mandates settlement within 30 days (non-investigated claims) or within 120 days (investigated claims) from date of claim registration. Nominee's bank account is credited.",
+      "Step 7 — Get Settlement Letter: Insurer provides settlement letter confirming final paid amount. Keep for tax records (death benefit is tax-free — but document helps prove the receipt)."
+    ],
+    "documents_needed": [
+      "Completed death claim form",
+      "Original policy document (or indemnity bond if lost)",
+      "Death certificate (original or certified copy from municipality/gram panchayat)",
+      "Medical cause of death certificate (from attending doctor)",
+      "Post-mortem report (if death was accidental or sudden — required by insurer for investigation)",
+      "FIR and police report (if accidental death)",
+      "Hospital records/discharge summary (if death in hospital)",
+      "Nominee's photo ID proof (Aadhaar, PAN)",
+      "Nominee's bank account details and cancelled cheque",
+      "Nominee's NEFT mandate form",
+      "Age proof of deceased (if not already submitted at policy inception)",
+      "Certificate of employment (for employer-sponsored group policies)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days for non-investigated claims, 120 days for investigated claims from claim registration date",
+    "tpa": "Life insurers usually process death claims in-house. No TPA involved.",
+    "toll_free": "LIC: 1800-33-5232. HDFC Life: 1860-267-9999. SBI Life: 1800-267-9090. ICICI Prudential: 1860-266-7766. Max Life: 1860-120-5577",
+    "common_rejection_reasons": [
+      "Suicide within first year of policy (exclusion in most policies; second year onwards may be covered)",
+      "Non-disclosure of pre-existing condition at proposal stage (misrepresentation)",
+      "Policy lapsed at time of death — premiums not paid",
+      "Death due to excluded cause (war, nuclear risk, self-inflicted injury)",
+      "Claim filed after 3 years of death — delay without valid reason",
+      "Nominee not registered or multiple nominees with disputes"
+    ],
+    "escalation_path": "Insurer Grievance Cell → IRDAI Bima Bharosa → Life Insurance Ombudsman → Civil Court"
+  },
+  {
+    "id": "cp_life_maturity_claim",
+    "insurer": "All Life Insurers — Standard Process",
+    "claim_type": "Life Maturity Claim",
+    "title": "Life Insurance Maturity/Survival Benefit Claim Process",
+    "process": [
+      "Step 1 — Insurer Pre-notification: Most insurers send a maturity intimation 2–3 months before maturity date by post, email, or SMS. If not received, contact insurer 3 months before maturity with your policy number.",
+      "Step 2 — Update Contact Details: Ensure your current address, mobile, email, and bank account details are updated with the insurer well before maturity. Incorrect bank details delay payment.",
+      "Step 3 — Collect Discharge Voucher: Insurer sends a discharge voucher (receipt form for accepting maturity proceeds). Sign and return this form with required documents.",
+      "Step 4 — Submit Documents: Submit to insurer's branch or via online portal. For amounts above ₹50,000, original policy document must be surrendered.",
+      "Step 5 — Tax Assessment: Check if maturity is taxable. SA/premium ratio ≥ 10× → tax-free under 10(10D). SA/premium < 10× → taxable; insurer deducts 5% TDS on gain. If income is below taxable limit, submit Form 15G (below 60) or 15H (above 60) to avoid TDS.",
+      "Step 6 — Receive Payment: Payment credited to your registered bank account within 5–15 working days of document submission. For large amounts, may take up to 30 days.",
+      "Step 7 — Update Records: Keep settlement letter for tax filing. Check Annual Information Statement (AIS) on IT portal to ensure correct reporting of maturity proceeds."
+    ],
+    "documents_needed": [
+      "Signed discharge voucher (provided by insurer)",
+      "Original policy document",
+      "Photo ID proof (Aadhaar, PAN)",
+      "Bank account details and cancelled cheque",
+      "NEFT mandate form",
+      "Age proof (if not already submitted)",
+      "Form 15G or 15H (if income below taxable limit and maturity is taxable)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "15–30 days from receipt of complete documents",
+    "tpa": "In-house by insurer",
+    "toll_free": "LIC: 1800-33-5232. HDFC Life: 1860-267-9999. SBI Life: 1800-267-9090",
+    "common_rejection_reasons": [
+      "Bank account details mismatch — wrong IFSC or account number",
+      "Discharge voucher not submitted",
+      "Policy document not surrendered (for large amounts)",
+      "KYC not updated — Aadhaar-PAN not linked",
+      "Address mismatch causing courier return of cheque (for manual payments)"
+    ],
+    "escalation_path": "Insurer Customer Service → Grievance Cell → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_motor_od_claim",
+    "insurer": "All Motor Insurers — Standard Process",
+    "claim_type": "Motor OD",
+    "title": "Motor Insurance Own Damage (OD) Claim Process",
+    "process": [
+      "Step 1 — Ensure Safety First: After an accident, ensure your safety and others'. Call 108 (ambulance) if there are injuries. Do NOT move the vehicle unless safety requires it.",
+      "Step 2 — Document the Scene: Take photos/videos of vehicle damage, accident site, third-party vehicle (if any), road conditions, and any signboards/landmarks. Time-stamped photos strengthen the claim.",
+      "Step 3 — FIR (if required): FIR is mandatory for: theft, major accidents, third-party injury/death. For minor accidents with no injury, FIR is not mandatory but recommended.",
+      "Step 4 — Intimate Insurer Immediately: Call insurer's helpline within 24 hours. Register claim and get claim number. Surveyor will be assigned. Do NOT get vehicle repaired before surveyor inspection (unless emergency).",
+      "Step 5 — Surveyor Inspection: Insurer's appointed surveyor inspects the vehicle damage. Cooperate fully — the survey report determines claim amount. Surveyor should inspect within 24–48 hours for non-cashless cases.",
+      "Step 6 — Cashless Repair (if at Network Garage): Take vehicle to insurer's cashless garage. Garage sends repair estimate to insurer. Insurer approves estimate. Repairs done — you pay only deductible and non-covered items.",
+      "Step 7 — Reimbursement (if at Non-Network Garage): Get repairs done after surveyor's inspection. Collect all bills. Submit to insurer within 7 days of repair completion.",
+      "Step 8 — Claim Settlement: Insurer settles within 30 days of survey completion and document submission."
+    ],
+    "documents_needed": [
+      "Claim form (insurer-specific)",
+      "Copy of driving license",
+      "Copy of vehicle RC (Registration Certificate)",
+      "Original motor insurance policy document",
+      "FIR copy (if applicable)",
+      "Photos of damage at accident site",
+      "Repair bills (original) for reimbursement claims",
+      "Surveyor's assessment report (insurer arranges this)",
+      "PUC certificate",
+      "Aadhaar/PAN of policyholder"
+    ],
+    "timeline_cashless_auth": "24–48 hours for surveyor visit. Cashless repair started after insurer approves estimate.",
+    "reimbursement_timeline": "30 days from receipt of surveyor report and complete documents",
+    "tpa": "Motor claims handled directly by insurer. No TPA in motor.",
+    "toll_free": "Bajaj Allianz Motor: 1800-209-5858. HDFC ERGO Motor: 1800-2666. Tata AIG Motor: 1800-266-7780. ICICI Lombard: 1800-2666. New India Assurance: 1800-209-1415",
+    "common_rejection_reasons": [
+      "Driving license invalid or expired at time of accident",
+      "Drunk driving (DUI) — excluded from all motor policies",
+      "Vehicle RC expired (not valid at time of claim)",
+      "Damage not consistent with accident description",
+      "Policy lapsed at time of accident",
+      "Damage from outside policy territory (driving in Nepal without endorsement)",
+      "Wear and tear damage — gradual deterioration is excluded"
+    ],
+    "escalation_path": "Insurer Surveyor → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman → Consumer Court → Civil Court"
+  },
+  {
+    "id": "cp_motor_third_party",
+    "insurer": "All Motor Insurers — Standard Process",
+    "claim_type": "Motor Third Party",
+    "title": "Motor Third-Party Claim Process",
+    "process": [
+      "Step 1 — FIR is Mandatory: For any third-party claim (injury, death, property damage), file FIR with police immediately. Third-party claims go to Motor Accident Claims Tribunal (MACT) — FIR is required.",
+      "Step 2 — Exchange Information: Exchange name, address, vehicle number, insurance policy details, and driving license details with the other party involved.",
+      "Step 3 — Intimate Insurer (Both Parties): The at-fault vehicle owner's insurer is liable. Intimate your insurer within 24 hours. If you are the claimant (third party), you need to file at MACT.",
+      "Step 4 — MACT Filing (for Claimants): File petition at Motor Accident Claims Tribunal (district court level). Claimant (injured/kin) files for compensation. No court fee. The at-fault driver's insurer pays compensation as awarded by Tribunal.",
+      "Step 5 — Investigation: Insurer investigates liability (who was at fault). Police charge sheet, FIR, eye-witness statements, and accident reconstruction may be used.",
+      "Step 6 — Settlement or Tribunal Award: Claim can be settled through negotiation or Tribunal award. Structured formula (as per Supreme Court guidelines) for compensation in death/disability cases. Property damage capped at ₹7.5 lakh.",
+      "Step 7 — Payment: Tribunal award must be paid within 30 days by insurer. Delay invites interest penalty."
+    ],
+    "documents_needed": [
+      "FIR copy",
+      "Driving license of at-fault vehicle's driver",
+      "RC of at-fault vehicle",
+      "Third-party insurance policy details",
+      "Medical bills (if injured — keep all originals)",
+      "Death certificate and post-mortem report (if death)",
+      "Income proof of deceased (for compensation calculation)",
+      "MACT petition (drafted by lawyer, file in MACT court)",
+      "Photos and witness statements"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "MACT proceedings typically take 1–3 years for a decision. Emergency interim relief may be ordered by MACT within weeks.",
+    "tpa": "N/A — handled by insurer's legal team and MACT",
+    "toll_free": "Same as OD claim helplines",
+    "common_rejection_reasons": [
+      "Driver was drunk (DUI) — insurer may deny TP claim as well",
+      "Vehicle used commercially without commercial insurance",
+      "Hit-and-run — MACT has Solatium Fund for hit-and-run victims",
+      "License invalid/expired — insurer may contest liability"
+    ],
+    "escalation_path": "MACT → High Court (appeal) → Supreme Court (final appeal). Insurance disputes: IRDAI Bima Bharosa → Ombudsman (for insurer procedural issues, not MACT awards)"
+  },
+  {
+    "id": "cp_critical_illness",
+    "insurer": "All Critical Illness Insurers",
+    "claim_type": "Critical Illness",
+    "title": "Critical Illness Insurance Claim Process",
+    "process": [
+      "Step 1 — Diagnosis: Get diagnosed with a covered critical illness by a qualified specialist. The diagnosis must meet the policy's specific definition (refer to standardized IRDAI definitions).",
+      "Step 2 — Survival Period: Survive the defined survival period (usually 30 days from diagnosis). Many policies require surviving 30 days after diagnosis to confirm the claim. Some insurers have waived the survival period post-2022.",
+      "Step 3 — Intimate Insurer: Contact insurer within the claim intimation timeline stated in policy (usually 7–15 days of diagnosis). Provide preliminary information: policy number, diagnosis, name of treating hospital/doctor.",
+      "Step 4 — Collect Documents: Gather all medical evidence proving the critical illness has occurred as per policy definition. For cancer: biopsy/pathology report and oncologist's report. For heart attack: ECG and cardiac enzyme tests. For stroke: MRI/CT scan report.",
+      "Step 5 — Submit Claim: Fill claim form and submit with all medical documents to insurer. Get acknowledgment.",
+      "Step 6 — Medical Review: Insurer may appoint an independent medical examiner (IME) to review documents or examine the patient. IME report is shared with claimant.",
+      "Step 7 — Lump Sum Payment: On approval, lump sum benefit amount is paid directly to policyholder's bank account. No bills required — this is a defined benefit, not reimbursement."
+    ],
+    "documents_needed": [
+      "Completed claim form",
+      "Diagnosis report (biopsy report for cancer, ECG for heart attack, imaging report for stroke)",
+      "Specialist doctor's certificate confirming diagnosis meets policy definition",
+      "Hospital records and reports",
+      "Photo ID and policy document",
+      "Bank account details",
+      "Survival period certificate (doctor's certificate confirming patient survived 30 days)"
+    ],
+    "timeline_cashless_auth": "N/A — lump sum, no hospitalization tracking",
+    "reimbursement_timeline": "30–45 days from receipt of complete documents. Lump sum paid once.",
+    "tpa": "Usually handled in-house by insurer",
+    "toll_free": "Check your specific insurer's helpline",
+    "common_rejection_reasons": [
+      "Diagnosis does not meet policy's specific definition (e.g., early-stage cancer not in covered list)",
+      "Pre-existing condition — illness diagnosed before policy inception",
+      "Waiting period not completed (usually 90 days initial waiting period for CI policies)",
+      "Survival period not met — policyholder died within 30 days of diagnosis",
+      "Non-disclosure of family history or previous symptoms at proposal stage"
+    ],
+    "escalation_path": "Insurer Grievance Cell → Independent Medical Expert Review → IRDAI Bima Bharosa → Ombudsman → Consumer Court"
+  }
+]

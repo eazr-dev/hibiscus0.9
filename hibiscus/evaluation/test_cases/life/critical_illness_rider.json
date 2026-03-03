@@ -1,0 +1,20 @@
+{
+  "test_id": "life_010",
+  "name": "Critical illness rider vs standalone CI plan",
+  "description": "User asks whether to add CI rider to term plan or buy standalone CI policy",
+  "category": "life",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "My term insurance company is offering a critical illness rider for ₹5,000 extra per year covering ₹20 lakhs for 20 critical illnesses. Should I take this or buy a separate critical illness plan? My budget is tight.",
+    "session_id": "test_session_life_010",
+    "user_id": "test_user_life_010"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_have_irdai_disclaimer": true,
+    "must_contain": ["rider", "standalone", "critical illness"],
+    "min_confidence": 0.65
+  },
+  "notes": "Rider: cheaper, covers only if policy in force, may reduce death benefit. Standalone: more illnesses covered (40-60), independent of life cover, continues even if term plan lapses. For tight budget, rider is OK as starting point. Should note 20 CIs may be less than standalone 40+ CIs."
+}

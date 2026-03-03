@@ -1,0 +1,251 @@
+[
+  {
+    "id": "tax_80c",
+    "section": "80C",
+    "title": "Section 80C — Life Insurance Premium Deduction",
+    "category": "tax_rules",
+    "description": "Section 80C allows deduction of up to ₹1,50,000 per year from taxable income for life insurance premiums paid. Available only under OLD tax regime. The policy must be in the name of self, spouse, or children. For HUF: policies on life of any member. Key condition: Sum Assured must be at least 10× annual premium (for policies issued after 1 April 2012) to claim full deduction.",
+    "conditions": [
+      "Policy must be in name of self, spouse, or children (for individuals); any member (for HUF)",
+      "Sum Assured ≥ 10× annual premium for policies issued after 1 April 2012",
+      "Sum Assured ≥ 5× annual premium for policies issued between 1 April 2003 and 31 March 2012",
+      "Deduction available under OLD tax regime only — not available in new regime",
+      "If SA/premium ratio not met: only proportionate deduction allowed (premium × SA / (10 × premium))",
+      "Premium paid by cheque, NEFT, UPI — cash payments may not be accepted by insurer; Section 80C allows deduction even if paid via digital modes"
+    ],
+    "limits": {
+      "maximum_deduction": "₹1,50,000 per year (combined with other 80C instruments)",
+      "instruments_sharing_80C_limit": "EPF, PPF, ELSS, NSC, home loan principal, SCSS, Sukanya Samriddhi",
+      "applicable_regime": "Old tax regime only"
+    },
+    "examples": [
+      "Scenario: Annual premium ₹50,000, SA ₹10 lakh (SA/premium = 20× → meets 10× condition). Taxable income ₹15 lakh (30% bracket). Calculation: 80C deduction = ₹50,000. Tax saved = ₹50,000 × 30% = ₹15,000.",
+      "Scenario: Annual premium ₹1,00,000, SA ₹5 lakh (SA/premium = 5×, does NOT meet 10× condition for post-2012 policy). Proportionate deduction = ₹1,00,000 × (₹5L / (10 × ₹1L)) = ₹1,00,000 × 0.5 = ₹50,000 deduction only.",
+      "Scenario: Family has EPF ₹72,000 + ELSS ₹50,000 + life insurance ₹60,000 = ₹1,82,000 total. 80C limit = ₹1,50,000. Only ₹1,50,000 can be claimed — the excess ₹32,000 from insurance is not deductible."
+    ],
+    "notes": [
+      "SA/premium ratio check: very common mistake — many LIC endowment policies have SA/premium < 10×",
+      "Single premium policies: deduction limited to 10% of SA in year of payment",
+      "ULIP premiums qualify for 80C but ULIP maturity taxation is separate (Finance Act 2021)",
+      "Group life insurance by employer: employee contribution qualifies for 80C; employer contribution does not count toward employee 80C",
+      "Term insurance premium: usually very low — all within 80C limit. SA/premium ratio for term plans is always very high (100×+), so always qualifies"
+    ],
+    "source": "Income Tax Act 1961, Section 80C"
+  },
+  {
+    "id": "tax_80d_self_below60",
+    "section": "80D",
+    "title": "Section 80D — Health Insurance Deduction: Self and Family (All Below 60)",
+    "category": "tax_rules",
+    "description": "Section 80D allows deduction for health insurance premiums paid for self, spouse, dependent children, and parents. This entry covers the scenario where the taxpayer AND parents are all below 60 years of age. Maximum deduction for self/spouse/children: ₹25,000 per year. Maximum deduction for parents (below 60): additional ₹25,000 per year. Total maximum: ₹50,000.",
+    "conditions": [
+      "Premium must be paid by taxpayer (not by employer in group plan — employer-paid group premium does not qualify for 80D)",
+      "Payment mode: any except cash — cheque, NEFT, UPI, credit card all accepted",
+      "Policy must be for health insurance (not life insurance)",
+      "Preventive health check-up: up to ₹5,000 INCLUDED within the ₹25,000 limit (cash payment accepted for preventive check-up only)",
+      "Deduction available only in OLD tax regime"
+    ],
+    "limits": {
+      "self_spouse_children_below_60": "₹25,000 per year (maximum)",
+      "parents_below_60": "Additional ₹25,000 per year (maximum)",
+      "total_both_below_60": "₹50,000 per year",
+      "preventive_health_checkup": "Up to ₹5,000 within the respective ₹25,000 limit"
+    },
+    "examples": [
+      "Scenario: Taxpayer age 35, spouse age 33, 2 children. Health insurance premium for family floater = ₹18,000/year. Parents both age 55. Parents' health insurance premium = ₹22,000/year. Calculation: Self/family deduction = ₹18,000 (within ₹25,000 limit). Parents deduction = ₹22,000 (within ₹25,000 limit). Total 80D deduction = ₹40,000. Tax saved at 20% bracket = ₹8,000.",
+      "Scenario: Taxpayer pays ₹25,000 health insurance for self/family AND ₹23,000 for parents (both under 60) + ₹2,000 preventive checkup for self. Calculation: Self/family = ₹25,000 (max, preventive checkup included in ₹25,000). Parents = ₹23,000 + ₹2,000 preventive = ₹25,000 (max). Total = ₹50,000."
+    ],
+    "notes": [
+      "GST paid on health insurance premium is included in the premium amount for 80D deduction",
+      "Group health insurance paid by employer: employee's own contribution qualifies; employer's contribution does not",
+      "Cannot claim 80D for sibling's health insurance — not a dependent family member under 80D",
+      "Payment must be made during the financial year (April–March) for that year's deduction"
+    ],
+    "source": "Income Tax Act 1961, Section 80D"
+  },
+  {
+    "id": "tax_80d_self_above60",
+    "section": "80D",
+    "title": "Section 80D — Health Insurance Deduction: Self or Spouse Above 60",
+    "category": "tax_rules",
+    "description": "When the taxpayer or their spouse is 60 years or above, the deduction limit for self/family health insurance premium doubles to ₹50,000 per year. If parents are also above 60, the total maximum deduction can reach ₹1,00,000 per year.",
+    "conditions": [
+      "Senior citizen: age 60 or above (at any point during the financial year)",
+      "Deduction available under OLD tax regime only",
+      "Note: Since FY 2018-19, senior citizens who do not have health insurance can claim ₹50,000 deduction for medical expenditure (not covered by insurance)"
+    ],
+    "limits": {
+      "self_or_spouse_above_60": "₹50,000 per year (maximum)",
+      "parents_above_60": "Additional ₹50,000 per year (maximum)",
+      "total_both_above_60": "₹1,00,000 per year — maximum possible 80D deduction"
+    },
+    "examples": [
+      "Scenario: Taxpayer age 62, spouse age 58. Self/family health insurance premium = ₹42,000/year. Parents both age 85 (senior). Parents' health insurance = ₹38,000/year. Calculation: Self = senior citizen → limit ₹50,000; claim ₹42,000. Parents = senior → limit ₹50,000; claim ₹38,000. Total 80D = ₹80,000. Tax saved at 30% bracket = ₹24,000.",
+      "Scenario: Taxpayer age 45. Parents age 70 and 68. No health insurance for parents, but medical expenses paid = ₹35,000. Calculation: Self/family premium (under 60) = ₹20,000 deduction. Parents' medical expenditure (no insurance) = ₹35,000 deduction (limit ₹50,000 for senior parents, cash payments allowed for senior medical expenditure). Total 80D = ₹55,000."
+    ],
+    "notes": [
+      "Senior citizens without health insurance: can claim actual medical expenditure (cash included) up to ₹50,000",
+      "This is a significant benefit for elderly parents not covered by insurance",
+      "Check policy renewal date — if policy covers both FY years, deduction applies in year of payment"
+    ],
+    "source": "Income Tax Act 1961, Section 80D"
+  },
+  {
+    "id": "tax_10_10d_exemption",
+    "section": "10(10D)",
+    "title": "Section 10(10D) — Life Insurance Maturity Exemption from Income Tax",
+    "category": "tax_rules",
+    "description": "Section 10(10D) exempts life insurance maturity and death benefit proceeds from income tax. The death benefit is ALWAYS tax-free. The maturity benefit is tax-free only if the Sum Assured/annual premium ratio conditions are met. This is one of the most important sections for life insurance tax planning.",
+    "conditions": [
+      "Death benefit: ALWAYS tax-free under 10(10D) — no conditions apply",
+      "Maturity benefit (policies issued after 1 April 2012): SA must be ≥ 10× annual premium for the ENTIRE policy term",
+      "Maturity benefit (policies issued after 1 April 2003 and before 31 March 2012): SA must be ≥ 5× annual premium",
+      "ULIP exception (Finance Act 2021): for ULIPs with annual premium > ₹2,50,000 (aggregate across all ULIPs), maturity is taxable as capital gains — regardless of SA ratio",
+      "Policies issued before 1 April 2003: no SA/premium ratio condition — maturity always tax-free",
+      "If policy is surrendered (not matured), surrender value may not qualify for 10(10D) — depends on circumstances"
+    ],
+    "limits": {
+      "ULIP_threshold_finance_act_2021": "₹2,50,000 annual premium per person (aggregate across all ULIPs)",
+      "traditional_policy_threshold": "SA ≥ 10× annual premium for post-April 2012 policies"
+    },
+    "examples": [
+      "Scenario: Endowment plan issued 2015. Annual premium ₹50,000. SA = ₹5,00,000 (SA/premium = 10× — EXACTLY meets condition). Maturity after 20 years: ₹18,00,000. Tax: Fully exempt under 10(10D).",
+      "Scenario: LIC plan issued 2013. Annual premium ₹75,000. SA = ₹5,00,000 (SA/premium = 6.7× — does NOT meet 10× condition). Maturity: ₹12,00,000. Total premiums paid: ₹15,00,000 (over 20 years). Tax: ₹12L maturity is TAXABLE as income from other sources. Gain = ₹12L - ₹15L = NEGATIVE (maturity < total premiums) → technically no taxable gain, but TDS will still be deducted on gross minus premiums formula.",
+      "Scenario: ULIP premium ₹3,00,000/year (exceeds ₹2.5L ULIP threshold). After 12 years, fund value = ₹80,00,000. Total premiums paid = ₹36,00,000. LTCG = ₹80L - ₹36L = ₹44,00,000. Tax at 10% LTCG (above ₹1L exemption) = 10% × ₹43L = ₹4,30,000 tax."
+    ],
+    "notes": [
+      "Very common mistake: assuming all LIC/life insurance maturity is tax-free — this is WRONG for post-2012 policies with low SA",
+      "If ratio condition is not met but claim is made as death benefit, it's still tax-free",
+      "Check policy documents carefully for SA and premium amount before making assumptions",
+      "For policies bought pre-2012, old rule applies (5× for 2003-2012 vintage)"
+    ],
+    "source": "Income Tax Act 1961, Section 10(10D); Finance Act 2021"
+  },
+  {
+    "id": "tax_ulip_above_2_5L",
+    "section": "ULIP Taxation",
+    "title": "ULIP Taxation — When Premium Exceeds ₹2.5 Lakh (Finance Act 2021)",
+    "category": "tax_rules",
+    "description": "From Budget 2021, ULIP maturity proceeds are treated as capital gains (not 10(10D) exempt) if aggregate annual premium across all ULIPs exceeds ₹2,50,000 in any financial year. This treats high-premium ULIPs similarly to equity mutual funds for tax purposes. Death benefit remains tax-free.",
+    "conditions": [
+      "Applies to ULIPs where aggregate annual premium exceeds ₹2,50,000 in any year from FY 2021-22 onwards",
+      "Applies if any single ULIP's premium > ₹2.5L OR multiple ULIPs' combined premium > ₹2.5L in a year",
+      "ULIPs with aggregate premium ≤ ₹2.5L/year remain exempt under 10(10D)",
+      "Treated as equity-linked product: gains are Long Term Capital Gains (LTCG) since holding > 1 year",
+      "LTCG tax: 10% on gains above ₹1 lakh (same as equity mutual fund taxation)",
+      "Death benefit: remains tax-free (10(10D)) regardless of premium amount"
+    ],
+    "limits": {
+      "premium_threshold": "₹2,50,000 per year aggregate across all ULIPs",
+      "ltcg_exemption": "₹1,00,000 per year (gains up to ₹1L are tax-free)",
+      "ltcg_tax_rate": "10% on gains above ₹1 lakh"
+    },
+    "examples": [
+      "Scenario: Single ULIP, annual premium ₹3,00,000 (exceeds ₹2.5L threshold). 12-year ULIP, total premiums = ₹36,00,000. Fund value at maturity = ₹90,00,000. LTCG = ₹90L - ₹36L = ₹54,00,000. Tax = 10% × (₹54L - ₹1L exemption) = 10% × ₹53L = ₹5,30,000.",
+      "Scenario: Taxpayer has 3 ULIPs each with ₹1L premium = aggregate ₹3L/year (exceeds ₹2.5L). ALL 3 ULIPs become taxable on maturity even though no single ULIP exceeds ₹2.5L.",
+      "Scenario: ULIP annual premium ₹2,00,000 (below ₹2.5L threshold). Maturity: fully tax-free under 10(10D) provided SA ≥ 10× annual premium. This ULIP remains in the exempt category.",
+      "Scenario: ULIP taxpayer dies in year 7. Fund value = ₹25L. Death benefit = sum assured ₹20L or fund value ₹25L, whichever is higher = ₹25L PAID TO NOMINEE. This ₹25L is FULLY TAX-FREE under 10(10D) — premium threshold does not apply to death claims."
+    ],
+    "notes": [
+      "Practical implication: high-net-worth investors with multiple ULIPs face significant tax on maturity",
+      "From 2021, ULIPs are no longer a tax-free wealth creation tool for large investments",
+      "Equity mutual funds are more tax-efficient for large investments (₹1L LTCG exemption, same 10% LTCG rate, no lock-in beyond 1 year vs ULIP 5-year lock-in)",
+      "For ULIPs purchased before 1 Feb 2021: old 10(10D) exemption still applies if conditions met at time of purchase"
+    ],
+    "source": "Finance Act 2021 / Income Tax Act 1961"
+  },
+  {
+    "id": "tax_80d_computation_examples",
+    "section": "80D",
+    "title": "Section 80D — Comprehensive Computation Examples",
+    "category": "tax_rules",
+    "description": "Detailed computation examples for Section 80D deduction across multiple scenarios combining self, family, and parents of various ages.",
+    "conditions": [
+      "All scenarios assume OLD tax regime",
+      "Payment by non-cash modes (except preventive check-up and senior medical expenses)",
+      "Financial year April to March"
+    ],
+    "limits": {
+      "self_family_below_60": "₹25,000",
+      "self_family_above_60": "₹50,000",
+      "parents_below_60": "₹25,000 additional",
+      "parents_above_60": "₹50,000 additional",
+      "maximum_total": "₹1,00,000 (both self and parents above 60)"
+    },
+    "examples": [
+      "Case 1 — Young professional, no parents claim: Age 28, income ₹12L, health insurance premium ₹18,000 for self+spouse floater. 80D = ₹18,000. Tax saved at 20% bracket = ₹3,600.",
+      "Case 2 — Middle-age, parents covered: Age 42, income ₹25L. Self/family premium ₹24,000. Parents (age 65, 63) premium ₹40,000. 80D = ₹24,000 (self, under ₹25K limit) + ₹40,000 (parents, senior, under ₹50K limit) = ₹64,000. Tax saved at 30% bracket = ₹19,200.",
+      "Case 3 — Maximum deduction scenario: Age 60+, income ₹40L. Self+spouse premium ₹48,000 (senior). Parents (age 82, 78) premium ₹50,000. 80D = ₹48,000 (self, senior, under ₹50K) + ₹50,000 (parents) = ₹98,000. Tax saved at 30% = ₹29,400.",
+      "Case 4 — Parents without insurance: Age 45, income ₹30L. Self/family premium ₹22,000. Parents (age 72, 68) — no health insurance, medical expenses paid in cash = ₹35,000. 80D = ₹22,000 (self) + ₹35,000 (senior parents no insurance, cash allowed) = ₹57,000. Tax saved at 30% = ₹17,100.",
+      "Case 5 — Employer group health + individual policy: Age 35. Employer pays ₹18,000 group health premium (not eligible for 80D). Employee pays ₹10,000 for individual top-up policy. 80D = only ₹10,000 (individual policy employee paid). Employee cannot claim employer-paid group premium.",
+      "Case 6 — Preventive health checkup: Age 38. Health insurance premium ₹20,000. Preventive checkup ₹3,500 (cash payment). 80D = ₹20,000 + ₹3,500 = ₹23,500 (total within ₹25,000 limit). Note: cash payment for checkup is specifically allowed."
+    ],
+    "notes": [
+      "Cannot claim 80D for siblings, in-laws, or grandparents",
+      "Can claim for dependent children (including adult children if dependent)",
+      "Parent's age matters at any point during the financial year — if parent turns 60 during the year, senior limit (₹50,000) applies for the ENTIRE year"
+    ],
+    "source": "Income Tax Act 1961, Section 80D; CBDT Clarifications"
+  },
+  {
+    "id": "tax_194da_tds",
+    "section": "194DA",
+    "title": "Section 194DA — TDS on Life Insurance Maturity Proceeds",
+    "category": "tax_rules",
+    "description": "Section 194DA requires the insurer to deduct TDS at 5% on the net income from life insurance maturity proceeds that are not exempt under Section 10(10D). The taxable gain = gross maturity amount minus aggregate premiums paid. TDS is on the gain amount (not full maturity).",
+    "conditions": [
+      "Applies only when maturity proceeds are NOT exempt under Section 10(10D)",
+      "I.e., SA/premium ratio < 10× for post-April 2012 policies",
+      "TDS rate: 5% on net amount (maturity amount minus total premiums paid)",
+      "TDS applies only if net amount exceeds ₹1,00,000 in a financial year",
+      "No TDS on death claims — death benefit always tax-free",
+      "Policyholder can avoid TDS by submitting Form 15G/15H (if income below taxable limit)"
+    ],
+    "limits": {
+      "tds_rate": "5% on (maturity amount - total premiums paid)",
+      "threshold_for_tds": "Net amount (gain) exceeds ₹1,00,000",
+      "form_to_avoid_tds": "Form 15G (below 60) or Form 15H (60+) if total income below taxable limit"
+    },
+    "examples": [
+      "Scenario: LIC policy (issued 2015, SA ₹5L, annual premium ₹75,000 — SA/premium = 6.67×, taxable). Policy runs 20 years. Total premiums = ₹15,00,000. Maturity amount = ₹22,00,000. Net gain = ₹22L - ₹15L = ₹7,00,000. TDS = 5% × ₹7,00,000 = ₹35,000 deducted by LIC. Policyholder must declare ₹7L as 'Income from Other Sources' in ITR.",
+      "Scenario: Policy maturity = ₹5,00,000. Total premiums paid = ₹4,50,000. Net gain = ₹50,000. Since net gain < ₹1,00,000 threshold: NO TDS deducted. But policyholder must still declare ₹50,000 as income.",
+      "Scenario: Senior citizen (age 65), same policy as Scenario 1 above. Total income only ₹3,50,000 (below ₹3L new regime exemption with standard deduction). Submit Form 15H to LIC before maturity. LIC deducts NO TDS. Policyholder checks AIS and files correct ITR."
+    ],
+    "notes": [
+      "Even if TDS is deducted, taxpayer can claim refund if total income is below taxable limit",
+      "If policy matures in multiple instalments (money-back), TDS applies to each instalment separately if conditions met",
+      "Common misconception: 'LIC deducted TDS so I need not declare' — WRONG. TDS is advance tax. Policyholder must still file ITR and declare income."
+    ],
+    "source": "Income Tax Act 1961, Section 194DA"
+  },
+  {
+    "id": "tax_regime_comparison",
+    "section": "Old vs New Regime",
+    "title": "Old Tax Regime vs New Tax Regime — Insurance Impact",
+    "category": "tax_rules",
+    "description": "Analysis of which tax regime is better for policyholders with insurance deductions. The old regime allows 80C and 80D deductions; the new regime has lower tax rates but no such deductions. New regime is default from FY 2023-24. The breakeven analysis helps choose the better regime.",
+    "conditions": [
+      "New tax regime is DEFAULT from FY 2023-24 (must opt into old regime)",
+      "Old regime: allows 80C (₹1.5L), 80D (up to ₹1L), HRA, home loan interest, LTA",
+      "New regime: standard deduction ₹75,000 (salaried), no 80C/80D, no HRA",
+      "New regime tax slabs (FY 2024-25): 0% up to ₹3L, 5% ₹3-7L, 10% ₹7-10L, 15% ₹10-12L, 20% ₹12-15L, 30% above ₹15L",
+      "Rebate under 87A: new regime — no tax if total income up to ₹7L; old regime — no tax up to ₹5L"
+    ],
+    "limits": {
+      "new_regime_rebate_limit": "₹7,00,000 (no tax for income up to ₹7L under new regime)",
+      "old_regime_rebate_limit": "₹5,00,000"
+    },
+    "examples": [
+      "Case: Gross income ₹20L, insurance premium 80C ₹1.5L + 80D ₹0.5L = ₹2L deductions. Old regime taxable income = ₹18L (after standard deduction ₹50K and 80C+80D). Tax old regime ≈ ₹3.6L. New regime taxable income = ₹19.25L (after standard deduction ₹75K). Tax new regime ≈ ₹3.5L. Result: New regime is slightly better in this case because insurance deductions don't exceed the slab benefit gap.",
+      "Case: Gross income ₹30L. 80C ₹1.5L + 80D ₹1L (senior parents) + HRA ₹3L + home loan interest ₹2L = ₹7.5L deductions. Old regime taxable ≈ ₹22L, tax ≈ ₹5.6L. New regime taxable ≈ ₹29.25L (only standard deduction), tax ≈ ₹7.6L. Result: Old regime saves ₹2L in tax — clearly better.",
+      "Breakeven rule of thumb: If total deductions (80C + 80D + HRA + home loan etc.) > ₹4.25L for income ₹10-20L range, OLD REGIME is typically better."
+    ],
+    "notes": [
+      "HRA (House Rent Allowance) is a major factor — if living in rented accommodation, old regime usually wins",
+      "For insurance agents and consultants recommending investments for old regime: be aware client must ACTIVELY OPT for old regime each year",
+      "Salaried employees: declare regime preference to employer in April each year",
+      "Old regime deductions useful only if taxable income is above ₹5L — below that, both regimes result in no tax anyway"
+    ],
+    "source": "Income Tax Act 1961; Finance Act 2024"
+  }
+]

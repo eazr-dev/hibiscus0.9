@@ -1,0 +1,22 @@
+{
+  "test_id": "life_001",
+  "name": "Term plan recommendation for 35-year-old",
+  "description": "User asks for term insurance recommendation — must give grounded advice with disclaimer",
+  "category": "life",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "I am 35 years old, earn ₹15 lakhs per year, married with 2 kids. I don't have any life insurance. How much term insurance should I take and which plan should I buy?",
+    "session_id": "test_session_life_001",
+    "user_id": "test_user_life_001"
+  },
+  "expected_response_criteria": {
+    "must_have_numbers": true,
+    "must_have_irdai_disclaimer": true,
+    "must_contain": ["income replacement", "crore", "term"],
+    "must_not_contain": ["guaranteed returns", "best plan"],
+    "must_cite_source": false,
+    "min_confidence": 0.6
+  },
+  "notes": "Should recommend 10-15x income rule → ₹1.5-2.25 crore cover"
+}
