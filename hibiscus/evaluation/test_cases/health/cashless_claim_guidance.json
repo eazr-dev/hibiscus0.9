@@ -1,0 +1,23 @@
+{
+  "test_id": "health_004",
+  "name": "Cashless claim filing guidance",
+  "description": "User needs to file a cashless claim — step-by-step guidance required",
+  "category": "health",
+  "intent": "claim",
+  "complexity": "L3",
+  "emotional_context": "concerned",
+  "input": {
+    "message": "My father needs to be admitted to hospital tomorrow. How do I file a cashless claim? He has Star Health.",
+    "session_id": "test_session_004",
+    "user_id": "test_user_004"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["cashless", "TPA", "hospital", "pre-authorization", "step"],
+    "must_have_numbered_steps": true,
+    "must_acknowledge_urgency": true,
+    "must_not_guarantee_claim": true,
+    "tone": "empathetic",
+    "minimum_confidence": 0.80
+  },
+  "expected_agent": "claims_guide"
+}

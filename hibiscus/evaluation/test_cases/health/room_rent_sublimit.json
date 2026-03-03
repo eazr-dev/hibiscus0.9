@@ -1,0 +1,20 @@
+{
+  "test_id": "health_006",
+  "name": "Room rent sub-limit impact explanation",
+  "description": "Explain how room rent sub-limits affect claim reimbursement — proportionate deduction",
+  "category": "health",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "My policy says room rent limit is 1% of sum insured. My sum insured is ₹5 lakh. I stayed in a room at ₹6,000/day. Will I get full claim?",
+    "session_id": "test_session_006",
+    "user_id": "test_user_006"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["₹5,000", "proportionate", "room rent"],
+    "must_explain_calculation": true,
+    "must_show_shortfall": true,
+    "minimum_confidence": 0.80,
+    "notes": "Room rent limit = 1% of ₹5L = ₹5,000/day. Actual = ₹6,000. Proportionate deduction applies to all claims, not just room rent."
+  }
+}

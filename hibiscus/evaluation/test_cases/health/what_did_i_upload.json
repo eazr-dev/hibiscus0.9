@@ -1,0 +1,44 @@
+{
+  "test_id": "health_002",
+  "name": "'What did I upload?' must work",
+  "description": "User asks what document they uploaded — Hibiscus must recall",
+  "category": "health",
+  "intent": "analyze",
+  "complexity": "L2",
+
+  "input": {
+    "message": "What did I upload? Can you summarize it in 2-3 sentences?",
+    "session_id": "test_session_002",
+    "user_id": "test_user_002",
+    "uploaded_files": []
+  },
+
+  "session_state": {
+    "document_context": {
+      "doc_id": "doc_002",
+      "filename": "niva_bupa_aspire_2024.pdf",
+      "extraction": {
+        "policy_type": "Family Floater Health Insurance",
+        "insurer": "Niva Bupa Health Insurance",
+        "sum_insured": 500000,
+        "annual_premium": 24000,
+        "members_covered": ["Self", "Spouse", "Child (2 years)"],
+        "copay": "10% for members above 60",
+        "room_rent_limit": "1% of sum insured per day"
+      }
+    }
+  },
+
+  "expected_response_criteria": {
+    "must_contain": [
+      "Niva Bupa",
+      "family floater",
+      "uploaded"
+    ],
+    "must_not_hallucinate": true,
+    "must_reference_actual_document": true,
+    "minimum_confidence": 0.80
+  },
+
+  "notes": "This tests the critical 'document recall' capability — Hibiscus must read from document_context, not from LLM imagination"
+}

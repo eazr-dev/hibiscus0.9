@@ -1,0 +1,29 @@
+{
+  "test_id": "health_005",
+  "name": "Pre-existing condition waiting period query",
+  "description": "User asks about pre-existing condition coverage",
+  "category": "health",
+  "intent": "analyze",
+  "complexity": "L2",
+  "input": {
+    "message": "I have diabetes. Will my health policy cover it? When does the waiting period end?",
+    "session_id": "test_session_005",
+    "user_id": "test_user_005"
+  },
+  "session_state": {
+    "document_context": {
+      "extraction": {
+        "insurer": "Bajaj Allianz Health Insurance",
+        "pre_existing_waiting_period": "4 years",
+        "specific_disease_waiting_period": "2 years",
+        "diseases_covered_after_waiting": ["diabetes", "hypertension", "thyroid"]
+      }
+    }
+  },
+  "expected_response_criteria": {
+    "must_contain": ["4 year", "pre-existing", "waiting period"],
+    "must_not_guarantee_coverage": true,
+    "must_cite_from_document": true,
+    "minimum_confidence": 0.85
+  }
+}

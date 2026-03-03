@@ -1,0 +1,31 @@
+{
+  "test_id": "health_003",
+  "name": "Explain copay from policy document",
+  "description": "User asks about copay — must cite from document, not invent",
+  "category": "health",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "What is the copay in my policy? Can you explain what it means?",
+    "session_id": "test_session_003",
+    "user_id": "test_user_003"
+  },
+  "session_state": {
+    "document_context": {
+      "doc_id": "doc_003",
+      "extraction": {
+        "policy_type": "Individual Health Insurance",
+        "insurer": "HDFC Ergo Health Insurance",
+        "copay": "20% for age above 60, else 0%",
+        "sum_insured": 300000
+      }
+    }
+  },
+  "expected_response_criteria": {
+    "must_contain": ["copay", "20%", "HDFC Ergo"],
+    "must_not_hallucinate_copay": true,
+    "must_explain_concept": true,
+    "minimum_confidence": 0.85
+  },
+  "critical_failure": "Response invents a copay % different from the extracted 20%"
+}

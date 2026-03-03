@@ -1,0 +1,22 @@
+{
+  "test_id": "health_010",
+  "name": "IRDAI portability rights explanation",
+  "description": "User asks about switching health insurer — IRDAI portability rights",
+  "category": "health",
+  "intent": "regulate",
+  "complexity": "L3",
+  "input": {
+    "message": "Can I switch my health insurance from Star Health to HDFC Ergo without losing my pre-existing benefits?",
+    "session_id": "test_session_010",
+    "user_id": "test_user_010"
+  },
+  "expected_response_criteria": {
+    "must_mention_portability": true,
+    "must_mention_irdai_portability_regulation": true,
+    "must_explain_credit_transfer": true,
+    "must_mention_waiting_period_transfer": true,
+    "minimum_confidence": 0.75,
+    "must_have_disclaimer": true
+  },
+  "notes": "IRDAI circular on health insurance portability allows transfer of accumulated benefits including waiting period credit"
+}

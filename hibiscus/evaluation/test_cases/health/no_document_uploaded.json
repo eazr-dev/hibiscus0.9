@@ -1,0 +1,25 @@
+{
+  "test_id": "health_007",
+  "name": "No document uploaded — graceful prompt",
+  "description": "User asks to analyze policy but hasn't uploaded one — must ask for upload, not hallucinate",
+  "category": "health",
+  "intent": "analyze",
+  "complexity": "L2",
+  "input": {
+    "message": "Analyze my health policy and tell me if it's good.",
+    "session_id": "test_session_007",
+    "user_id": "test_user_007",
+    "uploaded_files": []
+  },
+  "session_state": {
+    "document_context": null
+  },
+  "expected_response_criteria": {
+    "must_ask_for_upload": true,
+    "must_not_invent_policy_details": true,
+    "must_not_hallucinate": true,
+    "tone": "helpful",
+    "minimum_confidence": 0.90
+  },
+  "critical_failure": "Response invents any insurance policy details without a document"
+}

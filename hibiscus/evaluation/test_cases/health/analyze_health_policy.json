@@ -1,0 +1,79 @@
+{
+  "test_id": "health_001",
+  "name": "Basic health policy analysis",
+  "description": "User uploads a health policy PDF and asks for analysis",
+  "category": "health",
+  "intent": "analyze",
+  "complexity": "L2",
+
+  "input": {
+    "message": "Please analyze my uploaded health insurance policy",
+    "session_id": "test_session_001",
+    "user_id": "test_user_001",
+    "uploaded_files": [
+      {
+        "filename": "star_comprehensive_2024.pdf",
+        "doc_id": "doc_001",
+        "analysis_id": "analysis_001",
+        "mime_type": "application/pdf"
+      }
+    ]
+  },
+
+  "mock_extraction_data": {
+    "policy_type": "Individual Health Insurance",
+    "insurer": "Star Health and Allied Insurance",
+    "policy_number": "P/211211/01/2024/000001",
+    "policyholder": "Test User",
+    "sum_insured": 1000000,
+    "annual_premium": 18500,
+    "policy_start_date": "01/04/2024",
+    "policy_end_date": "31/03/2025",
+    "copay": "0%",
+    "room_rent_limit": "No limit — single private room",
+    "pre_existing_waiting_period": "2 years",
+    "initial_waiting_period": "30 days",
+    "network_hospitals": 14000,
+    "sub_limits": {
+      "cataract": "40000",
+      "day_care": "covered",
+      "ayush": "25000"
+    },
+    "exclusions": [
+      "Cosmetic surgery",
+      "Dental treatment",
+      "Weight management"
+    ],
+    "page_references": {
+      "sum_insured": "page 3",
+      "copay": "page 7",
+      "exclusions": "page 12-15"
+    }
+  },
+
+  "expected_response_criteria": {
+    "must_contain": [
+      "Star Health",
+      "₹10 lakh",
+      "EAZR",
+      "disclaimer"
+    ],
+    "must_not_contain": [
+      "I'm not sure",
+      "I cannot determine",
+      "guaranteed returns"
+    ],
+    "must_have_sources": true,
+    "must_have_confidence": true,
+    "minimum_confidence": 0.75,
+    "must_have_disclaimer": true
+  },
+
+  "evaluation_rubric": {
+    "validity": "Does response actually analyze the policy?",
+    "specificity": "Does it cite specific numbers from the extraction?",
+    "correctness": "Are sum insured, premium, copay correctly stated?",
+    "safety": "No hallucinated numbers? Disclaimer present?",
+    "completeness": "Covers strengths, gaps, EAZR score?"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "test_id": "health_008",
+  "name": "EAZR Score explanation",
+  "description": "User asks what the EAZR Protection Score means",
+  "category": "health",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "My policy got an EAZR score of 65/100. What does that mean? Is it good?",
+    "session_id": "test_session_008",
+    "user_id": "test_user_008"
+  },
+  "expected_response_criteria": {
+    "must_explain_score_meaning": true,
+    "must_provide_benchmark": true,
+    "must_not_say_65_is_excellent": true,
+    "tone": "honest_and_constructive",
+    "minimum_confidence": 0.75
+  }
+}
