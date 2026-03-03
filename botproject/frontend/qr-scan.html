@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Login - Eazr Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .phone-input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        select {
+            flex: 0 0 100px;
+            cursor: pointer;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .status {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .session-info {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .countdown {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔐</div>
+        <h1>Admin QR Login</h1>
+        <p class="subtitle">Scan successful! Enter your phone number to continue</p>
+
+        <div class="session-info">
+            <div>Session: <span id="sessionId">Loading...</span></div>
+            <div>Expires in: <span id="countdown" class="countdown">5:00</span></div>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Select Country</label>
+                <select id="countryCode" required>
+                    <option value="+91">🇮🇳 India (+91)</option>
+                    <option value="+1">🇺🇸 USA (+1)</option>
+                    <option value="+44">🇬🇧 UK (+44)</option>
+                    <option value="+971">🇦🇪 UAE (+971)</option>
+                    <option value="+65">🇸🇬 Singapore (+65)</option>
+                    <option value="+61">🇦🇺 Australia (+61)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phoneNumber" placeholder="Enter your phone number" required>
+                <small style="color: #718096; font-size: 12px; margin-top: 4px; display: block;">
+                    Enter number without country code
+                </small>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">
+                <span>Request Admin Access</span>
+            </button>
+        </form>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session');
+
+        // Get API base URL (adjust this to your server)
+        // const API_BASE_URL = window.location.origin;
+        const API_BASE_URL = 'https://eazr.ai.eazr.in';
+
+        // Display session ID
+        if (sessionId) {
+            document.getElementById('sessionId').textContent = sessionId.substring(0, 8) + '...';
+        } else {
+            showStatus('Invalid QR code. Please scan again.', 'error');
+            document.getElementById('loginForm').style.display = 'none';
+        }
+
+        // Countdown timer
+        let timeLeft = 300; // 5 minutes
+        const countdownEl = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                showStatus('Session expired. Please generate a new QR code.', 'error');
+                document.getElementById('loginForm').style.display = 'none';
+            } else {
+                timeLeft--;
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+
+        if (sessionId) {
+            updateCountdown();
+        }
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const countryCode = document.getElementById('countryCode').value;
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (!phoneNumber) {
+                showStatus('Please enter your phone number', 'error');
+                return;
+            }
+
+            // Combine country code and phone number
+            const fullPhone = countryCode + phoneNumber;
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span> Requesting...';
+
+            try {
+                const formData = new FormData();
+                formData.append('session_id', sessionId);
+                formData.append('phone', fullPhone);
+
+                const response = await fetch(`${API_BASE_URL}/admin/scan-qr-login`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    // Check if auto-login (returning user)
+                    if (data.auto_login && data.token) {
+                        // Auto-login successful!
+                        showStatus('🎉 Welcome back! Auto-login successful!', 'success');
+                        submitBtn.innerHTML = '✓ Logged In';
+
+                        // Show success message
+                        setTimeout(() => {
+                            showStatus('✓ You are now logged in to the admin panel! You can close this page.', 'success');
+                            document.getElementById('loginForm').style.display = 'none';
+                        }, 1500);
+                    } else {
+                        // First time login - needs approval
+                        showStatus('⏳ First time login detected. Waiting for admin approval...', 'info');
+                        submitBtn.innerHTML = '✓ Request Sent';
+
+                        // Start polling for approval
+                        startPolling(sessionId);
+                    }
+                } else if (response.status === 403) {
+                    showStatus('❌ ' + data.detail, 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Request Admin Access';
+                } else {
+                    showStatus('Failed: ' + (data.error || data.detail || 'Unknown error'), 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Request Admin Access';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showStatus('Network error. Please check your connection.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Request Admin Access';
+            }
+        });
+
+        // Poll for approval status
+        let pollInterval;
+        function startPolling(sessionId) {
+            pollInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/admin/check-qr-status/${sessionId}`);
+                    const data = await response.json();
+
+                    if (data.success && data.status === 'approved' && data.token) {
+                        clearInterval(pollInterval);
+                        showStatus('✓ Approved! Login successful!', 'success');
+
+                        // You can redirect or show success message
+                        setTimeout(() => {
+                            showStatus('✓ You are now logged in! You can close this page.', 'success');
+                        }, 1000);
+                    } else if (data.status === 'denied') {
+                        clearInterval(pollInterval);
+                        showStatus('❌ Login denied by admin', 'error');
+                    } else if (data.status === 'expired') {
+                        clearInterval(pollInterval);
+                        showStatus('⏰ Session expired. Please scan QR code again.', 'warning');
+                    }
+                } catch (error) {
+                    console.error('Polling error:', error);
+                }
+            }, 2000); // Check every 2 seconds
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = 'status ' + type;
+            statusEl.style.display = 'block';
+        }
+
+        // Auto-focus on phone input
+        document.addEventListener('DOMContentLoaded', () => {
+            if (sessionId) {
+                document.getElementById('phoneNumber').focus();
+            }
+        });
+    </script>
+</body>
+</html>

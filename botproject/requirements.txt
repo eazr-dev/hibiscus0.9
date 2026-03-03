@@ -1,0 +1,208 @@
+# Updated requirements.txt - Enhanced Financial Assistant with Redis & LangGraph
+# Based on existing dependencies with new additions for Redis and LangGraph
+
+# Core FastAPI and web framework (keeping existing versions)
+fastapi==0.115.14
+uvicorn==0.35.0
+starlette==0.46.2
+python-multipart==0.0.20
+python-dotenv==1.1.0
+
+# LangChain ecosystem (keeping existing versions)
+langchain==0.3.26
+langchain-openai==0.3.27
+langchain-community==0.3.24
+langchain-core==0.3.66
+langchain-text-splitters==0.3.8
+langsmith==0.3.45
+
+# NEW: LangGraph for state management and workflow automation
+langgraph==0.2.65
+langgraph-checkpoint>=2.0.10
+langgraph-checkpoint-sqlite==2.0.8
+
+# NEW: Redis for caching and session management
+redis==5.2.1
+# redis-py-cluster==2.1.3  # Commented out - incompatible with redis 5.x, use redis[hiredis] instead
+hiredis==3.1.0  # For better Redis performance
+
+# OpenAI and AI components (keeping existing versions)
+openai==1.93.0
+tiktoken==0.9.0
+tenacity==9.1.2
+
+# Vector store and embeddings (keeping existing versions)
+faiss-cpu==1.11.0
+numpy==2.2.6
+
+# Document processing (keeping existing versions)
+pypdf==5.7.0
+unstructured==0.18.1
+unstructured-client==0.37.2
+python-magic==0.4.27
+lxml==6.0.0
+beautifulsoup4==4.13.4
+html5lib==1.1
+
+# Audio processing for voice recognition (keeping existing versions)
+# SpeechRecognization==3.10.4
+pydub==0.25.1
+# pyaudio==0.2.11  # Commented out as it may need system-level installation
+
+# NEW: Enhanced speech recognition
+whisper==1.1.10  # For better speech recognition
+# speech-recognition-vosk==0.3.45  # Alternative offline recognition
+
+# Multilingual support (keeping existing versions)  
+deep-translator==1.11.4
+langdetect==1.0.9
+python-iso639==2025.2.18
+
+# Data processing and validation (keeping existing versions)
+pydantic==2.11.7
+pydantic-settings==2.10.1
+pydantic_core==2.33.2
+marshmallow==3.26.1
+SQLAlchemy==2.0.41
+
+# HTTP clients and networking (keeping existing versions)
+requests==2.32.4
+requests-toolbelt==1.0.0
+httpx==0.27.0
+httpcore==1.0.9
+httpx-sse==0.4.1
+h11==0.16.0
+hpack==3.0.0
+hyperframe==5.2.0
+
+# Async and concurrency (keeping existing versions)
+aiofiles==24.1.0
+aiohttp==3.12.13
+aiohappyeyeballs==2.6.1
+aiosignal==1.3.2
+anyio==4.9.0
+async-timeout==4.0.3
+nest-asyncio==1.6.0
+greenlet==3.2.3
+
+# NEW: Enhanced async Redis client
+aioredis==2.0.1
+
+# Utilities and helpers (keeping existing versions)
+click==8.2.1
+tqdm==4.67.1
+backoff==2.2.1
+emoji==2.14.1
+joblib==1.5.1
+psutil==7.0.0
+six==1.17.0
+wrapt==1.17.2
+
+# JSON and data serialization (keeping existing versions)
+jsonpatch==1.33
+jsonpointer==3.0.0
+orjson==3.10.18
+dataclasses-json==0.6.7
+
+# Text processing and NLP (keeping existing versions)
+nltk==3.9.1
+regex==2024.11.6
+RapidFuzz==3.13.0
+
+# Web scraping and parsing (keeping existing versions)
+soupsieve==2.7
+webencodings==0.5.1
+
+# Security and cryptography (keeping existing versions)
+cryptography==45.0.4
+cffi==1.17.1
+pycparser==2.22
+
+# File handling and compression (keeping existing versions)
+filetype==1.2.0
+zstandard==0.23.0
+olefile==0.47
+
+# Core Python utilities (keeping existing versions)
+attrs==25.3.0
+certifi==2025.6.15
+charset-normalizer==3.4.2
+chardet==3.0.4
+distro==1.9.0
+idna==2.10
+packaging==24.2
+sniffio==1.3.1
+typing_extensions==4.14.0
+typing-inspect==0.9.0
+typing-inspection==0.4.1
+urllib3==2.5.0
+
+# Collections and data structures (keeping existing versions)
+frozenlist==1.7.0
+multidict==6.6.2
+yarl==1.20.1
+propcache==0.3.2
+
+# Configuration and parsing (keeping existing versions)
+PyYAML==6.0.2
+rfc3986==1.5.0
+hstspreload==2025.1.1
+
+# Error handling (keeping existing versions)
+exceptiongroup==1.3.0
+
+# Office document processing (keeping existing versions)
+python-oxmsg==0.0.2
+
+# PDF generation with branding (NEW)
+reportlab==4.4.4
+# svglib==1.6.0  # Commented out - depends on pycairo which requires system Cairo libraries
+# rlpycairo==0.4.0  # Commented out - requires pycairo and system Cairo libraries
+# pycairo==1.29.0  # Commented out - requires system Cairo libraries (brew install cairo pkg-config)
+cssselect2==0.8.0
+freetype-py==2.5.1
+
+# Core typing extensions (keeping existing versions)
+mypy_extensions==1.1.0
+annotated-types==0.7.0
+jiter==0.10.0
+
+# NEW: Monitoring and observability
+prometheus-client==0.21.1
+structlog==24.4.0
+python-json-logger==2.0.7
+
+# NEW: Rate limiting and middleware
+slowapi==0.1.9
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# NEW: Background task processing (optional)
+celery==5.4.0
+flower==2.0.1
+
+# NEW: Caching utilities
+cachetools==5.5.0
+# diskcache==5.7.0
+
+# Development and testing dependencies
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+# black==24.11.0
+flake8==7.1.1
+mypy==1.13.0
+
+# Production deployment
+gunicorn==23.0.0
+supervisor==4.2.5
+
+# Database drivers
+psycopg2-binary==2.9.11  # PostgreSQL driver (insurance_india DB)
+motor==3.7.0              # MongoDB async driver (required for Card API)
+
+# Cloud storage
+boto3>=1.35.0             # AWS S3 SDK (policy uploads, reports)
+
+# Firebase Admin SDK for Push Notifications
+firebase-admin==6.6.0

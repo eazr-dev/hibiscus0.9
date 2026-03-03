@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazr AI | Next-Gen Financial Intelligence Platform</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Eazr AI | Next-Gen Financial Intelligence Platform">
+    <meta name="description" content="Experience next-generation financial assistance with AI-powered platform. Leveraging GPT-4, advanced RAG architecture, and real-time analytics to transform insurance, loans, and financial planning.">
+    <meta name="keywords" content="AI, Financial Assistant, Insurance, Loans, GPT-4, Machine Learning, LangChain, FastAPI, RAG, Chatbot, Financial Intelligence">
+    <meta name="author" content="Eazr AI">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/aieazr">
+    <meta property="og:title" content="Eazr AI | The Future of Financial Intelligence">
+    <meta property="og:description" content="Advanced AI-powered financial assistant with GPT-4, RAG architecture, multi-language support, voice recognition, and real-time analytics. Transform how you manage insurance and loans.">
+    <meta property="og:image" content="http://localhost:8000/frontend/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Eazr AI - Next-Gen Financial Intelligence Platform">
+    <meta property="og:site_name" content="Eazr AI">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://localhost:8000/aieazr">
+    <meta name="twitter:title" content="Eazr AI | The Future of Financial Intelligence">
+    <meta name="twitter:description" content="Advanced AI-powered financial assistant with GPT-4, RAG architecture, and real-time analytics. 10,000+ users, 99.9% uptime, <200ms response time.">
+    <meta name="twitter:image" content="http://localhost:8000/frontend/og-image.jpg">
+    <meta name="twitter:creator" content="@EazrAI">
+    <meta name="twitter:site" content="@EazrAI">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#14b8a6">
+    <meta name="msapplication-TileColor" content="#14b8a6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Eazr AI">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:8000/aieazr">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Eazr AI",
+      "applicationCategory": "FinanceApplication",
+      "description": "Next-generation financial intelligence platform powered by advanced AI",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "10000"
+      },
+      "screenshot": "http://localhost:8000/frontend/og-image.jpg",
+      "featureList": [
+        "Advanced RAG System with FAISS",
+        "Multi-Language Support (10+ languages)",
+        "Smart Policy Analysis",
+        "Voice Recognition with Whisper AI",
+        "Real-Time Analytics Dashboard",
+        "Dual-LLM Fallback System",
+        "QR Code Authentication"
+      ],
+      "applicationSubCategory": "AI Financial Assistant"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #17b7a7;
+            --primary-dark: #0d9488;
+            --secondary: #00d4c7;
+            --accent: #8b5cf6;
+            --bg-dark: #f7f9fb;
+            --bg-darker: #f0f4f8;
+            --bg-card: #ffffff;
+            --text-primary: #1a2332;
+            --text-secondary: #64748b;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(23, 183, 167, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Clean Minimal Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+        }
+
+        .bg-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(23, 183, 167, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+        }
+
+        /* Clean Background - Hide decorative elements */
+        .particles {
+            display: none;
+        }
+
+        /* Floating Chat Bubble Decorations */
+        .chat-bubble-bg {
+            position: absolute;
+            background: rgba(23, 183, 167, 0.06);
+            border: 2px solid rgba(23, 183, 167, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: floatBubble 20s ease-in-out infinite;
+        }
+
+        .chat-bubble-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgba(23, 183, 167, 0.06);
+        }
+
+        @keyframes floatBubble {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.7;
+            }
+        }
+
+        /* Insurance Shield Icons */
+        .shield-icon {
+            position: absolute;
+            width: 60px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(23, 183, 167, 0.1), rgba(0, 212, 199, 0.1));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border: 2px solid rgba(23, 183, 167, 0.2);
+            animation: floatShield 15s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        @keyframes floatShield {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-25px) rotate(10deg);
+                opacity: 0.8;
+            }
+        }
+
+        /* AI Brain/Circuit Pattern */
+        .ai-circuit {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 20%, transparent 60%);
+            border: 2px dashed rgba(139, 92, 246, 0.2);
+            border-radius: 50%;
+            animation: pulseCircuit 8s ease-in-out infinite;
+        }
+
+        .ai-circuit::before,
+        .ai-circuit::after {
+            content: '';
+            position: absolute;
+            background: rgba(139, 92, 246, 0.3);
+            border-radius: 50%;
+        }
+
+        .ai-circuit::before {
+            width: 6px;
+            height: 6px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ai-circuit::after {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 20%;
+        }
+
+        @keyframes pulseCircuit {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Document/Policy Icons */
+        .document-icon {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(23, 183, 167, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(23, 183, 167, 0.1);
+            animation: floatDocument 18s ease-in-out infinite;
+        }
+
+        .document-icon::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 8px;
+            right: 8px;
+            height: 3px;
+            background: rgba(23, 183, 167, 0.3);
+            border-radius: 2px;
+        }
+
+        .document-icon::after {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 8px;
+            right: 15px;
+            height: 2px;
+            background: rgba(23, 183, 167, 0.2);
+            border-radius: 2px;
+        }
+
+        @keyframes floatDocument {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) rotate(-5deg);
+                opacity: 0.7;
+            }
+        }
+
+        /* Positioned Insurance & AI Elements */
+        /* Chat Bubbles */
+        .bubble-1 {
+            width: 120px;
+            height: 80px;
+            top: 8%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .bubble-2 {
+            width: 140px;
+            height: 90px;
+            top: 60%;
+            left: 5%;
+            animation-delay: -5s;
+        }
+
+        .bubble-3 {
+            width: 100px;
+            height: 70px;
+            top: 25%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+
+        .bubble-4 {
+            width: 130px;
+            height: 85px;
+            bottom: 20%;
+            right: 8%;
+            animation-delay: -15s;
+        }
+
+        /* Shield Icons Positioned */
+        .shield-1 {
+            top: 15%;
+            left: 20%;
+            animation-delay: -2s;
+        }
+
+        .shield-2 {
+            top: 70%;
+            left: 15%;
+            animation-delay: -8s;
+        }
+
+        .shield-3 {
+            top: 35%;
+            right: 12%;
+            animation-delay: -12s;
+        }
+
+        .shield-4 {
+            bottom: 15%;
+            right: 20%;
+            animation-delay: -18s;
+        }
+
+        /* AI Circuit Nodes */
+        .circuit-1 {
+            top: 12%;
+            left: 35%;
+            animation-delay: -3s;
+        }
+
+        .circuit-2 {
+            top: 55%;
+            left: 25%;
+            animation-delay: -9s;
+        }
+
+        .circuit-3 {
+            top: 30%;
+            right: 25%;
+            animation-delay: -6s;
+        }
+
+        .circuit-4 {
+            bottom: 25%;
+            right: 35%;
+            animation-delay: -14s;
+        }
+
+        /* Document Icons */
+        .doc-1 {
+            top: 20%;
+            left: 12%;
+            animation-delay: -4s;
+        }
+
+        .doc-2 {
+            top: 75%;
+            left: 30%;
+            animation-delay: -11s;
+        }
+
+        .doc-3 {
+            top: 18%;
+            right: 18%;
+            animation-delay: -7s;
+        }
+
+        .doc-4 {
+            bottom: 30%;
+            right: 15%;
+            animation-delay: -16s;
+        }
+
+        /* AI Sparkle/Data Points */
+        .ai-sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: 50%;
+            animation: twinkleAI 4s ease-in-out infinite;
+            pointer-events: none;
+            box-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
+        }
+
+        @keyframes twinkleAI {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Connection Lines Between Elements */
+        .connection-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(23, 183, 167, 0.15), transparent);
+            transform-origin: left center;
+            animation: pulseConnection 6s ease-in-out infinite;
+        }
+
+        @keyframes pulseConnection {
+            0%, 100% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Mini Chat Message Decorations */
+        .mini-message {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(23, 183, 167, 0.2);
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 10px;
+            color: rgba(23, 183, 167, 0.6);
+            animation: fadeMessage 12s ease-in-out infinite;
+            backdrop-filter: blur(5px);
+        }
+
+        .mini-message::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(23, 183, 167, 0.4);
+            border-radius: 50%;
+            left: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes fadeMessage {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dollar Sign Icons for Loans */
+        .dollar-icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+            border: 2px solid rgba(34, 197, 94, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: rgba(34, 197, 94, 0.6);
+            font-weight: bold;
+            animation: floatDollar 14s ease-in-out infinite;
+        }
+
+        @keyframes floatDollar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) rotate(15deg);
+                opacity: 0.7;
+            }
+        }
+
+        .particle {
+            display: none;
+        }
+
+        .chat-bubble-decoration {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.25rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(23, 183, 167, 0.1);
+            box-shadow: 0 2px 12px rgba(23, 183, 167, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 4rem;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 20px rgba(23, 183, 167, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1);
+        }
+
+        .logo-wordmark {
+            height: 28px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-wordmark img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            padding: 0.75rem 1.75rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(23, 183, 167, 0.25);
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(23, 183, 167, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8rem 4rem 2rem;
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 650px;
+            z-index: 2;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1rem;
+            background: rgba(23, 183, 167, 0.08);
+            border: 1px solid rgba(23, 183, 167, 0.2);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .primary-btn, .secondary-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow:
+                0 4px 14px rgba(23, 183, 167, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .primary-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .primary-btn:hover::before {
+            left: 100%;
+        }
+
+        .primary-btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 8px 24px rgba(23, 183, 167, 0.45),
+                0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .primary-btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow:
+                0 3px 10px rgba(23, 183, 167, 0.3),
+                0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .secondary-btn {
+            background: white;
+            color: var(--text-secondary);
+            border: 2px solid rgba(100, 116, 139, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(23, 183, 167, 0.05);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 16px rgba(23, 183, 167, 0.15);
+        }
+
+        .secondary-btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 2px 6px rgba(23, 183, 167, 0.1);
+        }
+
+        /* Hero Visual - 3D Chat Preview */
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 3rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            animation: fadeInUp 1s ease 0.8s backwards;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid rgba(23, 183, 167, 0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(23, 183, 167, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            min-width: 180px;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(23, 183, 167, 0.1), rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            box-shadow:
+                0 12px 40px rgba(23, 183, 167, 0.2),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) rotateX(5deg) scale(1.02);
+        }
+
+        .stat-card:hover::after {
+            opacity: 1;
+        }
+
+        .stat-number {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Uniform Section Styles */
+        .features,
+        .tech-stack,
+        .architecture,
+        .cta-section {
+            padding: 6rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1rem;
+            background: rgba(23, 183, 167, 0.08);
+            border: 1px solid rgba(23, 183, 167, 0.2);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        .section-description {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Uniform Card Styles */
+        .feature-card,
+        .tech-card,
+        .layer {
+            background: white;
+            border: 1px solid rgba(23, 183, 167, 0.12);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(23, 183, 167, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .feature-card::after,
+        .tech-card::after,
+        .layer::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(23, 183, 167, 0.1), rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .feature-card:hover,
+        .tech-card:hover,
+        .layer:hover {
+            border-color: var(--primary);
+            box-shadow:
+                0 12px 40px rgba(23, 183, 167, 0.2),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) rotateX(5deg) scale(1.02);
+        }
+
+        .feature-card:hover::after,
+        .tech-card:hover::after,
+        .layer:hover::after {
+            opacity: 1;
+        }
+
+        /* Uniform Icon Styles */
+        .feature-icon,
+        .tech-logo,
+        .layer-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Uniform Title Styles */
+        .feature-title,
+        .tech-name,
+        .layer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Uniform Description Styles */
+        .feature-description,
+        .tech-type {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tech-card {
+            text-align: center;
+        }
+
+        .architecture-layers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .layer-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .layer-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(23, 183, 167, 0.08);
+            border: 1px solid rgba(23, 183, 167, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(23, 183, 167, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Binary Code Decoration */
+        .binary-code {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            opacity: 0.05;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .binary-left {
+            left: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .binary-right {
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 32px;
+            padding: 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotateCta 10s linear infinite;
+        }
+
+        @keyframes rotateCta {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--glass-border);
+            background: #0f172a;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-brand:hover {
+            opacity: 0.85;
+        }
+
+        .footer-brand-icon {
+            width: 38px;
+            height: 34px;
+            flex-shrink: 0;
+        }
+
+        .footer-brand-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.2);
+        }
+
+        .footer-brand-wordmark {
+            height: 24px;
+        }
+
+        .footer-brand-wordmark img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(1.2);
+        }
+
+        .footer-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .hero {
+                padding: 8rem 3rem 2rem;
+                gap: 3rem;
+            }
+
+            .stats-section,
+            .features,
+            .tech-stack,
+            .architecture,
+            .cta-section {
+                padding: 6rem 3rem;
+            }
+
+            nav {
+                padding: 1.25rem 3rem;
+            }
+
+            nav.scrolled {
+                padding: 1rem 3rem;
+            }
+        }
+
+        @media (max-width: 1300px) {
+            .hero {
+                gap: 2rem;
+            }
+
+            .chat-preview {
+                max-width: 400px;
+            }
+
+            h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 7rem 2rem 4rem;
+                align-items: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .chat-preview {
+                max-width: 100%;
+            }
+
+            .stats-section {
+                padding: 2rem;
+            }
+
+            .stats,
+            .features-grid,
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.25rem 2rem;
+            }
+
+            nav.scrolled {
+                padding: 1rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .stats-section,
+            .features,
+            .tech-stack,
+            .architecture,
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .features-grid,
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+                min-width: auto;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .primary-btn, .secondary-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-box {
+                padding: 3rem 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Simple Fade-in Animations (No 3D Effects) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Fade-in on Scroll */
+        .feature-card:not(.visible),
+        .tech-card:not(.visible),
+        .stat-card:not(.visible) {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .feature-card.visible,
+        .tech-card.visible,
+        .stat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Chat Preview Mockup - 3D Enhanced */
+        .chat-preview {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow:
+                0 20px 60px rgba(23, 183, 167, 0.15),
+                0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 450px;
+            width: 100%;
+            animation: fadeInUp 1s ease 0.6s backwards, float3D 6s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .chat-preview::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .chat-preview:hover {
+            transform: translateY(-8px) rotateX(2deg);
+            box-shadow:
+                0 30px 80px rgba(23, 183, 167, 0.25),
+                0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .chat-preview:hover::before {
+            opacity: 0.1;
+        }
+
+        @keyframes float3D {
+            0%, 100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotateY(2deg);
+            }
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(23, 183, 167, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .chat-title-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            animation: slideInMessage 0.4s ease;
+        }
+
+        .message-bubble {
+            background: rgba(23, 183, 167, 0.08);
+            padding: 0.875rem 1.125rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+            max-width: 85%;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .message-bubble:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 4px 12px rgba(23, 183, 167, 0.15);
+        }
+
+        .message-bubble.user {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 4px 15px rgba(23, 183, 167, 0.3);
+        }
+
+        .message-bubble.user:hover {
+            box-shadow: 0 6px 20px rgba(23, 183, 167, 0.4);
+        }
+
+        .message-bubble.bot {
+            background: rgba(23, 183, 167, 0.08);
+            color: var(--text-primary);
+            border-bottom-left-radius: 4px;
+            border: 1px solid rgba(23, 183, 167, 0.15);
+        }
+
+        .message-bubble.bot:hover {
+            background: rgba(23, 183, 167, 0.12);
+            border-color: rgba(23, 183, 167, 0.25);
+        }
+
+        .chat-input-preview {
+            margin-top: 1rem;
+            padding: 0.875rem 1rem;
+            background: rgba(23, 183, 167, 0.05);
+            border: 1px solid rgba(23, 183, 167, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.5rem 0;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: typingDot 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes slideInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes typingDot {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            30% {
+                transform: translateY(-8px);
+                opacity: 1;
+            }
+        }
+
+        .loan-card {
+            background: linear-gradient(135deg, rgba(23, 183, 167, 0.05) 0%, rgba(0, 212, 199, 0.05) 100%);
+            border: 1px solid rgba(23, 183, 167, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 0.75rem;
+            animation: slideInMessage 0.3s ease;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(23, 183, 167, 0.1);
+        }
+
+        .loan-card:hover {
+            transform: translateY(-3px) rotateX(3deg);
+            box-shadow: 0 8px 20px rgba(23, 183, 167, 0.2);
+            border-color: var(--primary);
+        }
+
+        .loan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .loan-rate {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .loan-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .loan-details > div {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .loader-logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .loader-logo-icon {
+            width: 80px;
+            height: 72px;
+            animation: rotateClockwise 3s linear infinite;
+            filter: drop-shadow(0 10px 30px rgba(20, 184, 166, 0.3));
+        }
+
+        .loader-logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .loader-logo-wordmark {
+            height: 48px;
+            opacity: 0;
+            animation: fadeInWordmark 1s ease 0.5s forwards;
+        }
+
+        .loader-logo-wordmark img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .loader-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeInText 1s ease 1s forwards;
+            letter-spacing: 0.5px;
+        }
+
+        .loader-progress {
+            width: 200px;
+            height: 3px;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .loader-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            animation: loadProgress 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+        }
+
+        @keyframes rotateClockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInWordmark {
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            to { opacity: 1; }
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; transform: translateX(0); }
+            50% { width: 70%; }
+            100% { width: 100%; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="loader-logo">
+                <div class="loader-logo-icon">
+                    <img src="/frontend/eazr-logo.svg" alt="Eazr Logo">
+                </div>
+                <div class="loader-logo-wordmark">
+                    <img src="/frontend/eazr-wordmark.svg" alt="Eazr">
+                </div>
+            </div>
+            <div class="loader-text">Loading your financial intelligence platform...</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insurance AI Chat Themed Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="particles">
+            <!-- Floating Chat Bubbles -->
+            <div class="chat-bubble-bg bubble-1"></div>
+            <div class="chat-bubble-bg bubble-2"></div>
+            <div class="chat-bubble-bg bubble-3"></div>
+            <div class="chat-bubble-bg bubble-4"></div>
+
+            <!-- Insurance Shield Icons -->
+            <div class="shield-icon shield-1">🛡️</div>
+            <div class="shield-icon shield-2">🔒</div>
+            <div class="shield-icon shield-3">✓</div>
+            <div class="shield-icon shield-4">💼</div>
+
+            <!-- AI Circuit Nodes -->
+            <div class="ai-circuit circuit-1"></div>
+            <div class="ai-circuit circuit-2"></div>
+            <div class="ai-circuit circuit-3"></div>
+            <div class="ai-circuit circuit-4"></div>
+
+            <!-- Policy Documents -->
+            <div class="document-icon doc-1"></div>
+            <div class="document-icon doc-2"></div>
+            <div class="document-icon doc-3"></div>
+            <div class="document-icon doc-4"></div>
+
+            <!-- AI Data Sparkles -->
+            <div class="ai-sparkle" style="top: 15%; left: 25%; animation-delay: 0s;"></div>
+            <div class="ai-sparkle" style="top: 45%; left: 18%; animation-delay: 1s;"></div>
+            <div class="ai-sparkle" style="top: 65%; left: 40%; animation-delay: 2s;"></div>
+            <div class="ai-sparkle" style="top: 28%; right: 22%; animation-delay: 1.5s;"></div>
+            <div class="ai-sparkle" style="top: 52%; right: 30%; animation-delay: 2.5s;"></div>
+            <div class="ai-sparkle" style="bottom: 25%; right: 18%; animation-delay: 0.8s;"></div>
+            <div class="ai-sparkle" style="bottom: 35%; left: 35%; animation-delay: 1.8s;"></div>
+            <div class="ai-sparkle" style="top: 80%; left: 22%; animation-delay: 2.2s;"></div>
+
+            <!-- Connection Lines -->
+            <div class="connection-line" style="top: 20%; left: 15%; width: 150px; transform: rotate(25deg); animation-delay: 0s;"></div>
+            <div class="connection-line" style="top: 40%; left: 20%; width: 120px; transform: rotate(-15deg); animation-delay: 2s;"></div>
+            <div class="connection-line" style="top: 60%; left: 10%; width: 180px; transform: rotate(35deg); animation-delay: 4s;"></div>
+            <div class="connection-line" style="top: 30%; right: 15%; width: 140px; transform: rotate(-25deg); animation-delay: 1s;"></div>
+            <div class="connection-line" style="bottom: 30%; right: 20%; width: 160px; transform: rotate(15deg); animation-delay: 3s;"></div>
+
+            <!-- Mini Chat Messages -->
+            <div class="mini-message" style="top: 10%; left: 40%; animation-delay: 0s;">Loan approved</div>
+            <div class="mini-message" style="top: 50%; left: 8%; animation-delay: 3s;">Policy active</div>
+            <div class="mini-message" style="top: 35%; right: 5%; animation-delay: 6s;">AI analyzing...</div>
+            <div class="mini-message" style="bottom: 15%; right: 40%; animation-delay: 9s;">Coverage updated</div>
+
+            <!-- Dollar Icons -->
+            <div class="dollar-icon" style="top: 42%; left: 45%; animation-delay: -2s;">$</div>
+            <div class="dollar-icon" style="bottom: 28%; left: 20%; animation-delay: -6s;">$</div>
+            <div class="dollar-icon" style="top: 22%; right: 35%; animation-delay: -10s;">$</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo" onclick="window.location.href='/aieazr'">
+            <div class="logo-icon">
+                <img src="/frontend/eazr-logo.svg" alt="Eazr Logo">
+            </div>
+            <div class="logo-wordmark">
+                <img src="/frontend/eazr-wordmark.svg" alt="Eazr">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#demo">Live Demo</a></li>
+        </ul>
+        <button class="cta-btn" onclick="window.location.href='admin.html'">Admin Dashboard</button>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="pulse-dot"></span>
+                Powered by Advanced AI • Live Now
+            </div>
+            <h1>
+                The Future of<br>
+                <span class="gradient-text">Financial Intelligence</span>
+            </h1>
+            <p class="hero-description">
+                Experience next-generation financial assistance with our AI-powered platform.
+                Leveraging GPT-4, advanced RAG architecture, and real-time analytics to transform
+                how you manage insurance, loans, and financial planning.
+            </p>
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="scrollToDemo()">
+                    <span>Try Live Demo</span>
+                    <span>→</span>
+                </button>
+                <button class="secondary-btn" onclick="scrollToTech()">
+                    <span>Explore Technology</span>
+                    <span>↓</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+                <div class="chat-preview">
+                    <div class="chat-header">
+                        <div class="chat-avatar">🤖</div>
+                        <div class="chat-title-section">
+                            <h3 class="chat-title">Eazr Financial Assistant</h3>
+                            <div class="chat-status">
+                                <span class="status-dot"></span>
+                                <span>Online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message-bubble bot">
+                            Hi! I'm your AI financial assistant. How can I help you today?
+                        </div>
+                        <div class="message-bubble user">
+                            I need a personal loan of $50,000
+                        </div>
+                        <div class="message-bubble bot">
+                            I can help you with that! Let me analyze your eligibility and find the best loan options for you...
+                            <div class="loan-card">
+                                <div class="loan-header">
+                                    <span>💰 Personal Loan</span>
+                                    <span class="loan-rate">5.5% APR</span>
+                                </div>
+                                <div class="loan-details">
+                                    <div>Amount: $50,000</div>
+                                    <div>Term: 36 months</div>
+                                    <div>Monthly: $1,503</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-bubble user">
+                            What about insurance coverage?
+                        </div>
+                        <div class="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    </div>
+                    <div class="chat-input-preview">
+                        <span>💬</span>
+                        <span>Type your financial question...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Stats -->
+    <section class="stats-section">
+        <div class="stats">
+            <div class="stat-card fade-in">
+                <div class="stat-number" data-target="10000">0</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number" data-target="500000">0</div>
+                <div class="stat-label">Messages Processed</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">&lt;200ms</div>
+                <div class="stat-label">Avg Response Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header fade-in">
+            <div class="section-badge">
+                <span>✨</span>
+                Core Capabilities
+            </div>
+            <h2 class="section-title">Revolutionary AI Features</h2>
+            <p class="section-description">
+                Built with cutting-edge technology to deliver unprecedented financial intelligence
+                and customer experience
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Advanced RAG System</h3>
+                <p class="feature-description">
+                    Retrieval-Augmented Generation with FAISS vector store enables contextual,
+                    accurate responses from your policy documents and knowledge base.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Multi-Language Support</h3>
+                <p class="feature-description">
+                    Communicate in 10+ languages with real-time translation powered by deep-translator
+                    and automatic language detection.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Smart Policy Analysis</h3>
+                <p class="feature-description">
+                    AI-driven policy recommendations, coverage gap analysis, and protection score
+                    calculations tailored to user needs.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎤</div>
+                <h3 class="feature-title">Voice Recognition</h3>
+                <p class="feature-description">
+                    Seamless voice-to-text with Whisper AI, enabling hands-free interaction and
+                    accessibility for all users.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Real-Time Analytics</h3>
+                <p class="feature-description">
+                    Comprehensive admin dashboard with live metrics, user tracking, session management,
+                    and business intelligence.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Dual-LLM Fallback</h3>
+                <p class="feature-description">
+                    Primary GPT-4 with automatic fallback to GLM-4.5-Air ensures 99.9% uptime
+                    and continuous service availability.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💳</div>
+                <h3 class="feature-title">Loan & Wallet APIs</h3>
+                <p class="feature-description">
+                    Integrated financial services including loan eligibility checks, wallet management,
+                    and transaction processing.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔐</div>
+                <h3 class="feature-title">QR Code Authentication</h3>
+                <p class="feature-description">
+                    Secure admin login with dual authentication: password-based and QR code scanning
+                    with real-time approval workflow.
+                </p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Session Memory</h3>
+                <p class="feature-description">
+                    Intelligent conversation history with Redis caching and MongoDB persistence
+                    for seamless user experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="technology">
+        <div class="section-header fade-in">
+            <div class="section-badge">
+                <span>⚡</span>
+                Technology Stack
+            </div>
+            <h2 class="section-title">Built with Best-in-Class Technologies</h2>
+            <p class="section-description">
+                Enterprise-grade architecture leveraging the latest innovations in AI, cloud computing,
+                and software engineering
+            </p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🤖</div>
+                <div class="tech-name">OpenAI GPT-4</div>
+                <div class="tech-type">Primary AI Engine</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🔗</div>
+                <div class="tech-name">LangChain</div>
+                <div class="tech-type">LLM Framework</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">⚡</div>
+                <div class="tech-name">FastAPI</div>
+                <div class="tech-type">Backend Framework</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🍃</div>
+                <div class="tech-name">MongoDB</div>
+                <div class="tech-type">Database</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🔴</div>
+                <div class="tech-name">Redis</div>
+                <div class="tech-type">Cache & Sessions</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🔍</div>
+                <div class="tech-name">FAISS</div>
+                <div class="tech-type">Vector Database</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🎯</div>
+                <div class="tech-name">LangGraph</div>
+                <div class="tech-type">Workflow Engine</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🌐</div>
+                <div class="tech-name">Deep Translator</div>
+                <div class="tech-type">Translation API</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🎤</div>
+                <div class="tech-name">Whisper AI</div>
+                <div class="tech-type">Voice Recognition</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🐍</div>
+                <div class="tech-name">Python 3.12</div>
+                <div class="tech-type">Runtime</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">📦</div>
+                <div class="tech-name">Pydantic</div>
+                <div class="tech-type">Data Validation</div>
+            </div>
+
+            <div class="tech-card fade-in">
+                <div class="tech-logo">🔐</div>
+                <div class="tech-name">JWT</div>
+                <div class="tech-type">Authentication</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture" id="architecture">
+        <div class="section-header fade-in">
+            <div class="section-badge">
+                <span>🏗️</span>
+                System Architecture
+            </div>
+            <h2 class="section-title">Enterprise-Grade Infrastructure</h2>
+            <p class="section-description">
+                Modular, scalable architecture designed for high performance, reliability, and maintainability
+            </p>
+        </div>
+
+        <div class="architecture-visual fade-in">
+            <div class="binary-code binary-left">
+                01001000 01100101 01101100 01101100 01101111<br>
+                01010111 01101111 01110010 01101100 01100100<br>
+                01000101 01100001 01111010 01110010 00100000<br>
+                01000001 01001001 00100000 01010011 01111001<br>
+                01110011 01110100 01100101 01101101 00100001
+            </div>
+
+            <div class="architecture-layers">
+                <div class="layer fade-in">
+                    <div class="layer-header">
+                        <div class="layer-icon">🎨</div>
+                        <div class="layer-title">Presentation Layer</div>
+                    </div>
+                    <div class="layer-techs">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Vanilla JS</span>
+                        <span class="tech-tag">ApexCharts</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="layer fade-in">
+                    <div class="layer-header">
+                        <div class="layer-icon">⚡</div>
+                        <div class="layer-title">API Layer</div>
+                    </div>
+                    <div class="layer-techs">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">RESTful APIs</span>
+                        <span class="tech-tag">JWT Auth</span>
+                        <span class="tech-tag">CORS</span>
+                        <span class="tech-tag">Rate Limiting</span>
+                    </div>
+                </div>
+
+                <div class="layer fade-in">
+                    <div class="layer-header">
+                        <div class="layer-icon">🤖</div>
+                        <div class="layer-title">AI/ML Layer</div>
+                    </div>
+                    <div class="layer-techs">
+                        <span class="tech-tag">OpenAI GPT-4</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">RAG Pipeline</span>
+                        <span class="tech-tag">Vector Search</span>
+                    </div>
+                </div>
+
+                <div class="layer fade-in">
+                    <div class="layer-header">
+                        <div class="layer-icon">🎯</div>
+                        <div class="layer-title">Business Logic Layer</div>
+                    </div>
+                    <div class="layer-techs">
+                        <span class="tech-tag">Policy Analysis</span>
+                        <span class="tech-tag">Loan APIs</span>
+                        <span class="tech-tag">Wallet Service</span>
+                        <span class="tech-tag">Admin Management</span>
+                        <span class="tech-tag">Analytics Engine</span>
+                    </div>
+                </div>
+
+                <div class="layer fade-in">
+                    <div class="layer-header">
+                        <div class="layer-icon">💾</div>
+                        <div class="layer-title">Data Layer</div>
+                    </div>
+                    <div class="layer-techs">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Redis Cache</span>
+                        <span class="tech-tag">FAISS Vector DB</span>
+                        <span class="tech-tag">Session Store</span>
+                        <span class="tech-tag">Analytics DB</span>
+                    </div>
+                </div>
+
+                <div class="layer fade-in">
+                    <div class="layer-header">
+                        <div class="layer-icon">🔧</div>
+                        <div class="layer-title">Infrastructure Layer</div>
+                    </div>
+                    <div class="layer-techs">
+                        <span class="tech-tag">Python 3.12</span>
+                        <span class="tech-tag">Async/Await</span>
+                        <span class="tech-tag">Logging</span>
+                        <span class="tech-tag">Error Handling</span>
+                        <span class="tech-tag">Load Balancing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="binary-code binary-right">
+                01010000 01101111 01110111 01100101 01110010<br>
+                01100010 01111001 00100000 01000001 01001001<br>
+                01000101 01101110 01110100 01100101 01110010<br>
+                01110000 01110010 01101001 01110011 01100101<br>
+                01000111 01110010 01100001 01100100 01100101
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="demo">
+        <div class="cta-box fade-in">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Experience the Future?</h2>
+                <p class="cta-description">
+                    Join thousands of users already leveraging AI-powered financial intelligence.
+                    Start your journey today.
+                </p>
+                <button class="cta-button" onclick="window.location.href='/chat'">
+                    Launch Live Demo →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand" onclick="window.location.href='/aieazr'">
+                    <div class="footer-brand-icon">
+                        <img src="/frontend/eazr-logo.svg" alt="Eazr Logo">
+                    </div>
+                    <div class="footer-brand-wordmark">
+                        <img src="/frontend/eazr-wordmark.svg" alt="Eazr">
+                    </div>
+                </div>
+                <p class="footer-description">
+                    Next-generation financial intelligence platform powered by advanced AI.
+                    Transforming insurance, loans, and financial planning with cutting-edge technology.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">𝕏</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">gh</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="/admin.html">Admin Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Eazr AI. All rights reserved. Built with ❤️ and cutting-edge AI technology.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen with smooth animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 2500); // Show for 2.5 seconds to display full logo animation
+        });
+
+        // Static AI Chat themed background - no floating particles needed
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate counters
+                    const counter = entry.target.querySelector('[data-target]');
+                    if (counter && !counter.classList.contains('counted')) {
+                        counter.classList.add('counted');
+                        animateCounter(counter);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth Scroll Functions
+        function scrollToDemo() {
+            document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTech() {
+            document.getElementById('technology').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 3D Mouse Movement Effects for Interactive Experience
+        const chatPreview = document.querySelector('.chat-preview');
+        const statCards = document.querySelectorAll('.stat-card');
+        const featureCards = document.querySelectorAll('.feature-card');
+
+        // Add 3D tilt effect on mouse move for chat preview
+        if (chatPreview) {
+            chatPreview.addEventListener('mousemove', (e) => {
+                const rect = chatPreview.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                chatPreview.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            chatPreview.addEventListener('mouseleave', () => {
+                chatPreview.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+            });
+        }
+
+        // Add 3D tilt effect for stat cards
+        statCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
+
+                card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Add subtle 3D effect for feature cards
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 25;
+                const rotateY = (centerX - x) / 25;
+
+                card.style.transform = `translateY(-12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('mobile-active');
+        });
+
+        // Console Easter Egg
+        console.log('%c🚀 Eazr AI - Built with Advanced Tech', 'color: #14b8a6; font-size: 20px; font-weight: bold;');
+        console.log('%cPowered by: GPT-4, LangChain, FastAPI, MongoDB, Redis, FAISS', 'color: #06b6d4; font-size: 14px;');
+        console.log('%cInterested in our tech stack? Contact us!', 'color: #8b5cf6; font-size: 12px;');
+    </script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EAZR — Policy Upload Test</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; min-height: 100vh; padding: 24px; }
+  .container { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { color: #666; font-size: 13px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.1); margin-bottom: 16px; }
+  label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px; color: #444; }
+  input, select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
+  input:focus, select:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79,70,229,.1); }
+  .row { display: flex; gap: 12px; }
+  .row > div { flex: 1; }
+  .drop-zone { border: 2px dashed #ccc; border-radius: 12px; padding: 32px; text-align: center; cursor: pointer; transition: .2s; margin-bottom: 16px; }
+  .drop-zone:hover, .drop-zone.drag-over { border-color: #4f46e5; background: #f0f0ff; }
+  .drop-zone p { color: #888; font-size: 14px; }
+  .drop-zone .icon { font-size: 36px; margin-bottom: 8px; }
+  .file-name { font-size: 13px; color: #4f46e5; font-weight: 600; margin-top: 8px; }
+  .btn { width: 100%; padding: 14px; background: #4f46e5; color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: .2s; }
+  .btn:hover { background: #4338ca; }
+  .btn:disabled { background: #aaa; cursor: not-allowed; }
+  .btn-sm { display: inline-flex; align-items: center; gap: 6px; width: auto; padding: 8px 16px; font-size: 13px; border-radius: 8px; }
+  .btn-green { background: #16a34a; }
+  .btn-green:hover { background: #15803d; }
+  .btn-outline { background: transparent; color: #4f46e5; border: 1.5px solid #4f46e5; }
+  .btn-outline:hover { background: #f0f0ff; }
+  .spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; margin-right: 8px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .status-bar { display: flex; gap: 8px; align-items: center; margin-bottom: 20px; padding: 10px 14px; border-radius: 8px; font-size: 13px; }
+  .status-bar.ok { background: #ecfdf5; color: #166534; }
+  .status-bar.fail { background: #fef2f2; color: #991b1b; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.green { background: #22c55e; }
+  .dot.red { background: #ef4444; }
+  .dot.yellow { background: #eab308; }
+
+  /* Result styles */
+  #result { margin-top: 20px; }
+  .result-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.1); margin-bottom: 16px; }
+  .result-card.success { border-left: 4px solid #22c55e; }
+  .result-card.error { border-left: 4px solid #ef4444; }
+  .result-header { font-weight: 700; font-size: 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+  .result-header .elapsed { font-size: 12px; color: #888; font-weight: 400; }
+
+  /* Section */
+  .section { margin-bottom: 20px; }
+  .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: #6b7280; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; }
+
+  /* Key-Value table */
+  .kv-table { width: 100%; border-collapse: collapse; }
+  .kv-table td { padding: 7px 0; font-size: 13px; vertical-align: top; }
+  .kv-table td:first-child { color: #6b7280; width: 40%; padding-right: 12px; }
+  .kv-table td:last-child { font-weight: 500; color: #111; word-break: break-word; }
+  .kv-table tr { border-bottom: 1px solid #f3f4f6; }
+  .kv-table tr:last-child { border-bottom: none; }
+
+  /* Badges */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-red { background: #fef2f2; color: #991b1b; }
+  .badge-yellow { background: #fefce8; color: #854d0e; }
+  .badge-blue { background: #eff6ff; color: #1e40af; }
+  .badge-purple { background: #faf5ff; color: #6b21a8; }
+  .badge-gray { background: #f3f4f6; color: #374151; }
+
+  /* Score bar */
+  .score-bar-wrap { margin-bottom: 10px; }
+  .score-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
+  .score-label span:last-child { font-weight: 700; }
+  .score-track { height: 8px; background: #e5e7eb; border-radius: 8px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 8px; transition: width .5s; }
+
+  /* Zone pills */
+  .zone-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-right: 8px; margin-bottom: 6px; }
+  .zone-green { background: #dcfce7; color: #166534; }
+  .zone-yellow { background: #fefce8; color: #854d0e; }
+  .zone-red { background: #fef2f2; color: #991b1b; }
+
+  /* Recommendation list */
+  .rec-list { list-style: none; padding: 0; }
+  .rec-list li { padding: 8px 12px; margin-bottom: 6px; background: #f9fafb; border-radius: 8px; font-size: 13px; line-height: 1.5; border-left: 3px solid #4f46e5; }
+
+  /* Warnings & errors list */
+  .issue-list { list-style: none; padding: 0; }
+  .issue-list li { padding: 6px 10px; margin-bottom: 4px; border-radius: 6px; font-size: 12px; }
+  .issue-list li.warn { background: #fefce8; color: #854d0e; }
+  .issue-list li.err { background: #fef2f2; color: #991b1b; }
+
+  /* Download bar */
+  .download-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+
+  /* Provider card */
+  .provider-card { display: flex; gap: 16px; align-items: flex-start; }
+  .provider-icon { width: 48px; height: 48px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .provider-info { flex: 1; }
+  .provider-name { font-weight: 700; font-size: 15px; }
+  .provider-sub { font-size: 12px; color: #6b7280; margin-top: 2px; }
+
+  /* Collapsible raw JSON */
+  details { margin-top: 16px; }
+  details summary { cursor: pointer; font-size: 13px; color: #6b7280; font-weight: 600; padding: 8px 0; }
+  details pre { background: #f8f9fa; padding: 14px; border-radius: 8px; font-size: 11px; overflow-x: auto; max-height: 400px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; margin-top: 8px; }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 0; border-bottom: 2px solid #e5e7eb; margin-bottom: 16px; }
+  .tab { padding: 8px 16px; font-size: 13px; font-weight: 600; color: #6b7280; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: .2s; }
+  .tab:hover { color: #4f46e5; }
+  .tab.active { color: #4f46e5; border-bottom-color: #4f46e5; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>EAZR Policy Upload Test</h1>
+  <p class="sub">Upload a policy PDF to test the analysis pipeline</p>
+
+  <div id="status-bar" class="status-bar ok">
+    <span class="dot green"></span>
+    <span>Checking server...</span>
+  </div>
+
+  <form id="uploadForm">
+    <div class="card">
+      <div class="drop-zone" id="dropZone">
+        <div class="icon">📄</div>
+        <p>Drop PDF here or click to browse</p>
+        <div class="file-name" id="fileName"></div>
+      </div>
+      <input type="file" id="fileInput" accept=".pdf" style="display:none">
+
+      <div class="row">
+        <div>
+          <label>Name</label>
+          <input type="text" id="name" value="Test User" required>
+        </div>
+        <div>
+          <label>Gender</label>
+          <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Policy For</label>
+          <select id="policyFor">
+            <option value="self">Self</option>
+            <option value="family">Family</option>
+          </select>
+        </div>
+        <div>
+          <label>Relationship</label>
+          <select id="relationship">
+            <option value="self">Self</option>
+            <option value="spouse">Spouse</option>
+            <option value="father">Father</option>
+            <option value="mother">Mother</option>
+            <option value="son">Son</option>
+            <option value="daughter">Daughter</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Date of Birth (optional)</label>
+      <input type="date" id="dob" value="1990-01-15">
+    </div>
+
+    <button type="submit" id="submitBtn" class="btn">Upload & Analyze</button>
+  </form>
+
+  <div id="result"></div>
+</div>
+
+<script>
+const API = window.location.origin;
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const fileNameEl = document.getElementById('fileName');
+const form = document.getElementById('uploadForm');
+const submitBtn = document.getElementById('submitBtn');
+const resultDiv = document.getElementById('result');
+const statusBar = document.getElementById('status-bar');
+let selectedFile = null;
+
+// Health check
+fetch(API + '/health').then(r => r.json()).then(d => {
+  statusBar.className = 'status-bar ok';
+  statusBar.innerHTML = '<span class="dot green"></span><span>Server healthy — ' + d.service + ' v' + d.version + '</span>';
+}).catch(() => {
+  statusBar.className = 'status-bar fail';
+  statusBar.innerHTML = '<span class="dot red"></span><span>Server unreachable at ' + API + '</span>';
+});
+
+// Drop zone
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) setFile(fileInput.files[0]); });
+
+function setFile(f) {
+  selectedFile = f;
+  fileNameEl.textContent = f.name + ' (' + (f.size / 1024 / 1024).toFixed(2) + ' MB)';
+}
+
+// Helpers
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function val(v) { return v != null && v !== '' ? esc(String(v)) : '<span style="color:#ccc">—</span>'; }
+function kvRow(label, value) { return `<tr><td>${esc(label)}</td><td>${val(value)}</td></tr>`; }
+function kvTable(rows) { return `<table class="kv-table">${rows}</table>`; }
+
+function scoreBadge(score) {
+  if (score == null) return '';
+  const n = parseFloat(score);
+  const cls = n >= 70 ? 'badge-green' : n >= 40 ? 'badge-yellow' : 'badge-red';
+  return `<span class="badge ${cls}">${n.toFixed(1)}</span>`;
+}
+function scoreBar(label, score, max) {
+  if (score == null) return '';
+  max = max || 100;
+  const pct = Math.min((score / max) * 100, 100);
+  const color = pct >= 70 ? '#22c55e' : pct >= 40 ? '#eab308' : '#ef4444';
+  return `<div class="score-bar-wrap">
+    <div class="score-label"><span>${esc(label)}</span><span>${parseFloat(score).toFixed(1)} / ${max}</span></div>
+    <div class="score-track"><div class="score-fill" style="width:${pct}%;background:${color}"></div></div>
+  </div>`;
+}
+function zonePill(zone) {
+  const z = (zone || '').toLowerCase();
+  const cls = z.includes('green') ? 'zone-green' : z.includes('red') ? 'zone-red' : 'zone-yellow';
+  const icon = z.includes('green') ? '✓' : z.includes('red') ? '✗' : '!';
+  return `<span class="zone-pill ${cls}">${icon} ${esc(zone)}</span>`;
+}
+
+// Build result HTML
+function renderResult(data, elapsed) {
+  let html = '';
+
+  // ── Header ──
+  const verdictText = data.verdict?.overallVerdict || data.verdict?.verdict || 'Analyzed';
+  const verdictCls = verdictText.toLowerCase().includes('good') || verdictText.toLowerCase().includes('accept') ? 'badge-green'
+    : verdictText.toLowerCase().includes('reject') || verdictText.toLowerCase().includes('bad') ? 'badge-red' : 'badge-yellow';
+  html += `<div class="result-card success">
+    <div class="result-header">
+      <span>Analysis Complete <span class="badge ${verdictCls}" style="margin-left:8px">${esc(verdictText)}</span></span>
+      <span class="elapsed">${elapsed}s</span>
+    </div>`;
+
+  // ── Tabs ──
+  html += `<div class="tabs">
+    <div class="tab active" data-tab="overview">Overview</div>
+    <div class="tab" data-tab="scores">Scores</div>
+    <div class="tab" data-tab="validation">Validation</div>
+    <div class="tab" data-tab="details">Details</div>
+    <div class="tab" data-tab="raw">Raw JSON</div>
+  </div>`;
+
+  // ── Tab: Overview ──
+  html += `<div class="tab-content active" data-tab="overview">`;
+
+  // Policy Info
+  if (data.policy) {
+    const p = data.policy;
+    html += `<div class="section"><div class="section-title">Policy Information</div>`;
+    html += kvTable(
+      kvRow('Policy Number', p.policyNumber) +
+      kvRow('UIN', p.uin) +
+      kvRow('Provider', p.insuranceProvider) +
+      kvRow('Type', p.policyType) +
+      kvRow('Policy Holder', p.policyHolderName) +
+      kvRow('Insured Name', p.insuredName) +
+      kvRow('Sum Assured', p.sumAssured ? '₹ ' + Number(p.sumAssured).toLocaleString('en-IN') : null) +
+      kvRow('Premium', p.premium ? '₹ ' + Number(p.premium).toLocaleString('en-IN') : null) +
+      kvRow('Frequency', p.premiumFrequency) +
+      kvRow('Start Date', p.startDate) +
+      kvRow('End Date', p.endDate) +
+      kvRow('Status', p.status)
+    );
+    html += `</div>`;
+  }
+
+  // Classification
+  if (data.classification) {
+    const c = data.classification;
+    html += `<div class="section"><div class="section-title">Classification</div>`;
+    let rows = kvRow('Category', c.category) + kvRow('Sub-category', c.subcategory);
+    if (c.confidence != null) rows += kvRow('Confidence', (c.confidence * 100).toFixed(0) + '%');
+    if (c.method) rows += kvRow('Method', c.method);
+    html += kvTable(rows);
+    html += `</div>`;
+  }
+
+  // DB Match
+  if (data.dbMatch) {
+    const db = data.dbMatch;
+    html += `<div class="section"><div class="section-title">Database Match</div>`;
+    let rows = kvRow('Matched', db.matched ? 'Yes' : 'No');
+    if (db.categoryId) rows += kvRow('Category ID', db.categoryId);
+    if (db.subcategoryId) rows += kvRow('Subcategory ID', db.subcategoryId);
+    if (db.productByUin) {
+      rows += kvRow('UIN Product', db.productByUin.product_name || db.productByUin.productName);
+      rows += kvRow('Company', db.productByUin.company_name || db.productByUin.companyName);
+    }
+    html += kvTable(rows);
+    if (db.topProducts && db.topProducts.length) {
+      html += `<div style="margin-top:10px;font-size:12px;color:#6b7280;font-weight:600">Top Matches:</div>`;
+      db.topProducts.forEach((p, i) => {
+        const name = p.product_name || p.productName || 'Unknown';
+        const company = p.company_name || p.companyName || '';
+        html += `<div style="font-size:12px;padding:4px 0">${i+1}. ${esc(name)} <span style="color:#888">— ${esc(company)}</span></div>`;
+      });
+    }
+    html += `</div>`;
+  }
+
+  // Provider
+  if (data.provider) {
+    const pr = data.provider;
+    html += `<div class="section"><div class="section-title">Insurance Provider</div>`;
+    html += `<div class="provider-card">
+      <div class="provider-icon">🏢</div>
+      <div class="provider-info">
+        <div class="provider-name">${val(pr.fullName || pr.providerName)}</div>
+        <div class="provider-sub">${val(pr.type)}${pr.founded ? ' · Founded ' + pr.founded : ''}${pr.headquarters ? ' · ' + pr.headquarters : ''}</div>
+      </div>
+    </div>`;
+    if (pr.claimSettlementRatio) {
+      html += `<div style="margin-top:10px">`;
+      html += scoreBar('Claim Settlement Ratio' + (pr.claimSettlementYear ? ' (' + pr.claimSettlementYear + ')' : ''), pr.claimSettlementRatio);
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+
+  // Zones
+  if (data.zones) {
+    html += `<div class="section"><div class="section-title">Zone Classification</div>`;
+    if (data.zones.overallZone) html += zonePill(data.zones.overallZone);
+    if (data.zones.zones && typeof data.zones.zones === 'object') {
+      Object.entries(data.zones.zones).forEach(([k, v]) => {
+        const zone = typeof v === 'object' ? (v.zone || v.classification || '') : v;
+        if (zone) html += zonePill(k + ': ' + zone);
+      });
+    }
+    html += `</div>`;
+  }
+
+  html += `</div>`; // end overview tab
+
+  // ── Tab: Scores ──
+  html += `<div class="tab-content" data-tab="scores">`;
+  if (data.scores) {
+    const s = data.scores;
+    html += `<div class="section"><div class="section-title">Universal Scores</div>`;
+    if (s.overall != null) html += scoreBar('Overall Score', s.overall);
+    if (s.coverage != null) html += scoreBar('Coverage', s.coverage);
+    if (s.value != null) html += scoreBar('Value for Money', s.value);
+    if (s.trust != null) html += scoreBar('Trust / Provider', s.trust);
+    if (s.transparency != null) html += scoreBar('Transparency', s.transparency);
+    // Handle nested scores
+    if (typeof s === 'object') {
+      Object.entries(s).forEach(([k, v]) => {
+        if (['overall','coverage','value','trust','transparency'].includes(k)) return;
+        if (typeof v === 'number') html += scoreBar(k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase()), v);
+        if (typeof v === 'object' && v.score != null) html += scoreBar(k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase()), v.score);
+      });
+    }
+    html += `</div>`;
+  }
+  if (data.verdict) {
+    html += `<div class="section"><div class="section-title">Verdict</div>`;
+    let rows = '';
+    Object.entries(data.verdict).forEach(([k, v]) => {
+      if (v != null && typeof v !== 'object') rows += kvRow(k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase()), v);
+    });
+    html += kvTable(rows);
+    html += `</div>`;
+  }
+  html += `</div>`;
+
+  // ── Tab: Validation ──
+  html += `<div class="tab-content" data-tab="validation">`;
+  if (data.validation) {
+    const v = data.validation;
+    // Data Quality
+    if (v.dataQuality) {
+      const dq = v.dataQuality;
+      html += `<div class="section"><div class="section-title">Data Quality</div>`;
+      html += `<div style="margin-bottom:10px">`;
+      html += dq.hasErrors ? '<span class="badge badge-red">Has Errors</span> ' : '';
+      html += dq.hasWarnings ? '<span class="badge badge-yellow">Has Warnings</span> ' : '';
+      html += !dq.hasIssues ? '<span class="badge badge-green">No Issues</span>' : '';
+      html += `<span class="badge badge-gray" style="margin-left:4px">${dq.totalIssues || 0} issues</span>`;
+      html += `</div>`;
+      if (dq.errors && dq.errors.length) {
+        html += `<ul class="issue-list">`;
+        dq.errors.forEach(e => { html += `<li class="err">${esc(typeof e === 'string' ? e : e.message || JSON.stringify(e))}</li>`; });
+        html += `</ul>`;
+      }
+      if (dq.warnings && dq.warnings.length) {
+        html += `<ul class="issue-list">`;
+        dq.warnings.forEach(w => { html += `<li class="warn">${esc(typeof w === 'string' ? w : w.message || JSON.stringify(w))}</li>`; });
+        html += `</ul>`;
+      }
+      if (dq.recommendations && dq.recommendations.length) {
+        html += `<div style="margin-top:10px;font-size:12px;color:#6b7280;font-weight:600">Recommendations:</div>`;
+        html += `<ul class="rec-list">`;
+        dq.recommendations.forEach(r => { html += `<li>${esc(typeof r === 'string' ? r : r.message || JSON.stringify(r))}</li>`; });
+        html += `</ul>`;
+      }
+      html += `</div>`;
+    }
+    // Four checks
+    if (v.fourChecks) {
+      html += `<div class="section"><div class="section-title">Four-Point Verification</div>`;
+      let rows = '';
+      Object.entries(v.fourChecks).forEach(([k, val]) => {
+        if (typeof val === 'boolean') rows += kvRow(k, val ? '✓ Pass' : '✗ Fail');
+        else if (val != null && typeof val !== 'object') rows += kvRow(k, val);
+      });
+      html += kvTable(rows);
+      html += `</div>`;
+    }
+    // IRDAI compliance
+    if (data.compliance) {
+      html += `<div class="section"><div class="section-title">IRDAI Compliance</div>`;
+      let rows = '';
+      Object.entries(data.compliance).forEach(([k, v]) => {
+        if (v != null && typeof v !== 'object') rows += kvRow(k.replace(/([A-Z])/g, ' $1'), v);
+      });
+      html += kvTable(rows);
+      html += `</div>`;
+    }
+  }
+  html += `</div>`;
+
+  // ── Tab: Details ──
+  html += `<div class="tab-content" data-tab="details">`;
+  // Extraction
+  if (data.extraction) {
+    html += `<div class="section"><div class="section-title">Extracted Fields</div>`;
+    Object.entries(data.extraction).forEach(([category, fields]) => {
+      if (category === 'metadata') return;
+      if (typeof fields === 'object' && fields) {
+        html += `<div style="font-size:12px;font-weight:700;color:#4f46e5;margin:10px 0 6px;text-transform:uppercase">${esc(category)}</div>`;
+        let rows = '';
+        Object.entries(fields).forEach(([k, v]) => {
+          const display = typeof v === 'object' && v ? (v.value != null ? v.value : JSON.stringify(v)) : v;
+          const conf = typeof v === 'object' && v && v.confidence != null ? ` <span class="badge badge-gray">${(v.confidence * 100).toFixed(0)}%</span>` : '';
+          rows += `<tr><td>${esc(k)}</td><td>${val(display)}${conf}</td></tr>`;
+        });
+        html += kvTable(rows);
+      }
+    });
+    html += `</div>`;
+  }
+  // Recommendations
+  if (data.recommendations) {
+    html += `<div class="section"><div class="section-title">Recommendations</div>`;
+    if (Array.isArray(data.recommendations)) {
+      html += `<ul class="rec-list">`;
+      data.recommendations.forEach(r => {
+        html += `<li>${esc(typeof r === 'string' ? r : r.recommendation || r.message || JSON.stringify(r))}</li>`;
+      });
+      html += `</ul>`;
+    } else if (typeof data.recommendations === 'object') {
+      Object.entries(data.recommendations).forEach(([k, v]) => {
+        html += `<div style="font-size:12px;font-weight:700;color:#4f46e5;margin:10px 0 4px">${esc(k)}</div>`;
+        if (Array.isArray(v)) {
+          html += `<ul class="rec-list">`;
+          v.forEach(r => { html += `<li>${esc(typeof r === 'string' ? r : r.recommendation || r.message || JSON.stringify(r))}</li>`; });
+          html += `</ul>`;
+        } else {
+          html += `<div style="font-size:13px;padding:4px 0">${val(v)}</div>`;
+        }
+      });
+    }
+    html += `</div>`;
+  }
+  html += `</div>`;
+
+  // ── Tab: Raw JSON ──
+  html += `<div class="tab-content" data-tab="raw">`;
+  html += `<pre>${esc(JSON.stringify(data, null, 2))}</pre>`;
+  html += `</div>`;
+
+  // ── Downloads ──
+  html += `<div class="download-bar">`;
+  // Report PDF
+  if (data.report && data.report.url) {
+    html += `<a href="${esc(data.report.url)}" target="_blank" class="btn btn-sm btn-green" download>⬇ Download Report PDF</a>`;
+  }
+  // Original document
+  if (data.policy && data.policy.originalDocumentUrl) {
+    html += `<a href="${esc(data.policy.originalDocumentUrl)}" target="_blank" class="btn btn-sm btn-outline" download>⬇ Original Document</a>`;
+  }
+  // JSON export
+  html += `<button class="btn btn-sm btn-outline" onclick="downloadJSON()">⬇ Export JSON</button>`;
+  html += `</div>`;
+
+  html += `</div>`; // end result-card
+
+  return html;
+}
+
+// JSON download
+let lastResponse = null;
+function downloadJSON() {
+  if (!lastResponse) return;
+  const blob = new Blob([JSON.stringify(lastResponse, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'policy_analysis_' + (lastResponse.policyId || 'result') + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Tab switching
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('tab')) {
+    const tabName = e.target.dataset.tab;
+    const card = e.target.closest('.result-card');
+    card.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
+    card.querySelectorAll('.tab-content').forEach(tc => tc.classList.toggle('active', tc.dataset.tab === tabName));
+  }
+});
+
+// Submit
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!selectedFile) { alert('Please select a PDF file'); return; }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spinner"></span>Analyzing... this may take 30-60s';
+  resultDiv.innerHTML = '';
+
+  const fd = new FormData();
+  fd.append('policyDocument', selectedFile);
+  fd.append('policyFor', document.getElementById('policyFor').value);
+  fd.append('name', document.getElementById('name').value);
+  fd.append('gender', document.getElementById('gender').value);
+  fd.append('relationship', document.getElementById('relationship').value);
+  fd.append('uploadedAt', new Date().toISOString());
+  fd.append('userId', '999999');
+  const dob = document.getElementById('dob').value;
+  if (dob) fd.append('dateOfBirth', dob);
+
+  const start = Date.now();
+  try {
+    const res = await fetch(API + '/api/policy/upload', { method: 'POST', body: fd });
+    const data = await res.json();
+    const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+    lastResponse = data;
+
+    if (res.ok && data.success) {
+      resultDiv.innerHTML = renderResult(data, elapsed);
+    } else {
+      resultDiv.innerHTML = `
+        <div class="result-card error">
+          <div class="result-header">
+            <span>Error ${res.status}</span>
+            <span class="elapsed">${elapsed}s</span>
+          </div>
+          <div style="margin-bottom:12px"><span class="badge badge-red">${esc(data.error_code || 'ERROR')}</span></div>
+          <p style="font-size:14px;margin-bottom:12px">${esc(data.message || data.detail || 'Unknown error')}</p>
+          <details><summary>Raw Response</summary><pre>${esc(JSON.stringify(data, null, 2))}</pre></details>
+        </div>`;
+    }
+  } catch (err) {
+    resultDiv.innerHTML = `
+      <div class="result-card error">
+        <div class="result-header"><span>Network Error</span></div>
+        <pre>${esc(err.message)}</pre>
+      </div>`;
+  }
+
+  submitBtn.disabled = false;
+  submitBtn.innerHTML = 'Upload & Analyze';
+});
+</script>
+</body>
+</html>

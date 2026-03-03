@@ -1,0 +1,39 @@
+# =============================================================
+# EAZR Chat — Development Overrides (auto-loaded)
+# Skip in production: docker compose -f docker-compose.yml up -d
+# =============================================================
+
+services:
+  # ── pgAdmin 4 — PostgreSQL Web UI ──────────────────────
+  eazr-pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: eazr-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@eazr.in
+      PGADMIN_DEFAULT_PASSWORD: eazr_admin
+      PGADMIN_LISTEN_PORT: 5050
+    ports:
+      - "5050:5050"
+    depends_on:
+      eazr-postgres:
+        condition: service_healthy
+    networks:
+      - eazr-network
+
+  # ── Mongo Express — MongoDB Web UI ─────────────────────
+  eazr-mongo-express:
+    image: mongo-express:latest
+    container_name: eazr-mongo-express
+    restart: unless-stopped
+    environment:
+      ME_CONFIG_MONGODB_URL: "mongodb://eazr-mongo:27017/"
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: eazr_admin
+    ports:
+      - "8081:8081"
+    depends_on:
+      eazr-mongo:
+        condition: service_healthy
+    networks:
+      - eazr-network

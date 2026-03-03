@@ -1,0 +1,185 @@
+{
+  "projectName": "EAZR Chat",
+  "branchName": "ralph/security-improvements",
+  "description": "Security improvements and feature enhancements identified from code audit",
+  "createdAt": "2026-01-20",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Replace bare except clauses with Exception",
+      "priority": 1,
+      "passes": true,
+      "category": "code-quality",
+      "acceptanceCriteria": [
+        "All bare 'except:' statements replaced with 'except Exception:'",
+        "Changes made in routers/, services/, ai_chat_components/",
+        "Code still runs without syntax errors",
+        "No functional behavior changes"
+      ],
+      "estimatedFiles": [
+        "routers/chat.py",
+        "routers/admin.py",
+        "services/auth_service.py"
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Add input validation middleware",
+      "priority": 2,
+      "passes": true,
+      "category": "security",
+      "acceptanceCriteria": [
+        "Create input_validation.py in core/",
+        "Validate max message length (10000 chars)",
+        "Strip dangerous HTML/script tags",
+        "Add middleware to app.py",
+        "Unit tests for validation functions"
+      ],
+      "estimatedFiles": [
+        "core/input_validation.py",
+        "app.py"
+      ]
+    },
+    {
+      "id": "US-003",
+      "title": "Add request logging middleware",
+      "priority": 3,
+      "passes": true,
+      "category": "observability",
+      "acceptanceCriteria": [
+        "Log all incoming requests with timestamp, method, path",
+        "Log response status codes",
+        "Don't log sensitive data (tokens, passwords)",
+        "Use structlog for structured logging",
+        "Add to middleware setup"
+      ],
+      "estimatedFiles": [
+        "core/middleware.py",
+        "core/logging_config.py"
+      ]
+    },
+    {
+      "id": "US-004",
+      "title": "Add health check for all services",
+      "priority": 4,
+      "passes": true,
+      "category": "observability",
+      "acceptanceCriteria": [
+        "GET /health endpoint checks MongoDB connection",
+        "Checks Redis connection",
+        "Returns status of each service",
+        "Returns overall healthy/unhealthy status",
+        "Response time included in health check"
+      ],
+      "estimatedFiles": [
+        "routers/health.py"
+      ]
+    },
+    {
+      "id": "US-005",
+      "title": "Add API versioning support",
+      "priority": 5,
+      "passes": true,
+      "category": "api-design",
+      "acceptanceCriteria": [
+        "Support /api/v1/ prefix for all routes",
+        "Legacy routes still work (backwards compatible)",
+        "Version header X-API-Version returned",
+        "Documentation updated"
+      ],
+      "estimatedFiles": [
+        "app.py",
+        "core/config.py"
+      ]
+    },
+    {
+      "id": "US-006",
+      "title": "Add audit logging for sensitive operations",
+      "priority": 6,
+      "passes": true,
+      "category": "security",
+      "acceptanceCriteria": [
+        "Create audit_logger.py in services/",
+        "Log login attempts (success/failure)",
+        "Log password/token changes",
+        "Log admin actions",
+        "Store in MongoDB audit_logs collection",
+        "Include user_id, action, timestamp, IP"
+      ],
+      "estimatedFiles": [
+        "services/audit_logger.py",
+        "services/auth_service.py",
+        "routers/admin.py"
+      ]
+    },
+    {
+      "id": "US-007",
+      "title": "Add password strength validation",
+      "priority": 7,
+      "passes": true,
+      "category": "security",
+      "acceptanceCriteria": [
+        "Admin passwords require min 12 characters",
+        "Must include uppercase, lowercase, number, symbol",
+        "Add validation function to security_utils.py",
+        "Return helpful error messages"
+      ],
+      "estimatedFiles": [
+        "session_security/security_utils.py",
+        "routers/admin.py"
+      ]
+    },
+    {
+      "id": "US-008",
+      "title": "Add graceful shutdown handling",
+      "priority": 8,
+      "passes": true,
+      "category": "reliability",
+      "acceptanceCriteria": [
+        "Handle SIGTERM and SIGINT signals",
+        "Close MongoDB connections cleanly",
+        "Close Redis connections cleanly",
+        "Wait for in-flight requests to complete",
+        "Log shutdown progress"
+      ],
+      "estimatedFiles": [
+        "app.py"
+      ]
+    },
+    {
+      "id": "US-009",
+      "title": "Add request ID tracking",
+      "priority": 9,
+      "passes": true,
+      "category": "observability",
+      "acceptanceCriteria": [
+        "Generate unique request ID for each request",
+        "Add X-Request-ID header to responses",
+        "Include request ID in all logs",
+        "Accept X-Request-ID from client if provided"
+      ],
+      "estimatedFiles": [
+        "core/middleware.py"
+      ]
+    },
+    {
+      "id": "US-010",
+      "title": "Add environment validation on startup",
+      "priority": 10,
+      "passes": true,
+      "category": "reliability",
+      "acceptanceCriteria": [
+        "Check required env vars on startup",
+        "Fail fast with clear error messages",
+        "List all missing variables",
+        "Warn about insecure default values"
+      ],
+      "estimatedFiles": [
+        "core/config.py",
+        "app.py"
+      ]
+    }
+  ],
+  "completedCount": 10,
+  "totalCount": 10
+}

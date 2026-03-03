@@ -1,0 +1,139 @@
+# =============================================================
+# EAZR Chat — Docker Compose
+# =============================================================
+# Usage:
+#   docker compose up -d              # Start all services
+#   docker compose up -d --build      # Rebuild app and start
+#   docker compose logs -f eazr-app   # Follow app logs
+#   docker compose down               # Stop all
+#   docker compose down -v            # Stop + remove volumes
+# =============================================================
+
+services:
+  # ── PostgreSQL 15 — Insurance Product Database ──────────
+  eazr-postgres:
+    image: postgres:15-alpine
+    container_name: eazr-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: eazr
+      POSTGRES_PASSWORD: eazr_secure_2024
+      POSTGRES_DB: insurance_india
+    ports:
+      - "5432:5432"
+    volumes:
+      - eazr-pgdata:/var/lib/postgresql/data
+      - ./botproject/scripts/pg-init.sh:/docker-entrypoint-initdb.d/01-pg-init.sh:ro
+      - ./botproject/init:/docker-init-sql/init:ro
+      - ./botproject/seed:/docker-init-sql/seed:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U eazr -d insurance_india"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - eazr-network
+
+  # ── MongoDB 7 — Chat, Policies, User Data ──────────────
+  eazr-mongo:
+    image: mongo:7
+    container_name: eazr-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: insurance_analysis_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - eazr-mongodata:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "--quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - eazr-network
+
+  # ── Redis 7 — Cache, Sessions, Rate Limiting ───────────
+  eazr-redis:
+    image: redis:7-alpine
+    container_name: eazr-redis
+    restart: unless-stopped
+    command: >
+      redis-server
+      --appendonly yes
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - eazr-redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    networks:
+      - eazr-network
+
+  # ── FastAPI Application — EAZR Chat Engine ─────────────
+  eazr-app:
+    build:
+      context: ./botproject
+      dockerfile: Dockerfile
+    container_name: eazr-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Docker overrides — point connections to container hostnames
+      ENVIRONMENT: local
+      REDIS_HOST: eazr-redis
+      REDIS_PORT: "6379"
+      MONGODB_URI_LOCAL: "mongodb://eazr-mongo:27017/"
+      MONGODB_DB_LOCAL: insurance_analysis_db
+      PG_INSURANCE_HOST: eazr-postgres
+      PG_INSURANCE_PORT: "5432"
+      PG_INSURANCE_USER: eazr
+      PG_INSURANCE_PASSWORD: eazr_secure_2024
+      PG_INSURANCE_DB: insurance_india
+      TYPEORM_HOST: eazr-postgres
+      TYPEORM_PORT: "5432"
+      TYPEORM_USERNAME: eazr
+      TYPEORM_PASSWORD: eazr_secure_2024
+    volumes:
+      - ./.env:/app/.env:ro
+      - ./botproject/faiss_index:/app/faiss_index
+      - ./botproject/eazrapp-firebase-adminsdk.json:/app/eazrapp-firebase-adminsdk.json:ro
+    depends_on:
+      eazr-postgres:
+        condition: service_healthy
+      eazr-mongo:
+        condition: service_healthy
+      eazr-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - eazr-network
+
+networks:
+  eazr-network:
+    name: eazr-network
+    driver: bridge
+
+volumes:
+  eazr-pgdata:
+    name: eazr-pgdata
+  eazr-mongodata:
+    name: eazr-mongodata
+  eazr-redisdata:
+    name: eazr-redisdata
