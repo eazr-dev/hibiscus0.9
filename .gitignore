@@ -1,0 +1,32 @@
+# Python
+botenv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Env / Secrets
+.env
+*.env
+botproject/eazrapp-firebase-adminsdk.json
+
+# FAISS index (large binary)
+botproject/faiss_index/
+
+# Uploads / generated files
+botproject/uploads/
+botproject/generated_pdfs/
+botproject/reports/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDE
+.vscode/
+.idea/
