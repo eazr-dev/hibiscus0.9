@@ -47,7 +47,13 @@ async def run(state: HibiscusState) -> dict:
 
     # ── L6: Document Memory ────────────────────────────────────────────
     doc_context = None
-    if state.get("uploaded_files") or state.get("has_document"):
+    message = state.get("message", "").lower()
+    _doc_keywords = ["my policy", "this policy", "the document", "uploaded", "what did i upload",
+                     "my insurance", "the policy", "not covered", "coverage", "exclusion",
+                     "copay", "premium", "sum insured", "eazr score"]
+    message_refs_doc = any(kw in message for kw in _doc_keywords)
+    should_load_doc = bool(state.get("uploaded_files")) or state.get("has_document") or message_refs_doc
+    if should_load_doc:
         try:
             from hibiscus.memory.layers.document import get_latest_document
             doc_context = await get_latest_document(state["user_id"])

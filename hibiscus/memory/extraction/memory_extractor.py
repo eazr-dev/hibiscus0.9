@@ -163,8 +163,7 @@ async def _run_extraction(
         result = await call_llm(
             messages=prompt_messages,
             tier="deepseek_v3",
-            purpose="memory_extraction",
-            max_tokens=_EXTRACTION_MAX_TOKENS,
+            extra_kwargs={"max_tokens": _EXTRACTION_MAX_TOKENS},
         )
         raw_text = result.get("content", "").strip()
         extracted = _parse_json_response(raw_text)

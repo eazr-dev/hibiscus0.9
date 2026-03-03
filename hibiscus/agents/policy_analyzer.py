@@ -78,7 +78,33 @@ class PolicyAnalyzerAgent(BaseAgent):
                         analysis_id=file_info["analysis_id"],
                         user_id=state.get("user_id", ""),
                     )
-                    extraction_data = analysis_result.get("extracted_data", {})
+                    # Botproject returns {policy: {...}, provider: {...}, ...}
+                    # Map to our extraction_data format
+                    if analysis_result.get("success") and analysis_result.get("policy"):
+                        bp_policy = analysis_result["policy"]
+                        bp_provider = analysis_result.get("provider", {})
+                        extraction_data = {
+                            "insurer": bp_policy.get("insuranceProvider", ""),
+                            "product_name": bp_policy.get("productName", bp_policy.get("policyNumber", "")),
+                            "policy_type": bp_policy.get("policyType", ""),
+                            "policy_number": bp_policy.get("policyNumber", ""),
+                            "policy_holder": bp_policy.get("policyHolderName", ""),
+                            "sum_insured": bp_policy.get("coverageAmount") or bp_policy.get("sumAssured", 0),
+                            "premium": bp_policy.get("premium", 0),
+                            "premium_frequency": bp_policy.get("premiumFrequency", "annual"),
+                            "start_date": bp_policy.get("startDate", ""),
+                            "end_date": bp_policy.get("endDate", ""),
+                            "status": bp_policy.get("status", ""),
+                            "copay": bp_policy.get("copay", "0%"),
+                            "csr": bp_provider.get("claimSettlementRatio", ""),
+                            "network_hospitals": bp_provider.get("networkSize", ""),
+                            "exclusions": analysis_result.get("exclusions", []),
+                            "gaps": analysis_result.get("gapAnalysis", []),
+                            "protection_score": analysis_result.get("protectionScore"),
+                            "sections": analysis_result.get("sections", []),
+                        }
+                    else:
+                        extraction_data = analysis_result.get("extracted_data", {}) or analysis_result.get("extractedData", {})
                     extraction_confidence = 0.90
                     sources.append({
                         "type": "document_extraction",

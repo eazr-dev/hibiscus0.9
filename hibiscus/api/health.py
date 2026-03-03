@@ -43,7 +43,7 @@ async def _check_mongodb() -> Dict[str, Any]:
     start = time.time()
     try:
         from hibiscus.memory.layers.document import _db
-        if _db:
+        if _db is not None:
             await _db.command("ping")
             return {"status": "ok", "latency_ms": int((time.time() - start) * 1000)}
         return {"status": "degraded", "reason": "in_memory_fallback"}
@@ -86,6 +86,42 @@ async def _check_anthropic() -> Dict[str, Any]:
     return {"status": "configured", "model": settings.claude_sonnet_model}
 
 
+async def _check_neo4j() -> Dict[str, Any]:
+    """Check Neo4j connectivity."""
+    start = time.time()
+    try:
+        from hibiscus.knowledge.graph.client import kg_client
+        if not kg_client.is_connected:
+            return {"status": "not_initialized", "note": "Run seed-kg to initialize"}
+        result = await kg_client.query("RETURN 1 AS n", query_name="health")
+        if result:
+            return {"status": "ok", "latency_ms": int((time.time() - start) * 1000)}
+        return {"status": "degraded", "reason": "query returned empty"}
+    except Exception as e:
+        return {"status": "error", "error": str(e)}
+
+
+async def _check_qdrant() -> Dict[str, Any]:
+    """Check Qdrant connectivity."""
+    start = time.time()
+    try:
+        from hibiscus.knowledge.rag.client import rag_client
+        if not rag_client.is_available:
+            # Try to initialize
+            await rag_client.connect()
+        if rag_client._client is not None:
+            info = await rag_client._client.get_collections()
+            collections = [c.name for c in info.collections]
+            return {
+                "status": "ok",
+                "latency_ms": int((time.time() - start) * 1000),
+                "collections": collections,
+            }
+        return {"status": "not_initialized", "note": "Qdrant client not connected"}
+    except Exception as e:
+        return {"status": "error", "error": str(e)}
+
+
 @router.get(
     "/health",
     summary="Hibiscus health check — all dependencies",
@@ -98,14 +134,17 @@ async def health() -> JSONResponse:
     start = time.time()
 
     # Run all checks in parallel
-    redis_result, mongo_result, eazr_result, ds_result, claude_result = await asyncio.gather(
+    results = await asyncio.gather(
         _check_redis(),
         _check_mongodb(),
         _check_eazr_api(),
         _check_deepseek(),
         _check_anthropic(),
+        _check_neo4j(),
+        _check_qdrant(),
         return_exceptions=True,
     )
+    redis_result, mongo_result, eazr_result, ds_result, claude_result, neo4j_result, qdrant_result = results
 
     # Handle exceptions from gather
     def safe_result(r, name):
@@ -119,9 +158,8 @@ async def health() -> JSONResponse:
         "eazr_api": safe_result(eazr_result, "eazr_api"),
         "deepseek": safe_result(ds_result, "deepseek"),
         "anthropic": safe_result(claude_result, "anthropic"),
-        # Phase 2 dependencies
-        "neo4j": {"status": "not_started", "phase": "Phase 2"},
-        "qdrant": {"status": "not_started", "phase": "Phase 2"},
+        "neo4j": safe_result(neo4j_result, "neo4j"),
+        "qdrant": safe_result(qdrant_result, "qdrant"),
     }
 
     # Critical services: Redis and EAZR API are critical for Phase 1
@@ -150,7 +188,10 @@ async def health() -> JSONResponse:
         "dependencies": dependencies,
         "capabilities": {
             "phase_1_ready": critical_healthy and llm_ready,
-            "phase_2_ready": False,  # Neo4j + Qdrant not yet started
+            "phase_2_ready": (
+                dependencies["neo4j"].get("status") == "ok" and
+                dependencies["qdrant"].get("status") == "ok"
+            ),
             "streaming": True,
             "multi_agent": True,
         },

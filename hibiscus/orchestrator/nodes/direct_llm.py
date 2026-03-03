@@ -46,11 +46,32 @@ async def run(state: HibiscusState) -> dict:
         user_id=state.get("user_id", "?"),
     )
     start = time.time()
-    plog.step_start("direct_llm", complexity=state.get("complexity"), intent=state.get("intent"))
+    intent = state.get("intent", "general_chat")
+    complexity = state.get("complexity", "L1")
+    plog.step_start("direct_llm", complexity=complexity, intent=intent)
 
     message = state.get("message", "")
     context = _build_context_from_state(state)
     tier = state.get("primary_model", "deepseek_v3")
+
+    # ── Response cache check (L1 educational/general only) ────────────────
+    # Skip cache when user has document context or session history (personalized)
+    from hibiscus.memory.layers.response_cache import (
+        is_cacheable, get_cached_response, set_cached_response,
+    )
+    use_cache = is_cacheable(
+        intent=intent,
+        has_document=state.get("has_document", False),
+        uploaded_files=state.get("uploaded_files", []),
+        document_context=state.get("document_context"),
+    )
+    # Only serve from cache if there is no user-specific context in the prompt
+    if use_cache and not context:
+        cached = await get_cached_response(message)
+        if cached:
+            plog.step_complete("direct_llm", latency_ms=int((time.time() - start) * 1000),
+                               cache_hit=True)
+            return cached
 
     user_content = message
     if context:
@@ -58,6 +79,8 @@ async def run(state: HibiscusState) -> dict:
 
     try:
         from hibiscus.llm.router import call_llm
+        # Cap tokens for L1/L2 — concise answers; users don't need 4096-token essays.
+        max_tokens = 800 if complexity == "L1" else 1500
         llm_response = await call_llm(
             messages=[
                 {"role": "system", "content": _SYSTEM_PROMPT},
@@ -66,6 +89,7 @@ async def run(state: HibiscusState) -> dict:
             tier=tier,
             conversation_id=state.get("conversation_id", "?"),
             agent="direct_llm",
+            extra_kwargs={"max_tokens": max_tokens},
         )
 
         content = llm_response["content"]
@@ -77,12 +101,13 @@ async def run(state: HibiscusState) -> dict:
             tokens_in=llm_response.get("tokens_in", 0),
             tokens_out=llm_response.get("tokens_out", 0),
             model=llm_response.get("model", tier),
+            cache_hit=False,
         )
 
         # Generate follow-up suggestions
-        follow_ups = _generate_follow_ups(state.get("intent", ""), state.get("category", ""))
+        follow_ups = _generate_follow_ups(intent, state.get("category", ""))
 
-        return {
+        result = {
             "response": content,
             "response_type": "text",
             "confidence": 0.75,  # Direct LLM confidence (no tool grounding)
@@ -92,6 +117,12 @@ async def run(state: HibiscusState) -> dict:
             "total_tokens_out": llm_response.get("tokens_out", 0),
             "agents_invoked": [],
         }
+
+        # Store in cache for future identical queries (only for cacheable queries)
+        if use_cache and not context:
+            await set_cached_response(message, result)
+
+        return result
 
     except Exception as e:
         plog.error("direct_llm", error=str(e))

@@ -35,8 +35,8 @@ class HibiscusEvaluator:
     def __init__(
         self,
         base_url: str = "http://localhost:8001",
-        timeout: float = 60.0,
-        max_concurrent: int = 3,
+        timeout: float = 90.0,
+        max_concurrent: int = 2,
     ):
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout

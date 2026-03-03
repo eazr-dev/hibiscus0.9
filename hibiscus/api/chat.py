@@ -171,47 +171,153 @@ async def _stream_response(
     plog: PipelineLogger,
     start_time: float,
 ) -> AsyncGenerator[str, None]:
-    """Generate SSE-formatted streaming response."""
+    """
+    Generate SSE-formatted streaming response.
+
+    Two paths:
+    1. Fast path (L1/L2 simple queries, no agents needed):
+       - Check cache → instant if hit
+       - Stream tokens directly from LLM as they arrive (TTFT ~2-4s)
+    2. Full path (L3/L4 complex queries with agents):
+       - Run full LangGraph pipeline → simulate streaming from completed response
+    """
 
     async def send_chunk(chunk: StreamChunk) -> str:
         return f"data: {json.dumps(chunk.model_dump())}\n\n"
 
+    yield await send_chunk(StreamChunk(
+        type="metadata",
+        metadata={"request_id": request_id, "status": "processing"},
+    ))
+
     try:
-        from hibiscus.orchestrator.graph import run_graph
+        # ── Fast keyword pre-classification (no LLM, instant) ────────────
+        from hibiscus.orchestrator.nodes.intent_classification import (
+            _fast_classify, _determine_agents, _determine_complexity,
+        )
+        message = state.get("message", "")
+        uploaded_files = state.get("uploaded_files", [])
+        fast = _fast_classify(message, uploaded_files)
+        agents_needed = _determine_agents(fast["intent"], fast["category"], fast["has_document"])
+        complexity = _determine_complexity(fast["intent"], fast["has_document"], agents_needed)
 
-        # Run the graph to get classification and routing
-        # For streaming, we emit tokens as they come from the LLM
-        config = {"configurable": {"thread_id": state.get("conversation_id", "unknown")}}
+        # ── Decide path ───────────────────────────────────────────────────
+        is_simple = complexity in ("L1", "L2") and not agents_needed
 
-        # Phase 1: Emit metadata first (fast)
-        yield await send_chunk(StreamChunk(
-            type="metadata",
-            metadata={"request_id": request_id, "status": "processing"},
-        ))
+        if is_simple:
+            # ── Fast path: cache check then direct LLM stream ─────────────
+            from hibiscus.memory.layers.response_cache import (
+                is_cacheable, get_cached_response, set_cached_response,
+            )
+            from hibiscus.llm.router import stream_llm
+            from pathlib import Path
 
-        # Run full pipeline
-        final_state = await run_graph(state, config)
+            _PROMPT_DIR = Path(__file__).parent.parent / "llm" / "prompts"
+            _SYSTEM_PROMPT = (_PROMPT_DIR / "system" / "hibiscus_core.txt").read_text()
 
-        # Stream the response token by token (simulated for now — real streaming in Phase 2)
-        response_text = final_state.get("response", "")
-        chunk_size = 10  # Characters per chunk
+            use_cache = is_cacheable(
+                intent=fast["intent"],
+                has_document=fast["has_document"],
+                uploaded_files=uploaded_files,
+                document_context=state.get("document_context"),
+            )
 
-        for i in range(0, len(response_text), chunk_size):
-            chunk = response_text[i:i + chunk_size]
-            yield await send_chunk(StreamChunk(type="token", content=chunk))
+            # Cache hit → stream cached chunks immediately
+            if use_cache and not state.get("session_history"):
+                cached = await get_cached_response(message)
+                if cached:
+                    response_text = cached.get("response", "")
+                    chunk_size = 15
+                    for i in range(0, len(response_text), chunk_size):
+                        yield await send_chunk(StreamChunk(type="token", content=response_text[i:i + chunk_size]))
+                    total_latency_ms = int((time.time() - start_time) * 1000)
+                    yield await send_chunk(StreamChunk(
+                        type="done",
+                        metadata={
+                            "confidence": cached.get("confidence", 0.75),
+                            "agents_invoked": [],
+                            "latency_ms": total_latency_ms,
+                            "follow_up_suggestions": cached.get("follow_up_suggestions", []),
+                            "eazr_products_relevant": [],
+                            "cache_hit": True,
+                        },
+                    ))
+                    return
 
-        # Final metadata chunk
-        total_latency_ms = int((time.time() - start_time) * 1000)
-        yield await send_chunk(StreamChunk(
-            type="done",
-            metadata={
-                "confidence": final_state.get("confidence", 0.0),
-                "agents_invoked": final_state.get("agents_invoked", []),
-                "latency_ms": total_latency_ms,
-                "follow_up_suggestions": final_state.get("follow_up_suggestions", []),
-                "eazr_products_relevant": final_state.get("eazr_products_relevant", []),
-            },
-        ))
+            # Cache miss → stream tokens from LLM as they arrive (true streaming)
+            full_response = []
+            async for token in stream_llm(
+                messages=[
+                    {"role": "system", "content": _SYSTEM_PROMPT},
+                    {"role": "user", "content": message},
+                ],
+                tier="deepseek_v3",
+                conversation_id=state.get("conversation_id", "?"),
+                agent="direct_llm_stream",
+            ):
+                full_response.append(token)
+                yield await send_chunk(StreamChunk(type="token", content=token))
+
+            response_text = "".join(full_response)
+            total_latency_ms = int((time.time() - start_time) * 1000)
+
+            # Cache the response for future requests
+            if use_cache and not state.get("session_history"):
+                result_payload = {
+                    "response": response_text,
+                    "confidence": 0.75,
+                    "sources": [{"type": "llm_reasoning", "confidence": 0.75}],
+                    "follow_up_suggestions": [],
+                    "agents_invoked": [],
+                }
+                import asyncio
+                asyncio.create_task(set_cached_response(message, result_payload))
+
+            # Fire memory storage in background
+            import asyncio
+            from hibiscus.orchestrator.nodes.memory_storage import _do_store
+            from hibiscus.observability.logger import PipelineLogger as _PLog
+            bg_state = {**state, "response": response_text, "intent": fast["intent"],
+                        "category": fast["category"], "confidence": 0.75, "agents_invoked": []}
+            bg_plog = _PLog(component="memory_storage_bg", request_id=request_id,
+                            session_id=state.get("session_id", "?"), user_id=state.get("user_id", "?"))
+            asyncio.create_task(_do_store(bg_state, bg_plog))
+
+            yield await send_chunk(StreamChunk(
+                type="done",
+                metadata={
+                    "confidence": 0.75,
+                    "agents_invoked": [],
+                    "latency_ms": total_latency_ms,
+                    "follow_up_suggestions": [],
+                    "eazr_products_relevant": [],
+                    "cache_hit": False,
+                },
+            ))
+
+        else:
+            # ── Full path: complex queries with agents ─────────────────────
+            from hibiscus.orchestrator.graph import run_graph
+            config = {"configurable": {"thread_id": state.get("conversation_id", "unknown")}}
+            final_state = await run_graph(state, config)
+
+            # Chunk the completed response
+            response_text = final_state.get("response", "")
+            chunk_size = 15
+            for i in range(0, len(response_text), chunk_size):
+                yield await send_chunk(StreamChunk(type="token", content=response_text[i:i + chunk_size]))
+
+            total_latency_ms = int((time.time() - start_time) * 1000)
+            yield await send_chunk(StreamChunk(
+                type="done",
+                metadata={
+                    "confidence": final_state.get("confidence", 0.0),
+                    "agents_invoked": final_state.get("agents_invoked", []),
+                    "latency_ms": total_latency_ms,
+                    "follow_up_suggestions": final_state.get("follow_up_suggestions", []),
+                    "eazr_products_relevant": final_state.get("eazr_products_relevant", []),
+                },
+            ))
 
     except Exception as e:
         yield await send_chunk(StreamChunk(

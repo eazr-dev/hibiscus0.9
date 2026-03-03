@@ -126,10 +126,17 @@ class TaxAdvisorAgent(BaseAgent):
 
             # ── Step 5: 10(10D) check ──────────────────────────────────────
             exemption_10_10d = None
-            if tax_inputs.get("life_premium") and tax_inputs.get("sum_assured") and tax_inputs.get("annual_life_premium"):
+            # For ULIP queries, sum_assured is not needed — the 2021 threshold rule only checks annual premium
+            has_10_10d_inputs = (
+                tax_inputs.get("life_premium") and tax_inputs.get("annual_life_premium") and
+                (tax_inputs.get("sum_assured") or tax_inputs.get("is_ulip"))
+            )
+            if has_10_10d_inputs:
                 plog.step_start("10_10d_check")
+                # For ULIPs without sum_assured, use 10x premium as proxy (doesn't affect 2021 ULIP threshold check)
+                _sum_assured = float(tax_inputs.get("sum_assured") or tax_inputs["annual_life_premium"] * 10)
                 exemption_10_10d = check_10_10d_exemption(
-                    sum_assured=float(tax_inputs["sum_assured"]),
+                    sum_assured=_sum_assured,
                     annual_premium=float(tax_inputs["annual_life_premium"]),
                     policy_year_of_issue=int(tax_inputs.get("policy_issue_year", 2015)),
                     is_ulip=tax_inputs.get("is_ulip", False),
@@ -236,6 +243,19 @@ class TaxAdvisorAgent(BaseAgent):
                 if sa:
                     inputs["sum_assured"] = sa
 
+        # Self age from message
+        if "age" not in inputs:
+            for pattern in [
+                r"i\s+am\s+(\d{2})\s+(?:years?)?",
+                r"(?:my\s+)?age\s+is\s+(\d{2})",
+                r"(\d{2})\s+year[s\s]+old",
+            ]:
+                m = re.search(pattern, msg_lower)
+                if m:
+                    inputs["age"] = int(m.group(1))
+                    inputs["self_age"] = int(m.group(1))
+                    break
+
         # From message: annual income
         if "annual_income" not in inputs:
             for pattern in [
@@ -248,45 +268,91 @@ class TaxAdvisorAgent(BaseAgent):
                     inputs["annual_income"] = self._parse_amount(m.group(1), m.group(2))
                     break
 
-        # Life premium from message
+        # Tax bracket directly from percentage mention ("I am in 30% tax bracket")
+        if "tax_bracket" not in inputs:
+            m = re.search(r"(\d+)%\s+tax\s+(?:bracket|slab|rate)", msg_lower)
+            if m:
+                inputs["tax_bracket"] = float(m.group(1)) / 100.0
+                # Infer approximate income from tax bracket for 80D computation
+                if "annual_income" not in inputs:
+                    bracket = float(m.group(1))
+                    # Map bracket to representative income (old regime)
+                    if bracket >= 30:
+                        inputs["annual_income"] = 1_500_001  # above ₹15L
+                    elif bracket >= 20:
+                        inputs["annual_income"] = 800_000    # ₹8L
+                    elif bracket >= 5:
+                        inputs["annual_income"] = 400_000    # ₹4L
+
+        # Life premium from message — broader patterns
         if "life_premium" not in inputs:
             for pattern in [
                 r"life\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
                 r"term\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+                # "I pay ₹3 lakhs annually [for ULIP/term/policy]"
+                r"(?:i\s+)?pay\s+(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+(?:annually|per\s+year|yearly)\s+(?:for\s+)?(?:a\s+)?(?:ulip|term|life|lic)",
+                r"(?:ulip|term|lic|life\s+insurance)\s+(?:premium\s+)?(?:of\s+)?(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+                r"pay\s+(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+(?:annually|per\s+year)\s+(?:to\s+lic|for\s+(?:a\s+)?ulip)",
+                r"(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+(?:annually|per\s+year)\s+(?:for\s+(?:a\s+)?ulip|to\s+lic)",
             ]:
                 m = re.search(pattern, msg_lower)
                 if m:
                     inputs["life_premium"] = self._parse_amount(m.group(1), m.group(2))
                     inputs["annual_life_premium"] = inputs["life_premium"]
+                    # Detect ULIP
+                    if "ulip" in msg_lower:
+                        inputs["is_ulip"] = True
                     break
 
-        # Health premium from message
+        # Health premium from message — broader patterns
         if "health_premium" not in inputs:
             for pattern in [
                 r"health\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
                 r"medical\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+                # "pay ₹22,000 for my family health insurance"
+                r"pay\s+(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+for\s+(?:my\s+)?(?:family\s+)?health\s+insurance",
+                r"(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+for\s+(?:my\s+)?(?:family\s+)?health\s+insurance",
+                # "family health insurance of ₹X"
+                r"family\s+health\s+insurance\s+(?:of\s+)?(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
             ]:
                 m = re.search(pattern, msg_lower)
                 if m:
                     inputs["health_premium"] = self._parse_amount(m.group(1), m.group(2))
                     break
 
-        # Parent health premium
-        for pattern in [
-            r"parent(?:s')?\s+health\s+premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
-            r"(?:father|mother)\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
-        ]:
-            m = re.search(pattern, msg_lower)
-            if m:
-                inputs["parent_health_premium"] = self._parse_amount(m.group(1), m.group(2))
-                break
+        # Parent health premium — broader patterns
+        if "parent_health_premium" not in inputs:
+            for pattern in [
+                r"parent(?:s'?)?\s+health\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+                r"(?:father|mother)\s+(?:insurance\s+)?premium\s+(?:of\s+)?(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+                # "₹35,000 for my parents' health insurance"
+                r"(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+for\s+(?:my\s+)?parents?'?\s+health\s+insurance",
+                r"pay\s+(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+for\s+(?:my\s+)?parents?'?\s+health\s+insurance",
+                # "parents' health insurance ... ₹35,000"
+                r"parents?'?\s+health\s+insurance\s+(?:and\s+)?(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+            ]:
+                m = re.search(pattern, msg_lower)
+                if m:
+                    inputs["parent_health_premium"] = self._parse_amount(m.group(1), m.group(2))
+                    break
 
-        # Parent age
-        for pattern in [r"parent(?:s')?\s+age\s+(?:is\s+)?(\d{2})", r"father.*?(\d{2})\s+years?"]:
-            m = re.search(pattern, msg_lower)
-            if m:
-                inputs["parent_age"] = int(m.group(1))
-                break
+        # Parent age — broader patterns
+        if "parent_age" not in inputs:
+            for pattern in [
+                r"parent(?:s')?\s+age\s+(?:is\s+)?(\d{2})",
+                r"father.*?(\d{2})\s+years?",
+                # "they are 65+" / "they are 65 years old" / "parents are 65+"
+                r"(?:they\s+are|they're|parents?\s+are)\s+(\d{2})\+?",
+                r"parents?\s+(?:are\s+)?(?:aged?\s+)?(\d{2})\+?",
+                r"(?:aged?\s+)?(\d{2})\+?\s+(?:years?\s+old\s+)?(?:senior|parent)",
+            ]:
+                m = re.search(pattern, msg_lower)
+                if m:
+                    inputs["parent_age"] = int(m.group(1))
+                    break
+            # Detect "65+" without explicit age number — treat as senior (65)
+            if "parent_age" not in inputs and re.search(r"(?:60|65)\+", msg_lower):
+                inputs["parent_age"] = 65
 
         # Sum assured
         if "sum_assured" not in inputs:
@@ -298,10 +364,43 @@ class TaxAdvisorAgent(BaseAgent):
                     inputs["sum_assured"] = self._parse_amount(m.group(1), m.group(2))
                     break
 
-        # Tax bracket from income
-        annual_income = inputs.get("annual_income", 0)
-        if annual_income:
-            inputs["tax_bracket"] = self._income_to_bracket(annual_income, regime="old")
+        # Tax bracket from income (only if not already set from percentage pattern)
+        if "tax_bracket" not in inputs:
+            annual_income = inputs.get("annual_income", 0)
+            if annual_income:
+                inputs["tax_bracket"] = self._income_to_bracket(annual_income, regime="old")
+
+        # Policy purchase year — for 10(10D) check
+        if "policy_issue_year" not in inputs:
+            for pattern in [
+                r"bought\s+(?:it\s+)?in\s+(?:\w+\s+)?(\d{4})",
+                r"purchased\s+(?:in\s+)?(?:\w+\s+)?(\d{4})",
+                r"took\s+(?:it\s+)?in\s+(?:\w+\s+)?(\d{4})",
+                r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*\s+(\d{4})",
+                r"(?:in\s+)?(\d{4})\s+i\s+(?:bought|purchased|took)",
+            ]:
+                m = re.search(pattern, msg_lower)
+                if m:
+                    year = int(m.group(1))
+                    if 2000 <= year <= 2030:
+                        inputs["policy_issue_year"] = year
+                    break
+
+        # ULIP detection from message
+        if "is_ulip" not in inputs and "ulip" in msg_lower:
+            inputs["is_ulip"] = True
+            # Also mark as life premium context if not yet set
+            if "life_premium" not in inputs:
+                # Try generic ₹X lakh pattern as ULIP premium
+                for pattern in [
+                    r"pay\s+(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?",
+                    r"(?:₹|rs\.?|inr)\s*([\d,]+(?:\.\d+)?)\s*(lakh|crore|l|cr)?\s+(?:annually|per\s+year|yearly)",
+                ]:
+                    m = re.search(pattern, msg_lower)
+                    if m:
+                        inputs["life_premium"] = self._parse_amount(m.group(1), m.group(2))
+                        inputs["annual_life_premium"] = inputs["life_premium"]
+                        break
 
         # Existing 80C investments
         for pattern in [

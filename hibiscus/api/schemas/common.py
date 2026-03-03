@@ -11,7 +11,7 @@ class Source(BaseModel):
 
 
 class UploadedFile(BaseModel):
-    filename: str
+    filename: Optional[str] = None   # Optional when looking up by analysis_id
     doc_id: Optional[str] = None
     analysis_id: Optional[str] = None
     mime_type: str = "application/pdf"

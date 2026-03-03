@@ -18,14 +18,16 @@ COPY hibiscus/pyproject.toml /app/hibiscus/pyproject.toml
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
         fastapi uvicorn[standard] python-multipart \
-        langgraph langchain langchain-core langchain-community \
+        langgraph langchain langchain-core langchain-community langchain-text-splitters \
         litellm openai anthropic \
         httpx tenacity \
         redis hiredis motor pymongo \
         asyncpg sqlalchemy \
         qdrant-client tiktoken \
+        neo4j \
         pydantic pydantic-settings \
-        python-dotenv structlog orjson numpy python-dateutil
+        python-dotenv structlog orjson numpy python-dateutil \
+        tavily-python langsmith
 
 # Copy application code
 COPY hibiscus/ /app/hibiscus/
@@ -42,4 +44,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
 
 EXPOSE 8001
 
-CMD ["uvicorn", "hibiscus.main:app", "--host", "0.0.0.0", "--port", "8001", "--log-config", "/dev/null"]
+CMD ["uvicorn", "hibiscus.main:app", "--host", "0.0.0.0", "--port", "8001", "--no-access-log"]

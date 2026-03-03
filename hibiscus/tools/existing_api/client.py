@@ -107,23 +107,26 @@ class EAZRClient:
 
     def __init__(
         self,
-        base_url: str = EXISTING_CONFIG.api_base_url,
+        base_url: Optional[str] = None,
         session_id:   Optional[str] = None,
         access_token: Optional[str] = None,
         user_id:      Optional[str] = None,
         max_retries:  int = 3,
     ):
+        if base_url is None:
+            # Use settings so EAZR_API_BASE env var is respected (e.g. http://eazr-app:8000 in Docker)
+            from hibiscus.config import settings
+            base_url = settings.eazr_api_base
         self.base_url     = base_url.rstrip("/")
         self.session_id   = session_id
         self.access_token = access_token
         self.user_id      = user_id
         self.max_retries  = max_retries
         self._circuit     = CircuitBreaker()
-        self._http        = httpx.AsyncClient(
-            base_url=self.base_url,
-            headers=self._default_headers(),
-            follow_redirects=True,
-        )
+        # NOTE: Don't create a persistent AsyncClient here — it causes connection
+        # issues when used within FastAPI's uvicorn event loop. Use fresh clients
+        # per request instead (see _request below).
+        self._http        = None
 
     def _default_headers(self) -> Dict[str, str]:
         h: Dict[str, str] = {"Content-Type": "application/json"}
@@ -159,11 +162,16 @@ class EAZRClient:
         for attempt in range(self.max_retries):
             t0 = time.monotonic()
             try:
-                resp = await self._http.request(
-                    method, path,
-                    json=json, params=params, data=data, files=files,
-                    timeout=timeout,
-                )
+                async with httpx.AsyncClient(
+                    base_url=self.base_url,
+                    headers=self._default_headers(),
+                    follow_redirects=True,
+                ) as http:
+                    resp = await http.request(
+                        method, path,
+                        json=json, params=params, data=data, files=files,
+                        timeout=timeout,
+                    )
                 latency_ms = int((time.monotonic() - t0) * 1000)
                 logger.info(
                     "EAZR API %s %s → %d  (%dms)",
@@ -192,7 +200,7 @@ class EAZRClient:
         raise HibiscusToolError(path, 503, f"All {self.max_retries} retries failed", detail=str(last_err))
 
     async def close(self) -> None:
-        await self._http.aclose()
+        pass  # No persistent client to close (uses per-request AsyncClient)
 
     # ── Context manager support ───────────────────────────────────────────────
     async def __aenter__(self):
@@ -274,6 +282,18 @@ class EAZRClient:
     async def get_policy_detail(self, policy_id: str, user_id: str) -> Dict:
         return await self._request(
             "GET", f"/api/user/policies/{policy_id}",
+            EndpointCategory.POLICY_CRUD,
+            params={"userId": user_id},
+        )
+
+    async def get_analysis(self, analysis_id: str, user_id: str) -> Dict:
+        """
+        Fetch a previously completed policy analysis from botproject.
+        Called by PolicyAnalyzer when uploaded_files contains analysis_id.
+        Uses GET /api/user/policies/{analysis_id} which returns the policy details.
+        """
+        return await self._request(
+            "GET", f"/api/user/policies/{analysis_id}",
             EndpointCategory.POLICY_CRUD,
             params={"userId": user_id},
         )
