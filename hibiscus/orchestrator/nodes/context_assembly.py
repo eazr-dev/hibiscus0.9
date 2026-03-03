@@ -48,9 +48,26 @@ async def run(state: HibiscusState) -> dict:
     # ── L6: Document Memory ────────────────────────────────────────────
     doc_context = None
     message = state.get("message", "").lower()
-    _doc_keywords = ["my policy", "this policy", "the document", "uploaded", "what did i upload",
-                     "my insurance", "the policy", "not covered", "coverage", "exclusion",
-                     "copay", "premium", "sum insured", "eazr score"]
+    _doc_keywords = [
+        # Direct policy references
+        "my policy", "this policy", "the document", "uploaded", "what did i upload",
+        "my insurance", "the policy",
+        # Coverage terms
+        "not covered", "coverage", "exclusion", "copay", "co-pay", "deductible",
+        "premium", "sum insured", "eazr score",
+        # My-specific queries (policy detail questions)
+        "room rent", "icu", "waiting period", "pre-existing", "network hospital",
+        "cashless", "reimburs", "claim", "hospitali", "admission",
+        # "My ___" patterns — user asking about their own policy
+        "my plan", "my coverage", "my benefit", "my cover", "my sum", "my premium",
+        "am i covered", "do i have", "will i be covered", "will my",
+        "is my", "what is my", "what are my", "how much is my", "how much cover",
+        "gap in my", "gaps in my", "what does my",
+        # Product-name references (common insurers)
+        "acko", "hdfc ergo", "star health", "care health", "care supreme",
+        "optima", "family optima", "red carpet", "star comprehensive",
+        "bajaj allianz", "icici lombard", "niva bupa", "max bupa",
+    ]
     message_refs_doc = any(kw in message for kw in _doc_keywords)
     should_load_doc = bool(state.get("uploaded_files")) or state.get("has_document") or message_refs_doc
     if should_load_doc:

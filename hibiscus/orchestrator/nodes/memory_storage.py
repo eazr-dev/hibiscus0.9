@@ -53,21 +53,24 @@ async def _do_store(state: HibiscusState, plog: PipelineLogger) -> None:
                     analysis=output,
                 )
                 # Also store in hibiscus_documents so get_latest_document() can find it
+                # Only store if there is actual new extraction data (avoid overwriting seeded/cached docs)
                 extraction = output.get("structured_data", {}).get("extraction") or {}
                 uploaded_files = state.get("uploaded_files", [])
-                filename = (uploaded_files[0].get("filename") or "policy.pdf") if uploaded_files else "policy.pdf"
-                analysis_id = (uploaded_files[0].get("analysis_id")) if uploaded_files else None
-                doc_id = f"doc_{state['user_id']}_{int(time.time())}"
-                await store_document(
-                    user_id=state["user_id"],
-                    session_id=state["session_id"],
-                    doc_id=doc_id,
-                    filename=filename,
-                    file_type="pdf",
-                    extraction=extraction,
-                    extraction_confidence=output.get("confidence", 0.0),
-                    analysis_id=analysis_id,
-                )
+                if extraction and uploaded_files:
+                    # Only persist when a real file was uploaded AND extraction was computed
+                    filename = (uploaded_files[0].get("filename") or "policy.pdf") if uploaded_files else "policy.pdf"
+                    analysis_id = (uploaded_files[0].get("analysis_id")) if uploaded_files else None
+                    doc_id = f"doc_{state['user_id']}_{int(time.time())}"
+                    await store_document(
+                        user_id=state["user_id"],
+                        session_id=state["session_id"],
+                        doc_id=doc_id,
+                        filename=filename,
+                        file_type="pdf",
+                        extraction=extraction,
+                        extraction_confidence=output.get("confidence", 0.0),
+                        analysis_id=analysis_id,
+                    )
                 plog.step_start("document_analysis_stored")
             except Exception as e:
                 plog.warning("document_storage_failed", error=str(e))

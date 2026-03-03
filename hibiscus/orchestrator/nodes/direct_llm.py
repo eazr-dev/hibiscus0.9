@@ -21,10 +21,23 @@ def _build_context_from_state(state: HibiscusState) -> str:
     """Build context string from available state."""
     parts = []
 
-    # Document context
+    # Document context — inject full extraction so LLM can answer policy-specific questions
     if state.get("document_context"):
         doc = state["document_context"]
-        parts.append(f"USER'S POLICY: {doc.get('policy_type', 'insurance')} policy from {doc.get('insurer', 'insurer')}")
+        extraction = doc.get("extraction") or {}
+        if extraction:
+            import json as _json
+            parts.append("USER'S POLICY (full details):")
+            parts.append(f"  File: {doc.get('filename', 'policy.pdf')}")
+            for field, val in extraction.items():
+                if val and field not in ("raw_text", "page_references", "_id"):
+                    if isinstance(val, (dict, list)):
+                        parts.append(f"  {field}: {_json.dumps(val, ensure_ascii=False)[:300]}")
+                    else:
+                        parts.append(f"  {field}: {val}")
+        else:
+            parts.append(f"USER'S POLICY: {extraction.get('policy_type', 'insurance')} policy"
+                         f" from {extraction.get('insurer', 'unknown insurer')}")
 
     # Session history
     if state.get("session_history"):

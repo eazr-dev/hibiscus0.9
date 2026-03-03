@@ -54,7 +54,16 @@ _INTENT_KEYWORDS = {
     "calculate":  ["calculate", "how much cover", "how much life insurance", "maturity amount",
                    "emi calculation", "policy irr", "irr of", "how much will i get"],
     "analyze":    ["analyze", "analyse", "review my policy", "check my policy", "what does my policy",
-                   "uploaded", "explain my policy"],
+                   "uploaded", "explain my policy",
+                   # Policy-detail queries ("my X" about their specific policy)
+                   "what is my sum insured", "what is my coverage", "what is my premium",
+                   "what are my benefits", "what are the gaps", "gap in my", "gaps in my",
+                   "room rent restriction", "room rent limit", "room rent cap",
+                   "my room rent", "my icu limit", "my co-pay", "my copay",
+                   "am i covered for", "will my policy cover", "does my policy cover",
+                   "what does my", "tell me about my policy", "explain my coverage",
+                   "my policy cover", "which members are covered", "who is covered",
+                   "my waiting period", "my pre-existing", "my deductible"],
     # ── Most general — must come last ──
     "educate":    ["what is", "explain", "how does", "meaning of", "define", "difference between",
                    "how to", "what happens", "lapsed"],
