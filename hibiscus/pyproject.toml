@@ -47,7 +47,8 @@ dependencies = [
     # Neo4j (Knowledge Graph)
     "neo4j>=5.25.0",
 
-    # Embeddings
+    # Embeddings (local inference — no API key required)
+    "fastembed>=0.4.0",
     "tiktoken>=0.8.0",
 
     # Data validation
@@ -64,6 +65,9 @@ dependencies = [
     # Observability + web search (optional, gracefully degrade without API keys)
     "langsmith>=0.1.0",
     "tavily-python>=0.3.0",
+
+    # Prometheus metrics (optional — all helpers are no-ops if not installed)
+    "prometheus_client>=0.21.0",
 ]
 
 [project.optional-dependencies]

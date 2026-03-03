@@ -268,5 +268,922 @@
       "Non-disclosure of family history or previous symptoms at proposal stage"
     ],
     "escalation_path": "Insurer Grievance Cell → Independent Medical Expert Review → IRDAI Bima Bharosa → Ombudsman → Consumer Court"
+  },
+  {
+    "id": "cp_star_health_cashless",
+    "insurer": "Star Health and Allied Insurance Co. Ltd.",
+    "claim_type": "cashless",
+    "title": "Star Health — Cashless Hospitalization Claim",
+    "process": [
+      "Step 1 — Find Star Health Network Hospital: Visit Star Health website or app, or call 1800-425-2255 to find a network hospital. Star Health has 14,000+ network hospitals across India.",
+      "Step 2 — Inform Star Health: For planned hospitalization, call the helpline at least 48 hours in advance. For emergencies, call within 24 hours of admission. Star Health manages claims in-house (no TPA involved).",
+      "Step 3 — Pre-authorization Request: The hospital's insurance desk submits a pre-auth request directly to Star Health's in-house claims team. Star Health responds within 1 hour (emergency) and 2–3 hours (planned).",
+      "Step 4 — Treatment and Discharge: Undergo treatment. At discharge, Star Health settles the approved amount directly with the hospital. You pay only copay, deductible (if any), and non-covered charges.",
+      "Step 5 — Document Collection: Even after cashless, collect discharge summary, final bills, lab reports — these are required if any post-discharge complication arises and you need to file a follow-up claim.",
+      "Step 6 — Post-discharge Consultation Claims: Claim post-hospitalization consultations (within 60 days) by submitting doctor bills and prescriptions to Star Health's nearest branch or via the online portal."
+    ],
+    "documents_required": [
+      "Star Health insurance card (digital via app or physical)",
+      "Photo ID (Aadhaar/PAN/Passport)",
+      "Doctor's admission advice",
+      "Policy schedule / member ID",
+      "Pre-existing disease declaration (if applicable)"
+    ],
+    "timeline_days": 1,
+    "tips": [
+      "Star Health is an in-house TPA — no third-party intermediary. Decisions are faster.",
+      "Download the Star Health app — it has a hospital locator and digital insurance card.",
+      "For pre-auth delays beyond 2 hours for emergencies, escalate directly to the claims manager.",
+      "Pre-authorization approval is not a guarantee of full payment — final bill may result in adjustments for non-covered items."
+    ],
+    "common_rejection_reasons": [
+      "PED waiting period not completed (3 years for standard plans)",
+      "Treatment classified as 'cosmetic' by the insurer",
+      "Non-medical expenses billed by hospital (toiletries, attendant charges, etc.)",
+      "Pre-authorization not obtained before treatment (except genuine emergencies)",
+      "Room rent exceeds policy sub-limit"
+    ],
+    "escalation_path": "Star Health Branch Manager → Star Health Grievance Officer (grievance@starhealth.in) → IRDAI Bima Bharosa → Insurance Ombudsman → Consumer Court"
+  },
+  {
+    "id": "cp_hdfc_ergo_cashless",
+    "insurer": "HDFC ERGO General Insurance Co. Ltd.",
+    "claim_type": "cashless",
+    "title": "HDFC ERGO — Health Cashless Claim",
+    "process": [
+      "Step 1 — Identify Network Hospital: Use HDFC ERGO app or website to find a cashless hospital. HDFC ERGO uses Medi Assist TPA for claims management.",
+      "Step 2 — Intimate Medi Assist TPA: Call Medi Assist helpline (1800-419-9898) or HDFC ERGO helpline (1800-2666) within 24 hours of emergency admission or 48 hours before planned hospitalization.",
+      "Step 3 — Pre-authorization: Hospital insurance desk contacts Medi Assist for pre-authorization. Medi Assist reviews and responds. Authorization letter is shared with the hospital.",
+      "Step 4 — Treatment and Discharge: Treatment proceeds. Hospital submits final bills to Medi Assist. TPA reviews and settles with the hospital. Policyholder pays only the deductible/non-covered amounts.",
+      "Step 5 — Deficiency Claims: If any expense is not covered in cashless, the policyholder can file a reimbursement for the balance within 30 days."
+    ],
+    "documents_required": [
+      "HDFC ERGO health insurance card",
+      "Photo ID proof",
+      "Policy number and member ID",
+      "Pre-authorization form (filled by hospital)",
+      "Doctor's prescription for admission"
+    ],
+    "timeline_days": 1,
+    "tips": [
+      "Keep the Medi Assist TPA helpline number (1800-419-9898) saved separately — in emergencies, the hospital insurance desk may not know it.",
+      "HDFC ERGO Optima Restore and similar plans have restoration benefit — if SI gets exhausted, a fresh SI is activated. Track this with TPA.",
+      "For out-of-network hospital treatment, pay and file reimbursement — submit within 30 days of discharge."
+    ],
+    "common_rejection_reasons": [
+      "PED waiting period not served",
+      "Treatment at non-network hospital without emergency justification",
+      "Sub-limit exceeded (room rent, specific procedure)",
+      "Insufficient documentation — missing lab reports",
+      "Treatment classified as OPD procedure not requiring hospitalization"
+    ],
+    "escalation_path": "Medi Assist TPA → HDFC ERGO Grievance Cell (1800-2666 option 9) → IRDAI Bima Bharosa → Insurance Ombudsman"
+  },
+  {
+    "id": "cp_bajaj_allianz_health_cashless",
+    "insurer": "Bajaj Allianz General Insurance Co. Ltd.",
+    "claim_type": "cashless",
+    "title": "Bajaj Allianz — Health Cashless Claim",
+    "process": [
+      "Step 1 — Identify Bajaj Allianz Cashless Hospital: Use Bajaj Allianz website/app or call 1800-209-0144 for hospital network. Bajaj Allianz has 6,500+ network hospitals.",
+      "Step 2 — Intimate Bajaj Allianz: For emergencies, call within 24 hours. For planned admission, call 48–72 hours in advance. Bajaj Allianz processes cashless claims through in-house team and partner TPAs.",
+      "Step 3 — Pre-authorization Form: Hospital's insurance desk fills and submits the pre-auth form to Bajaj Allianz. Bajaj Allianz's claims team reviews and grants authorization within the IRDAI-mandated timeline.",
+      "Step 4 — Treatment and Discharge: Medical treatment is provided. Hospital submits final bills on discharge. Bajaj Allianz settles directly with hospital.",
+      "Step 5 — Final Settlement Confirmation: Bajaj Allianz sends a settlement notification to the policyholder showing approved amount, deductions, and any balance payable by the insured."
+    ],
+    "documents_required": [
+      "Bajaj Allianz health card",
+      "Photo ID",
+      "Policy number",
+      "Doctor's recommendation for hospitalization",
+      "FIR (if accident-related)"
+    ],
+    "timeline_days": 2,
+    "tips": [
+      "Bajaj Allianz's Extra Care Plus plan has no room rent sub-limit — take advantage of this.",
+      "Use Bajaj Allianz's 'Caringly Yours' app for hospital search, pre-auth tracking, and claim status.",
+      "For senior citizen plans (Silver Health), copay applies — keep 50% of bill amount ready."
+    ],
+    "common_rejection_reasons": [
+      "Cosmetic, dental, or vision treatments",
+      "Congenital disease during waiting period",
+      "Admitted for observation without active treatment",
+      "Room rent sub-limit exceeded with proportionate deduction",
+      "Claim intimation delayed beyond policy requirement"
+    ],
+    "escalation_path": "Bajaj Allianz Branch → Grievance Cell (grievance@bajajallianz.co.in) → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_niva_bupa_reimbursement",
+    "insurer": "Niva Bupa Health Insurance Co. Ltd.",
+    "claim_type": "reimbursement",
+    "title": "Niva Bupa — Reimbursement Claim",
+    "process": [
+      "Step 1 — Treatment at Any Hospital: Get treated at any registered hospital (network or non-network). Niva Bupa's reimbursement facility covers non-network hospitals.",
+      "Step 2 — Intimate Niva Bupa Within 24 Hours: Call 1800-103-2529 within 24 hours of emergency hospitalization or 48 hours before planned admission.",
+      "Step 3 — Pay Bills and Collect Documents: Pay all bills and collect: discharge summary, itemized bills, all diagnostic reports, pharmacy receipts, referral letters.",
+      "Step 4 — Submit Claim Form: Download Niva Bupa's claim form from their website. Fill and submit with all documents via online portal or courier to Niva Bupa's claims address within 30 days of discharge.",
+      "Step 5 — Claims Processing: Niva Bupa processes claims within 30 days of receipt of complete documents. Their in-house claims team may request additional information within 7 working days.",
+      "Step 6 — Payment: Approved amount credited to the registered bank account (NEFT). Rejection must be communicated in writing with specific reason."
+    ],
+    "documents_required": [
+      "Completed Niva Bupa claim form",
+      "Original discharge summary",
+      "Original itemized hospital bills",
+      "All diagnostic reports (originals or insurer-certified copies)",
+      "Pharmacy bills with doctor prescription",
+      "FIR (if accident)",
+      "Cancelled cheque for NEFT",
+      "Photo ID and policy document"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "Niva Bupa's ReAssure 2.0 plan has 'Health Returns' — track this via their app even during reimbursement claims.",
+      "Niva Bupa has a 'Cashless Everywhere' feature (2024) — even non-network hospitals can sometimes process cashless for policyholders. Check if applicable.",
+      "For post-hospitalization claims (60 days), file a separate claim submission citing the original hospitalization claim number."
+    ],
+    "common_rejection_reasons": [
+      "Claim filed after 30-day deadline",
+      "Documents incomplete — missing prescription-linked pharmacy bills",
+      "Pre-existing condition within waiting period",
+      "Minimum hospitalization of 24 hours not met",
+      "Hospital not registered or not in AYUSH list (for AYUSH claims)"
+    ],
+    "escalation_path": "Niva Bupa Customer Service → Grievance Cell → IRDAI Bima Bharosa → Insurance Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_care_health_reimbursement",
+    "insurer": "Care Health Insurance (formerly Religare Health Insurance)",
+    "claim_type": "reimbursement",
+    "title": "Care Health — Reimbursement Claim",
+    "process": [
+      "Step 1 — Hospitalization and Payment: Get treated and pay all bills. Care Health's reimbursement covers hospitalization at any NABH/government-recognized hospital.",
+      "Step 2 — Claim Intimation: Call 1800-102-4488 within 24 hours of emergency admission. Provide policy number, patient name, and hospital name.",
+      "Step 3 — Document Collection: Before leaving hospital: discharge summary, itemized bill, all reports, pharmacy bills (with prescription), pre- and post-hospitalization documents.",
+      "Step 4 — Online Claim Filing: Go to Care Health's portal (careinsurance.com) → Claims → Reimbursement. Upload scanned copies. Physical documents to be mailed within 15 days of digital submission.",
+      "Step 5 — Query Response: Care Health may raise queries within 7 days. Respond within 15 days with requested documents.",
+      "Step 6 — Settlement: NEFT credit within 30 days of complete document submission."
+    ],
+    "documents_required": [
+      "Care Health claim form",
+      "Discharge summary (original)",
+      "Itemized bills (original)",
+      "Lab/diagnostic reports",
+      "Prescription + pharmacy bills",
+      "Doctor's certificates",
+      "Cancelled cheque",
+      "Aadhaar/PAN copy"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "Care Health's 'Unlimited Restoration' feature: if SI is exhausted, fresh SI is available for different illness — document carefully.",
+      "Care Advantage plan covers OPD consultations — file these separately with prescription and bills.",
+      "Care Health has a 'Direct Claim' online portal with real-time status tracking."
+    ],
+    "common_rejection_reasons": [
+      "Minimum 24-hour hospitalization not met for non-day-care procedures",
+      "Treatment not covered (dental, cosmetic, obesity treatment)",
+      "Hospital not NABH-accredited or not recognized",
+      "Claim intimation delay — beyond policy stipulated period"
+    ],
+    "escalation_path": "Care Health Branch → complaints@careinsurance.com → IRDAI Bima Bharosa → Insurance Ombudsman"
+  },
+  {
+    "id": "cp_lic_death_claim",
+    "insurer": "Life Insurance Corporation of India (LIC)",
+    "claim_type": "death",
+    "title": "LIC — Death Claim (Individual Life Policy)",
+    "process": [
+      "Step 1 — Report Death to LIC Branch: Nominee (or any family member) informs the nearest LIC branch or the servicing branch (where policy is held) about the death. Provide policy bond number and details.",
+      "Step 2 — Claim Registration: Fill LIC Death Claim Form A (Claimant's Statement) available at branch or licindia.in. LIC issues a claim number and acknowledges within 3 working days.",
+      "Step 3 — Document Submission: Submit all required documents at the LIC branch. For claims above ₹50 lakh or early claims (within 3 years), additional scrutiny is standard.",
+      "Step 4 — Investigation (if required): LIC may appoint an investigator for claims under 3 years of policy inception or where cause of death requires verification. Investigation completed within 90 days.",
+      "Step 5 — Settlement: Non-investigated claims settled within 30 days. Investigated claims within 120 days. Payment to nominee's registered bank account via NEFT.",
+      "Step 6 — Annuity Conversion (if applicable): For some policies (Jeevan Shanti, Jeevan Akshay), the nominee may have an option to receive proceeds as annuity instead of lump sum."
+    ],
+    "documents_required": [
+      "Claimant's statement (Form A)",
+      "Original policy bond",
+      "Death certificate issued by municipal corporation/gram panchayat",
+      "Medical certificate of cause of death",
+      "Hospital certificate (if death in hospital)",
+      "Post-mortem report (if accidental death or sudden death)",
+      "FIR and coroner's report (if accidental/unnatural death)",
+      "NEFT mandate with cancelled cheque",
+      "Photo ID and address proof of nominee",
+      "Legal evidence of title (if no nomination — succession certificate or legal heir certificate)"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "LIC has 'Online Claim Submission' at licindia.in — faster than visiting branch for document submission.",
+      "If the original policy bond is lost, submit an Indemnity Bond (available at branch) along with stamp paper declaration.",
+      "LIC's 'IVRS' helpline (1800-33-5232) can guide nominees through the entire process.",
+      "For early claims (within 3 years), be prepared for investigator visit — cooperate fully and be ready with medical records."
+    ],
+    "common_rejection_reasons": [
+      "Suicide within first year of policy (Section 45 — suicide in year 1 is excluded in most LIC policies)",
+      "Non-disclosure of material facts at proposal stage (challengeable within first 3 years)",
+      "Policy lapsed at time of death with no revival",
+      "Death under exclusion clause (war, nuclear peril)",
+      "Fraudulent claim — death certificate not genuine"
+    ],
+    "escalation_path": "LIC Branch Manager → LIC Divisional Office Claims Dept → LIC Zonal Office → IRDAI Bima Bharosa → Life Insurance Ombudsman → Civil Court"
+  },
+  {
+    "id": "cp_hdfc_life_death_claim",
+    "insurer": "HDFC Life Insurance Co. Ltd.",
+    "claim_type": "death",
+    "title": "HDFC Life — Death Claim",
+    "process": [
+      "Step 1 — Intimate HDFC Life: Nominee calls 1860-267-9999 or emails claimsintimation@hdfclife.com to register the death claim. Claim is registered and a Claim Reference Number is issued.",
+      "Step 2 — Document Submission: Submit required documents at nearest HDFC Life branch or courier to HDFC Life's claims processing center.",
+      "Step 3 — Claims Assessment: HDFC Life's claims team reviews documents. For claims within 3 years of policy issue or revival, an investigation may be initiated.",
+      "Step 4 — Nominee Verification: HDFC Life verifies the nominee's identity and bank account details to prevent fraud.",
+      "Step 5 — Settlement: Non-investigated claims settled within 30 days of complete documents. HDFC Life's average claim settlement time is typically 7–10 working days for straightforward cases.",
+      "Step 6 — Confirmation Letter: Settlement letter sent to nominee confirming amount paid. Tax deduction certificate (Form 16A if TDS deducted) provided if applicable."
+    ],
+    "documents_required": [
+      "HDFC Life Death Claim form",
+      "Original policy document",
+      "Death certificate (original or notarized copy)",
+      "Claimant's photo ID (Aadhaar, PAN)",
+      "Claimant's address proof",
+      "Medical records if death due to illness",
+      "FIR and post-mortem report for accidental deaths",
+      "NEFT mandate and cancelled cheque",
+      "Cause of death certificate from treating doctor"
+    ],
+    "timeline_days": 15,
+    "tips": [
+      "HDFC Life's CSR is 99%+ — one of the highest. Claims are usually processed within 7 working days.",
+      "Use HDFC Life's online portal for claim submission to speed up the process.",
+      "For group term claims through employer, the HR department coordinates with HDFC Life directly — nominees should contact HR first."
+    ],
+    "common_rejection_reasons": [
+      "Suicide within exclusion period",
+      "Pre-existing condition not disclosed",
+      "Policy lapsed and not revived before death",
+      "Death due to illegal activities or self-inflicted injury",
+      "Nominee not registered — legal heir certificate may be required"
+    ],
+    "escalation_path": "HDFC Life Branch → claimsgrievance@hdfclife.com → IRDAI Bima Bharosa → Life Insurance Ombudsman → Civil Court"
+  },
+  {
+    "id": "cp_icici_lombard_motor_od",
+    "insurer": "ICICI Lombard General Insurance Co. Ltd.",
+    "claim_type": "motor_own_damage",
+    "title": "ICICI Lombard — Motor Own Damage Claim",
+    "process": [
+      "Step 1 — Secure Scene and Call Helpline: After the accident, ensure safety. Call ICICI Lombard's motor claims helpline: 1800-2666 immediately. Register the claim and get a claim number.",
+      "Step 2 — Digital Intimation via IL Take Care App: Download the 'IL Take Care' app and register the claim digitally with photos. ICICI Lombard has AI-powered survey capabilities in the app.",
+      "Step 3 — Vehicle Survey: ICICI Lombard assigns a cashless surveyor for network garage claims or an independent surveyor for reimbursement claims. Surveyor inspects within 24–48 hours.",
+      "Step 4 — Cashless Repair at Network Garage: Take the vehicle to ICICI Lombard's 15,500+ cashless garages. Garage sends repair estimate to ICICI Lombard. After approval, repairs begin. Policyholder pays deductible.",
+      "Step 5 — Reimbursement at Non-Network Garage: Get repairs done at any garage. Collect all original bills. Submit to ICICI Lombard within 7 days of repair completion for reimbursement.",
+      "Step 6 — Settlement: ICICI Lombard releases payment within 7 working days of claim approval for cashless (direct to garage) or 15 working days for reimbursement."
+    ],
+    "documents_required": [
+      "Claim registration form",
+      "Copy of driving license",
+      "RC book / Registration Certificate",
+      "Motor policy document",
+      "FIR (if theft or accident with injury/death)",
+      "Photos of damaged vehicle at accident site",
+      "Repair bills and GST invoices (for reimbursement)",
+      "Towing receipt if applicable",
+      "Pollution under control (PUC) certificate"
+    ],
+    "timeline_days": 7,
+    "tips": [
+      "ICICI Lombard's AI survey via IL Take Care app can process minor claims without a physical surveyor visit — faster settlement.",
+      "Do NOT get vehicle repaired before surveyror inspection, except for emergency safety repairs.",
+      "NCB protection add-on: if you have it, filing one claim per year does not reduce your NCB at renewal.",
+      "Spot cashless settlement of up to ₹50,000 is possible at ICICI Lombard's preferred garages."
+    ],
+    "common_rejection_reasons": [
+      "Driving under influence of alcohol or drugs",
+      "Driving license expired at time of accident",
+      "Vehicle used for commercial purpose without commercial insurance",
+      "Delay in intimation beyond policy requirement",
+      "Damage inconsistent with reported accident (suspected fraud)"
+    ],
+    "escalation_path": "ICICI Lombard Claims Team → Grievance Cell (1800-2666) → IRDAI Bima Bharosa → Motor Insurance Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_new_india_motor_od",
+    "insurer": "The New India Assurance Co. Ltd.",
+    "claim_type": "motor_own_damage",
+    "title": "New India Assurance — Motor Own Damage Claim",
+    "process": [
+      "Step 1 — Intimate New India Branch: Call 1800-209-1415 or visit the nearest New India Assurance branch with the vehicle details. Register the claim.",
+      "Step 2 — Surveyor Appointment: New India appoints a government-licensed independent surveyor. For vehicles in remote areas, a 'spot survey' may be conducted via photos.",
+      "Step 3 — Survey and Report: Surveyor inspects damage and submits a survey report to New India, including the recommended repair scope and estimated amount.",
+      "Step 4 — Repair Authorization: New India authorizes repairs at a network garage or issues a survey report for a non-network garage. For cashless repairs, authorization goes directly to the network garage.",
+      "Step 5 — Claim Settlement: After repairs, the garage submits bills. New India settles directly (cashless) or reimburses the policyholder within 30 days of complete documents.",
+      "Step 6 — Discharge Voucher: For final settlement, New India may require a signed discharge voucher confirming the policyholder's acceptance of the settlement amount."
+    ],
+    "documents_required": [
+      "Claim form",
+      "Policy document",
+      "Driving license copy",
+      "RC copy",
+      "PUC certificate",
+      "FIR (if applicable)",
+      "Surveyor's report (arranged by New India)",
+      "Repair bills with GST invoice",
+      "Discharge voucher (for final settlement)"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "New India Assurance is a government PSU insurer — branch-based process may take longer than private insurers.",
+      "Follow up regularly with the branch claims officer for survey report status.",
+      "New India has a wider rural branch network than most private insurers — useful for rural vehicle claims.",
+      "Claim settlement authority limits: small claims (< ₹50,000) settled at branch level; larger claims go to divisional/regional office."
+    ],
+    "common_rejection_reasons": [
+      "Policy not in force at time of accident (non-renewal)",
+      "Driver license invalid (not a valid class for the vehicle type)",
+      "Vehicle overloaded (exceeds permitted capacity)",
+      "Flood damage without flood/engine protect endorsement",
+      "Theft not reported to police within 24 hours"
+    ],
+    "escalation_path": "Branch Claims Officer → Divisional Manager → Regional Manager → New India HO Grievance → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_motor_tp_detailed",
+    "insurer": "All Motor Insurers — MACT Process",
+    "claim_type": "motor_third_party",
+    "title": "Motor Third-Party Injury/Death Claim at MACT",
+    "process": [
+      "Step 1 — FIR is Mandatory: File FIR at the nearest police station with vehicle number of the at-fault vehicle. FIR is the foundation of the TP claim.",
+      "Step 2 — Medical Treatment: Victim (or family of deceased) should get immediate medical treatment. MACT can order interim compensation for medical expenses even before final award.",
+      "Step 3 — Consult a Lawyer: TP claims go to Motor Accident Claims Tribunal (MACT — district level court). File an application (petition) through a lawyer. No court fee is payable.",
+      "Step 4 — MACT Petition Filing: Petition includes: FIR details, description of accident, nature of injury/death, income proof of victim, details of at-fault vehicle's insurance.",
+      "Step 5 — Service and Hearing: MACT serves notice to the at-fault vehicle owner and their insurer. Insurance company files a counter-claim. Witnesses are examined. Takes 1–3 years typically.",
+      "Step 6 — Compensation Award: MACT calculates compensation using Sarla Verma formula (Supreme Court) for death: based on income, age, and dependency. For injury: medical expenses + loss of income + pain and suffering.",
+      "Step 7 — Payment: Insurer must pay within 30 days of award. Default attracts 9–12% interest per annum."
+    ],
+    "documents_required": [
+      "FIR copy",
+      "Medical treatment bills (originals)",
+      "Death certificate + post-mortem report (if death)",
+      "Income proof of victim (salary slips, ITR, bank statements)",
+      "Identity proof of victim and claimant",
+      "Vehicle RC of at-fault vehicle",
+      "Insurance policy of at-fault vehicle",
+      "Witnesses' contact details and statements",
+      "Disability certificate (for disability claims — from authorized medical board)"
+    ],
+    "timeline_days": 365,
+    "tips": [
+      "MACT Interim Compensation: For urgent medical bills, apply for interim compensation immediately after filing the petition — MACT can order advance payment within days.",
+      "Hit-and-run with unknown vehicle: claim from Solatium Fund — ₹2 lakh for death, ₹50,000 for grievous injury. File at district collector's office.",
+      "Claimant does not need to prove whose fault it was in most cases — 'no fault liability' applies for third parties under Motor Vehicles Act.",
+      "Compensation formula: Sarla Verma (death) = monthly income × 12 × multiplier (based on age) × 2/3 dependency ratio."
+    ],
+    "common_rejection_reasons": [
+      "FIR not filed — MACT may not proceed without FIR",
+      "Insurer contests policy validity (lapsed policy, unlicensed driver)",
+      "Claim filed beyond 3 years from accident (limitation period)",
+      "Vehicle not insured — insurer can be excluded, claim may go against owner personally"
+    ],
+    "escalation_path": "MACT → High Court (appeal within 90 days of MACT order) → Supreme Court (for substantial legal questions)"
+  },
+  {
+    "id": "cp_travel_medical_emergency",
+    "insurer": "All Travel Insurers — Standard Process",
+    "claim_type": "travel",
+    "title": "Travel Insurance — Medical Emergency Abroad Claim",
+    "process": [
+      "Step 1 — Call Emergency Assistance: Most travel policies include 24/7 emergency assistance via a toll-free or reverse-charge number provided in the policy card. Call immediately on any medical emergency abroad. The assistance company coordinates hospitalization and cashless facility.",
+      "Step 2 — Cashless Treatment Abroad: For serious emergencies, the assistance company can direct guarantee of payment (GOP) to the overseas hospital — enabling cashless treatment. This avoids out-of-pocket payment for large bills.",
+      "Step 3 — Pay and Claim (For Minor Bills): For minor emergencies (clinic visits, pharmacy), pay from pocket and file reimbursement on return. Keep all bills, receipts, and medical reports in original.",
+      "Step 4 — Claim Filing on Return: File the travel insurance claim within 30 days of return. Submit via insurer's portal or send physical documents. Most travel insurers have dedicated international claims teams.",
+      "Step 5 — Document Submission: Provide all medical documentation, bills, proof of travel dates, and emergency assistance reference number (if used).",
+      "Step 6 — Settlement: Travel insurance claims are typically settled within 15–30 days of complete document submission. Payments may be in INR or USD depending on policy terms."
+    ],
+    "documents_required": [
+      "Travel insurance policy document",
+      "Passport (with travel dates)",
+      "Boarding pass / flight itinerary",
+      "Emergency assistance reference number",
+      "Hospital admission and discharge documents",
+      "Itemized hospital bills and payment receipts",
+      "Treating doctor's certificate",
+      "Diagnosis report",
+      "Prescription and pharmacy bills",
+      "Bank account details for reimbursement"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "CRITICAL: Call the emergency assistance number first — don't just walk into an overseas hospital and start accruing bills without coordinating with the assistance company.",
+      "Emergency assistance companies can arrange medical evacuation (repatriation) if needed — covered under most travel policies.",
+      "Pre-existing conditions are usually excluded from medical emergency cover abroad — do not assume travel insurance covers your diabetes hospitalization.",
+      "Multi-trip annual policies are cost-effective for frequent travelers — ₹8,000–₹15,000/year for unlimited trips (each trip up to 30–45 days)."
+    ],
+    "common_rejection_reasons": [
+      "Pre-existing disease — emergency hospitalization caused by a pre-existing condition",
+      "Adventure sports injury — not covered unless adventure sports rider is added",
+      "Drunk/intoxicated — injury while under influence excluded",
+      "Pregnancy complications abroad — usually excluded (unless within first trimester and emergency)",
+      "Medical tourism — planned treatment abroad is not covered"
+    ],
+    "escalation_path": "Travel Insurer's International Claims Team → Insurer Grievance Cell → IRDAI Bima Bharosa → Insurance Ombudsman"
+  },
+  {
+    "id": "cp_travel_baggage_loss",
+    "insurer": "All Travel Insurers — Standard Process",
+    "claim_type": "travel",
+    "title": "Travel Insurance — Baggage Loss Claim",
+    "process": [
+      "Step 1 — Report to Airline Immediately: File a Property Irregularity Report (PIR) at the airline's lost baggage counter at the destination airport. Get a PIR reference number — this is mandatory for the insurance claim.",
+      "Step 2 — Follow Up with Airline: Track your baggage via the airline's website using the PIR number. Airlines typically have 21 days to deliver delayed/lost baggage. After 21 days, baggage is officially declared 'lost'.",
+      "Step 3 — Intimate Travel Insurer: Call or email your travel insurer within 24–48 hours of discovering the baggage loss. Provide policy number, PIR reference, flight details.",
+      "Step 4 — Compile Replacement Receipts: For baggage loss, claim reimbursement for essential replacement purchases. Keep all receipts. For delayed baggage (different from lost), claim for emergency purchases during delay period.",
+      "Step 5 — Claim Submission: Submit claim form with PIR, airline's confirmation of loss/damage, list of lost items (with approximate value), replacement purchase receipts, and boarding pass.",
+      "Step 6 — Settlement: Travel insurer settles based on policy's baggage loss limit (usually ₹50,000–₹2 lakh per person for international travel)."
+    ],
+    "documents_required": [
+      "PIR (Property Irregularity Report) from airline",
+      "Airline's confirmation of loss (after 21 days for permanent loss)",
+      "Travel policy document",
+      "Boarding pass",
+      "Passport copy",
+      "List of lost items with estimated values",
+      "Purchase receipts for essential replacement items",
+      "Bank account details"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "Valuable items (jewellery, electronics) are often excluded or have low sub-limits in travel insurance — declare and insure separately if carrying expensive items.",
+      "Baggage delay cover (separate from baggage loss) kicks in if baggage arrives 6–12 hours late — covers emergency purchases.",
+      "Airlines have a limited liability (Warsaw Convention or Montreal Convention) for baggage loss — travel insurance covers the excess above airline liability.",
+      "For international claims, submit in the currency used (USD/EUR) if you have receipts — insurer converts to INR at prevailing rate."
+    ],
+    "common_rejection_reasons": [
+      "No PIR filed at airport — airlines' confirmation is mandatory",
+      "Claim filed after 30-day deadline",
+      "Valuable items not covered under policy",
+      "Baggage left unattended (theft excluded if left unattended)",
+      "Sports equipment excluded from standard baggage cover"
+    ],
+    "escalation_path": "Travel Insurer Claims Team → Insurer Grievance → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_domiciliary_claim",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "domiciliary",
+    "title": "Domiciliary Hospitalization Claim Process",
+    "process": [
+      "Step 1 — Doctor Certificate of Necessity: Obtain a written certificate from the treating doctor stating: (a) the condition requires hospitalization-level care, (b) hospitalization is not possible due to non-availability of hospital beds or the patient's condition prevents transfer, (c) treatment will be administered at home.",
+      "Step 2 — Intimate Insurer Immediately: Call TPA/insurer as soon as domiciliary treatment begins. Most policies require notification within 24–48 hours of starting domiciliary treatment. Without prior intimation, reimbursement may be rejected.",
+      "Step 3 — Maintain Treatment Records: Keep detailed records of all home visits by doctor/nurse, all medicines administered, all nursing/caregiver bills, and any medical equipment rented (oxygen concentrator, suction machine, etc.).",
+      "Step 4 — Treatment Duration: Most policies require minimum 3 days of domiciliary treatment for a claim to be valid.",
+      "Step 5 — Submit Claim: After treatment concludes, file reimbursement claim with all documents. Some insurers require a 'Domiciliary Claim Form' — check your insurer's website.",
+      "Step 6 — Settlement: Reimbursement within 30 days of complete document submission."
+    ],
+    "documents_required": [
+      "Domiciliary claim form (insurer-specific)",
+      "Doctor's certificate of medical necessity",
+      "All prescription slips with dates",
+      "Pharmacy bills (date-wise)",
+      "Doctor/nurse visit bills with date, time, and signature",
+      "Medical equipment rental receipts",
+      "Diagnostic reports conducted at home",
+      "Any pathology/lab bills for home-collected samples",
+      "Photo ID and policy document"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "Domiciliary claims are frequently disputed — ensure the doctor's certificate is very specific about why hospitalization is not possible.",
+      "Common conditions for domiciliary: elderly patient unable to travel, no ICU beds available, infectious disease (COVID, typhoid), severe arthritis preventing movement.",
+      "Not all treatments qualify — some policies list specific conditions covered for domiciliary treatment.",
+      "Maintain a daily treatment log with entry/exit times of medical staff — prevents claims from being questioned."
+    ],
+    "common_rejection_reasons": [
+      "Doctor's certificate vague or not specifying reason hospitalization was not possible",
+      "Treatment for chronic condition (e.g., routine insulin administration) not covered under domiciliary",
+      "Minimum 3-day requirement not met",
+      "Intimation not given before starting treatment",
+      "Condition not on insurer's approved domiciliary conditions list"
+    ],
+    "escalation_path": "TPA Helpline → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_daycare_claim",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "daycare",
+    "title": "Day Care Procedure Claim Process",
+    "process": [
+      "Step 1 — Confirm Day Care Coverage: Verify that the planned procedure is on the insurer's Day Care Treatment list (IRDAI mandates all insurers cover 540+ day care procedures). Common day care: cataract, chemotherapy, dialysis, lithotripsy, tonsillectomy, hernia under local anesthesia, endoscopy.",
+      "Step 2 — Network Hospital for Cashless: For cashless, go to a network hospital with day surgery facilities. Inform TPA 48 hours in advance (for planned procedures).",
+      "Step 3 — Pre-authorization (for Cashless): Hospital insurance desk files pre-auth request with TPA. TPA approves — cashless available for the day care procedure.",
+      "Step 4 — Treatment and Discharge (Same Day): Day care procedures are completed and patient discharged within the same working day. Minimum 24-hour hospitalization requirement is WAIVED for day care procedures.",
+      "Step 5 — Document Collection: Even for cashless, collect discharge summary with procedure name and ICD code, anesthesia record (if used), and pharmacy bills.",
+      "Step 6 — Reimbursement (if Non-cashless): File reimbursement within 30 days with: procedure receipt, day surgery admission and discharge summary, doctor's notes, pharmacy bills."
+    ],
+    "documents_required": [
+      "Health insurance card",
+      "Photo ID",
+      "Day surgery admission form",
+      "Procedure/surgery notes from doctor",
+      "Day surgery discharge summary",
+      "Anesthesia record (if applicable)",
+      "Pre and post procedure prescriptions and bills",
+      "TPA authorization number (for cashless)"
+    ],
+    "timeline_days": 7,
+    "tips": [
+      "Day care claim does NOT require 24-hour hospitalization — this is explicitly covered by IRDAI for approved procedures.",
+      "If the insurer denies a day care claim citing 'less than 24 hours hospitalization', this is against IRDAI guidelines — escalate immediately.",
+      "Dialysis sessions (if needed multiple times a week) are day care — each session is a separate day care claim entry.",
+      "Chemotherapy day care: each treatment cycle is a separate day care claim — keep session summaries."
+    ],
+    "common_rejection_reasons": [
+      "Procedure not on insurer's approved day care list (rare — IRDAI list is comprehensive)",
+      "Procedure done in an unrecognized facility",
+      "No anesthesia administered — insurer may question if 'hospitalization' was necessary",
+      "PED waiting period not served for the condition being treated"
+    ],
+    "escalation_path": "TPA Helpline → Insurer Grievance Cell → IRDAI (cite IRDAI Day Care guidelines) → Ombudsman"
+  },
+  {
+    "id": "cp_preauth_planned_procedure",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "pre_authorization",
+    "title": "Pre-Authorization Process for Planned Surgery",
+    "process": [
+      "Step 1 — Doctor's Recommendation: Obtain doctor's prescription/referral recommending the surgery or procedure. This forms the basis of the pre-authorization request.",
+      "Step 2 — Hospital Insurance Desk: Visit the hospital's insurance desk (at the cashless network hospital) with your health insurance card, photo ID, and doctor's prescription. The insurance desk handles the pre-authorization process.",
+      "Step 3 — Pre-auth Form Submission: The hospital fills the insurer's/TPA's pre-authorization form — including: patient demographics, policy details, diagnosis, proposed treatment/procedure, expected admission date, estimated cost.",
+      "Step 4 — TPA/Insurer Review: TPA reviews the request against policy terms: Is the condition covered? Is the waiting period served? Is the estimated cost within reasonable range? TPA may request additional reports (e.g., surgeon's notes, recent ECG).",
+      "Step 5 — Authorization Decision: Within 1 hour (emergency) or 4 hours (planned) as per IRDAI norms, TPA issues: full approval (proceed cashless), partial approval (with conditions), or denial (with reasons).",
+      "Step 6 — Proceed with Treatment: On approval, the hospital proceeds with admission and treatment. The authorization letter specifies the approved amount — final claim may adjust based on actual bills."
+    ],
+    "documents_required": [
+      "Health insurance card",
+      "Photo ID",
+      "Doctor's prescription/referral",
+      "Recent diagnostic reports supporting the diagnosis",
+      "Pre-authorization form (filled by hospital)",
+      "Surgeon's estimate/quote (for expensive procedures)"
+    ],
+    "timeline_days": 1,
+    "tips": [
+      "Request a pre-authorization 2–3 weeks before the planned surgery — allows time for any additional document requirements.",
+      "Keep a copy of the authorization letter and reference number — it is proof of cashless approval.",
+      "Pre-authorization can be denied for various reasons — if denied, you can appeal with additional medical justification.",
+      "For organ transplants or very expensive procedures, insurers may require a second medical opinion."
+    ],
+    "common_rejection_reasons": [
+      "PED waiting period not completed for the diagnosed condition",
+      "Insufficient medical evidence (no supporting diagnostic reports)",
+      "Procedure classified as elective/cosmetic by insurer",
+      "Estimated cost significantly exceeds benchmark for the procedure (insurer may request revised estimate)"
+    ],
+    "escalation_path": "TPA Helpline → Insurer Grievance → IRDAI Bima Bharosa (for pre-auth delays exceeding IRDAI mandated timeline) → Ombudsman"
+  },
+  {
+    "id": "cp_lic_maturity_claim",
+    "insurer": "Life Insurance Corporation of India (LIC)",
+    "claim_type": "death",
+    "title": "LIC — Maturity Claim (Endowment / Money Back)",
+    "process": [
+      "Step 1 — Pre-maturity Notification from LIC: LIC sends a maturity notice 2–3 months before the policy maturity date to the registered address. Check your address is updated in LIC's records.",
+      "Step 2 — Download/Collect Discharge Form: LIC sends a Discharge Voucher. Sign the form in the presence of a witness (both signatures required). For amounts above ₹50,000, the original policy bond must be surrendered.",
+      "Step 3 — KYC Submission: Submit PAN card (mandatory for amounts above ₹50,000 as per Income Tax), Aadhaar, and NEFT mandate with cancelled cheque.",
+      "Step 4 — Submit at LIC Branch: Submit at the servicing branch (where the policy is held) or online at licindia.in for digital submission.",
+      "Step 5 — Tax Assessment: LIC checks if maturity is taxable under Section 10(10D). If premium/SA ratio does not qualify for exemption, LIC deducts TDS at 5% on the maturity gain. Submit Form 15G/15H (if income below taxable limit) to avoid TDS.",
+      "Step 6 — Payment: LIC credits the maturity amount to the NEFT account within 15–30 days of document submission."
+    ],
+    "documents_required": [
+      "Signed discharge voucher",
+      "Original policy bond",
+      "PAN card",
+      "Aadhaar card",
+      "Cancelled cheque",
+      "NEFT mandate form",
+      "Age proof (if not submitted earlier)",
+      "Form 15G/15H (if applicable)"
+    ],
+    "timeline_days": 15,
+    "tips": [
+      "Update your mobile number, email, and bank account at LIC well before maturity.",
+      "If the policy bond is lost, submit a Bond Surrender Indemnity (BSI) on stamp paper as a substitute.",
+      "For money back plans, survival benefits already paid reduce the final maturity proceeds — LIC statement shows all previously paid amounts.",
+      "If you have a loan against the policy, LIC will deduct outstanding loan + interest from maturity proceeds before paying the balance."
+    ],
+    "common_rejection_reasons": [
+      "Bank account details mismatch — wrong IFSC or account number",
+      "Signed discharge voucher not submitted",
+      "PAN not submitted (TDS not deductible — LIC delays payment)",
+      "Policy bond not surrendered for large amounts"
+    ],
+    "escalation_path": "LIC Branch → Divisional Claims → LIC HO → IRDAI Bima Bharosa → Life Insurance Ombudsman"
+  },
+  {
+    "id": "cp_health_portability_process",
+    "insurer": "All Health Insurers — IRDAI Portability Rules",
+    "claim_type": "pre_authorization",
+    "title": "Health Insurance Portability Process",
+    "process": [
+      "Step 1 — Initiate Before Renewal: Start the portability process 45–60 days before your current policy's renewal date. IRDAI requires you to apply at least 45 days before expiry.",
+      "Step 2 — Choose New Insurer: Research plans, compare premiums, and select the new insurer. Ensure the new plan covers at least what the old plan covered.",
+      "Step 3 — Submit Portability Application: Fill the new insurer's portability application form. Submit it to the new insurer along with: current policy document, last 3 years' claim history, proposal form.",
+      "Step 4 — New Insurer Contacts Old Insurer: The new insurer requests your policy and claim history from the old insurer through IRDAI's portability portal. Old insurer must respond within 7 working days.",
+      "Step 5 — Underwriting Decision: New insurer reviews your portability file. They must accept portability for the sum insured you had with the old insurer (same or lower) — they CANNOT refuse based on portability alone. For a higher SI, fresh underwriting applies.",
+      "Step 6 — Policy Issuance: New insurer issues the policy continuing all waiting period credits from the old insurer. The old policy should be allowed to lapse without renewal fees (since you are porting).",
+      "Step 7 — Confirm Continuity: Verify that the new policy explicitly states the credit for waiting periods served (PED, specific disease waiting periods) — get this in writing."
+    ],
+    "documents_required": [
+      "Current health insurance policy document",
+      "Last 3 years' renewal certificates",
+      "Claim history statement (from old insurer)",
+      "Portability proposal form (new insurer)",
+      "Photo ID and address proof",
+      "Medical records if any PED is listed",
+      "Bank account details for premium payment"
+    ],
+    "timeline_days": 45,
+    "tips": [
+      "Compare ICR (Incurred Claim Ratio) and CSR of the new insurer before porting.",
+      "During portability, network hospitals and TPA may change — verify network hospitals near your home.",
+      "Portability preserves waiting period credit — if you have served 3 years of PED waiting period with the old insurer, the new insurer must credit those 3 years.",
+      "You CANNOT port during the policy year — only at renewal."
+    ],
+    "common_rejection_reasons": [
+      "Portability application filed after the 45-day window",
+      "New insurer refuses portability (illegal under IRDAI — escalate to IRDAI immediately)",
+      "Requested SI is higher than what the old policy provided — new insurer can underwrite the difference",
+      "Old insurer does not provide claim history within 7 days (file complaint with IRDAI)"
+    ],
+    "escalation_path": "New Insurer Underwriting Team → IRDAI (if portability is illegally refused) → Insurance Ombudsman"
+  },
+  {
+    "id": "cp_critical_illness_cancer",
+    "insurer": "All Critical Illness Insurers — Cancer Focus",
+    "claim_type": "pre_authorization",
+    "title": "Critical Illness Claim — Cancer Diagnosis",
+    "process": [
+      "Step 1 — Obtain Pathology Report: For cancer CI claim, a biopsy pathology report confirming cancer diagnosis is the primary requirement. The report must be from an NABH-accredited lab or government-recognized pathology lab.",
+      "Step 2 — Oncologist Certificate: Get a certificate from a qualified oncologist (MBBS + MD/DNB in Oncology) confirming: cancer type, stage, ICD-10 code, date of diagnosis, and that the diagnosis meets the policy's definition of 'cancer of specified severity.'",
+      "Step 3 — Survival Period Verification: Most CI policies require surviving 30 days after diagnosis. If the policyholder dies within 30 days of cancer diagnosis, the CI claim may be rejected (though the life insurance death claim applies).",
+      "Step 4 — Intimate Insurer: Call insurer within 7–15 days of diagnosis. Provide: policy number, diagnosis details, treating hospital and oncologist details.",
+      "Step 5 — Independent Medical Examiner (IME): Insurer may appoint an IME to verify the diagnosis and confirm it meets the policy definition. IME report is shared with the claimant.",
+      "Step 6 — Lump Sum Payout: On approval, the CI benefit (₹10–₹1 crore depending on policy) is paid directly to the policyholder's bank account. No bills required — it is a defined benefit payout."
+    ],
+    "documents_required": [
+      "CI claim form",
+      "Biopsy/pathology report from accredited lab",
+      "Oncologist's certificate and case history",
+      "Imaging reports (CT scan, PET scan, MRI)",
+      "Hospital records and consultation notes",
+      "Photo ID and policy document",
+      "30-day survival certificate (from treating doctor)",
+      "NEFT mandate and cancelled cheque"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "IRDAI standardizes CI definitions — 'cancer of specified severity' excludes: skin cancers (other than melanoma), prostate cancer Gleason score < 6, early-stage cancers (carcinoma in situ). Confirm your diagnosis meets the definition.",
+      "Some CI policies cover specific early-stage cancers at a reduced benefit (20–25% of SA). Check your policy.",
+      "CI benefit is a defined benefit — it is tax-free under Section 10(10D) when received as a rider benefit (subject to conditions).",
+      "After receiving CI benefit, the rider benefit is exhausted. The base life policy continues if it is a separate product."
+    ],
+    "common_rejection_reasons": [
+      "Diagnosis does not meet IRDAI's standard definition of 'cancer of specified severity'",
+      "Early-stage cancer (carcinoma in situ) not covered under standard CI",
+      "Initial waiting period not completed (usually 90 days for CI policies)",
+      "30-day survival period not met (policyholder died within 30 days of diagnosis)",
+      "PED — cancer diagnosed before policy inception"
+    ],
+    "escalation_path": "Insurer Claims Department → Independent Medical Board Review → IRDAI Bima Bharosa → Consumer Forum (for expert medical testimony disputes)"
+  },
+  {
+    "id": "cp_group_health_claim",
+    "insurer": "All Group Health Insurers — Employer-Sponsored",
+    "claim_type": "reimbursement",
+    "title": "Group Health Insurance (Employer) — Claim Process",
+    "process": [
+      "Step 1 — Contact HR Department: For group health insurance claims, the first point of contact is the HR/admin department of your employer. They coordinate with the insurer/TPA and can guide you on the specific process for your company's group policy.",
+      "Step 2 — Cashless at Network Hospital: For planned hospitalization, check the insurer's hospital network. Contact the hospital's insurance desk with your group health card (or employee ID). The insurance desk contacts the TPA.",
+      "Step 3 — TPA Pre-authorization: TPA issues pre-authorization for cashless. Many employers have dedicated TPA contact numbers for their employees — use this for faster service.",
+      "Step 4 — Discharge and Post-treatment Documents: After discharge, collect all original documents. Some group policies cover family members — check if the claim is for employee, spouse, children, or parents.",
+      "Step 5 — Reimbursement Submission: For non-cashless claims, submit to HR or directly to TPA with the claim form. HR typically has a deadline for submitting claim forms (usually 30 days).",
+      "Step 6 — Settlement: TPA processes and settles to employee's bank account (usually deducted/credited via payroll or direct NEFT)."
+    ],
+    "documents_required": [
+      "Group health insurance card",
+      "Employee ID",
+      "Completed claim form (employer-specific format or TPA format)",
+      "Discharge summary",
+      "Itemized hospital bills",
+      "Lab/diagnostic reports",
+      "Prescription + pharmacy bills",
+      "FIR (if accident-related)",
+      "Bank account details (if direct NEFT)"
+    ],
+    "timeline_days": 21,
+    "tips": [
+      "Check if your employer's group policy covers parents and in-laws — not all do. Pre-authorization for parents may require additional employer approval.",
+      "Group policies often have no PED waiting period — coverage from day 1 for all conditions. Verify this advantage with HR.",
+      "If you resign/retire, group coverage ends — immediately buy an individual health policy. Portability from group to individual is possible via IRDAI rules.",
+      "Keep a copy of the master policy document from HR — it has the exact list of covered procedures, sub-limits, and exclusions."
+    ],
+    "common_rejection_reasons": [
+      "Employee relationship terminated before claim date",
+      "Dependent not registered in the group policy (e.g., child born after policy inception not added)",
+      "Treatment date falls during a lapse period (if group policy premium unpaid by employer)",
+      "Sub-limits exceeded (room rent, maternity sub-limit in group policy)"
+    ],
+    "escalation_path": "HR Department → TPA Helpline → Insurer Grievance → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_life_surrender",
+    "insurer": "All Life Insurers — Traditional Plans",
+    "claim_type": "death",
+    "title": "Life Insurance Policy Surrender (Voluntary Termination)",
+    "process": [
+      "Step 1 — Check Eligibility: Surrender is available only after a minimum premium-paying period (typically 2–3 years for traditional policies, 5 years for ULIPs after lock-in). Calculate surrender value before proceeding.",
+      "Step 2 — Obtain Surrender Value Quote: Call the insurer's helpline or visit the branch to get the exact surrender value calculation — Guaranteed Surrender Value (GSV) vs Special Surrender Value (SSV). Note the amount before committing.",
+      "Step 3 — Submit Surrender Request Form: Fill the surrender form at the insurer's branch or online. For amounts above ₹50,000, the original policy bond must be submitted.",
+      "Step 4 — KYC and Bank Details: Submit: PAN card, Aadhaar, NEFT mandate, cancelled cheque. Ensure bank account is in the policyholder's name.",
+      "Step 5 — Tax Assessment: Insurer calculates TDS liability. For policies not qualifying under Section 10(10D), TDS at 5% (with PAN) or 20% (without PAN) applies on the gain amount.",
+      "Step 6 — Payment: Surrender value credited to NEFT account within 7–15 working days of document submission."
+    ],
+    "documents_required": [
+      "Surrender request form",
+      "Original policy bond",
+      "PAN card",
+      "Aadhaar card",
+      "NEFT mandate and cancelled cheque",
+      "Photo ID and address proof"
+    ],
+    "timeline_days": 15,
+    "tips": [
+      "Compare surrender value vs paid-up conversion — surrendering may be suboptimal if the policy has many years left to maturity.",
+      "For ULIPs within lock-in period: surrender value goes into discontinued policy fund (4% p.a.) — paid only after 5 years from inception.",
+      "If the reason for surrender is premium unaffordability, consider making the policy paid-up instead.",
+      "Check for any outstanding loan against the policy — surrender value will be netted after loan repayment."
+    ],
+    "common_rejection_reasons": [
+      "Minimum premium-paying period not completed (below GSV eligibility)",
+      "Original policy bond not submitted",
+      "Loan outstanding not cleared",
+      "Policy under assignment — assignee's NOC required"
+    ],
+    "escalation_path": "Insurer Branch → Grievance Cell → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_motor_theft",
+    "insurer": "All Motor Insurers — Standard Process",
+    "claim_type": "motor_own_damage",
+    "title": "Motor Insurance — Vehicle Theft Claim",
+    "process": [
+      "Step 1 — FIR is Mandatory: File FIR at the nearest police station within 24 hours of discovering theft. This is non-negotiable — no FIR, no claim.",
+      "Step 2 — Intimate Insurer Immediately: Call the insurer's helpline immediately after filing FIR. Provide: policy number, vehicle RC number, FIR details. Time is critical — delay can void the claim.",
+      "Step 3 — RTO Intimation: Inform the Regional Transport Office (RTO) about the vehicle theft. The RTO issues an 'RC Cancellation Certificate' once the vehicle is confirmed stolen.",
+      "Step 4 — Non-traceable Certificate (NTC): Wait for police investigation. If the vehicle is not recovered within 90 days, police issue a Non-Traceable Certificate (also called Final Report or NTC). This is required for claim settlement.",
+      "Step 5 — Submit Claim with NTC: Submit all documents to the insurer after receiving NTC. Insurer arranges final survey and settlement based on IDV (less depreciation and policy deductible).",
+      "Step 6 — Sign Form 35 (Hypothecation Release): If vehicle has a loan (hypothecation with bank), get Form 35 signed by the bank releasing their claim on the vehicle before insurer can pay."
+    ],
+    "documents_required": [
+      "FIR copy (original and certified copy)",
+      "Original RC book to be surrendered",
+      "All original keys of the vehicle (both sets)",
+      "Policy document",
+      "Non-Traceable Certificate (NTC) from police",
+      "RTO transfer application and RC cancellation",
+      "Form 35 (hypothecation NOC from bank if applicable)",
+      "Photo ID and address proof",
+      "Signed indemnity bond"
+    ],
+    "timeline_days": 90,
+    "tips": [
+      "Vehicle tracking: if your vehicle has GPS/telematics installed, share the location history with the insurer — can help in recovery.",
+      "Duplicate keys: insurers will ask for all key sets — missing a key set raises suspicion of insurance fraud.",
+      "During the 90-day waiting period, follow up actively with police for recovery attempts.",
+      "If vehicle is recovered but damaged, switch to OD claim — theft + recovery with damage is an OD claim not a full theft claim."
+    ],
+    "common_rejection_reasons": [
+      "FIR filed after 24-hour delay without valid reason",
+      "Claim intimation delayed significantly after FIR",
+      "All keys not submitted (suspicion of inside job)",
+      "Policy lapsed at time of theft",
+      "Non-Traceable Certificate not obtained from police"
+    ],
+    "escalation_path": "Insurer Claims Manager → Grievance Cell → IRDAI Bima Bharosa → Motor Insurance Ombudsman → Civil Court"
+  },
+  {
+    "id": "cp_travel_trip_cancellation",
+    "insurer": "All Travel Insurers — Standard Process",
+    "claim_type": "travel",
+    "title": "Travel Insurance — Trip Cancellation Claim",
+    "process": [
+      "Step 1 — Cancel Trip with Service Providers: Cancel flights, hotels, and tour packages immediately with the airlines and hotels. Get cancellation confirmations and refund amount statements from each service provider.",
+      "Step 2 — Doctor Certificate (if Medical Reason): If cancellation is due to illness or injury, obtain a medical certificate from a registered doctor stating: patient's diagnosis, severity, and explicit recommendation against travel.",
+      "Step 3 — Intimate Insurer Immediately: Call travel insurer as soon as the decision to cancel is made — before the trip departure date. Late intimation (after the trip date) is a ground for rejection.",
+      "Step 4 — Claim Filing: Submit trip cancellation claim form with: cancellation confirmation from all service providers, refund amounts received (or refund rejection confirmation), total non-refundable amount.",
+      "Step 5 — Document Compilation: Attach: booking invoices, cancellation confirmation emails, refund statements, medical certificate (if applicable), travel policy.",
+      "Step 6 — Settlement: Insurer pays the non-refundable, forfeited portion of the trip cost up to the policy's trip cancellation limit."
+    ],
+    "documents_required": [
+      "Travel insurance policy",
+      "Trip booking invoices (flights, hotels, tours)",
+      "Cancellation confirmation from all providers",
+      "Refund statements (showing what was refunded and what was forfeited)",
+      "Medical certificate (for medical cancellation)",
+      "Death certificate (if trip cancelled due to death in family)",
+      "Passport copy",
+      "Bank account details"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "Cancel as early as possible — many hotels and airlines have tiered cancellation fees. Earlier cancellation = smaller loss.",
+      "Keep all email correspondence with airlines and hotels — these prove the cancellation and non-refundable amount.",
+      "Know covered reasons: illness, death in family, natural disaster at destination, job loss (some policies), visa denial. Personal preference to cancel is NOT covered.",
+      "CFAR (Cancel For Any Reason) travel insurance is available at higher premium — covers cancellation for any reason (not common in India)."
+    ],
+    "common_rejection_reasons": [
+      "Cancellation due to personal preference or change of mind — not a covered reason",
+      "Insurer not intimated before trip departure date",
+      "Medical certificate from non-qualified doctor or incomplete certificate",
+      "Trip cost can be fully recovered from airline/hotel refund — insurer pays only non-refundable portion",
+      "Flight cancelled by airline (airline liability, not travel insurance — airline must refund)"
+    ],
+    "escalation_path": "Travel Insurer Claims → Grievance Cell → IRDAI Bima Bharosa → Insurance Ombudsman"
+  },
+  {
+    "id": "cp_pa_disability_claim",
+    "insurer": "All PA Insurers — Standard Process",
+    "claim_type": "pre_authorization",
+    "title": "Personal Accident Insurance — Disability Claim (PTD/PPD)",
+    "process": [
+      "Step 1 — Medical Treatment and Stabilization: Get immediate treatment. For PA disability claims, the claim can only be filed after the condition is declared permanent — not during acute treatment phase.",
+      "Step 2 — Wait for Stabilization (180 days): Most PA policies require a waiting/stabilization period (typically 180 days or 6 months) before a disability is declared permanent. File the claim after this period.",
+      "Step 3 — Medical Board Certificate: Obtain a Permanent Disability Certificate from a government-recognized medical board (e.g., State Medical Board, AIIMS Medical Board) or from a specialist approved by the insurer. The certificate must specify: nature of disability, percentage of disability, and permanence.",
+      "Step 4 — Intimate Insurer: File the PA disability claim form with the insurer — provide FIR, accident details, medical treatment history, and disability certificate.",
+      "Step 5 — Independent Medical Examiner: The insurer may appoint their own IME to verify the disability percentage. IME report is considered alongside the medical board certificate.",
+      "Step 6 — Lump Sum Payment: Insurer pays: for PTD = 100% of sum assured; for PPD = the applicable percentage per IRDAI's standard PA disability schedule × SA. Payment is tax-free."
+    ],
+    "documents_required": [
+      "PA claim form",
+      "FIR (mandatory for all accident-related claims)",
+      "Accident details (photos, incident report)",
+      "Medical treatment records from date of accident",
+      "Medical board's permanent disability certificate",
+      "Specialist doctor's reports",
+      "Photo ID and policy document",
+      "NEFT mandate and cancelled cheque"
+    ],
+    "timeline_days": 180,
+    "tips": [
+      "Do not rush the disability certificate — the condition must be truly permanent (at least 6 months of treatment/stabilization) before filing.",
+      "Know the IRDAI disability schedule — it lists exactly what percentage applies to each body part disability.",
+      "Occupational hazard exclusions: if the accident occurred during a hazardous activity not declared in the proposal form, the claim may be rejected.",
+      "PA benefit is over and above any health insurance — both can be claimed for the same accident."
+    ],
+    "common_rejection_reasons": [
+      "Disability due to illness (not accident) — PA covers only accidents",
+      "Accident occurred during excluded activity (flying as non-professional passenger is usually covered; extreme sports may not be)",
+      "Claim filed before disability is declared permanent",
+      "Medical board certificate not from an approved/recognized authority",
+      "Intoxication at time of accident — excluded in most PA policies"
+    ],
+    "escalation_path": "PA Insurer Claims → Independent Medical Board → Grievance Cell → IRDAI Bima Bharosa → Consumer Court"
+  },
+  {
+    "id": "cp_irdai_grievance",
+    "insurer": "IRDAI — Applicable to All Insurers",
+    "claim_type": "pre_authorization",
+    "title": "Filing a Grievance with IRDAI Bima Bharosa",
+    "process": [
+      "Step 1 — First, Exhaust Insurer Grievance Process: File a written complaint with the insurer's grievance officer first. The insurer has 15 days to acknowledge and 30 days to resolve. Keep all correspondence.",
+      "Step 2 — If Unresolved After 30 Days: If the insurer does not respond within 30 days, or gives an unsatisfactory response, escalate to IRDAI.",
+      "Step 3 — File on Bima Bharosa Portal: Visit the IRDAI Bima Bharosa portal. Register with your mobile number. File the complaint with: policy details, insurer name, grievance description, previous correspondence with insurer.",
+      "Step 4 — IRDAI Assigns Complaint to Insurer: IRDAI forwards the complaint to the concerned insurer's nodal officer. The insurer must respond to IRDAI within a stipulated time.",
+      "Step 5 — IRDAI Follow-up: IRDAI monitors insurer's response. If insurer's response is still unsatisfactory, IRDAI can direct the insurer to resolve.",
+      "Step 6 — Ombudsman Escalation: If IRDAI grievance is also unresolved, the next level is the Insurance Ombudsman — a quasi-judicial body that can issue binding awards up to ₹30 lakh for individual policyholders."
+    ],
+    "documents_required": [
+      "Policy document copy",
+      "Claim rejection/dispute letter from insurer",
+      "Grievance letter previously sent to insurer",
+      "Insurer's response (or proof of no response)",
+      "All supporting documents for the claim",
+      "Photo ID of complainant"
+    ],
+    "timeline_days": 30,
+    "tips": [
+      "Always complain in writing — emails, portal submissions with acknowledgment numbers are all valid.",
+      "Keep reference numbers for every interaction: claim number, grievance number, IRDAI complaint number.",
+      "Insurance Ombudsman is free, fast (typically 3–6 months for resolution), and binding for amounts up to ₹30 lakh.",
+      "Consumer Forum (NCDRC/state/district) is an alternative to Ombudsman — no monetary limit."
+    ],
+    "common_rejection_reasons": [
+      "Complaint filed before exhausting insurer's grievance process",
+      "Complaint is out of jurisdiction (e.g., MACT award disputes go to court, not ombudsman)",
+      "Limitation period expired — complaint must be filed within 1 year of insurer's final decision",
+      "Insufficient documentation"
+    ],
+    "escalation_path": "IRDAI Bima Bharosa → Insurance Ombudsman → Consumer Forum → High Court"
   }
 ]

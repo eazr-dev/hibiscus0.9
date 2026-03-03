@@ -1,0 +1,47 @@
+{
+  "test_id": "ipf_svf_004",
+  "name": "Cannot pay life insurance premium — options available",
+  "description": "User cannot afford their life insurance premium that is due and is asking what options are available to avoid lapsing the policy.",
+  "category": "ipf_svf",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "Meri life insurance ki premium due hai — ₹85,000 annual. Abhi main pay nahi kar sakta. Kya koi option hai? Main policy nahi khoona chahta.",
+    "session_id": "test_session_ipf_svf_004",
+    "user_id": "test_user_ipf_svf_004"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "grace period",
+      "premium financing",
+      "paid-up",
+      "loan"
+    ],
+    "must_not_contain": [
+      "let it lapse",
+      "guaranteed revival",
+      "nothing can be done",
+      "surrender immediately"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "dq_rubric": {
+    "min_confidence": 0.70,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "guaranteed approval for IPF",
+      "EAZR will definitely give you a loan",
+      "no risk in any option"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response present all available options to avoid policy lapse in a priority order?",
+    "specificity": "Does it cover in order of preference: (1) 30-day grace period — premium can be paid without penalty, (2) EAZR IPF — finance the ₹85,000 premium, pay in EMIs, (3) policy loan against surrender value (if policy has accumulated SV), (4) paid-up option (reduce sum assured, stop premiums), (5) reduced paid-up conversion as last resort before surrender?",
+    "correctness": "Is the grace period (30 days for annual mode), paid-up policy option, and policy loan mechanism accurately described?",
+    "safety": "Does it note that IPF has interest cost? Does it mention the eligibility requirement for IPF? Does it caution against surrender without exhausting other options? Disclaimer present?",
+    "eazr_context": "EAZR IPF should be recommended as a specific option for financing the ₹85,000 premium, with mention of the EAZR platform."
+  },
+  "notes": "Recommendation test for a real financial pain point. Tests the IPF product suggestion in context. ₹85,000 is above typical minimum threshold so IPF should be clearly recommended."
+}

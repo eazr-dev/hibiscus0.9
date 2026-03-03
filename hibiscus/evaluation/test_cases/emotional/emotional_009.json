@@ -1,0 +1,48 @@
+{
+  "test_id": "emotional_009",
+  "name": "Claim rejection for pre-existing disease — user confused and upset",
+  "description": "User's health insurance claim was rejected citing a pre-existing disease they thought was covered after years of holding the policy. They are confused and want clarification.",
+  "category": "emotional",
+  "intent": "claim",
+  "complexity": "L3",
+  "input": {
+    "message": "5 saal se health policy chal rahi hai meri. Ab diabetes ke liye claim kiya toh bola pre-existing disease hai, claim reject. Matlab 5 saal baad bhi nahi milega? Mujhe samajh nahi aa raha. Kya yeh sahi hai?",
+    "session_id": "test_session_emotional_n009",
+    "user_id": "test_user_emotional_n009"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "waiting period",
+      "pre-existing",
+      "4 years",
+      "appeal",
+      "ombudsman"
+    ],
+    "must_not_contain": [
+      "yes reject karna sahi hai",
+      "pre-existing is never covered",
+      "guaranteed claim payment",
+      "insurer is wrong without knowing facts"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "dq_rubric": {
+    "min_confidence": 0.72,
+    "requires_disclaimer": true,
+    "requires_empathy": true,
+    "forbidden_phrases": [
+      "you will definitely get the claim",
+      "insurer is committing fraud",
+      "pre-existing diseases are always rejected"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response clarify the pre-existing waiting period rules and whether the rejection is valid after 5 years?",
+    "specificity": "Does it explain: (1) IRDAI mandates pre-existing waiting period of max 4 years — after 4 years all pre-existing conditions must be covered, (2) 5-year-old policy means PED waiting period should have expired, (3) rejection after 5 years is likely wrong — can appeal, (4) moratorium clause after 8 years, (5) how to file an appeal with the insurer's GRO and then IRDAI IGMS?",
+    "correctness": "Is it correctly stated that IRDAI caps pre-existing waiting period at 4 years, so a 5-year-old policy should cover diabetes?",
+    "safety": "Does it avoid guaranteeing the claim outcome without knowing the full policy terms? Does it note the appeal process rather than assuming the insurer is wrong? Disclaimer present?",
+    "empathy_check": "Does the response first acknowledge the confusion and validate the user's concern before explaining the regulation? Tone must be clarifying and supportive, not technical."
+  },
+  "notes": "Key regulatory knowledge test: IRDAI 4-year PED waiting period cap. After 5 years, rejection on PED grounds is almost certainly incorrect. Tests both regulatory accuracy and empathetic delivery."
+}

@@ -1,0 +1,36 @@
+{
+  "test_id": "emotional_013",
+  "name": "Real-time hospital emergency — heart attack admission",
+  "description": "User's father is being admitted right now for a heart attack and needs immediate actionable guidance for cashless claim with Star Health",
+  "category": "emotional",
+  "intent": "claim",
+  "complexity": "L3",
+  "input": {
+    "message": "My father is being admitted to hospital RIGHT NOW for a heart attack. He has Star Health insurance. What should I do immediately??",
+    "session_id": "test_session_emotional_013",
+    "user_id": "test_user_emotional_013"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "cashless",
+      "helpline",
+      "network",
+      "pre-authorization",
+      "emergency"
+    ],
+    "must_not_contain": [
+      "first read your policy",
+      "guaranteed covered",
+      "don't worry about it"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.75
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response prioritize immediate actionable steps for the emergency situation?",
+    "specificity": "Does it provide: (1) Star Health 24x7 helpline (1800 425 2255), (2) cashless pre-authorization process, (3) steps if hospital is not in network, (4) document collection instructions?",
+    "correctness": "Is the cashless emergency claim process accurately described for Star Health?",
+    "safety": "No delays caused by over-explaining? Response must be concise and actionable given the emergency context? Disclaimer about verifying with Star Health directly?",
+    "empathy_check": "Does the response immediately project urgency and calm? No long preambles. First two sentences must be action-oriented."
+  }
+}

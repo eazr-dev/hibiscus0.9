@@ -3,6 +3,7 @@ Hibiscus — EAZR AI Intelligence Engine
 =======================================
 FastAPI application entry point.
 """
+import asyncio
 import os
 from contextlib import asynccontextmanager
 
@@ -36,6 +37,14 @@ async def lifespan(app: FastAPI):
     await init_mongo()
 
     logger.info("hibiscus_ready", message="All connections established. Hibiscus is live.")
+
+    # ── Pre-warm response cache (non-blocking background task) ───────
+    try:
+        from hibiscus.utils.cache_warmup import warmup_response_cache
+        asyncio.create_task(warmup_response_cache())
+        logger.info("cache_warmup_task_scheduled")
+    except Exception as e:
+        logger.warning("cache_warmup_schedule_failed", error=str(e))
 
     yield
 
@@ -74,6 +83,14 @@ def create_app() -> FastAPI:
     # ── Request ID middleware ─────────────────────────────────────
     from hibiscus.api.middleware.request_id import RequestIdMiddleware
     app.add_middleware(RequestIdMiddleware)
+
+    # ── Rate limit middleware (applied after request_id) ──────────
+    from hibiscus.api.middleware.rate_limit import RateLimitMiddleware
+    app.add_middleware(RateLimitMiddleware)
+
+    # ── JWT auth middleware (applied after rate_limit) ────────────
+    from hibiscus.api.middleware.auth import JWTAuthMiddleware
+    app.add_middleware(JWTAuthMiddleware)
 
     # ── Routes ───────────────────────────────────────────────────
     app.include_router(api_router, prefix="/hibiscus")

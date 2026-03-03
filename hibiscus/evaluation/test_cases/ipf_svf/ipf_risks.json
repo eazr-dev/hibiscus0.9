@@ -1,0 +1,34 @@
+{
+  "test_id": "ipf_008",
+  "name": "Risks of insurance premium financing — default consequences",
+  "description": "User wants to understand the downside risks of IPF and what happens if they cannot repay the loan",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "What are the risks of insurance premium financing? What happens if I can't repay the loan?",
+    "session_id": "test_session_ipf_008",
+    "user_id": "test_user_ipf_008"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "default",
+      "policy lapse",
+      "collateral",
+      "risk"
+    ],
+    "must_not_contain": [
+      "risk-free",
+      "no consequences",
+      "guaranteed safe"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response give a balanced and honest view of IPF risks?",
+    "specificity": "Does it cover: (1) policy assigned to NBFC — NBFC can surrender on default, (2) loss of insurance cover mid-year on default, (3) credit score impact, (4) surrendered policy tax implications, (5) EMI stress in financial hardship?",
+    "correctness": "Is the risk of policy lapse and loss of coverage accurately described as a consequence of NBFC assignment?",
+    "safety": "Is the risk disclosure complete and honest without being alarmist? Does it balance with the use case for IPF? Disclaimer present?"
+  }
+}

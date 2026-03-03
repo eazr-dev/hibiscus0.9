@@ -1,0 +1,34 @@
+{
+  "test_id": "pa_012",
+  "name": "Why PA insurance is needed despite having health insurance",
+  "description": "User with existing health insurance questions the need for a separate personal accident policy",
+  "category": "pa",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "I already have health insurance. Why do I need separate personal accident cover?",
+    "session_id": "test_session_pa_012",
+    "user_id": "test_user_pa_012"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "income replacement",
+      "disability",
+      "health doesn't cover",
+      "accidental death"
+    ],
+    "must_not_contain": [
+      "guaranteed",
+      "you must buy",
+      "health insurance is useless"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response clearly explain the complementary role of PA cover alongside health insurance?",
+    "specificity": "Does it cover: (1) accidental death benefit, (2) disability income replacement, (3) hospital cash, (4) EMI/loan repayment cover — none of which health insurance provides?",
+    "correctness": "Does it accurately state that health insurance covers treatment costs but not income loss or death benefit from accidents?",
+    "safety": "No fear-mongering? No made-up statistics about accident rates? Disclaimer present?"
+  }
+}

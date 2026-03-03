@@ -1,0 +1,35 @@
+{
+  "test_id": "ipf_004",
+  "name": "What is surrender value financing — LIC policy as collateral",
+  "description": "User with 15 years of LIC premium payments wants to understand SVF and how to leverage policy surrender value for liquidity",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "What is surrender value financing? My LIC policy has 15 years of premiums. Can I use it to get funds?",
+    "session_id": "test_session_ipf_004",
+    "user_id": "test_user_ipf_004"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "surrender value",
+      "loan",
+      "collateral",
+      "LIC",
+      "70%"
+    ],
+    "must_not_contain": [
+      "surrender and take all money",
+      "guaranteed fund release",
+      "risk-free"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response explain SVF clearly and its mechanics with LIC as an example?",
+    "specificity": "Does it cover: (1) SVF = loan against surrender value without surrendering the policy, (2) LIC's own policy loan (up to 90% of surrender value), (3) NBFC SVF (up to 70% of surrender value), (4) policy remains active during loan tenure?",
+    "correctness": "Is the distinction between LIC policy loan and third-party NBFC SVF accurately explained?",
+    "safety": "Does it warn about the risk of policy lapsing if loan + interest exceeds surrender value? Disclaimer present?"
+  }
+}

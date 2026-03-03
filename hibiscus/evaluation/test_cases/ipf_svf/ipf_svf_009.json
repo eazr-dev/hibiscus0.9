@@ -1,0 +1,48 @@
+{
+  "test_id": "ipf_svf_009",
+  "name": "Surrender policy or take loan against it — decision framework",
+  "description": "User is torn between surrendering their LIC policy for liquidity versus taking a loan against it. They want a clear recommendation or decision framework.",
+  "category": "ipf_svf",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "Mujhe thodi liquidity chahiye. Mera LIC policy surrender karoon ya loan le loon uske against? Kya better rahega long term mein? Surrender value lagbhag ₹2.5 lakh hai.",
+    "session_id": "test_session_ipf_svf_009",
+    "user_id": "test_user_ipf_svf_009"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "surrender value",
+      "loan",
+      "maturity",
+      "interest",
+      "protection"
+    ],
+    "must_not_contain": [
+      "definitely surrender",
+      "loan is always better",
+      "no risk either way",
+      "guaranteed maturity amount ₹"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "dq_rubric": {
+    "min_confidence": 0.72,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "definitely surrender the policy",
+      "guaranteed better to take loan",
+      "maturity benefit is guaranteed ₹"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response provide a structured decision framework for surrender vs loan?",
+    "specificity": "Does it cover the key decision factors: (1) duration remaining to maturity — closer to maturity, stronger case for loan, (2) purpose of liquidity — temporary need = loan; permanent need = possibly surrender, (3) cost comparison — loan interest vs maturity benefit foregone, (4) life cover continues with loan but ends on surrender — evaluate protection need, (5) tax: surrender gains may be taxable; loan repayment is not, (6) recommendation for ₹2.5L SV: LIC policy loan (up to ₹2.25L, ~10% p.a.) likely cheapest option?",
+    "correctness": "Is the framework for evaluating surrender vs loan correctly structured? Is the LIC policy loan (up to 90% of SV) correctly identified as typically the cheapest option for a ₹2.5L SV policy?",
+    "safety": "Does it avoid a definitive recommendation without knowing tenure, premium amount, maturity benefit, and purpose of funds? Does it mention the tax implications of surrender? Disclaimer present?",
+    "eazr_context": "Should mention both LIC policy loan (cheapest direct option) and EAZR SVF (if user prefers NBFC route for any reason) as viable options for the loan path."
+  },
+  "notes": "Decision framework test. ₹2.5L SV with LIC policy loan available at ~10% is the most compelling option for temporary liquidity — Hibiscus should identify this. Key failure mode: recommending surrender without evaluating the loan option cost."
+}

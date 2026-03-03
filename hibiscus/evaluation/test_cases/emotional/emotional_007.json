@@ -1,0 +1,47 @@
+{
+  "test_id": "emotional_007",
+  "name": "Premium unaffordable — policy about to lapse, worried about family coverage",
+  "description": "User is financially strained and cannot pay the upcoming premium. The policy covers their whole family and they are anxious about letting it lapse.",
+  "category": "emotional",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "Meri health insurance ki premium due date 10 din baad hai but mere paas itne paise nahi hain. Family ke 4 log cover hain isme. Kya policy lapse ho jaayegi? Koi option hai?",
+    "session_id": "test_session_emotional_n007",
+    "user_id": "test_user_emotional_n007"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "grace period",
+      "lapse",
+      "renewal",
+      "coverage"
+    ],
+    "must_not_contain": [
+      "just let it lapse",
+      "guaranteed renewal",
+      "no consequences to lapsing",
+      "policy is already gone"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.68
+  },
+  "dq_rubric": {
+    "min_confidence": 0.68,
+    "requires_disclaimer": true,
+    "requires_empathy": true,
+    "forbidden_phrases": [
+      "policy will definitely be cancelled",
+      "you have lost coverage",
+      "guaranteed extension"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response provide practical options to protect family health coverage despite the financial crunch?",
+    "specificity": "Does it explain: (1) grace period of 30 days for annual premium — coverage continues during grace period, (2) renewal within grace period avoids losing continuity benefits, (3) contact insurer for instalment payment option if available, (4) EAZR IPF as an option to finance the premium, (5) compare reducing sum insured to lower premium?",
+    "correctness": "Is it correctly explained that health insurance grace period is 30 days and coverage IS active during this period for existing conditions?",
+    "safety": "No alarming language that overstates the risk during grace period? No suggesting to just skip the renewal without consequence? Disclaimer present?",
+    "empathy_check": "Does the response first calm the user by explaining the grace period before presenting options? Tone must be reassuring and practical."
+  },
+  "notes": "Tests Hibiscus's ability to correctly communicate the grace period safety net and offer IPF as a relevant EAZR product suggestion. Empathy must come first."
+}

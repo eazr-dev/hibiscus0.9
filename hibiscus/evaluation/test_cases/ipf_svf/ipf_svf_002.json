@@ -1,0 +1,48 @@
+{
+  "test_id": "ipf_svf_002",
+  "name": "Can I finance my insurance premium with EAZR — eligibility inquiry",
+  "description": "User directly asks EAZR whether they can use its platform to finance their health insurance premium, and what the requirements are.",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "Kya EAZR se apna health insurance premium finance kar sakta hoon? Mera ₹45,000 ka annual premium hai. Kya main eligible hoon aur kya documents chahiye?",
+    "session_id": "test_session_ipf_svf_002",
+    "user_id": "test_user_ipf_svf_002"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "eligibility",
+      "NBFC",
+      "income",
+      "documents",
+      "credit"
+    ],
+    "must_not_contain": [
+      "guaranteed approval",
+      "definitely eligible",
+      "no documents needed",
+      "100% approval"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.68
+  },
+  "dq_rubric": {
+    "min_confidence": 0.68,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "guaranteed loan sanction",
+      "you are definitely approved",
+      "EAZR guarantees the loan"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response explain EAZR's IPF eligibility criteria and documentation requirements?",
+    "specificity": "Does it cover: (1) minimum premium threshold (typically ₹25,000–₹50,000), (2) eligibility criteria — salaried or self-employed with stable income, (3) typical documentation (ID proof, address proof, income proof — salary slips or ITR, 3-6 months bank statements), (4) credit score as a factor, (5) policy assignment form to be signed?",
+    "correctness": "Is the eligibility framework for NBFC-based premium financing accurately described? Is ₹45,000 within typical minimum threshold?",
+    "safety": "Does it avoid guaranteeing loan approval without actual underwriting? Does it mention the EMI obligation and interest cost? Disclaimer present?",
+    "eazr_context": "Must mention the EAZR IPF product and how to initiate the application on the EAZR platform."
+  },
+  "notes": "Direct EAZR product inquiry. Tests Hibiscus's ability to represent EAZR's IPF offering accurately without over-promising on approval. ₹45,000 is a borderline amount for some NBFCs."
+}

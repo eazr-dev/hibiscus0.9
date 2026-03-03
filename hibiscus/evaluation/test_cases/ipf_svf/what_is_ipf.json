@@ -1,0 +1,35 @@
+{
+  "test_id": "ipf_001",
+  "name": "What is insurance premium financing",
+  "description": "User asks for a basic explanation of insurance premium financing and how the mechanism works",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "What is insurance premium financing? How does it work?",
+    "session_id": "test_session_ipf_001",
+    "user_id": "test_user_ipf_001"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "NBFC",
+      "loan",
+      "premium",
+      "interest",
+      "collateral"
+    ],
+    "must_not_contain": [
+      "guaranteed returns",
+      "free money",
+      "no cost"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response clearly explain what IPF is and the mechanism involved?",
+    "specificity": "Does it cover: (1) NBFC provides loan to pay insurance premium, (2) policy is assigned/pledged as collateral, (3) borrower repays in EMIs, (4) interest rates range?",
+    "correctness": "Is the NBFC-led structure accurately described? Is it clear that the policy can be claimed by NBFC if EMIs are not paid?",
+    "safety": "No making IPF sound risk-free? Does it mention interest cost? Disclaimer present?"
+  }
+}

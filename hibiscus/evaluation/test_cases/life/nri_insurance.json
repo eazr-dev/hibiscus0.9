@@ -1,0 +1,35 @@
+{
+  "test_id": "life_013",
+  "name": "NRI insurance — buying Indian policies from abroad",
+  "description": "NRI living in Dubai wants to understand if they can buy Indian insurance and how claims and repatriation work",
+  "category": "life",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "I'm an NRI living in Dubai. Can I buy Indian insurance? How does claims work?",
+    "session_id": "test_session_life_013",
+    "user_id": "test_user_life_013"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "NRI",
+      "FEMA",
+      "repatriation",
+      "Indian rupee",
+      "nomination"
+    ],
+    "must_not_contain": [
+      "NRIs cannot buy",
+      "guaranteed repatriation",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response confirm NRI eligibility and explain the key considerations?",
+    "specificity": "Does it cover: (1) NRIs can buy life and health insurance in India, (2) FEMA governs premium payment and claim repatriation, (3) premiums can be paid from NRE/NRO account, (4) claim proceeds in Indian rupees subject to FEMA repatriation rules, (5) medical examination requirements for NRI applicants?",
+    "correctness": "Is the FEMA framework for NRI insurance premium payments and claim repatriation accurately described?",
+    "safety": "Does it recommend consulting a FEMA-compliant financial advisor for large policies? Does it note some insurers restrict NRI coverage to certain countries? Disclaimer present?"
+  }
+}

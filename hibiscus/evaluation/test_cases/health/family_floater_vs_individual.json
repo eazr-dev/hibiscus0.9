@@ -1,0 +1,35 @@
+{
+  "test_id": "health_019",
+  "name": "Family floater vs individual health policies for family of 4",
+  "description": "User with wife and 2 kids weighing a single family floater against separate individual policies for each member",
+  "category": "health",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "I have wife and 2 kids. Should I get one family floater or individual policies for each?",
+    "session_id": "test_session_health_019",
+    "user_id": "test_user_health_019"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "family floater",
+      "individual",
+      "age",
+      "premium",
+      "restoration"
+    ],
+    "must_not_contain": [
+      "guaranteed cheaper",
+      "floater is always better",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response give a balanced comparison and help the user decide based on their situation?",
+    "specificity": "Does it cover: (1) floater economics (premium savings), (2) risk of shared pool exhaustion, (3) eldest member's age driving premium, (4) individual plan advantage for senior/high-risk members, (5) restoration benefit as mitigation?",
+    "correctness": "Is the thumb rule accurate — floater works well for young healthy families, individual better when any member is older or has pre-existing conditions?",
+    "safety": "No recommendation without knowing ages and existing health conditions? Disclaimer present?"
+  }
+}

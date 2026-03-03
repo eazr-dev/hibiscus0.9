@@ -17,6 +17,7 @@ from litellm import acompletion, completion_cost
 from hibiscus.config import settings
 from hibiscus.observability.logger import get_logger
 from hibiscus.observability.cost_tracker import track_llm_call
+from hibiscus.observability.metrics import record_llm_call as _metric_llm, record_error as _metric_error
 
 logger = get_logger(__name__)
 
@@ -121,12 +122,20 @@ async def call_llm(
             tokens_out = response.usage.completion_tokens if response.usage else 0
 
             # Track cost
-            track_llm_call(
+            llm_call_record = track_llm_call(
                 conversation_id=conversation_id,
                 model=config["model"],
                 tokens_in=tokens_in,
                 tokens_out=tokens_out,
                 agent=agent,
+            )
+
+            # Prometheus instrumentation
+            _metric_llm(
+                model=config["model"],
+                agent=agent,
+                cost_inr=llm_call_record.cost_inr,
+                latency_s=latency_ms / 1000.0,
             )
 
             logger.info(
@@ -161,6 +170,7 @@ async def call_llm(
             # Continue to next provider in fallback chain
 
     # All providers failed
+    _metric_error("llm_exhausted")
     raise RuntimeError(
         f"All LLM providers exhausted. Last error: {last_error}. "
         f"Check API keys: DeepSeek={settings.has_deepseek}, Anthropic={settings.has_anthropic}"

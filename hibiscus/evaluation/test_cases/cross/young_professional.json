@@ -1,0 +1,35 @@
+{
+  "test_id": "cross_007",
+  "name": "Insurance priority framework for 28-year-old first-time buyer",
+  "description": "28-year-old salaried professional earning ₹8L/year asking what insurance to buy first on a limited budget",
+  "category": "cross",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "I'm 28, just started working, earning ₹8 lakh per year. What insurance should I buy first?",
+    "session_id": "test_session_cross_007",
+    "user_id": "test_user_cross_007"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "term",
+      "health",
+      "priority",
+      "₹"
+    ],
+    "must_not_contain": [
+      "buy everything now",
+      "guaranteed best plan",
+      "ULIP is perfect for you"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response give a clear prioritised insurance buying roadmap for a young professional?",
+    "specificity": "Does it provide: (1) Priority 1 — health insurance (₹5L–₹10L, ~₹7,000–12,000/year), (2) Priority 2 — term plan if dependents (10-15x income = ₹80L–₹1.2Cr), (3) Priority 3 — PA cover if no employer cover, (4) indicative premium ranges?",
+    "correctness": "Is the income multiple for term cover (10-15x) and health cover quantum (₹5L minimum) correctly recommended?",
+    "safety": "No recommending ULIPs or endowment plans as primary purchase? No invented plan names as 'perfect'? Disclaimer present?",
+    "eazr_context": "Should suggest EAZR tool for personalised recommendation."
+  }
+}

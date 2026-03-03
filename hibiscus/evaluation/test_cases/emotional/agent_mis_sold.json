@@ -1,0 +1,36 @@
+{
+  "test_id": "emotional_014",
+  "name": "Mis-selling complaint — ULIP sold with false guaranteed return promise",
+  "description": "User feels cheated after realising their agent sold them a ULIP by promising 15% guaranteed returns which are not materialising",
+  "category": "emotional",
+  "intent": "regulate",
+  "complexity": "L3",
+  "input": {
+    "message": "I think my insurance agent sold me a ULIP by hiding all the charges. He said guaranteed 15% returns but now I see the actual returns are terrible. I feel cheated.",
+    "session_id": "test_session_emotional_014",
+    "user_id": "test_user_emotional_014"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "mis-selling",
+      "IRDAI",
+      "complaint",
+      "ombudsman",
+      "free look"
+    ],
+    "must_not_contain": [
+      "guaranteed 15%",
+      "agent was right",
+      "ULIPs always perform well"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response validate the concern about mis-selling and provide clear redressal steps?",
+    "specificity": "Does it explain: (1) ULIP charges (mortality, fund management, policy admin), (2) free-look period if recent purchase, (3) IRDAI mis-selling complaint process, (4) Insurance Ombudsman option?",
+    "correctness": "Is it factually correct that ULIPs cannot offer guaranteed returns — they are market-linked?",
+    "safety": "Does it not defame the insurer by name without evidence? Does it present both sides (agent mis-sold, but surrendering may still cause loss)?",
+    "empathy_check": "Does the response acknowledge the feeling of being cheated before providing remediation steps? No victim-blaming language."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "test_id": "health_015",
+  "name": "Restoration benefit in health insurance — frequency and conditions",
+  "description": "User wants to understand what restoration benefit is, how many times it applies, and under what conditions it triggers",
+  "category": "health",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "What is restoration benefit in health insurance? How many times does it apply?",
+    "session_id": "test_session_health_015",
+    "user_id": "test_user_health_015"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "restoration",
+      "restore",
+      "exhausted",
+      "same illness"
+    ],
+    "must_not_contain": [
+      "guaranteed",
+      "unlimited restoration always",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response clearly explain the restoration benefit mechanism?",
+    "specificity": "Does it explain: (1) sum insured restored once exhausted, (2) some policies offer unlimited restoration, (3) same illness exclusion in many plans (restored amount only for different illness), (4) same illness restoration available in premium plans?",
+    "correctness": "Is the distinction between 'same illness exclusion' vs 'same illness covered restoration' accurately described as varying by product?",
+    "safety": "Does it avoid stating a specific number of restorations without knowing the policy? Disclaimer present?"
+  }
+}

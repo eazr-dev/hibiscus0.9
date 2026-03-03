@@ -1,0 +1,34 @@
+{
+  "test_id": "ipf_003",
+  "name": "IPF via NBFC vs insurer EMI payment comparison",
+  "description": "User wants to understand the practical difference between paying premiums in EMIs to the insurer directly versus getting an NBFC premium loan",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "What's the difference between paying premium in EMIs directly to insurer vs getting premium financing from an NBFC?",
+    "session_id": "test_session_ipf_003",
+    "user_id": "test_user_ipf_003"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "interest rate",
+      "EMI",
+      "NBFC",
+      "insurer"
+    ],
+    "must_not_contain": [
+      "both are exactly the same",
+      "no difference",
+      "guaranteed better"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response clearly differentiate between insurer EMI and NBFC-based IPF?",
+    "specificity": "Does it cover key differences: (1) interest rate (insurer EMI typically adds 3-5% loading vs NBFC 12-18% p.a.), (2) policy assignment (only in NBFC), (3) credit check (only in NBFC), (4) available products (not all insurers offer EMI)?",
+    "correctness": "Are the structural differences accurately described?",
+    "safety": "Does it help the user evaluate which is better for their case without making a definitive recommendation? Disclaimer present?"
+  }
+}

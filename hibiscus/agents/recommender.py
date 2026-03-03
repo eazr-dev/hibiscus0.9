@@ -147,6 +147,29 @@ class RecommenderAgent(BaseAgent):
             gaps = self._collect_gaps(state)
             plog.step_complete("collect_gaps", gaps_found=len(gaps))
 
+            # ── Step 2.5: Run quote comparison if message is a compare query ──
+            compare_table = ""
+            is_compare_query = any(
+                kw in message.lower()
+                for kw in ["compare", "vs ", "versus", "side by side", "which is better",
+                            "best health insurance", "best term plan", "top health plans"]
+            )
+            if is_compare_query:
+                plog.step_start("compare_quotes")
+                try:
+                    from hibiscus.tools.quote.compare import compare_quotes, parse_requirements
+                    req = parse_requirements(message, merged_profile)
+                    compare_result = await compare_quotes(req, top_k=5)
+                    compare_table = compare_result.get("comparison_table", "")
+                    if compare_table:
+                        plog.step_complete(
+                            "compare_quotes",
+                            products_compared=len(compare_result.get("products", [])),
+                            data_source=compare_result.get("data_source", "?"),
+                        )
+                except Exception as e:
+                    plog.warning("compare_quotes_failed", error=str(e))
+
             # ── Step 3: Map gaps to product recommendations ────────────────
             plog.step_start("map_gaps_to_products")
             product_recommendations = self._map_gaps_to_products(gaps, merged_profile)
@@ -164,6 +187,7 @@ class RecommenderAgent(BaseAgent):
                 product_recommendations=product_recommendations,
                 adequacy_analysis=adequacy_analysis,
                 message=message,
+                compare_table=compare_table,
             )
 
             llm_response = await call_llm(
@@ -461,6 +485,7 @@ class RecommenderAgent(BaseAgent):
         product_recommendations: List[Dict[str, Any]],
         adequacy_analysis: Dict[str, Any],
         message: str,
+        compare_table: str = "",
     ) -> str:
         """Build prompt for LLM with all pre-computed analysis."""
         profile_text = json.dumps(user_profile, indent=2, ensure_ascii=False) if user_profile else "Not provided — use general guidance"
@@ -468,6 +493,10 @@ class RecommenderAgent(BaseAgent):
         gaps_text = ", ".join(gaps) if gaps else "No specific gaps identified — provide general guidance"
         recommendations_text = json.dumps(product_recommendations, indent=2, ensure_ascii=False)
         adequacy_text = json.dumps(adequacy_analysis, indent=2, ensure_ascii=False) if adequacy_analysis else "Not computed"
+
+        compare_section = ""
+        if compare_table:
+            compare_section = f"\n\nCOMPARISON TABLE (include this in your response — label premiums as estimates):\n{compare_table}\n"
 
         return f"""The user is asking for insurance product recommendations.
 
@@ -486,8 +515,7 @@ PRE-COMPUTED COVERAGE ADEQUACY:
 {adequacy_text}
 
 PRODUCT RECOMMENDATIONS (based on gap analysis — present these):
-{recommendations_text}
-
+{recommendations_text}{compare_section}
 INSTRUCTIONS FOR RESPONSE:
 1. Open with a brief assessment of the user's current situation (1-2 sentences)
 2. Present Top 3 recommendations (or fewer if gaps < 3) in this format:

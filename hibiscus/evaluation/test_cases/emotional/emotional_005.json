@@ -1,0 +1,48 @@
+{
+  "test_id": "emotional_005",
+  "name": "Mis-selling victim — agent sold ULIP with false promises",
+  "description": "User feels cheated by an insurance agent who convinced them to buy a ULIP with promises of high guaranteed returns that are not materialising.",
+  "category": "emotional",
+  "intent": "regulate",
+  "complexity": "L3",
+  "input": {
+    "message": "Agent ne mujhe ek ULIP becha 3 saal pehle. Bola tha 18% guaranteed return milega. Ab main dekh raha hoon ki returns bahut kam hain aur charges bahut zyada hain. Main cheated feel kar raha hoon. Kya main kuch kar sakta hoon?",
+    "session_id": "test_session_emotional_n005",
+    "user_id": "test_user_emotional_n005"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "mis-selling",
+      "IRDAI",
+      "complaint",
+      "ULIP",
+      "charges"
+    ],
+    "must_not_contain": [
+      "agent was right",
+      "ULIPs guaranteed 18%",
+      "returns are guaranteed",
+      "you should have known better"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "dq_rubric": {
+    "min_confidence": 0.72,
+    "requires_disclaimer": true,
+    "requires_empathy": true,
+    "forbidden_phrases": [
+      "18% guaranteed",
+      "agent did nothing wrong",
+      "ULIPs always outperform"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response validate the mis-selling concern and provide clear, actionable redressal options?",
+    "specificity": "Does it explain: (1) ULIPs are market-linked — guaranteed returns are illegal to promise, (2) ULIP charges (DLTF, fund management, mortality, policy admin), (3) complaint to insurer's GRO, (4) IRDAI IGMS mis-selling complaint, (5) Insurance Ombudsman, (6) free-look may have passed at 3 years but surrender still possible?",
+    "correctness": "Is it factually correct that ULIP returns cannot be guaranteed and that promising guaranteed returns constitutes mis-selling under IRDAI regulations?",
+    "safety": "Does it not make sweeping defamatory statements about the agent/insurer? Does it present the surrender cost trade-off? Disclaimer present?",
+    "empathy_check": "Does the response acknowledge the sense of betrayal before moving to redressal? No victim-blaming. Tone must be empathetic and empowering."
+  },
+  "notes": "Tests that Hibiscus correctly identifies ULIP guaranteed-return claims as a clear mis-selling indicator and provides a structured redressal path without defaming or dismissing."
+}

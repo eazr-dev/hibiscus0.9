@@ -1,0 +1,36 @@
+{
+  "test_id": "cross_011",
+  "name": "Retirement planning using insurance products at age 45",
+  "description": "45-year-old user seeking a comprehensive retirement planning roadmap using insurance products",
+  "category": "cross",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "I'm 45 years old. How should I plan for retirement using insurance products?",
+    "session_id": "test_session_cross_011",
+    "user_id": "test_user_cross_011"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "pension",
+      "annuity",
+      "NPS",
+      "life insurance",
+      "health in retirement"
+    ],
+    "must_not_contain": [
+      "guaranteed returns from annuity",
+      "definitely enough",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response provide a structured retirement planning framework using insurance products?",
+    "specificity": "Does it cover: (1) term plan adequacy until retirement, (2) annuity/pension plan for post-retirement income, (3) NPS as complementary product (Section 80CCD), (4) senior citizen health insurance planning, (5) critical illness cover while still insurable?",
+    "correctness": "Is the product landscape for retirement planning (ULIP, guaranteed pension, NPS) accurately described with real IRDAI-approved products?",
+    "safety": "No invented return projections? No claiming specific plans will guarantee a retirement corpus? Disclaimer about needing a financial plan alongside insurance?",
+    "multi_agent": "This query should engage at least recommender + tax_advisor + educator agents."
+  }
+}

@@ -23,11 +23,16 @@ RUN pip install --no-cache-dir --upgrade pip && \
         httpx tenacity \
         redis hiredis motor pymongo \
         asyncpg sqlalchemy \
-        qdrant-client tiktoken \
+        qdrant-client fastembed tiktoken \
         neo4j \
         pydantic pydantic-settings \
         python-dotenv structlog orjson numpy python-dateutil \
-        tavily-python langsmith
+        tavily-python langsmith \
+        prometheus_client
+
+# Pre-download fastembed model (BAAI/bge-large-en-v1.5) during build — cached in image
+# This avoids a ~2s model download on first request after container start
+RUN python -c "from fastembed import TextEmbedding; TextEmbedding('BAAI/bge-large-en-v1.5')" 2>/dev/null || true
 
 # Copy application code
 COPY hibiscus/ /app/hibiscus/

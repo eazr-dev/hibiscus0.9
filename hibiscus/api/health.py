@@ -16,7 +16,7 @@ import time
 from typing import Any, Dict
 
 from fastapi import APIRouter
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, PlainTextResponse
 
 from hibiscus.config import settings
 from hibiscus.observability.logger import get_logger
@@ -200,3 +200,21 @@ async def health() -> JSONResponse:
     logger.info("health_check", status=overall_status, latency_ms=total_latency_ms)
 
     return JSONResponse(content=response, status_code=http_status)
+
+
+@router.get(
+    "/metrics",
+    summary="Prometheus metrics",
+    description="Prometheus-format metrics for scraping by Prometheus or compatible systems.",
+    response_class=PlainTextResponse,
+)
+async def metrics() -> PlainTextResponse:
+    """Return Prometheus text-format metrics (text/plain; version=0.0.4)."""
+    try:
+        from hibiscus.observability.metrics import get_metrics_text
+        text = get_metrics_text()
+        return PlainTextResponse(content=text, media_type="text/plain; version=0.0.4")
+    except ImportError:
+        return PlainTextResponse(content="# prometheus_client not installed\n")
+    except Exception as e:
+        return PlainTextResponse(content=f"# metrics error: {e}\n")

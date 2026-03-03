@@ -49,6 +49,7 @@ class HibiscusState(TypedDict, total=False):
     document_context: Optional[Dict[str, Any]] # Extracted doc data from doc memory
     relevant_memories: List[Dict[str, Any]]    # Semantic search results (insights)
     relevant_conversations: List[Dict[str, Any]]  # Past relevant conversations
+    renewal_alerts: str                           # Formatted renewal alert string (empty = none)
 
     # ── CLASSIFICATION ────────────────────────────────────────────────────
     category: str           # health|life|motor|travel|pa|cross|general
@@ -109,6 +110,7 @@ def initial_state(
         document_context=None,
         relevant_memories=[],
         relevant_conversations=[],
+        renewal_alerts="",
         category="general",
         intent="general_chat",
         complexity=Complexity.L1.value,

@@ -1,0 +1,35 @@
+{
+  "test_id": "ipf_007",
+  "name": "IPF for small businesses to afford employee group health insurance",
+  "description": "SME owner asking whether premium financing can help them afford group health insurance for employees",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "Can small businesses use premium financing to afford group health insurance for employees?",
+    "session_id": "test_session_ipf_007",
+    "user_id": "test_user_ipf_007"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "group",
+      "SME",
+      "premium",
+      "financing",
+      "NBFC"
+    ],
+    "must_not_contain": [
+      "SMEs cannot do this",
+      "guaranteed approval",
+      "free insurance"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.68
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response confirm IPF availability for group health insurance and explain the mechanics?",
+    "specificity": "Does it cover: (1) group health IPF as a product available through NBFCs, (2) typical group size requirements (10+ employees), (3) premium threshold for financing eligibility, (4) tax deductibility of group health premium as business expense?",
+    "correctness": "Is it accurate that group health premium can be paid through IPF and that it qualifies as a business expense under Section 37(1)?",
+    "safety": "Does it note that NBFC credit assessment applies? Does it mention the interest cost impact on the business? Disclaimer present?"
+  }
+}

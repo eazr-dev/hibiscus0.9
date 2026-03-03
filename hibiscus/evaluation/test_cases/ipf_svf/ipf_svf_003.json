@@ -1,0 +1,48 @@
+{
+  "test_id": "ipf_svf_003",
+  "name": "How does surrender value financing work — mechanism explained",
+  "description": "User has a life insurance policy with accumulated surrender value and wants to understand how surrender value financing works as a liquidity option without surrendering the policy.",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "Surrender value financing kya hota hai? Mera ek LIC endowment plan hai jisme surrender value hai. Kya main paise le sakta hoon bina policy surrender kiye?",
+    "session_id": "test_session_ipf_svf_003",
+    "user_id": "test_user_ipf_svf_003"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "surrender value",
+      "loan",
+      "collateral",
+      "LIC",
+      "policy continues"
+    ],
+    "must_not_contain": [
+      "surrender the policy immediately",
+      "guaranteed fund release",
+      "risk-free loan",
+      "no interest charged"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "dq_rubric": {
+    "min_confidence": 0.72,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "risk-free",
+      "guaranteed loan against any policy",
+      "you will get 100% of surrender value"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response explain SVF clearly including the core distinction from surrendering?",
+    "specificity": "Does it explain: (1) SVF = loan against surrender value — policy stays active, (2) LIC's own policy loan (up to 90% of paid-up surrender value at ~10% p.a.), (3) NBFC SVF (up to 70% of surrender value, rates 12–15%), (4) the policy remains active during loan tenure (death benefit continues), (5) risk: if loan + interest exceeds surrender value, policy may lapse?",
+    "correctness": "Is the LIC policy loan product (direct, no NBFC required) correctly distinguished from third-party NBFC SVF? Are the LTV ratios (90% LIC vs 70% NBFC) approximately correct?",
+    "safety": "Does it warn about the policy lapse risk if interest accumulates and exceeds surrender value? Does it note the interest cost? Disclaimer present?",
+    "eazr_context": "Should mention EAZR's SVF offering as an option for those who prefer the NBFC route for higher loan amounts."
+  },
+  "notes": "Core SVF education test. Key accuracy check: LIC policy loan (cheapest, direct) vs NBFC SVF (more flexible but higher rate). Both keep the policy active."
+}

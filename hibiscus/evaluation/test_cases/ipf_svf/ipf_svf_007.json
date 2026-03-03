@@ -1,0 +1,46 @@
+{
+  "test_id": "ipf_svf_007",
+  "name": "Can I use ULIP surrender value for a loan",
+  "description": "User has a ULIP with market-linked surrender value and wants to know if they can take a loan against it, given that ULIP values fluctuate.",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "Mera ek ULIP hai jisme fund value abhi ₹7 lakh hai. Kya main ULIP ki surrender value ke against loan le sakta hoon? EAZR se possible hai kya?",
+    "session_id": "test_session_ipf_svf_007",
+    "user_id": "test_user_ipf_svf_007"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "ULIP",
+      "fund value",
+      "partial withdrawal",
+      "loan"
+    ],
+    "must_not_contain": [
+      "guaranteed ₹7 lakh loan",
+      "ULIP loan is risk-free",
+      "fund value is fixed"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "dq_rubric": {
+    "min_confidence": 0.70,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "guaranteed loan against ULIP",
+      "₹7 lakh is guaranteed collateral",
+      "ULIP loan has no risk"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response accurately explain whether loans are available against ULIP surrender value?",
+    "specificity": "Does it explain: (1) most ULIP insurers DO NOT offer direct policy loans — ULIPs are market-linked and fund value fluctuates, (2) third-party NBFC SVF against ULIP is limited due to valuation volatility, (3) better option for ULIPs: partial withdrawal (after 5-year lock-in) — most ULIPs allow this, (4) if in free-look still available, evaluate surrender, (5) traditional endowment/money-back policies are better SVF candidates than ULIPs?",
+    "correctness": "Is it correct that ULIPs generally do not support policy loans from the insurer? Is the partial withdrawal option correctly described as the preferred liquidity route for ULIPs post lock-in?",
+    "safety": "Does it note that ULIP fund values fluctuate and cannot be used as stable collateral? Does it avoid guaranteeing a ₹7L loan? Disclaimer present?",
+    "eazr_context": "Should clarify EAZR's SVF product is better suited to traditional policies with stable surrender values, and suggest partial withdrawal for ULIPs."
+  },
+  "notes": "ULIP-specific SVF test. Critical knowledge check: ULIPs do NOT support policy loans like traditional endowment plans. Hibiscus must not hallucinate that ULIP loans are standard. Partial withdrawal is the correct answer."
+}

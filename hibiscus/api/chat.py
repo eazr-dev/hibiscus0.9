@@ -259,6 +259,13 @@ async def _stream_response(
                 yield await send_chunk(StreamChunk(type="token", content=token))
 
             response_text = "".join(full_response)
+
+            # Ensure every streamed response has at minimum a short disclaimer
+            from hibiscus.guardrails.compliance import _DISCLAIMER_PATTERNS, SHORT_DISCLAIMER
+            if not any(p in response_text.lower() for p in _DISCLAIMER_PATTERNS):
+                response_text += SHORT_DISCLAIMER
+                yield await send_chunk(StreamChunk(type="token", content=SHORT_DISCLAIMER))
+
             total_latency_ms = int((time.time() - start_time) * 1000)
 
             # Cache the response for future requests

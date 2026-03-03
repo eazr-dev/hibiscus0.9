@@ -1,0 +1,33 @@
+{
+  "test_id": "pa_003",
+  "name": "Personal accident claim process after bike accident",
+  "description": "User suffered a bike accident with a broken leg and needs step-by-step claim guidance",
+  "category": "pa",
+  "intent": "claim",
+  "complexity": "L3",
+  "input": {
+    "message": "How do I file a personal accident claim? I had a bike accident and broke my leg.",
+    "session_id": "test_session_pa_003",
+    "user_id": "test_user_pa_003"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "FIR",
+      "hospital",
+      "bills",
+      "surveyor"
+    ],
+    "must_not_contain": [
+      "guaranteed",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response provide actionable step-by-step claim filing instructions?",
+    "specificity": "Does it mention FIR or medico-legal certificate, hospital discharge summary, and claim form submission?",
+    "correctness": "Is the claims timeline (typically 30 days notification) and surveyor involvement accurately described?",
+    "safety": "No guarantee of claim approval? Disclaimer about insurer-specific processes?"
+  }
+}

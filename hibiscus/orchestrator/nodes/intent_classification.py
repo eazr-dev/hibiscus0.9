@@ -16,6 +16,7 @@ import time
 from pathlib import Path
 
 from hibiscus.observability.logger import PipelineLogger
+from hibiscus.observability.metrics import record_conversation as _metric_conversation
 from hibiscus.orchestrator.state import HibiscusState
 
 # ── Prompt loading ──────────────────────────────────────────────────────────
@@ -42,14 +43,19 @@ _INTENT_KEYWORDS = {
     "tax":        ["80c", "80d", "tax benefit", "tax deduction", "tax saving", "deduction", "exemption", "10(10d)"],
     "surrender":  ["surrender", "should i continue", "should i keep", "policy loan", "paid-up"],
     "regulate":   ["irdai", "regulation", "circular", "free look", "legal right", "consumer right",
-                   "ombudsman rule", "revive", "revival", "lapsed policy", "grace period"],
+                   "ombudsman rule", "revive", "revival", "lapsed policy", "grace period",
+                   "portability", "port my", "i want to port", "porting", "to port",
+                   "do i port", "how do i port", "want to port", "switch insurer",
+                   "moratorium", "continuous renewal", "continuous coverage", "5-year rule",
+                   "5 year rule", "moratorium period"],
     "grievance":  ["ombudsman", "consumer court", "escalate", "grievance", "complaint", "unfairly rejected"],
     # ── Moderate specificity ──
     "claim":      ["claim", "settle", "hospital bill", "cashless", "reimbursement", "rejection"],
     "recommend":  ["recommend", "suggest", "best policy", "which policy", "compare",
                    "should i buy", "should i invest", "is it better", "better than", "worth buying",
                    "mis-selling", "mis selling", "agent is pushing", "guaranteed return",
-                   "ulip vs", "vs mutual fund", "vs term"],
+                   "ulip vs", "vs mutual fund", "vs term",
+                   "is there overlap", "policy overlap", "insurance overlap"],
     # NOTE: "returns" and "premium" deliberately removed — too broad, mis-routes comparison/mis-selling queries
     "calculate":  ["calculate", "how much cover", "how much life insurance", "maturity amount",
                    "emi calculation", "policy irr", "irr of", "how much will i get"],
@@ -184,6 +190,10 @@ def _determine_agents(intent: str, category: str, has_document: bool) -> list:
         "general_chat": [],
     }
     agents = agent_map.get(intent, [])
+    # analyze without a document → use direct_llm for general guidance
+    # Prevents policy_analyzer from asking for upload on "does my health insurance cover X?" queries
+    if intent == "analyze" and not has_document:
+        return []
     if has_document and "policy_analyzer" not in agents and intent not in ("educate", "general_chat"):
         agents = ["policy_analyzer"] + agents
     return agents
@@ -258,6 +268,11 @@ RECENT CONTEXT: {session_context or 'None'}
     intent = llm_result.get("intent", fast_result["intent"])
     emotional_state = llm_result.get("emotional_state", fast_result["emotional_state"])
     has_document = llm_result.get("has_document", fast_result["has_document"])
+    # Ground truth: if no files were uploaded, has_document MUST be False.
+    # Prevents LLM from hallucinating has_document=True for "my health insurance" queries
+    # which causes policy_analyzer to run and ask for document upload.
+    if not uploaded_files:
+        has_document = False
     document_type = llm_result.get("document_type", "unknown")
     requires_calculation = llm_result.get("requires_calculation", intent in ("calculate", "surrender"))
     # Always use our deterministic agent mapping — LLM agents_needed is unreliable
@@ -283,6 +298,9 @@ RECENT CONTEXT: {session_context or 'None'}
         emotional_state=emotional_state,
         agents_needed=agents_needed,
     )
+
+    # Prometheus: record conversation start with complexity + category
+    _metric_conversation(complexity=complexity, category=category)
 
     return {
         "category": category,

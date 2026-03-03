@@ -29,12 +29,14 @@ class HibiscusSettings(BaseSettings):
     deepseek_api_key: str = Field(default="", alias="DEEPSEEK_API_KEY")
     anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
     openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
+    zhipu_api_key: str = Field(default="", alias="GLM_API_KEY")
+    zhipu_base_url: str = Field(default="https://api.z.ai/api/paas/v4/", alias="GLM_BASE_URL")
 
     # ── LLM Models ──────────────────────────────────────────────────
     deepseek_v3_model: str = "deepseek/deepseek-chat"        # Tier 1 — 80%
     deepseek_r1_model: str = "deepseek/deepseek-reasoner"    # Tier 2 — 15%
     claude_sonnet_model: str = "anthropic/claude-sonnet-4-5" # Tier 3 — 5%
-    embedding_model: str = "text-embedding-3-small"          # OpenAI embeddings
+    embedding_model: str = "embedding-2"                     # GLM embeddings (primary)
 
     # ── LLM Config ──────────────────────────────────────────────────
     llm_temperature: float = Field(default=0.3, alias="LLM_TEMPERATURE")
@@ -81,6 +83,11 @@ class HibiscusSettings(BaseSettings):
 
     # ── Web Search ────────────────────────────────────────────────────
     tavily_api_key: str = Field(default="", alias="TAVILY_API_KEY")
+
+    # ── Auth / Security ───────────────────────────────────────────────
+    # JWT secret shared with botproject. Empty string = dev mode (auth skipped).
+    jwt_secret: str = Field(default="", alias="JWT_SECRET")
+    jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
 
     # ── Guardrails ────────────────────────────────────────────────────
     confidence_threshold_high: float = 0.85    # State as fact

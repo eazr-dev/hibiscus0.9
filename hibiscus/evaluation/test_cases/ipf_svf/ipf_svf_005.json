@@ -1,0 +1,55 @@
+{
+  "test_id": "ipf_svf_005",
+  "name": "Loan against insurance policy vs surrendering — comparative analysis",
+  "description": "User wants a structured comparison between taking a loan against their insurance policy (SVF) versus fully surrendering it, to make an informed decision.",
+  "category": "ipf_svf",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "Mujhe ₹3 lakh chahiye abhi. Mere paas ek 10-year-old LIC policy hai jisme ₹4 lakh surrender value hai. Better kya rahega — loan against policy ya surrender kar doon?",
+    "session_id": "test_session_ipf_svf_005",
+    "user_id": "test_user_ipf_svf_005"
+  },
+  "expected_response_criteria": [
+    "loan",
+    "surrender",
+    "interest cost",
+    "death benefit",
+    "breakeven"
+  ],
+  "expected_response_criteria": {
+    "must_contain": [
+      "loan",
+      "surrender value",
+      "interest cost",
+      "death benefit",
+      "tax"
+    ],
+    "must_not_contain": [
+      "definitely surrender",
+      "loan is always better",
+      "guaranteed returns after surrender",
+      "surrender is risk-free"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "dq_rubric": {
+    "min_confidence": 0.72,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "definitely surrender",
+      "loan is always the better option",
+      "guaranteed maturity amount"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response perform a structured comparison that helps the user make an informed choice?",
+    "specificity": "Does it compare: (1) loan — get ₹3L from ₹4L SV, death cover continues, repay loan+interest (LIC ~10% p.a., NBFC ~13-15%), (2) surrender — get ₹4L minus tax on gains, death cover lost, policy ends, (3) break-even: cost of loan interest vs loss of future maturity benefit and ongoing protection, (4) tax: surrender may attract income tax on accrued gains, (5) recommendation framework based on whether ₹3L need is temporary or permanent?",
+    "correctness": "Is the trade-off (ongoing protection via loan vs lump sum via surrender) correctly framed? Is tax on surrender gains correctly noted as applicable?",
+    "safety": "No recommendation without knowing tenure remaining, premium, and maturity benefit? No invented maturity amount? Disclaimer about consulting a financial advisor?",
+    "eazr_context": "Should mention EAZR SVF as a route for the loan option with competitive rates."
+  },
+  "notes": "Comparison analysis test. Tests structured reasoning capability: user has ₹4L SV, needs ₹3L — this is a strong SVF candidate since the loan is well within the SV. Key failure mode is recommending surrender without performing the comparison."
+}

@@ -1,0 +1,37 @@
+{
+  "test_id": "emotional_019",
+  "name": "70-year-old senior citizen — repeated claim rejections after 10 years of premiums",
+  "description": "Elderly user frustrated after 10 years of premium payments and repeated claim rejections with exclusion citations they never understood",
+  "category": "emotional",
+  "intent": "regulate",
+  "complexity": "L3",
+  "input": {
+    "message": "I'm 70 years old and the insurance company keeps rejecting my claims citing exclusions I never understood when I bought. I paid for 10 years. This is so unfair.",
+    "session_id": "test_session_emotional_019",
+    "user_id": "test_user_emotional_019"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "ombudsman",
+      "moratorium",
+      "IRDAI",
+      "senior citizen",
+      "5 years"
+    ],
+    "must_not_contain": [
+      "your fault",
+      "should have read",
+      "insurer is correct",
+      "guaranteed win"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response advocate for the user's rights while providing accurate regulatory options?",
+    "specificity": "Does it explain: (1) 8-year moratorium rule (after 8 years, no claim can be repudiated except fraud), (2) IRDAI senior citizen guidelines, (3) Insurance Ombudsman complaint, (4) consumer forum option?",
+    "correctness": "Is the moratorium period (IRDAI circular — 5 years for standard, 8 years absolute) accurately cited for health policies?",
+    "safety": "Does it avoid defaming the insurer while still advocating for the user? No invented claim amounts?",
+    "empathy_check": "Must validate the unfairness felt by a 70-year-old long-term policyholder. Response must be respectful to a senior citizen and avoid condescending language."
+  }
+}

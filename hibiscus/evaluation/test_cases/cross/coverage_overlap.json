@@ -1,0 +1,36 @@
+{
+  "test_id": "cross_008",
+  "name": "Coverage overlap analysis — employer + personal + spouse family floater",
+  "description": "User has employer health insurance, personal health insurance, and wife's family floater — wants to understand overlap and optimise portfolio",
+  "category": "cross",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "I have employer health insurance ₹3L, personal health ₹5L, and my wife has ₹10L family floater. Is there overlap? What should I do?",
+    "session_id": "test_session_cross_008",
+    "user_id": "test_user_cross_008"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "coordination",
+      "primary",
+      "secondary",
+      "overlap",
+      "gap"
+    ],
+    "must_not_contain": [
+      "all three are useless",
+      "cancel one",
+      "guaranteed full coverage",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response perform a meaningful overlap and gap analysis for this portfolio?",
+    "specificity": "Does it cover: (1) multi-policy coordination rules (employer = primary for employee, personal = secondary), (2) whether wife's family floater covers the user (as family member), (3) effective total cover for each family member, (4) gaps (elder parents if not covered)?",
+    "correctness": "Is the principle of contribution clause and coordination between multiple health policies accurately explained?",
+    "safety": "No invented policy terms for unnamed policies? Does it note that contribution clause prevents double claiming of the same expense? Disclaimer present?"
+  }
+}

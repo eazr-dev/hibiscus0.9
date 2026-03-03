@@ -1,0 +1,48 @@
+{
+  "test_id": "ipf_svf_010",
+  "name": "How long does IPF take to process — TAT inquiry",
+  "description": "User who has decided to proceed with insurance premium financing wants to know how long the process takes and whether it will be ready before the premium due date.",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "Agar main EAZR se insurance premium financing ke liye apply karta hoon toh kitne din mein process ho jaata hai? Meri premium due date 15 din baad hai.",
+    "session_id": "test_session_ipf_svf_010",
+    "user_id": "test_user_ipf_svf_010"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "days",
+      "documents",
+      "approval",
+      "disbursement",
+      "due date"
+    ],
+    "must_not_contain": [
+      "instant approval",
+      "same day guaranteed",
+      "no documentation needed",
+      "100% on time"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.65
+  },
+  "dq_rubric": {
+    "min_confidence": 0.65,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "guaranteed same day approval",
+      "instant disbursement",
+      "EAZR guarantees 15-day processing"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response give a realistic processing timeline for IPF and address the 15-day window?",
+    "specificity": "Does it cover: (1) typical IPF TAT — 3–7 working days for documentation and NBFC credit assessment, (2) steps in the process — document upload → NBFC review → approval → policy assignment → premium disbursement, (3) with 15 days to deadline, there is sufficient time if documents are ready immediately, (4) what documents to keep ready to avoid delays, (5) advice to start the process now to build in buffer time?",
+    "correctness": "Is the typical NBFC loan processing timeline (3–7 working days end-to-end for a standard case) approximately accurate?",
+    "safety": "Does it avoid guaranteeing that the disbursement will happen in time? Does it flag that delays can occur if documents are incomplete? Does it advise applying immediately given the 15-day window? Disclaimer present?",
+    "eazr_context": "Must guide the user to start the EAZR IPF application immediately and mention the document list to avoid delays. Urgency should be communicated without panic."
+  },
+  "notes": "Practical TAT test. 15 days is a tight but feasible window. Hibiscus must balance optimism (feasible) with caution (apply now, have documents ready). Key failure mode: either claiming instant approval or scaring the user that 15 days is not enough."
+}

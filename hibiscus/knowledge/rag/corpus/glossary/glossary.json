@@ -5,9 +5,16 @@
     "category": "health",
     "definition": "The maximum amount the insurance company will pay in a policy year for covered medical expenses. Also called 'coverage amount' or 'cover'. Resets every policy year on renewal.",
     "example": "With a ₹10 lakh sum insured, the insurer pays up to ₹10 lakh for all claims in the policy year. If you claim ₹3 lakh, the remaining cover for the year is ₹7 lakh.",
-    "related_terms": ["Sum Assured", "Coverage Limit", "Policy Limit", "Restoration Benefit"],
+    "related_terms": [
+      "Sum Assured",
+      "Coverage Limit",
+      "Policy Limit",
+      "Restoration Benefit"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g002",
@@ -15,9 +22,15 @@
     "category": "health",
     "definition": "A fixed percentage of the claim amount that the insured must pay from their own pocket, with the insurer paying the remaining portion. Expressed as a percentage (e.g., 10% copay means you pay 10%, insurer pays 90%). Common in senior citizen plans and plans with low premiums.",
     "example": "If your hospital bill is ₹1 lakh and your policy has a 10% copay, you pay ₹10,000 and the insurer pays ₹90,000.",
-    "related_terms": ["Deductible", "Co-insurance", "Sub-limit"],
+    "related_terms": [
+      "Deductible",
+      "Co-insurance",
+      "Sub-limit"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g003",
@@ -25,9 +38,15 @@
     "category": "health",
     "definition": "A fixed amount the insured must pay before the insurer begins to pay. Unlike copay (which is a percentage), deductible is a fixed rupee amount. Common in top-up and super top-up plans — the insurer pays only when claims exceed the deductible threshold.",
     "example": "A super top-up plan with ₹5 lakh deductible: if aggregate claims in a year are ₹8 lakh, the insurer pays ₹3 lakh (₹8L minus ₹5L deductible). Your base health plan covers the first ₹5 lakh.",
-    "related_terms": ["Copayment", "Super Top-up", "Top-up Plan"],
+    "related_terms": [
+      "Copayment",
+      "Super Top-up",
+      "Top-up Plan"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g004",
@@ -35,9 +54,15 @@
     "category": "health",
     "definition": "A cap within your sum insured for specific treatments, procedures, or expenses. Even if your overall sum insured is higher, the insurer will only pay up to the sub-limit for the specified item. Common sub-limits: cataract surgery, knee replacement, room rent.",
     "example": "A ₹5 lakh policy with ₹50,000 sub-limit for cataract surgery: even if the surgery costs ₹80,000, the insurer pays only ₹50,000.",
-    "related_terms": ["Sum Insured", "Room Rent Limit", "Copayment"],
+    "related_terms": [
+      "Sum Insured",
+      "Room Rent Limit",
+      "Copayment"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g005",
@@ -45,9 +70,15 @@
     "category": "health",
     "definition": "A cap on the daily hospital room rent the insurer will reimburse. If you choose a room with higher rent, the proportionate deduction applies — meaning not just the rent difference but all associated charges (surgeon fees, nursing charges) are reduced proportionately.",
     "example": "Policy room rent limit: ₹3,000/day. You take a ₹6,000/day room. Insurer may pay only 50% of total bill including doctor fees and nursing charges, not just the room difference.",
-    "related_terms": ["Sub-limit", "Proportionate Deduction", "Copayment"],
+    "related_terms": [
+      "Sub-limit",
+      "Proportionate Deduction",
+      "Copayment"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g006",
@@ -55,9 +86,15 @@
     "category": "health",
     "definition": "A feature that restores (reinstates) the sum insured after it has been partially or fully exhausted by a claim in the same policy year. Restoration can be complete (full sum insured restored) or partial (a portion restored). Typically used for different illness/injury than the one that exhausted the cover.",
     "example": "₹5 lakh sum insured, claim of ₹5 lakh in June exhausts cover. With restoration, ₹5 lakh is restored — available for a different illness from July onwards in the same year.",
-    "related_terms": ["Sum Insured", "Super Top-up", "Recharge Benefit"],
+    "related_terms": [
+      "Sum Insured",
+      "Super Top-up",
+      "Recharge Benefit"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g007",
@@ -65,9 +102,15 @@
     "category": "health",
     "definition": "A reward for not making any claims in a policy year. In health insurance, NCB typically increases your sum insured (coverage) by 5–50% for each claim-free year, up to a maximum (usually 50–100% of base sum insured). Does not directly reduce premium in most health policies (unlike motor NCB).",
     "example": "Base sum insured ₹5 lakh. After 1 claim-free year, NCB of 10% = sum insured becomes ₹5.5 lakh. After 5 claim-free years (10% each), sum insured becomes ₹7.5 lakh.",
-    "related_terms": ["Cumulative Bonus", "Sum Insured", "NCB Motor"],
+    "related_terms": [
+      "Cumulative Bonus",
+      "Sum Insured",
+      "NCB Motor"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g008",
@@ -75,9 +118,14 @@
     "category": "health",
     "definition": "Another name for No Claim Bonus in health insurance — the accumulated increase in sum insured for each claim-free year. Different insurers call it NCB or Cumulative Bonus. The bonus is lost (reduced or reset) if a claim is made in any year.",
     "example": "Cumulative bonus of 10% per year over 3 years on ₹5 lakh base SI = ₹5L + ₹0.5L + ₹0.5L + ₹0.5L = ₹6.5 lakh effective coverage.",
-    "related_terms": ["No Claim Bonus (NCB)", "Sum Insured"],
+    "related_terms": [
+      "No Claim Bonus (NCB)",
+      "Sum Insured"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g009",
@@ -85,9 +133,15 @@
     "category": "health",
     "definition": "The period from policy inception during which certain claims are not payable. Types: (1) Initial waiting period — 30 days for all illnesses except accidents. (2) PED waiting period — 2–4 years for pre-existing diseases. (3) Specific disease waiting period — 1–2 years for named conditions like hernia, cataract, knee replacement.",
     "example": "You buy health insurance on 1 Jan. The 30-day initial waiting period means any non-accident illness treated before 31 Jan is not covered. If you have diabetes (PED), it is not covered for the first 3 years.",
-    "related_terms": ["Pre-existing Disease (PED)", "Moratorium Period", "Free Look Period"],
+    "related_terms": [
+      "Pre-existing Disease (PED)",
+      "Moratorium Period",
+      "Free Look Period"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g010",
@@ -95,9 +149,15 @@
     "category": "health",
     "definition": "Any illness, injury, or condition that you had before buying the health insurance policy. IRDAI defines PED as any condition for which you received medical advice, diagnosis, care, or treatment within 48 months before the policy start date. PED is covered after the waiting period (usually 2–4 years) is completed.",
     "example": "If you have hypertension diagnosed in 2020 and buy health insurance in 2024, hypertension is a PED. It will be covered only after the 3-year PED waiting period, i.e., from 2027.",
-    "related_terms": ["Waiting Period", "Moratorium Period", "Portability"],
+    "related_terms": [
+      "Waiting Period",
+      "Moratorium Period",
+      "Portability"
+    ],
     "source": "IRDAI Circular IRDAI/HLT/REG/CIR/200/10/2019",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g011",
@@ -105,9 +165,15 @@
     "category": "health",
     "definition": "The right of a health insurance policyholder to switch their policy from one insurer to another without losing the credit for waiting periods already served. IRDAI mandates that portability must be offered by all non-life insurers for individual and family floater health policies. You must apply for portability at least 45 days before renewal.",
     "example": "You had a health policy with Insurer A for 3 years and served 3 years of PED waiting period. When you port to Insurer B, you get credit for 3 years already served — you don't restart the waiting period from zero.",
-    "related_terms": ["Pre-existing Disease (PED)", "Waiting Period", "Renewal"],
+    "related_terms": [
+      "Pre-existing Disease (PED)",
+      "Waiting Period",
+      "Renewal"
+    ],
     "source": "IRDAI Portability Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g012",
@@ -115,9 +181,16 @@
     "category": "health",
     "definition": "A claim settlement mechanism where the insured does not pay the hospital directly — the insurer/TPA settles the bill directly with the network hospital. Requires pre-authorization from TPA. Available only at network hospitals. The insured needs to show their health card at the hospital.",
     "example": "You are admitted to a network hospital. Show your insurance card, fill a cashless request form. TPA approves ₹4 lakh. The hospital bills the TPA directly, you pay only non-covered expenses (e.g., registration charges, personal consumables).",
-    "related_terms": ["Reimbursement Claim", "TPA", "Network Hospital", "Pre-authorization"],
+    "related_terms": [
+      "Reimbursement Claim",
+      "TPA",
+      "Network Hospital",
+      "Pre-authorization"
+    ],
     "source": "IRDAI Claim Settlement Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g013",
@@ -125,9 +198,15 @@
     "category": "health",
     "definition": "A claim where the insured pays the hospital bill first and then submits a claim to the insurer/TPA for reimbursement. Required when treatment is at a non-network hospital or when cashless was denied. Must submit all original documents within 15–30 days of discharge.",
     "example": "Treated at a non-network hospital, bill = ₹2.5 lakh. You pay from your pocket. Within 15 days of discharge, you submit original discharge summary, bills, prescription, and investigation reports. Insurer reimburses ₹2.5 lakh (minus any deductions) within 30 days.",
-    "related_terms": ["Cashless Claim", "TPA", "Non-Network Hospital"],
+    "related_terms": [
+      "Cashless Claim",
+      "TPA",
+      "Non-Network Hospital"
+    ],
     "source": "IRDAI Claim Settlement Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g014",
@@ -135,9 +214,15 @@
     "category": "health",
     "definition": "A company licensed by IRDAI to handle health insurance claims on behalf of insurers. TPAs issue health cards, process cashless approvals, and handle reimbursement claims. They are the interface between policyholders and insurers for claim servicing. Some large insurers have in-house TPA operations.",
     "example": "Star Health uses its own in-house TPA. HDFC ERGO uses Paramount Health Services as TPA. Medi Assist and Vidal Health are large third-party TPAs.",
-    "related_terms": ["Cashless Claim", "Pre-authorization", "Network Hospital"],
+    "related_terms": [
+      "Cashless Claim",
+      "Pre-authorization",
+      "Network Hospital"
+    ],
     "source": "IRDAI TPA Regulations",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g015",
@@ -145,9 +230,15 @@
     "category": "health",
     "definition": "A hospital that has a tie-up with the insurer/TPA for cashless treatment. Bills are settled directly between the insurer/TPA and the hospital. Network hospitals display the insurer's empanelment. Policyholders can check the insurer's website/app for network hospital locator.",
     "example": "Star Health has 14,000+ network hospitals across India. Apollo Hospitals, Fortis, Manipal are part of most insurer networks. A local nursing home may not be in the network.",
-    "related_terms": ["Non-Network Hospital", "Cashless Claim", "TPA"],
+    "related_terms": [
+      "Non-Network Hospital",
+      "Cashless Claim",
+      "TPA"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g016",
@@ -155,9 +246,15 @@
     "category": "health",
     "definition": "A hospital not empanelled with the insurer/TPA. Cashless treatment is not available here. The insured must pay the full bill and claim reimbursement afterward. Some policies have higher copay for non-network hospital claims.",
     "example": "You visit a standalone local nursing home not in insurer's network. Pay the bill (₹80,000), then file a reimbursement claim with all documents. Insurer reimburses after scrutiny.",
-    "related_terms": ["Network Hospital", "Reimbursement Claim", "Cashless Claim"],
+    "related_terms": [
+      "Network Hospital",
+      "Reimbursement Claim",
+      "Cashless Claim"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g017",
@@ -165,9 +262,15 @@
     "category": "health",
     "definition": "Approval from TPA/insurer before undergoing cashless hospitalization. For planned procedures, pre-authorization request should be sent 72 hours in advance. For emergencies, within 24 hours of admission. Without pre-authorization, cashless claim may be denied and patient must resort to reimbursement.",
     "example": "Planned knee replacement surgery. Send pre-authorization to TPA 3 days before with doctor's recommendation, estimate, and policy details. TPA approves ₹3 lakh limit. Hospital treatment happens cashless within that limit.",
-    "related_terms": ["Cashless Claim", "TPA", "Network Hospital"],
+    "related_terms": [
+      "Cashless Claim",
+      "TPA",
+      "Network Hospital"
+    ],
     "source": "IRDAI Claim Settlement Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g018",
@@ -175,9 +278,15 @@
     "category": "health",
     "definition": "After 8 continuous years of health insurance (even with portability), the insurer cannot reject a claim citing non-disclosure of pre-existing diseases at inception — UNLESS the claim involves fraud or misrepresentation. This is the moratorium period under IRDAI guidelines. Protects long-term policyholders from unjust claim denials.",
     "example": "You failed to disclose a minor skin condition when buying insurance in 2016. After 8 years (2024), even if you claim for that condition, the insurer cannot reject it on grounds of non-disclosure (unless proven fraud).",
-    "related_terms": ["Pre-existing Disease (PED)", "Waiting Period", "Portability"],
+    "related_terms": [
+      "Pre-existing Disease (PED)",
+      "Waiting Period",
+      "Portability"
+    ],
     "source": "IRDAI/HLT/MISC/CIR/200/10/2019",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g019",
@@ -185,9 +294,15 @@
     "category": "health",
     "definition": "A single health insurance policy that covers multiple family members (proposer, spouse, children, parents) under one sum insured. The sum insured is shared among all members. More cost-effective than individual policies but carries the risk of sum insured getting exhausted by one member's large claim.",
     "example": "Family floater of ₹10 lakh covering husband, wife, and 2 children. If the husband claims ₹6 lakh, the remaining ₹4 lakh is available for the rest of the family for that year.",
-    "related_terms": ["Individual Policy", "Sum Insured", "Super Top-up"],
+    "related_terms": [
+      "Individual Policy",
+      "Sum Insured",
+      "Super Top-up"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g020",
@@ -195,9 +310,14 @@
     "category": "health",
     "definition": "A health insurance policy covering a single person. Each insured person has their own sum insured which cannot be shared with other family members. More expensive than family floater when covering multiple members but each person retains their full sum insured regardless of others' claims.",
     "example": "Individual policy: husband ₹5 lakh SI, wife ₹5 lakh SI. Husband claims ₹4 lakh — wife still has her full ₹5 lakh available.",
-    "related_terms": ["Family Floater", "Sum Insured"],
+    "related_terms": [
+      "Family Floater",
+      "Sum Insured"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g021",
@@ -205,9 +325,15 @@
     "category": "health",
     "definition": "A supplementary health policy that pays when the aggregate of all claims in a policy year exceeds the deductible amount. More useful than a regular top-up (which activates on a single claim exceeding the threshold). Ideal for enhancing coverage when you have a base policy.",
     "example": "Base policy: ₹5 lakh. Super top-up: ₹20 lakh with ₹5 lakh deductible. Year 1: 3 separate claims of ₹2L, ₹2L, ₹3L = aggregate ₹7L. Base pays ₹5L. Super top-up pays ₹2L (₹7L - ₹5L deductible).",
-    "related_terms": ["Top-up Plan", "Deductible", "Family Floater"],
+    "related_terms": [
+      "Top-up Plan",
+      "Deductible",
+      "Family Floater"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g022",
@@ -215,9 +341,15 @@
     "category": "health",
     "definition": "A supplementary health policy that activates when a SINGLE claim exceeds the threshold (deductible) amount. Unlike super top-up, it doesn't aggregate multiple smaller claims. Cheaper than super top-up but less useful for multiple small-medium hospitalizations in a year.",
     "example": "Top-up with ₹5L deductible and ₹20L cover. Single claim of ₹8L: base policy pays ₹5L, top-up pays ₹3L. But if three claims of ₹3L each: top-up doesn't activate because no single claim exceeds ₹5L.",
-    "related_terms": ["Super Top-up", "Deductible", "Sum Insured"],
+    "related_terms": [
+      "Super Top-up",
+      "Deductible",
+      "Sum Insured"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g023",
@@ -225,9 +357,15 @@
     "category": "health",
     "definition": "A type of insurance that pays a lump sum amount upon diagnosis of specified life-threatening diseases such as cancer, heart attack, kidney failure, stroke, organ transplant, etc. The lump sum is paid regardless of actual medical expenses. Useful for income replacement, treatment abroad, or experimental therapies not covered by health insurance.",
     "example": "Critical illness policy with ₹25 lakh cover. On diagnosis of stage 3 cancer, insurer pays ₹25 lakh directly to the insured — to use for treatment, income replacement, or any purpose. This is separate from health insurance claims.",
-    "related_terms": ["Day Care Procedures", "Health Insurance", "Sum Insured"],
+    "related_terms": [
+      "Day Care Procedures",
+      "Health Insurance",
+      "Sum Insured"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g024",
@@ -235,9 +373,15 @@
     "category": "health",
     "definition": "Medical procedures that require less than 24 hours of hospitalization due to advances in medical technology. IRDAI mandates health policies to cover at least 141 day care procedures listed in Arogya Sanjeevani. These include chemotherapy, dialysis, cataract surgery, and various minor surgeries.",
     "example": "Cataract surgery now takes 2–3 hours. Since it's under 24 hours, it's a day care procedure. Your health policy covers it even without overnight hospitalization.",
-    "related_terms": ["Domiciliary Hospitalization", "Sum Insured", "Network Hospital"],
+    "related_terms": [
+      "Domiciliary Hospitalization",
+      "Sum Insured",
+      "Network Hospital"
+    ],
     "source": "IRDAI/HLT/REG/CIR/152/07/2020",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g025",
@@ -245,9 +389,15 @@
     "category": "health",
     "definition": "Treatment received at home when hospital admission is not possible due to patient's critical condition or non-availability of hospital beds, but the treatment would otherwise require hospitalization. Must be advised by a doctor. Coverage varies by policy — not all plans cover it. Excludes routine homecare or non-critical treatment.",
     "example": "Patient with severe stroke cannot be moved to hospital. Doctor certifies home hospitalization. With domiciliary cover, the health policy pays for ICU equipment, nursing, and doctor visits at home for the defined period.",
-    "related_terms": ["Day Care Procedures", "Network Hospital", "Sum Insured"],
+    "related_terms": [
+      "Day Care Procedures",
+      "Network Hospital",
+      "Sum Insured"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g026",
@@ -255,9 +405,15 @@
     "category": "health",
     "definition": "India's government-funded health insurance scheme. Consists of: (1) PM-JAY (Pradhan Mantri Jan Arogya Yojana) — provides ₹5 lakh coverage per family per year to ~55 crore beneficiaries from poor and vulnerable families. (2) Health and Wellness Centres — primary healthcare. Covers 1,929 procedure packages. Cashless and paperless at empanelled hospitals.",
     "example": "A Below Poverty Line family is hospitalized for cardiac surgery. Under PM-JAY, the ₹2 lakh surgery is fully covered, cashless, at any empanelled government or private hospital in India.",
-    "related_terms": ["PMJAY", "Sum Insured", "Cashless Claim"],
+    "related_terms": [
+      "PMJAY",
+      "Sum Insured",
+      "Cashless Claim"
+    ],
     "source": "National Health Authority, GOI",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g027",
@@ -265,9 +421,15 @@
     "category": "health",
     "definition": "Pradhan Mantri Jan Arogya Yojana — the flagship government health insurance scheme covering ₹5 lakh per family per year for secondary and tertiary hospitalization. Available to approximately 55 crore beneficiaries from the bottom 40% of India's population. No premium is paid by the beneficiary — fully funded by Centre and States.",
     "example": "A family with PMJAY Ayushman card. Member hospitalized for kidney dialysis (chronic). PMJAY covers up to ₹5 lakh per year across all covered procedures at any empanelled hospital nationwide.",
-    "related_terms": ["Ayushman Bharat", "Sum Insured", "Network Hospital"],
+    "related_terms": [
+      "Ayushman Bharat",
+      "Sum Insured",
+      "Network Hospital"
+    ],
     "source": "National Health Authority, GOI",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g028",
@@ -275,9 +437,15 @@
     "category": "health",
     "definition": "Outpatient Department coverage — pays for doctor consultations, diagnostics (blood tests, X-rays, MRI), and medicines that do not require hospitalization. Traditional health policies do not cover OPD; newer comprehensive plans and employer group policies increasingly include OPD cover. Often subject to annual limits and per-consultation caps.",
     "example": "Policy with ₹10,000 OPD cover per year. Doctor consultations (₹500 × 10 = ₹5,000) + diagnostic tests (₹3,000) + medicines (₹1,500) = ₹9,500 claimed under OPD cover.",
-    "related_terms": ["Day Care Procedures", "Sum Insured", "Health Insurance"],
+    "related_terms": [
+      "Day Care Procedures",
+      "Sum Insured",
+      "Health Insurance"
+    ],
     "source": "IRDAI Product Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g029",
@@ -285,9 +453,15 @@
     "category": "health",
     "definition": "Coverage for expenses related to childbirth — normal delivery, C-section, complications of pregnancy, and sometimes newborn care. Has a waiting period of 2–4 years in most policies. Sum insured for maternity is usually sublimited (₹25,000–₹1,00,000). Some employer group policies provide immediate maternity cover.",
     "example": "Policy with 2-year maternity waiting period and ₹50,000 maternity sublimit. After 2 years, C-section delivery at ₹80,000: insurer pays ₹50,000 (sublimit), you pay ₹30,000.",
-    "related_terms": ["Newborn Cover", "Waiting Period", "Sub-limit"],
+    "related_terms": [
+      "Newborn Cover",
+      "Waiting Period",
+      "Sub-limit"
+    ],
     "source": "IRDAI Product Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g030",
@@ -295,9 +469,15 @@
     "category": "health",
     "definition": "Coverage for a newborn baby from the day of birth until it can be added to a separate policy (usually 90–91 days). Covers treatment for congenital defects, neonatal conditions, and other illnesses. Often bundled with maternity benefit. Parents must inform the insurer within the specified days to add the newborn.",
     "example": "Baby born with a congenital heart defect needs immediate surgery (₹3 lakh). With newborn cover, this is payable from birth, subject to policy sublimits. Parents must inform insurer within 90 days to add baby as a named member.",
-    "related_terms": ["Maternity Benefit", "Sum Insured", "Waiting Period"],
+    "related_terms": [
+      "Maternity Benefit",
+      "Sum Insured",
+      "Waiting Period"
+    ],
     "source": "IRDAI Product Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g031",
@@ -305,9 +485,15 @@
     "category": "health",
     "definition": "The ratio of total claims paid (incurred) by an insurer to total premiums earned in a financial year, expressed as a percentage. ICR = (Net Incurred Claims / Net Earned Premium) × 100. Published annually by IRDAI. ICR between 60–85% is considered healthy; very low ICR may indicate claim rejection issues; very high ICR may threaten solvency.",
     "example": "Star Health ICR for FY 2023-24 = 65.8% — meaning for every ₹100 in premium collected, ₹65.80 was paid as claims. This is a healthy ratio.",
-    "related_terms": ["Claim Settlement Ratio (CSR)", "Loss Ratio", "Solvency Ratio"],
+    "related_terms": [
+      "Claim Settlement Ratio (CSR)",
+      "Loss Ratio",
+      "Solvency Ratio"
+    ],
     "source": "IRDAI Annual Report",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g032",
@@ -315,9 +501,15 @@
     "category": "health",
     "definition": "The percentage of claims settled (paid) out of total claims received by an insurer in a financial year. CSR = (Claims Settled / Total Claims Received) × 100. A CSR above 95% is generally considered good for health insurers. Published by IRDAI. Helps consumers compare insurer reliability.",
     "example": "HDFC ERGO CSR for FY 2023-24 = 97.3% — meaning 97.3% of all claims filed were settled. Only 2.7% were rejected or pending.",
-    "related_terms": ["Incurred Claim Ratio (ICR)", "Network Hospital", "TPA"],
+    "related_terms": [
+      "Incurred Claim Ratio (ICR)",
+      "Network Hospital",
+      "TPA"
+    ],
     "source": "IRDAI Annual Report",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g033",
@@ -325,9 +517,15 @@
     "category": "health",
     "definition": "The right to transfer your existing health insurance policy to another insurer while retaining waiting period credits already accumulated. Regulated by IRDAI. Applicable for individual and family floater policies. Must be requested at least 45 days before renewal date. The new insurer cannot reject portability based on medical history for equivalent or lesser coverage.",
     "example": "3 years with Insurer A. PED waiting period = 3 years served. Port to Insurer B for better service. Insurer B must give credit for the 3 years served — effectively, PED is already covered at Insurer B.",
-    "related_terms": ["Pre-existing Disease (PED)", "Waiting Period", "Renewal"],
+    "related_terms": [
+      "Pre-existing Disease (PED)",
+      "Waiting Period",
+      "Renewal"
+    ],
     "source": "IRDAI Portability Guidelines",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g034",
@@ -335,9 +533,15 @@
     "category": "health",
     "definition": "A period after the premium due date during which the policy remains in force and claims are payable, even though premium has not been paid. For health insurance, IRDAI mandates a minimum 30-day grace period for annual policies. If premium is paid within grace period, policy continues without break.",
     "example": "Policy renews on 1 April. Grace period = 30 days. If premium is paid by 30 April, policy was continuously active. A hospitalization on 15 April (within grace period) is covered even if premium is paid only on 28 April.",
-    "related_terms": ["Renewal", "Lapse", "Waiting Period"],
+    "related_terms": [
+      "Renewal",
+      "Lapse",
+      "Waiting Period"
+    ],
     "source": "IRDAI Health Insurance Regulations",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g035",
@@ -345,9 +549,15 @@
     "category": "health",
     "definition": "When a policy ceases to be in force due to non-payment of premium beyond the grace period. A lapsed health policy means all coverage is lost. When reinstated after a lapse, waiting periods typically restart from scratch. Portability credits may also be lost if lapsed for more than 45 days.",
     "example": "Policy renews 1 April, grace period 30 days. Premium not paid by 30 April. Policy lapses from 1 May. A claim on 5 May is not covered. If reinstated in July, new policy may have fresh waiting periods.",
-    "related_terms": ["Grace Period", "Renewal", "Waiting Period"],
+    "related_terms": [
+      "Grace Period",
+      "Renewal",
+      "Waiting Period"
+    ],
     "source": "IRDAI Health Insurance Regulations",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g036",
@@ -355,9 +565,15 @@
     "category": "health",
     "definition": "A period after policy purchase during which the policyholder can review the policy document and return it for a full refund if not satisfied. IRDAI mandates a minimum 15-day free look period for all health insurance policies. If returned, premium is refunded after deducting medical examination expenses (if any) and stamp duty.",
     "example": "Buy health insurance on 1 Jan. Receive policy document on 5 Jan. Free look: 15 days from receipt = till 20 Jan. If you return policy by 20 Jan, full premium is refunded minus stamp duty (~₹200–500).",
-    "related_terms": ["Renewal", "Lapse", "Free Look Period (Life)"],
+    "related_terms": [
+      "Renewal",
+      "Lapse",
+      "Free Look Period (Life)"
+    ],
     "source": "IRDAI Health Insurance Regulations",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g037",
@@ -365,9 +581,15 @@
     "category": "health",
     "definition": "A digital health identity under Ayushman Bharat Digital Mission (ABDM). 14-digit unique health identifier (Health ID) for every Indian citizen. Stores digital health records (prescriptions, lab reports, discharge summaries) in a citizen-controlled health locker. Insurers can access records (with consent) for faster claim processing. Also called Health ID.",
     "example": "ABHA number: 14-digit ID linked to Aadhaar. All your doctor visits, lab tests, and hospital discharge summaries are stored in your ABHA account. Share with insurer during claim for paperless claim processing.",
-    "related_terms": ["Ayushman Bharat", "PMJAY", "Cashless Claim"],
+    "related_terms": [
+      "Ayushman Bharat",
+      "PMJAY",
+      "Cashless Claim"
+    ],
     "source": "National Health Authority, ABDM",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g038",
@@ -375,9 +597,15 @@
     "category": "health",
     "definition": "When two or more insurance policies cover the same risk, each insurer pays a proportionate share of the claim. Different from co-pay (which is insured vs insurer split). In group health insurance, co-insurance often refers to the employer-employee premium sharing. In personal health, some senior plans have co-insurance clauses.",
     "example": "Two group health policies cover the same employee — employer policy covers 70%, employee personal policy covers 30% of any claim above a threshold.",
-    "related_terms": ["Copayment", "Deductible", "Contribution Clause"],
+    "related_terms": [
+      "Copayment",
+      "Deductible",
+      "Contribution Clause"
+    ],
     "source": "IRDAI Glossary",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g039",
@@ -385,9 +613,15 @@
     "category": "health",
     "definition": "The annual process of continuing health insurance by paying the next year's premium before or during the grace period. IRDAI mandates lifetime renewability for all individual health policies — insurers cannot refuse renewal except on grounds of fraud or misrepresentation. Premiums may increase at renewal based on age, claims, and medical inflation.",
     "example": "Policy expires 31 March. Pay renewal premium by 30 April (within grace period). Policy continues without break. If claims occurred, premium may increase at renewal by 10–20%.",
-    "related_terms": ["Grace Period", "Lapse", "No Claim Bonus (NCB)"],
+    "related_terms": [
+      "Grace Period",
+      "Lapse",
+      "No Claim Bonus (NCB)"
+    ],
     "source": "IRDAI Health Insurance Regulations",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g040",
@@ -395,9 +629,15 @@
     "category": "health",
     "definition": "The ratio of claims incurred to premiums earned, expressed as a percentage. Similar to ICR. Sometimes used interchangeably with ICR in general insurance. A loss ratio above 100% means the insurer is paying more in claims than it collects in premiums — financially unsustainable. Used by IRDAI to monitor insurer health.",
     "example": "Insurer collects ₹1000 crore in premiums, pays ₹720 crore in claims. Loss ratio = 72%. Within sustainable range for a growing insurer with good investment income.",
-    "related_terms": ["Incurred Claim Ratio (ICR)", "Claim Settlement Ratio (CSR)", "Solvency Ratio"],
+    "related_terms": [
+      "Incurred Claim Ratio (ICR)",
+      "Claim Settlement Ratio (CSR)",
+      "Solvency Ratio"
+    ],
     "source": "IRDAI Annual Report",
-    "applicable_to": ["health"]
+    "applicable_to": [
+      "health"
+    ]
   },
   {
     "id": "g041",
@@ -405,9 +645,15 @@
     "category": "life",
     "definition": "In life insurance, the guaranteed amount payable on the insured's death or on policy maturity. The minimum death benefit is the higher of: (a) 10 times annual premium (for policies after Apr 2012), or (b) 105% of premiums paid. Different from Sum Insured (health) — Sum Assured is a fixed guaranteed amount, not a maximum limit.",
     "example": "Term plan with ₹1 crore sum assured. On death, nominee receives ₹1 crore regardless of actual financial loss. Annual premium = ₹8,000. SA/Premium ratio = 125× (well above IRDAI minimum of 10×).",
-    "related_terms": ["Sum Insured", "Death Benefit", "Maturity Benefit"],
+    "related_terms": [
+      "Sum Insured",
+      "Death Benefit",
+      "Maturity Benefit"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g042",
@@ -415,9 +661,15 @@
     "category": "life",
     "definition": "The amount paid to the nominee/beneficiary upon the death of the life assured during the policy term. In term plans, equals sum assured. In endowment/ULIP, death benefit = higher of sum assured or fund value (for ULIPs) or sum assured + accumulated bonus (for endowment). Tax-free under Section 10(10D) (subject to SA/premium ratio).",
     "example": "ULIP: Sum assured = ₹50 lakh, fund value on death = ₹30 lakh. Death benefit = ₹50 lakh (higher of the two). Endowment: SA = ₹10 lakh, bonus = ₹4 lakh. Death benefit = ₹14 lakh.",
-    "related_terms": ["Sum Assured", "Maturity Benefit", "Nomination"],
+    "related_terms": [
+      "Sum Assured",
+      "Maturity Benefit",
+      "Nomination"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g043",
@@ -425,9 +677,15 @@
     "category": "life",
     "definition": "The amount paid to the policyholder when the policy survives to the end of the policy term without any death claim. In endowment/money-back plans: SA + bonuses. In ULIPs: fund value at maturity. In term plans: no maturity benefit (pure risk cover). Tax treatment: tax-free under 10(10D) if SA ≥ 10× annual premium.",
     "example": "Endowment plan: SA ₹10 lakh, 20-year term. At maturity: ₹10 lakh SA + ₹6 lakh reversionary bonus + ₹1 lakh terminal bonus = ₹17 lakh paid to policyholder.",
-    "related_terms": ["Death Benefit", "Surrender Value", "Sum Assured"],
+    "related_terms": [
+      "Death Benefit",
+      "Surrender Value",
+      "Sum Assured"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g044",
@@ -435,9 +693,15 @@
     "category": "life",
     "definition": "The amount an insurer pays when the policyholder voluntarily terminates the policy before maturity. Applicable after the policy has been in force for at least 2–3 years (when it acquires surrender value). Two types: Guaranteed Surrender Value (GSV) — minimum guaranteed by IRDAI; Special Surrender Value (SSV) — usually higher than GSV, based on insurer's calculations.",
     "example": "Traditional endowment plan, ₹1 lakh annual premium, 7 years in. GSV = 30% × total premiums paid for years 3–7 = 30% × ₹5L = ₹1.5L. SSV may be ₹2L based on paid-up value and bonus. Insurer pays the higher of GSV and SSV.",
-    "related_terms": ["Guaranteed Surrender Value (GSV)", "Special Surrender Value (SSV)", "Paid-up Policy"],
+    "related_terms": [
+      "Guaranteed Surrender Value (GSV)",
+      "Special Surrender Value (SSV)",
+      "Paid-up Policy"
+    ],
     "source": "IRDAI Life Insurance Regulations, 2024",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g045",
@@ -445,9 +709,15 @@
     "category": "life",
     "definition": "The minimum surrender value guaranteed by IRDAI regulation. For traditional policies: After 2 years: 30% of total premiums paid (excluding first-year premium and excluding premiums for riders) less any loans. After 3 years and beyond: increasing percentage as per IRDAI table. IRDAI 2024 regulations significantly increased GSV percentages, effective from Oct 2024.",
     "example": "Policy with ₹1L annual premium, surrendered in year 4. Premiums paid = ₹4L. GSV = 50% × ₹3L (excluding 1st year premium) = ₹1.5L guaranteed minimum.",
-    "related_terms": ["Surrender Value", "Special Surrender Value (SSV)", "Paid-up Policy"],
+    "related_terms": [
+      "Surrender Value",
+      "Special Surrender Value (SSV)",
+      "Paid-up Policy"
+    ],
     "source": "IRDAI Life Insurance Product Regulations 2024",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g046",
@@ -455,9 +725,15 @@
     "category": "life",
     "definition": "A surrender value calculated by the insurer, typically higher than GSV. Computed as: Paid-up Sum Assured + accumulated bonus, discounted to present value using the insurer's factors. Insurers are required to pay the higher of GSV and SSV. For policies with many years elapsed, SSV can be significantly higher than GSV.",
     "example": "Policy: ₹10 lakh SA, 20-year term, 10 years in. Paid-up value = ₹5L. Accumulated bonus = ₹2L. SSV calculation by insurer = ₹5.2L. GSV = ₹4.8L. Insurer pays ₹5.2L (SSV, being higher).",
-    "related_terms": ["Guaranteed Surrender Value (GSV)", "Surrender Value", "Paid-up Policy"],
+    "related_terms": [
+      "Guaranteed Surrender Value (GSV)",
+      "Surrender Value",
+      "Paid-up Policy"
+    ],
     "source": "IRDAI Life Insurance Product Regulations 2024",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g047",
@@ -465,9 +741,15 @@
     "category": "life",
     "definition": "When premiums stop being paid but the policy continues in force with a reduced sum assured (paid-up value). The paid-up sum assured = Original SA × (Number of premiums paid / Total premiums payable). The policy does not lapse but provides reduced coverage. Future bonuses may or may not be added depending on policy terms.",
     "example": "20-year endowment, SA ₹10 lakh, paid premiums for 10 years (50% of total). Paid-up SA = ₹10L × 10/20 = ₹5 lakh. Policy continues with ₹5L death/maturity benefit without further premium payment.",
-    "related_terms": ["Surrender Value", "Revival", "Premium Payment Term"],
+    "related_terms": [
+      "Surrender Value",
+      "Revival",
+      "Premium Payment Term"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g048",
@@ -475,9 +757,15 @@
     "category": "life",
     "definition": "The period during which premiums must be paid for a life insurance policy. Can be: (1) Regular pay — same as policy term. (2) Limited pay — shorter than policy term (e.g., 10-year pay, 20-year cover). (3) Single pay — one-time premium. Limited pay popular for higher income years. Single pay has higher SA/premium ratio requirement for tax benefits.",
     "example": "Limited pay: pay ₹1L/year for 10 years, policy covers you for 30 years. After year 10, no more premiums but coverage continues till year 30.",
-    "related_terms": ["Policy Term", "Sum Assured", "Paid-up Policy"],
+    "related_terms": [
+      "Policy Term",
+      "Sum Assured",
+      "Paid-up Policy"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g049",
@@ -485,9 +773,15 @@
     "category": "life",
     "definition": "The duration for which life insurance coverage is provided. Term plan: 10–40 years. Endowment: 10–30 years. Whole life: to age 99 or 100. ULIP: minimum 5 years lock-in (IRDAI mandate). The death benefit is payable only if death occurs within the policy term. Maturity benefit is payable when the policy term expires.",
     "example": "Term plan: 30-year policy term, age 30 to 60. Death between age 30 and 60 → nominee gets ₹1 crore. Survives to 60 → no maturity benefit (term plan). Endowment: same period, survives to 60 → receives SA + bonus.",
-    "related_terms": ["Premium Payment Term", "Sum Assured", "Maturity Benefit"],
+    "related_terms": [
+      "Premium Payment Term",
+      "Sum Assured",
+      "Maturity Benefit"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g050",
@@ -495,9 +789,16 @@
     "category": "life",
     "definition": "A life insurance product combining investment and insurance. Premium is split: part pays for insurance charges (mortality), part is invested in market-linked funds (equity, debt, balanced). NAV-linked fund value fluctuates with market. 5-year lock-in period mandated by IRDAI. Charges: mortality, premium allocation, fund management (≤1.35%), policy administration. Partial withdrawals allowed after 5 years.",
     "example": "₹1L annual premium ULIP. ₹5,000 mortality charge, ₹2,000 admin charge, ₹93,000 invested in equity fund. After 10 years, if fund grows at 12% CAGR, fund value ≈ ₹18 lakh.",
-    "related_terms": ["NAV (Net Asset Value)", "Fund Value", "Mortality Charge", "Fund Management Charge"],
+    "related_terms": [
+      "NAV (Net Asset Value)",
+      "Fund Value",
+      "Mortality Charge",
+      "Fund Management Charge"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g051",
@@ -505,9 +806,15 @@
     "category": "life",
     "definition": "The per-unit value of the investment fund in a ULIP, calculated daily. NAV = (Total fund assets - Liabilities) / Number of units. Your ULIP fund value = Number of units × Current NAV. NAV fluctuates daily with market movements. ULIPs show fund performance through NAV history.",
     "example": "You have 1,000 units in equity fund. Today's NAV = ₹35.50. Your fund value = 1,000 × ₹35.50 = ₹35,500.",
-    "related_terms": ["ULIP (Unit Linked Insurance Plan)", "Fund Value", "Fund Management Charge"],
+    "related_terms": [
+      "ULIP (Unit Linked Insurance Plan)",
+      "Fund Value",
+      "Fund Management Charge"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g052",
@@ -515,9 +822,15 @@
     "category": "life",
     "definition": "The current market value of your ULIP investment = number of units held × current NAV. Fund value is the amount you would receive on surrender/maturity of a ULIP. At death, death benefit = higher of sum assured or fund value. Fund value is separate from surrender value in traditional policies.",
     "example": "ULIP: 10 years, invested ₹10L total. Units accumulated = 28,000 across equity and debt funds. Current average NAV = ₹45. Fund value = 28,000 × ₹45 = ₹12.6 lakh.",
-    "related_terms": ["ULIP (Unit Linked Insurance Plan)", "NAV (Net Asset Value)", "Surrender Value"],
+    "related_terms": [
+      "ULIP (Unit Linked Insurance Plan)",
+      "NAV (Net Asset Value)",
+      "Surrender Value"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g053",
@@ -525,9 +838,15 @@
     "category": "life",
     "definition": "The cost of life insurance coverage in a ULIP, deducted monthly from the fund value by canceling units. Based on age, sum at risk (SA minus fund value), and mortality table. Increases with age. In traditional policies, mortality cost is embedded in the premium structure.",
     "example": "Age 35 ULIP. Sum at risk = ₹50L SA - ₹10L fund value = ₹40L. Mortality rate (per ₹1L) = ₹1.2 per month. Mortality charge = 40 × ₹1.2 = ₹48/month deducted from fund.",
-    "related_terms": ["ULIP (Unit Linked Insurance Plan)", "Fund Value", "Policy Administration Charge"],
+    "related_terms": [
+      "ULIP (Unit Linked Insurance Plan)",
+      "Fund Value",
+      "Policy Administration Charge"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g054",
@@ -535,9 +854,15 @@
     "category": "life",
     "definition": "A fixed monthly charge in ULIPs for administering the policy (sending statements, regulatory compliance, etc.). Typically ₹100–600/month, deducted by canceling units. IRDAI caps total charges (including fund management) to limit the overall charge burden on policyholders.",
     "example": "ULIP admin charge: ₹200/month. Over 10 years = ₹24,000 deducted from fund by canceling units.",
-    "related_terms": ["ULIP (Unit Linked Insurance Plan)", "Mortality Charge", "Premium Allocation Charge"],
+    "related_terms": [
+      "ULIP (Unit Linked Insurance Plan)",
+      "Mortality Charge",
+      "Premium Allocation Charge"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g055",
@@ -545,9 +870,15 @@
     "category": "life",
     "definition": "A percentage deducted from the premium before investing the remaining amount in ULIP funds. Higher in initial years (5–10%), reduces in later years. Post-2010 IRDAI regulations capped and structured these charges. Many modern ULIPs have zero or minimal premium allocation charges, passing more of the premium to the fund.",
     "example": "₹1L premium, 5% premium allocation charge = ₹5,000 deducted. Only ₹95,000 invested in funds. After paying mortality and admin charges, net investment may be ₹90,000.",
-    "related_terms": ["ULIP (Unit Linked Insurance Plan)", "Mortality Charge", "Fund Management Charge"],
+    "related_terms": [
+      "ULIP (Unit Linked Insurance Plan)",
+      "Mortality Charge",
+      "Fund Management Charge"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g056",
@@ -555,9 +886,15 @@
     "category": "life",
     "definition": "An annual charge as a percentage of the fund value for managing ULIP investment funds. IRDAI caps this at 1.35% per year for all ULIP funds. Deducted daily in the NAV calculation (not separately charged). Similar to expense ratio in mutual funds.",
     "example": "ULIP equity fund, FMC = 1.25% p.a. Fund value = ₹10 lakh. Annual FMC = 1.25% × ₹10L = ₹12,500 deducted from fund through NAV reduction.",
-    "related_terms": ["ULIP (Unit Linked Insurance Plan)", "NAV (Net Asset Value)", "Mortality Charge"],
+    "related_terms": [
+      "ULIP (Unit Linked Insurance Plan)",
+      "NAV (Net Asset Value)",
+      "Mortality Charge"
+    ],
     "source": "IRDAI ULIP Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g057",
@@ -565,9 +902,16 @@
     "category": "life",
     "definition": "A life insurance plan providing both death benefit and maturity benefit (savings). Premiums are higher than term plans but the policy matures with SA + accumulated bonuses if the insured survives. Returns are typically 4–6% IRR (lower than market investments). Popular for long-term savings goals and as collateral for loans.",
     "example": "LIC Jeevan Anand: ₹10L SA, 20-year term, annual premium ₹50,000. If death in year 10: nominee gets ₹10L + bonus. If survives 20 years: insured gets ₹10L + ₹8L bonus = ₹18L maturity benefit.",
-    "related_terms": ["Term Plan", "Money Back Plan", "Maturity Benefit", "Surrender Value"],
+    "related_terms": [
+      "Term Plan",
+      "Money Back Plan",
+      "Maturity Benefit",
+      "Surrender Value"
+    ],
     "source": "IRDAI Life Insurance Product Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g058",
@@ -575,9 +919,15 @@
     "category": "life",
     "definition": "A type of endowment plan that pays a percentage of sum assured at regular intervals (survival benefits) during the policy term, with the remaining amount paid at maturity. Provides liquidity. Returns are lower than regular endowment due to periodic payouts. Popular for goal-based planning (education, marriage).",
     "example": "LIC Jeevan Tarang (₹10L SA, 20-year): ₹2L paid every 5 years (at years 5, 10, 15) = ₹6L during policy. At maturity: remaining ₹4L + bonuses. On death anytime: full ₹10L paid regardless of survival benefits paid.",
-    "related_terms": ["Endowment Plan", "Maturity Benefit", "Sum Assured"],
+    "related_terms": [
+      "Endowment Plan",
+      "Maturity Benefit",
+      "Sum Assured"
+    ],
     "source": "IRDAI Life Insurance Product Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g059",
@@ -585,9 +935,15 @@
     "category": "life",
     "definition": "Pure life insurance providing only death benefit — no maturity benefit or savings component. Lowest premium for highest coverage. Death within policy term → nominee gets sum assured. Survival to maturity → no payout. Ideal for income protection for dependents. IRDAI mandates return of premium (ROP) options be available.",
     "example": "Online term plan: 30-year-old, ₹1 crore SA, 30-year term, annual premium ₹8,000–12,000. If death occurs: nominee gets ₹1 crore. Survives 30 years: no payout (unless ROP rider chosen).",
-    "related_terms": ["Sum Assured", "Death Benefit", "Return of Premium"],
+    "related_terms": [
+      "Sum Assured",
+      "Death Benefit",
+      "Return of Premium"
+    ],
     "source": "IRDAI Life Insurance Product Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g060",
@@ -595,9 +951,15 @@
     "category": "life",
     "definition": "A life insurance plan providing coverage for the entire life of the insured (typically to age 99 or 100). Death benefit payable whenever death occurs. Premium payment term is usually limited (10–20 years) while coverage continues for life. Often used for estate planning and leaving a legacy. Higher premiums than term plans.",
     "example": "Whole life plan: SA ₹25 lakh, premium payment 20 years, coverage till 99. Pay premiums age 40–60. Coverage continues till age 99. Nominee gets ₹25L + bonuses upon death.",
-    "related_terms": ["Term Plan", "Endowment Plan", "Sum Assured"],
+    "related_terms": [
+      "Term Plan",
+      "Endowment Plan",
+      "Sum Assured"
+    ],
     "source": "IRDAI Life Insurance Product Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g061",
@@ -605,9 +967,15 @@
     "category": "life",
     "definition": "A term insurance variant where total premiums paid are returned at the end of the policy term if the insured survives. More expensive than pure term (typically 1.5–2× premium). The returned amount is tax-free under Section 10(10D) if SA/premium ratio conditions are met. Popular for those who want protection with recovery of cost.",
     "example": "ROP term plan: ₹1 crore SA, 30 years, annual premium ₹25,000. Total paid = ₹7.5 lakh. If survives 30 years: ₹7.5 lakh returned. If dies: nominee gets ₹1 crore.",
-    "related_terms": ["Term Plan", "Maturity Benefit", "Sum Assured"],
+    "related_terms": [
+      "Term Plan",
+      "Maturity Benefit",
+      "Sum Assured"
+    ],
     "source": "IRDAI Life Insurance Product Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g062",
@@ -615,9 +983,15 @@
     "category": "life",
     "definition": "An addition to the sum assured in participating (with-profit) life policies, declared by LIC or insurer based on their surplus profits. Types: Simple Reversionary Bonus (SRB) — declared as % of SA each year and accrues; Compound Reversionary Bonus — declared as % of (SA + accumulated bonus). Once declared, cannot be taken back. Added to death/maturity benefit.",
     "example": "LIC endowment, SA ₹10 lakh, SRB = ₹45 per ₹1000 SA per year. Year 1 bonus = ₹4,500. After 20 years at same rate: total bonus = ₹90,000 (simple) to ₹1.5L (compound) added to SA.",
-    "related_terms": ["Terminal Bonus", "Endowment Plan", "Sum Assured"],
+    "related_terms": [
+      "Terminal Bonus",
+      "Endowment Plan",
+      "Sum Assured"
+    ],
     "source": "LIC / IRDAI Life Insurance Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g063",
@@ -625,9 +999,15 @@
     "category": "life",
     "definition": "A special one-time bonus paid at the end of the policy (on maturity or death) in addition to reversionary bonuses. Also called 'final additional bonus'. Not guaranteed — declared at discretion of insurer based on fund performance. Usually added for policies that have remained in force for the full term or for long-duration policies.",
     "example": "20-year endowment matures. SA = ₹10L, reversionary bonus accrued = ₹8L, terminal bonus = ₹1.5L. Total maturity payout = ₹19.5 lakh.",
-    "related_terms": ["Bonus (Reversionary)", "Guaranteed Additions", "Maturity Benefit"],
+    "related_terms": [
+      "Bonus (Reversionary)",
+      "Guaranteed Additions",
+      "Maturity Benefit"
+    ],
     "source": "LIC / IRDAI Life Insurance Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g064",
@@ -635,9 +1015,15 @@
     "category": "life",
     "definition": "Guaranteed increases to the sum assured in some traditional life plans, declared as a fixed amount per year (₹X per ₹1000 SA) regardless of insurer performance. Unlike bonuses (which depend on surplus), guaranteed additions are contractually promised. Found in some LIC plans and private insurer savings plans.",
     "example": "Plan with ₹50 guaranteed addition per ₹1000 SA per year. SA = ₹10 lakh. Annual guaranteed addition = ₹50 × 1000 = ₹50,000. After 10 years: ₹5 lakh guaranteed additions added to SA.",
-    "related_terms": ["Bonus (Reversionary)", "Terminal Bonus", "Sum Assured"],
+    "related_terms": [
+      "Bonus (Reversionary)",
+      "Terminal Bonus",
+      "Sum Assured"
+    ],
     "source": "IRDAI Life Insurance Product Guidelines",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g065",
@@ -645,9 +1031,15 @@
     "category": "life",
     "definition": "The process of naming a person (nominee) to receive the life insurance death benefit if the insured dies. IRDAI mandates nomination for all individual life policies. The nominee is a trustee — the actual legal heirs under succession laws may have a claim, but insurer's obligation is discharged on payment to nominee. Can be changed anytime during policy term.",
     "example": "Policyholder nominates wife as nominee. On death, insurer pays ₹1 crore to wife (nominee). This discharges insurer's liability. Wife is legally obligated to distribute to rightful heirs as per succession laws.",
-    "related_terms": ["Assignment", "Death Benefit", "Sum Assured"],
+    "related_terms": [
+      "Assignment",
+      "Death Benefit",
+      "Sum Assured"
+    ],
     "source": "Insurance Act 1938, Section 39",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g066",
@@ -655,9 +1047,15 @@
     "category": "life",
     "definition": "Transfer of rights, title, and interest in a life insurance policy to another person or entity. Types: Absolute Assignment (all rights transferred, nominee changes automatically — used for loan security) and Conditional Assignment (reverts on fulfillment of condition). Banks require absolute assignment when policy is pledged as collateral.",
     "example": "Taking home loan from bank. Bank requires absolute assignment of LIC policy as collateral. Policy is assigned to bank. If policyholder dies, bank is paid first; excess (if any) goes to nominee.",
-    "related_terms": ["Nomination", "Loan Against Policy", "Death Benefit"],
+    "related_terms": [
+      "Nomination",
+      "Loan Against Policy",
+      "Death Benefit"
+    ],
     "source": "Insurance Act 1938, Section 38",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g067",
@@ -665,9 +1063,15 @@
     "category": "life",
     "definition": "Life insurance taken by a company on the life of a key employee or founder, where the company is the policyholder and beneficiary. Protects the company against financial loss from the death of a critical person. Premium is tax-deductible as a business expense for the company. Maturity proceeds are taxable for the company.",
     "example": "Startup takes ₹5 crore term plan on the life of its CTO. Company pays premium (tax-deductible). CTO dies → company receives ₹5 crore to replace talent and fund operations during transition.",
-    "related_terms": ["Term Plan", "Sum Assured", "Death Benefit"],
+    "related_terms": [
+      "Term Plan",
+      "Sum Assured",
+      "Death Benefit"
+    ],
     "source": "IRDAI / Income Tax Act",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g068",
@@ -675,9 +1079,15 @@
     "category": "life",
     "definition": "The period after receiving a life insurance policy document during which the policyholder can review and return it for a full refund of premium, minus proportionate risk premium for days covered and stamp duty. IRDAI mandates 30 days free look for distance-sold/electronic policies and 15 days for regular policies.",
     "example": "Buy ULIP on 1 Jan, receive policy on 10 Jan. Free look = 30 days from receipt (electronic policy) = till 9 Feb. Return policy by 9 Feb: insurer refunds premium minus NAV loss from fund investment and stamp duty.",
-    "related_terms": ["Free Look Period", "ULIP (Unit Linked Insurance Plan)", "Endowment Plan"],
+    "related_terms": [
+      "Free Look Period",
+      "ULIP (Unit Linked Insurance Plan)",
+      "Endowment Plan"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g069",
@@ -685,9 +1095,15 @@
     "category": "life",
     "definition": "A loan facility available against traditional life insurance policies (endowment, whole life, money-back) that have acquired surrender value. Loan amount: typically 85–90% of surrender value. Interest rate: 9–11% p.a. Policy remains in force as collateral. If loan + interest exceeds surrender value, policy may lapse.",
     "example": "LIC endowment, surrender value = ₹3 lakh. Loan available = 90% × ₹3L = ₹2.7 lakh at 9% p.a. Policy remains in force. Repay loan + interest to restore full value.",
-    "related_terms": ["Surrender Value", "Assignment", "Paid-up Policy"],
+    "related_terms": [
+      "Surrender Value",
+      "Assignment",
+      "Paid-up Policy"
+    ],
     "source": "Insurance Act 1938",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g070",
@@ -695,9 +1111,15 @@
     "category": "life",
     "definition": "The process of reinstating a lapsed or paid-up life insurance policy to full force by paying all overdue premiums with interest. IRDAI mandates insurers must allow revival within 5 years of first unpaid premium. May require medical examination if lapse > 6 months. Revival ensures original sum assured and all benefits are restored.",
     "example": "Policy lapsed in Jan 2022 (missed 2 premiums). Want to revive in Jan 2024. Pay: 2 overdue premiums (₹50,000 × 2 = ₹1L) + interest at ~9% = total ₹1.1L approximately. Submit health declaration. Policy revived with all original benefits.",
-    "related_terms": ["Lapse", "Paid-up Policy", "Premium Payment Term"],
+    "related_terms": [
+      "Lapse",
+      "Paid-up Policy",
+      "Premium Payment Term"
+    ],
     "source": "IRDAI Life Insurance Regulations",
-    "applicable_to": ["life"]
+    "applicable_to": [
+      "life"
+    ]
   },
   {
     "id": "g071",
@@ -705,9 +1127,15 @@
     "category": "motor",
     "definition": "The maximum sum insured in a motor insurance policy — the current market value of the vehicle minus depreciation. IDV is set at policy inception and determines the maximum claim payable for total loss or theft. Higher IDV = higher premium. IRDAI prescribes depreciation schedules for calculating IDV.",
     "example": "Car bought at ₹10 lakh in 2022. In 2024 (2 years old), depreciation = 20%. IDV = ₹10L × 80% = ₹8 lakh. This is the maximum the insurer pays if the car is totalled or stolen.",
-    "related_terms": ["OD (Own Damage)", "Constructive Total Loss", "Agreed Value"],
+    "related_terms": [
+      "OD (Own Damage)",
+      "Constructive Total Loss",
+      "Agreed Value"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g072",
@@ -715,9 +1143,15 @@
     "category": "motor",
     "definition": "The component of motor insurance covering damage to your own vehicle from accidents, natural calamities (flood, earthquake), fire, theft, and man-made events. OD is optional in comprehensive policies (compulsory is third-party only). OD premium is based on IDV, vehicle age, and insurer's rating. Depreciation applies on parts during claims.",
     "example": "Your car is damaged in an accident. OD component pays for repair after deducting depreciation on replaced parts (rubber, nylon parts: 50% depreciation; metal parts: age-based).",
-    "related_terms": ["IDV (Insured Declared Value)", "Third Party Liability", "Comprehensive Policy"],
+    "related_terms": [
+      "IDV (Insured Declared Value)",
+      "Third Party Liability",
+      "Comprehensive Policy"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g073",
@@ -725,9 +1159,15 @@
     "category": "motor",
     "definition": "Mandatory motor insurance under the Motor Vehicles Act 1988, covering your legal liability to third parties for bodily injury, death, or property damage caused by your vehicle. Premium is fixed by IRDAI (not negotiable). Unlimited liability for personal injury/death; property damage limit = ₹7.5 lakh per incident.",
     "example": "Your car hits a pedestrian. Third-party (pedestrian) claims compensation of ₹50 lakh from Motor Accident Claims Tribunal. Your third-party insurance pays this unlimited amount.",
-    "related_terms": ["Comprehensive Policy", "OD (Own Damage)", "PA Cover"],
+    "related_terms": [
+      "Comprehensive Policy",
+      "OD (Own Damage)",
+      "PA Cover"
+    ],
     "source": "Motor Vehicles Act 1988 / IRDAI",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g074",
@@ -735,9 +1175,15 @@
     "category": "motor",
     "definition": "A motor insurance policy combining mandatory third-party liability cover with optional own damage (OD) cover. Covers your vehicle AND provides third-party liability. Most car owners choose comprehensive for complete protection. Add-ons like zero depreciation, engine protection can be added to enhance coverage.",
     "example": "Comprehensive policy: covers your car damage (OD) AND third-party liability. With zero depreciation add-on, the full repair cost (without depreciation deduction) is paid for accident claims.",
-    "related_terms": ["OD (Own Damage)", "Third Party Liability", "Zero Depreciation"],
+    "related_terms": [
+      "OD (Own Damage)",
+      "Third Party Liability",
+      "Zero Depreciation"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g075",
@@ -745,9 +1191,15 @@
     "category": "motor",
     "definition": "A motor insurance add-on that eliminates depreciation deductions on replaced parts during claims. Standard OD policies deduct depreciation (0–50% based on age and material) on replaced parts. Zero depreciation add-on means insurer pays the full cost of parts without any depreciation deduction. Usually available for vehicles up to 5 years old.",
     "example": "Car bumper replacement costs ₹15,000. Standard OD: 50% depreciation on plastic = insurer pays ₹7,500. With zero depreciation add-on: insurer pays full ₹15,000.",
-    "related_terms": ["OD (Own Damage)", "IDV (Insured Declared Value)", "Comprehensive Policy"],
+    "related_terms": [
+      "OD (Own Damage)",
+      "IDV (Insured Declared Value)",
+      "Comprehensive Policy"
+    ],
     "source": "IRDAI Motor Insurance Add-on Guidelines",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g076",
@@ -755,9 +1207,15 @@
     "category": "motor",
     "definition": "A discount on OD premium for each claim-free year. Ranges from 20% after 1 year to 50% after 5 consecutive claim-free years. Transferable between vehicles (same owner). Lost if a claim is made. NCB protect add-on preserves NCB even after one claim per year.",
     "example": "OD premium without NCB: ₹10,000. After 3 claim-free years, NCB = 35% discount. OD premium = ₹6,500. Making a claim resets NCB to 0% next year.",
-    "related_terms": ["No Claim Bonus (NCB)", "OD (Own Damage)", "Comprehensive Policy"],
+    "related_terms": [
+      "No Claim Bonus (NCB)",
+      "OD (Own Damage)",
+      "Comprehensive Policy"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g077",
@@ -765,9 +1223,15 @@
     "category": "motor",
     "definition": "A garage/workshop in the motor insurer's network that accepts cashless claim settlement. The insurer directly settles the repair bill with the garage. Policyholder pays only the compulsory deductible and non-covered items. Insurer pre-approves the repair estimate before work begins at most cashless garages.",
     "example": "Your car is damaged. You take it to an insurer-empanelled cashless garage. Garage sends repair estimate (₹45,000) to insurer. Insurer approves ₹43,000 (excluding deductible ₹1,500 and non-covered items ₹500). You pay ₹2,000, garage pays ₹43,000 by insurer.",
-    "related_terms": ["OD (Own Damage)", "Comprehensive Policy", "Zero Depreciation"],
+    "related_terms": [
+      "OD (Own Damage)",
+      "Comprehensive Policy",
+      "Zero Depreciation"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g078",
@@ -775,9 +1239,15 @@
     "category": "motor",
     "definition": "A motor insurance add-on that pays the original invoice price of the vehicle (not IDV) in case of total loss or theft. Since IDV depreciates over time, RTI covers the gap between IDV and original purchase price. Available for new vehicles (usually within 3 years of purchase).",
     "example": "Car bought at ₹12 lakh in 2023. In 2025, IDV = ₹9 lakh. Car is stolen. Without RTI: insurer pays ₹9L. With RTI add-on: insurer pays ₹12L (original invoice price).",
-    "related_terms": ["IDV (Insured Declared Value)", "Constructive Total Loss", "Comprehensive Policy"],
+    "related_terms": [
+      "IDV (Insured Declared Value)",
+      "Constructive Total Loss",
+      "Comprehensive Policy"
+    ],
     "source": "IRDAI Motor Insurance Add-on Guidelines",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g079",
@@ -785,9 +1255,14 @@
     "category": "motor",
     "definition": "Personal Accident cover providing compensation for accidental death or permanent disability of the vehicle owner-driver. IRDAI mandates ₹15 lakh PA cover for all vehicle owners. This is a separate policy since 2019 (not bundled with motor policy). Compensation: 100% for death, 100% for loss of two limbs, 50% for loss of one limb/eye.",
     "example": "Owner-driver of a car dies in an accident. PA cover: ₹15 lakh paid to nominee. Third-party insurance handles compensation to other affected parties (pedestrian, other vehicle).",
-    "related_terms": ["Third Party Liability", "Comprehensive Policy"],
+    "related_terms": [
+      "Third Party Liability",
+      "Comprehensive Policy"
+    ],
     "source": "IRDAI Motor Insurance Regulations 2019",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g080",
@@ -795,9 +1270,15 @@
     "category": "motor",
     "definition": "When the cost of repairing a damaged vehicle exceeds 75% of its IDV, the vehicle is declared a Constructive Total Loss (CTL). In CTL cases, the insurer pays the IDV (minus salvage value or deductible) instead of repair cost. The damaged vehicle is surrendered to the insurer.",
     "example": "Car IDV = ₹8 lakh. Flood damage — repair cost estimated at ₹6.5 lakh (81% of IDV). Declared CTL. Insurer pays ₹8L minus compulsory deductible (₹1,000) minus salvage value (₹0.5L) = approximately ₹7.5 lakh.",
-    "related_terms": ["IDV (Insured Declared Value)", "OD (Own Damage)", "Return to Invoice"],
+    "related_terms": [
+      "IDV (Insured Declared Value)",
+      "OD (Own Damage)",
+      "Return to Invoice"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g081",
@@ -805,9 +1286,15 @@
     "category": "motor",
     "definition": "A motor insurance claim settlement where the insured deals directly with the insurer without going through a cashless garage or intermediary. The insured gets the vehicle repaired at a garage of their choice, pays the bill, and then claims reimbursement from the insurer.",
     "example": "Car damaged in remote area. Repair done at local garage for ₹20,000. You pay and then file a direct claim with all bills, RC book, driving license, and FIR (if required). Insurer reimburses after deducting depreciation and deductible.",
-    "related_terms": ["OD (Own Damage)", "Cashless Garage", "Comprehensive Policy"],
+    "related_terms": [
+      "OD (Own Damage)",
+      "Cashless Garage",
+      "Comprehensive Policy"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g082",
@@ -815,9 +1302,15 @@
     "category": "motor",
     "definition": "India Motor Tariff (IMT) clauses are standard endorsements to motor insurance policies. Common IMT clauses: IMT-23 (named driver only), IMT-28 (fibre glass body), IMT-47 (trailer). These are standardized additions/exclusions that modify the standard motor policy terms for specific situations.",
     "example": "Commercial vehicle with IMT-47 trailer clause: covers the trailer attached to the commercial vehicle as well as the main vehicle.",
-    "related_terms": ["Comprehensive Policy", "OD (Own Damage)", "Third Party Liability"],
+    "related_terms": [
+      "Comprehensive Policy",
+      "OD (Own Damage)",
+      "Third Party Liability"
+    ],
     "source": "India Motor Tariff (IMT)",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g083",
@@ -825,9 +1318,14 @@
     "category": "motor",
     "definition": "A motor insurance option (mainly for vintage/classic cars and two-wheelers) where the insured and insurer agree on a fixed value for the vehicle at policy inception. Claims are settled at this agreed value without IDV depreciation. Typically available for vehicles over 15 years old with limited market reference.",
     "example": "Vintage car agreed value: ₹25 lakh (no market depreciation table available). Total loss/theft: insurer pays ₹25 lakh as agreed.",
-    "related_terms": ["IDV (Insured Declared Value)", "Constructive Total Loss"],
+    "related_terms": [
+      "IDV (Insured Declared Value)",
+      "Constructive Total Loss"
+    ],
     "source": "IRDAI Motor Insurance Regulations",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g084",
@@ -835,9 +1333,14 @@
     "category": "motor",
     "definition": "An add-on motor insurance benefit providing emergency assistance on the road — flat tyre change, battery jump start, fuel delivery, minor on-spot repairs, towing to nearest garage, hotel accommodation if breakdown is far from home. Available 24/7 through insurer's tie-up with a road assistance provider.",
     "example": "Car breaks down on highway at night. Call insurer's RSA helpline. They arrange towing to nearest garage within 30 minutes. RSA covers the towing cost as per policy limits.",
-    "related_terms": ["Comprehensive Policy", "Engine Protection"],
+    "related_terms": [
+      "Comprehensive Policy",
+      "Engine Protection"
+    ],
     "source": "IRDAI Motor Insurance Add-on Guidelines",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g085",
@@ -845,9 +1348,15 @@
     "category": "motor",
     "definition": "A motor insurance add-on covering engine damage from water ingression (hydrostatic lock during flooding) or lubricant leakage post-accident. Standard OD policies exclude engine damage if the car was driven into waterlogged roads. Engine protection is crucial in flood-prone areas or monsoon seasons.",
     "example": "Monsoon floods, car driven into waterlogged road, engine hydrostatic lock. Repair cost: ₹1.2 lakh. Standard OD: not covered (excluded). Engine protection add-on: full repair cost covered.",
-    "related_terms": ["OD (Own Damage)", "Comprehensive Policy", "Zero Depreciation"],
+    "related_terms": [
+      "OD (Own Damage)",
+      "Comprehensive Policy",
+      "Zero Depreciation"
+    ],
     "source": "IRDAI Motor Insurance Add-on Guidelines",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
   },
   {
     "id": "g086",
@@ -855,9 +1364,17 @@
     "category": "tax",
     "definition": "Section 80C of the Income Tax Act 1961 allows deduction of up to ₹1.5 lakh per year on life insurance premium payments (among other instruments like PPF, ELSS, home loan principal). Deduction is available only under the OLD tax regime. The policy sum assured must be at least 10× the annual premium (for policies issued after Apr 2012) to claim full deduction.",
     "example": "Annual life insurance premium: ₹50,000. SA = ₹10 lakh (SA/premium = 20×, meets 10× requirement). Taxable income ₹15 lakh (30% bracket). Tax saved under 80C for this premium = ₹50,000 × 30% = ₹15,000.",
-    "related_terms": ["Section 80D", "Section 10(10D)", "Old tax regime", "Deduction"],
+    "related_terms": [
+      "Section 80D",
+      "Section 10(10D)",
+      "Old tax regime",
+      "Deduction"
+    ],
     "source": "Income Tax Act 1961, Section 80C",
-    "applicable_to": ["life", "tax"]
+    "applicable_to": [
+      "life",
+      "tax"
+    ]
   },
   {
     "id": "g087",
@@ -865,9 +1382,17 @@
     "category": "tax",
     "definition": "Section 80D of the Income Tax Act 1961 provides deduction for health insurance premiums paid. Limits: Self/spouse/children (all below 60) = ₹25,000/year. Self/spouse/children (any above 60) = ₹50,000/year. Parents (below 60) = additional ₹25,000. Parents (above 60) = additional ₹50,000. Maximum total = ₹1 lakh (all senior). Preventive health check-up: ₹5,000 within these limits. Old regime only.",
     "example": "Self (40, premium ₹20,000) + parents (65, premium ₹35,000). 80D deduction = ₹20,000 (self, limit ₹25,000) + ₹35,000 (parents above 60, limit ₹50,000) = ₹55,000 total deduction.",
-    "related_terms": ["Section 80C", "Section 10(10D)", "Old tax regime", "Deduction"],
+    "related_terms": [
+      "Section 80C",
+      "Section 10(10D)",
+      "Old tax regime",
+      "Deduction"
+    ],
     "source": "Income Tax Act 1961, Section 80D",
-    "applicable_to": ["health", "tax"]
+    "applicable_to": [
+      "health",
+      "tax"
+    ]
   },
   {
     "id": "g088",
@@ -875,9 +1400,16 @@
     "category": "tax",
     "definition": "Section 10(10D) of the Income Tax Act exempts life insurance maturity and death benefits from income tax. Conditions for maturity benefit exemption: SA must be ≥ 10× annual premium (policies after Apr 2012). ULIP exception: if annual premium exceeds ₹2.5 lakh (after Feb 2021), ULIP maturity is taxable as capital gains. Entire death benefit is always tax-free.",
     "example": "Endowment maturity: ₹18 lakh received. Annual premium was ₹50,000, SA = ₹10L (10× ratio met). Entire ₹18 lakh is tax-free under 10(10D). But if premium was ₹1.5L and SA = ₹10L (SA/premium = 6.6× < 10×): maturity is taxable as income.",
-    "related_terms": ["Section 80C", "TDS on maturity (194DA)", "LTCG on ULIP"],
+    "related_terms": [
+      "Section 80C",
+      "TDS on maturity (194DA)",
+      "LTCG on ULIP"
+    ],
     "source": "Income Tax Act 1961, Section 10(10D)",
-    "applicable_to": ["life", "tax"]
+    "applicable_to": [
+      "life",
+      "tax"
+    ]
   },
   {
     "id": "g089",
@@ -885,9 +1417,16 @@
     "category": "tax",
     "definition": "When a life insurance policy maturity amount is taxable (SA/premium ratio not met, i.e., not exempt under 10(10D)), the insurer deducts TDS at 5% on the net maturity amount (gross maturity minus total premiums paid). The policyholder must declare this as income and pay applicable tax. Submit Form 15G/15H if income is below taxable limit.",
     "example": "Maturity amount: ₹5 lakh. Total premiums paid: ₹3 lakh. Net income = ₹2 lakh. TDS at 5% = ₹10,000 deducted at source. Policyholder must declare ₹2 lakh as other income in ITR.",
-    "related_terms": ["Section 10(10D)", "Form 15G/15H", "Annual Information Statement (AIS)"],
+    "related_terms": [
+      "Section 10(10D)",
+      "Form 15G/15H",
+      "Annual Information Statement (AIS)"
+    ],
     "source": "Income Tax Act 1961, Section 194DA",
-    "applicable_to": ["life", "tax"]
+    "applicable_to": [
+      "life",
+      "tax"
+    ]
   },
   {
     "id": "g090",
@@ -895,9 +1434,16 @@
     "category": "tax",
     "definition": "From 2021 Budget: ULIP maturity proceeds are taxable as Long Term Capital Gains (LTCG) if annual premium exceeds ₹2.5 lakh. Treated like equity mutual funds (LTCG at 10% above ₹1 lakh gain). Multiple ULIPs: aggregate premium > ₹2.5L makes all ULIPs taxable. Death benefit remains tax-free regardless.",
     "example": "ULIP annual premium: ₹3 lakh (exceeds ₹2.5L threshold). Maturity after 10 years: ₹60L. Total premiums: ₹30L. LTCG = ₹30L. Tax: 10% on (₹30L - ₹1L exemption) = 10% × ₹29L = ₹2.9L LTCG tax.",
-    "related_terms": ["Section 10(10D)", "ULIP (Unit Linked Insurance Plan)", "LTCG"],
+    "related_terms": [
+      "Section 10(10D)",
+      "ULIP (Unit Linked Insurance Plan)",
+      "LTCG"
+    ],
     "source": "Finance Act 2021 / Income Tax Act 1961",
-    "applicable_to": ["life", "tax"]
+    "applicable_to": [
+      "life",
+      "tax"
+    ]
   },
   {
     "id": "g091",
@@ -905,9 +1451,15 @@
     "category": "tax",
     "definition": "Goods and Services Tax applicable on insurance premiums. Rates: Life insurance (term plans): 18% GST on premium. Life insurance (endowment, ULIP — first year): 4.5% GST. Life insurance (endowment — renewal years): 2.25% GST. Health insurance: 18% GST. LIC policies have 4.5% GST for first year, 2.25% for renewal (non-term). Important: GST paid on health premium is included in the 80D deduction limit.",
     "example": "Health insurance premium: ₹25,000 + 18% GST = ₹4,500 = total payment ₹29,500. The 80D deduction claim = ₹25,000 (net premium) + GST paid = ₹29,500 (entire amount including GST, subject to 80D limit).",
-    "related_terms": ["Section 80D", "Section 80C", "Old tax regime"],
+    "related_terms": [
+      "Section 80D",
+      "Section 80C",
+      "Old tax regime"
+    ],
     "source": "GST Act / CBDT Circular",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g092",
@@ -915,9 +1467,16 @@
     "category": "tax",
     "definition": "The pre-Budget 2020 income tax regime that allows various deductions and exemptions: Section 80C (₹1.5L), 80D (up to ₹1L), HRA, LTA, home loan interest, etc. Tax rates are slightly higher but deductions can significantly reduce taxable income. Beneficial for those with significant insurance, EPF, home loan, and other deductible investments.",
     "example": "Gross income ₹20L. Old regime deductions: 80C ₹1.5L + 80D ₹0.55L + HRA ₹2L + home loan interest ₹2L = ₹6.05L deductions. Taxable income = ₹20L - ₹6.05L = ₹13.95L. Tax = approx ₹2.4L (substantially lower).",
-    "related_terms": ["New tax regime", "Section 80C", "Section 80D", "Deduction"],
+    "related_terms": [
+      "New tax regime",
+      "Section 80C",
+      "Section 80D",
+      "Deduction"
+    ],
     "source": "Income Tax Act 1961",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g093",
@@ -925,9 +1484,15 @@
     "category": "tax",
     "definition": "The simplified tax regime (default from FY 2023-24) with lower tax rates but no deductions for insurance premiums (80C, 80D), home loan interest, or most exemptions. Only standard deduction (₹75,000 for salaried from FY 2024-25), employer NPS deduction (80CCD(2)), and basic exemption (₹3L) apply. Tax on ULIP maturity, death benefit remain unchanged.",
     "example": "Gross income ₹20L. New regime: standard deduction ₹75,000. Taxable income = ₹19.25L. No 80C/80D deductions. Tax = approx ₹2.8L. If deductions under old regime would save >₹0.4L more, old regime is better.",
-    "related_terms": ["Old tax regime", "Section 80C", "Section 80D"],
+    "related_terms": [
+      "Old tax regime",
+      "Section 80C",
+      "Section 80D"
+    ],
     "source": "Finance Act 2020 / Finance Act 2024",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g094",
@@ -935,9 +1500,15 @@
     "category": "tax",
     "definition": "Life insurance maturity proceeds that are completely exempt from income tax under Section 10(10D). Conditions: SA ≥ 10× annual premium (for policies issued after Apr 2012); or SA ≥ 5× annual premium (for policies after Apr 2003 and before Apr 2012); and ULIP premiums ≤ ₹2.5L per year. Death benefit is always tax-free regardless of ratio.",
     "example": "Term plan with ROP: ₹1 crore SA, annual premium ₹25,000. SA/premium = 400× (meets 10× condition). Maturity amount ₹7.5L returned is fully tax-free under 10(10D).",
-    "related_terms": ["Section 10(10D)", "Section 80C", "LTCG on ULIP"],
+    "related_terms": [
+      "Section 10(10D)",
+      "Section 80C",
+      "LTCG on ULIP"
+    ],
     "source": "Income Tax Act 1961, Section 10(10D)",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g095",
@@ -945,9 +1516,16 @@
     "category": "tax",
     "definition": "An amount that can be subtracted from gross income before computing tax liability. Insurance-related deductions: Section 80C (life insurance premium up to ₹1.5L), Section 80D (health insurance premium up to ₹1L for senior parents), Section 80CCC (pension plan). Deductions are available only under the old tax regime.",
     "example": "Gross income ₹15L. Life insurance premium ₹60,000 + health insurance ₹29,500 = ₹89,500 in insurance deductions (within 80C and 80D limits combined). Reduces taxable income by ₹89,500.",
-    "related_terms": ["Section 80C", "Section 80D", "Old tax regime", "Exemption"],
+    "related_terms": [
+      "Section 80C",
+      "Section 80D",
+      "Old tax regime",
+      "Exemption"
+    ],
     "source": "Income Tax Act 1961",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g096",
@@ -955,9 +1533,15 @@
     "category": "tax",
     "definition": "An income that is fully excluded from taxation — not added to total income at all. Insurance-related exemptions: Section 10(10D) — life insurance maturity/death proceeds (if conditions met); Section 10(10A) — commuted pension; Gratuity (Section 10(10)); HRA (Section 10(13A)). Unlike deductions (reduce taxable income), exemptions prevent income from being taxed entirely.",
     "example": "Life insurance maturity of ₹20 lakh (conditions for 10(10D) met): this ₹20L is exempt income — not added to your taxable income at all. Even a high-income taxpayer in 30% bracket pays zero tax on this ₹20L.",
-    "related_terms": ["Section 10(10D)", "Deduction", "Tax-free maturity"],
+    "related_terms": [
+      "Section 10(10D)",
+      "Deduction",
+      "Tax-free maturity"
+    ],
     "source": "Income Tax Act 1961",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g097",
@@ -965,9 +1549,15 @@
     "category": "tax",
     "definition": "Self-declaration forms to prevent TDS deduction when the taxpayer's total income is below the taxable limit. Form 15G: for individuals below 60 years, resident Indians. Form 15H: for individuals 60 years and above. Used in insurance context: submit to insurer when taxable life insurance maturity is received but total income is below basic exemption limit (₹3L new regime, ₹2.5L old regime).",
     "example": "Senior citizen (65), insurance maturity = ₹4 lakh, no other income. Total income = ₹4L, below ₹3L basic exemption (new regime). Submit Form 15H to insurer before maturity: no TDS deducted. Without 15H: insurer deducts 5% TDS = ₹5,000–10,000.",
-    "related_terms": ["TDS on maturity (194DA)", "Section 10(10D)", "Annual Information Statement (AIS)"],
+    "related_terms": [
+      "TDS on maturity (194DA)",
+      "Section 10(10D)",
+      "Annual Information Statement (AIS)"
+    ],
     "source": "Income Tax Act 1961 / CBDT",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g098",
@@ -975,9 +1565,15 @@
     "category": "tax",
     "definition": "A comprehensive statement of a taxpayer's financial transactions as reported to the Income Tax department, available on the income tax portal. Includes insurance premium payments (above ₹50,000), TDS on insurance maturity (194DA), insurance payouts, etc. Helps taxpayers reconcile and ensure correct tax filing. Insurers report large transactions to CBDT.",
     "example": "Life insurance maturity: insurer pays ₹10 lakh, deducts TDS of ₹20,000 (194DA). This appears in AIS. When filing ITR, taxpayer must reconcile AIS entries — claim credit for TDS or declare income accordingly.",
-    "related_terms": ["TDS on maturity (194DA)", "Form 15G/15H", "Section 10(10D)"],
+    "related_terms": [
+      "TDS on maturity (194DA)",
+      "Form 15G/15H",
+      "Section 10(10D)"
+    ],
     "source": "Income Tax Act 1961 / CBDT",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g099",
@@ -985,9 +1581,15 @@
     "category": "tax",
     "definition": "Life insurance maturity proceeds that are subject to income tax because the SA/premium ratio condition for Section 10(10D) exemption is not met. The taxable amount = gross maturity minus total premiums paid. Added to 'income from other sources'. Insurer deducts 5% TDS on net amount under Section 194DA. Typically occurs with high-premium, low-SA traditional plans.",
     "example": "LIC policy: SA ₹5 lakh, annual premium ₹75,000 (SA/premium = 6.7×, less than 10×). Policy purchased after April 2012 — does NOT qualify for 10(10D). Maturity of ₹9L: tax on (₹9L - ₹3L premiums) = tax on ₹6L as other income.",
-    "related_terms": ["Section 10(10D)", "TDS on maturity (194DA)", "Tax-free maturity"],
+    "related_terms": [
+      "Section 10(10D)",
+      "TDS on maturity (194DA)",
+      "Tax-free maturity"
+    ],
     "source": "Income Tax Act 1961, Section 194DA",
-    "applicable_to": ["tax"]
+    "applicable_to": [
+      "tax"
+    ]
   },
   {
     "id": "g100",
@@ -995,9 +1597,16 @@
     "category": "tax",
     "definition": "Section 10(10A) exempts the commuted value of pension from a life insurance pension/annuity plan from income tax. Full commutation is tax-free if the employee does not receive gratuity. One-third commutation is tax-free if the employee receives gratuity. Relevant for NPS, LIC Jeevan Akshay, and other pension plans from life insurers.",
     "example": "Pension plan vests at age 60. Accumulated corpus = ₹50 lakh. Choose to commute 1/3 (₹16.67L as lump sum) and take balance as annuity. The ₹16.67L lump sum is tax-free under 10(10A) (if also receives gratuity). Annuity is taxable as income.",
-    "related_terms": ["Section 80C", "Section 10(10D)", "Maturity Benefit"],
+    "related_terms": [
+      "Section 80C",
+      "Section 10(10D)",
+      "Maturity Benefit"
+    ],
     "source": "Income Tax Act 1961, Section 10(10A)",
-    "applicable_to": ["life", "tax"]
+    "applicable_to": [
+      "life",
+      "tax"
+    ]
   },
   {
     "id": "g101",
@@ -1005,8 +1614,1733 @@
     "category": "motor",
     "definition": "24/7 emergency motor assistance service — includes towing (up to a specified distance), flat tyre change, emergency fuel delivery, battery jump start, minor on-spot repairs, hotel accommodation for stranded drivers, and alternate travel arrangement. Available as add-on to comprehensive motor policies.",
     "example": "Car breaks down 200 km from home at night. RSA helpline arranges a tow truck within 45 minutes. Policy covers towing up to 50 km (to nearest garage). Hotel accommodation of ₹2,000 for driver provided.",
-    "related_terms": ["Comprehensive Policy", "Cashless Garage"],
+    "related_terms": [
+      "Comprehensive Policy",
+      "Cashless Garage"
+    ],
     "source": "IRDAI Motor Insurance Add-on Guidelines",
-    "applicable_to": ["motor"]
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g102",
+    "term": "ICU Sub-limit",
+    "category": "health",
+    "definition": "A cap within the sum insured specifically for Intensive Care Unit (ICU) charges. Even if the overall sum insured is high, the insurer will only pay up to the ICU sub-limit for charges incurred in the ICU — including ICU nursing, monitoring equipment, and associated medical charges.",
+    "example": "A ₹10 lakh policy with a ₹5,000/day ICU sub-limit: if your ICU charges are ₹15,000/day, you pay ₹10,000/day out of pocket and the insurer covers only ₹5,000/day.",
+    "related_terms": [
+      "Sub-limit",
+      "Room Rent Limit",
+      "Sum Insured"
+    ],
+    "source": "IRDAI Glossary / Standard Policy Terms",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g103",
+    "term": "Base Plan",
+    "category": "health",
+    "definition": "The core health insurance policy that provides the primary sum insured. Top-up and super top-up plans work above this base plan's deductible. The base plan covers claims up to its sum insured, after which a top-up plan kicks in (for single claim top-up) or super top-up (for aggregate claims top-up).",
+    "example": "A ₹5 lakh base plan + ₹20 lakh super top-up with ₹5 lakh deductible: the base plan covers the first ₹5 lakh of aggregate claims; the super top-up covers amounts above ₹5 lakh up to ₹25 lakh total.",
+    "related_terms": [
+      "Super Top-up",
+      "Top-up Plan",
+      "Sum Insured",
+      "Deductible"
+    ],
+    "source": "IRDAI Product Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g104",
+    "term": "AYUSH Cover",
+    "category": "health",
+    "definition": "Coverage for treatments under Ayurveda, Yoga and Naturopathy, Unani, Siddha, and Homeopathy (AYUSH) systems of medicine. IRDAI mandates that all standard indemnity health insurance policies cover AYUSH treatments at government-recognized institutions. Sub-limits often apply (e.g., ₹25,000 or a percentage of sum insured).",
+    "example": "If your policy has a ₹1 lakh AYUSH sub-limit and you undergo Ayurvedic panchakarma treatment costing ₹40,000 at a recognized NABH-accredited hospital, the insurer covers the eligible portion up to ₹1 lakh.",
+    "related_terms": [
+      "Day Care Procedures",
+      "Domiciliary Hospitalization",
+      "Sub-limit"
+    ],
+    "source": "IRDAI Circular on AYUSH Coverage / Insurance Act",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g105",
+    "term": "Mental Health Coverage",
+    "category": "health",
+    "definition": "Coverage for mental illness treatment mandated under Section 21(4) of the Mental Healthcare Act, 2017. IRDAI directed all health insurers to cover mental illnesses on the same basis as physical illnesses from 2019 onwards. Covers in-patient psychiatric treatment, psychotherapy during hospitalization, and in some policies, OPD mental health consultations.",
+    "example": "A policyholder hospitalized for severe depression or bipolar disorder is entitled to the same health cover as a patient hospitalized for diabetes or hypertension — under the Mental Healthcare Act mandate.",
+    "related_terms": [
+      "OPD Cover",
+      "Day Care Procedures",
+      "IRDAI Circular"
+    ],
+    "source": "Mental Healthcare Act 2017, Section 21(4); IRDAI Circular 2020",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g106",
+    "term": "No Room Rent Sub-limit",
+    "category": "health",
+    "definition": "A policy feature where there is no upper cap on the hospital room rent the insurer will cover. Policies with no room rent sub-limit pay the actual room rent as charged by the hospital, eliminating the risk of proportionate deduction on the total bill. Premium is higher for such policies.",
+    "example": "A policy with no room rent sub-limit allows you to stay in a ₹10,000/day private suite — the insurer pays the full room rent and the full associated medical bill without proportionate deduction.",
+    "related_terms": [
+      "Room Rent Limit",
+      "Proportionate Deduction",
+      "Sub-limit"
+    ],
+    "source": "Policy Product Features",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g107",
+    "term": "Maternity Benefit Waiting Period",
+    "category": "health",
+    "definition": "The specific waiting period that must be served before maternity-related expenses (normal delivery, caesarean section, pre- and post-natal care) are covered under a health policy. Typically ranges from 9 months to 4 years depending on the insurer and plan. Porting to another insurer does not waive this waiting period unless it was already served.",
+    "example": "A plan with a 2-year maternity waiting period: a woman who buys the policy in January 2024 can claim maternity benefits only after January 2026. Pregnancies during the waiting period are excluded.",
+    "related_terms": [
+      "Waiting Period",
+      "Maternity Benefit",
+      "Newborn Cover",
+      "Portability"
+    ],
+    "source": "IRDAI Health Insurance Regulations",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g108",
+    "term": "Newborn Coverage",
+    "category": "health",
+    "definition": "Coverage for a newborn child's medical expenses from day one of birth, including NICU charges, congenital defects treatment, and vaccinations within the policy year. Most policies cover the newborn automatically from birth if the mother is insured. The child must be added to the policy at renewal. Sub-limits often apply.",
+    "example": "A newborn requiring 10 days of NICU care at ₹20,000/day (total ₹2 lakh) would be covered from day 1 if the mother's floater policy includes newborn coverage — the insurer pays up to the newborn sub-limit or SI, whichever is less.",
+    "related_terms": [
+      "Maternity Benefit",
+      "Family Floater",
+      "Sub-limit"
+    ],
+    "source": "IRDAI Standard Health Policy Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g109",
+    "term": "Pre-Authorization Letter",
+    "category": "health",
+    "definition": "A formal written approval from the insurer or TPA confirming that a proposed medical procedure or hospitalization is covered under the policy and that the cashless facility is approved for a specified amount. Required for all planned cashless hospitalizations. Not a final settlement — the actual payout may differ based on final bills.",
+    "example": "Before a planned knee replacement surgery, the hospital sends a pre-authorization request to the TPA. The TPA issues a letter saying 'We approve cashless claim up to ₹3.5 lakh for total knee replacement at XYZ Hospital for policy holder Arun Sharma.'",
+    "related_terms": [
+      "Cashless Claim",
+      "TPA",
+      "Network Hospital",
+      "Pre-authorization"
+    ],
+    "source": "IRDAI Claims Regulation",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g110",
+    "term": "DRG (Diagnosis Related Group)",
+    "category": "health",
+    "definition": "A fixed-rate package pricing system used by hospitals and insurers for common procedures. The insurer agrees to pay a fixed package rate for defined procedures (e.g., appendectomy, normal delivery, cataract surgery) regardless of actual hospital charges. Simplifies claims processing and reduces fraud. Increasingly used in cashless claims.",
+    "example": "If the DRG rate for cataract surgery is ₹35,000 and the hospital charges ₹45,000, the insurer pays ₹35,000 (the package rate). The remaining ₹10,000 is payable by the patient unless policy covers beyond DRG.",
+    "related_terms": [
+      "Cashless Claim",
+      "Pre-authorization",
+      "Sub-limit"
+    ],
+    "source": "Insurer Network Hospital Agreements / IRDAI",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g111",
+    "term": "Floater Sum Insured vs Individual Sum Insured",
+    "category": "health",
+    "definition": "Floater sum insured is shared among all family members — any one or more members can claim up to the total sum insured in a year. Individual sum insured gives each member a separate, dedicated sum insured. Floater is cheaper but riskier if multiple members fall ill simultaneously. Individual is more expensive but each member has full cover independent of others.",
+    "example": "Family floater of ₹10 lakh for 4 members: if spouse claims ₹8 lakh, only ₹2 lakh remains for others that year. Individual ₹5 lakh each: each member independently has ₹5 lakh regardless of others' claims.",
+    "related_terms": [
+      "Family Floater",
+      "Individual Policy",
+      "Sum Insured",
+      "Restoration Benefit"
+    ],
+    "source": "IRDAI Health Insurance Product Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g112",
+    "term": "Paid-up Value",
+    "category": "life",
+    "definition": "The reduced benefit that a traditional life insurance policy (endowment, money-back, whole life) acquires after the policyholder stops paying premiums — instead of surrendering or lapsing the policy. The sum assured is reduced proportionally based on premiums paid vs total premiums due. Policy continues until maturity without further premium payments.",
+    "example": "A 20-year endowment with ₹10 lakh SA, if premiums are paid for 10 years (50% of term) and then stopped — the paid-up value becomes approximately ₹5 lakh. Policy stays alive and pays ₹5 lakh at maturity.",
+    "related_terms": [
+      "Surrender Value",
+      "Lapsed Policy",
+      "Non-forfeiture Options",
+      "Paid-up Policy"
+    ],
+    "source": "Insurance Act 1938, Section 113",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g113",
+    "term": "Extended Term Insurance",
+    "category": "life",
+    "definition": "A non-forfeiture option where the cash value of a lapsed traditional life policy is used to purchase extended term insurance — maintaining the original death benefit for a shorter period. The policy converts to a pure term plan funded by the accumulated cash value. Available only in policies with sufficient surrender value.",
+    "example": "If a 20-year endowment policy lapses after 15 years with ₹3 lakh surrender value, this amount can be used to buy extended term insurance of ₹10 lakh (original SA) for, say, 5 more years.",
+    "related_terms": [
+      "Non-forfeiture Options",
+      "Paid-up Value",
+      "Surrender Value"
+    ],
+    "source": "Insurance Act 1938",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g114",
+    "term": "Automatic Cover",
+    "category": "life",
+    "definition": "A provision in group life insurance policies where new employees are automatically covered up to a specified sum assured without requiring medical underwriting. Employees beyond this 'free cover limit' (FCL) need medical evidence. Also called 'Non-Medical Limit' in group policies.",
+    "example": "A company's group term policy has an automatic cover of ₹25 lakh per employee. New joiners are automatically insured for ₹25 lakh. Employees wanting higher cover (e.g., ₹50 lakh) must submit medical reports.",
+    "related_terms": [
+      "Group Insurance",
+      "Underwriting",
+      "Sum Assured"
+    ],
+    "source": "IRDAI Group Insurance Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g115",
+    "term": "Accidental Death Benefit (ADB) Rider",
+    "category": "life",
+    "definition": "An add-on rider to a life insurance policy that pays an additional death benefit if the policyholder dies due to an accident. The rider benefit is paid in addition to the base policy's sum assured. Some riders also cover permanent total disability (PTD) from accidents. Typically costs ₹50–₹100 per ₹1 lakh of additional cover annually.",
+    "example": "A ₹50 lakh term plan with ₹25 lakh ADB rider: if the policyholder dies in a road accident, the family receives ₹75 lakh total (₹50 lakh base + ₹25 lakh ADB). Natural death: only ₹50 lakh.",
+    "related_terms": [
+      "Rider",
+      "PA Cover",
+      "Death Benefit",
+      "Term Plan"
+    ],
+    "source": "IRDAI Rider Products Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g116",
+    "term": "Waiver of Premium (WOP) Rider",
+    "category": "life",
+    "definition": "A rider that waives future premium payments if the policyholder becomes permanently disabled (or diagnosed with a critical illness, depending on the variant) and is unable to earn income. The policy continues in full force with all benefits intact despite non-payment of premiums.",
+    "example": "Rajesh has a ₹1 crore term plan with WOP rider and suffers a severe stroke at age 40, resulting in total disability. His future premiums are waived — he pays nothing, but his family remains covered for ₹1 crore until policy term ends.",
+    "related_terms": [
+      "Rider",
+      "Critical Illness",
+      "Disability",
+      "Premium Payment Term"
+    ],
+    "source": "IRDAI Rider Products Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g117",
+    "term": "Income Benefit Rider",
+    "category": "life",
+    "definition": "A life insurance rider that provides a regular monthly or annual income to the beneficiary in addition to (or instead of) a lump sum death benefit. Designed to replace the policyholder's income stream for the family after death. The income is paid over a fixed period (e.g., 10 years) or until the original policy maturity.",
+    "example": "A ₹50 lakh term plan with a ₹1 lakh/month income benefit rider for 10 years: upon death, the family receives ₹50 lakh lump sum plus ₹1 lakh/month for 10 years (total ₹1.2 crore additional income).",
+    "related_terms": [
+      "Rider",
+      "Death Benefit",
+      "Term Plan",
+      "Nomination"
+    ],
+    "source": "IRDAI Rider Products Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g118",
+    "term": "Reduced Paid-up Policy",
+    "category": "life",
+    "definition": "A traditional life insurance policy that has been converted to paid-up status after the policyholder stops paying premiums. The sum assured is reduced proportionally, and the policy remains in force until maturity — delivering the reduced sum assured plus accumulated bonuses on maturity. No further premiums are required.",
+    "example": "A 25-year endowment with ₹20 lakh SA, premiums paid for 15 years (60%): the policy becomes reduced paid-up with approximately ₹12 lakh SA. At maturity (25 years from start), the reduced SA + vested bonuses are paid.",
+    "related_terms": [
+      "Paid-up Value",
+      "Non-forfeiture Options",
+      "Surrender Value",
+      "Endowment Plan"
+    ],
+    "source": "Insurance Act 1938, LIC Policy Terms",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g119",
+    "term": "Policy Revival",
+    "category": "life",
+    "definition": "The reinstatement of a lapsed life insurance policy to its original in-force status by paying all outstanding premiums with interest and fulfilling any additional health requirements specified by the insurer. Revival must typically occur within 5 years of lapse. Insurer may require fresh medical examination for large sum assureds or long lapse periods.",
+    "example": "A term policy lapsed after missing 2 years of premiums. The policyholder can revive it within 5 years by paying 2 years' overdue premiums + 8% interest p.a. + submitting a revival health declaration form. On approval, the policy is restored with full benefits.",
+    "related_terms": [
+      "Lapsed Policy",
+      "Grace Period",
+      "Free Look Period"
+    ],
+    "source": "Insurance Act 1938 / Insurer Revival Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g120",
+    "term": "Lapsed Policy",
+    "category": "life",
+    "definition": "An insurance policy that has ceased to be in force because premiums were not paid within the grace period. A lapsed policy provides no insurance coverage — death or maturity claims cannot be filed. Can be revived (reinstated) within a specified period. After the revival window closes, surrender value (if any) is paid and the policy terminates.",
+    "example": "If a policy premium falls due in March and is not paid by end of April (within the 30-day grace period), the policy lapses. During the lapse period, if the policyholder dies, no death benefit is payable.",
+    "related_terms": [
+      "Grace Period",
+      "Revival",
+      "Paid-up Value",
+      "Non-forfeiture Options"
+    ],
+    "source": "Insurance Act 1938",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g121",
+    "term": "Non-forfeiture Options",
+    "category": "life",
+    "definition": "The choices available to a policyholder when they stop paying premiums on a traditional life policy that has acquired a surrender value (typically after 3 years of premiums paid). Options include: (1) Paid-up value — policy continues with reduced SA; (2) Surrender — receive cash now; (3) Extended term insurance — use cash value to buy term cover. The policy does not simply lapse when non-forfeiture options exist.",
+    "example": "After 5 years of premiums on an endowment policy, the policyholder can: take ₹2 lakh surrender value, OR convert to a reduced paid-up policy with ₹6 lakh SA at maturity, OR use the surrender value to buy term cover for 10 more years.",
+    "related_terms": [
+      "Paid-up Value",
+      "Surrender Value",
+      "Extended Term Insurance",
+      "Lapsed Policy"
+    ],
+    "source": "Insurance Act 1938, Section 113",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g122",
+    "term": "Endowment vs Term Comparison",
+    "category": "life",
+    "definition": "Term insurance provides pure death benefit (no maturity payout) at low cost — typically ₹10–₹15/lakh/month for a 30-year-old. Endowment provides both death cover and maturity payout but at 10–20x higher premium. The internal rate of return (IRR) on endowment is typically 4–6% — far below equity mutual funds. Financial advisors generally recommend term + mutual fund over endowment for wealth building.",
+    "example": "₹1 crore term for 30 years at age 30: ₹15,000/year premium. ₹1 crore endowment for 30 years: ₹3–4 lakh/year premium. The ₹2.85 lakh savings invested in equity mutual funds at 12% CAGR would compound to ₹6–8 crore vs ₹1 crore endowment payout.",
+    "related_terms": [
+      "Term Plan",
+      "Endowment Plan",
+      "IRR",
+      "ULIP"
+    ],
+    "source": "Financial Planning Best Practices / IRDAI Consumer Education",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g123",
+    "term": "Section 45 — Contestability Period",
+    "category": "life",
+    "definition": "A provision under Section 45 of the Insurance Act, 1938 that limits the insurer's right to repudiate a life insurance claim. After a policy has been in force for 3 years, the insurer CANNOT repudiate the claim on grounds of misrepresentation or non-disclosure (with limited exceptions for fraud). Before 3 years, the insurer can investigate and reject on these grounds.",
+    "example": "If a policyholder concealed a pre-existing heart condition at inception and dies after 4 years of policy being in force — the insurer generally cannot reject the claim under Section 45. If death occurs in year 2, the insurer can investigate and potentially reject.",
+    "related_terms": [
+      "Non-disclosure",
+      "Death Benefit",
+      "Policy Revival",
+      "Lapsed Policy"
+    ],
+    "source": "Insurance Act 1938, Section 45 (Amended 2015)",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g124",
+    "term": "Zero Depreciation Cover",
+    "category": "motor",
+    "definition": "A motor insurance add-on that eliminates the depreciation deduction on replaced parts during claim settlement. Standard policies deduct depreciation (15–50% depending on part age and type) from claim amounts. With zero depreciation, the insurer pays the full cost of replacement parts without applying depreciation. Also called 'Nil Depreciation' or 'Bumper-to-Bumper' cover.",
+    "example": "A 3-year-old car needs a bumper replacement costing ₹15,000. Standard policy depreciates plastic parts at 30% — insurer pays ₹10,500. With zero depreciation add-on, the insurer pays the full ₹15,000.",
+    "related_terms": [
+      "IDV",
+      "Own Damage",
+      "Comprehensive Policy",
+      "Add-on"
+    ],
+    "source": "IRDAI Motor Tariff / Insurer Add-on Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g125",
+    "term": "Engine Protect Cover",
+    "category": "motor",
+    "definition": "A motor insurance add-on that covers damage to the engine and gearbox due to water ingression (hydrostatic lock from driving through floods), oil leakage, or related mechanical failure — which are excluded from standard own damage cover. Standard motor OD does not cover engine damage from water entry or oil-related failures.",
+    "example": "If a car's engine seizes after driving through a waterlogged road during monsoon, the standard OD policy does not cover this (it's excluded as consequential loss). Engine protect add-on covers the repair cost — often ₹2–5 lakh for engine replacement.",
+    "related_terms": [
+      "Own Damage",
+      "Comprehensive Policy",
+      "Add-on",
+      "Consumables Cover"
+    ],
+    "source": "IRDAI Motor Insurance Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g126",
+    "term": "Consumables Cover",
+    "category": "motor",
+    "definition": "A motor insurance add-on that covers the cost of consumable items used during vehicle repair — such as engine oil, brake fluid, coolant, AC gas, nuts, bolts, and screws — which are excluded from standard own damage cover. Typically costs ₹500–₹2,000/year as add-on.",
+    "example": "After an accident repair, the workshop replaces engine oil (₹3,000), coolant (₹800), brake fluid (₹500), and various nuts and bolts (₹1,200). Without consumables cover, these ₹5,500 are out-of-pocket. With the add-on, insurer pays.",
+    "related_terms": [
+      "Own Damage",
+      "Zero Depreciation",
+      "Engine Protect",
+      "Comprehensive Policy"
+    ],
+    "source": "IRDAI Motor Add-on Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g127",
+    "term": "Key Replacement Cover",
+    "category": "motor",
+    "definition": "A motor insurance add-on that covers the cost of replacing car keys (including smart keys, transponder keys, and remote key fobs) if they are lost, stolen, or damaged. Also usually covers locksmith charges and reprogramming of the car's locking system. Smart keys for modern cars can cost ₹5,000–₹50,000 to replace.",
+    "example": "A car owner loses their smart key fob. Replacement cost from the dealer: ₹18,000 (key) + ₹3,000 (programming). Without key replacement cover, this is out-of-pocket. With the add-on, the insurer reimburses.",
+    "related_terms": [
+      "Comprehensive Policy",
+      "Add-on",
+      "Own Damage"
+    ],
+    "source": "IRDAI Motor Add-on Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g128",
+    "term": "Return to Invoice (RTI) Cover",
+    "category": "motor",
+    "definition": "A motor insurance add-on that ensures the insurer pays the original purchase invoice price of the vehicle (plus registration and road tax) in case of total loss or theft — instead of the lower IDV (Insured Declared Value) which reflects depreciation. Particularly valuable for new cars (0–3 years old).",
+    "example": "A car bought for ₹12 lakh in 2023, IDV after 2 years = ₹8.4 lakh. In case of theft, standard policy pays ₹8.4 lakh (IDV). RTI add-on makes the insurer pay ₹12 lakh (invoice price). Difference: ₹3.6 lakh saved.",
+    "related_terms": [
+      "IDV",
+      "Total Loss",
+      "Comprehensive Policy",
+      "Add-on"
+    ],
+    "source": "IRDAI Motor Insurance Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g129",
+    "term": "PA Cover Owner-Driver",
+    "category": "motor",
+    "definition": "Compulsory Personal Accident (PA) cover of ₹15 lakh for the owner-driver of a vehicle, mandated by IRDAI since 2018. Pays on accidental death or permanent total disability of the owner-driver. Issued as a standalone PA policy (since 2019 — no longer bundled with motor OD). If the owner already has a ₹15 lakh+ standalone PA policy, the compulsory PA can be waived.",
+    "example": "Every car/two-wheeler owner must either buy the compulsory ₹15 lakh owner-driver PA cover (₹100–₹200/year standalone) OR show that they already have a standalone PA policy of equal or higher value. Failure to have this cover while driving is an insurance violation.",
+    "related_terms": [
+      "PA Cover",
+      "Motor Insurance",
+      "Third Party",
+      "Comprehensive Policy"
+    ],
+    "source": "IRDAI Circular on Compulsory PA Cover 2018",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g130",
+    "term": "Constructive Total Loss (CTL)",
+    "category": "motor",
+    "definition": "A motor insurance claim classification where the cost of repairing the vehicle exceeds 75% of the IDV. In such cases, the insurer treats it as a 'total loss' and pays the IDV instead of repairing the vehicle. The salvage (damaged vehicle) is taken by the insurer after settlement.",
+    "example": "IDV of a car = ₹6 lakh. Repair cost after accident = ₹5 lakh (83% of IDV). Since repair cost > 75% IDV threshold, it becomes a CTL. Insurer pays ₹6 lakh (IDV) and takes the salvage car.",
+    "related_terms": [
+      "IDV",
+      "Own Damage",
+      "Total Loss",
+      "Return to Invoice"
+    ],
+    "source": "India Motor Tariff / IRDAI",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g131",
+    "term": "IGMS (Integrated Grievance Management System)",
+    "category": "irdai",
+    "definition": "The Insurance Regulatory and Development Authority of India's (IRDAI) online portal for registering and tracking insurance grievances. Policyholders can file complaints against any insurer directly on the IGMS portal (igms.irda.gov.in) if the insurer fails to resolve the grievance within 15 days or provides an unsatisfactory resolution. Replaced by Bima Bharosa.",
+    "example": "If HDFC Life rejects your claim and does not respond to your grievance within 15 days, you can file a complaint on IGMS portal. IRDAI assigns a registration number and the insurer must respond within the regulated timeline.",
+    "related_terms": [
+      "Bima Bharosa",
+      "Ombudsman",
+      "Grievance",
+      "IRDAI"
+    ],
+    "source": "IRDAI IGMS Guidelines",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g132",
+    "term": "Bima Bharosa",
+    "category": "irdai",
+    "definition": "IRDAI's integrated grievance and redressal system launched in 2023-24 as the unified platform replacing IGMS. Policyholders can register complaints, track status, and access consumer education on the Bima Bharosa platform. The first level of escalation after the insurer's own grievance cell fails to resolve within 30 days.",
+    "example": "A policyholder whose claim was denied by Star Health, and whose grievance to Star Health's grievance officer was unresolved after 30 days, can escalate to Bima Bharosa for IRDAI intervention.",
+    "related_terms": [
+      "IGMS",
+      "Ombudsman",
+      "IRDAI",
+      "Grievance"
+    ],
+    "source": "IRDAI Annual Report 2024",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g133",
+    "term": "Bima Sugam",
+    "category": "irdai",
+    "definition": "A proposed unified digital insurance marketplace by IRDAI — a one-stop platform where consumers can buy, renew, and manage all insurance policies digitally. Bima Sugam aims to be the 'UPI for insurance' — enabling seamless policy issuance, claims processing, and agent access. Integration with insurance repositories and e-Insurance Accounts (eIA) for paperless policy management.",
+    "example": "A consumer can log into Bima Sugam, see all their existing policies (health, life, motor), buy a new term plan from any insurer, and file a claim — all from one unified portal linked to their Aadhaar and PAN.",
+    "related_terms": [
+      "e-Insurance Account",
+      "Insurance Repository",
+      "Bima Vahak",
+      "IRDAI"
+    ],
+    "source": "IRDAI Vision Document 2047 / Bima Sugam Announcement 2023",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g134",
+    "term": "Bima Vahak",
+    "category": "irdai",
+    "definition": "IRDAI's scheme to create a grassroots network of insurance distribution workers (Bima Vahaks) at the village/gram panchayat level to increase insurance penetration in rural India. Each gram panchayat will have a Bima Vahak — a local trained insurance distributor who can sell and service insurance policies. Part of the 'Insurance for All by 2047' vision.",
+    "example": "In a village in Bihar with no insurance agent, the appointed Bima Vahak can help farmers buy crop insurance, help women buy micro health policies, and assist in filing claims — without requiring the villager to travel to a city.",
+    "related_terms": [
+      "Bima Sugam",
+      "IRDAI",
+      "Insurance Penetration"
+    ],
+    "source": "IRDAI Bima Vahak Regulations 2023",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor"
+    ]
+  },
+  {
+    "id": "g135",
+    "term": "e-Insurance Account (eIA)",
+    "category": "irdai",
+    "definition": "An electronic repository account that stores all insurance policies of a policyholder in digital format — similar to a demat account for shares. Issued by IRDAI-licensed insurance repositories. The eIA number is unique to each policyholder. Reduces paperwork, enables online policy management, and ensures policies are not lost. Integration with Bima Sugam is planned.",
+    "example": "A policyholder with 5 different policies (LIC endowment, Star Health floater, HDFC Ergo motor, Bajaj travel, HDFC Life term) can consolidate all into one eIA. All policy documents are available digitally — no physical storage needed.",
+    "related_terms": [
+      "Insurance Repository",
+      "Bima Sugam",
+      "IRDAI"
+    ],
+    "source": "IRDAI Insurance Repository Regulations 2013 / Amended 2024",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g136",
+    "term": "Insurance Repository",
+    "category": "irdai",
+    "definition": "An IRDAI-licensed entity authorized to maintain an electronic database of insurance policies — enabling policyholders to convert physical policies into e-Policies and store them in e-Insurance Accounts (eIA). Currently licensed repositories in India: NSDL Database Management (NDML), CAMS Repository (CAMSRep), Karvy Insurance Repository (KIR), and Central Insurance Repository (CIR).",
+    "example": "A policyholder can submit their physical LIC policy and health policy to CAMS Repository, which digitizes them and stores in an eIA. The policyholder can then view all policies on one dashboard and request service changes online.",
+    "related_terms": [
+      "e-Insurance Account",
+      "Bima Sugam",
+      "IRDAI"
+    ],
+    "source": "IRDAI Insurance Repository Regulations 2013",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g137",
+    "term": "KYC for Insurance",
+    "category": "irdai",
+    "definition": "Know Your Customer (KYC) requirements for buying insurance in India. IRDAI mandates that all insurers verify identity and address proof before issuing policies. Accepted documents: Aadhaar (most common), PAN (mandatory for policies above ₹50,000 annual premium), passport, voter ID, driving license. Aadhaar-based e-KYC via OTP is the fastest method. CKYC (Central KYC) records are shared across financial institutions.",
+    "example": "To buy a ₹1 crore term plan, the insurer requires Aadhaar for e-KYC verification, PAN card (premium > ₹50,000/year), bank account details (NEFT for settlement), and a recent passport photo. E-KYC via Aadhaar OTP can complete the process in 2 minutes.",
+    "related_terms": [
+      "IRDAI",
+      "Bima Sugam",
+      "Insurance Repository",
+      "PAN"
+    ],
+    "source": "IRDAI KYC Regulations / PMLA Guidelines",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g138",
+    "term": "Premium Financing",
+    "category": "financial",
+    "definition": "A financial arrangement where a bank, NBFC, or insurer-affiliated financier lends money to pay large insurance premiums (typically for life insurance, ULIP, or large health premiums) and the policyholder repays in installments. Also called Insurance Premium Financing (IPF). EAZR's IPF product enables premium financing for high-value policies. The policy itself serves as collateral.",
+    "example": "An annual ULIP premium of ₹5 lakh is financed via IPF — the policyholder pays ₹45,000/month EMI instead. The policy is assigned to the financier as collateral. On maturity or surrender, the loan is repaid first before the policyholder receives the balance.",
+    "related_terms": [
+      "Loan Against Policy",
+      "ULIP",
+      "Assignment",
+      "Surrender Value"
+    ],
+    "source": "RBI NBFC Guidelines / IRDAI IPF Guidance",
+    "applicable_to": [
+      "life",
+      "health"
+    ]
+  },
+  {
+    "id": "g139",
+    "term": "Loan Against Policy",
+    "category": "financial",
+    "definition": "A loan provided by the insurance company against the surrender value of a traditional life insurance policy (endowment, money-back, whole life). The policy is assigned to the insurer as collateral. Loan amount is typically 85–90% of the surrender value. Interest is charged. If unpaid, the insurer deducts the loan + interest from the maturity or death benefit.",
+    "example": "A 15-year-old endowment policy has a surrender value of ₹5 lakh. The policyholder can take a loan of up to ₹4.5 lakh (90% of SV) at 9–10% p.a. interest from LIC. If the policy matures with ₹10 lakh payout, the insurer deducts the outstanding loan + interest before paying.",
+    "related_terms": [
+      "Surrender Value",
+      "Loan Against Policy",
+      "Assignment",
+      "Endowment Plan"
+    ],
+    "source": "LIC / Private Insurer Loan Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g140",
+    "term": "Policy Loan vs Surrender",
+    "category": "financial",
+    "definition": "Two options for a policyholder needing immediate funds from a life policy. Surrender: terminate the policy and receive the surrender value immediately — policy ends, future benefits forfeited. Policy Loan: borrow against surrender value and keep the policy alive — policy continues, pays benefits at maturity/death minus outstanding loan. Loan is better if the policyholder can repay; surrender is better if the policy is underperforming or premiums are unaffordable.",
+    "example": "10-year-old endowment, SV = ₹4 lakh, SA = ₹10 lakh maturing in 5 years. Surrender gives ₹4 lakh now, policy ends. Policy Loan gives ₹3.6 lakh now (90% SV), you repay over 5 years, and collect ₹10 lakh maturity. If you can repay the loan, the loan option is financially superior.",
+    "related_terms": [
+      "Surrender Value",
+      "Loan Against Policy",
+      "Paid-up Value"
+    ],
+    "source": "Financial Planning Best Practices",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g141",
+    "term": "Assignment of Policy",
+    "category": "financial",
+    "definition": "The legal transfer of rights and benefits of an insurance policy from the policyholder (assignor) to another person or entity (assignee). Used for: (1) Loan security — policy assigned to bank/NBFC; (2) Business purposes — key person policy assigned to company; (3) Gifts — policy transferred to family member. Two types: Absolute assignment (full transfer, irrevocable) and Conditional assignment (reversible on repayment of loan). Must be filed with the insurer.",
+    "example": "Priya takes a home loan from HDFC Bank and assigns her LIC policy worth ₹20 lakh as collateral (conditional assignment). If she dies before repaying the loan, HDFC Bank collects the outstanding loan amount from death benefit, and the balance goes to her nominee.",
+    "related_terms": [
+      "Nomination",
+      "Loan Against Policy",
+      "Premium Financing"
+    ],
+    "source": "Insurance Act 1938, Section 38",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g142",
+    "term": "Nomination in Insurance",
+    "category": "financial",
+    "definition": "The process of designating a person (nominee) to receive the insurance claim proceeds in the event of the policyholder's death. Nomination does NOT transfer ownership of the policy — the nominee receives the money on behalf of the legal heirs. For life policies, IRDAI mandates naming a beneficiary. Multiple nominees can be appointed with percentage shares. Nomination can be changed at any time during policy tenure.",
+    "example": "Rahul buys a ₹1 crore term plan and nominates his wife Priya (60%) and daughter Kavya (40%). If Rahul dies, the insurer pays ₹60 lakh to Priya and ₹40 lakh to Kavya. This is a nominee designation — if there is a will specifying otherwise, the will may take precedence (unless the nominee is a beneficial nominee under IRDAI 2015 rules).",
+    "related_terms": [
+      "Death Benefit",
+      "Assignment",
+      "Term Plan",
+      "Beneficial Nominee"
+    ],
+    "source": "Insurance Act 1938, Section 39 / IRDAI 2015 Amendment",
+    "applicable_to": [
+      "life",
+      "health"
+    ]
+  },
+  {
+    "id": "g143",
+    "term": "Pre and Post Hospitalization Expenses",
+    "category": "health",
+    "definition": "Health insurance covers medical expenses incurred before and after a hospitalization related to the same illness. Pre-hospitalization: typically 30–60 days before admission (doctor consultations, diagnostics leading to hospitalization). Post-hospitalization: typically 60–90 days after discharge (follow-up consultations, medicines, physiotherapy related to the same condition). Must be causally related to the hospitalized illness.",
+    "example": "Patient hospitalized for knee replacement on 1 March. Pre-hospitalization (30 days before): MRI, blood tests, physio consultation in February — all covered. Post-hospitalization (60 days after): physio, follow-up orthopedic consultations in April-May — all covered. Unrelated consultations (diabetes check-up in March) — NOT covered.",
+    "related_terms": [
+      "Cashless Claim",
+      "Reimbursement Claim",
+      "Sub-limit"
+    ],
+    "source": "IRDAI Standard Health Policy Terms",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g144",
+    "term": "Coordination of Benefits",
+    "category": "health",
+    "definition": "A provision determining how multiple health insurance policies coordinate to pay a claim when a policyholder is covered under more than one policy. The total claim cannot exceed the actual medical expense. The primary insurer pays first (up to its limit), and the secondary insurer covers the remaining balance. IRDAI permits claiming from multiple policies for the same hospitalization.",
+    "example": "Employee covered by: (1) employer group health plan ₹3 lakh, (2) personal Star Health floater ₹10 lakh. Hospital bill: ₹4 lakh. Group plan pays ₹3 lakh. Star Health (secondary) pays the remaining ₹1 lakh after seeing the settlement letter from the group insurer.",
+    "related_terms": [
+      "Reimbursement Claim",
+      "Co-insurance",
+      "Copayment",
+      "Group Insurance"
+    ],
+    "source": "IRDAI Health Insurance Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g145",
+    "term": "Coinsurance",
+    "category": "health",
+    "definition": "A cost-sharing arrangement where the insurer and the insured share the claim amount in a defined ratio — different from copay (which is a fixed percentage) in that coinsurance may apply after the deductible is met. In India, coinsurance is also used in commercial insurance to share large risks across multiple insurers. For individual health, 'coinsurance' and 'copayment' are often used interchangeably.",
+    "example": "A policy with 80:20 coinsurance and ₹1 lakh deductible: total bill = ₹2 lakh. After ₹1 lakh deductible, remaining ₹1 lakh is split — insurer pays 80% (₹80,000), policyholder pays 20% (₹20,000). Total out-of-pocket: ₹1.2 lakh.",
+    "related_terms": [
+      "Copayment",
+      "Deductible",
+      "Coordination of Benefits"
+    ],
+    "source": "IRDAI Health Insurance Regulations",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g146",
+    "term": "Group Health Insurance",
+    "category": "health",
+    "definition": "An insurance policy purchased by an employer (or association/institution) for its employees (or members), covering them under a single master policy. Premiums are usually paid by the employer (or shared). No medical underwriting for individual employees — all are covered regardless of pre-existing conditions, usually from day one. Coverage ends when employment terminates. Benefit: covers PEDs from day one. Risk: no continuity if you leave the job.",
+    "example": "A tech company provides group health cover of ₹5 lakh to all employees and their families. An employee with diabetes is covered from Day 1 — no waiting period. Upon resignation, coverage ends. The ex-employee must buy an individual policy, and the PED 30-day moratorium or standard waiting period applies fresh.",
+    "related_terms": [
+      "TPA",
+      "Network Hospital",
+      "Portability",
+      "Pre-existing Disease"
+    ],
+    "source": "IRDAI Group Insurance Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g147",
+    "term": "ABHA Number (Ayushman Bharat Health Account)",
+    "category": "health",
+    "definition": "A 14-digit unique health ID issued under the Ayushman Bharat Digital Mission (ABDM). Links all health records (prescriptions, lab reports, hospital discharge summaries, insurance claims) in a unified digital health profile. Created using Aadhaar or mobile number. Enables paperless hospital admissions, claim filing, and health record access. Increasingly integrated with insurance TPAs for faster cashless processing.",
+    "example": "A patient with an ABHA number at a participating hospital can share their health records digitally with the TPA for cashless pre-authorization — eliminating the need for physical document submission. Previous hospitalization records are instantly accessible to doctors.",
+    "related_terms": [
+      "TPA",
+      "Cashless Claim",
+      "e-Insurance Account",
+      "KYC for Insurance"
+    ],
+    "source": "National Health Authority / ABDM Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g148",
+    "term": "Survivorship Benefit",
+    "category": "life",
+    "definition": "A benefit paid to the policyholder if they survive a specified period (survival benefit) or reach a specified age under a money-back or endowment-type policy. Unlike death benefit (paid to nominee on death), survivorship benefits are paid to the living policyholder at defined milestones. Common in money-back plans where 20–25% of SA is paid every 5 years during the policy term.",
+    "example": "A 20-year money-back policy with ₹10 lakh SA: 20% paid at year 5 (₹2 lakh), 20% at year 10 (₹2 lakh), 20% at year 15 (₹2 lakh), and 40% + bonuses at maturity (year 20). These payments are survivorship/survival benefits.",
+    "related_terms": [
+      "Money Back Plan",
+      "Endowment Plan",
+      "Maturity Benefit",
+      "Death Benefit"
+    ],
+    "source": "LIC / Private Life Insurer Product Terms",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g149",
+    "term": "Contestability Period",
+    "category": "life",
+    "definition": "The period (typically the first 2–3 years of a policy) during which the insurer can investigate and potentially deny a claim due to misrepresentation, fraud, or material non-disclosure at the time of application. After this period (governed by Section 45 of the Insurance Act), the insurer's right to contest is severely limited. Also called the 'incontestability period' in reverse — once it lapses, the policy becomes incontestable.",
+    "example": "A 40-year-old buys a term policy concealing a heart condition diagnosed 1 year ago. Dies in year 2 — insurer investigates and can reject the claim due to non-disclosure (within contestability period). Dies in year 4 — insurer generally CANNOT reject the claim (Section 45 protection applies).",
+    "related_terms": [
+      "Section 45",
+      "Non-disclosure",
+      "Death Benefit",
+      "Revival"
+    ],
+    "source": "Insurance Act 1938, Section 45",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g150",
+    "term": "Insurable Interest",
+    "category": "financial",
+    "definition": "A fundamental principle of insurance — the policyholder must have a legitimate financial interest in the insured person or property. Without insurable interest, the insurance contract is void. For life insurance: self (unlimited), spouse, children, and business partners (to the extent of financial interest). For property insurance: owners, mortgagees, lessees have insurable interest.",
+    "example": "A wife has insurable interest in her husband's life. An employee does NOT have insurable interest in a stranger's life. A business partner has insurable interest in a co-partner's life up to the financial loss they'd suffer. Buying life insurance without insurable interest is wagering (prohibited).",
+    "related_terms": [
+      "Keyman Insurance",
+      "Assignment",
+      "Nomination"
+    ],
+    "source": "Insurance Act 1938 / Common Law Principle",
+    "applicable_to": [
+      "life",
+      "health",
+      "motor"
+    ]
+  },
+  {
+    "id": "g151",
+    "term": "Reinstatement Value",
+    "category": "motor",
+    "definition": "The current market cost of rebuilding or replacing an asset to its original condition using new materials. Relevant in property insurance (building/home insurance). Different from IDV (which applies depreciation). A 'reinstatement value policy' or 'new for old policy' pays the full replacement cost without depreciation. Common for commercial property insurance in India.",
+    "example": "A factory building has an IDV of ₹2 crore (market value after depreciation) but a reinstatement value of ₹3.5 crore (cost to rebuild at current construction rates). A reinstatement value policy would pay ₹3.5 crore to rebuild after a fire — an IDV-based policy would pay only ₹2 crore.",
+    "related_terms": [
+      "IDV",
+      "Own Damage",
+      "Total Loss"
+    ],
+    "source": "IRDAI Property Insurance Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g152",
+    "term": "Surrender Charge",
+    "category": "life",
+    "definition": "A penalty fee deducted when a ULIP or investment-linked insurance policy is surrendered before the lock-in period (typically 5 years) or a specified holding period. IRDAI regulations cap ULIP surrender charges — from year 1 to 5, maximum charges are defined. After the lock-in period, surrender charges drop to zero in most ULIPs. Traditional policies may also have implicit surrender charges via lower Guaranteed Surrender Value in early years.",
+    "example": "If a ULIP is surrendered in year 2, IRDAI caps the surrender charge — the insurer cannot charge more than a specified percentage of premium or fund value. After 5 years (lock-in), most ULIPs have zero surrender charges — the full fund value is paid on surrender.",
+    "related_terms": [
+      "ULIP",
+      "Surrender Value",
+      "Lock-in Period",
+      "Fund Value"
+    ],
+    "source": "IRDAI ULIP Regulations 2019",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g153",
+    "term": "Lock-in Period",
+    "category": "life",
+    "definition": "The minimum period for which a ULIP policyholder must stay invested before they can withdraw funds or surrender the policy. For ULIPs, IRDAI mandates a 5-year lock-in period. During lock-in, if the policy is surrendered, the surrender value is credited to a discontinued policy fund and paid only after the 5-year lock-in expires, with minimal returns (4% p.a. as mandated). After lock-in, partial withdrawals are permitted.",
+    "example": "A ULIP started in 2020, lock-in ends in 2025. If surrendered in 2022, the fund value (minus surrender charges) goes into a discontinued policy fund earning 4% p.a. At 2025, the accumulated amount is paid. If surrendered after 2025, the full fund value is paid immediately.",
+    "related_terms": [
+      "ULIP",
+      "Surrender Charge",
+      "Fund Value",
+      "Partial Withdrawal"
+    ],
+    "source": "IRDAI ULIP Regulations 2019",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g154",
+    "term": "Partial Withdrawal",
+    "category": "life",
+    "definition": "The facility in ULIPs that allows policyholders to withdraw a portion of the fund value after the 5-year lock-in period, without surrendering the policy. The policy continues after partial withdrawal. IRDAI limits: partial withdrawals are permitted up to 20% of fund value per year after lock-in. Withdrawals are tax-free under Section 10(10D) if premiums paid are less than 10% of sum assured.",
+    "example": "A ULIP started in 2018, fund value in 2025 = ₹15 lakh. After lock-in (5 years from 2018 = 2023), the policyholder can withdraw up to ₹3 lakh (20% of ₹15 lakh) while keeping the policy active. Remaining ₹12 lakh stays invested.",
+    "related_terms": [
+      "ULIP",
+      "Lock-in Period",
+      "Fund Value",
+      "Section 10(10D)"
+    ],
+    "source": "IRDAI ULIP Regulations 2019",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g155",
+    "term": "Fund Switching",
+    "category": "life",
+    "definition": "A ULIP feature allowing policyholders to move their accumulated corpus between different investment funds (equity, debt, balanced, liquid) within the same policy based on risk appetite and market conditions. Most ULIPs offer 4–12 free switches per year; additional switches attract nominal charges (₹100–₹500). Switching does not trigger capital gains tax — it is a tax-neutral operation within the ULIP wrapper.",
+    "example": "A ULIP policyholder moves ₹5 lakh from an equity fund (70% stocks) to a balanced fund (50:50) when markets are near a peak — this is a fund switch. No tax is payable on this transfer. The move rebalances portfolio risk without triggering LTCG.",
+    "related_terms": [
+      "ULIP",
+      "Fund Value",
+      "NAV",
+      "Partial Withdrawal"
+    ],
+    "source": "IRDAI ULIP Regulations / Product Terms",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g156",
+    "term": "Systematic Transfer Plan (STP) in ULIP",
+    "category": "life",
+    "definition": "A facility within ULIPs allowing automatic, periodic transfer of funds between investment funds — similar to SIP in mutual funds. Used to gradually move corpus from a liquid/debt fund to equity (for rupee-cost averaging) or from equity to debt (for systematic de-risking near maturity). Reduces timing risk of lump-sum fund switches.",
+    "example": "A ULIP policyholder with ₹10 lakh in a liquid fund sets up an STP to transfer ₹1 lakh/month into an equity fund over 10 months. This achieves cost averaging rather than making a single large switch at a potentially wrong market timing.",
+    "related_terms": [
+      "ULIP",
+      "Fund Switching",
+      "Fund Value",
+      "NAV"
+    ],
+    "source": "IRDAI / ULIP Product Features",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g157",
+    "term": "Proposal Form",
+    "category": "financial",
+    "definition": "The application form submitted to an insurer when buying insurance — it is the basis of the insurance contract. The policyholder must disclose all material facts truthfully: health history, lifestyle habits, occupation, income, existing policies. Any misrepresentation or non-disclosure in the proposal form can give the insurer grounds to repudiate claims (especially within the contestability period). The proposal form becomes part of the policy document.",
+    "example": "A proposal form for a term plan asks: 'Have you been diagnosed with diabetes in the last 5 years?' If the applicant answers 'No' falsely, this is material misrepresentation. If they die within 3 years, the insurer can investigate and reject the claim.",
+    "related_terms": [
+      "Non-disclosure",
+      "Section 45",
+      "Contestability Period",
+      "KYC for Insurance"
+    ],
+    "source": "Insurance Act 1938 / IRDAI Product Regulations",
+    "applicable_to": [
+      "life",
+      "health",
+      "motor"
+    ]
+  },
+  {
+    "id": "g158",
+    "term": "Material Non-disclosure",
+    "category": "financial",
+    "definition": "The failure to disclose information that would have influenced an insurer's decision to accept, reject, or price the insurance policy. If material non-disclosure is proven, the insurer can repudiate the claim or void the policy (within the contestability period). Common examples: undisclosed pre-existing diseases, hazardous occupation, previous policy rejections, tobacco/alcohol use.",
+    "example": "A person buys health insurance without disclosing they were diagnosed with hypertension 2 years ago. This is material non-disclosure. If they are hospitalized for a hypertension complication, the insurer can reject the claim citing non-disclosure.",
+    "related_terms": [
+      "Proposal Form",
+      "Section 45",
+      "Contestability Period"
+    ],
+    "source": "Insurance Act 1938 / Common Law Principle of Utmost Good Faith",
+    "applicable_to": [
+      "life",
+      "health"
+    ]
+  },
+  {
+    "id": "g159",
+    "term": "Utmost Good Faith (Uberrimae Fidei)",
+    "category": "financial",
+    "definition": "The foundational legal principle of insurance contracts requiring both parties (insurer and insured) to act in complete honesty and disclose all material facts relevant to the insurance contract. The insured must disclose all material facts; the insurer must clearly explain policy terms and exclusions. Failure of utmost good faith by either party can void the contract.",
+    "example": "When buying life insurance, Anand must disclose his smoking habit (10 cigarettes/day) even if the proposal form does not explicitly ask — because it is a material fact affecting life expectancy. Not disclosing this is a breach of utmost good faith.",
+    "related_terms": [
+      "Material Non-disclosure",
+      "Proposal Form",
+      "Section 45"
+    ],
+    "source": "Marine Insurance Act 1906 (applied to all insurance) / Insurance Act 1938",
+    "applicable_to": [
+      "life",
+      "health",
+      "motor",
+      "travel"
+    ]
+  },
+  {
+    "id": "g160",
+    "term": "Portability of Health Insurance",
+    "category": "health",
+    "definition": "The right of a health insurance policyholder to shift from one insurer to another without losing credit for waiting periods (PED, specific disease waiting periods) served with the previous insurer. IRDAI mandates portability at renewal. The new insurer must accept the portability application and cannot charge extra premium solely due to portability. Portability applies to the same or lower sum insured — higher SI upgrades may require fresh underwriting.",
+    "example": "A customer with Bajaj Allianz health insurance for 4 years (with a 4-year PED waiting period for diabetes served) switches to Star Health at renewal. Star Health must credit 4 years of PED waiting period — so diabetes is already covered from day 1 with Star Health.",
+    "related_terms": [
+      "Pre-existing Disease",
+      "Waiting Period",
+      "Moratorium Period",
+      "Health Insurance"
+    ],
+    "source": "IRDAI Portability Guidelines 2011 / Updated 2020",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g161",
+    "term": "Critical Illness Rider",
+    "category": "life",
+    "definition": "An add-on rider to a life or health policy that pays a lump sum on diagnosis of specified critical illnesses (typically 10–40 illnesses including cancer, heart attack, stroke, kidney failure, major organ transplant). The payout is made irrespective of medical expenses — it is a defined benefit. The base policy continues after the CI payout. IRDAI standardizes definitions of 9 'major critical illnesses' for uniformity.",
+    "example": "A ₹50 lakh term plan with a ₹25 lakh CI rider. On diagnosis of major cancer (as per IRDAI definition), the insurer pays ₹25 lakh immediately. The policyholder can use this for treatment, income replacement, or debt repayment. The ₹50 lakh death benefit (minus CI amount) remains active.",
+    "related_terms": [
+      "Rider",
+      "Critical Illness",
+      "Waiver of Premium",
+      "Term Plan"
+    ],
+    "source": "IRDAI Rider Guidelines / Standard CI Definitions",
+    "applicable_to": [
+      "life",
+      "health"
+    ]
+  },
+  {
+    "id": "g162",
+    "term": "Riders",
+    "category": "financial",
+    "definition": "Optional add-on benefits attached to a base insurance policy that enhance coverage for additional premium. Common riders: Accidental Death Benefit (ADB), Waiver of Premium (WOP), Critical Illness (CI), Income Benefit, Hospital Cash, Permanent Disability. Riders must be attached at policy inception or at specific renewal milestones. IRDAI rules: rider premium cannot exceed 30% of base policy premium; rider benefit cannot exceed base policy benefit.",
+    "example": "A term plan with base premium of ₹15,000/year can have riders costing up to ₹4,500/year (30% of ₹15,000). Common rider combination: ₹1,500 (ADB rider) + ₹1,200 (WOP rider) + ₹1,800 (CI rider) = ₹4,500 total rider premium.",
+    "related_terms": [
+      "Accidental Death Benefit",
+      "Waiver of Premium",
+      "Critical Illness Rider",
+      "Term Plan"
+    ],
+    "source": "IRDAI Rider Regulations 2023",
+    "applicable_to": [
+      "life",
+      "health"
+    ]
+  },
+  {
+    "id": "g163",
+    "term": "Incurred But Not Reported (IBNR)",
+    "category": "financial",
+    "definition": "Actuarial reserve that an insurer sets aside for claims that have been incurred (treatment has happened) but not yet reported to the insurer. Important in health and motor insurance where there is a lag between loss occurrence and claim filing. IBNR reserving ensures the insurer has sufficient funds when delayed claims arrive.",
+    "example": "In December 2024, a policyholder is hospitalized for surgery but submits the claim in February 2025. The insurer maintains an IBNR reserve for claims like this that occurred in December but will be reported in the future. This is standard actuarial practice.",
+    "related_terms": [
+      "Incurred Claim Ratio",
+      "Loss Ratio",
+      "Reimbursement Claim"
+    ],
+    "source": "IRDAI Actuarial Regulations",
+    "applicable_to": [
+      "health",
+      "motor"
+    ]
+  },
+  {
+    "id": "g164",
+    "term": "Loading",
+    "category": "financial",
+    "definition": "An additional percentage added to the base premium due to higher-than-standard risk factors in the applicant's profile. Insurers may load premiums for: history of pre-existing illness, higher BMI, family history of hereditary diseases, hazardous occupation, or high claims history. In health insurance, IRDAI permits loading at renewal if the policyholder's claims experience is significantly worse than the pool average.",
+    "example": "A 45-year-old applicant with obesity (BMI > 35) and family history of heart disease may be offered a standard health policy with a 20% loading — meaning the premium is 20% higher than the standard rate for a 45-year-old.",
+    "related_terms": [
+      "Underwriting",
+      "Premium",
+      "Pre-existing Disease"
+    ],
+    "source": "IRDAI Health Insurance Guidelines",
+    "applicable_to": [
+      "health",
+      "life"
+    ]
+  },
+  {
+    "id": "g165",
+    "term": "Underwriting",
+    "category": "financial",
+    "definition": "The process by which an insurer assesses the risk profile of an applicant and decides whether to accept, reject, or modify the insurance offer (via loading, exclusion, or reduced cover). For life insurance: health underwriting (medical reports, lifestyle disclosures) and financial underwriting (income verification for large SA). For health insurance: health declaration and medical tests for older applicants. Group policies use 'experience underwriting' (based on group's past claims).",
+    "example": "A 55-year-old applying for a ₹1 crore term plan must undergo medical tests (ECG, blood glucose, lipid profile). If reports show diabetes, the insurer may: accept with standard premium, add 'diabetes loading' (20% extra premium), or exclude diabetes complications from rider benefits.",
+    "related_terms": [
+      "Loading",
+      "Material Non-disclosure",
+      "Proposal Form",
+      "Pre-existing Disease"
+    ],
+    "source": "IRDAI Regulations / Actuarial Practice",
+    "applicable_to": [
+      "life",
+      "health"
+    ]
+  },
+  {
+    "id": "g166",
+    "term": "Travel Insurance",
+    "category": "travel",
+    "definition": "An insurance policy covering financial losses during domestic or international travel. Key coverages: emergency medical expenses abroad, trip cancellation, trip interruption, baggage loss or delay, flight cancellation, personal liability, and repatriation of remains. Premiums are based on destination, trip duration, traveler's age, and sum insured. Student travel plans and senior citizen travel plans are specialized variants.",
+    "example": "A person traveling to the USA for 15 days buys a travel policy with $1,00,000 medical cover, $1,000 baggage loss, $2,000 trip cancellation, and $500 flight delay cover. If they fall sick abroad and hospitalized for 3 days ($15,000 bill), the insurer pays the hospital directly or reimburses.",
+    "related_terms": [
+      "Pre-existing Disease",
+      "Trip Cancellation",
+      "Baggage Delay"
+    ],
+    "source": "IRDAI Travel Insurance Guidelines",
+    "applicable_to": [
+      "travel"
+    ]
+  },
+  {
+    "id": "g167",
+    "term": "Trip Cancellation Cover",
+    "category": "travel",
+    "definition": "A travel insurance benefit that reimburses non-refundable travel expenses (flights, hotels, tour packages) if the trip is cancelled due to a covered reason BEFORE departure. Covered reasons: serious illness or death of traveler or immediate family member, natural disaster at destination, terrorist attack, visa denial (some policies). Covered amount: typically the pre-paid, non-refundable trip cost.",
+    "example": "Priya books a ₹2 lakh Europe trip (flights + hotel, non-refundable). She falls seriously ill 3 days before departure. Her travel insurance's trip cancellation cover reimburses ₹2 lakh — provided the illness is certified by a doctor as preventing travel.",
+    "related_terms": [
+      "Travel Insurance",
+      "Trip Interruption"
+    ],
+    "source": "IRDAI Travel Insurance Product Guidelines",
+    "applicable_to": [
+      "travel"
+    ]
+  },
+  {
+    "id": "g168",
+    "term": "Baggage Delay Cover",
+    "category": "travel",
+    "definition": "A travel insurance benefit that reimburses emergency purchase of essential items (clothing, toiletries, medicines) if checked-in baggage is delayed beyond a specified period (typically 6–12 hours) by the airline. This is different from baggage loss cover (which applies when baggage is permanently lost). Compensation is usually a fixed amount per hour of delay (e.g., ₹500/hour up to ₹5,000).",
+    "example": "Flights into London, but checked-in baggage is delayed for 18 hours. The traveler buys toiletries (₹2,000) and essential clothing (₹5,000) while waiting. Travel policy with baggage delay cover reimburses up to the policy sub-limit — say ₹6,000.",
+    "related_terms": [
+      "Travel Insurance",
+      "Trip Cancellation Cover"
+    ],
+    "source": "IRDAI Travel Insurance Guidelines",
+    "applicable_to": [
+      "travel"
+    ]
+  },
+  {
+    "id": "g169",
+    "term": "Personal Accident (PA) Insurance",
+    "category": "pa",
+    "definition": "Standalone insurance covering bodily injury resulting from an accident. Covers: accidental death (AD), permanent total disability (PTD), permanent partial disability (PPD), and temporary total disability (TTD). Benefit is paid as a lump sum (for AD, PTD, PPD) or weekly compensation (for TTD). PA insurance does NOT cover illness — only accidents. Highly affordable: ₹10 lakh cover typically costs ₹100–₹200/year for a 30-year-old.",
+    "example": "A construction worker falls from a scaffold, loses use of both legs permanently (PTD). His PA policy of ₹25 lakh pays ₹25 lakh (100% of SA for PTD). If only one arm is lost (PPD — say 50% disability), the policy pays 50% of SA = ₹12.5 lakh.",
+    "related_terms": [
+      "PA Cover Owner-Driver",
+      "Accidental Death Benefit Rider",
+      "Disability"
+    ],
+    "source": "IRDAI PA Product Guidelines",
+    "applicable_to": [
+      "pa"
+    ]
+  },
+  {
+    "id": "g170",
+    "term": "Permanent Total Disability (PTD)",
+    "category": "pa",
+    "definition": "A disability classification in PA insurance where the insured is permanently and completely unable to perform any occupation or gainful employment due to an accidental injury. Examples: loss of both eyes, loss of both hands, loss of both legs, or any combination that renders the person completely unable to work. PTD benefit is typically 100% of the PA sum assured paid as a lump sum.",
+    "example": "A delivery driver loses both hands in a factory accident. Medical board certifies permanent total disability. His PA policy (₹20 lakh SA) pays ₹20 lakh (100% of SA) as a lump sum on PTD certification. He can also apply for ESIC disability pension if employed.",
+    "related_terms": [
+      "Personal Accident Insurance",
+      "Permanent Partial Disability",
+      "PA Cover"
+    ],
+    "source": "IRDAI Standard PA Policy Terms",
+    "applicable_to": [
+      "pa"
+    ]
+  },
+  {
+    "id": "g171",
+    "term": "Permanent Partial Disability (PPD)",
+    "category": "pa",
+    "definition": "A disability classification in PA insurance where the insured loses partial use or function of a body part permanently due to an accident. Each body part has a defined compensation percentage of the sum assured (e.g., loss of one eye = 50%, loss of one hand = 50%, loss of one finger = 10%). These percentages are standardized by IRDAI in the standard PA policy.",
+    "example": "A road accident causes permanent loss of sight in one eye. PA policy with ₹15 lakh SA: one eye = 50% disability percentage → payout = ₹7.5 lakh. If the accident had caused loss of sight in BOTH eyes, it would be PTD (100% = ₹15 lakh).",
+    "related_terms": [
+      "Personal Accident Insurance",
+      "Permanent Total Disability",
+      "PA Cover"
+    ],
+    "source": "IRDAI Standard PA Policy Schedule of Disabilities",
+    "applicable_to": [
+      "pa"
+    ]
+  },
+  {
+    "id": "g172",
+    "term": "Temporary Total Disability (TTD)",
+    "category": "pa",
+    "definition": "A temporary disability from an accident that prevents the insured from working for a period of time — but is not permanent. TTD benefit in PA insurance is typically a weekly compensation (e.g., ₹5,000/week or 1% of SA per week) for the duration of the disability, subject to a maximum of 104 weeks. Requires medical certificate confirming disability and period of rest.",
+    "example": "A software engineer breaks both wrists in a cycle accident and cannot type for 8 weeks. PA policy with TTD benefit of ₹5,000/week pays ₹40,000 total (8 weeks × ₹5,000) as income replacement during recovery.",
+    "related_terms": [
+      "Personal Accident Insurance",
+      "PTD",
+      "PPD"
+    ],
+    "source": "IRDAI Standard PA Policy Terms",
+    "applicable_to": [
+      "pa"
+    ]
+  },
+  {
+    "id": "g173",
+    "term": "Hospital Cash",
+    "category": "health",
+    "definition": "A health insurance benefit (standalone policy or rider) that pays a fixed daily cash amount for each day of hospitalization — regardless of actual medical expenses. Used to cover incidental expenses (food, transport for family, loss of income) not covered by standard health plans. Typical amount: ₹500–₹5,000/day. Waiting periods apply (usually 24 hours for the first payout). Does not require submission of medical bills — only proof of hospitalization.",
+    "example": "A self-employed person with a hospital cash policy of ₹2,000/day is hospitalized for 7 days. They receive ₹14,000 flat — no bills needed, just a discharge summary. This compensates for lost business income during the hospital stay.",
+    "related_terms": [
+      "Health Insurance",
+      "Day Care Procedures",
+      "Sub-limit"
+    ],
+    "source": "IRDAI Health Insurance Guidelines",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g174",
+    "term": "Third-Party Administrator (TPA) — Detailed",
+    "category": "health",
+    "definition": "An IRDAI-licensed intermediary that manages health insurance claims on behalf of insurers. Functions: issue health cards, maintain hospital networks, process pre-authorization for cashless claims, adjudicate and settle reimbursement claims, handle member queries. TPA receives a service fee from the insurer. Insurers can switch TPAs; some large insurers (Star Health, Care Health) manage claims in-house (in-house TPA). TPA is accountable to both the insurer and the policyholder.",
+    "example": "HDFC ERGO uses Medi Assist TPA. When an HDFC ERGO policyholder goes to a network hospital, the hospital's insurance desk calls Medi Assist for pre-authorization, not HDFC ERGO directly. Medi Assist processes the cashless request and settles the hospital bill.",
+    "related_terms": [
+      "Cashless Claim",
+      "Pre-authorization",
+      "Network Hospital",
+      "Health Insurance"
+    ],
+    "source": "IRDAI TPA Regulations",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g175",
+    "term": "Waiting Period — Specific Disease",
+    "category": "health",
+    "definition": "A specific waiting period (typically 1–2 years) for certain named diseases or conditions, even in the absence of a pre-existing disease. Common diseases on the specific disease waiting period list: hernia, cataract, kidney stones, joint replacement, hemorrhoids, sinusitis, and hydrocele. During this period, treatment for these conditions is excluded even if the policyholder never had them before.",
+    "example": "A new health policy with a 1-year specific disease waiting period for hernia: if the insured develops a hernia in month 8 and requires surgery, the claim is rejected. After month 12, the surgery is covered. This is different from PED — the person didn't have hernia before buying the policy.",
+    "related_terms": [
+      "Waiting Period",
+      "Pre-existing Disease",
+      "Moratorium Period"
+    ],
+    "source": "IRDAI Standard Health Policy Terms",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g176",
+    "term": "Standard Health Product (Arogya Sanjeevani)",
+    "category": "health",
+    "definition": "A standardized health insurance product mandated by IRDAI in 2020, with uniform features across all insurers. Key features: sum insured ₹1 lakh to ₹5 lakh, covers hospitalization, ICU, AYUSH, day care procedures, cataract up to ₹40,000, modern treatments up to 50% SI. 5% room rent sub-limit. Compulsory standard exclusions. Insurers cannot change core features. Enables easy comparison across insurers. Also called 'Arogya Sanjeevani Policy.'",
+    "example": "Whether you buy 'Arogya Sanjeevani Policy' from LIC Health Insurance, Star Health, or HDFC ERGO — the core features are identical. Easy comparison means only price and service quality differ. Perfect for first-time buyers or senior citizens wanting simple, standardized cover.",
+    "related_terms": [
+      "Health Insurance",
+      "Sub-limit",
+      "AYUSH Cover",
+      "IRDAI"
+    ],
+    "source": "IRDAI Circular on Standard Health Product 2020",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g177",
+    "term": "Reinsurance",
+    "category": "financial",
+    "definition": "Insurance for insurers — a practice where primary insurers transfer a portion of their risk to reinsurance companies to reduce the financial impact of large claims. In India, GIC Re (General Insurance Corporation of India) is the national reinsurer mandated to receive the first right of refusal for all reinsurance treaties. Reinsurance enables insurers to offer large sum insureds (e.g., ₹1 crore+ health plans) without taking on full risk.",
+    "example": "A life insurer sells a ₹5 crore term plan. To manage the risk, it reinsures ₹4 crore with GIC Re or a foreign reinsurer (Swiss Re, Munich Re). If the policyholder dies, the primary insurer pays ₹5 crore to the family — the reinsurer then pays the primary insurer its ₹4 crore share.",
+    "related_terms": [
+      "Sum Assured",
+      "Sum Insured",
+      "IRDAI"
+    ],
+    "source": "Insurance Act 1938 / IRDAI Reinsurance Guidelines",
+    "applicable_to": [
+      "life",
+      "health",
+      "motor"
+    ]
+  },
+  {
+    "id": "g178",
+    "term": "Actuary",
+    "category": "financial",
+    "definition": "A specialist professional who assesses financial risk using mathematics, statistics, and probability. In insurance, actuaries: design insurance products, calculate premiums based on mortality/morbidity tables, determine policy reserves, price riders, and certify solvency margins. Every insurer must have a Designated Actuary (DA) certified by the Institute of Actuaries of India (IAI). Premium pricing is ultimately signed off by the actuary.",
+    "example": "The premium for a ₹1 crore term plan for a 35-year-old non-smoker male is ₹12,000/year. This is calculated by actuaries using: mortality rates for Indian males age 35, lapse rates, investment return assumptions, expense loadings, and profit margins — all compliant with IRDAI mandated mortality tables.",
+    "related_terms": [
+      "Underwriting",
+      "Loading",
+      "Mortality Charge"
+    ],
+    "source": "Insurance Act 1938 / IRDAI Appointed Actuary Regulations",
+    "applicable_to": [
+      "life",
+      "health",
+      "motor"
+    ]
+  },
+  {
+    "id": "g179",
+    "term": "Solvency Ratio",
+    "category": "financial",
+    "definition": "A financial health indicator of an insurance company — the ratio of available solvency margin (ASM) to required solvency margin (RSM). IRDAI mandates a minimum solvency ratio of 1.5 for all Indian insurers. Higher ratio = more financially stable insurer, less risk of default on claim payments. Typically disclosed in annual reports and IRDAI websites.",
+    "example": "An insurer with a solvency ratio of 3.0 has twice the required financial cushion — very safe. An insurer with solvency ratio of 1.5 meets the minimum — acceptable but not a buffer. If an insurer's solvency ratio falls below 1.5, IRDAI can intervene and restrict new business.",
+    "related_terms": [
+      "IRDAI",
+      "Claim Settlement Ratio",
+      "Reinsurance"
+    ],
+    "source": "IRDAI Solvency Regulations",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor"
+    ]
+  },
+  {
+    "id": "g180",
+    "term": "Surrender Value — Detailed",
+    "category": "life",
+    "definition": "The cash amount an insurer pays when a traditional life insurance policy is terminated before maturity at the policyholder's request. Two components: Guaranteed Surrender Value (GSV — minimum guaranteed by law under Insurance Act, based on premiums paid) and Special Surrender Value (SSV — higher value offered by insurer based on actual performance, typically used by LIC). Insurers pay the higher of GSV or SSV. Surrender value is available only after a minimum number of premiums are paid (typically 3 years for traditional plans).",
+    "example": "LIC Jeevan Anand policy, premiums paid for 10 years, SA = ₹10 lakh: GSV = 30% of premiums paid (guaranteed minimum), SSV = ₹4.5 lakh (based on LIC's calculation). LIC pays SSV (₹4.5 lakh) as it is higher than GSV. Surrendering forfeits all future benefits including death cover.",
+    "related_terms": [
+      "Guaranteed Surrender Value",
+      "Special Surrender Value",
+      "Paid-up Value",
+      "Loan Against Policy"
+    ],
+    "source": "Insurance Act 1938, Section 113 / LIC Policy Terms",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g181",
+    "term": "Micro Insurance",
+    "category": "financial",
+    "definition": "Low-premium, low-coverage insurance products designed for economically vulnerable populations in India. IRDAI's micro insurance regulations allow simplified products with sum assureds as low as ₹50,000 (life) or ₹10,000 (health). Simpler KYC, simpler underwriting, lower premiums. Distributed through NGOs, SHGs, MFIs, and Bima Vahaks to reach the uninsured rural population.",
+    "example": "A village woman enrolled in a micro insurance scheme through her SHG pays ₹50/month for a health micro insurance policy with ₹50,000 hospitalization cover. If hospitalized, she receives reimbursement up to ₹50,000 — covering basic rural hospital costs.",
+    "related_terms": [
+      "Bima Vahak",
+      "IRDAI",
+      "Group Health Insurance"
+    ],
+    "source": "IRDAI Micro Insurance Regulations 2005 / Amended 2015",
+    "applicable_to": [
+      "health",
+      "life"
+    ]
+  },
+  {
+    "id": "g182",
+    "term": "Subrogation",
+    "category": "financial",
+    "definition": "After an insurer pays a claim, subrogation gives the insurer the right to pursue the responsible third party to recover the paid claim amount. Common in motor insurance: if another party caused the accident, the insurer (after paying the policyholder's OD claim) can recover from the at-fault party's insurer. The policyholder must cooperate with the insurer's subrogation proceedings.",
+    "example": "A truck hits and damages a car (policyholder's own car). The car insurer pays the own damage claim of ₹3 lakh. The insurer then subrogate against the truck owner's third-party insurer to recover ₹3 lakh. The car owner does not need to pursue the truck owner — the insurer does it.",
+    "related_terms": [
+      "Own Damage",
+      "Third Party Liability",
+      "Motor Insurance"
+    ],
+    "source": "Insurance Act 1938 / Common Law",
+    "applicable_to": [
+      "motor",
+      "health"
+    ]
+  },
+  {
+    "id": "g183",
+    "term": "Proximate Cause",
+    "category": "financial",
+    "definition": "A fundamental principle of insurance claims — the insurer is liable only for losses proximately (directly) caused by a covered peril. If there is a chain of events, the proximate cause is the most immediate and dominant cause that set the events in motion. Remote or secondary causes that are excluded perils do not give rise to a claim even if they contribute to the loss.",
+    "example": "A person has a heart attack while driving, loses control, and the car crashes. The proximate cause of vehicle damage is the accident (covered under OD). If the heart attack itself is claimed under health insurance, the hospitalization is covered. Motor claim is not denied just because the heart attack was the underlying trigger.",
+    "related_terms": [
+      "Own Damage",
+      "Health Insurance",
+      "Claim Rejection"
+    ],
+    "source": "Insurance Law Principle / IRDAI",
+    "applicable_to": [
+      "motor",
+      "health",
+      "life"
+    ]
+  },
+  {
+    "id": "g184",
+    "term": "IRDAI Annual Report",
+    "category": "irdai",
+    "definition": "IRDAI's annual publication reporting on the state of the insurance industry in India — including premium data, claim settlement ratios, solvency positions, consumer complaints, number of insurers, penetration rates, and regulatory actions. Published every year and available on irdai.gov.in. Key reference for comparing insurer performance metrics.",
+    "example": "IRDAI Annual Report 2023-24 shows health insurance premium grew 20% YoY to ₹1.1 lakh crore. LIC's claim settlement ratio: 98.66%. Max Life: 99.51%. The report allows consumers to compare insurers' claim settlement performance.",
+    "related_terms": [
+      "Claim Settlement Ratio",
+      "Incurred Claim Ratio",
+      "Solvency Ratio"
+    ],
+    "source": "IRDAI Annual Report (annual publication)",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor"
+    ]
+  },
+  {
+    "id": "g185",
+    "term": "Wearables and Health Incentives",
+    "category": "health",
+    "definition": "A growing feature in Indian health insurance where insurers reward policyholders for healthy behaviors tracked via wearables (fitness bands, smartwatches). Rewards may include: premium discounts at renewal, additional sum insured, shopping vouchers, or loyalty points. Used by Niva Bupa (ReAssure), Star Health (Star Wellness), and Aditya Birla Health Insurance (Activ program) to incentivize preventive health.",
+    "example": "Niva Bupa's ReAssure 2.0 offers a 'Health Returns' feature: if the policyholder walks 10,000 steps/day and completes health check-ups, they earn health returns that can be used to offset claim amounts or premiums. Annual health return up to 30% of premium paid back as a reward.",
+    "related_terms": [
+      "Health Insurance",
+      "Cumulative Bonus",
+      "Renewal"
+    ],
+    "source": "Niva Bupa / Star Health / Aditya Birla Health Product Features 2024",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g186",
+    "term": "Telemedicine / OPD Insurance",
+    "category": "health",
+    "definition": "Health insurance coverage for outpatient department (OPD) consultations and telemedicine (online doctor consultations). Traditionally, health insurance only covered in-patient (IPD) hospitalization. IRDAI now permits OPD cover as a policy feature. Some insurers provide unlimited telemedicine consultations or a fixed number of in-person OPD visits per year. Particularly valuable post-COVID with the rise of digital health platforms.",
+    "example": "Star Health's Comprehensive Plan includes OPD cover of ₹10,000/year — covering doctor consultations, diagnostics, and pharmacy bills without hospitalization. The policyholder can claim doctor visit bills up to ₹10,000 in a year under OPD cover.",
+    "related_terms": [
+      "OPD Cover",
+      "Day Care Procedures",
+      "Health Insurance",
+      "ABHA Number"
+    ],
+    "source": "IRDAI OPD Product Guidelines / Star Health Product Features",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g187",
+    "term": "Renewable Term Insurance",
+    "category": "life",
+    "definition": "A term insurance policy that can be renewed at the end of each term without requiring fresh medical evidence (guaranteed renewability), though premiums increase with age. Not common in India — most Indian term plans are fixed long-term contracts (20–40 years). Annual renewable term (ART) is common in group term policies. The right to renew without medical underwriting is the key feature.",
+    "example": "An annual group term life policy at a company renews every year — each year, the premium is repriced based on the group's demographics and claims experience. Individual members are not required to submit fresh medical reports as long as they remain in the group.",
+    "related_terms": [
+      "Term Plan",
+      "Group Insurance",
+      "Renewal",
+      "Premium Payment Term"
+    ],
+    "source": "IRDAI Group Insurance Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g188",
+    "term": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+    "category": "irdai",
+    "definition": "India's flagship crop insurance scheme for farmers, managed by the government with IRDAI oversight. Covers yield losses from natural calamities (drought, flood, pest attack, unseasonal rain). Premium is highly subsidized — farmers pay 1.5–5% of sum insured, government pays 40–80% as subsidy. Sum insured is based on the area-based threshold yield for the crop and season. Implemented by empaneled general insurers.",
+    "example": "A farmer in Maharashtra grows cotton on 2 acres. PMFBY coverage for kharif cotton: sum insured ₹40,000/acre × 2 acres = ₹80,000. Farmer pays 5% premium = ₹4,000. Government pays the balance (~₹36,000 in subsidies). If the crop fails due to drought, the insurer pays up to ₹80,000.",
+    "related_terms": [
+      "IRDAI",
+      "Bima Vahak",
+      "Micro Insurance"
+    ],
+    "source": "PMFBY Guidelines / Department of Agriculture",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g189",
+    "term": "D&O Insurance (Directors and Officers)",
+    "category": "financial",
+    "definition": "A liability insurance policy protecting company directors and officers from personal financial losses due to wrongful acts in managing the company — including alleged breach of duty, negligence, misstatement, or employment disputes. The policy covers legal defense costs, settlements, and judgments. Required for companies with public shareholders or large borrowings. Increasingly common for Indian startups with institutional investors.",
+    "example": "A startup's CFO is sued by minority shareholders for financial mismanagement. The D&O policy covers the CFO's legal defense costs (₹50 lakh in lawyer fees) and any settlement amount — protecting personal assets from being at risk for actions taken in official capacity.",
+    "related_terms": [
+      "Keyman Insurance",
+      "Assignment",
+      "Insurable Interest"
+    ],
+    "source": "IRDAI Commercial Lines Guidelines",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g190",
+    "term": "Mediclaim",
+    "category": "health",
+    "definition": "A colloquial/popular term for hospitalization health insurance in India — derived from the original 'Mediclaim' policy launched by GIC (General Insurance Corporation) in 1986, which was India's first standardized health insurance product. Today, 'mediclaim' is used generically to refer to any health insurance policy. Formally, modern health insurance is governed by IRDAI health insurance regulations. The original Mediclaim policy is still available through public sector insurers.",
+    "example": "When a colleague asks 'Do you have mediclaim?' — they are asking if you have health insurance. This term is used interchangeably with health insurance in everyday Indian conversation, though technically 'mediclaim' referred to the original GIC product.",
+    "related_terms": [
+      "Health Insurance",
+      "Reimbursement Claim",
+      "Cashless Claim",
+      "Sum Insured"
+    ],
+    "source": "GIC History / Common Usage",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g191",
+    "term": "Annuity",
+    "category": "life",
+    "definition": "A financial product (sold by life insurers) that provides a regular income stream (monthly, quarterly, or annually) in exchange for a lump sum investment — primarily used for retirement income. Annuity types in India: immediate annuity (income starts immediately after paying lump sum), deferred annuity (income starts after a deferral period), life annuity (income for life, stops at death), joint life annuity (income for policyholder and spouse), annuity with return of purchase price (heirs get back the principal on death). Regulated by IRDAI.",
+    "example": "At retirement, Suresh invests ₹50 lakh into an immediate life annuity with HDFC Life at 6.5% annuity rate — he receives ₹27,083/month (₹3.25 lakh/year) for the rest of his life. On death, if 'return of purchase price' is selected, his wife gets back ₹50 lakh.",
+    "related_terms": [
+      "Pension Plan",
+      "NPS",
+      "Section 10(10A)",
+      "Maturity Benefit"
+    ],
+    "source": "IRDAI Annuity Product Regulations",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g192",
+    "term": "NPS (National Pension System)",
+    "category": "financial",
+    "definition": "India's voluntary pension scheme regulated by PFRDA (Pension Fund Regulatory and Development Authority) — distinct from insurance but often compared. NPS has tax benefits under Section 80CCD(1) (₹1.5 lakh within 80C), 80CCD(1B) (additional ₹50,000 deduction), and 80CCD(2) (employer contribution deduction). At retirement (age 60), 60% of NPS corpus can be withdrawn tax-free; 40% must be used to buy an annuity. NPS is not insurance — it is a pension product.",
+    "example": "A 35-year-old invests ₹12,000/month in NPS till age 60 (25 years). Assuming 10% returns, corpus ≈ ₹1.6 crore at 60. She can withdraw ₹96 lakh tax-free; must invest ₹64 lakh in annuity for monthly pension. Extra: 80CCD(1B) gives ₹50,000 additional deduction beyond 80C.",
+    "related_terms": [
+      "Annuity",
+      "Section 10(10A)",
+      "Tax Planning",
+      "Section 80C"
+    ],
+    "source": "PFRDA / Income Tax Act",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g193",
+    "term": "Section 80D — Health Insurance Tax",
+    "category": "tax",
+    "definition": "Income Tax Act Section 80D allows deduction on health insurance premiums paid. Limits for FY2024-25: Self + family (below 60): ₹25,000; Self + family + parents (parents below 60): ₹50,000 (₹25k + ₹25k); Self + family + parents (parents above 60): ₹75,000 (₹25k + ₹50k); Both self and parents above 60: ₹1,00,000. Includes preventive health checkup up to ₹5,000 within the limit. Valid only under old tax regime. Under new tax regime, Section 80D deduction is NOT available.",
+    "example": "Vikram (35, pays own family's premium ₹22,000) + parents above 60 (pays ₹35,000): total premium ₹57,000. Deduction available: ₹25,000 (self/family) + ₹35,000 (senior parent premium, up to ₹50k limit) = ₹60,000 deduction under 80D. In 30% tax bracket: saves ₹18,000 in taxes.",
+    "related_terms": [
+      "Section 80C",
+      "Old Tax Regime",
+      "New Tax Regime",
+      "Health Insurance"
+    ],
+    "source": "Income Tax Act 1961, Section 80D",
+    "applicable_to": [
+      "health"
+    ]
+  },
+  {
+    "id": "g194",
+    "term": "Third Party Insurance — Motor",
+    "category": "motor",
+    "definition": "Mandatory motor insurance under the Motor Vehicles Act 1988 that covers damage or injury caused to third parties (other people, vehicles, or property) by the policyholder's vehicle. Third party (TP) premium rates are fixed by IRDAI annually. TP cover does NOT cover the policyholder's own vehicle damage. Driving without TP insurance is a punishable offense under IPC. TP liability for death/disability is unlimited under law.",
+    "example": "A car driver jumps a signal and hits a pedestrian causing injury. The car's mandatory TP insurance covers: the pedestrian's medical bills, compensation for disability or death (as awarded by MACT). The car owner's own vehicle damage is NOT covered by TP — they need OD cover for that.",
+    "related_terms": [
+      "Motor Third Party Claim Process",
+      "Motor Vehicles Act",
+      "MACT",
+      "Comprehensive Policy"
+    ],
+    "source": "Motor Vehicles Act 1988 / IRDAI Motor TP Premium Circular",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g195",
+    "term": "NACH Mandate",
+    "category": "financial",
+    "definition": "National Automated Clearing House (NACH) mandate is a bank auto-debit authorization that allows insurers to automatically debit premium amounts from the policyholder's bank account on the due date. Eliminates risk of policy lapse due to forgotten premium payments. Used by most insurers for annual, semi-annual, quarterly, and monthly premium modes. NACH mandate is set up once at policy inception.",
+    "example": "A term plan policyholder sets up a NACH mandate for ₹15,000/year. Every year on the policy anniversary date, the insurer automatically debits ₹15,000 from the policyholder's savings account. No manual action required — the policy stays active.",
+    "related_terms": [
+      "Grace Period",
+      "Lapsed Policy",
+      "Premium Payment Term"
+    ],
+    "source": "NPCI / RBI NACH Regulations",
+    "applicable_to": [
+      "life",
+      "health",
+      "motor"
+    ]
+  },
+  {
+    "id": "g196",
+    "term": "Nominee vs Legal Heir",
+    "category": "life",
+    "definition": "A nominee is the person designated by the policyholder to receive insurance proceeds on death — the nominee is the primary recipient. A legal heir is a person entitled to inherit property under succession laws (e.g., Hindu Succession Act). Under IRDAI 2015 rules, if the nominee is a 'beneficial nominee' (spouse, children, parents), they are the absolute owners of the proceeds — not just custodians for legal heirs. If the nominee is a stranger (not family), legal heirs may contest.",
+    "example": "Arun nominates his wife Sunita in his term policy. On Arun's death, Sunita is the beneficial nominee — she receives and keeps the ₹1 crore benefit as absolute owner. Arun's parents (legal heirs) cannot claim the proceeds from Sunita. If Arun had nominated a friend, the friend must pay the amount to legal heirs (holding it in trust).",
+    "related_terms": [
+      "Nomination",
+      "Assignment",
+      "Death Benefit"
+    ],
+    "source": "Insurance Act 1938, Section 39 / IRDAI 2015 Amendment on Beneficial Nominees",
+    "applicable_to": [
+      "life"
+    ]
+  },
+  {
+    "id": "g197",
+    "term": "Indemnity vs Benefit Policy",
+    "category": "financial",
+    "definition": "Two fundamental types of insurance payout structures. Indemnity policy pays actual financial loss — you can claim only what you actually spent/lost, and not more than that (prevents profit from insurance). Examples: health reimbursement, motor OD, property insurance. Benefit policy pays a predetermined fixed amount regardless of actual loss. Examples: term life insurance, critical illness policy, personal accident policy, hospital cash. Knowing the type matters for claim strategy.",
+    "example": "Health reimbursement policy = indemnity: hospital charges ₹3 lakh, you get ₹3 lakh. Term plan = benefit: policy is ₹1 crore, family gets ₹1 crore (regardless of actual financial 'loss'). CI policy = benefit: ₹25 lakh paid on diagnosis of cancer, regardless of treatment costs.",
+    "related_terms": [
+      "Cashless Claim",
+      "Critical Illness",
+      "Personal Accident Insurance",
+      "Term Plan"
+    ],
+    "source": "Insurance Principles",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor"
+    ]
+  },
+  {
+    "id": "g198",
+    "term": "Policy Endorsement",
+    "category": "financial",
+    "definition": "A written amendment or addition to an existing insurance policy that modifies its terms, coverage, or details. Changes that can be made via endorsement: nominee change, address update, adding/removing family members (floater), vehicle engine replacement (motor), upgrading sum insured. Endorsements become part of the policy document and must be requested through the insurer's official channel.",
+    "example": "After a car engine is replaced (due to flood damage), the policyholder must get an IMT endorsement on the motor policy to record the new engine number. Failing to do this can cause claim rejection (mismatched engine number in RC vs policy).",
+    "related_terms": [
+      "IMT Clause",
+      "Nomination",
+      "Policy Document"
+    ],
+    "source": "IRDAI / Insurer Policy Admin Guidelines",
+    "applicable_to": [
+      "health",
+      "life",
+      "motor"
+    ]
+  },
+  {
+    "id": "g199",
+    "term": "Cashless Garage Network",
+    "category": "motor",
+    "definition": "A network of garages (workshops) empaneled with a motor insurer where policyholders can get their vehicles repaired on a cashless basis — the insurer pays the garage directly. The policyholder pays only the deductible and non-covered amounts. Network garages are quality-vetted by the insurer. Repairs at non-network garages require advance payment by the policyholder and later reimbursement from the insurer.",
+    "example": "HDFC ERGO has a network of 6,800+ cashless garages. If a policyholder's car needs repair after an accident, they take it to a network garage — the garage and HDFC ERGO settle the bill directly (less depreciation and deductible). The policyholder pays only their share (e.g., ₹1,000 compulsory deductible).",
+    "related_terms": [
+      "Cashless Claim",
+      "Own Damage",
+      "IDV",
+      "Zero Depreciation"
+    ],
+    "source": "IRDAI / Insurer Motor Network",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g200",
+    "term": "Compulsory Deductible — Motor",
+    "category": "motor",
+    "definition": "A fixed amount that the policyholder must pay out-of-pocket in every motor own damage claim, regardless of claim size. Set by IRDAI: ₹1,000 for private cars (not exceeding 1500cc), ₹2,000 for cars above 1500cc, ₹100 for two-wheelers. This is in addition to any voluntary deductible the policyholder has opted for. The compulsory deductible cannot be waived or covered by any add-on.",
+    "example": "A car's own damage claim is ₹25,000. Compulsory deductible: ₹1,000 (as per IRDAI for a car below 1500cc). Insurer pays ₹24,000. If the policyholder had also opted for a voluntary deductible of ₹5,000 to reduce premium, insurer pays only ₹19,000.",
+    "related_terms": [
+      "Own Damage",
+      "Deductible",
+      "Comprehensive Policy"
+    ],
+    "source": "IRDAI Motor Tariff",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g201",
+    "term": "Voluntary Deductible — Motor",
+    "category": "motor",
+    "definition": "An optional additional deductible that a motor policyholder chooses to bear in exchange for a premium discount. The higher the voluntary deductible, the larger the premium discount. Options range from ₹2,500 to ₹15,000. Policyholder must evaluate: if they are claim-prone, a high voluntary deductible is expensive; if they rarely claim, the premium saving outweighs the deductible.",
+    "example": "Opting for ₹5,000 voluntary deductible on a motor policy gives 20% premium discount. If the annual OD premium was ₹8,000, the discount saves ₹1,600/year. If the policyholder makes 2 small claims of ₹6,000 each year, the voluntary deductible costs ₹10,000 (2 × ₹5,000) — much more than ₹1,600 saved.",
+    "related_terms": [
+      "Compulsory Deductible",
+      "Own Damage",
+      "NCB"
+    ],
+    "source": "IRDAI Motor Tariff / Insurer Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
+  },
+  {
+    "id": "g202",
+    "term": "Home Insurance",
+    "category": "financial",
+    "definition": "Insurance covering the building structure and/or its contents against perils such as fire, lightning, explosion, earthquake, flood, burglary, and accidental damage. Two types: Building-only (for homeowners), Contents-only (for renters), or combined. Basis of coverage: reinstatement value or market value. Premium for a ₹50 lakh home structure is approximately ₹2,000–₹5,000/year. Largely underutilized in India despite high awareness of natural calamity risk.",
+    "example": "A ₹80 lakh apartment (building value ₹50 lakh + contents ₹15 lakh) is insured under a home insurance policy. During monsoon, the apartment floods and ₹8 lakh worth of contents are damaged. The contents section of the home insurance policy pays ₹8 lakh minus deductible.",
+    "related_terms": [
+      "Reinstatement Value",
+      "Reinsurance",
+      "Deductible"
+    ],
+    "source": "IRDAI Property Insurance Guidelines",
+    "applicable_to": [
+      "motor"
+    ]
   }
 ]

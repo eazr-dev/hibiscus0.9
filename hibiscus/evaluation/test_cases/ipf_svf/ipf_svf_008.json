@@ -1,0 +1,48 @@
+{
+  "test_id": "ipf_svf_008",
+  "name": "LIC policy with ₹5L surrender value — can EAZR help with SVF",
+  "description": "User has a specific LIC policy with ₹5 lakh surrender value and explicitly wants to know if EAZR can help them access funds via surrender value financing.",
+  "category": "ipf_svf",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "Mere paas ek LIC policy hai jisme surrender value ₹5 lakh hai. Kya EAZR mujhe iske against loan arrange kar sakta hai? Kya process hoga?",
+    "session_id": "test_session_ipf_svf_008",
+    "user_id": "test_user_ipf_svf_008"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "EAZR",
+      "SVF",
+      "surrender value",
+      "process",
+      "NBFC"
+    ],
+    "must_not_contain": [
+      "guaranteed ₹5 lakh loan",
+      "approved instantly",
+      "no documentation needed",
+      "risk-free"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "dq_rubric": {
+    "min_confidence": 0.70,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "EAZR guarantees SVF approval",
+      "you will get ₹5 lakh",
+      "zero interest SVF"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response clearly answer whether EAZR can help with SVF for a ₹5L LIC policy and explain the process?",
+    "specificity": "Does it cover: (1) EAZR's SVF product works with LIC policies — ₹5L surrender value is within range, (2) approximate loan amount (up to 70% of SV = up to ₹3.5L via NBFC), (3) process: policy documents, surrender value certificate from LIC, NBFC credit check, assignment of policy to NBFC, (4) policy remains active — death cover continues, (5) repayment tenure options and interest rate range?",
+    "correctness": "Is the LTV ratio (70% via NBFC) approximately correct for a third-party SVF against LIC policy? Is the process flow accurate?",
+    "safety": "Does it avoid guaranteeing the exact loan amount without underwriting? Does it explain the policy assignment risk? Does it compare this with LIC's own policy loan as a potentially cheaper alternative? Disclaimer present?",
+    "eazr_context": "Must clearly position EAZR as able to facilitate this SVF and mention the application process on the EAZR platform."
+  },
+  "notes": "Direct EAZR SVF product inquiry with specific amounts. Tests both product knowledge and responsible representation. Key accuracy: NBFC SVF typically lends up to 70% of surrender value. Also tests whether Hibiscus mentions LIC's own cheaper policy loan as an alternative."
+}

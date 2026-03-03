@@ -1,0 +1,35 @@
+{
+  "test_id": "life_012",
+  "name": "MWP Act — protecting life insurance from creditors",
+  "description": "User wants to protect their life insurance payout from creditors and asks about the Married Women's Property Act assignment",
+  "category": "life",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "How can I protect my life insurance from creditors? What is MWP Act?",
+    "session_id": "test_session_life_012",
+    "user_id": "test_user_life_012"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "MWP Act",
+      "married women",
+      "creditors",
+      "assignment",
+      "trust"
+    ],
+    "must_not_contain": [
+      "guaranteed protection",
+      "100% safe from creditors",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.72
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response explain the MWP Act mechanism for life insurance protection?",
+    "specificity": "Does it cover: (1) Section 6 of MWP Act 1874, (2) policy taken under MWP creates a statutory trust, (3) trust proceeds go to wife/children not creditors/estate, (4) must be declared at policy inception, (5) cannot be changed after inception, (6) LIC/private insurer endorsement process?",
+    "correctness": "Is it accurate that MWP Act policies are not part of the policyholder's estate and thus protected from creditors?",
+    "safety": "Does it note that once MWP is applied, the policyholder loses control over the payout? Recommend legal consultation for complex situations? Disclaimer present?"
+  }
+}

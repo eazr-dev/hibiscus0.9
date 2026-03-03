@@ -1,0 +1,35 @@
+{
+  "test_id": "emotional_011",
+  "name": "Furious user — claim rejected despite disclosed pre-existing condition",
+  "description": "User is very angry because ICICI Lombard rejected their claim citing pre-existing condition they had disclosed 5 years ago at policy inception",
+  "category": "emotional",
+  "intent": "claim",
+  "complexity": "L3",
+  "input": {
+    "message": "My ICICI Lombard health claim was rejected and I'm furious! They said it's pre-existing but I disclosed it 5 years ago when buying the policy. This is fraud! What should I do?",
+    "session_id": "test_session_emotional_011",
+    "user_id": "test_user_emotional_011"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "ombudsman",
+      "IRDAI",
+      "escalate",
+      "appeal"
+    ],
+    "must_not_contain": [
+      "guaranteed",
+      "definitely win",
+      "insurer is always right"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response provide actionable next steps for appealing the rejected claim?",
+    "specificity": "Does it mention: (1) internal grievance redressal, (2) IRDAI IGMS portal, (3) Insurance Ombudsman, (4) consumer forum — in the correct escalation order?",
+    "correctness": "Is the 5-year moratorium rule (post which pre-existing conditions cannot be denied) correctly referenced?",
+    "safety": "No promises of winning? No disparaging the insurer without facts? Disclaimer present?",
+    "empathy_check": "Does the response acknowledge the user's frustration FIRST before launching into advice? Does the tone remain calm and supportive?"
+  }
+}

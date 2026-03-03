@@ -1,20 +1,26 @@
 """
 Embedding Model Configuration
 ==============================
-OpenAI text-embedding-3-small (1536 dims) — used for all RAG vector operations.
+BAAI/bge-large-en-v1.5 (1024 dims) — primary via fastembed (local, no API key).
+GLM (Zhipu AI) embedding-2 — fallback if fastembed unavailable.
+OpenAI text-embedding-3-small (1536 dims) — final fallback.
 
 Design decisions:
-  - Single embedding model across all collections for consistency
-  - Batch API for ingestion (max 100 texts per call per OpenAI limits)
-  - Tenacity retry for rate limit / transient failures
-  - Cost tracking: log token usage so we can calculate embedding spend
-  - Fallback: return zero vector (with warning) if OpenAI unavailable
-    Consequence: those chunks will not match anything — acceptable for graceful degradation
+  - fastembed chosen as primary: local inference, no API key, no cost, 1024 dims
+  - BAAI/bge-large-en-v1.5 matches our Qdrant collection dimension (1024)
+  - Model is downloaded once and cached in ~/.cache/fastembed/
+  - Sync fastembed.embed() called via asyncio.get_event_loop().run_in_executor()
+  - Batch size 32 for local CPU (100 is fine for API; smaller batch = lower memory)
+  - Fallback chain: fastembed -> GLM API -> OpenAI API -> zero vector
+    Zero vector consequence: chunks won't match semantically -- acceptable graceful degradation
 
-Costs (as of 2025):
-  - text-embedding-3-small: $0.020 per million tokens
-  - Average chunk ~200 tokens → ~₹0.0003 per chunk
-  - Full corpus of 10K chunks → ~₹3 total
+Costs:
+  - fastembed (local): $0 — runs on CPU inside container
+  - GLM embedding-2: ~$0.005 per million tokens (if key is valid)
+  - OpenAI text-embedding-3-small: ~$0.020 per million tokens (if key is valid)
+
+IMPORTANT: Qdrant collection dimension = 1024 (bge-large-en-v1.5).
+If switching to OpenAI (1536 dims), recreate Qdrant collections.
 """
 import asyncio
 import time
@@ -35,23 +41,109 @@ from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
 
-# ── Constants ─────────────────────────────────────────────────────────────────
-EMBEDDING_MODEL = "text-embedding-3-small"
-EMBEDDING_DIMENSIONS = 1536
-MAX_BATCH_SIZE = 100        # OpenAI batch limit
-MAX_TEXT_TOKENS = 8191      # text-embedding-3-small context window
+# -- Constants -----------------------------------------------------------------
+EMBEDDING_MODEL_LOCAL = "BAAI/bge-large-en-v1.5"   # fastembed primary (1024 dims)
+EMBEDDING_MODEL_GLM = "embedding-2"                  # GLM API fallback
+EMBEDDING_MODEL_OAI = "text-embedding-3-small"       # OpenAI API fallback
+EMBEDDING_DIMENSIONS = 1024                           # bge-large-en-v1.5 / GLM output dims
+MAX_BATCH_SIZE = 32                                   # CPU-friendly batch size for fastembed
+MAX_TEXT_TOKENS = 8191
+
+# Module-level fastembed model instance (lazy-initialized)
+_fastembed_model = None
+_fastembed_lock = asyncio.Lock()
 
 
-def _get_openai_client() -> openai.AsyncOpenAI:
-    """Lazy-create OpenAI async client."""
+def _load_fastembed_model():
+    """Load fastembed model synchronously (called once, cached at module level)."""
+    global _fastembed_model
+    if _fastembed_model is not None:
+        return _fastembed_model
+    try:
+        from fastembed import TextEmbedding
+        _fastembed_model = TextEmbedding(
+            model_name=EMBEDDING_MODEL_LOCAL,
+            cache_dir=None,     # use default ~/.cache/fastembed/
+            threads=4,          # 4 ONNX threads — fast on modern CPUs
+        )
+        logger.info("fastembed_model_loaded", model=EMBEDDING_MODEL_LOCAL, dims=EMBEDDING_DIMENSIONS)
+        return _fastembed_model
+    except Exception as exc:
+        logger.warning("fastembed_load_failed", error=str(exc), fallback="api_providers")
+        return None
+
+
+async def _get_fastembed_model():
+    """Async lazy-init for fastembed model (thread-safe)."""
+    global _fastembed_model
+    if _fastembed_model is not None:
+        return _fastembed_model
+    async with _fastembed_lock:
+        if _fastembed_model is not None:
+            return _fastembed_model
+        loop = asyncio.get_event_loop()
+        model = await loop.run_in_executor(None, _load_fastembed_model)
+        return model
+
+
+async def _embed_fastembed(texts: List[str]) -> Optional[List[List[float]]]:
+    """
+    Get embeddings from local fastembed model.
+    Returns list of float vectors, or None on failure.
+    """
+    try:
+        model = await _get_fastembed_model()
+        if model is None:
+            return None
+        loop = asyncio.get_event_loop()
+        embeddings = await loop.run_in_executor(
+            None,
+            lambda: [emb.tolist() for emb in model.embed(texts)],
+        )
+        return embeddings
+    except Exception as exc:
+        logger.warning("fastembed_embed_failed", error=str(exc), fallback="api_providers")
+        return None
+
+
+# -- API clients (fallback only) -----------------------------------------------
+
+def _get_glm_client() -> openai.AsyncOpenAI:
+    """Lazy-create GLM async client (OpenAI-compatible API)."""
     return openai.AsyncOpenAI(
-        api_key=settings.openai_api_key,
+        api_key=settings.zhipu_api_key,
+        base_url=settings.zhipu_base_url,
         timeout=30.0,
-        max_retries=0,  # We handle retries with tenacity
+        max_retries=0,
     )
 
 
-# ── Single embedding ──────────────────────────────────────────────────────────
+def _get_openai_client() -> openai.AsyncOpenAI:
+    """Lazy-create OpenAI async client (fallback)."""
+    return openai.AsyncOpenAI(
+        api_key=settings.openai_api_key,
+        timeout=30.0,
+        max_retries=0,
+    )
+
+
+@retry(
+    retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError)),
+    wait=wait_exponential(multiplier=1, min=2, max=30),
+    stop=stop_after_attempt(4),
+    before_sleep=before_sleep_log(logging.getLogger(__name__), logging.WARNING),
+    reraise=True,
+)
+async def _call_glm_embed(texts: List[str]) -> openai.types.CreateEmbeddingResponse:
+    """GLM embedding API call with retry."""
+    client = _get_glm_client()
+    response = await client.embeddings.create(
+        model=EMBEDDING_MODEL_GLM,
+        input=texts,
+        encoding_format="float",
+    )
+    return response
+
 
 @retry(
     retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError)),
@@ -61,112 +153,101 @@ def _get_openai_client() -> openai.AsyncOpenAI:
     reraise=True,
 )
 async def _call_openai_embed(texts: List[str]) -> openai.types.CreateEmbeddingResponse:
-    """Raw OpenAI embedding API call with retry on rate limit / connection errors."""
+    """OpenAI embedding API call (final fallback)."""
     client = _get_openai_client()
     response = await client.embeddings.create(
-        model=EMBEDDING_MODEL,
+        model=EMBEDDING_MODEL_OAI,
         input=texts,
-        dimensions=EMBEDDING_DIMENSIONS,
         encoding_format="float",
     )
     return response
 
 
+# -- Single embedding ----------------------------------------------------------
+
 async def get_embedding(text: str) -> List[float]:
     """
     Get embedding for a single text string.
 
-    Args:
-        text: Text to embed. Truncated at 8000 chars (~2000 tokens) if too long.
+    Priority: fastembed (local) -> GLM API -> OpenAI API -> zero vector.
 
     Returns:
-        List of 1536 floats (cosine-normalized).
-        Returns zero vector on OpenAI failure (graceful degradation).
+        List of 1024 floats.
+        Returns zero vector on all failures (graceful degradation).
     """
     if not text or not text.strip():
         logger.warning("embedding_empty_text", fallback="zero_vector")
         return _zero_vector()
 
-    if not settings.openai_api_key:
-        logger.warning(
-            "embedding_no_api_key",
-            model=EMBEDDING_MODEL,
-            fallback="zero_vector",
-        )
-        return _zero_vector()
-
-    # Truncate if very long (rough char limit — 1 token ~ 4 chars)
     text = text[:32000]
-
     start_ms = int(time.time() * 1000)
-    try:
-        response = await _call_openai_embed([text])
-        embedding = response.data[0].embedding
 
+    # Try local fastembed first (no API key required)
+    result = await _embed_fastembed([text])
+    if result:
         latency_ms = int(time.time() * 1000) - start_ms
-        _log_embedding_cost(
-            tokens=response.usage.total_tokens,
-            count=1,
-            latency_ms=latency_ms,
-        )
+        logger.debug("embedding_fastembed_ok", latency_ms=latency_ms)
+        return result[0]
 
-        return embedding
+    # Try GLM API
+    if settings.zhipu_api_key:
+        try:
+            response = await _call_glm_embed([text])
+            embedding = response.data[0].embedding
+            latency_ms = int(time.time() * 1000) - start_ms
+            _log_embedding_cost(
+                tokens=response.usage.total_tokens,
+                count=1,
+                latency_ms=latency_ms,
+                model="glm_embedding_2",
+            )
+            return embedding
+        except openai.AuthenticationError as exc:
+            logger.error("glm_embedding_auth_failed", error=str(exc))
+        except Exception as exc:
+            logger.warning("glm_embedding_failed", error=str(exc), fallback="try_openai")
 
-    except openai.AuthenticationError as exc:
-        logger.error(
-            "embedding_auth_failed",
-            error=str(exc),
-            hint="check_openai_api_key",
-        )
-        return _zero_vector()
+    # Try OpenAI API
+    if settings.openai_api_key:
+        try:
+            response = await _call_openai_embed([text])
+            embedding = response.data[0].embedding
+            latency_ms = int(time.time() * 1000) - start_ms
+            _log_embedding_cost(
+                tokens=response.usage.total_tokens,
+                count=1,
+                latency_ms=latency_ms,
+                model="openai_text_embedding_3_small",
+            )
+            if len(embedding) > EMBEDDING_DIMENSIONS:
+                embedding = embedding[:EMBEDDING_DIMENSIONS]
+            return embedding
+        except Exception as exc:
+            logger.warning("openai_embedding_failed", error=str(exc), fallback="zero_vector")
 
-    except Exception as exc:
-        latency_ms = int(time.time() * 1000) - start_ms
-        logger.warning(
-            "embedding_failed",
-            error=str(exc),
-            error_type=type(exc).__name__,
-            fallback="zero_vector",
-            latency_ms=latency_ms,
-        )
-        return _zero_vector()
+    logger.warning("embedding_no_provider_available", fallback="zero_vector")
+    return _zero_vector()
 
 
-# ── Batch embeddings ──────────────────────────────────────────────────────────
+# -- Batch embeddings ----------------------------------------------------------
 
 async def get_embeddings_batch(texts: List[str]) -> List[List[float]]:
     """
-    Get embeddings for a list of texts in batches of max 100.
+    Get embeddings for a list of texts in batches.
 
-    Handles:
-    - Empty texts: replaced with zero vector
-    - Batching: splits into groups of MAX_BATCH_SIZE
-    - Rate limits: exponential backoff via tenacity
-    - Failures: individual batch failures fall back to zero vectors
-
-    Args:
-        texts: List of text strings to embed.
+    Priority per batch: fastembed (local) -> GLM API -> OpenAI API -> zero vectors.
 
     Returns:
-        List of embedding vectors, same length as input.
+        List of embedding vectors (1024 dims), same length as input.
         Positions with failures get zero vectors.
     """
     if not texts:
         return []
 
-    if not settings.openai_api_key:
-        logger.warning(
-            "embeddings_batch_no_api_key",
-            count=len(texts),
-            fallback="zero_vectors",
-        )
-        return [_zero_vector() for _ in texts]
-
     results: List[Optional[List[float]]] = [None] * len(texts)
-    total_tokens = 0
     start_ms = int(time.time() * 1000)
 
-    # Identify empty texts early — don't send to OpenAI
+    # Identify empty texts early
     non_empty_indices = [i for i, t in enumerate(texts) if t and t.strip()]
     for i in range(len(texts)):
         if i not in non_empty_indices:
@@ -175,68 +256,97 @@ async def get_embeddings_batch(texts: List[str]) -> List[List[float]]:
     if not non_empty_indices:
         return [_zero_vector() for _ in texts]
 
-    # Batch non-empty texts
+    # Process in batches
     for batch_start in range(0, len(non_empty_indices), MAX_BATCH_SIZE):
         batch_indices = non_empty_indices[batch_start : batch_start + MAX_BATCH_SIZE]
-        batch_texts = [texts[i][:32000] for i in batch_indices]  # truncate
+        batch_texts = [texts[i][:32000] for i in batch_indices]
 
-        try:
-            response = await _call_openai_embed(batch_texts)
+        batch_ok = False
 
-            # OpenAI returns embeddings in same order as input
+        # Try fastembed (local) first
+        fastembed_result = await _embed_fastembed(batch_texts)
+        if fastembed_result and len(fastembed_result) == len(batch_texts):
             for response_idx, global_idx in enumerate(batch_indices):
-                results[global_idx] = response.data[response_idx].embedding
+                results[global_idx] = fastembed_result[response_idx]
+            batch_ok = True
 
-            total_tokens += response.usage.total_tokens
+        # Try GLM API if fastembed failed
+        if not batch_ok and settings.zhipu_api_key:
+            try:
+                response = await _call_glm_embed(batch_texts)
+                for response_idx, global_idx in enumerate(batch_indices):
+                    results[global_idx] = response.data[response_idx].embedding
+                batch_ok = True
+            except Exception as exc:
+                logger.warning(
+                    "glm_batch_embed_failed",
+                    batch_start=batch_start,
+                    error=str(exc),
+                    fallback="try_openai",
+                )
 
-        except Exception as exc:
-            logger.warning(
-                "embeddings_batch_failed",
+        # Try OpenAI if GLM failed
+        if not batch_ok and settings.openai_api_key:
+            try:
+                response = await _call_openai_embed(batch_texts)
+                for response_idx, global_idx in enumerate(batch_indices):
+                    emb = response.data[response_idx].embedding
+                    if len(emb) > EMBEDDING_DIMENSIONS:
+                        emb = emb[:EMBEDDING_DIMENSIONS]
+                    results[global_idx] = emb
+                batch_ok = True
+            except Exception as exc:
+                logger.warning(
+                    "openai_batch_embed_failed",
+                    batch_start=batch_start,
+                    error=str(exc),
+                    fallback="zero_vectors_for_batch",
+                )
+
+        if not batch_ok:
+            logger.error(
+                "embedding_all_providers_failed",
                 batch_start=batch_start,
                 batch_size=len(batch_texts),
-                error=str(exc),
-                fallback="zero_vectors_for_batch",
             )
-            # Fill failed batch with zero vectors
             for global_idx in batch_indices:
                 results[global_idx] = _zero_vector()
 
-    # Fill any remaining Nones (shouldn't happen, defensive)
+    # Fill any remaining Nones
     for i in range(len(results)):
         if results[i] is None:
             results[i] = _zero_vector()
 
     latency_ms = int(time.time() * 1000) - start_ms
-    _log_embedding_cost(
-        tokens=total_tokens,
+    logger.info(
+        "embedding_batch_complete",
+        model="bge_large_en_v1.5",
         count=len(non_empty_indices),
+        total=len(texts),
         latency_ms=latency_ms,
     )
 
     return results  # type: ignore[return-value]
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# -- Helpers -------------------------------------------------------------------
 
 def _zero_vector() -> List[float]:
     """Return a zero vector of the correct dimensionality."""
     return [0.0] * EMBEDDING_DIMENSIONS
 
 
-def _log_embedding_cost(tokens: int, count: int, latency_ms: int) -> None:
-    """
-    Log embedding cost for tracking.
-
-    text-embedding-3-small: $0.020 per 1M tokens
-    At USD/INR = 84 (approx): ₹1.68 per 1M tokens
-    """
-    # Cost in USD: tokens * (0.020 / 1_000_000)
-    cost_usd = tokens * 0.020 / 1_000_000
-    cost_inr = cost_usd * 84  # approximate
+def _log_embedding_cost(tokens: int, count: int, latency_ms: int, model: str = "bge_large") -> None:
+    """Log API embedding cost for tracking (local fastembed has no cost)."""
+    if model.startswith("glm"):
+        cost_usd = tokens * 0.005 / 1_000_000
+    else:
+        cost_usd = tokens * 0.020 / 1_000_000
+    cost_inr = cost_usd * 84
 
     logger.info(
         "embedding_cost",
-        model=EMBEDDING_MODEL,
+        model=model,
         tokens=tokens,
         count=count,
         cost_usd=round(cost_usd, 8),
@@ -246,16 +356,12 @@ def _log_embedding_cost(tokens: int, count: int, latency_ms: int) -> None:
 
 
 async def count_tokens(text: str) -> int:
-    """
-    Estimate token count for a text using tiktoken.
-    Used to ensure chunks are within embedding context window.
-    """
+    """Estimate token count for a text."""
     try:
         import tiktoken
-        enc = tiktoken.get_encoding("cl100k_base")  # Same as text-embedding-3-small
+        enc = tiktoken.get_encoding("cl100k_base")
         return len(enc.encode(text))
     except ImportError:
-        # Rough estimate: 1 token ~ 4 characters
         return len(text) // 4
     except Exception:
         return len(text) // 4

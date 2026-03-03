@@ -1,0 +1,35 @@
+{
+  "test_id": "emotional_020",
+  "name": "Completely confused family insurance portfolio — 3 policies, 4 members",
+  "description": "User is overwhelmed with 3 policies from different agents for a family of 4 and cannot understand what is covered",
+  "category": "emotional",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "I have NO idea what policies I have. My family has 4 members, we have 3 different policies from different agents and I'm completely confused about what's covered. Can you help me make sense of this?",
+    "session_id": "test_session_emotional_020",
+    "user_id": "test_user_emotional_020"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "portfolio",
+      "coverage gap",
+      "overlap",
+      "family floater"
+    ],
+    "must_not_contain": [
+      "this is simple",
+      "guaranteed coverage",
+      "all your policies are fine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.68
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response offer a structured approach to untangle the portfolio confusion?",
+    "specificity": "Does it: (1) ask for or acknowledge need for policy documents, (2) explain the portfolio review framework (health, life, PA), (3) explain concepts of overlap and gap, (4) suggest uploading policies for EAZR analysis?",
+    "correctness": "Does it correctly explain that multiple policies can co-exist and claims can be coordinated across insurers?",
+    "safety": "No invented coverage assessments without seeing the policies? No alarming without basis?",
+    "empathy_check": "Does the response normalise the confusion (many people face this) and provide a calm, structured way forward rather than adding to the overwhelm?"
+  }
+}

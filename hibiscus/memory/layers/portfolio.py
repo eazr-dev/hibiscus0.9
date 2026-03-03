@@ -342,3 +342,116 @@ def _to_datetime(value: Any) -> Optional[datetime]:
             except ValueError:
                 continue
     return None
+
+
+# ── Renewal / Lapse Tracking ──────────────────────────────────────────────────
+
+async def get_expiring_policies(user_id: str, days_ahead: int = 30) -> List[Dict[str, Any]]:
+    """Get policies expiring (or already lapsed) within the given window.
+
+    Looks at ``policy_end_date`` on the portfolio table.  Returns policies
+    whose end date falls within the range::
+
+        [today - days_ahead, today + days_ahead]
+
+    so that both *upcoming* renewals and *recently lapsed* policies are
+    surfaced to the renewal tracker.
+
+    Args:
+        user_id:    EAZR user identifier.
+        days_ahead: Forward look-ahead window in calendar days (default 30).
+                    The backward look-back uses the same number of days so
+                    that freshly-lapsed policies are also returned.
+
+    Returns:
+        List of dicts with keys:
+            policy_type, insurer, due_date (DD/MM/YYYY), premium_amount,
+            policy_id.
+        Returns [] on any error (graceful fallback).
+    """
+    from datetime import timedelta
+
+    today = date.today()
+    window_start = today - timedelta(days=days_ahead)   # catch recent lapses
+    window_end = today + timedelta(days=days_ahead)     # catch upcoming renewals
+
+    pool = await get_pool()
+    if pool:
+        try:
+            async with pool.acquire() as conn:
+                rows = await conn.fetch(
+                    """
+                    SELECT id, policy_type, insurer, policy_end_date, annual_premium
+                    FROM hibiscus_policy_portfolio
+                    WHERE user_id = $1
+                      AND is_active = TRUE
+                      AND policy_end_date IS NOT NULL
+                      AND policy_end_date >= $2
+                      AND policy_end_date <= $3
+                    ORDER BY policy_end_date ASC
+                    """,
+                    user_id,
+                    window_start,
+                    window_end,
+                )
+
+            results: List[Dict[str, Any]] = []
+            for row in rows:
+                end_date = row["policy_end_date"]
+                # Normalise to date if stored as datetime
+                if isinstance(end_date, datetime):
+                    end_date = end_date.date()
+                results.append({
+                    "policy_type": row["policy_type"] or "Insurance Policy",
+                    "insurer": row["insurer"] or "Unknown Insurer",
+                    # DD/MM/YYYY — Indian format
+                    "due_date": end_date.strftime("%d/%m/%Y") if end_date else None,
+                    "premium_amount": row["annual_premium"],
+                    "policy_id": str(row["id"]),
+                })
+
+            logger.info(
+                "portfolio_expiring_policies_fetched",
+                user_id=user_id,
+                days_ahead=days_ahead,
+                count=len(results),
+            )
+            return results
+
+        except Exception as exc:
+            logger.warning(
+                "portfolio_expiring_policies_failed",
+                user_id=user_id,
+                error=str(exc),
+            )
+            return []
+
+    # ── In-memory fallback ────────────────────────────────────────────────────
+    from datetime import timedelta
+
+    policies = _portfolio_store.get(user_id, [])
+    results = []
+    for p in policies:
+        if not p.get("is_active", True):
+            continue
+        end_date = _to_date(p.get("policy_end_date"))
+        if end_date is None:
+            continue
+        window_start_fb = today - timedelta(days=days_ahead)
+        window_end_fb = today + timedelta(days=days_ahead)
+        if window_start_fb <= end_date <= window_end_fb:
+            results.append({
+                "policy_type": p.get("policy_type") or "Insurance Policy",
+                "insurer": p.get("insurer") or "Unknown Insurer",
+                "due_date": end_date.strftime("%d/%m/%Y"),
+                "premium_amount": p.get("annual_premium"),
+                "policy_id": str(p.get("id", "")),
+            })
+
+    results.sort(key=lambda x: x["due_date"])
+    logger.info(
+        "portfolio_expiring_policies_fetched_fallback",
+        user_id=user_id,
+        count=len(results),
+    )
+    return results

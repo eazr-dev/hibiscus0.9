@@ -1,0 +1,36 @@
+{
+  "test_id": "emotional_017",
+  "name": "Widow navigating LIC term death claim — completely lost",
+  "description": "Grieving widow whose husband passed away 2 weeks ago needs gentle, step-by-step guidance to file a death claim on his LIC term plan",
+  "category": "emotional",
+  "intent": "claim",
+  "complexity": "L3",
+  "input": {
+    "message": "My husband passed away 2 weeks ago. He had an LIC term plan. I don't know what to do or how to claim. I'm completely lost.",
+    "session_id": "test_session_emotional_017",
+    "user_id": "test_user_emotional_017"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "death certificate",
+      "nominee",
+      "claim form",
+      "settlement",
+      "30 days"
+    ],
+    "must_not_contain": [
+      "guaranteed payout",
+      "this is simple",
+      "just fill the form"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.75
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response provide a gentle, clear, step-by-step claim filing guide?",
+    "specificity": "Does it cover: (1) intimation to LIC branch, (2) claim forms (3756/3783/3801), (3) required documents (death cert, policy bond, ID proof of nominee), (4) LIC's 30-day settlement mandate, (5) LIC helpline/online portal?",
+    "correctness": "Is LIC's death claim process accurately described per current procedures?",
+    "safety": "No overwhelming the user with jargon? Steps presented in manageable sequence? No invented policy details?",
+    "empathy_check": "Must begin with sincere condolences. Tone must be compassionate throughout. Must not rush into procedural details without first acknowledging the grief."
+  }
+}

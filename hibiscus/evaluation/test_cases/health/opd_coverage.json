@@ -1,0 +1,34 @@
+{
+  "test_id": "health_016",
+  "name": "OPD and outpatient coverage in health insurance",
+  "description": "User asks whether health insurance covers doctor consultations and medicine bills without hospitalisation",
+  "category": "health",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "Does health insurance cover doctor consultations and medicine bills without hospitalization?",
+    "session_id": "test_session_health_016",
+    "user_id": "test_user_health_016"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "OPD",
+      "outpatient",
+      "consultation",
+      "daycare"
+    ],
+    "must_not_contain": [
+      "all consultations covered",
+      "guaranteed OPD cover",
+      "I cannot determine"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.70
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response accurately explain OPD coverage and its limitations in standard health policies?",
+    "specificity": "Does it cover: (1) standard health policies don't include OPD, (2) OPD riders/add-ons available at extra premium, (3) daycare procedures (less than 24h) are covered, (4) specific plans (Niva Bupa, Max Bupa ReAssure) with OPD cover?",
+    "correctness": "Is it accurately stated that base indemnity health plans typically exclude OPD and daycare is different from OPD?",
+    "safety": "Does it avoid claiming all health policies cover OPD? Disclaimer to check specific policy wording?"
+  }
+}

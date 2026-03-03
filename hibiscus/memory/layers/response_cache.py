@@ -21,6 +21,7 @@ import re
 from typing import Optional
 
 from hibiscus.observability.logger import get_logger
+from hibiscus.observability.metrics import record_cache_hit as _metric_cache_hit, record_cache_miss as _metric_cache_miss
 
 logger = get_logger(__name__)
 
@@ -67,8 +68,10 @@ async def get_cached_response(message: str) -> Optional[dict]:
         if raw:
             payload = json.loads(raw)
             logger.info("response_cache_hit", key=key[:16])
+            _metric_cache_hit()
             return payload
         logger.info("response_cache_miss", key=key[:16])
+        _metric_cache_miss()
     except Exception as e:
         logger.warning("response_cache_get_error", error=str(e))
     return None

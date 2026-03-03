@@ -9,7 +9,7 @@ Collections:
   - user_knowledge        : Per-user extracted policy facts and insights
 
 Hybrid search strategy:
-  - Dense  : text-embedding-3-small (1536 dims) via OpenAI
+  - Dense  : GLM embedding-2 (1024 dims) via Zhipu AI
   - Sparse : BM25 via Qdrant's built-in sparse vectors
   - Fusion : Reciprocal Rank Fusion (RRF) — balances semantic + keyword matching
 """
@@ -30,8 +30,6 @@ from qdrant_client.models import (
     FieldCondition,
     MatchValue,
     SparseVector,
-    NamedVector,
-    NamedSparseVector,
 )
 
 from hibiscus.config import settings
@@ -40,7 +38,7 @@ from hibiscus.observability.logger import get_logger
 logger = get_logger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-VECTOR_SIZE = 1536          # text-embedding-3-small dimensions
+VECTOR_SIZE = 1024          # GLM embedding-2 dimensions (changed from 1536 OpenAI)
 DENSE_VECTOR_NAME = "dense"
 SPARSE_VECTOR_NAME = "sparse"
 
@@ -77,6 +75,7 @@ class QdrantRAGClient:
                 host=settings.qdrant_host,
                 port=settings.qdrant_port,
                 timeout=10.0,
+                check_compatibility=False,  # client 1.17 vs server 1.12 version mismatch
             )
             # Health-check by listing collections
             await self._client.get_collections()
@@ -266,32 +265,33 @@ class QdrantRAGClient:
                 ]
                 qdrant_filter = Filter(must=conditions)
 
-            # ── Dense search ──────────────────────────────────────────────
+            # ── Dense search (qdrant-client >= 1.7 uses query_points) ─────
             dense_embedding = await self.get_embedding(query)
 
-            dense_results = await self._client.search(
+            dense_response = await self._client.query_points(
                 collection_name=collection,
-                query_vector=NamedVector(name=DENSE_VECTOR_NAME, vector=dense_embedding),
+                query=dense_embedding,
+                using=DENSE_VECTOR_NAME,
                 query_filter=qdrant_filter,
                 limit=top_k * 2,  # Fetch more for RRF fusion
                 with_payload=True,
                 with_vectors=False,
             )
+            dense_results = dense_response.points
 
             # ── Sparse search ─────────────────────────────────────────────
             sparse_vector = self._build_sparse_vector(query)
 
-            sparse_results = await self._client.search(
+            sparse_response = await self._client.query_points(
                 collection_name=collection,
-                query_vector=NamedSparseVector(
-                    name=SPARSE_VECTOR_NAME,
-                    vector=sparse_vector,
-                ),
+                query=sparse_vector,
+                using=SPARSE_VECTOR_NAME,
                 query_filter=qdrant_filter,
                 limit=top_k * 2,
                 with_payload=True,
                 with_vectors=False,
             )
+            sparse_results = sparse_response.points
 
             # ── RRF Fusion ────────────────────────────────────────────────
             fused = self._rrf_fusion(dense_results, sparse_results, k=RRF_K)

@@ -47,12 +47,19 @@ _DISCLAIMER_REQUIRED_INTENTS = {
     "calculate",
     "portfolio",
     "tax",
+    "claim",
+    "educate",
+    "regulate",
+    "grievance",
+    "analyze",
+    "research",
 }
 
 # ── Patterns that violate compliance ─────────────────────────────────────────
 _GUARANTEED_RETURNS_PATTERNS = [
     r'guaranteed?\s+return',
     r'guaranteed?\s+(?:interest|yield|profit|income)',
+    r'guaranteed?\s+\d+[\s]*%',  # catches "guaranteed 9%", "guaranteed 12%"
     r'risk.?free\s+return',
     r'assured\s+return',
     r'sure\s+(?:to\s+)?return',
@@ -104,6 +111,9 @@ def check_compliance(
                 "\n\n⚠️ *Note: No insurance product can guarantee returns. "
                 "Returns, if any, depend on market conditions and policy terms.*"
             )
+            # Also add IRDAI disclaimer (guaranteed-returns responses need compliance context)
+            if not any(phrase in modified_response.lower() for phrase in _DISCLAIMER_PATTERNS):
+                modified_response += IRDAI_DISCLAIMER
             return ComplianceCheckResult(
                 passed=False,
                 reason=f"Response implies guaranteed returns (pattern: {pattern})",
@@ -136,8 +146,8 @@ def check_compliance(
     if intent in _DISCLAIMER_REQUIRED_INTENTS and not has_disclaimer:
         modified_response = modified_response + IRDAI_DISCLAIMER
 
-    elif not has_disclaimer and _has_recommendation_language(response_lower):
-        # Response makes recommendations without disclaimer — add short one
+    elif not has_disclaimer:
+        # Every insurance response should have at minimum a short disclaimer
         modified_response = modified_response + SHORT_DISCLAIMER
 
     return ComplianceCheckResult(
@@ -150,6 +160,7 @@ def check_compliance(
 def _fix_guaranteed_returns(response: str) -> str:
     """Replace guaranteed return language with appropriate hedging."""
     replacements = [
+        (r'guaranteed\s+\d+\.?\d*\s*%', 'a stated percentage (not guaranteed — returns depend on policy terms and fund performance)'),
         (r'guaranteed returns?', 'potential returns (subject to policy terms)'),
         (r'guaranteed interest', 'stated interest rate (subject to terms)'),
         (r'assured returns?', 'projected returns (not guaranteed)'),

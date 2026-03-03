@@ -1,0 +1,48 @@
+{
+  "test_id": "ipf_svf_006",
+  "name": "Interest rate for insurance premium loan — rate inquiry",
+  "description": "User wants to know the typical interest rates charged for insurance premium financing before deciding whether to proceed.",
+  "category": "ipf_svf",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "Insurance premium financing ka interest rate kya hota hai? EAZR ka rate kya hai? Kya yeh personal loan se sasta padega?",
+    "session_id": "test_session_ipf_svf_006",
+    "user_id": "test_user_ipf_svf_006"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "interest rate",
+      "%",
+      "per annum",
+      "personal loan",
+      "EMI"
+    ],
+    "must_not_contain": [
+      "0% interest",
+      "free",
+      "guaranteed lowest rate",
+      "exact EAZR rate is X%"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.68
+  },
+  "dq_rubric": {
+    "min_confidence": 0.68,
+    "requires_disclaimer": true,
+    "requires_empathy": false,
+    "forbidden_phrases": [
+      "0% interest guaranteed",
+      "EAZR charges exactly X%",
+      "cheapest in India"
+    ]
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response give a useful, accurate range for IPF interest rates and compare it to personal loan rates?",
+    "specificity": "Does it cover: (1) typical IPF rates — 12–18% per annum from NBFCs, (2) comparison: personal loan rates — 10.5–24% depending on bank/NBFC, (3) IPF advantage: secured by policy (lower rate than unsecured personal loan), (4) additional: insurer EMI option may add only 3–5% loading on premium vs NBFC's annual rate, (5) EAZR: works with partner NBFCs — exact rate depends on credit profile?",
+    "correctness": "Are the rate ranges approximately accurate for the current market (2025–2026)? Is the secured nature of IPF (policy as collateral) correctly cited as the reason for potentially lower rates?",
+    "safety": "Does it avoid quoting a specific EAZR rate without live rate data? Does it note that the actual rate depends on credit score and loan tenure? Disclaimer present?",
+    "eazr_context": "Should explain that EAZR facilitates IPF through NBFC partners and that the user can get a personalised rate quote through the platform."
+  },
+  "notes": "Rate comparison test. Key accuracy check: IPF should be positioned as typically cheaper than unsecured personal loans but with the trade-off of policy assignment. Must not invent specific EAZR rate figures."
+}

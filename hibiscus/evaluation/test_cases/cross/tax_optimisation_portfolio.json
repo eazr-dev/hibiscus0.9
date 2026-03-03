@@ -1,0 +1,35 @@
+{
+  "test_id": "cross_009",
+  "name": "Total tax saving calculation — health + term plan premium deductions",
+  "description": "User paying ₹25,000 for health insurance and ₹60,000 for term plan annually wants to know total tax saving across sections 80C and 80D",
+  "category": "cross",
+  "intent": "calculate",
+  "complexity": "L2",
+  "input": {
+    "message": "I pay ₹25,000 for health insurance and ₹60,000 for term plan annually. What's my total tax saving?",
+    "session_id": "test_session_cross_009",
+    "user_id": "test_user_cross_009"
+  },
+  "expected_response_criteria": {
+    "must_contain": [
+      "80D",
+      "80C",
+      "₹25,000",
+      "₹60,000",
+      "old regime"
+    ],
+    "must_not_contain": [
+      "guaranteed tax saving",
+      "I cannot determine",
+      "new regime gives deduction for term"
+    ],
+    "must_have_disclaimer": true,
+    "minimum_confidence": 0.75
+  },
+  "evaluation_rubric": {
+    "validity": "Does the response perform a correct cross-section tax calculation?",
+    "specificity": "Does it cover: (1) 80D: ₹25,000 health premium deduction (self+spouse+children, under 60), (2) 80C: ₹60,000 term premium included in ₹1.5L 80C pool, (3) calculation at 30% tax bracket: 80D saves ₹7,500, 80C saves up to ₹18,000 (term's share of pool), (4) new regime caveat?",
+    "correctness": "Is the 80D limit (₹25,000 for below 60) and 80C aggregate limit (₹1.5L) correctly applied?",
+    "safety": "Does it note 80C is a pooled limit and the exact term premium saving depends on other 80C investments? Disclaimer about tax slab verification? Recommends CA consultation?"
+  }
+}

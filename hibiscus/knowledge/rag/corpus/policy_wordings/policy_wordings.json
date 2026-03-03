@@ -1,0 +1,302 @@
+[
+  {
+    "id": "wording_001",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Pre-existing Disease Exclusion",
+    "section": "Exclusions — Waiting Period",
+    "content": "Pre-existing Disease (PED) means any condition, ailment, injury or disease diagnosed, or for which medical advice or treatment was received by the Insured Person within 48 months prior to the first policy issued by the insurer to the insured person. Any Medical Expense incurred for treatment of a Pre-existing Disease shall not be admissible under this policy for a period of 48 months of continuous coverage from the date of inception of the first policy.",
+    "plain_english": "If you had a health condition diagnosed or treated in the 4 years before buying this insurance, it is a pre-existing disease. Claims for treating that condition will be rejected for the first 4 years of the policy. After 4 continuous years of renewing this policy, the condition is covered.",
+    "consumer_tip": "Always disclose all past medical conditions truthfully in your proposal form. Non-disclosure is worse — if the insurer discovers it later, they can reject ALL claims, not just PED-related ones. If you have PED, choose an insurer with a shorter PED waiting period (some offer 2 or 3 years)."
+  },
+  {
+    "id": "wording_002",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Initial Waiting Period",
+    "section": "Exclusions — Waiting Period",
+    "content": "The Company shall not be liable to make any payment under this policy in respect of any expense whatsoever incurred by any Insured Person during the first 30 days from the date of commencement of this policy, except in the case of Accidental Bodily Injury sustained by the Insured Person after the commencement of the policy.",
+    "plain_english": "For the first 30 days of the policy, no medical claims are covered EXCEPT for accidental injuries. You can claim for a road accident on Day 5, but not for a fever, surgery, or any other illness. This prevents people from buying insurance only when they are already sick.",
+    "consumer_tip": "If you are switching from one insurer to another (portability), the initial 30-day waiting period is waived — your previous coverage period counts. If you are buying for the first time, plan so that the 30-day window does not coincide with a known health issue."
+  },
+  {
+    "id": "wording_003",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Room Rent Sub-limit and Proportionate Deduction",
+    "section": "Limitations — Sub-limits",
+    "content": "In the event of hospitalization, the Company will cover the charges for accommodation in a hospital room up to the limit specified in the Schedule. If the Insured Person is admitted to a room with charges in excess of the eligible room rent, all other expenses (including surgeon's fees, nursing charges, ICU charges, doctor visit charges, anaesthesia charges, and operation theatre charges) shall be payable proportionately in the same ratio as the admissible room rent bears to the actual room rent charged.",
+    "plain_english": "Your policy covers room rent up to a daily limit (e.g., ₹3,000/day). If you choose a room costing ₹6,000/day (double the limit), the insurer does NOT just cut the room rent difference. Instead, ALL medical charges (surgeon fees, doctor visits, nursing, OT charges) are also cut by 50% — because your room is 50% over the limit. This can result in very large out-of-pocket expenses on a big hospital bill.",
+    "consumer_tip": "The proportionate deduction clause is one of the most expensive surprises in Indian health insurance. Always choose a room that matches your policy's room rent limit. Or buy a policy with NO room rent sub-limit — it costs slightly more in premium but saves you dramatically on claims. Ask specifically: 'Does this policy have a room rent sub-limit?'"
+  },
+  {
+    "id": "wording_004",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Cosmetic Surgery Exclusion",
+    "section": "Exclusions — General",
+    "content": "The Company shall not be liable to make any payment under this policy in respect of any expense incurred for treatment which is related to or arising from cosmetic or aesthetic treatment or surgery, including but not limited to: rhinoplasty (nose job), mammoplasty (breast augmentation/reduction), hair transplant, liposuction, dental implants (unless due to injury), and any procedure not medically necessary.",
+    "plain_english": "Health insurance does not cover any procedures done to change or improve your appearance — even if done in a hospital by a qualified surgeon. Cosmetic surgery, hair transplants, laser skin treatments, and aesthetic procedures are excluded. If a reconstructive surgery is needed after an accident or cancer (medically necessary), that is generally covered — but confirm with your insurer.",
+    "consumer_tip": "Post-cancer reconstruction (e.g., breast reconstruction after mastectomy) or reconstructive surgery after a severe accident is typically covered as it is medically necessary. If your claim is being rejected as 'cosmetic', ask the insurer to classify it — submit your treating doctor's medical necessity certificate."
+  },
+  {
+    "id": "wording_005",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Maternity Benefit",
+    "section": "Benefits — Maternity",
+    "content": "The Company shall be liable to pay for medical expenses incurred for normal delivery and caesarean section subject to: (a) a waiting period of [24/36/48] months from the date of commencement of the first policy year, (b) the maternity benefit limit specified in the Schedule of Benefits, (c) the insured person being a female member named in the schedule, (d) pre and post-natal charges up to the sub-limit specified.",
+    "plain_english": "Maternity cover is available only after you have held the policy for a waiting period (varies: 2 to 4 years depending on the plan). You must be explicitly listed as a covered female member. The cover has a cap — typically ₹50,000 to ₹2 lakh for normal delivery or C-section. Pre and post-natal consultations are covered up to a sub-limit.",
+    "consumer_tip": "If you are planning a pregnancy, buy health insurance with maternity cover IMMEDIATELY — so the waiting period is served by the time you need it. Most policies have 2–4 year waiting periods. Do not buy maternity cover when pregnant — it will not be covered. Also check if the newborn is automatically covered from birth under the same policy."
+  },
+  {
+    "id": "wording_006",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — War and Nuclear Exclusion",
+    "section": "Exclusions — General",
+    "content": "The Company shall not be liable to make any payment under this policy directly or indirectly caused by, arising from or in consequence of: (a) War, invasion, act of foreign enemies, hostilities (whether war be declared or not), civil war, rebellion, revolution, insurrection or civil commotion assuming the proportions of or amounting to an uprising; (b) Nuclear weapons or material, ionising radiation, contamination by radioactivity from nuclear material.",
+    "plain_english": "Health insurance does not cover medical expenses arising from war, invasion, civil war, or nuclear events. This is a standard exclusion in virtually all insurance policies globally. If you are hospitalized due to injuries from a war situation or nuclear contamination, health insurance will not cover the treatment.",
+    "consumer_tip": "This exclusion is standard and unavoidable. It is relevant only in extreme circumstances. For travel to conflict zones, standard travel health insurance is also excluded — some specialty insures offer war zone health insurance for journalists, aid workers, and military contractors."
+  },
+  {
+    "id": "wording_007",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Cataract Sub-limit",
+    "section": "Limitations — Sub-limits",
+    "content": "Notwithstanding any other provision in this policy, expenses related to treatment of cataract (ICD code H25 and H26) including surgery (phacoemulsification or extracapsular extraction with or without implant of intraocular lens) shall be admissible only up to the limit specified in the Schedule of Benefits per eye per policy year, irrespective of the actual expenses incurred.",
+    "plain_english": "Even if your total sum insured is ₹10 lakh, cataract surgery is capped at a specific sub-limit — often ₹40,000 to ₹1 lakh per eye per year (depending on the plan). If the surgery at a premium eye hospital costs ₹80,000 per eye and your sub-limit is ₹40,000, you pay ₹40,000 out of pocket per eye.",
+    "consumer_tip": "Before booking cataract surgery, verify the exact sub-limit in your policy schedule. Choose a hospital and lens type that fits within the sub-limit. Government or mid-tier hospitals often offer good cataract surgery within ₹40,000–₹60,000 range."
+  },
+  {
+    "id": "wording_008",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Specific Disease Waiting Period",
+    "section": "Exclusions — Waiting Period",
+    "content": "Notwithstanding any other provision in this policy, the following diseases/treatments are excluded for the first [12/24] months of the policy, irrespective of whether or not such disease existed prior to the date of commencement of the policy: hernia, hydrocele, undescended testes, congenital internal diseases, cataract, benign prostatic hypertrophy, myomectomy, uterine fibroids, sinusitis and related disorders, gout and rheumatism.",
+    "plain_english": "Even if you did NOT have these conditions before buying the policy, they are excluded for the first 1 or 2 years. This means if you develop a hernia in month 8, the surgery is not covered. After the waiting period ends, these conditions are covered fully — whether they are new or pre-existing.",
+    "consumer_tip": "This is a 'Specific Disease Waiting Period' — different from PED waiting period. Always read the list of specific disease waiting periods in your policy schedule. These are usually non-negotiable. If you know you will need treatment for one of these conditions soon, your claim will likely be rejected during this window."
+  },
+  {
+    "id": "wording_009",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Day Care Procedures",
+    "section": "Benefits — Day Care",
+    "content": "The Company shall reimburse/pay Medical Expenses incurred for Day Care Treatment(s) as listed in Annexure [X] of this policy, which requires less than 24 hours of hospitalization due to advancement of medical technology. The requirement of 24-hour hospitalization does not apply to Day Care Treatment(s). Hospitalization expenses for the listed Day Care Treatments shall be payable subject to the Sum Insured and applicable sub-limits.",
+    "plain_english": "Certain medical procedures that used to require 24-hour hospitalization can now be done as 'day care' — you come in the morning and go home by evening. Health insurance covers these procedures even though you were not hospitalized overnight. Examples: cataract surgery, chemotherapy sessions, dialysis, knee arthroscopy, lithotripsy.",
+    "consumer_tip": "If an insurer rejects your claim for a listed day care procedure citing 'hospitalization was less than 24 hours' — this is against IRDAI guidelines. File a complaint with the insurer's grievance cell citing the IRDAI's mandatory day care procedure list. Day care claims are your right."
+  },
+  {
+    "id": "wording_010",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Mental Illness Coverage",
+    "section": "Benefits — Mental Health",
+    "content": "In accordance with Section 21(4) of the Mental Healthcare Act, 2017 and IRDAI Circular dated [date], the Company shall provide insurance for treatment of mental illness on the same basis as is available for physical illness. In-patient treatment for mental illness including psychiatric hospitalization, psychotherapy during hospitalization, and rehabilitation shall be covered. The coverage shall be subject to the terms and conditions of this policy including applicable waiting periods and sub-limits.",
+    "plain_english": "You have a legal right to health insurance coverage for mental illness. If you are hospitalized for depression, bipolar disorder, schizophrenia, anxiety disorder, or any other mental illness, your health insurer must cover it the same way they cover physical illnesses like heart disease or diabetes. This is mandated by law.",
+    "consumer_tip": "If your insurer rejects a mental illness hospitalization claim, they are violating the Mental Healthcare Act 2017 and IRDAI circular. File a complaint immediately with IRDAI Bima Bharosa. You have a strong legal right in this case. OPD mental health (outpatient therapy) may or may not be covered — check your policy's OPD cover."
+  },
+  {
+    "id": "wording_011",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Term Life Policy — Suicide Exclusion",
+    "section": "Exclusions",
+    "content": "In case of death due to suicide within 12 months from the date of commencement of risk under this policy or from the date of revival of the policy, as applicable, the nominee or beneficiary of the policyholder shall be entitled to at least 80% of the total premiums paid till the date of death, or the surrender value available as on date of death, whichever is higher. The death benefit shall not be payable. This exclusion shall not apply after completion of 12 months from the date of commencement of risk.",
+    "plain_english": "If the policyholder dies by suicide within the first year of the policy, the full death benefit is NOT paid. However, 80% of all premiums paid so far will be returned to the family — this is mandated by IRDAI. After the first year of the policy, suicide is NOT excluded — the full death benefit is paid.",
+    "consumer_tip": "This is a commonly misunderstood clause. After the first year, suicide is covered like any other death under term plans. Insurance companies cannot use suicide as a reason to reject claims after year 1. If you are renewing a lapsed policy (revival), the 12-month window restarts from the revival date."
+  },
+  {
+    "id": "wording_012",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Non-disclosure and Misrepresentation",
+    "section": "General Conditions",
+    "content": "If any statement made in the proposal form or any document leading to the issue of this policy is found to be inaccurate or false, or if any material fact has been suppressed, the Company reserves the right to repudiate any claim under this policy. However, no repudiation shall be made on grounds of misrepresentation or non-disclosure after 3 years from the date of commencement of the policy or from the date of revival, as per Section 45 of the Insurance Act, 1938.",
+    "plain_english": "If you lied in your proposal form (e.g., hid a pre-existing health condition), the insurer can reject your claim. BUT — after 3 years of the policy being in force, the insurer CANNOT reject a claim on the grounds of what you disclosed or did not disclose in the proposal form (except in cases of provable fraud). This is your protection under Section 45.",
+    "consumer_tip": "Always disclose truthfully — the risk of non-disclosure is complete claim rejection within 3 years. After 3 years, your family is protected even if there was some non-disclosure. Never misrepresent your smoking status or medical history — insurers verify during claim investigation."
+  },
+  {
+    "id": "wording_013",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Nomination Clause",
+    "section": "General Conditions — Nomination",
+    "content": "The Policyholder shall have the right to nominate the person(s) to whom the moneys secured by the policy shall be paid in the event of the Policyholder's death. Nomination shall be made in accordance with Section 39 of the Insurance Act, 1938. If the nominee is the policyholder's spouse, children, or parents (beneficial nominees), the nominee shall be the absolute owner of the policy moneys on the policyholder's death. In case of any other nominee, the nominee shall hold the policy moneys as a trustee for the benefit of the legal heirs.",
+    "plain_english": "You can name a person (nominee) to receive the death benefit. If the nominee is your immediate family (spouse, children, parents), they are the absolute owners — your other relatives cannot claim it. If you name a non-family member (friend, distant relative), that person holds the money in trust for your legal heirs — they cannot keep it.",
+    "consumer_tip": "Name your spouse or children as beneficial nominees for clean, immediate claim settlement. If you have minor children as nominees, also appoint a 'Appointee' (usually the other parent) to manage the money until the child turns 18. Update nominee details after major life events — marriage, divorce, birth of a child."
+  },
+  {
+    "id": "wording_014",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Assignment Clause",
+    "section": "General Conditions — Assignment",
+    "content": "The Policyholder may assign or transfer the policy at any time before the policy matures, subject to Section 38 of the Insurance Act, 1938. The assignment shall be made either by an endorsement upon the policy itself or by a separate instrument signed by the transferor/assignor, as the case may be. Notice of the assignment must be submitted in writing to the Company. The Company shall acknowledge the assignment by an endorsement on the policy. In case of absolute assignment, the assignee shall have the full right and title to the policy and all benefits thereunder.",
+    "plain_english": "You can transfer your life insurance policy to another person or institution (like a bank). This is often done as collateral for a home loan. There are two types: Absolute assignment (complete transfer — assignee becomes full owner) and Conditional assignment (partial transfer — ownership reverts when condition is met, e.g., loan repaid).",
+    "consumer_tip": "When you take a home loan and assign your life policy to the bank, check: (1) Is it absolute or conditional? Conditional is better — if the loan is repaid, the policy returns to you. (2) Does the bank send assignment cancellation notice to the insurer after loan repayment? Failure to do this creates issues during claim settlement."
+  },
+  {
+    "id": "wording_015",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard ULIP Policy — Free Look Period",
+    "section": "General Conditions",
+    "content": "Notwithstanding anything contained in this policy, if the Policyholder is not satisfied with the terms and conditions of the policy, the Policyholder may return the policy to the Company within 30 days from the date of receipt of the policy, stating the reasons for objection. On such cancellation, the Policyholder shall be entitled to receive the fund value as on date of cancellation plus refund of all charges deducted including mortality charges and administration charges, subject to deduction of risk premium for the period of coverage and policy stamp duty.",
+    "plain_english": "You have 30 days from receiving the policy document to read it and return it if you are not happy (for ULIPs and online policies; 15 days for offline policies). You get back most of your money — the insurer only deducts the cost of coverage for the days you were insured (risk premium) and stamp duty. No surrender penalty during free look.",
+    "consumer_tip": "Use the free look period seriously — read the policy document on receiving it. If anything does not match what the agent told you, return it within 30 days. Mis-selling is common in ULIPs — if you were told it is 'like an FD' or 'guaranteed returns', that is mis-selling. Free look period is your exit without penalty."
+  },
+  {
+    "id": "wording_016",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Drunk Driving Exclusion",
+    "section": "Exclusions — General",
+    "content": "The Company shall not be liable under Section I (Own Damage) or Section II (Third Party Liability) of this policy for any accident, injury, loss or damage caused, sustained or incurred whilst the vehicle is being driven by any person who at the time of the accident is under the influence of intoxicating liquor, drugs or narcotic substances, and whose blood alcohol content exceeds the permissible limit as prescribed under the Motor Vehicles Act, 1988.",
+    "plain_english": "If you are drunk driving (blood alcohol above the legal limit of 30mg per 100ml under India's Motor Vehicles Act) and have an accident, your motor insurance does NOT cover: (a) damage to your own vehicle, (b) third-party injuries/death. This is a hard exclusion — there are no exceptions.",
+    "consumer_tip": "Not only does drunk driving void your insurance claim — it is also a criminal offense under the Motor Vehicles Act with potential imprisonment. After any accident, the police can order a breathalyzer test. A failed test means criminal charges + no insurance coverage. Never drink and drive."
+  },
+  {
+    "id": "wording_017",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Geographical Limit",
+    "section": "Conditions — Territorial Limits",
+    "content": "The policy shall be operative in India only. In case the Insured desires to extend the cover to foreign countries such as Bangladesh, Bhutan, Nepal, Pakistan, Sri Lanka, and Maldives, the Company may at its discretion extend the cover on payment of additional premium and on such terms and conditions as the Company may decide. The cover will be extended only for the specific country/countries and the period mentioned in the endorsement.",
+    "plain_english": "Your standard motor insurance only works in India. If you drive your car to Nepal, Sri Lanka, or Bangladesh (which some Indian car owners do), your Indian motor policy does not automatically cover you there. You need a special endorsement from your insurer to extend coverage. Pakistan is practically excluded.",
+    "consumer_tip": "Planning a road trip to Nepal or Bhutan? Contact your motor insurer at least 2 weeks before departure and request a 'geographical extension endorsement' for the specific country and period. There is an additional premium for this. Also carry an International Driving Permit if required."
+  },
+  {
+    "id": "wording_018",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Consequential Loss Exclusion",
+    "section": "Exclusions — General",
+    "content": "The Company shall not be liable under this policy for: (a) Consequential loss, depreciation, wear and tear, mechanical or electrical breakdown, failures or breakages; (b) Damage to tyres and tubes unless the vehicle is damaged at the same time; (c) Any accidental loss or damage suffered whilst the insured vehicle is being used other than in accordance with the 'Limitations as to Use'.",
+    "plain_english": "Motor insurance does NOT cover: (1) Gradual wear and tear of your car, (2) Mechanical or electrical breakdowns, (3) Tyre damage alone (unless the whole car is damaged in the same accident), (4) Engine damage due to driving into waterlogged areas (unless you have Engine Protect add-on). Only accidental, sudden damage to the vehicle is covered.",
+    "consumer_tip": "Understand what 'consequential loss' means for you: if you drove into a flooded road and your engine hydrolocked, the standard policy does NOT cover this. You need the 'Engine Protect' add-on. If your tyre bursts on the highway alone, no coverage. If an accident damages the tyre + car, both are covered."
+  },
+  {
+    "id": "wording_019",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — IDV Clause and Depreciation",
+    "section": "Definitions — IDV",
+    "content": "The Insured's Declared Value (IDV) of the vehicle shall be treated as the Sum Insured for the purpose of this policy. IDV shall be fixed at the commencement of each policy year and shall be the current ex-showroom price of the vehicle (adjusted for the age of the vehicle as per the depreciation schedule). In case of total loss or constructive total loss, the Company shall pay the IDV less the applicable deductibles. In case of partial loss, depreciation on the replaced parts shall be deducted as per the depreciation schedule.",
+    "plain_english": "IDV is the insured value of your car — based on the current market value adjusted for age. It decreases every year as the car ages. In a total loss (accident or theft), the insurer pays the IDV. For partial repairs, they deduct depreciation on replaced parts (e.g., plastic parts: 30% depreciation after 3 years). IDV at renewal should reflect the correct current value of your car.",
+    "consumer_tip": "When renewing motor insurance, do not set IDV too low to save premium — you will be underinsured in a total loss. Also do not set it too high — you cannot profit from insurance (insurer pays only market value). A fair IDV = current market resale value of your car model and year."
+  },
+  {
+    "id": "wording_020",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Zero Depreciation Add-on Conditions",
+    "section": "Add-on Conditions — Zero Depreciation",
+    "content": "Subject to the terms, conditions and exclusions of this policy, and payment of additional premium, the Company agrees to indemnify the Insured against depreciation of parts in the event of an accidental loss. The depreciation clause of the standard policy shall stand waived. However, this add-on shall be subject to: (a) Maximum of [1/2/3] claims per policy year; (b) Policyholder paying the applicable compulsory deductible; (c) This add-on shall not apply if the vehicle is more than [5] years old; (d) Rubber, nylon, plastic parts, tyres and tubes shall be payable at 50% of the replaced cost under this add-on.",
+    "plain_english": "Zero depreciation means no depreciation is deducted when parts are replaced — good news. But: (1) There is usually a limit on how many claims you can make with zero dep (typically 2 per year), (2) You still pay the compulsory deductible (₹1,000–₹2,000), (3) After the car is 5 years old, zero dep is usually not available. Even with zero dep, rubber, nylon, and plastic parts are covered at only 50% (not 100%).",
+    "consumer_tip": "Zero depreciation is most valuable for new cars (0–5 years). After 5 years, most insurers stop offering it. Even with zero dep, plan for the compulsory deductible (₹1,000–₹2,000). Note that rubber seals, plastic trims, and tyres are still at 50% under zero dep — not fully free."
+  },
+  {
+    "id": "wording_021",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — NCB Protection Add-on",
+    "section": "Add-on Conditions — NCB Protection",
+    "content": "Subject to payment of additional premium, the No Claim Bonus (NCB) accrued under this policy shall be protected in the event of the Insured making one claim (Own Damage or Theft) during the policy year. The NCB earned in the previous year shall be applied to the renewal premium notwithstanding such a claim. This add-on is valid for a maximum of one OD claim per policy year. In the event of more than one claim, the NCB shall be forfeited in accordance with the standard NCB rules.",
+    "plain_english": "Normally, making ANY claim resets your NCB (No Claim Bonus) to zero, costing you thousands more at renewal. The NCB Protection add-on lets you make ONE claim per year without losing your NCB. At renewal, you keep your 20–50% NCB discount. Making a second claim in the same year still resets the NCB.",
+    "consumer_tip": "NCB Protection add-on is worth buying if you have accumulated a high NCB (35–50%) — the premium saving is large enough to justify the add-on cost. At 50% NCB, a ₹20,000 OD premium becomes ₹10,000. Losing that 50% to a small claim without protection would cost ₹10,000 more at renewal."
+  },
+  {
+    "id": "wording_022",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Adventure Sports Exclusion",
+    "section": "Exclusions — Activities",
+    "content": "This policy does not cover any accident, loss, liability or expense arising from the Insured Person's participation in hazardous activities or adventure sports including but not limited to: mountaineering or trekking above 4,000 metres, bungee jumping, skydiving, paragliding, hang gliding, scuba diving below 30 metres, white water rafting above Grade IV, BMX racing, motor racing, or any other activity involving substantial risk of injury or death.",
+    "plain_english": "Standard travel insurance does NOT cover you if you get injured doing adventure sports — skiing, skydiving, scuba diving, paragliding, mountain climbing. If you break your leg on a ski slope or have an accident skydiving, your standard travel policy will reject the medical claim.",
+    "consumer_tip": "If your trip involves adventure activities, buy a travel policy with an 'Adventure Sports Add-on' or 'Hazardous Activities extension.' These cost more but cover injuries from listed adventure activities. Always read the exclusion list — some policies cover trekking up to 4,000m but not above. Himalayan treks (above 4,000m altitude) require specialized travel insurance."
+  },
+  {
+    "id": "wording_023",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Pre-existing Condition Exclusion",
+    "section": "Exclusions — Medical",
+    "content": "This policy does not cover any claim directly or indirectly arising from, based upon, or attributable to any Pre-existing Condition. A Pre-existing Condition means any medical condition, disease, ailment, illness or injury for which the Insured Person has received medical treatment, consultation, diagnosis, or prescription in the 12 months prior to the inception of this policy, or any chronic condition that requires ongoing treatment.",
+    "plain_english": "Travel insurance does NOT cover medical emergencies abroad that are caused by a pre-existing health condition. If you have diabetes and are hospitalized abroad for a diabetic emergency, your travel policy will reject the claim. This includes conditions under regular treatment — hypertension, asthma, diabetes, heart conditions.",
+    "consumer_tip": "If you have a pre-existing condition and are traveling internationally, look for a travel policy that specifically offers 'Pre-existing Condition Cover' — some insurers offer this for stable, controlled conditions (e.g., controlled diabetes, stable hypertension). It costs more but is essential. Always carry your regular medications in sufficient quantity for the entire trip."
+  },
+  {
+    "id": "wording_024",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Baggage Loss Sub-limits",
+    "section": "Limitations — Baggage",
+    "content": "The Company's liability under the Baggage Loss benefit shall be subject to the limits specified in the Schedule of Benefits. Additionally, the following sub-limits shall apply irrespective of the overall baggage limit: (a) Jewellery, watches, and precious items: 10% of overall baggage limit per item, maximum [₹10,000]; (b) Electronic items and gadgets: [₹25,000] per item; (c) Business items and samples: excluded; (d) Cash, currency, and negotiable instruments: [₹5,000]. No single item shall be reimbursed for more than its purchase value.",
+    "plain_english": "Even if your overall baggage loss limit is ₹1 lakh, individual items have sub-limits. Jewellery in your checked bag is covered only up to ₹10,000 per item. Electronics up to ₹25,000 per item. Cash in your bag is covered only up to ₹5,000. Business merchandise and product samples are NOT covered at all.",
+    "consumer_tip": "Do not check in expensive jewellery, electronics, or large amounts of cash. Carry these in your hand baggage (which is your responsibility — generally covered only if snatched). Consider a personal belongings extension or jewellery-specific rider if you are carrying high-value items."
+  },
+  {
+    "id": "wording_025",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Trip Cancellation Covered Reasons",
+    "section": "Benefits — Trip Cancellation",
+    "content": "The Company shall reimburse the unused, non-refundable, pre-paid trip expenses in the event of trip cancellation due to: (a) sudden accidental bodily injury, or illness resulting in hospitalization of the Insured, Insured's spouse, or dependent children; (b) death of the Insured or Insured's immediate family member (spouse, parents, children, siblings); (c) natural disasters making the destination uninhabitable; (d) mandatory work commitment for Government employees requiring documented proof; (e) Visa denial from destination country's embassy (with proof of rejection). Trip cancellation due to personal choice, financial reasons, or disinclination to travel is NOT covered.",
+    "plain_english": "Trip cancellation insurance pays only for specific, documented reasons: serious illness, death in immediate family, natural disaster at destination, or visa refusal. It does NOT pay if you simply do not want to go, if flights are late (that is flight delay, not cancellation), or if you change your mind due to fear or work pressure.",
+    "consumer_tip": "Keep documentation for everything: doctor certificate with diagnosis, hospitalization records, death certificate, embassy visa refusal letter. Trip cancellation claims require proof — verbal explanations do not suffice. If your flight is cancelled by the airline, the airline bears responsibility — this is not a travel insurance cancellation claim."
+  },
+  {
+    "id": "wording_026",
+    "category": "pa",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard PA Policy — Occupational Hazard Exclusion",
+    "section": "Exclusions — Occupational",
+    "content": "This policy does not cover accidental death, disability or injury arising from or in connection with the Insured's engagement in: (a) Any hazardous occupation or profession not declared at inception and accepted by the Company; (b) Mining, quarrying, blasting or explosives work; (c) Electrical or underground work; (d) Military or paramilitary operations; (e) Aviation as pilot, crew or student pilot (other than as a fare-paying passenger). The Insured must declare any change in occupation to the Company within 30 days of such change.",
+    "plain_english": "If your job is hazardous (mining, blasting, electrical line work, military), you need to declare this when buying PA insurance. If you do not declare it, accidents at work in a hazardous role will not be covered. Also, if you change to a more hazardous job during the policy year, you must inform the insurer within 30 days.",
+    "consumer_tip": "Do not try to hide a hazardous occupation to save on premium — the premium loading for hazardous occupations is usually reasonable. If occupation changes to something riskier during the policy year, tell the insurer — they may load the premium slightly but will continue coverage. Non-disclosure of occupation leads to claim rejection."
+  },
+  {
+    "id": "wording_027",
+    "category": "pa",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard PA Policy — Disability Definition and Schedule",
+    "section": "Benefits — Disability",
+    "content": "In the event of accidental bodily injury to the Insured resulting in Permanent Total Disability, the Company shall pay 100% of the Capital Sum Insured. In the event of Permanent Partial Disability, the Company shall pay the percentage of Capital Sum Insured as specified in the Table of Disabilities: (a) Loss of two limbs or two eyes, or one limb and one eye: 100%; (b) Loss of one hand or foot: 50%; (c) Loss of one eye: 50%; (d) Loss of four fingers and thumb of one hand: 40%; (e) Loss of four fingers: 35%; (f) Loss of thumb — both phalanges: 25%; (g) Loss of index finger — three phalanges: 10%; (h) Loss of hearing in both ears: 50%; (i) Loss of hearing in one ear: 15%.",
+    "plain_english": "PA insurance pays a fixed percentage of the sum assured based on which body part is permanently lost or disabled. Losing both hands or eyes = 100% payout. Losing one hand = 50% payout. Losing one eye = 50% payout. Losing a thumb = 25% payout. These percentages are standardized by IRDAI across all PA insurers.",
+    "consumer_tip": "If you have a physically demanding job where hands or eyes are at risk, ensure your PA sum assured is high enough. Calculate: if you lose a hand (50% PPD payout from a ₹20 lakh policy = ₹10 lakh) — is ₹10 lakh enough to sustain your family and your rehabilitation? PA insurance is extremely cheap relative to the coverage it provides."
+  },
+  {
+    "id": "wording_028",
+    "category": "pa",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard PA Policy — Self-inflicted Injury Exclusion",
+    "section": "Exclusions — General",
+    "content": "This policy does not cover accidental death, disability, injury or expense arising from: (a) Intentional self-inflicted injuries or suicide or attempted suicide; (b) The Insured being under the influence of alcohol, drugs, or narcotic substances; (c) The Insured engaging in any criminal or illegal act; (d) Pregnancy, childbirth, or medical termination of pregnancy (including complications thereof); (e) Mental or nervous disorder; (f) Aviation, except as a fare-paying passenger on a licensed commercial airline.",
+    "plain_english": "PA insurance does NOT cover: self-harm, injuries while drunk or on drugs, injuries during criminal activities, pregnancy complications, mental illness, or non-commercial flying (you must be a paying passenger on a commercial flight to be covered for aviation accidents).",
+    "consumer_tip": "PA insurance covers accidental injuries during normal daily activities — commuting, working, recreational activities (mostly). Extreme sports, hazardous activities, and above exclusions are standard across all PA policies. For sports, look for PA policies with 'sports extension' rider."
+  },
+  {
+    "id": "wording_029",
+    "category": "pa",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard PA Policy — Temporary Total Disability (TTD) Benefit",
+    "section": "Benefits — TTD",
+    "content": "In the event of accidental bodily injury to the Insured resulting in Temporary Total Disability (TTD), the Company shall pay a weekly benefit of [1% of Capital Sum Insured / specified amount per week] for the period of such disability, commencing from the eighth day after the onset of the disability and continuing for a maximum period of 104 weeks. The Insured must provide a medical certificate from a registered medical practitioner certifying the disability and its expected duration.",
+    "plain_english": "If an accident leaves you completely unable to work temporarily — say you break both arms and cannot work for 3 months — PA insurance pays you a weekly income replacement during this period. Payment starts from day 8 of the disability (first 7 days not paid), and continues up to 2 years (104 weeks) maximum. You need a doctor's certificate.",
+    "consumer_tip": "TTD benefit is particularly valuable for self-employed individuals and daily wage workers who have no employer sick pay. When buying PA insurance, check the TTD weekly amount — typically 1% of the sum assured per week. For a ₹20 lakh SA policy, TTD pays ₹20,000/week — close to a decent income replacement for most people."
+  },
+  {
+    "id": "wording_030",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Restoration Benefit",
+    "section": "Benefits — Restoration",
+    "content": "If the Sum Insured is exhausted on account of claims made during the policy year, the Company shall reinstate the Sum Insured once (or as specified in the Schedule) for the remaining policy year. The restored Sum Insured can be used for: (a) Any hospitalization for a completely different illness (in the case of basic restoration); (b) Any hospitalization including the same illness (in the case of unlimited restoration), as specified in the policy schedule. The restoration shall be applicable only when the Sum Insured has been completely exhausted and not for partial utilization.",
+    "plain_english": "If you use up your entire sum insured in one hospital stay, the restoration benefit refills it — either once or unlimited times depending on your plan. Standard (basic) restoration: refilled SI can only be used for a DIFFERENT illness. Premium restoration (unlimited): refilled SI can be used for any illness, even the same one. Restoration only activates when SI is FULLY used up — not partially.",
+    "consumer_tip": "Understand what type of restoration your policy has — basic or unlimited. Basic restoration is a useful feature but limited (cannot use it for follow-up treatment of the same illness). Unlimited restoration (like Niva Bupa ReAssure, Star Comprehensive) is far superior — especially for cancer, dialysis patients, or families with multiple members. The premium difference is usually modest."
+  }
+]
