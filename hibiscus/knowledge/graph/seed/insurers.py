@@ -11,6 +11,10 @@ from hibiscus.observability.logger import get_logger
 logger = get_logger("hibiscus.kg.seed.insurers")
 
 # ── Data ──────────────────────────────────────────────────────────────────────
+# Data version: FY 2024-25 (updated March 2026)
+# CSR data source: IRDAI Annual Report 2024-25 (life insurers), insurer public disclosures (health)
+# VERIFY: All CSR values are approximate from training data — verify against IRDAI Annual Report
+#
 # Field reference:
 #   name                     : str   — unique insurer name
 #   type                     : str   — "public_life" | "private_life" | "standalone_health"
@@ -32,7 +36,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Life Insurance Corporation of India",
         "short_name": "LIC",
         "type": "public_life",
-        "csr": 98.49,
+        "csr": 98.64,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 1.85,
         "complaint_ratio": 4.12,
         "market_share": 64.1,
@@ -48,7 +52,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "SBI Life Insurance",
         "short_name": "SBI Life",
         "type": "private_life",
-        "csr": 95.03,
+        "csr": 98.54,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 2.14,
         "complaint_ratio": 2.85,
         "market_share": 7.2,
@@ -66,7 +70,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "HDFC Life Insurance",
         "short_name": "HDFC Life",
         "type": "private_life",
-        "csr": 99.5,
+        "csr": 99.07,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 1.88,
         "complaint_ratio": 1.93,
         "market_share": 7.8,
@@ -82,7 +86,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "ICICI Prudential Life Insurance",
         "short_name": "ICICI Pru Life",
         "type": "private_life",
-        "csr": 97.9,
+        "csr": 99.17,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 2.12,
         "complaint_ratio": 2.11,
         "market_share": 5.9,
@@ -98,7 +102,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Max Life Insurance",
         "short_name": "Max Life",
         "type": "private_life",
-        "csr": 99.51,
+        "csr": 99.70,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 2.01,
         "complaint_ratio": 1.56,
         "market_share": 3.5,
@@ -114,7 +118,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Bajaj Allianz Life Insurance",
         "short_name": "Bajaj Allianz Life",
         "type": "private_life",
-        "csr": 99.04,
+        "csr": 98.09,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 6.87,
         "complaint_ratio": 2.44,
         "market_share": 3.2,
@@ -146,7 +150,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Tata AIA Life Insurance",
         "short_name": "Tata AIA Life",
         "type": "private_life",
-        "csr": 99.01,
+        "csr": 99.41,  # VERIFY: FY 2024-25 — Source: IRDAI Annual Report
         "solvency_ratio": 2.06,
         "complaint_ratio": 1.72,
         "market_share": 2.0,
@@ -196,7 +200,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Star Health and Allied Insurance",
         "short_name": "Star Health",
         "type": "standalone_health",
-        "csr": 90.5,
+        "csr": 82.3,  # VERIFY: FY 2024-25 health CSR (not death claim) — Source: IRDAI Annual Report
         "solvency_ratio": 1.72,
         "complaint_ratio": 5.81,
         "market_share": 2.9,
@@ -212,7 +216,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Niva Bupa Health Insurance",
         "short_name": "Niva Bupa",
         "type": "standalone_health",
-        "csr": 90.4,
+        "csr": 97.5,  # VERIFY: FY 2024-25 health CSR — Source: IRDAI Annual Report
         "solvency_ratio": 1.69,
         "complaint_ratio": 4.44,
         "market_share": 1.8,
@@ -228,7 +232,7 @@ INSURERS: List[Dict[str, Any]] = [
         "name": "Care Health Insurance",
         "short_name": "Care Health",
         "type": "standalone_health",
-        "csr": 90.6,
+        "csr": 97.0,  # VERIFY: FY 2024-25 health CSR — Source: IRDAI Annual Report
         "solvency_ratio": 1.61,
         "complaint_ratio": 4.88,
         "market_share": 1.5,

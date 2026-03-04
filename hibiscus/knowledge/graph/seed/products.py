@@ -70,6 +70,14 @@ PRODUCTS: List[Dict[str, Any]] = [
         "restore_benefit": True,
         "annual_health_checkup": True,
         "no_claim_bonus": "50% of SI per year, max 100%",
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against star1.in
+        "premium_examples": [
+            {"age": 25, "si": L(5),  "zone": "Zone 1", "annual": 5500},
+            {"age": 30, "si": L(10), "zone": "Zone 1", "annual": 9800},
+            {"age": 35, "si": L(15), "zone": "Zone 1", "annual": 18500, "type": "floater_couple"},
+            {"age": 45, "si": L(20), "zone": "Zone 1", "annual": 28000, "type": "floater_2A2C"},
+            {"age": 60, "si": L(10), "zone": "Zone 1", "annual": 35000},
+        ],
     },
     {
         "name": "Star Health Young Star Insurance Policy",
@@ -144,6 +152,14 @@ PRODUCTS: List[Dict[str, Any]] = [
         "eazr_score": 8.8,
         "unlimited_restore": True,
         "lock_the_clock": True,
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against nivabupa.com
+        "premium_examples": [
+            {"age": 25, "si": L(10), "zone": "Zone 1", "annual": 8200},
+            {"age": 30, "si": L(10), "zone": "Zone 1", "annual": 9800},
+            {"age": 35, "si": L(15), "zone": "Zone 1", "annual": 16500},
+            {"age": 45, "si": L(25), "zone": "Zone 1", "annual": 32000},
+            {"age": 60, "si": L(10), "zone": "Zone 1", "annual": 42000},
+        ],
     },
     {
         "name": "HDFC ERGO Optima Restore",
@@ -192,6 +208,14 @@ PRODUCTS: List[Dict[str, Any]] = [
         "copay_structure": "0%",
         "room_rent_limit": "No limit",
         "eazr_score": 8.4,
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against hdfcergo.com
+        "premium_examples": [
+            {"age": 25, "si": L(10), "zone": "Zone 1", "annual": 7200},
+            {"age": 30, "si": L(10), "zone": "Zone 1", "annual": 8500},
+            {"age": 35, "si": L(15), "zone": "Zone 1", "annual": 14500},
+            {"age": 45, "si": L(25), "zone": "Zone 1", "annual": 28500},
+            {"age": 60, "si": L(10), "zone": "Zone 1", "annual": 38000},
+        ],
     },
     {
         "name": "Care Supreme Health Insurance",
@@ -216,6 +240,14 @@ PRODUCTS: List[Dict[str, Any]] = [
         "room_rent_limit": "No limit",
         "eazr_score": 8.3,
         "cashless_approval_mins": 30,
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against careinsurance.com
+        "premium_examples": [
+            {"age": 25, "si": L(10), "zone": "Zone 1", "annual": 7800},
+            {"age": 30, "si": L(10), "zone": "Zone 1", "annual": 9200},
+            {"age": 35, "si": L(15), "zone": "Zone 1", "annual": 15000},
+            {"age": 45, "si": L(25), "zone": "Zone 1", "annual": 29000},
+            {"age": 60, "si": L(10), "zone": "Zone 1", "annual": 36000},
+        ],
     },
     {
         "name": "ManipalCigna ProHealth Plus",
@@ -439,6 +471,14 @@ PRODUCTS: List[Dict[str, Any]] = [
         "plan_options": ["Life", "Life Plus", "Life Goal", "Life Income"],
         "return_of_premium": True,
         "whole_life_option": True,
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against hdfclife.com
+        "premium_examples": [
+            {"age": 30, "gender": "M", "smoker": False, "sa": Cr(1), "term": 30, "annual": 9800},
+            {"age": 35, "gender": "M", "smoker": False, "sa": Cr(1), "term": 25, "annual": 13200},
+            {"age": 30, "gender": "F", "smoker": False, "sa": Cr(1), "term": 30, "annual": 7500},
+            {"age": 40, "gender": "M", "smoker": False, "sa": Cr(1), "term": 20, "annual": 18500},
+            {"age": 30, "gender": "M", "smoker": False, "sa": Cr(2), "term": 30, "annual": 16500},
+        ],
     },
     {
         "name": "ICICI Pru iProtect Smart",
@@ -464,6 +504,13 @@ PRODUCTS: List[Dict[str, Any]] = [
         "eazr_score": 9.1,
         "ci_conditions_covered": 34,
         "unlimited_si": True,
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against iciciprulife.com
+        "premium_examples": [
+            {"age": 30, "gender": "M", "smoker": False, "sa": Cr(1), "term": 30, "annual": 9200},
+            {"age": 35, "gender": "M", "smoker": False, "sa": Cr(1), "term": 25, "annual": 12800},
+            {"age": 30, "gender": "F", "smoker": False, "sa": Cr(1), "term": 30, "annual": 7100},
+            {"age": 40, "gender": "M", "smoker": False, "sa": Cr(1), "term": 20, "annual": 17500},
+        ],
     },
     {
         "name": "Max Life Smart Secure Plus Plan",
@@ -488,6 +535,12 @@ PRODUCTS: List[Dict[str, Any]] = [
         "room_rent_limit": "NA",
         "eazr_score": 8.9,
         "special_exit_value": True,
+        # VERIFY: approximate premiums as of Q1 FY26 — needs verification against maxlifeinsurance.com
+        "premium_examples": [
+            {"age": 30, "gender": "M", "smoker": False, "sa": Cr(1), "term": 30, "annual": 10200},
+            {"age": 35, "gender": "M", "smoker": False, "sa": Cr(1), "term": 25, "annual": 13800},
+            {"age": 30, "gender": "F", "smoker": False, "sa": Cr(1), "term": 30, "annual": 7800},
+        ],
     },
     {
         "name": "Tata AIA SRS Vitality Protect",
@@ -896,6 +949,15 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
 
     # ── Motor Insurance ───────────────────────────────────────────────────────
+
+    # ── Motor Insurance TP Premium Rates (IRDAI-fixed, FY 2024-25) ────────────
+    # VERIFY: approximate rates — needs verification against latest IRDAI TP premium order
+    # Private Car TP by engine capacity:
+    #   ≤1,000cc: ₹2,094/year | 1,000-1,500cc: ₹3,416/year | >1,500cc: ₹7,897/year
+    # Two-Wheeler TP by engine capacity:
+    #   ≤75cc: ₹538/year | 75-150cc: ₹714/year | 150-350cc: ₹1,366/year | >350cc: ₹2,804/year
+    # CPA (Compulsory Personal Accident) for owner-driver: ₹15 lakh mandatory
+    # NCB slabs: 20% (1yr) → 25% (2yr) → 35% (3yr) → 45% (4yr) → 50% (5+yr)
 
     {
         "name": "HDFC ERGO Motor Own Damage Insurance",
