@@ -52,7 +52,7 @@ hibiscus/                          # Root repository (standalone — no botproje
 - **12 Specialist Agents** — each is a LangGraph node with its own prompt, tools, and confidence scoring
 - **Native Extraction (ABSORB)** — PDF → text → classify → extract → validate → score → gap analysis. Zero external dependencies.
 - **6-Layer Memory** — Session (Redis), Conversation History (Qdrant), User Profile (PostgreSQL), Knowledge Memory (Qdrant), Outcome Memory (PostgreSQL), Document Memory (MongoDB)
-- **Knowledge Graph** — Neo4j: 62 insurers, 1,207 products (1,041 with UINs), 100 regulations, 760 benchmarks, 32 tax rules, 17 ombudsman offices, 60 CSR time-series
+- **Knowledge Graph** — Neo4j: 62 insurers, 1,207 products (1,041 with UINs), 156 regulations, 1001 benchmarks, 41 tax rules, 17 ombudsman offices, 60 CSR time-series
 - **RAG Pipeline** — Qdrant: 750+ corpus entries (50 IRDAI circulars, 500 glossary terms, 100 claims processes, 100 case law), policy wordings, tax rules
 - **Guardrails** — Hallucination, Compliance (IRDAI), Financial, Emotional, PII
 
@@ -90,9 +90,9 @@ Hibiscus v0.9 — standalone product. Phases 1-3 complete, Phase 4 scaffolded.
 |-----------|-------|
 | Insurer | 62 |
 | Product | 1,207 |
-| Regulation | 100 |
-| Benchmark | 760 |
-| TaxRule | 32 |
+| Regulation | 156 |
+| Benchmark | 1,001 |
+| TaxRule | 41 |
 | OmbudsmanOffice | 17 |
 | CSREntry | 60 |
 

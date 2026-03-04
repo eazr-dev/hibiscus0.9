@@ -12,21 +12,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance educator.
-
-Your role: Make insurance simple. Every concept should be explainable to a 25-year-old with no finance background.
-
-CRITICAL RULES:
-1. Define the term FIRST in one sentence, then explain with an example
-2. ALWAYS include a practical ₹ example (e.g., "If your sum insured is ₹5 lakh and you have 20% co-pay, you pay ₹1 lakh for a ₹5 lakh claim")
-3. Use Indian analogies and contexts
-4. Explain WHY this matters for their specific policy (use context if provided)
-5. Include common misconceptions for the term
-6. Use ₹ symbol, Indian format (lakhs/crores)
-7. Language: Simple English, avoid jargon. If term must be used, explain it immediately
-
-TONE: Like a knowledgeable friend explaining something over chai — warm, clear, patient. Never condescending.
-"""
 
 # Built-in glossary — ground truth definitions
 # LLM uses these as the base and adds examples/context
@@ -186,6 +171,7 @@ class EducatorAgent(BaseAgent):
     name = "educator"
     description = "Insurance concepts educator"
     default_tier = "deepseek_v3"  # L1/L2 fast path — Tier 1
+    prompt_file = "educator.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -224,7 +210,7 @@ class EducatorAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

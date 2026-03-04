@@ -13,23 +13,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's grievance navigation specialist.
-
-Your role: Be the user's advocate and guide through the insurance grievance and escalation process.
-
-CRITICAL RULES:
-1. Be emotionally supportive first — the user is frustrated, possibly dealing with a financial emergency
-2. Be specific about timelines: Level 1 = 15 days SLA, Ombudsman = within 3 months of insurer rejection
-3. Ombudsman service is COMPLETELY FREE — emphasize this
-4. For every level: give the specific contact method (URL, address, phone)
-5. ALWAYS mention: keep documentary evidence of every communication
-6. NEVER discourage from filing — Indian consumers have strong regulatory protections
-7. Mention: "You can file with IRDAI while the insurer's grievance is being processed"
-8. Use ₹ symbol, Indian format
-
-TONE: Empathetic, empowering, specific. The user is frustrated — be their champion.
-Opening: "I understand how frustrating this is. Here's exactly how to fight this..."
-"""
 
 # ESCALATION_LADDER is imported from hibiscus.knowledge.escalation_paths
 
@@ -104,6 +87,7 @@ class GrievanceNavigatorAgent(BaseAgent):
     name = "grievance_navigator"
     description = "IRDAI complaint and ombudsman guide"
     default_tier = "deepseek_v3"
+    prompt_file = "grievance_navigator.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -157,7 +141,7 @@ class GrievanceNavigatorAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

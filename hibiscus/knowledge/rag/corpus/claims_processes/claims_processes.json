@@ -7784,5 +7784,1118 @@
       "If disability becomes permanent after initial TTD period, file a separate PTD/PPD claim for lump sum payout"
     ],
     "source": "# VERIFY: approximate process — verify against insurer website"
+  },
+  {
+    "id": "cp_101",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Own Damage Cashless",
+    "title": "Motor Own Damage — Cashless Repair at Network Garage",
+    "process": [
+      "Step 1 — Report Accident: Call insurer helpline within 24 hours. Provide: policy number, vehicle registration, location, damage description. Take photos/videos of damage from multiple angles.",
+      "Step 2 — FIR (if required): File FIR for third-party involvement, theft attempt, or major accidents. For minor self-accidents (parking dent, single vehicle), FIR may not be required.",
+      "Step 3 — Visit Network Garage: Take vehicle to nearest network garage (find via insurer app/website). DO NOT start repairs before surveyor inspection.",
+      "Step 4 — Surveyor Inspection: Insurer appoints surveyor within 24 hours. Surveyor assesses damage, estimates repair cost. For claims under ₹75,000, video survey via insurer app may be accepted.",
+      "Step 5 — Cashless Approval: Insurer reviews survey report and approves cashless repair authorization. Approval within 30 minutes for minor repairs, 4 hours for major repairs.",
+      "Step 6 — Repair: Garage completes repair as per approved estimate. Any additional damage found during repair requires supplementary survey approval.",
+      "Step 7 — Collect Vehicle: Pay deductible (₹1,000-2,000), depreciation on parts (unless zero dep add-on), and non-covered items. Collect vehicle with repair invoice and quality guarantee certificate."
+    ],
+    "documents_needed": [
+      "Claim form (filled at garage or online)",
+      "Driving license of person driving at time of accident",
+      "Vehicle RC (registration certificate)",
+      "FIR copy (if applicable)",
+      "Damage photographs (taken at scene before moving vehicle)",
+      "Previous policy copy (for NCB verification)"
+    ],
+    "timeline_cashless_auth": "Surveyor: 24 hours. Cashless approval: 30 min (minor) to 4 hours (major). Repair: 3-7 working days.",
+    "reimbursement_timeline": "N/A for cashless",
+    "tpa": "Not applicable — motor claims handled by insurer directly",
+    "toll_free": "Bajaj Allianz: 1800-209-0144. ICICI Lombard: 1800-266-9725. HDFC ERGO: 1800-2666. Tata AIG: 1800-266-7780",
+    "common_rejection_reasons": [
+      "Driving under influence of alcohol (blood alcohol test positive)",
+      "Driver without valid driving license",
+      "Vehicle used for commercial purpose (private policy)",
+      "Claim not intimated within 24-48 hours",
+      "Repairs started before surveyor inspection",
+      "Engine damage from waterlogging (without Engine Protect add-on)"
+    ],
+    "escalation_path": "Garage Insurance Desk → Insurer Claims Helpline → Insurer Grievance Cell → IRDAI Bima Bharosa → Insurance Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_102",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Own Damage Reimbursement",
+    "title": "Motor Own Damage — Reimbursement Claim (Non-Network Garage)",
+    "process": [
+      "Step 1 — Report Accident: Intimate insurer within 24 hours via helpline or app. Provide policy number, vehicle details, accident description.",
+      "Step 2 — FIR: File FIR if required (third-party involvement, major accident, theft attempt).",
+      "Step 3 — Surveyor Inspection: Insurer appoints surveyor within 24 hours. Surveyor visits the vehicle at accident site or garage. DO NOT start repairs before survey.",
+      "Step 4 — Get Repair Estimate: Garage provides detailed repair estimate with itemized parts and labor costs.",
+      "Step 5 — Surveyor Approves Estimate: Surveyor reviews and approves the repair estimate (may negotiate with garage).",
+      "Step 6 — Complete Repairs: Pay the garage from your pocket. Collect: original repair invoice, parts replacement invoice, labor charges, GST receipt.",
+      "Step 7 — Submit Claim: Submit claim form with all documents within 15 days of repair completion. Submit via insurer branch, app, or courier.",
+      "Step 8 — Reimbursement: Insurer processes claim and reimburses approved amount (minus deductible, depreciation, non-covered items) to your bank account within 30 days."
+    ],
+    "documents_needed": [
+      "Completed motor claim form",
+      "Original repair invoice with itemized breakdown",
+      "Parts replacement bills with GST",
+      "Labor charges receipt",
+      "Surveyor report (insurer provides)",
+      "FIR copy (if applicable)",
+      "Driving license of driver at time of accident",
+      "Vehicle RC copy",
+      "Damage photographs",
+      "Cancelled cheque for reimbursement"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of complete documents (IRDAI mandate)",
+    "tpa": "Not applicable",
+    "toll_free": "New India: 1800-209-1415. United India: 1800-425-5214. National: 1800-200-7710",
+    "common_rejection_reasons": [
+      "Repairs started before surveyor inspection",
+      "Inflated repair estimate not matching surveyor assessment",
+      "Documents incomplete or not in original",
+      "Delayed claim submission beyond 15-day window",
+      "Vehicle modification not declared to insurer"
+    ],
+    "escalation_path": "Insurer Claims Office → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_103",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Total Loss",
+    "title": "Motor Insurance — Total Loss / Constructive Total Loss Claim",
+    "process": [
+      "Step 1 — Report Accident/Damage: Intimate insurer immediately. For accidents: call from the scene. For flooding/natural disaster: call as soon as safe.",
+      "Step 2 — FIR: File FIR at nearest police station with accident details. FIR is mandatory for total loss claims.",
+      "Step 3 — Surveyor Inspection: Insurer appoints surveyor within 24 hours. Surveyor inspects vehicle and determines if repair cost exceeds 75% of IDV (constructive total loss threshold).",
+      "Step 4 — Total Loss Declaration: If surveyor confirms repair cost > 75% of IDV, vehicle is declared total loss. Insurer communicates total loss settlement offer.",
+      "Step 5 — Salvage Determination: Two options: (a) Insurer takes salvage — pays full IDV minus deductible; (b) Policyholder retains salvage — insurer pays IDV minus agreed salvage value and deductible.",
+      "Step 6 — Document Submission: Submit: claim form, RC, insurance certificate, all car keys, FIR, loan NOC (if financed), Form 28/29/30 for RTO transfer.",
+      "Step 7 — Settlement: Insurer settles within 30 days of final documentation. Amount = IDV - salvage value (if retained) - deductible. If RTI add-on: invoice value instead of IDV.",
+      "Step 8 — RC Cancellation: Insurer assists with RC cancellation at RTO (if salvage transferred to insurer)."
+    ],
+    "documents_needed": [
+      "Motor claim form",
+      "Original RC (Registration Certificate)",
+      "Insurance certificate/policy",
+      "All vehicle keys (original + duplicate)",
+      "FIR copy",
+      "NOC from financer/bank (if vehicle under loan)",
+      "Form 28, 29, 30 for RTO transfer (if salvage to insurer)",
+      "Surveyor's total loss report",
+      "PAN card (for settlements above ₹1 lakh)",
+      "Cancelled cheque"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of complete documents including RTO forms",
+    "tpa": "Not applicable",
+    "toll_free": "See individual insurer toll-free numbers",
+    "common_rejection_reasons": [
+      "Missing vehicle keys (suggests fraud suspicion)",
+      "Financer NOC not provided (loan on vehicle)",
+      "RTO forms not submitted for salvage transfer",
+      "Delayed FIR filing",
+      "Vehicle used for commercial purpose under private policy"
+    ],
+    "escalation_path": "Insurer Claims Manager → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_104",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Third Party Property Damage",
+    "title": "Motor Insurance — Third Party Property Damage Claim",
+    "process": [
+      "Step 1 — Accident Documentation: Exchange details with the third party (name, vehicle number, insurance details, contact). Take photos of both vehicles and damage to third party property.",
+      "Step 2 — FIR: File FIR if property damage is significant or if the third party insists. Get accident spot panchnama if possible.",
+      "Step 3 — Intimate Your Insurer: Report the accident to your motor insurer within 24 hours. Provide: your policy number, third party details, damage description.",
+      "Step 4 — Third Party Claim: The third party (or their insurer) files a claim against your policy for property damage. Maximum TP property damage liability: ₹7.5 lakh per event.",
+      "Step 5 — Survey and Assessment: Insurer arranges survey of third party's damage. Third party provides repair estimate.",
+      "Step 6 — Settlement: Your insurer settles the third party's property damage claim (up to ₹7.5 lakh) directly with the third party. You do not pay anything for TP claims.",
+      "Step 7 — Your Own Damage: File a separate OD claim for damage to your own vehicle (separate process under OD section)."
+    ],
+    "documents_needed": [
+      "Claim form",
+      "FIR / accident report",
+      "Third party details (name, address, vehicle number, insurance)",
+      "Photographs of accident scene and damage to both vehicles",
+      "Driving license",
+      "RC of your vehicle",
+      "Spot panchnama (if available)"
+    ],
+    "timeline_cashless_auth": "N/A — TP claims settled directly with third party",
+    "reimbursement_timeline": "Settlement timeline varies — typically 30-90 days for straightforward property damage",
+    "tpa": "Not applicable",
+    "toll_free": "See individual insurer toll-free numbers",
+    "common_rejection_reasons": [
+      "Driver at fault did not have valid driving license",
+      "Accident not reported within stipulated time",
+      "Policy had lapsed before accident date",
+      "Vehicle used beyond geographical or use limitations"
+    ],
+    "escalation_path": "Insurer TP Claims Department → Legal Department → MACT (if disputed)"
+  },
+  {
+    "id": "cp_105",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Vehicle Theft",
+    "title": "Motor Insurance — Vehicle Theft Claim (Detailed)",
+    "process": [
+      "Step 1 — Discover Theft: Search the vicinity thoroughly. Check if vehicle was towed by traffic police (call local traffic helpline).",
+      "Step 2 — File FIR: File FIR at nearest police station within 24 hours. Mention: vehicle make, model, color, registration number, engine number, chassis number, last seen location and time.",
+      "Step 3 — Intimate Insurer: Call insurer helpline immediately after FIR. Provide: policy number, vehicle details, FIR number, circumstances.",
+      "Step 4 — Submit Documents: Submit claim form with: policy, RC, all keys (original + duplicates), FIR, NOC from financer, transfer forms.",
+      "Step 5 — Police Investigation: Police investigates for 45-90 days. Insurer may appoint an investigator.",
+      "Step 6 — Non-Traceable Certificate: After police investigation (typically 90 days), obtain 'vehicle non-traceable' or 'final report' from police.",
+      "Step 7 — Settlement: Submit non-traceable certificate to insurer. Insurer settles at IDV (or invoice value with RTI add-on) minus deductible. Transfer RC to insurer via RTO.",
+      "Step 8 — RTO Formalities: Execute Form 28, 29, 30 for transfer of vehicle registration to insurer. Insurer handles RC cancellation."
+    ],
+    "documents_needed": [
+      "Motor claim form (theft)",
+      "Original FIR copy",
+      "Vehicle non-traceable certificate from police",
+      "Original RC (Registration Certificate)",
+      "Original policy document",
+      "ALL vehicle keys (original + duplicate — very important)",
+      "NOC from financer (if vehicle under loan)",
+      "Form 28, 29, 30 for RC transfer",
+      "PAN card (for settlement above ₹1 lakh)",
+      "Cancelled cheque",
+      "Hypothecation termination certificate (if loan closed)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of non-traceable certificate and complete documents",
+    "tpa": "Not applicable",
+    "toll_free": "See individual insurer toll-free numbers",
+    "common_rejection_reasons": [
+      "All vehicle keys not submitted (biggest red flag — suggests staged theft)",
+      "FIR filed with significant delay (weeks)",
+      "Financer NOC not available (loan outstanding)",
+      "Vehicle registration details mismatch",
+      "Previous theft claim history",
+      "Accessories/modifications not declared in policy"
+    ],
+    "escalation_path": "Insurer Claims Manager → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_106",
+    "insurer": "All Life Insurers — Standard Process",
+    "claim_type": "Life Death Claim - Accidental",
+    "title": "Life Insurance — Accidental Death Claim",
+    "process": [
+      "Step 1 — Immediate Notification: Nominee calls insurer helpline immediately after accidental death. Provide: policy number, name of deceased, date/time/place of accident, cause of death.",
+      "Step 2 — FIR: Ensure FIR is filed at the accident location. Obtain FIR copy with case number.",
+      "Step 3 — Post-Mortem: If required by police/hospital, post-mortem is conducted. Obtain post-mortem report.",
+      "Step 4 — Collect Claim Forms: Download death claim form and accidental death benefit rider form from insurer website.",
+      "Step 5 — Gather Documents: Compile: death certificate, FIR, post-mortem report, hospital records, policy document, nominee identity proof, bank details.",
+      "Step 6 — Submit Claim: Submit at insurer branch or online portal within 90 days of death. Get acknowledgment with claim number.",
+      "Step 7 — Investigation: Insurer investigates accidental death claims. Investigation includes: police report verification, hospital records, witness statements. Timeline: 90 days maximum.",
+      "Step 8 — Settlement: Base death benefit + accidental death rider benefit (if applicable) paid to nominee. Total payout: sum assured + AD rider amount. Tax-free under Section 10(10D)."
+    ],
+    "documents_needed": [
+      "Death claim form (insurer-specific)",
+      "Accidental death benefit rider claim form",
+      "Original death certificate",
+      "FIR copy with case number",
+      "Post-mortem report",
+      "Panchnama / inquest report",
+      "Hospital treatment records (if hospitalized before death)",
+      "Original policy document (or indemnity bond if lost)",
+      "Nominee's identity proof (Aadhaar, PAN, passport)",
+      "Nominee's bank account details (cancelled cheque)",
+      "Driving license of deceased (if motor accident)",
+      "Employer certificate (if applicable)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "120 days from claim registration (investigated claims). Non-investigated: 30 days.",
+    "tpa": "Not applicable for life insurance claims",
+    "toll_free": "LIC: 1800-425-7828. HDFC Life: 1800-266-9777. SBI Life: 1800-267-9090. ICICI Pru: 1860-266-7766",
+    "common_rejection_reasons": [
+      "Death within contestability period (3 years) with non-disclosure",
+      "Accidental death benefit rider exclusions: drunk driving, criminal activity, self-inflicted",
+      "Delayed claim intimation beyond reasonable period",
+      "Missing FIR or post-mortem report",
+      "Policy lapsed before date of accident"
+    ],
+    "escalation_path": "Insurer Claims Department → Insurer Grievance Cell → IRDAI Bima Bharosa → Insurance Ombudsman → NCDRC"
+  },
+  {
+    "id": "cp_107",
+    "insurer": "All Life Insurers — Standard Process",
+    "claim_type": "Life Survival Benefit",
+    "title": "Life Insurance — Survival Benefit / Money Back Claim",
+    "process": [
+      "Step 1 — Check Eligibility: Verify survival benefit due date from policy schedule. Survival benefits are paid at specified intervals (e.g., every 5 years in a 20-year money back plan).",
+      "Step 2 — Insurer Notification: Most insurers proactively initiate survival benefit payment. If not received within 30 days of due date, contact insurer.",
+      "Step 3 — Submit Documents: Policy document, identity proof, and bank details (if not already registered). Some insurers require a survival certificate.",
+      "Step 4 — Verification: Insurer verifies policyholder is alive and policy is in force. Premium payment status is confirmed.",
+      "Step 5 — Payment: Survival benefit credited to registered bank account within 15 days of due date (IRDAI mandate). Tax treatment: typically tax-free under Section 10(10D) if premium is less than 10% of sum assured."
+    ],
+    "documents_needed": [
+      "Policy document (for reference)",
+      "Identity proof of policyholder",
+      "Bank account details (if not registered)",
+      "Survival certificate (some insurers require)",
+      "PAN card (for large payments)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "15 days from survival benefit due date (IRDAI mandate)",
+    "tpa": "Not applicable",
+    "toll_free": "LIC: 1800-425-7828. Contact respective insurer for others.",
+    "common_rejection_reasons": [
+      "Policy lapsed due to non-payment of premiums",
+      "Bank account details not updated with insurer",
+      "Premium paid via irregular channel (suspected fraud)",
+      "Policy assigned to bank — benefit paid to assignee"
+    ],
+    "escalation_path": "Insurer Branch → Customer Care → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_108",
+    "insurer": "All Life Insurers — Standard Process",
+    "claim_type": "ULIP Partial Withdrawal",
+    "title": "Life Insurance — ULIP Partial Withdrawal Claim",
+    "process": [
+      "Step 1 — Verify Eligibility: ULIP partial withdrawal available only after completing 5-year lock-in period. Maximum withdrawal: typically up to 50% of fund value (varies by policy).",
+      "Step 2 — Submit Request: Online through insurer portal/app OR by submitting partial withdrawal form at branch.",
+      "Step 3 — Choose Amount: Specify withdrawal amount (within permitted limits) and which fund to debit.",
+      "Step 4 — Processing: Insurer processes withdrawal request within 3-5 working days. Units are redeemed at NAV on date of processing.",
+      "Step 5 — Payment: Amount credited to registered bank account within 7 working days of request. No discontinuance charges apply (post lock-in). Tax: taxable if total ULIP premium exceeds ₹2.5 lakh per year."
+    ],
+    "documents_needed": [
+      "Partial withdrawal request form",
+      "Identity proof",
+      "Bank account details",
+      "PAN card (for tax compliance)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "7 working days from request submission",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Lock-in period not completed (5 years from inception)",
+      "Withdrawal exceeds permitted limit (typically 50% of fund value)",
+      "Minimum fund value not maintained after withdrawal",
+      "Policy under lien/assignment to bank"
+    ],
+    "escalation_path": "Insurer Customer Care → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_109",
+    "insurer": "All Life Insurers — Standard Process",
+    "claim_type": "Terminal Illness Benefit",
+    "title": "Life Insurance — Terminal Illness Benefit Claim",
+    "process": [
+      "Step 1 — Diagnosis: Obtain written diagnosis of terminal illness from two independent medical specialists. Terminal illness: condition expected to result in death within 12 months.",
+      "Step 2 — Intimate Insurer: Contact insurer with terminal illness diagnosis. Request terminal illness benefit claim form.",
+      "Step 3 — Submit Documents: Diagnosis certificates from two independent specialists, medical records, treatment history, policy document.",
+      "Step 4 — Medical Review: Insurer's medical panel reviews the diagnosis. May request additional medical opinions.",
+      "Step 5 — Benefit Payment: If approved, up to 100% of sum assured (or ₹1 crore, whichever is lower) is paid as advance. Remaining sum assured (if any) continues as death benefit.",
+      "Step 6 — Policy Status: If 100% is paid as terminal illness benefit, the policy terminates. If partial advance, remaining coverage continues."
+    ],
+    "documents_needed": [
+      "Terminal illness claim form",
+      "Medical certificate from treating specialist",
+      "Second opinion certificate from independent specialist",
+      "Medical records and diagnostic reports",
+      "Policy document",
+      "Identity proof and bank details",
+      "Treatment history and hospital records"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of complete documents and medical review",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Diagnosis does not meet terminal illness definition (expected death within 12 months)",
+      "Only one specialist opinion provided (two required)",
+      "Policy does not have terminal illness benefit rider/feature",
+      "Terminal illness rider sum assured limit exceeded"
+    ],
+    "escalation_path": "Insurer Medical Review Panel → Insurer Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_110",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Travel Medical Emergency Abroad (Detailed)",
+    "title": "Travel Insurance — Medical Emergency Abroad (Comprehensive Process)",
+    "process": [
+      "Step 1 — Seek Treatment: Go to the nearest hospital/medical facility immediately. Your health comes first — do not worry about insurance process before getting treated.",
+      "Step 2 — Contact Emergency Helpline: Call the 24/7 international emergency helpline on your travel insurance card. Provide: policy number, name, location, medical condition. They will guide you to a cashless hospital if available.",
+      "Step 3 — Hospital Treatment: If cashless hospital: insurance company coordinates directly with hospital — you pay nothing (or minimal copay). If non-cashless: pay out of pocket and keep ALL receipts.",
+      "Step 4 — Medical Evacuation (if needed): If local hospital cannot provide adequate treatment, the insurer arranges medical evacuation to a suitable facility (air ambulance or commercial flight with medical escort).",
+      "Step 5 — Document Collection: Collect: hospital discharge summary, medical reports, pharmacy bills, ambulance receipts, doctor's certificates (all in English if possible).",
+      "Step 6 — Claim Submission: For cashless: insurer settles directly. For reimbursement: submit claim within 30 days of returning to India with all original documents.",
+      "Step 7 — Repatriation: When medically stable, insurer arranges return to India (commercial flight with medical escort if needed)."
+    ],
+    "documents_needed": [
+      "Travel insurance policy document",
+      "Passport copy and visa",
+      "Hospital discharge summary (English translation if foreign language)",
+      "Itemized hospital bill with treatment details",
+      "Pharmacy prescriptions and bills",
+      "Ambulance/transportation receipts",
+      "Doctor's medical certificate with diagnosis",
+      "Proof of payment (credit card statements, cash receipts)",
+      "FIR/police report (if accident/assault related)",
+      "Flight tickets showing travel dates"
+    ],
+    "timeline_cashless_auth": "Emergency helpline responds within 30 minutes. Cashless hospital coordination: 2-4 hours.",
+    "reimbursement_timeline": "30 days from claim submission with complete documents",
+    "tpa": "International TPA: Assist America, Mondial Assistance, Europ Assistance (varies by insurer)",
+    "toll_free": "Available on travel insurance card — typically 24/7 international collect call number",
+    "common_rejection_reasons": [
+      "Pre-existing condition treatment claimed (excluded in most travel policies)",
+      "Treatment in non-emergency for routine/planned procedure",
+      "Policy not active on date of treatment (check policy period)",
+      "Alcohol-related medical emergency",
+      "Adventure sports injury without adventure sports rider",
+      "Claim submitted beyond 30-day deadline"
+    ],
+    "escalation_path": "International TPA → Insurer Travel Claims Department → Insurer Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_111",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Travel Baggage Loss",
+    "title": "Travel Insurance — Baggage Loss / Delay Claim (Detailed)",
+    "process": [
+      "Step 1 — Report at Airport: Immediately report missing baggage at the airline's baggage counter at the arrival airport. Get a PIR (Property Irregularity Report) from the airline — this is the most critical document.",
+      "Step 2 — Contact Insurer: Call travel insurance helpline and report the baggage loss/delay. Get a claim number.",
+      "Step 3 — Airline Tracking: Allow 48-72 hours for airline tracking. If baggage is delayed but found, airline delivers to your hotel/address.",
+      "Step 4 — Emergency Purchases (if delayed): Buy essential items (toiletries, basic clothing) during the delay period. Keep all receipts. Emergency purchase benefit: typically ₹5,000-15,000 for baggage delay of 12+ hours.",
+      "Step 5 — Baggage Loss Declaration: If baggage is not found within 21 days, the airline declares it lost. Get written confirmation from airline of permanent loss.",
+      "Step 6 — Claim Submission: Submit claim with: PIR from airline, loss declaration from airline, list of contents with approximate values, purchase receipts for lost items (if available), emergency purchase receipts.",
+      "Step 7 — Settlement: Insurer settles based on declared value of contents subject to per-item and overall limits. Jewellery, electronics, and cash have separate sub-limits."
+    ],
+    "documents_needed": [
+      "PIR (Property Irregularity Report) from airline — ESSENTIAL",
+      "Written loss/delay confirmation from airline",
+      "Detailed list of baggage contents with estimated values",
+      "Purchase receipts for items in lost baggage (if available)",
+      "Emergency purchase receipts (for delayed baggage)",
+      "Boarding passes and baggage tags",
+      "Travel insurance policy",
+      "Identity proof",
+      "Bank account details for settlement"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from submission of complete documents",
+    "tpa": "International TPA assistance for documentation",
+    "toll_free": "See travel insurance card for helpline",
+    "common_rejection_reasons": [
+      "No PIR obtained at airport (most common reason for rejection)",
+      "Baggage was checked in with no tag (unverifiable loss)",
+      "Items claimed exceed per-item or overall sub-limits",
+      "Valuables not in hand baggage (jewellery, electronics should be in cabin bag)",
+      "Claim submission delayed beyond deadline"
+    ],
+    "escalation_path": "Insurer Travel Claims → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_112",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Cyber Insurance Identity Theft",
+    "title": "Cyber Insurance — Identity Theft Claim",
+    "process": [
+      "Step 1 — Discover Identity Theft: Identify unauthorized transactions, fake accounts, or misuse of personal information.",
+      "Step 2 — File FIR: File a cyber crime FIR at the nearest police station or through the National Cyber Crime Reporting Portal (cybercrime.gov.in).",
+      "Step 3 — Intimate Insurer: Report identity theft to your cyber insurer within 48 hours. Provide details of the identity theft.",
+      "Step 4 — Block Accounts: Block affected bank accounts, credit cards, and online accounts. Change all passwords.",
+      "Step 5 — Document Losses: List all financial losses: unauthorized transactions, legal fees, credit repair costs, communication costs.",
+      "Step 6 — Submit Claim: Submit claim form with: FIR, bank statements showing unauthorized transactions, credit reports, communication records, legal expense receipts.",
+      "Step 7 — Investigation: Insurer may investigate through cyber forensics. Cooperate fully with the investigation.",
+      "Step 8 — Settlement: Financial loss reimbursement + legal expense coverage + credit monitoring service for 12 months."
+    ],
+    "documents_needed": [
+      "Cyber crime FIR / National Cyber Crime Portal complaint",
+      "Bank/credit card statements showing unauthorized transactions",
+      "Screenshots of fake accounts or unauthorized access",
+      "Credit report showing unauthorized inquiries or accounts",
+      "Legal expense receipts (if lawyer engaged)",
+      "Communication costs (calls, courier)",
+      "Identity proof documents affected",
+      "Insurer's cyber claim form"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of complete documents and investigation completion",
+    "tpa": "Not applicable",
+    "toll_free": "Cyber crime helpline: 1930. Insurer helpline per policy.",
+    "common_rejection_reasons": [
+      "FIR not filed with cyber crime authority",
+      "Losses occurred before policy inception",
+      "Sharing OTP/passwords voluntarily (social engineering — may be excluded)",
+      "Identity theft from pre-existing breach before policy",
+      "Claim filed beyond stipulated time limit"
+    ],
+    "escalation_path": "Insurer Claims → Grievance Cell → IRDAI → Cyber Crime Cell → Consumer Forum"
+  },
+  {
+    "id": "cp_113",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Cyber Insurance Online Fraud",
+    "title": "Cyber Insurance — Online Financial Fraud Claim",
+    "process": [
+      "Step 1 — Discover Fraud: Identify unauthorized online transaction, phishing loss, or UPI/net banking fraud.",
+      "Step 2 — Immediate Action: Call bank immediately to block the account/card. Report to RBI's complaint portal. File complaint on cybercrime.gov.in.",
+      "Step 3 — FIR: File FIR at nearest police station citing the online fraud details. Mention amount lost, mode of fraud, and suspect details if known.",
+      "Step 4 — Bank Dispute: Lodge formal dispute with bank for chargeback/reversal of fraudulent transaction. Get bank's dispute reference number.",
+      "Step 5 — Intimate Insurer: Report to cyber insurer within 48 hours with: claim form, FIR, bank dispute reference, transaction details.",
+      "Step 6 — Documentation: Gather: bank statements, transaction logs, phishing email/message screenshots, bank dispute response.",
+      "Step 7 — Settlement: Insurer pays the loss amount minus any amount recovered by the bank through chargeback. Coverage typically up to ₹2-5 lakh for online fraud."
+    ],
+    "documents_needed": [
+      "Cyber crime FIR",
+      "Bank statements showing fraudulent transactions",
+      "Screenshots of phishing emails/messages/websites",
+      "Bank dispute/chargeback reference number",
+      "Bank's response to dispute",
+      "RBI complaint reference number",
+      "Cyber insurance claim form",
+      "Identity proof"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from complete documentation and bank dispute resolution",
+    "tpa": "Not applicable",
+    "toll_free": "Cyber crime: 1930. Bank fraud: respective bank helplines.",
+    "common_rejection_reasons": [
+      "Voluntarily sharing OTP/credentials (social engineering exclusion)",
+      "Transaction initiated by the insured (disputed but not unauthorized)",
+      "Loss from cryptocurrency or gambling platforms (excluded)",
+      "Claim filed beyond 48-hour notification period",
+      "Bank successfully reversed the transaction (no net loss)"
+    ],
+    "escalation_path": "Insurer → Grievance Cell → IRDAI → Consumer Forum"
+  },
+  {
+    "id": "cp_114",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "Critical Illness - Heart Attack",
+    "title": "Critical Illness Insurance — Heart Attack Claim",
+    "process": [
+      "Step 1 — Emergency Treatment: Seek immediate emergency treatment at the nearest hospital. Treatment comes first — insurance process follows.",
+      "Step 2 — Diagnosis Confirmation: Cardiologist confirms acute myocardial infarction (heart attack) with: troponin elevation, ECG changes (ST elevation or new Q waves), echocardiogram findings.",
+      "Step 3 — Survival Period: CI policies require survival for 30 days from diagnosis. The 30-day survival period must be completed before the claim is filed.",
+      "Step 4 — Intimate Insurer: After 30-day survival period, intimate the insurer. Submit CI claim form with medical documentation.",
+      "Step 5 — Medical Review: Insurer's medical panel reviews the diagnosis against the CI policy definition. 'Heart attack of specified severity' requires specific clinical criteria.",
+      "Step 6 — Settlement: If criteria met, lump sum CI benefit paid within 30 days. This is IN ADDITION to any health insurance hospitalization claim filed separately."
+    ],
+    "documents_needed": [
+      "CI claim form",
+      "Cardiologist's diagnosis certificate with specific findings",
+      "Troponin test reports",
+      "ECG reports (at admission and follow-up)",
+      "Echocardiogram/angiogram reports",
+      "Hospital discharge summary",
+      "Treatment records",
+      "Policy document",
+      "Identity proof and bank details"
+    ],
+    "timeline_cashless_auth": "N/A — CI is lump sum benefit, not cashless",
+    "reimbursement_timeline": "30 days from receipt of complete documents after survival period",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Heart attack does not meet 'specified severity' criteria (e.g., non-ST elevation MI may not qualify in some policies)",
+      "30-day survival period not completed",
+      "Pre-existing cardiac condition within waiting period",
+      "Definition mismatch: angina or cardiac arrest without myocardial infarction"
+    ],
+    "escalation_path": "Insurer Medical Review → Grievance Cell → IRDAI → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_115",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "Critical Illness - Stroke",
+    "title": "Critical Illness Insurance — Stroke Claim",
+    "process": [
+      "Step 1 — Emergency Treatment: Seek immediate emergency treatment at nearest stroke center/hospital. Time is critical for stroke treatment.",
+      "Step 2 — Diagnosis: Neurologist confirms stroke (cerebrovascular accident) with: CT scan/MRI brain, neurological examination showing permanent deficit.",
+      "Step 3 — Survival and Assessment: 30-day survival period required. After 30 days, neurologist assesses permanent neurological deficit (speech, motor, cognitive impairment).",
+      "Step 4 — Submit Claim: Submit CI claim form with: neurologist certificate confirming permanent deficit, brain imaging (CT/MRI), disability assessment report.",
+      "Step 5 — Medical Review: Insurer's medical panel reviews against CI definition: 'stroke resulting in permanent neurological deficit persisting for more than 30 days.'",
+      "Step 6 — Settlement: Lump sum CI benefit paid. Separate health insurance claim for hospitalization costs filed independently."
+    ],
+    "documents_needed": [
+      "CI claim form",
+      "Neurologist's diagnosis and disability assessment",
+      "CT scan / MRI brain reports (at admission and 30-day follow-up)",
+      "Hospital discharge summary",
+      "Rehabilitation therapy records",
+      "Functional disability assessment",
+      "Policy document",
+      "Identity proof and bank details"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from complete documentation post 30-day survival period",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "No permanent neurological deficit after 30 days (transient ischemic attack / TIA does not qualify)",
+      "Stroke due to trauma or brain injury (not cerebrovascular)",
+      "Pre-existing cerebrovascular condition within waiting period",
+      "Insufficient documentation of permanent deficit"
+    ],
+    "escalation_path": "Insurer Medical Review → Grievance Cell → IRDAI → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_116",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "Critical Illness - Cancer",
+    "title": "Critical Illness Insurance — Cancer Diagnosis Claim (Comprehensive)",
+    "process": [
+      "Step 1 — Diagnosis: Oncologist confirms cancer diagnosis with histopathology/biopsy report. Cancer staging (TNM) determines CI claim eligibility.",
+      "Step 2 — Verify CI Definition: Check CI policy definition — 'cancer of specified severity' typically requires: invasive cancer confirmed by histopathology, excluding: carcinoma in situ, non-invasive cancers, early-stage skin cancers (basal cell), early thyroid cancers.",
+      "Step 3 — Survival Period: 30-day survival from date of diagnosis required. Continue treatment during this period.",
+      "Step 4 — Submit Claim: After 30-day survival, submit: CI claim form, biopsy/histopathology report, oncologist's staging certificate, treatment plan.",
+      "Step 5 — Medical Review: Insurer's oncology panel reviews staging and histopathology against CI definition.",
+      "Step 6 — Settlement: If criteria met: full CI lump sum for Stage II+ invasive cancers. Some policies pay 25% for early-stage cancers (minor CI benefit). Health insurance hospitalization claim filed separately for treatment costs."
+    ],
+    "documents_needed": [
+      "CI claim form",
+      "Histopathology / biopsy report",
+      "Oncologist's diagnosis and staging certificate (TNM staging)",
+      "PET-CT / imaging reports",
+      "Treatment plan from oncologist",
+      "Hospital records",
+      "Policy document",
+      "Identity proof and bank details"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from complete documentation post survival period",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Cancer is carcinoma in situ or non-invasive (excluded from 'specified severity')",
+      "Early-stage cancer (Stage I / T1N0M0) below CI threshold",
+      "Histopathology not confirmatory",
+      "Pre-existing cancer within waiting period",
+      "30-day survival period not completed"
+    ],
+    "escalation_path": "Insurer Oncology Review → Grievance Cell → IRDAI → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_117",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Natural Disaster",
+    "title": "Motor Insurance — Natural Disaster / Flood Damage Claim",
+    "process": [
+      "Step 1 — Ensure Safety: Do not attempt to start a flooded vehicle — this can cause engine hydrostatic lock and void engine coverage.",
+      "Step 2 — Document Damage: Take photos/videos of the vehicle in its flooded/damaged state BEFORE moving it. Photograph water level marks, surrounding area, and any debris.",
+      "Step 3 — Intimate Insurer: Call insurer helpline within 24 hours. Report: location, extent of flooding/damage, vehicle condition.",
+      "Step 4 — Do NOT Move/Start Vehicle: Wait for insurer's surveyor. Starting a flooded engine causes catastrophic damage that standard policy does not cover (Engine Protect add-on needed).",
+      "Step 5 — Surveyor Inspection: Surveyor visits within 48 hours (may be delayed during widespread natural disaster). Surveyor assesses external damage and refers to authorized garage for engine assessment.",
+      "Step 6 — Towing: Insurer arranges towing to nearest network garage. Towing cost covered under policy or roadside assistance add-on.",
+      "Step 7 — Repair Assessment: Garage provides repair estimate. If flood damage + body damage > 75% of IDV: total loss. Otherwise: repair claim.",
+      "Step 8 — Settlement: OD section covers: body damage, electrical damage (dashboard, lights), upholstery damage. Engine damage: covered ONLY with Engine Protect add-on."
+    ],
+    "documents_needed": [
+      "Claim form",
+      "Photos/videos of vehicle in flooded/damaged state",
+      "Location and date of flooding event",
+      "FIR (not always required for natural disaster — check with insurer)",
+      "News articles or government declaration of flood/disaster",
+      "Surveyor report",
+      "Repair estimate from garage"
+    ],
+    "timeline_cashless_auth": "Surveyor: 48 hours (may be longer in widespread disaster). Cashless: per standard timeline.",
+    "reimbursement_timeline": "30 days from complete documentation. May be extended during widespread catastrophe.",
+    "tpa": "Not applicable",
+    "toll_free": "See individual insurer toll-free numbers",
+    "common_rejection_reasons": [
+      "Engine damage claimed without Engine Protect add-on",
+      "Vehicle started after flooding (driver caused additional damage)",
+      "No documentation of flood damage (photos/videos)",
+      "Delayed intimation beyond 48 hours without valid reason",
+      "Vehicle parked in clearly flood-prone area repeatedly (suspected moral hazard)"
+    ],
+    "escalation_path": "Insurer Claims → Grievance Cell → IRDAI → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_118",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Travel Flight Delay",
+    "title": "Travel Insurance — Flight Delay Compensation Claim",
+    "process": [
+      "Step 1 — Document Delay: Get written confirmation from airline of delay duration and reason. Screenshot departure board showing delay.",
+      "Step 2 — Track Delay Duration: Coverage triggers at 6-hour delay (meals/hotel) and 12-hour delay (additional fixed benefit).",
+      "Step 3 — Essential Expenses: Purchase meals, refreshments, and hotel (if overnight delay). Keep ALL receipts.",
+      "Step 4 — Contact Insurer: Inform travel insurer's helpline about the delay.",
+      "Step 5 — Submit Claim: On return to India, submit: airline delay confirmation, original boarding passes, expense receipts, hotel bills.",
+      "Step 6 — Settlement: Insurer reimburses documented expenses up to policy limit plus any fixed delay benefit."
+    ],
+    "documents_needed": [
+      "Airline's written delay confirmation with reason",
+      "Original boarding passes",
+      "All expense receipts during delay (meals, hotel, transport)",
+      "Photographs of departure board showing delay",
+      "Travel insurance policy",
+      "Bank details for settlement"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from claim submission",
+    "tpa": "International TPA",
+    "toll_free": "See travel insurance card",
+    "common_rejection_reasons": [
+      "Delay less than 6 hours (below trigger threshold)",
+      "No airline confirmation of delay",
+      "Expenses claimed are unreasonable (luxury hotel for economy traveler)",
+      "Delay due to policyholder's own fault (late check-in)"
+    ],
+    "escalation_path": "Insurer Travel Claims → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_119",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Cyber Data Breach",
+    "title": "Cyber Insurance — Data Breach Notification and Recovery Claim",
+    "process": [
+      "Step 1 — Identify Breach: Discover unauthorized access to personal data (email, bank, Aadhaar, social media).",
+      "Step 2 — Contain Breach: Change all affected passwords, enable 2FA, notify affected service providers.",
+      "Step 3 — File Complaint: Report to CERT-In (Indian Computer Emergency Response Team) and local cyber crime cell.",
+      "Step 4 — Intimate Insurer: Report data breach to cyber insurer within 48 hours.",
+      "Step 5 — Document Impact: List: accounts compromised, data exposed, financial impact, credit report changes, time spent on recovery.",
+      "Step 6 — Submit Claim: Submit claim form with: CERT-In complaint, cyber crime FIR, affected account details, credit reports, recovery expense receipts.",
+      "Step 7 — Settlement: Coverage includes: identity restoration costs, credit monitoring (12 months), legal consultation fees, lost wages during recovery."
+    ],
+    "documents_needed": [
+      "Cyber crime FIR",
+      "CERT-In complaint reference",
+      "List of compromised accounts and data",
+      "Credit reports showing unauthorized inquiries",
+      "Recovery expense receipts",
+      "Legal consultation receipts",
+      "Communication cost records",
+      "Cyber insurance claim form"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from complete documentation",
+    "tpa": "Not applicable",
+    "toll_free": "Cyber crime: 1930. CERT-In: incident@cert-in.org.in",
+    "common_rejection_reasons": [
+      "Breach occurred before policy inception",
+      "Data shared voluntarily (not unauthorized access)",
+      "Failure to report to CERT-In or cyber crime cell",
+      "Business data breach (personal policy covers only personal data)"
+    ],
+    "escalation_path": "Insurer → Grievance Cell → IRDAI → Consumer Forum"
+  },
+  {
+    "id": "cp_120",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Health Day Care Detailed",
+    "title": "Health Insurance — Day Care Procedure Claim (Detailed Process)",
+    "process": [
+      "Step 1 — Identify Day Care: Verify your procedure is on the IRDAI day-care list (587+ procedures including chemotherapy, dialysis, cataract, lithotripsy, angioplasty diagnostic).",
+      "Step 2 — Pre-Authorization: For cashless: submit pre-authorization to TPA/insurer 48 hours before scheduled procedure. Mention 'day care procedure' on the form.",
+      "Step 3 — Undergo Procedure: Admitted, treated, and discharged same day (less than 24 hours). This is normal for day care — the 24-hour rule does not apply.",
+      "Step 4 — Discharge Documentation: Collect: discharge summary, procedure notes, investigation reports, pharmacy bills, payment receipt (if reimbursement).",
+      "Step 5 — Cashless Settlement: If cashless: hospital settles directly with insurer. You pay only copay/deductible/non-medical items.",
+      "Step 6 — Reimbursement: If reimbursement: submit claim within 15-30 days with all documents. Insurer processes within 30 days."
+    ],
+    "documents_needed": [
+      "Pre-authorization form (for cashless)",
+      "Doctor's prescription recommending the procedure",
+      "Discharge summary with procedure details",
+      "Investigation/lab reports",
+      "Pharmacy bills",
+      "Payment receipt (for reimbursement)",
+      "Health insurance card",
+      "Identity proof"
+    ],
+    "timeline_cashless_auth": "1 hour for cashless pre-authorization",
+    "reimbursement_timeline": "30 days from submission of complete documents",
+    "tpa": "Depends on insurer — Medi Assist, Vidal Health, MD India, Heritage Health",
+    "toll_free": "Contact respective insurer/TPA",
+    "common_rejection_reasons": [
+      "Procedure not on day-care list (verify IRDAI list)",
+      "Insurer incorrectly citing 24-hour hospitalization requirement",
+      "Pre-authorization not obtained before procedure",
+      "Procedure classified as OPD rather than day care"
+    ],
+    "escalation_path": "TPA → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_121",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Life Policy Loan",
+    "title": "Life Insurance — Loan Against Policy Process",
+    "process": [
+      "Step 1 — Verify Eligibility: Policy must have completed minimum 3 years of premium payment. Only available for traditional plans (endowment, money back, whole life) — NOT ULIPs or term plans.",
+      "Step 2 — Calculate Available Amount: Maximum loan: 90% of surrender value. Contact insurer for exact loan amount available.",
+      "Step 3 — Submit Application: Apply online through insurer portal or submit loan application form at branch. No income proof, credit check, or documentation needed beyond the policy details.",
+      "Step 4 — Processing: Loan sanctioned within 3-5 working days. Interest rate: typically repo rate + 2-3% (currently around 9-10%).",
+      "Step 5 — Disbursement: Loan amount credited to registered bank account.",
+      "Step 6 — Repayment: No EMI required — interest accrues and is deducted from final claim (maturity or death). Optional: pay interest annually to prevent compounding."
+    ],
+    "documents_needed": [
+      "Policy loan application form",
+      "Original policy document (or indemnity bond if lost)",
+      "Identity proof",
+      "Bank account details for disbursement"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "3-5 working days from application to disbursement",
+    "tpa": "Not applicable",
+    "toll_free": "LIC: 1800-425-7828. Contact respective insurer for others.",
+    "common_rejection_reasons": [
+      "Policy has not completed 3 years of premium payment",
+      "Policy is already under assignment to bank",
+      "Policy type does not support loans (ULIP, term)",
+      "Existing loan balance exceeds available loan capacity"
+    ],
+    "escalation_path": "Insurer Branch → Customer Care → Grievance Cell → IRDAI"
+  },
+  {
+    "id": "cp_122",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Health AYUSH Claim",
+    "title": "Health Insurance — AYUSH Treatment Claim Process",
+    "process": [
+      "Step 1 — Verify Hospital: Confirm AYUSH hospital is NABH-accredited or government-recognized. Verify on NABH website or state AYUSH department list.",
+      "Step 2 — Verify Practitioner: Ensure treating AYUSH practitioner is registered with the respective state board (Ayurveda, Unani, Siddha, Homeopathy).",
+      "Step 3 — Pre-Authorization (Cashless): Submit pre-authorization mentioning AYUSH treatment type. TPA processes similarly to allopathic cashless.",
+      "Step 4 — Treatment: Undergo AYUSH treatment (Panchakarma, Homeopathic hospitalization, etc.) at the recognized facility.",
+      "Step 5 — Documentation: Collect: AYUSH discharge summary, practitioner prescription, treatment protocol, pharmacy bills, hospital bill.",
+      "Step 6 — Claim Settlement: Cashless: settled by insurer directly. Reimbursement: submit within policy timeline (15-30 days). Coverage up to sum insured without separate sub-limit (from 2024)."
+    ],
+    "documents_needed": [
+      "Pre-authorization form (for cashless)",
+      "AYUSH practitioner's prescription and treatment protocol",
+      "Hospital's NABH accreditation certificate or government recognition proof",
+      "Practitioner's registration certificate with state AYUSH board",
+      "Discharge summary",
+      "Itemized hospital bill",
+      "Pharmacy bills for AYUSH medicines",
+      "Identity proof and health insurance card"
+    ],
+    "timeline_cashless_auth": "1 hour (same as allopathic)",
+    "reimbursement_timeline": "30 days from complete documentation",
+    "tpa": "Same TPA as allopathic — Medi Assist, Vidal Health, etc.",
+    "toll_free": "Contact respective insurer/TPA",
+    "common_rejection_reasons": [
+      "Hospital not NABH-accredited or government-recognized",
+      "Practitioner not registered with state AYUSH board",
+      "Treatment classified as wellness/spa (not medical treatment)",
+      "Hospitalization less than 24 hours and not on day-care list"
+    ],
+    "escalation_path": "TPA → Insurer Grievance Cell → IRDAI Bima Bharosa → Ombudsman"
+  },
+  {
+    "id": "cp_123",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Health Organ Transplant",
+    "title": "Health Insurance — Organ Transplant Claim Process",
+    "process": [
+      "Step 1 — Pre-Authorization: Submit pre-authorization for organ transplant surgery. Include: transplant surgeon's recommendation, organ match documentation, recipient and donor details.",
+      "Step 2 — Donor Coverage: Inform insurer that living donor expenses will be covered under recipient's policy. Submit donor's medical fitness assessment.",
+      "Step 3 — Transplant Surgery: Both recipient's transplant surgery and donor's organ harvesting surgery covered simultaneously.",
+      "Step 4 — Post-Transplant: Immunosuppressant medicines covered for 12 months post-transplant. Post-surgical follow-up covered under post-hospitalization benefit.",
+      "Step 5 — Claim Settlement: Cashless: insurer settles with hospital for both recipient and donor charges. Reimbursement: submit all documents including donor's bills.",
+      "Step 6 — Follow-Up Claims: Subsequent hospitalizations related to transplant (rejection episodes, infections) covered as new claims within the same policy year."
+    ],
+    "documents_needed": [
+      "Pre-authorization form (transplant + donor)",
+      "Transplant surgeon's recommendation",
+      "Organ match and compatibility reports",
+      "Donor's medical fitness certificate",
+      "Hospital bills for both recipient and donor",
+      "Immunosuppressant drug prescriptions",
+      "Post-transplant follow-up records",
+      "NOTTO (National Organ & Tissue Transplant Organization) authorization"
+    ],
+    "timeline_cashless_auth": "4-24 hours (complex pre-authorization for transplant)",
+    "reimbursement_timeline": "30 days from complete documentation",
+    "tpa": "Specialized TPA handling for transplant claims",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Sum insured insufficient for transplant cost",
+      "Donor coverage not pre-authorized",
+      "Transplant not at NABH/government-approved transplant center",
+      "NOTTO authorization not obtained",
+      "Organ purchase from unauthorized source (illegal — not covered)"
+    ],
+    "escalation_path": "TPA → Insurer Transplant Claims Unit → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_124",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "PA Accidental Death",
+    "title": "Personal Accident Insurance — Accidental Death Claim",
+    "process": [
+      "Step 1 — Report Death: Nominee reports accidental death to PA insurer within 48 hours. Provide: policy number, deceased name, date/location/circumstances of accident.",
+      "Step 2 — FIR: Ensure FIR is filed at accident location. For road accidents: also file with MACT if pursuing third-party compensation.",
+      "Step 3 — Post-Mortem: Obtain post-mortem report confirming accidental death cause.",
+      "Step 4 — Submit Claim: PA death claim form + all documents within 90 days of death.",
+      "Step 5 — Investigation: Insurer verifies accidental nature of death. May request: police investigation report, witness statements, CCTV footage.",
+      "Step 6 — Settlement: 100% of capital sum insured paid to nominee. If employee group PA: employer facilitates claim on behalf of nominee."
+    ],
+    "documents_needed": [
+      "PA death claim form",
+      "Original death certificate",
+      "FIR with accident details",
+      "Post-mortem report",
+      "Panchnama/inquest report",
+      "Hospital records (if hospitalized before death)",
+      "Policy document",
+      "Nominee identity proof",
+      "Nominee bank details",
+      "Employer certificate (if group PA)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days (non-investigated). 120 days (investigated).",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Death not accidental (natural cause, illness, suicide)",
+      "Accident under influence of alcohol/drugs",
+      "Accident during criminal activity",
+      "Death beyond 180 days of accident date",
+      "PA policy had lapsed before accident date"
+    ],
+    "escalation_path": "Insurer Claims → Grievance Cell → IRDAI → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_125",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "Health Mental Health",
+    "title": "Health Insurance — Mental Health Hospitalization Claim",
+    "process": [
+      "Step 1 — Psychiatric Assessment: Qualified psychiatrist recommends inpatient psychiatric treatment for the patient.",
+      "Step 2 — Hospital Selection: Choose a psychiatric hospital or general hospital with a psychiatric ward. Network hospital preferred for cashless.",
+      "Step 3 — Pre-Authorization: Submit pre-authorization for psychiatric hospitalization. Diagnosis, expected treatment duration, and treatment plan required.",
+      "Step 4 — Hospitalization: Patient undergoes inpatient psychiatric treatment (medication management, psychotherapy, stabilization).",
+      "Step 5 — Discharge: Collect discharge summary, psychiatrist's treatment notes, medication prescriptions, hospital bill.",
+      "Step 6 — Claim Settlement: Cashless or reimbursement — processed same as any physical illness hospitalization. Mental illness cannot be excluded."
+    ],
+    "documents_needed": [
+      "Pre-authorization form",
+      "Psychiatrist's referral and treatment plan",
+      "Hospital discharge summary with psychiatric diagnosis (ICD-10 coded)",
+      "Medication prescriptions",
+      "Hospital bill (itemized)",
+      "Follow-up treatment plan",
+      "Health insurance card",
+      "Identity proof"
+    ],
+    "timeline_cashless_auth": "1 hour (same as physical illness)",
+    "reimbursement_timeline": "30 days from complete documentation",
+    "tpa": "Standard TPA processing",
+    "toll_free": "Contact respective insurer/TPA. Mental health helpline: iCall 9152987821",
+    "common_rejection_reasons": [
+      "INVALID REJECTION — Mental illness coverage is mandatory under Mental Healthcare Act 2017. If rejected, this is a regulatory violation. File complaint with IRDAI immediately.",
+      "OPD psychiatric treatment claimed (covered only if policy has OPD benefit)",
+      "Substance abuse treatment rejected (should be covered if under psychiatric supervision)"
+    ],
+    "escalation_path": "TPA → Insurer Grievance Cell → IRDAI Bima Bharosa (cite Mental Healthcare Act 2017) → Ombudsman → Consumer Forum"
+  },
+  {
+    "id": "cp_126",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Life Annuity Payment",
+    "title": "Life Insurance — Annuity/Pension Payment Claim",
+    "process": [
+      "Step 1 — Vesting: On reaching vesting age (retirement), policyholder chooses annuity option: life annuity, joint life, with/without return of purchase price.",
+      "Step 2 — Annuity Option Selection: Submit annuity option selection form to insurer. Once selected, annuity option is irrevocable.",
+      "Step 3 — Commutation: Commute up to 60% of corpus as lump sum (subject to Income Tax Act provisions). Remaining 40% must be annuitized.",
+      "Step 4 — Documentation: Submit: vesting claim form, identity proof, bank details, PAN card, annuity option selection form.",
+      "Step 5 — Annuity Commencement: Monthly/quarterly/annual annuity payments begin within 30 days of vesting date.",
+      "Step 6 — Tax: Annuity income is taxable as income in the year received. TDS deducted by insurer."
+    ],
+    "documents_needed": [
+      "Vesting/annuity claim form",
+      "Annuity option selection form",
+      "Identity proof (Aadhaar, PAN)",
+      "Bank account details for annuity credit",
+      "PAN card (mandatory for TDS)",
+      "Policy document",
+      "Age proof (for annuity rate calculation)"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "First annuity payment within 30 days of vesting date",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Annuity option not selected within stipulated time",
+      "KYC/PAN not updated with insurer",
+      "Bank account details mismatch",
+      "Policy under lien/assignment"
+    ],
+    "escalation_path": "Insurer Pension/Annuity Department → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_127",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Motor Compulsory PA",
+    "title": "Motor Insurance — Compulsory Personal Accident (CPA) Owner-Driver Claim",
+    "process": [
+      "Step 1 — Accident Report: Report motor accident to insurer. CPA covers the owner-driver for accidental death and permanent disability while driving.",
+      "Step 2 — Medical Treatment: Seek immediate medical treatment. If death: nominee files claim. If disability: policyholder files claim after medical stabilization.",
+      "Step 3 — FIR: File FIR at accident location.",
+      "Step 4 — Medical Assessment: For disability claims: medical professional assesses permanent disability percentage as per IRDAI disability schedule.",
+      "Step 5 — Submit Claim: CPA claim form + FIR + medical reports + disability assessment (for disability claims) + death certificate (for death claims).",
+      "Step 6 — Settlement: Death: ₹15 lakh to nominee. PTD: ₹15 lakh. PPD: percentage of ₹15 lakh as per disability schedule."
+    ],
+    "documents_needed": [
+      "CPA claim form",
+      "FIR with accident details",
+      "Medical reports and treatment records",
+      "Disability assessment certificate (for disability claims)",
+      "Death certificate (for death claims)",
+      "Post-mortem report (for death claims)",
+      "Driving license proving owner-driver status",
+      "Vehicle RC showing ownership",
+      "Policy document with CPA cover",
+      "Nominee/claimant identity and bank details"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from complete documentation",
+    "tpa": "Not applicable",
+    "toll_free": "Contact motor insurer",
+    "common_rejection_reasons": [
+      "Claimant was not the registered owner-driver (CPA covers only owner-driver)",
+      "Driving without valid driving license",
+      "Driving under influence of alcohol/drugs",
+      "Vehicle used for commercial purpose under private policy"
+    ],
+    "escalation_path": "Motor Insurer Claims → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_128",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "Health Maternity",
+    "title": "Health Insurance — Maternity Claim (Normal Delivery / C-Section)",
+    "process": [
+      "Step 1 — Verify Coverage: Check if maternity benefit is included in your policy and if the waiting period (24-48 months) has been completed.",
+      "Step 2 — Pre-Authorization: For planned delivery at network hospital: submit pre-authorization 7-10 days before expected delivery date with: gynecologist recommendation, expected delivery type, hospital details.",
+      "Step 3 — Delivery: Normal delivery or C-section at chosen hospital. Cashless or reimbursement as per policy.",
+      "Step 4 — Newborn Coverage: Newborn automatically covered for first 90 days from birth under family floater. Any NICU/treatment needed is covered.",
+      "Step 5 — Pre/Post-Natal Expenses: Claim pre-natal expenses (30 days before) and post-natal expenses (60 days after) as part of the maternity claim.",
+      "Step 6 — Document Submission: Submit: discharge summary, delivery notes, baby's birth certificate, hospital bill, pre/post-natal consultation and pharmacy bills."
+    ],
+    "documents_needed": [
+      "Pre-authorization form",
+      "Gynecologist prescription/delivery recommendation",
+      "Hospital discharge summary (mother)",
+      "Baby's birth certificate",
+      "Baby's discharge summary (if NICU/extended stay)",
+      "Hospital bill (itemized)",
+      "Pre-natal consultation bills (30 days before)",
+      "Post-natal consultation bills (60 days after)",
+      "Pharmacy bills for pre/post-natal medicines",
+      "Health insurance card and identity proof"
+    ],
+    "timeline_cashless_auth": "1 hour for cashless pre-authorization",
+    "reimbursement_timeline": "30 days from complete documentation",
+    "tpa": "Standard TPA processing",
+    "toll_free": "Contact respective insurer/TPA",
+    "common_rejection_reasons": [
+      "Maternity waiting period not completed (24-48 months)",
+      "Policy does not include maternity benefit",
+      "Maternity sub-limit exceeded (bill higher than sub-limit)",
+      "Pre-natal expenses beyond 30-day window",
+      "NICU costs for newborn not covered (verify policy includes newborn cover)"
+    ],
+    "escalation_path": "TPA → Insurer Claims → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_129",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Life Premium Waiver",
+    "title": "Life Insurance — Premium Waiver Benefit Claim",
+    "process": [
+      "Step 1 — Trigger Event: Policyholder diagnosed with critical illness or suffers permanent total disability (as defined in the premium waiver rider).",
+      "Step 2 — Medical Documentation: Obtain specialist medical certificate confirming the qualifying condition.",
+      "Step 3 — Submit Claim: Submit premium waiver claim form with medical documentation to insurer within 90 days of diagnosis/disability.",
+      "Step 4 — Medical Review: Insurer's medical panel reviews the diagnosis against rider definitions.",
+      "Step 5 — Approval: If approved, all future premiums are waived from the next premium due date. Policy continues with full benefits.",
+      "Step 6 — Ongoing: No further premiums required for the remaining policy term. All benefits (death, maturity, riders) remain active."
+    ],
+    "documents_needed": [
+      "Premium waiver claim form",
+      "Specialist medical certificate with diagnosis",
+      "Medical reports and treatment records",
+      "Disability assessment (for PTD claims)",
+      "Hospital records",
+      "Policy document",
+      "Identity proof"
+    ],
+    "timeline_cashless_auth": "N/A",
+    "reimbursement_timeline": "30 days from receipt of complete medical documentation",
+    "tpa": "Not applicable",
+    "toll_free": "Contact respective insurer",
+    "common_rejection_reasons": [
+      "Condition does not meet rider definition criteria",
+      "Medical documentation insufficient",
+      "Claim filed beyond 90-day notification period",
+      "Rider not active on policy (not purchased or lapsed)"
+    ],
+    "escalation_path": "Insurer Medical Review → Grievance Cell → IRDAI → Ombudsman"
+  },
+  {
+    "id": "cp_130",
+    "insurer": "All Insurers — Standard Process",
+    "claim_type": "Health Emergency Abroad Repatriation",
+    "title": "Health Insurance — Medical Repatriation to India",
+    "process": [
+      "Step 1 — Medical Stabilization: Patient is stabilized at overseas hospital.",
+      "Step 2 — Treating Doctor Assessment: Overseas doctor certifies patient is fit to travel (with or without medical escort).",
+      "Step 3 — Insurer Coordination: Travel insurer's international TPA coordinates repatriation: commercial flight (business class if medical necessity), medical escort (doctor/nurse), stretcher arrangement.",
+      "Step 4 — Flight Arrangement: TPA books appropriate transportation. For critical patients: air ambulance arranged.",
+      "Step 5 — Indian Hospital Reception: Indian hospital arranged for continuing treatment upon arrival (if needed).",
+      "Step 6 — Documentation: All overseas medical records, treatment summaries, and prescriptions translated to English for Indian doctors."
+    ],
+    "documents_needed": [
+      "Overseas doctor's fitness-to-travel certificate",
+      "Complete medical records from overseas hospital",
+      "Travel insurance policy",
+      "Passport and visa",
+      "Flight/air ambulance booking details",
+      "Indian hospital admission arrangement (if continuing treatment)"
+    ],
+    "timeline_cashless_auth": "N/A — coordinated by international TPA",
+    "reimbursement_timeline": "Insurer covers directly through TPA coordination",
+    "tpa": "Assist America, Mondial Assistance, Europ Assistance",
+    "toll_free": "24/7 international helpline on travel insurance card",
+    "common_rejection_reasons": [
+      "Patient not medically fit to travel (repatriation postponed)",
+      "Travel insurance expired before repatriation date",
+      "Pre-existing condition triggered the hospitalization (excluded)"
+    ],
+    "escalation_path": "International TPA → Insurer Travel Claims → Grievance Cell → IRDAI"
+  },
+  {
+    "id": "cp_131",
+    "insurer": "All Health Insurers — Standard Process",
+    "claim_type": "Health Second Opinion",
+    "title": "Health Insurance — Second Medical Opinion Service",
+    "process": [
+      "Step 1 — Request Second Opinion: Contact insurer's second opinion service (available for policies with SI above ₹10 lakh). Provide current diagnosis and treatment plan.",
+      "Step 2 — Specialist Assignment: Insurer assigns an independent specialist from their panel (different from treating doctor) for second opinion.",
+      "Step 3 — Document Sharing: Share all medical reports, imaging, biopsy results with the second opinion specialist (digitally or in person).",
+      "Step 4 — Second Opinion Report: Specialist provides written second opinion within 7-10 days. May confirm, modify, or contradict the original diagnosis/treatment plan.",
+      "Step 5 — Decision: You decide whether to proceed with original treatment or follow second opinion recommendation.",
+      "Step 6 — Claims Impact: If second opinion recommends a different (possibly less invasive) treatment, the insurer covers the chosen treatment. Conservative treatment recommended by second opinion is fully covered."
+    ],
+    "documents_needed": [
+      "Second opinion request form",
+      "Current diagnosis report",
+      "All medical investigation reports",
+      "Imaging studies (MRI, CT, PET-CT)",
+      "Biopsy reports (if applicable)",
+      "Current treatment plan",
+      "Policy document"
+    ],
+    "timeline_cashless_auth": "N/A — second opinion is a consultative service",
+    "reimbursement_timeline": "Second opinion report within 7-10 days. Cost covered: up to ₹10,000 per opinion.",
+    "tpa": "Not applicable",
+    "toll_free": "Contact insurer's wellness/value-added services helpline",
+    "common_rejection_reasons": [
+      "Policy SI below ₹10 lakh (second opinion may not be available)",
+      "More than 3 second opinions requested per year (limit exceeded)",
+      "Second opinion requested for non-covered condition"
+    ],
+    "escalation_path": "Insurer Wellness Services → Customer Care → Grievance Cell"
   }
 ]

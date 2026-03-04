@@ -298,5 +298,515 @@
     "content": "If the Sum Insured is exhausted on account of claims made during the policy year, the Company shall reinstate the Sum Insured once (or as specified in the Schedule) for the remaining policy year. The restored Sum Insured can be used for: (a) Any hospitalization for a completely different illness (in the case of basic restoration); (b) Any hospitalization including the same illness (in the case of unlimited restoration), as specified in the policy schedule. The restoration shall be applicable only when the Sum Insured has been completely exhausted and not for partial utilization.",
     "plain_english": "If you use up your entire sum insured in one hospital stay, the restoration benefit refills it — either once or unlimited times depending on your plan. Standard (basic) restoration: refilled SI can only be used for a DIFFERENT illness. Premium restoration (unlimited): refilled SI can be used for any illness, even the same one. Restoration only activates when SI is FULLY used up — not partially.",
     "consumer_tip": "Understand what type of restoration your policy has — basic or unlimited. Basic restoration is a useful feature but limited (cannot use it for follow-up treatment of the same illness). Unlimited restoration (like Niva Bupa ReAssure, Star Comprehensive) is far superior — especially for cancer, dialysis patients, or families with multiple members. The premium difference is usually modest."
+  },
+  {
+    "id": "wording_031",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Guaranteed Surrender Value (GSV)",
+    "section": "Benefits — Surrender",
+    "content": "The Guaranteed Surrender Value (GSV) shall be the sum equal to the guaranteed surrender value factor multiplied by total premiums paid (excluding first year premium, service tax/GST, and rider premiums). The GSV shall be available after completion of at least 2 consecutive years of premium payment. The GSV factor shall be as specified in the policy schedule and shall not be less than 30% of total premiums paid (excluding first year) as mandated by IRDAI Surrender Value Regulations 2024.",
+    "plain_english": "If you stop paying premiums after at least 2 years and want to exit the policy, you get the Guaranteed Surrender Value. This is calculated as a percentage of your total premiums (excluding first year premium and taxes). The minimum GSV is 30% of premiums paid from year 2 onwards. This amount increases as more premiums are paid and the policy approaches maturity.",
+    "consumer_tip": "GSV is the minimum you will receive. The Special Surrender Value (SSV) may be higher — always ask your insurer to calculate both GSV and SSV before surrendering. If SSV is higher, you get SSV. Never surrender a policy in the first 3-5 years — the surrender value is very low compared to premiums paid."
+  },
+  {
+    "id": "wording_032",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Special Surrender Value (SSV)",
+    "section": "Benefits — Surrender",
+    "content": "The Special Surrender Value (SSV) shall be calculated as the present value of the Paid-Up Sum Assured plus the present value of accrued reversionary bonuses plus the present value of terminal bonus (if any), discounted at the rate notified by the insurer. The SSV shall not be less than the GSV at any point during the policy term. The insurer shall pay the higher of GSV and SSV to the policyholder on surrender.",
+    "plain_english": "The SSV is a more sophisticated calculation that considers what your policy would eventually pay at maturity, discounted to today's value. It takes into account the bonuses already earned and the reduced coverage the policy would provide. SSV is usually higher than GSV, especially for policies held for many years. You always get the higher of the two.",
+    "consumer_tip": "Ask the insurer to provide both GSV and SSV figures in writing before making a surrender decision. The SSV increases significantly after 10+ years of premium payment. Sometimes keeping the policy as paid-up (stopping premiums but not surrendering) gives better returns than surrendering, since the bonuses continue to accrue on the paid-up value."
+  },
+  {
+    "id": "wording_033",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Revival of Lapsed Policy",
+    "section": "General Conditions — Revival",
+    "content": "A policy which has lapsed due to non-payment of premium within the grace period may be revived during the lifetime of the Life Assured, within a period of 5 consecutive years from the date of the first unpaid premium and before the date of maturity, on submission of proof of continued insurability satisfactory to the Company and payment of all arrears of premium together with interest at such rate as may be determined by the Company from time to time. On revival, the policy shall be restored with all benefits from the date of revival.",
+    "plain_english": "If your life policy has lapsed because you missed premium payments, you can revive it within 5 years. You need to: (1) Pay all the missed premiums with interest, and (2) Prove you are still in good health (medical tests may be required for high sum assured). Once revived, the policy is fully active again with all benefits restored from the revival date.",
+    "consumer_tip": "Revival is almost always better than buying a new policy — because your age at inception was lower (younger), your premium stays the same. A new policy at your current age will be more expensive. Also, waiting periods restart from revival date, and the 12-month suicide clause restarts. Try to revive within 6 months of lapse to avoid medical tests."
+  },
+  {
+    "id": "wording_034",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Death Claim Settlement Process",
+    "section": "Claims — Death",
+    "content": "Upon receipt of notification of death of the Life Assured, the Company shall: (a) issue claim forms within 3 working days of notification; (b) request all relevant documents within 15 days; (c) process and settle the claim within 30 days of receiving all required documents for non-investigated claims; (d) for claims requiring investigation (death within 3 years of policy commencement or suspicious circumstances), complete investigation within 90 days and settle within 120 days of claim notification. Interest at 2% above prevailing bank rate shall be payable on claims settled beyond 30 days.",
+    "plain_english": "When the policyholder dies, the nominee notifies the insurer. The insurer must act quickly: send claim forms within 3 days, ask for documents within 15 days, and settle within 30 days of getting complete documents. If the death happened within 3 years of policy start and the insurer investigates, they get up to 120 days total. If they take longer than 30 days for non-investigated claims, they must pay interest on the delayed amount.",
+    "consumer_tip": "Submit all documents together — do not send them in pieces. The 30-day clock starts only when ALL documents are submitted. Keep the policy document, premium receipts, and nominee's bank details ready. If the insurer asks for additional documents, respond within 7 days to avoid further delays. If settlement exceeds 30 days, claim interest."
+  },
+  {
+    "id": "wording_035",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard ULIP — Fund Switch and Premium Redirection",
+    "section": "Investment Options — Fund Management",
+    "content": "The Policyholder may switch the existing fund value from one fund to another fund offered under this policy, subject to: (a) first 4 switches per policy year being free of charge; (b) a switching charge of ₹100 per switch for switches beyond 4 per year; (c) minimum switch amount: 25% of fund value or ₹5,000 (whichever is higher). Premium Redirection: the Policyholder may redirect future premiums to different funds by written request at least 7 days before the next premium due date, at no charge.",
+    "plain_english": "In a ULIP, you can move your money between different funds (equity, debt, balanced). The first 4 switches each year are free. Beyond that, each switch costs ₹100. You can also change where your future premiums go (premium redirection) — this is always free. Fund switching helps you manage risk — move from equity to debt when markets are high, and vice versa.",
+    "consumer_tip": "Use fund switches strategically — do not switch on every market dip. The first 4 per year are free. Before retirement or when approaching maturity, gradually switch from equity funds to debt funds to protect your gains. Premium redirection is free and unlimited — use this to adjust your ongoing investment strategy without touching existing corpus."
+  },
+  {
+    "id": "wording_036",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Free Look Period (Detailed)",
+    "section": "General Conditions — Free Look",
+    "content": "The Policyholder shall have the right to review the terms and conditions of this policy within 15 days from the date of receipt of the policy document (30 days for policies sold through distance mode including online, telephone, or electronic communication). If the Policyholder disagrees with any terms and conditions, the policy may be returned with reasons for objection. The Company shall refund the premium paid less: (a) proportionate risk premium for the period on cover; (b) stamp duty charges; (c) expenses on medical examination, if any. For ULIPs, refund shall be at the prevailing NAV of the units.",
+    "plain_english": "You have 15 days (30 days for online policies) from receiving your policy document to read it thoroughly and return it if you are not satisfied. You get back almost all your money — only a small deduction for the days you were actually covered and stamp duty. For ULIPs, you get back the current value of your units (which may be slightly less or more than what you paid, depending on market movement in those few days).",
+    "consumer_tip": "This is your safety net against mis-selling. READ the policy document as soon as you receive it. Compare what you were told by the agent with what the policy actually says. If ANYTHING is different — return it. Common mis-selling red flags: agent said 'guaranteed returns' for ULIP, agent said 'like FD', agent did not mention charges or lock-in period. Free look is your exit without penalty."
+  },
+  {
+    "id": "wording_037",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Exclusions (Comprehensive)",
+    "section": "Exclusions",
+    "content": "The following are excluded from the scope of this policy: (a) Death due to suicide within 12 months from the date of commencement of risk or date of revival — nominee entitled to 80% of premiums paid or surrender value (whichever is higher); (b) Death resulting from the Insured's participation in any criminal or illegal activity; (c) Death due to self-inflicted injury while sane or insane (within first year); (d) Death resulting from aviation other than as a fare-paying passenger in a commercially licensed aircraft. Note: After completion of 12 months from commencement, no exclusions apply — all causes of death are covered including suicide.",
+    "plain_english": "Life insurance has very few exclusions: suicide within first year (family still gets 80% of premiums back), death during criminal activity, self-harm (first year only), and non-commercial aviation accidents. After the first year, essentially ALL causes of death are covered — including suicide, adventure sports, hazardous occupations, and even death abroad. This is why term insurance is one of the simplest financial products.",
+    "consumer_tip": "After completing one year, your term insurance covers death from virtually any cause. Do not worry about complex exclusion lists like health insurance has. The only practical advice: do not lie in your proposal form about health, smoking, or occupation — if you die within 3 years and the insurer investigates and finds misrepresentation, they can reject the claim (Section 45). After 3 years, even misrepresentation cannot be grounds for rejection."
+  },
+  {
+    "id": "wording_038",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Depreciation Schedule for Parts",
+    "section": "Claims — Depreciation Deduction",
+    "content": "In the event of a claim for replacement of parts/accessories, the following depreciation shall be deducted from the cost of replacement parts: (a) Rubber, nylon, plastic parts, tyres and tubes, air bags, batteries: 50% depreciation; (b) Fibre glass components: 30% depreciation; (c) Glass parts: Nil depreciation; (d) Metal body parts: 0% for vehicles up to 6 months old, 5% for 6 months to 1 year, 10% for 1-2 years, 15% for 2-3 years, 25% for 3-5 years, 40% for 5-10 years, 50% for above 10 years. (e) Painting: actual cost with no depreciation for vehicles up to 2 years; 10% for 2-5 years.",
+    "plain_english": "When your car is repaired after an accident, the insurer deducts depreciation on replaced parts based on the type of part and the age of the car. Plastic and rubber parts always get 50% depreciation (you pay half). Glass has zero depreciation. Metal parts depreciation increases with car age — from 0% for new cars to 50% for cars above 10 years old. This depreciation deduction can make your out-of-pocket cost significant on an older car.",
+    "consumer_tip": "The depreciation deduction is the biggest reason people are surprised by their motor claim payout. On a 5-year-old car, if plastic bumpers, rubber seals, and a battery are replaced in addition to metal body panels — the depreciation deduction can be 30-50% of the total repair bill. This is exactly why zero depreciation add-on is valuable for new cars (0-5 years). For older cars, zero dep is usually not available."
+  },
+  {
+    "id": "wording_039",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — NCB Transfer and Portability",
+    "section": "Benefits — No Claim Bonus",
+    "content": "No Claim Bonus (NCB) is a discount on Own Damage premium earned for each claim-free year of insurance: 20% after 1 claim-free year, 25% after 2 years, 35% after 3 years, 45% after 4 years, and 50% after 5 or more consecutive claim-free years. NCB is the earned right of the policyholder and is transferable: (a) to a new vehicle purchased by the same owner; (b) to a different insurer at renewal; (c) on transfer of vehicle ownership, the NCB remains with the previous owner. NCB is forfeited if a claim is made during the policy year, resetting to 0%.",
+    "plain_english": "NCB is a reward for not making claims — it saves you 20-50% on your OD premium. After 5 claim-free years, you get 50% off your OD premium. The NCB belongs to YOU, not your car. If you sell your car and buy a new one, the NCB transfers to your new car. If you switch insurers, the NCB transfers. If you make even one OD claim, your NCB resets to 0%.",
+    "consumer_tip": "Before making a small claim, calculate whether it is worth losing your NCB. Example: if your OD premium is ₹15,000 and you have 50% NCB (saving ₹7,500/year), making a ₹5,000 claim means losing ₹7,500 in NCB — a net loss of ₹2,500. For small damages, it is often cheaper to pay out of pocket and preserve your NCB. Consider the NCB Protection add-on if you have high NCB."
+  },
+  {
+    "id": "wording_040",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Cashless Repair at Network Garage",
+    "section": "Claims — Cashless Facility",
+    "content": "The Company offers cashless repair facility at its network of authorized garages. The Insured shall: (a) intimate the Company/TPA within 24 hours of the incident; (b) submit claim form with damage photographs; (c) the Company shall appoint a surveyor within 24 hours; (d) upon surveyor's assessment, cashless authorization shall be issued to the network garage; (e) the Insured shall pay only the applicable deductible, depreciation on replaced parts, and any non-covered items; (f) repair quality is assured by the Company for 6 months from date of repair completion.",
+    "plain_english": "With cashless repair at a network garage, the insurer pays the garage directly — you only pay the deductible (₹1,000-2,000), depreciation on parts, and any non-covered items. You need to inform the insurer within 24 hours of the accident, submit photos, and go to one of their network garages. The surveyor assesses damage, approves the repair estimate, and the garage does the work. There is a 6-month quality guarantee on repairs.",
+    "consumer_tip": "Always prefer cashless at a network garage over reimbursement. Advantages: (1) You do not pay upfront, (2) No document submission hassle, (3) 6-month repair quality guarantee. To get the best experience: call the insurer immediately after the accident, take photos of damage from multiple angles, and go to the nearest network garage. Use the insurer's app to find network garages near you."
+  },
+  {
+    "id": "wording_041",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Third Party Liability Section",
+    "section": "Section II — Third Party Liability",
+    "content": "The Company hereby agrees to indemnify the Insured against all sums which the Insured shall become legally liable to pay as damages, including claimant's costs and expenses, in respect of: (a) death of or bodily injury to any person (including occupants carried for hire or reward) but excluding employees; (b) damage to property of any third party, up to the limit of ₹7.5 lakh per event. The Company shall also pay all costs and expenses incurred with its written consent. The liability under this section is unlimited for death and bodily injury claims.",
+    "plain_english": "If your vehicle causes an accident injuring or killing someone, the insurer pays the compensation awarded by the Motor Accidents Claims Tribunal (MACT). For bodily injury and death, there is NO upper limit — the insurer pays whatever the court awards (can be ₹10 lakh, ₹50 lakh, or even crores). For damage to someone else's property (their car, shop, wall), the limit is ₹7.5 lakh per incident.",
+    "consumer_tip": "Third-party insurance is compulsory under the Motor Vehicles Act — driving without it is a criminal offense. TP premium is fixed by IRDAI and is the same across all insurers. If you are involved in an accident causing third-party injury, immediately inform your insurer and cooperate with the investigation. Never admit liability at the accident scene — let the tribunal and insurer handle liability determination."
+  },
+  {
+    "id": "wording_042",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Personal Accident Owner-Driver Mandatory Cover",
+    "section": "Section III — Personal Accident",
+    "content": "Compulsory Personal Accident cover for the owner-driver of the vehicle: sum insured of ₹15 lakh payable in the event of: (a) Accidental death: 100% of sum insured (₹15 lakh); (b) Permanent total disability: 100% of sum insured; (c) Permanent partial disability: as per IRDAI Schedule of Disabilities. This cover is available only when the vehicle is being driven by the registered owner named in the policy. The owner-driver may opt out of this cover only if they hold a separate standalone PA policy with sum insured of ₹15 lakh or more.",
+    "plain_english": "Every motor insurance policy includes a mandatory ₹15 lakh PA cover for the vehicle owner when driving. If the owner dies in a vehicle accident, the nominee gets ₹15 lakh. If the owner suffers permanent disability, they receive compensation as per the disability schedule. This cover applies ONLY to the registered owner driving the vehicle — not to other authorized drivers.",
+    "consumer_tip": "This ₹15 lakh CPA cover costs only ₹750/year for cars and ₹200/year for two-wheelers. You can opt out ONLY if you already have a standalone PA policy worth ₹15 lakh+. There is no reason to opt out — the premium is negligible and the cover is valuable. Note: this covers only the owner-driver — for paid driver or named driver coverage, you need a separate add-on."
+  },
+  {
+    "id": "wording_043",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Zero Depreciation Add-On (Detailed)",
+    "section": "Add-on — Zero Depreciation",
+    "content": "Under this add-on, the depreciation deduction on replacement parts as specified in the standard depreciation schedule shall be waived. The Company shall pay the full invoice cost of replacement parts without any depreciation deduction, subject to: (a) maximum 2 claims per policy year under this add-on; (b) compulsory deductible still applies; (c) rubber, nylon, and plastic parts payable at 50% under this add-on (not 100%); (d) vehicle age: available only for vehicles up to 5 years old at inception; (e) tyres and tubes: payable at 50% under this add-on; (f) consumables (engine oil, coolant, nuts/bolts) are NOT covered under zero depreciation — separate consumable add-on needed.",
+    "plain_english": "Zero depreciation waives the age-based depreciation deduction on metal, fiberglass, and glass parts. Instead of paying 25-50% of replacement part cost out of pocket, you pay nothing (except the deductible). BUT: rubber and plastic parts are still at 50% (not zero), tyres at 50%, and consumables (oil, coolant) are not covered. You get a maximum of 2 claims per year with zero dep.",
+    "consumer_tip": "Zero dep is most valuable for new cars (0-3 years) and luxury cars where parts are expensive. After the car is 5 years old, zero dep is usually unavailable. Even with zero dep, there are items you still pay: compulsory deductible (₹1,000-2,000), rubber/plastic at 50%, consumables. For comprehensive protection, consider adding both zero dep AND consumable cover add-ons."
+  },
+  {
+    "id": "wording_044",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Pre-existing Disease (PED) Definition (Detailed)",
+    "section": "Definitions — Pre-existing Disease",
+    "content": "Pre-existing Disease means any condition, ailment, injury, or disease: (a) that is/are diagnosed by a physician within 48 months prior to the effective date of the policy issued by the insurer or its reinstatement; OR (b) for which medical advice or treatment was recommended by, or received from, a physician within 48 months prior to the effective date of the policy; OR (c) which was known to the insured at the time of proposal, irrespective of whether medical advice was sought. The determination of whether a condition is pre-existing shall be based on medical records, diagnostic reports, and physician certifications available at the time of claim assessment.",
+    "plain_english": "A pre-existing disease (PED) is any health condition you had or knew about in the 4 years before buying the policy. This includes: conditions diagnosed by a doctor, conditions for which you received treatment or advice, and conditions you were aware of even if you did not seek treatment. If you had knee pain for years but never saw a doctor — and your insurer can prove you knew about it — it can be classified as PED.",
+    "consumer_tip": "The most important thing: DISCLOSE everything in your proposal form. If you mention your conditions upfront, the insurer can either accept with exclusion or charge higher premium — but they cannot reject your claim later for non-disclosure. The PED waiting period (4 years, reducing to 3 years from 2025) starts from Day 1 of your policy. After that, PED is fully covered. After 8 years (moratorium), insurer cannot challenge any condition as PED."
+  },
+  {
+    "id": "wording_045",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — AYUSH Treatment Coverage",
+    "section": "Benefits — AYUSH",
+    "content": "The Company shall provide coverage for hospitalization treatment under Ayurveda, Yoga and Naturopathy, Unani, Siddha, and Homeopathy (AYUSH) systems of medicine, provided: (a) the treatment is taken in a government hospital or a hospital recognized by the Central/State Government or accredited by the Quality Council of India/NABH; (b) the treatment is administered by a qualified AYUSH practitioner registered with the respective state board; (c) the hospitalization is for a minimum of 24 hours (or qualifies as day-care procedure); (d) the maximum coverage under this benefit shall be equal to the sum insured (no separate sub-limit effective from 2024).",
+    "plain_english": "Your health insurance covers treatment under Indian traditional medicine systems: Ayurveda, Yoga, Unani, Siddha, and Homeopathy. The treatment must be at a recognized hospital with a registered practitioner. From 2024, AYUSH coverage is at par with allopathic treatment — up to your full sum insured without a separate sub-limit. Panchakarma therapy in an Ayurvedic hospital is covered if it requires hospitalization.",
+    "consumer_tip": "AYUSH coverage is often underutilized. If you prefer Ayurvedic or Homeopathic treatment for chronic conditions like arthritis, digestive disorders, or skin conditions — check if the hospital is NABH-accredited or government-recognized. Ensure the practitioner is registered with the state AYUSH board. Keep all prescriptions and treatment records — same documentation standard as allopathic treatment applies."
+  },
+  {
+    "id": "wording_046",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Modern Treatment Methods Coverage",
+    "section": "Benefits — Modern Treatment",
+    "content": "The Company shall cover the following modern treatment methods when prescribed by the treating specialist: (a) Robotic surgery (including da Vinci robotic system); (b) Stem cell therapy (for IRDAI-approved indications); (c) Immunotherapy (for cancer treatment); (d) Gene therapy (for approved genetic conditions); (e) Balloon sinuplasty; (f) Deep brain stimulation; (g) Oral chemotherapy; (h) Intra-vitreal injections; (i) Proton beam therapy; (j) HIFU (High Intensity Focused Ultrasound); (k) Uterine artery embolization. The coverage shall be subject to the terms and conditions of this policy including the sum insured and applicable sub-limits.",
+    "plain_english": "Your health insurance must cover advanced medical treatments including robotic surgery, stem cell therapy, immunotherapy for cancer, and other modern procedures. The insurer cannot refuse to cover a treatment just because it uses advanced technology. If your doctor prescribes robotic surgery for prostate cancer, the insurer must cover the full cost including the robot usage charges — they cannot limit it to what an open surgery would have cost.",
+    "consumer_tip": "If your insurer rejects a claim for robotic surgery citing it as 'not covered' or limits payout to 'equivalent open surgery cost' — this violates IRDAI guidelines. File a grievance citing the IRDAI circular on modern treatment methods. Robotic surgery typically costs ₹2-4 lakh more than traditional surgery but offers faster recovery. Your health insurance must cover the full cost."
+  },
+  {
+    "id": "wording_047",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Maternity Coverage (Detailed Terms)",
+    "section": "Benefits — Maternity",
+    "content": "Maternity Benefit shall cover: (a) Normal delivery and caesarean section (C-section) up to the maternity sub-limit specified in the Schedule; (b) Pre-natal expenses: consultations, diagnostics, and medications for 30 days prior to delivery date; (c) Post-natal expenses: mother and newborn care for 60 days after delivery date; (d) Ectopic pregnancy: covered without waiting period (treated as emergency); (e) Lawful medical termination of pregnancy: covered subject to maternity sub-limit; (f) Newborn coverage from birth: covered under the policy for first 90 days from date of birth without separate enrollment. Maternity benefit is subject to a waiting period of [24/36/48] months from the date of commencement of the first policy with the insurer.",
+    "plain_english": "Maternity coverage pays for delivery (normal or C-section), pre-natal care (30 days before), post-natal care (60 days after), and newborn care from birth. There is a waiting period (2-4 years depending on the plan) before maternity coverage activates. Ectopic pregnancy is treated as a medical emergency with no waiting period. The newborn is automatically covered for 90 days from birth — you do not need to separately enroll the baby during that period.",
+    "consumer_tip": "Plan ahead: buy health insurance with maternity cover 2-4 years before you plan to have a baby to serve the waiting period. Check the maternity sub-limit carefully — it varies from ₹25,000 to ₹1 lakh+ depending on the plan. C-section typically costs ₹50,000-₹2 lakh depending on the city and hospital — ensure your sub-limit is adequate. Also check if the newborn is automatically covered for the first 90 days — this saves significant expense for NICU stays."
+  },
+  {
+    "id": "wording_048",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Room Rent Proportionate Deduction (Worked Example)",
+    "section": "Limitations — Proportionate Deduction",
+    "content": "Example: Policy room rent limit: ₹5,000/day. Patient admitted to room costing ₹10,000/day (ratio: 50%). Total hospital bill: Room charges: ₹50,000 (5 days x ₹10,000). Surgeon fees: ₹80,000. Nursing: ₹15,000. ICU: ₹40,000. Medicines: ₹25,000. Diagnostics: ₹20,000. Total: ₹2,30,000. Proportionate deduction applied at 50% ratio to ALL charges: Admissible amount: ₹1,15,000 (50% of ₹2,30,000). Patient pays: ₹1,15,000 out of pocket. If patient had chosen ₹5,000/day room: Full ₹2,30,000 would be covered (within sum insured).",
+    "plain_english": "This example shows the devastating impact of room rent proportionate deduction. By choosing a room costing double the policy limit, the patient does not just lose ₹25,000 in room rent difference — they lose ₹1,15,000 because ALL charges (surgeon, ICU, medicines, diagnostics) are also cut by 50%. The total out-of-pocket cost is ₹1,15,000 instead of ₹0.",
+    "consumer_tip": "This is the single most expensive mistake in health insurance claims. ALWAYS choose a room within your policy limit. If no lower room is available, get a letter from the hospital admin confirming unavailability — this can be used to argue against proportionate deduction. Better yet: buy a policy without room rent sub-limits. The slightly higher premium saves you lakhs during a major claim."
+  },
+  {
+    "id": "wording_049",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Moratorium Period (8 Years)",
+    "section": "General Conditions — Moratorium",
+    "content": "After completion of 8 continuous years under this policy (including portability credit from previous insurer), no claim shall be contestable on the ground that a pre-existing disease or condition was not disclosed at the time of taking the policy or any renewal thereof. This moratorium shall apply to all conditions, whether or not disclosed, and whether or not known to the insured at the time of proposal. The only exception to this moratorium is provable fraud, which must be established by the insurer through documentary evidence in a court of competent jurisdiction.",
+    "plain_english": "After 8 continuous years of health insurance coverage (including years with a previous insurer if you ported), the insurer CANNOT reject any claim based on pre-existing disease non-disclosure. Even if you deliberately hid a condition when buying the policy, after 8 years it cannot be used against you. The only exception is if the insurer proves intentional fraud in a court — which is a very high legal bar.",
+    "consumer_tip": "The 8-year moratorium is your strongest consumer protection in health insurance. After 8 continuous years, you have near-absolute claim protection. This is why continuous coverage is critical — never let your policy lapse, as the moratorium clock resets. When porting to a new insurer, ensure they credit your previous coverage years toward the moratorium. Also note: there is a 5-year continuous coverage rule after which the PED waiting period (4 years) is deemed served regardless."
+  },
+  {
+    "id": "wording_050",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Mental Health Coverage (Mandatory)",
+    "section": "Benefits — Mental Health",
+    "content": "In compliance with Section 21(4) of the Mental Healthcare Act, 2017 and IRDAI directives, the Company shall cover treatment of mental illness on the same basis as physical illness. Covered conditions include but are not limited to: depression, bipolar disorder, schizophrenia, anxiety disorders, obsessive-compulsive disorder, post-traumatic stress disorder, eating disorders, substance abuse disorders (when under psychiatric supervision), and any other condition classified as mental illness under the Mental Healthcare Act, 2017. Coverage includes: inpatient psychiatric hospitalization, psychiatric medications, psychotherapy during hospitalization, and rehabilitation.",
+    "plain_english": "Mental illness is covered by your health insurance — this is your legal right under the Mental Healthcare Act. Whether it is depression requiring hospitalization, schizophrenia treatment, severe anxiety, or substance abuse de-addiction — the insurer must cover it just like they cover heart disease or cancer. The insurer cannot charge extra premium for mental health history or exclude mental illness from your policy.",
+    "consumer_tip": "If your health insurer rejects a mental health claim, you have an extremely strong legal position. Cite: (1) Mental Healthcare Act 2017, Section 21(4), (2) IRDAI circular mandating mental health coverage. File with IRDAI Bima Bharosa immediately. Consumer forums have consistently ruled against insurers who reject mental health claims. OPD mental health (therapy sessions, psychiatrist consultations) may or may not be covered — check if your policy has OPD benefit."
+  },
+  {
+    "id": "wording_051",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Cancer Treatment Coverage",
+    "section": "Benefits — Cancer",
+    "content": "The Company shall cover all medically necessary treatment for cancer including: (a) Chemotherapy (intravenous and oral); (b) Radiation therapy (external beam, brachytherapy, proton beam); (c) Immunotherapy and targeted therapy; (d) Hormonal therapy; (e) Bone marrow transplant/stem cell transplant; (f) Surgical procedures including robotic surgery; (g) PET scan and cancer diagnostics; (h) Prosthetics after cancer surgery (breast prosthesis after mastectomy, limb prosthesis); (i) Post-cancer rehabilitation and palliative care. Cancer claims shall not be subject to any disease-specific sub-limit lower than 50% of the sum insured.",
+    "plain_english": "Health insurance must cover comprehensive cancer treatment: surgery, chemotherapy, radiation, immunotherapy, targeted therapy, bone marrow transplant, and even robotic surgery for cancer. Post-cancer prosthetics (like breast prosthesis after mastectomy) and rehabilitation are also covered. The insurer cannot set a separate cancer sub-limit lower than 50% of your sum insured — if your SI is ₹20 lakh, cancer treatment must be covered for at least ₹10 lakh.",
+    "consumer_tip": "Cancer treatment can cost ₹5-25 lakh depending on the type and stage. Ensure your health insurance sum insured is adequate. Consider: a super top-up on top of your base policy to enhance cancer coverage. Oral chemotherapy at home is also covered — you do not need to be hospitalized for each chemo cycle. If your insurer tries to reject cancer drugs as 'investigational' or 'not proven', get your oncologist to certify medical necessity."
+  },
+  {
+    "id": "wording_052",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Trip Cancellation (Detailed Clauses)",
+    "section": "Benefits — Trip Cancellation",
+    "content": "The Company shall reimburse the Insured for unused, non-refundable, pre-paid trip expenses for trip cancellation due to: (a) sudden serious illness/injury requiring hospitalization of the Insured, Insured's spouse, or dependent child within 30 days of departure; (b) death of immediate family member; (c) natural disaster making destination officially declared uninhabitable; (d) visa denial with documented proof of rejection; (e) jury duty or compulsory government service with written orders. Maximum reimbursement: actual non-refundable expenses or 100% of trip cost (whichever is lower). Exclusions: change of mind, financial inability, fear of travel, employer pressure, or any other reason within the Insured's control.",
+    "plain_english": "Trip cancellation insurance reimburses non-refundable trip costs (flights, hotels, tours) when you cannot travel due to specific documented reasons: serious illness, family death, natural disaster, or visa rejection. It does NOT cover: deciding not to go, being afraid to travel, work pressure, or any personal reason. You must prove the cancellation reason with documentation — hospital certificate, death certificate, embassy rejection letter.",
+    "consumer_tip": "Book refundable travel wherever possible — it is often cheaper than the trip cancellation premium. For non-refundable bookings: buy travel insurance immediately after booking (not at the last minute). If you need to cancel: get documentation FIRST (doctor's certificate, etc.) before cancelling bookings. The insurer will ask for proof that the reason was genuine and unforeseeable."
+  },
+  {
+    "id": "wording_053",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Medical Evacuation and Repatriation",
+    "section": "Benefits — Emergency Medical Evacuation",
+    "content": "The Company shall cover: (a) Emergency medical evacuation: transportation of the Insured to the nearest adequate medical facility when local treatment is inadequate — by air ambulance, commercial flight (business class if medical necessity), or ground ambulance; (b) Repatriation to India: when the Insured is medically stable, transportation back to India including medical escort if required; (c) Repatriation of mortal remains: transportation of deceased Insured's body to India including embalming, casket, and customs documentation; (d) Accompaniment benefit: economy class round-trip ticket for one family member to travel to the Insured's location in case of hospitalization exceeding 7 days. Maximum coverage: USD 100,000 or as specified in the Schedule.",
+    "plain_english": "If you fall seriously ill abroad and the local hospital cannot treat you adequately, travel insurance covers emergency evacuation to a better hospital (by air ambulance if needed). Once stable, it covers your return to India with medical escort. If you die abroad, it covers transportation of your body back to India. If you are hospitalized for more than 7 days, it even covers a family member's flight ticket to be with you.",
+    "consumer_tip": "Medical evacuation is the most expensive component of travel insurance and the most critical. An air ambulance from Europe to India can cost ₹30-50 lakh. Without travel insurance, your family would bear this cost. Always buy travel insurance with at least USD 100,000 medical evacuation coverage. For adventure travel or trekking at altitude, ensure evacuation from remote locations (helicopter rescue) is explicitly covered."
+  },
+  {
+    "id": "wording_054",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Flight Delay and Missed Connection",
+    "section": "Benefits — Flight Delay",
+    "content": "The Company shall provide the following benefits in the event of flight delay: (a) Flight delay of 6 hours or more at the point of departure: reimbursement of reasonable expenses for meals, refreshments, and hotel accommodation up to [₹5,000/USD 100] per 6-hour delay block; (b) Flight delay of 12 hours or more: additional fixed benefit of [₹10,000/USD 200]; (c) Missed connecting flight due to delay of incoming flight: reimbursement of additional travel costs to reach the destination by the next available route, up to [₹25,000/USD 500]; (d) Trip curtailment: if the delayed flight results in loss of 24 hours or more of the planned trip, reimbursement of proportionate unused tour/accommodation costs.",
+    "plain_english": "If your flight is delayed by 6+ hours, travel insurance reimburses meals and hotel costs during the wait. A delay of 12+ hours gives an additional fixed compensation. If you miss a connecting flight because your first flight was delayed, the additional cost to rebook and reach your destination is covered. If the delay eats into your trip significantly (24+ hours lost), you can claim proportionate refund of unused tour costs.",
+    "consumer_tip": "Keep all receipts during flight delays — meal bills, hotel receipts, and rebooking charges. Get written confirmation from the airline of the delay and its duration. If the airline provides meals/accommodation, you cannot double-claim from insurance. If the airline cancels your flight (not just delays), the airline bears responsibility under their contract of carriage — file with the airline first, then insurance for any gaps."
+  },
+  {
+    "id": "wording_055",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Organ Donor Expenses Coverage",
+    "section": "Benefits — Organ Transplant",
+    "content": "The Company shall cover all medical expenses of the organ donor during the course of organ harvesting and related procedures, subject to the Insured Person's Sum Insured. Coverage includes: (a) Pre-operative assessment and testing of the organ donor; (b) Surgical expenses for organ harvesting; (c) Hospitalization of the organ donor including ICU and ward charges; (d) Post-operative care and follow-up of the organ donor for up to 30 days post-surgery; (e) Organ preservation and transportation costs. The organ donor need not be a policyholder under this or any insurance policy. The coverage shall be in addition to the recipient's transplant surgery coverage.",
+    "plain_english": "When you need an organ transplant and a living donor donates an organ (like a kidney), all the donor's medical expenses are covered by YOUR health insurance. This includes the donor's testing, surgery, hospitalization, and 30-day follow-up. The donor does not need their own insurance. These expenses come from your sum insured but are in addition to your own transplant surgery costs.",
+    "consumer_tip": "This is a critical benefit that many policyholders are not aware of. If you need a kidney transplant and a family member donates a kidney, the donor's entire medical bill (typically ₹2-4 lakh) is covered by your health insurance. Ensure your sum insured is adequate to cover both your transplant and the donor's expenses. Some policies also cover organ transportation costs if the donor is in a different city."
+  },
+  {
+    "id": "wording_056",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Guaranteed Renewal and Non-Cancellation",
+    "section": "General Conditions — Renewal",
+    "content": "This policy is guaranteed renewable for life. The Company shall not cancel, refuse to renew, or impose new exclusions on this policy: (a) on account of claims made during the policy year; (b) on account of the Insured Person's deterioration in health; (c) on account of the Insured Person's advancing age. The Company may revise premium rates applicable to the entire portfolio of policyholders in the same age band and product category, subject to IRDAI approval. No individual-specific premium increase shall be levied. The Company may discontinue the product — in which case, the policyholder shall be migrated to an equivalent or better product at the same or lower premium.",
+    "plain_english": "Your health insurance is guaranteed renewable for life. The insurer cannot cancel your policy or refuse renewal because you made claims or because your health has worsened. They can increase premiums — but only across the board for everyone in your age group, not specifically for you because you claimed. If the insurer discontinues your product, they must migrate you to an equivalent product.",
+    "consumer_tip": "This is one of the most important consumer protections in health insurance. Never worry about 'claiming too much' — your policy cannot be cancelled for making claims. If the insurer tries to refuse renewal, report to IRDAI immediately — this is a serious regulatory violation. When premiums increase at renewal, it should be a portfolio-wide increase, not targeted at you individually. Ask the insurer to confirm the increase is applicable to all policyholders in your age band."
+  },
+  {
+    "id": "wording_057",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Co-Payment Clause",
+    "section": "Limitations — Co-Payment",
+    "content": "Co-payment means a cost sharing requirement under this policy that provides that the Insured Person will bear a specified percentage of the admissible claim amount. The co-payment percentage applicable to this policy is specified in the Schedule of Benefits. Co-payment shall be applied after all other deductions (sub-limits, non-medical items, non-payable items) have been computed. The Company shall pay the claim amount minus the co-payment percentage. Co-payment for senior citizens (age 60+) shall not exceed 20% as per IRDAI guidelines.",
+    "plain_english": "Co-payment means you share a percentage of every claim with the insurer. If your policy has a 10% co-pay and your approved claim is ₹5 lakh, the insurer pays ₹4.5 lakh and you pay ₹50,000. Co-pay is applied AFTER all other deductions — so it is calculated on the net admissible amount, not the total bill. For senior citizens, the maximum co-pay allowed is 20%.",
+    "consumer_tip": "Co-pay reduces your premium but increases your out-of-pocket cost during claims. A 10% co-pay on a ₹10 lakh claim means you pay ₹1 lakh from your pocket. For young families, choose a policy with 0% co-pay (slightly higher premium but worth it). For senior citizen policies, 10-20% co-pay is common and helps keep premiums affordable. Always factor co-pay into your insurance planning — it is a significant cost during large claims."
+  },
+  {
+    "id": "wording_058",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Cumulative Bonus / No Claim Bonus",
+    "section": "Benefits — Cumulative Bonus",
+    "content": "For each claim-free year, the Sum Insured shall be increased by [5-10]% of the base Sum Insured, subject to a maximum cumulative increase of [50-100]% of the base Sum Insured over the policy tenure. In the event of a claim during a policy year: (a) Basic NCB: the cumulative bonus is reduced by one step (not reset to zero); (b) Super NCB (if applicable): the cumulative bonus is retained even after one claim per year. The cumulative bonus shall be transferable to a new insurer in the event of portability, subject to verification of claim-free status from the previous insurer.",
+    "plain_english": "Health insurance NCB works differently from motor NCB. Instead of giving you a premium discount, it increases your sum insured. Each claim-free year adds 5-10% to your SI. After 10 claim-free years, your SI could double. If you make a claim, you lose one step of bonus (not the entire bonus). When you port to a new insurer, your cumulative bonus transfers with you.",
+    "consumer_tip": "Health NCB is extremely valuable over the long term. If you start with ₹10 lakh SI and get 10% NCB per year, after 10 claim-free years your effective SI is ₹20 lakh — without paying any additional premium. This is why health insurance becomes more valuable over time. Avoid making small claims (₹10,000-20,000) that would cost you a year's NCB increment. Save your insurance for significant medical events."
+  },
+  {
+    "id": "wording_059",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Restoration Benefit (Detailed)",
+    "section": "Benefits — Restoration",
+    "content": "If the Sum Insured is exhausted during the policy year, the Sum Insured shall be reinstated as follows: (a) Basic Restoration: Sum Insured reinstated once per year for a DIFFERENT illness/condition than the one that exhausted the original SI; (b) Unlimited Restoration: Sum Insured reinstated for ANY illness (including the same illness) — available on select premium plans; (c) The restoration benefit is available for each insured member individually under a family floater; (d) Restoration activates only when the original Sum Insured is 100% exhausted (not for partial utilization). The reinstated Sum Insured is equal to the base Sum Insured (excluding any cumulative bonus).",
+    "plain_english": "If you exhaust your entire sum insured in one claim, the restoration benefit refills it so you still have coverage for the rest of the year. Basic restoration: the refilled SI can only be used for a different illness. Unlimited restoration: the refilled SI can be used for any illness, including more treatment for the same condition. Restoration activates only when SI is fully used up, not when partially used.",
+    "consumer_tip": "Understand which type of restoration your policy has — basic vs unlimited. For a family floater with 4 members: if one member exhausts the entire SI, basic restoration ensures other family members still have coverage (for different illnesses). Unlimited restoration is far superior — especially for cancer patients who may need multiple rounds of treatment costing more than one round of SI. Check if your policy restores the base SI or the enhanced SI (with cumulative bonus)."
+  },
+  {
+    "id": "wording_060",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Emergency Ambulance Coverage",
+    "section": "Benefits — Ambulance",
+    "content": "The Company shall reimburse the cost of ambulance services for transportation of the Insured Person to the nearest hospital with adequate medical facilities: (a) Road ambulance: covered at actual cost up to ₹5,000 per hospitalization event or as specified in the Schedule; (b) Air ambulance: covered up to 10% of the Sum Insured or ₹5 lakh (whichever is lower) when ground transportation is not feasible due to terrain, distance, or medical urgency; (c) Government ambulance services (108/102): fully reimbursed at actual; (d) Inter-hospital ambulance transfer: covered when transfer is medically necessary for specialized treatment. Dead body transportation from hospital to residence or cremation ground is covered up to ₹10,000.",
+    "plain_english": "Your health insurance covers ambulance costs — both road ambulance (up to ₹5,000 per event) and air ambulance (up to 10% of SI or ₹5 lakh). Government 108 ambulance charges are fully covered. If you need to be transferred from one hospital to another for better treatment, that ambulance is also covered. Even the cost of transporting a deceased family member from hospital to home is covered up to ₹10,000.",
+    "consumer_tip": "In an emergency, call 108 (government ambulance) or the nearest private ambulance — do not worry about whether it is covered. Keep the ambulance receipt for reimbursement. For air ambulance (helicopter/air evacuation), this is typically needed for accidents in remote areas or mountain trekking injuries. Ensure your policy has air ambulance coverage if you travel frequently to remote areas. The ₹5,000 road ambulance limit may seem low — some premium policies offer higher limits or uncapped ambulance coverage."
+  },
+  {
+    "id": "wording_061",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Nomination and Assignment (Detailed Comparison)",
+    "section": "General Conditions — Nomination vs Assignment",
+    "content": "Nomination (Section 39, Insurance Act): designates who receives the death benefit. Beneficial nominee (spouse, children, parents) is absolute owner. Non-beneficial nominee holds money as trustee for legal heirs. Assignment (Section 38): transfers ownership of the policy itself. Absolute assignment: complete transfer of all rights. Conditional assignment: ownership reverts on condition (e.g., loan repaid). Key difference: nomination takes effect only on death; assignment takes effect immediately during the policyholder's lifetime.",
+    "plain_english": "Nomination and assignment are different legal concepts. Nomination is like naming someone to receive your mail — it only matters after your death. Assignment is transferring the policy itself to someone else during your lifetime. If your spouse is a nominee, they get the money when you die. If you assign the policy to a bank, the bank owns the policy rights now (during your lifetime) — they receive the payout until the loan is repaid.",
+    "consumer_tip": "For most families: nominate your spouse and children as beneficial nominees — this gives them absolute ownership of the death benefit, bypassing any will disputes. Only assign your policy if required for a loan. Always use CONDITIONAL assignment for loans — so the policy reverts to you on loan repayment. After a home loan is repaid, verify that the bank has released the assignment — many banks forget this step."
+  },
+  {
+    "id": "wording_062",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard ULIP — Lock-in Period and Discontinuance Charges",
+    "section": "Conditions — Lock-in",
+    "content": "The minimum lock-in period for ULIPs shall be 5 years from the date of commencement of the policy. During the lock-in period: (a) Surrender/withdrawal of fund value is not permitted; (b) If premiums are discontinued during lock-in: the fund value is moved to a Discontinued Policy Fund earning minimum 4% p.a., and the fund value (minus discontinuance charges) is paid out on completion of the lock-in period. Discontinuance charges: Year 1: lower of ₹3,000 or 6% of fund value; Year 2: ₹2,500 or 4%; Year 3: ₹2,000 or 3%; Year 4: ₹1,500 or 2%; Year 5 onwards: Nil.",
+    "plain_english": "You cannot withdraw from a ULIP for the first 5 years — this is a mandatory lock-in. If you stop paying premiums during this period, your money sits in a low-return fund (4% p.a.) and is returned to you after the 5-year lock-in ends, minus a discontinuance charge. The charge decreases each year — from ₹3,000 in year 1 to zero after year 5.",
+    "consumer_tip": "The 5-year lock-in is why ULIPs should never be compared to mutual funds for short-term goals. If you cannot commit to 5 years of premium payment, do not buy a ULIP. After 5 years, you can surrender with zero charges and get your full fund value. During lock-in, if you stop premiums, your money earns only 4% — much less than keeping it invested in the market-linked fund. Stick with premium payments for at least 5 years."
+  },
+  {
+    "id": "wording_063",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Engine Protect Add-On",
+    "section": "Add-on — Engine Protect",
+    "content": "Subject to payment of additional premium, the Company agrees to cover loss or damage to the engine, gear box, and transmission resulting from: (a) Water ingression (hydrostatic lock) due to driving through waterlogged areas; (b) Lubricant leakage leading to engine seizure; (c) Damage to engine components due to entry of foreign matter. This add-on covers: engine repair/replacement costs including labor. Exclusions: (i) Normal wear and tear of engine; (ii) Damage due to lack of routine maintenance; (iii) Consequential loss beyond engine repair/replacement. Available only for vehicles up to 7 years old.",
+    "plain_english": "The Engine Protect add-on covers your engine damage from driving through flooded roads (hydrostatic lock), which the standard policy does NOT cover. It also covers engine seizure from oil leaks and damage from foreign matter entering the engine. Without this add-on, engine damage from waterlogging is entirely your expense — and engine replacement can cost ₹50,000 to ₹5 lakh depending on the car.",
+    "consumer_tip": "If you live in a city prone to flooding (Mumbai, Chennai, Kolkata, Bengaluru), the Engine Protect add-on is essential. Many car owners learn this the hard way during monsoon — driving through a waterlogged road, engine hydrolocks, and the standard policy does not cover it. Engine replacement on a mid-range car can cost ₹1.5-3 lakh. The Engine Protect add-on premium is typically ₹500-2,000 — a small price for critical protection."
+  },
+  {
+    "id": "wording_064",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Return to Invoice (RTI) Add-On",
+    "section": "Add-on — Return to Invoice",
+    "content": "Subject to payment of additional premium, in the event of Total Loss or Constructive Total Loss or Theft of the insured vehicle, the Company shall pay the difference between the ex-showroom invoice value of the vehicle (as per original purchase invoice) and the Insured's Declared Value (IDV) payable under the standard policy. Total payout: IDV + RTI amount = ex-showroom invoice value. Conditions: (a) Available for vehicles up to 5 years old; (b) Maximum 1 claim under this add-on per policy period; (c) Registration, road tax, and accessories value are NOT included in RTI — only ex-showroom price.",
+    "plain_english": "With standard insurance, in a total loss or theft, you get the IDV (depreciated value). A 3-year-old car bought for ₹10 lakh might have an IDV of ₹7 lakh — you lose ₹3 lakh. The RTI add-on pays the gap: you get the full original invoice price (₹10 lakh in this case). This means zero financial loss on the car itself in case of total loss or theft.",
+    "consumer_tip": "RTI is most valuable for new and expensive cars where the gap between invoice and IDV is large. For a ₹15 lakh car after 3 years: IDV might be ₹10.5 lakh, RTI fills the ₹4.5 lakh gap. The RTI add-on costs approximately 5-8% of OD premium — a small price to protect ₹4.5 lakh. Note: RTI does not cover registration fees, road tax, or accessories — only the ex-showroom price. For accessories, get a separate declared accessories cover."
+  },
+  {
+    "id": "wording_065",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Consumable Cover Add-On",
+    "section": "Add-on — Consumable Cover",
+    "content": "Subject to payment of additional premium, the Company shall reimburse the cost of consumable items used during repair of the insured vehicle following an accident covered under this policy. Consumable items covered: engine oil, gear box oil, coolant, brake oil, AC gas/refrigerant, grease, washers, clips, nuts and bolts, screws, bearings, seals and gaskets, and similar consumable parts that are not covered under the standard policy. Maximum coverage per claim: actual cost or 5% of the total claim amount (whichever is lower).",
+    "plain_english": "When your car is repaired after an accident, the standard policy does not cover consumable items like engine oil, brake fluid, coolant, AC gas, nuts and bolts, seals, and bearings. You pay for these out of pocket. The consumable cover add-on reimburses these costs. For a typical repair: consumables can add ₹2,000-10,000 depending on the extent of repair.",
+    "consumer_tip": "Consumable cover is one of the most underrated motor add-ons. During major repairs, the consumable bill (oil, coolant, AC gas, seals, bearings) can be ₹5,000-15,000 — none of which is covered by the standard policy or even zero depreciation. The add-on costs approximately ₹300-800 per year. Combined with zero dep and engine protect, you get near-complete motor claim coverage with minimal out-of-pocket costs."
+  },
+  {
+    "id": "wording_066",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Super Top-Up Deductible Mechanism",
+    "section": "Policy Structure — Super Top-Up",
+    "content": "This Super Top-Up Health Insurance Policy provides coverage for medical expenses that exceed the Deductible Amount specified in the Schedule. The Deductible is the threshold amount below which the Company has no liability. The Deductible operates on an aggregate basis across all claims during the policy year (not per claim). Example: If Deductible = ₹5 lakh and total claims in the year = ₹8 lakh, Company pays ₹3 lakh (₹8 lakh minus ₹5 lakh). The Deductible can be met by: (a) the Insured's own base health policy claims; (b) employer group health insurance claims; (c) out-of-pocket medical expenses.",
+    "plain_english": "A super top-up is like a second layer of health insurance that kicks in after your base coverage is exhausted. You choose a deductible (say ₹5 lakh) matching your base policy sum insured. If total medical bills in a year exceed ₹5 lakh, the super top-up pays everything above ₹5 lakh up to its own sum insured. The deductible is aggregate per year — so multiple smaller claims can also breach the deductible.",
+    "consumer_tip": "Super top-up is the most cost-effective way to enhance health coverage. A ₹50 lakh super top-up with ₹5 lakh deductible costs roughly ₹3,000-5,000/year for a 35-year-old — compared to ₹15,000-25,000 for a comprehensive ₹50 lakh policy. If you already have ₹5 lakh employer group coverage, add a ₹50 lakh super top-up with ₹5 lakh deductible — you are covered for ₹55 lakh total at minimal cost."
+  },
+  {
+    "id": "wording_067",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Subrogation Rights",
+    "section": "General Conditions — Subrogation",
+    "content": "The Insured Person shall take all reasonable steps to preserve and exercise their right of recovery against any third party. The Company shall be entitled to subrogation rights — the right to recover from any third party who is legally liable for the Insured Person's medical expenses. Upon settlement of a claim, the Insured Person shall transfer to the Company all rights of recovery against such third party. Any amount recovered through subrogation shall be applied: first to reimburse the Company, and any excess shall be paid to the Insured Person.",
+    "plain_english": "If someone else is legally responsible for your injury (e.g., a road accident caused by another driver), your health insurer pays your medical bills but then has the right to recover that money from the person who caused the injury. You must cooperate with your insurer in this recovery process. If the insurer recovers more than they paid, the excess goes to you.",
+    "consumer_tip": "This clause mainly applies to accident cases where a third party is at fault. Your health insurer pays your hospital bills immediately (cashless or reimbursement) and then pursues the at-fault party for recovery. You do not need to wait for the third party to pay — your health insurance works immediately. Keep the FIR copy and police report — your insurer may need them for subrogation."
+  },
+  {
+    "id": "wording_068",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Grace Period for Premium Payment",
+    "section": "General Conditions — Grace Period",
+    "content": "A grace period of 30 days from the premium due date shall be allowed for payment of each renewal premium. During the grace period, the policy shall remain in force with full coverage. If the premium is not paid within the grace period, the policy shall lapse. A lapsed policy can be revived within [90/180] days of lapse by paying the outstanding premium. Claims arising during the grace period are payable — the outstanding premium shall be deducted from the claim amount. Claims during lapsed period are NOT payable.",
+    "plain_english": "You have 30 extra days after your premium due date to pay without losing coverage. During these 30 days, if you are hospitalized, the claim is still valid — the insurer will deduct the unpaid premium from the claim payout. If you do not pay within 30 days, the policy lapses and you have no coverage. You can revive a lapsed policy within 90-180 days by paying the premium, but claims during the lapse period are not covered.",
+    "consumer_tip": "Set up auto-debit for your health insurance premium — never let it lapse. If your policy lapses and you revive it, some insurers may impose fresh waiting periods or require medical underwriting again. A 30-day gap in coverage can be very risky — if you are hospitalized during the lapse period, you are entirely uninsured. If you are facing financial difficulty, contact the insurer before the grace period ends — some offer premium instalment options."
+  },
+  {
+    "id": "wording_069",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Term Insurance — Accidental Death Benefit Rider",
+    "section": "Riders — Accidental Death",
+    "content": "Accidental Death Benefit Rider provides an additional sum assured over and above the base policy sum assured in the event of death of the Life Assured due to an accident. The Rider Sum Assured shall be equal to the Base Sum Assured (effectively doubling the death benefit on accidental death). Accident is defined as a sudden, unforeseen, external, and violent event causing bodily injury which independently of any other cause results in death within 180 days of such event. Exclusions: suicide, self-inflicted injury, war, nuclear, participation in criminal activity, death under influence of alcohol/drugs (with blood alcohol above legal limit).",
+    "plain_english": "This rider doubles your death benefit if you die in an accident. If your term plan sum assured is ₹1 crore, the accidental death rider adds another ₹1 crore — your family gets ₹2 crore on accidental death. The death must occur within 180 days of the accident and must be caused solely by the accident. Standard exclusions apply: drunk driving, criminal activity, war.",
+    "consumer_tip": "The accidental death rider costs very little (₹300-500 per year for ₹1 crore rider) because accidental deaths are statistically rare. It is worth adding for the marginal cost. However, do not over-rely on AD riders — ensure your base term sum assured is adequate for your family's needs regardless of death cause. Most deaths in India are from illness (heart disease, cancer), not accidents — so the base policy is more important than the rider."
+  },
+  {
+    "id": "wording_070",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Term Insurance — Critical Illness Rider",
+    "section": "Riders — Critical Illness",
+    "content": "Critical Illness Rider provides a lump sum benefit equal to the CI Rider Sum Assured upon first diagnosis of any of the following critical illnesses: (1) Cancer of specified severity; (2) First heart attack — of specified severity with troponin elevation; (3) Coronary artery bypass surgery; (4) Stroke with permanent neurological deficit; (5) Kidney failure requiring regular dialysis; (6) Major organ transplant; (7) Paralysis of limbs; (8) Multiple sclerosis; (9) Major burns; (10) Blindness. The CI benefit is payable subject to a 30-day survival period from the date of diagnosis. The CI benefit is paid in addition to (and not in lieu of) the base policy death benefit.",
+    "plain_english": "The CI rider pays a lump sum when you are diagnosed with a listed critical illness. If your CI rider is ₹25 lakh and you are diagnosed with cancer, you get ₹25 lakh immediately (after surviving 30 days from diagnosis). This money is for treatment costs, income replacement, and lifestyle modifications. Your base term insurance continues — if you die later, your family still gets the full death benefit.",
+    "consumer_tip": "CI riders are valuable but have strict definitions. For example: 'cancer of specified severity' excludes early-stage cancers like Stage 0/carcinoma in situ, some skin cancers, and early thyroid cancers. 'Heart attack' requires specific troponin levels and ECG findings. Read the definitions carefully. The CI lump sum is most useful as income replacement during recovery — it gives you money when you cannot work. Consider a CI rider of at least 5-10x your monthly income."
+  },
+  {
+    "id": "wording_071",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Bariatric Surgery Coverage",
+    "section": "Benefits — Bariatric Surgery",
+    "content": "Bariatric surgery (weight loss surgery) shall be covered under this policy subject to the following conditions: (a) The Insured Person's BMI exceeds 35 (morbid obesity) OR BMI exceeds 30 with at least one obesity-related co-morbidity (Type 2 diabetes, severe sleep apnea, obesity-related heart disease); (b) The Insured Person has completed a documented 6-month supervised weight loss program that was unsuccessful; (c) The surgery is recommended by a qualified bariatric surgeon; (d) A waiting period of 24 months from policy inception applies. Coverage includes: gastric bypass, sleeve gastrectomy, adjustable gastric banding, and post-surgical nutritional counseling for 12 months.",
+    "plain_english": "Health insurance covers bariatric surgery if your BMI is above 35 (or above 30 with related health issues like diabetes) AND you have tried supervised weight loss for 6 months without success. There is a 24-month waiting period before this benefit activates. The surgery itself and 12 months of post-surgical nutritional follow-up are covered.",
+    "consumer_tip": "Bariatric surgery in India costs ₹2-5 lakh depending on the procedure and hospital. If you qualify (BMI > 35 or BMI > 30 with diabetes), start the 6-month supervised weight loss documentation immediately — this is a mandatory requirement. Keep all weight loss program records: dietitian consultations, gym memberships, medication, and periodic weight measurements. Without this 6-month documentation, your bariatric claim will be rejected."
+  },
+  {
+    "id": "wording_072",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Implant and Stent Coverage",
+    "section": "Benefits — Implants",
+    "content": "All medically necessary implants shall be covered at the actual cost billed by the hospital, subject to the Sum Insured. Common implants covered: (a) Cardiac stents (bare metal and drug-eluting) at NPPA-capped prices; (b) Knee replacement implants (total and partial); (c) Hip replacement implants; (d) Cochlear implants; (e) Spinal implants (rods, screws, cages); (f) Intraocular lenses (IOL) for cataract surgery; (g) Pacemakers, ICDs, and CRT devices; (h) Bone plates and screws for fracture fixation. The insurer shall not specify the brand or type of implant — the treating surgeon's recommendation shall be followed.",
+    "plain_english": "Your health insurance covers all medically necessary implants at actual cost. Cardiac stents have NPPA price caps (₹7,660 for bare metal, ₹29,600 for drug-eluting). Knee and hip replacement implants, cochlear implants, spinal hardware, pacemakers, and bone fixation devices are all covered. The insurer cannot dictate which brand or type of implant your doctor should use.",
+    "consumer_tip": "Implant costs are a significant part of many surgical bills. A knee replacement implant alone costs ₹50,000 to ₹3 lakh depending on the type (cemented vs cementless, standard vs high-flex). Ensure your sum insured is adequate to cover the implant plus the overall surgical cost. If your insurer tries to restrict implant brand or limit payout to a 'standard' implant cost — this violates IRDAI guidelines. Your doctor's recommendation should be followed. Get the implant serial number and warranty card for future reference."
+  },
+  {
+    "id": "wording_073",
+    "category": "motor",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Motor Policy — Roadside Assistance Add-On",
+    "section": "Add-on — Roadside Assistance",
+    "content": "Subject to payment of additional premium, the Company shall provide the following roadside assistance services: (a) Towing: vehicle towed to nearest network garage or a garage of the Insured's choice within 50 km radius, at no cost; (b) Battery jump-start: on-site assistance for dead battery; (c) Flat tyre change: assistance with spare tyre fitting (tyre/tube cost not included); (d) Emergency fuel delivery: up to 5 liters of fuel delivered to stranded vehicle (fuel cost payable by Insured); (e) Lockout assistance: arrangement for locksmith; (f) Minor on-site repair: basic roadside repairs to enable vehicle movement; (g) Taxi benefit: reimbursement up to ₹1,500 for taxi to reach home/destination if vehicle cannot be moved.",
+    "plain_english": "Roadside assistance add-on provides emergency help when your car breaks down: free towing within 50 km, battery jump-start, flat tyre change, emergency fuel delivery, and locksmith for lockout. If your car cannot be fixed on the spot, they arrange a taxi for you (up to ₹1,500 reimbursed). This is a convenience add-on — not a repair guarantee.",
+    "consumer_tip": "Roadside assistance is one of the cheapest add-ons (₹200-500/year) and provides enormous peace of mind, especially for long highway drives. Save the roadside assistance helpline number in your phone. Note: roadside assistance covers getting your car moving again — not the actual repair cost (that is covered under OD). If you frequently drive on highways or in remote areas, this add-on is a must-have."
+  },
+  {
+    "id": "wording_074",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Policy Loan Facility",
+    "section": "Benefits — Loan Against Policy",
+    "content": "The Policyholder may avail a loan against the policy subject to: (a) the policy has been in force for a minimum of 3 consecutive years with all premiums paid; (b) the maximum loan amount shall not exceed 90% of the surrender value of the policy; (c) interest on the loan shall be charged at the rate determined by the Company (typically repo rate + 2-3%); (d) the loan and interest shall be deducted from any claim (death or maturity) payment; (e) if the loan plus accrued interest exceeds the surrender value, the policy shall be foreclosed and the policyholder informed. The loan facility is available only for traditional plans and not for ULIPs or term insurance.",
+    "plain_english": "You can borrow money against your traditional life insurance policy (endowment, whole life, money back). The maximum loan is 90% of the surrender value. Interest is charged at repo rate + 2-3%. The loan does not need to be repaid in EMIs — the principal and interest are deducted from the maturity or death benefit. If you never repay and the loan grows larger than the surrender value, the policy is cancelled.",
+    "consumer_tip": "A policy loan is often cheaper than a personal loan — interest rates are typically 8-10% compared to 12-18% for personal loans. It is also fast: no credit check, no income proof — the policy is the collateral. However, beware of compound interest accumulation: if you do not repay, the interest keeps adding up and can eat into your maturity benefit significantly. Always compare: taking a policy loan vs surrendering the policy and investing elsewhere."
+  },
+  {
+    "id": "wording_075",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Post-Hospitalization Coverage",
+    "section": "Benefits — Post-Hospitalization",
+    "content": "The Company shall reimburse medical expenses incurred for treatment of the same ailment for which the Insured Person was hospitalized, for a period of 60 days (or 90 days as specified in the Schedule) from the date of discharge. Post-hospitalization expenses include: (a) Follow-up doctor consultations; (b) Diagnostic tests as prescribed by the treating doctor; (c) Medicines prescribed at discharge or during follow-up; (d) Physiotherapy sessions as prescribed. The expenses must be directly related to the condition for which hospitalization occurred. Receipts and prescriptions must be submitted as proof.",
+    "plain_english": "After you are discharged from the hospital, your health insurance continues to cover related medical expenses for 60-90 days. This includes follow-up doctor visits, blood tests, medicines prescribed at discharge, and physiotherapy. The expenses must be for the SAME condition you were hospitalized for — you cannot claim unrelated expenses under post-hospitalization.",
+    "consumer_tip": "Many policyholders forget to claim post-hospitalization expenses. After discharge, keep ALL receipts: pharmacy bills, doctor consultation fees, diagnostic reports, and physiotherapy bills. Submit these as part of your original claim within the claim submission deadline. For chronic conditions (cancer, cardiac), post-hospitalization expenses can be ₹20,000-50,000 — a significant amount worth claiming."
+  },
+  {
+    "id": "wording_076",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Pre-Hospitalization Coverage",
+    "section": "Benefits — Pre-Hospitalization",
+    "content": "The Company shall reimburse medical expenses incurred for treatment of the same ailment for which the Insured Person is subsequently hospitalized, for a period of 30 days (or 60 days as specified in the Schedule) prior to the date of admission. Pre-hospitalization expenses include: (a) Doctor consultations leading to hospitalization decision; (b) Diagnostic tests that led to diagnosis; (c) Medicines prescribed prior to admission; (d) Second opinion consultations. The expenses must be directly related to the condition for which hospitalization subsequently occurred.",
+    "plain_english": "Medical expenses for up to 30-60 days before your hospitalization are also covered — including the doctor visits, blood tests, scans, and medicines that led to the diagnosis and hospital admission. If you visited a cardiologist who ordered an ECG and stress test, then referred you for angioplasty — those pre-hospital expenses are all covered.",
+    "consumer_tip": "Start collecting receipts from the moment you first visit a doctor for the condition that eventually leads to hospitalization. Many people throw away initial consultation and diagnostic receipts — these are claimable under pre-hospitalization. If you had multiple doctor consultations across different specialties before reaching the final diagnosis, all related consultations are covered."
+  },
+  {
+    "id": "wording_077",
+    "category": "travel",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Travel Policy — Passport Loss Coverage",
+    "section": "Benefits — Passport Loss",
+    "content": "The Company shall reimburse expenses incurred by the Insured Person for obtaining a duplicate passport in the event of loss of passport during the trip: (a) Embassy/Consulate fees for emergency travel document or replacement passport; (b) Photographs and documentation costs; (c) Communication charges (phone, fax) related to passport replacement; (d) Additional hotel accommodation (up to 3 nights) while awaiting replacement passport; (e) Additional travel costs if the Insured misses their return flight due to passport replacement delay. Maximum coverage: ₹50,000 or as specified in the Schedule. Conditions: FIR or police report at the place of loss is mandatory.",
+    "plain_english": "If you lose your passport abroad, travel insurance covers the cost of getting a replacement: embassy fees, photos, extra hotel stays while waiting for the new passport, and rebooking travel if you miss your flight. You must file a police report/FIR immediately at the place where the passport was lost or stolen.",
+    "consumer_tip": "If your passport is lost or stolen abroad: (1) File a police report immediately, (2) Contact the nearest Indian Embassy/Consulate, (3) Keep all receipts for everything: hotel, food, communication, photos, fees. The maximum coverage is typically ₹50,000 — which should cover most expenses for passport replacement in most countries. Carry photocopies of your passport and visa separately from the originals."
+  },
+  {
+    "id": "wording_078",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — HIV/AIDS Coverage",
+    "section": "Benefits — HIV/AIDS",
+    "content": "In compliance with Section 3 of the HIV and AIDS (Prevention and Control) Act, 2017, the Company shall cover medical treatment for HIV/AIDS on the same basis as any other chronic disease. Coverage includes: (a) Hospitalization for HIV-related illnesses and opportunistic infections; (b) Antiretroviral therapy (ART) during hospitalization; (c) Diagnostic testing including CD4 count, viral load testing; (d) Treatment of opportunistic infections (tuberculosis, pneumonia, candidiasis) arising from HIV. The Company shall not: (i) deny coverage based on HIV status; (ii) charge additional premium based on HIV status; (iii) exclude HIV/AIDS from policy coverage.",
+    "plain_english": "Health insurance must cover HIV/AIDS treatment — this is mandated by law. The insurer cannot deny you a policy, charge higher premium, or exclude HIV from coverage. Hospitalization for HIV-related conditions, antiretroviral therapy, and treatment of infections arising from HIV are all covered. Pre-existing disease waiting period applies (4 years) but cannot be extended beyond standard for HIV.",
+    "consumer_tip": "If you are living with HIV and an insurer refuses to sell you health insurance or adds a specific HIV exclusion — this is illegal under the HIV/AIDS Act 2017 and IRDAI guidelines. File a complaint with IRDAI Bima Bharosa citing the Act. Many people with HIV do not buy health insurance thinking they are not eligible — you ARE eligible, and coverage is your legal right."
+  },
+  {
+    "id": "wording_079",
+    "category": "life",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Life Policy — Waiver of Premium Rider",
+    "section": "Riders — Waiver of Premium",
+    "content": "Waiver of Premium Rider: In the event of the Policyholder's Total Permanent Disability due to accident or diagnosis of any of the listed Critical Illnesses, all future premiums falling due under this policy shall be waived. The policy shall continue as if all premiums are being paid — all benefits including death benefit, maturity benefit, and riders shall remain in force. The waiver shall commence from the premium due date immediately following the date of disability/diagnosis and shall continue for the remaining premium payment term. This rider is available as an add-on at additional premium.",
+    "plain_english": "If you become permanently disabled or are diagnosed with a critical illness, this rider waives all future premiums on your life policy. The policy continues with full benefits — your family's death benefit protection remains intact even though you are no longer paying premiums. This is crucial for scenarios where disability or serious illness eliminates your income.",
+    "consumer_tip": "The waiver of premium rider is one of the most important riders for term insurance. If you are diagnosed with cancer or have a disabling accident, you likely cannot work and earn — how will you pay premiums? This rider ensures your family's ₹1 crore term cover continues even when you cannot pay. The cost is typically ₹500-1,500/year — absolutely worth it. It is especially important for policies with long premium payment terms (20-30 years)."
+  },
+  {
+    "id": "wording_080",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Claim Settlement Timelines (IRDAI Mandate)",
+    "section": "General Conditions — Settlement Timelines",
+    "content": "The Company shall settle claims within the following timelines mandated by IRDAI: (a) Cashless pre-authorization: approval/rejection within 1 hour for planned procedures, 30 minutes for emergencies; (b) Cashless final settlement: within 3 hours of discharge; (c) Reimbursement claims: within 30 days of receiving complete documents; (d) Additional document request: within 7 days of claim receipt; (e) Rejection communication: within 30 days with specific reasons citing policy clause. Interest at 2% above bank rate shall be payable on delayed settlement beyond these timelines. Any breach shall be reported to the IRDAI Policyholder Protection Division.",
+    "plain_english": "IRDAI has set strict timelines for claim settlement. Cashless must be approved within 1 hour (30 minutes for emergencies). Reimbursement must be settled within 30 days of complete documentation. If the insurer takes longer, they must pay you interest. If they reject your claim, they must give specific reasons citing the exact policy clause — generic rejection is not permitted.",
+    "consumer_tip": "Know your timelines and assert them: if cashless pre-auth takes more than 1 hour, escalate to the insurer's senior management citing IRDAI mandate. If reimbursement takes more than 30 days, demand interest. If rejection does not cite a specific policy clause, challenge it as non-compliant with IRDAI guidelines. Keep a timeline record of all communications with your insurer — dates of submission, responses, and delays. This documentation is invaluable if you escalate to Ombudsman or consumer forum."
+  },
+  {
+    "id": "wording_081",
+    "category": "health",
+    "insurer": "Generic/IRDAI Standard",
+    "policy_name": "Standard Health Policy — Portability Clause",
+    "section": "General Conditions — Portability",
+    "content": "The Insured Person has the right to port this policy to any other insurer under the IRDAI Health Insurance Portability Guidelines. On porting: (a) All waiting period credit earned with the current insurer shall be fully transferred to the new insurer; (b) The new insurer must accept portability for the same or lower sum insured without fresh medical underwriting; (c) Cumulative bonus / NCB earned shall be credited by the new insurer; (d) The portability window is 45 days before to 30 days after the renewal date; (e) The current insurer must issue a portability certificate within 7 days of request. Portability does not apply to: products with fundamentally different structures (e.g., indemnity to benefit-based).",
+    "plain_english": "You can switch your health insurance from one company to another (portability) without losing your waiting period credit. If you have served 3 years of PED waiting with your current insurer, the new insurer must credit those 3 years. Your NCB/cumulative bonus also transfers. The switch must happen within a specific window around your renewal date. Your current insurer must give you a portability certificate within 7 days.",
+    "consumer_tip": "Portability is your power tool against bad service. If your insurer has poor claim settlement, delayed cashless, or unhelpful customer service — port to a better insurer at renewal. You do not lose any waiting period credit or NCB. Start the portability process 45 days before renewal: (1) Apply to the new insurer, (2) Request portability certificate from current insurer, (3) New insurer must respond within 15 days. Do not cancel your existing policy until the new policy is confirmed."
   }
 ]

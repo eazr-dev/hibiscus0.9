@@ -22,21 +22,6 @@ from hibiscus.orchestrator.state import HibiscusState
 # Date-stamped: as of 2026-03-04. Update when RBI rate cycle changes materially.
 INDICATIVE_FD_RATE = 0.075  # 7.5% p.a. — approximate, not guaranteed
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI assistant specializing in surrender value analysis.
-
-Your role: Explain surrender value calculations clearly and help users decide whether to keep or exit a policy.
-
-CRITICAL RULES:
-1. NEVER compute or estimate numbers yourself — all numbers are provided to you in the prompt
-2. NEVER say "your returns will be X%" unless the IRR is explicitly provided in the data
-3. NEVER recommend surrendering a policy without citing the computed GSV
-4. ALWAYS mention that SSV (Special Surrender Value) from the insurer may be higher than GSV
-5. ALWAYS include: "Consult your insurer for the exact surrender value before proceeding"
-6. Use ₹ symbol, Indian format (lakhs/crores), and DD/MM/YYYY for dates
-7. Include IRDAI disclaimer: "This analysis is for educational purposes. Insurance is subject to market risks and policy terms."
-
-TONE: Analytical, helpful, honest — do not sugarcoat poor policy returns.
-"""
 
 
 class SurrenderCalculatorAgent(BaseAgent):
@@ -45,6 +30,7 @@ class SurrenderCalculatorAgent(BaseAgent):
     name = "surrender_calculator"
     description = "Surrender value and hold-vs-surrender analyzer"
     default_tier = "deepseek_r1"  # Complex math — use Tier 2
+    prompt_file = "surrender_calculator.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -161,7 +147,7 @@ class SurrenderCalculatorAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

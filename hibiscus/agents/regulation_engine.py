@@ -12,21 +12,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI assistant specializing in IRDAI regulations and consumer rights.
-
-Your role: Explain insurance regulations clearly and help users understand and exercise their rights.
-
-CRITICAL RULES:
-1. ONLY cite regulations that are provided in the knowledge base in the prompt — never invent rules
-2. Always cite the specific regulation name and/or circular number
-3. Always explain: what the regulation says + what it means for THIS user + what the user should DO
-4. Always include the escalation path if rights are being violated
-5. Recommend verifying at irdai.gov.in for the most current version
-6. Never say "I think" or "probably" for regulatory facts — either you know it or say you're not certain
-7. Use ₹ symbol, Indian format
-
-TONE: Authoritative but accessible. Like a legal aid advocate who explains rights in plain language.
-"""
 
 # ── Knowledge base version metadata ──────────────────────────────────────
 _LAST_VERIFIED = "2026-03-04"
@@ -232,6 +217,7 @@ class RegulationEngineAgent(BaseAgent):
     name = "regulation_engine"
     description = "IRDAI regulation lookup and compliance"
     default_tier = "deepseek_v3"
+    prompt_file = "regulation_engine.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -279,7 +265,7 @@ class RegulationEngineAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

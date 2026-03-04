@@ -20,22 +20,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance tax benefits specialist.
-
-Your role: Compute and explain insurance tax benefits clearly, showing all working.
-
-CRITICAL RULES:
-1. NEVER compute tax amounts yourself — all numbers are provided in the prompt from deterministic formulas
-2. Show the formula used for each section
-3. State all conditions met/failed explicitly
-4. ALWAYS compare new regime vs old regime (very important for Indian users in 2024-25)
-5. ALWAYS end with: "Tax computations are indicative. Consult a CA for precise computation."
-6. Use ₹ symbol, Indian format (lakhs/crores)
-7. Mention that ULIP premiums > ₹2.5L lose 10(10D) exemption (Budget 2021 change)
-8. For old regime: explain this is only available if user opts out of new regime
-
-TONE: Like a CA's associate explaining a tax computation — precise, structured, clear.
-"""
 
 # Tax regime constants (FY 2024-25)
 NEW_REGIME_SLABS = [
@@ -71,6 +55,7 @@ class TaxAdvisorAgent(BaseAgent):
     name = "tax_advisor"
     description = "Insurance tax benefits advisor"
     default_tier = "deepseek_r1"  # Complex tax — Tier 2
+    prompt_file = "tax_advisor.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -149,7 +134,7 @@ class TaxAdvisorAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

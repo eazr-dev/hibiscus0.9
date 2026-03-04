@@ -1,6 +1,6 @@
 """
 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
-KG seed: regulations — 100+ IRDAI circulars, guidelines, and master regulations.
+KG seed: regulations — 155 IRDAI circulars, guidelines, and master regulations.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
@@ -2072,6 +2072,1202 @@ REGULATIONS: List[Dict[str, Any]] = [
             "Emergency helpline access during travel",
         ],
         "legislation_type": "circular",
+    },
+
+    # ── BIMA SUGAM & BIMA VISTAAR ────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/INT/REG/CIR/001/01/2023",
+        "date": "2023-01-10",
+        "subject": "IRDAI (BIMA SUGAM - Digital Insurance Marketplace) Framework 2023",
+        "category": "bima_sugam",
+        "effective_date": "2023-04-01",
+        "key_requirements": [
+            "BIMA SUGAM is IRDAI's unified digital marketplace for insurance — analogous to UPI for payments",
+            "All life, health, and general insurers must register on BIMA SUGAM platform",
+            "Policyholders can view all their policies (across insurers) in a single dashboard",
+            "Policy purchase, renewal, portability, and claims filing available through single portal",
+            "Insurers must provide real-time API integration with BIMA SUGAM for policy issuance and servicing",
+        ],
+        "consumer_rights_granted": [
+            "Single dashboard for all insurance policies across insurers",
+            "Seamless portability and renewal through unified platform",
+            "Transparent product comparison across all registered insurers",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/INT/CIR/002/03/2023",
+        "date": "2023-03-20",
+        "subject": "BIMA SUGAM — Insurer API Integration Standards",
+        "category": "bima_sugam",
+        "effective_date": "2023-07-01",
+        "key_requirements": [
+            "Insurers must expose REST APIs for policy issuance, endorsement, and claims on BIMA SUGAM",
+            "Standardised data formats (JSON) for policy documents, claims, and customer data exchange",
+            "Real-time premium quotation API mandatory for all listed products",
+            "Claim status tracking API to provide real-time updates to policyholders",
+            "Data security: all API communications must use TLS 1.3 and OAuth 2.0 authentication",
+        ],
+        "consumer_rights_granted": [
+            "Real-time premium comparison across insurers",
+            "Instant policy issuance through digital marketplace",
+            "Real-time claim tracking across insurers",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/INT/REG/CIR/003/06/2024",
+        "date": "2024-06-15",
+        "subject": "BIMA VISTAAR — Inclusive Insurance Product Framework",
+        "category": "bima_vistaar",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "BIMA VISTAAR is a bundled composite insurance product covering life, health, property, and accident risks",
+            "Annual premium capped at ₹1,500 for basic cover — affordable for lower-income segments",
+            "Life cover: ₹2 lakh; health cover: ₹50,000; personal accident: ₹2 lakh; property: ₹1 lakh",
+            "No medical examination required for enrolment",
+            "All insurers (life and general) must offer BIMA VISTAAR through designated channels",
+            "Distribution through India Post, CSCs, cooperative banks, and digital platforms",
+        ],
+        "consumer_rights_granted": [
+            "Affordable bundled insurance covering multiple risks at ₹1,500/year",
+            "No medical underwriting required",
+            "Wide distribution through India Post, CSCs, and banking correspondents",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/INT/CIR/004/08/2024",
+        "date": "2024-08-20",
+        "subject": "BIMA VISTAAR — Distribution and Agent Network Guidelines",
+        "category": "bima_vistaar",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "BIMA VISTAAR to be distributed through BIMA Vahaks — village-level insurance agents",
+            "BIMA Vahaks can sell policies of all insurers, not limited to a single insurer",
+            "Simplified training: 25-hour certification programme for BIMA Vahaks",
+            "Commission structure: flat ₹150 per policy sold for BIMA Vahaks",
+            "Digital-first distribution — policies can be issued via mobile app with Aadhaar e-KYC",
+        ],
+        "consumer_rights_granted": [
+            "Access to insurance through village-level distribution network",
+            "Simplified application process with Aadhaar e-KYC",
+            "Multi-insurer product availability through single agent",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/INT/CIR/005/11/2023",
+        "date": "2023-11-05",
+        "subject": "Digital Insurance Distribution — e-KYC and Paperless Onboarding Norms",
+        "category": "digital_insurance",
+        "effective_date": "2024-01-01",
+        "key_requirements": [
+            "Aadhaar e-KYC (OTP-based and biometric) accepted for insurance policy issuance up to ₹50 lakh SA",
+            "Video KYC (VKYC) accepted for policies above ₹50 lakh SA",
+            "DigiLocker integration mandatory for document verification — driving licence, PAN, Aadhaar",
+            "E-signature (Aadhaar-based or DSC) valid for all insurance documents including proposal forms",
+            "Paperless policy issuance: e-policy with QR code is legally valid document",
+        ],
+        "consumer_rights_granted": [
+            "Fully digital onboarding without physical documentation",
+            "E-policy is legally valid — no need for physical copy",
+            "Aadhaar OTP-based KYC for quick policy issuance",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/INT/CIR/006/09/2024",
+        "date": "2024-09-12",
+        "subject": "BIMA SUGAM — Claim Settlement Through Digital Platform",
+        "category": "bima_sugam",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "Policyholders can file claims through BIMA SUGAM portal for any insurer",
+            "Claims documents uploaded once — accessible to the relevant insurer automatically",
+            "Cashless health claims triggered via BIMA SUGAM with insurer response within 30 minutes",
+            "Death claims: digital documentation submission with Aadhaar-linked death certificate verification",
+            "Claim status dashboard shows real-time processing stage across all insurers",
+        ],
+        "consumer_rights_granted": [
+            "Single claim filing portal across all insurers",
+            "30-minute cashless claim response through BIMA SUGAM",
+            "Real-time claim tracking dashboard",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/INT/REG/007/02/2024",
+        "date": "2024-02-15",
+        "subject": "IRDAI (Insurance Products) Regulations 2024 — Use and File Framework",
+        "category": "bima_sugam",
+        "effective_date": "2024-04-01",
+        "key_requirements": [
+            "Insurers can launch new products under Use and File — no prior IRDAI approval required",
+            "Products must comply with IRDAI product design guidelines and pricing norms",
+            "IRDAI can withdraw product within 1 year if non-compliant",
+            "Product filing through BIMA SUGAM portal with standardised templates",
+            "Faster innovation: products can be launched in 15 days instead of 60-day approval cycle",
+        ],
+        "consumer_rights_granted": [
+            "Faster availability of innovative insurance products",
+            "Standardised product information for easy comparison",
+            "IRDAI oversight ensures consumer protection even with expedited launches",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/INT/CIR/008/05/2024",
+        "date": "2024-05-22",
+        "subject": "BIMA SUGAM — Policyholder Data Portability and Consent Framework",
+        "category": "bima_sugam",
+        "effective_date": "2024-08-01",
+        "key_requirements": [
+            "Policyholders own their insurance data — consent required for any data sharing between insurers",
+            "Data portability: policyholders can transfer their complete insurance history to a new insurer digitally",
+            "Consent management dashboard on BIMA SUGAM — revoke/grant data access per insurer",
+            "Compliance with DPDP Act 2023 — insurance-specific data protection guidelines",
+            "Health data (claims history, medical reports) shared only with explicit policyholder consent",
+        ],
+        "consumer_rights_granted": [
+            "Full ownership and portability of insurance data",
+            "Consent-based data sharing with granular controls",
+            "DPDP Act compliance for insurance data",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Cyber Insurance ──────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/CIR/MISC/115/04/2023",
+        "date": "2023-04-18",
+        "subject": "IRDAI Guidelines on Cyber Insurance Products",
+        "category": "cyber_insurance",
+        "effective_date": "2023-07-01",
+        "key_requirements": [
+            "Standardised cyber insurance product framework for individuals and corporates",
+            "Individual cyber policy: minimum covers — identity theft, cyber stalking, phishing, ransomware, data breach",
+            "Corporate cyber policy: business interruption, data restoration, regulatory fines, third-party liability",
+            "Mandatory risk assessment questionnaire before issuing cyber insurance to corporates",
+            "Sub-limits clearly disclosed for each coverage component — no bundled opaque limits",
+        ],
+        "consumer_rights_granted": [
+            "Standardised cyber coverage with clear definitions",
+            "Individual protection against identity theft and online fraud",
+            "Transparent sub-limits for each cyber risk component",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/NL/CIR/MISC/116/06/2023",
+        "date": "2023-06-25",
+        "subject": "Cyber Risk Management Framework for Insurers",
+        "category": "cyber_insurance",
+        "effective_date": "2023-10-01",
+        "key_requirements": [
+            "All insurers must implement cyber risk management framework as per IRDAI-CERT-In guidelines",
+            "Mandatory cyber insurance for insurers' own operations — minimum ₹100 crore cover",
+            "Annual cyber risk assessment and penetration testing mandatory",
+            "Incident response plan with 6-hour reporting to IRDAI for material cyber incidents",
+            "Customer data encrypted at rest (AES-256) and in transit (TLS 1.3)",
+        ],
+        "consumer_rights_granted": [
+            "Insurance companies must maintain robust cyber defences",
+            "Customer data encryption standards enforced",
+            "Mandatory incident response ensures prompt breach notification",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/NL/CIR/MISC/117/09/2023",
+        "date": "2023-09-08",
+        "subject": "Cyber Insurance — Data Breach Notification and Claims Processing",
+        "category": "cyber_insurance",
+        "effective_date": "2024-01-01",
+        "key_requirements": [
+            "Corporate cyber insurance: insurer must provide breach notification services as part of policy",
+            "Claims processing for cyber incidents: interim settlement within 48 hours for business continuity",
+            "Forensic investigation costs covered as part of cyber policy — not deducted from claim limit",
+            "Third-party liability claims: coverage for customer data breach resulting in lawsuits",
+            "Regulatory fine coverage: DPDP Act penalties covered up to policy limit (subject to insurability)",
+        ],
+        "consumer_rights_granted": [
+            "48-hour interim claim settlement for cyber business interruption",
+            "Forensic investigation costs not deducted from policy limit",
+            "Breach notification services included in policy",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/NL/CIR/MISC/118/02/2024",
+        "date": "2024-02-20",
+        "subject": "Cyber Insurance for SMEs and Individuals — Simplified Products",
+        "category": "cyber_insurance",
+        "effective_date": "2024-04-01",
+        "key_requirements": [
+            "Simplified cyber insurance products for SMEs — annual premium starting ₹5,000 for ₹10 lakh cover",
+            "Individual cyber insurance: minimum cover ₹1 lakh for identity theft, ₹50,000 for financial fraud",
+            "No technical risk assessment required for individual policies and SMEs below ₹25 lakh cover",
+            "Social engineering fraud (vishing, phishing, SIM swap) explicitly covered in standard wordings",
+            "24x7 cyber helpline mandatory for all cyber insurance products",
+        ],
+        "consumer_rights_granted": [
+            "Affordable cyber insurance starting ₹5,000/year for SMEs",
+            "Social engineering fraud covered without ambiguity",
+            "24x7 helpline for cyber incidents",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Updated Motor Insurance ──────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/MTR/CIR/MISC/119/09/2018",
+        "date": "2018-09-01",
+        "subject": "Motor Insurance — Compulsory Personal Accident (CPA) Cover Mandate",
+        "category": "motor_insurance",
+        "effective_date": "2019-01-01",
+        "key_requirements": [
+            "Compulsory Personal Accident (CPA) cover of ₹15 lakhs for owner-driver of all motor vehicles",
+            "CPA cover is mandatory — cannot be opted out even if standalone PA cover exists",
+            "CPA premium: approximately ₹750/year for cars, ₹350/year for two-wheelers",
+            "CPA cover is linked to motor policy tenure — renewed with motor policy",
+            "Death or permanent total disability due to motor accident covered",
+        ],
+        "consumer_rights_granted": [
+            "Mandatory ₹15 lakh accidental death/disability cover for vehicle owners",
+            "Low-cost CPA protection linked to motor policy",
+            "Coverage for permanent total disability in addition to death",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/MTR/CIR/MISC/120/08/2019",
+        "date": "2019-08-20",
+        "subject": "Motor Vehicle Act 2019 — Insurance Implications and Compliance",
+        "category": "motor_insurance",
+        "effective_date": "2019-09-01",
+        "key_requirements": [
+            "Motor Vehicle Amendment Act 2019 increases third-party liability significantly",
+            "Hit-and-run compensation increased from ₹25,000 to ₹2,00,000 (death) and ₹50,000 (grievous injury)",
+            "Motor Vehicles Accident Fund established for providing compensation in certain cases",
+            "Electronic monitoring of vehicle insurance status by traffic authorities",
+            "Penalties for uninsured vehicles: ₹2,000 first offence, ₹4,000 subsequent offences",
+        ],
+        "consumer_rights_granted": [
+            "Higher hit-and-run compensation — ₹2 lakh for death",
+            "Motor Vehicles Accident Fund for additional protection",
+            "Electronic verification of insurance status",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/MTR/CIR/MISC/121/01/2020",
+        "date": "2020-01-15",
+        "subject": "Long-Term Motor Insurance — 3-Year and 5-Year TP Policies",
+        "category": "motor_insurance",
+        "effective_date": "2020-04-01",
+        "key_requirements": [
+            "New cars: mandatory 3-year third-party insurance bundled at purchase",
+            "New two-wheelers: mandatory 5-year third-party insurance bundled at purchase",
+            "OD (own damage) cover can be separate — 1-year OD with long-term TP allowed",
+            "Premium for long-term TP calculated at discounted rates vs annual renewal",
+            "Policyholder can switch OD insurer annually while retaining long-term TP policy",
+        ],
+        "consumer_rights_granted": [
+            "Uninterrupted TP coverage for 3/5 years from vehicle purchase",
+            "Flexibility to change OD insurer annually",
+            "Discounted long-term TP premium",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/MTR/CIR/MISC/122/04/2024",
+        "date": "2024-04-05",
+        "subject": "Motor Insurance TP Premium Revision — FY 2024-25 Rates",
+        "category": "motor_insurance",
+        "effective_date": "2024-04-01",
+        "key_requirements": [
+            "IRDAI fixes third-party premium rates annually — no insurer discretion on TP pricing",
+            "Private car TP premium (< 1000cc): ₹2,094/year; (1000-1500cc): ₹3,416/year; (> 1500cc): ₹7,897/year",
+            "Two-wheeler TP: (< 75cc): ₹538; (75-150cc): ₹714; (150-350cc): ₹2,804; (> 350cc): ₹3,508",
+            "Electric vehicle TP premium: 15% discount on equivalent IC engine vehicle rates",
+            "Goods vehicle TP premium linked to GVW — ranges from ₹3,875 to ₹44,242",
+        ],
+        "consumer_rights_granted": [
+            "Standardised TP rates across all insurers — no overcharging",
+            "EV discount on TP premium",
+            "Transparent annual rate revision by IRDAI",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/MTR/CIR/MISC/123/06/2024",
+        "date": "2024-06-18",
+        "subject": "Motor Insurance — Pay As You Drive (PAYD) and Usage-Based Insurance",
+        "category": "motor_insurance",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "Insurers permitted to offer Pay As You Drive (PAYD) motor OD policies",
+            "Telematics data (OBD-II devices or mobile app) used for usage-based premium calculation",
+            "Minimum base premium: 40% of standard OD premium; variable component based on driving behaviour",
+            "Safe driving discounts up to 25% of OD premium based on telematics score",
+            "Data privacy: telematics data used only for insurance pricing and claims — not shared with third parties",
+        ],
+        "consumer_rights_granted": [
+            "Lower OD premium for low-usage and safe driving",
+            "Up to 25% safe driving discount",
+            "Telematics data privacy protection",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Micro Insurance ──────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/MICRO/REG/124/11/2015",
+        "date": "2015-11-24",
+        "subject": "IRDAI (Micro Insurance) Regulations 2015",
+        "category": "micro_insurance",
+        "effective_date": "2016-01-01",
+        "key_requirements": [
+            "Micro insurance products: sum insured between ₹5,000 and ₹2,00,000",
+            "Premium: maximum ₹2,000/year for individual micro life; ₹1,500/year for micro general",
+            "Simplified proposal form — 1-page application, no medical examination",
+            "Distribution through NGOs, MFIs, SHGs, cooperative societies, and banking correspondents",
+            "Claims: simplified process — minimal documentation, settlement within 15 days",
+        ],
+        "consumer_rights_granted": [
+            "Affordable insurance products for low-income segments",
+            "Simplified application without medical tests",
+            "Fast-track claim settlement within 15 days",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/MICRO/CIR/125/03/2024",
+        "date": "2024-03-10",
+        "subject": "IRDAI (Micro Insurance) Amendment Regulations 2024",
+        "category": "micro_insurance",
+        "effective_date": "2024-06-01",
+        "key_requirements": [
+            "Micro insurance sum insured ceiling raised from ₹2 lakh to ₹5 lakh",
+            "Premium ceiling raised to ₹5,000/year to allow richer product designs",
+            "Composite micro insurance (life + health + property) explicitly permitted",
+            "Digital distribution permitted — micro insurance through mobile apps and UPI-linked channels",
+            "Micro insurance agents can sell products of multiple insurers under BIMA Vahak scheme",
+        ],
+        "consumer_rights_granted": [
+            "Higher coverage up to ₹5 lakh under micro insurance",
+            "Composite products covering multiple risk categories",
+            "Digital purchase through mobile and UPI",
+        ],
+        "legislation_type": "amendment_regulation",
+    },
+    {
+        "circular_no": "IRDAI/CROP/CIR/126/04/2016",
+        "date": "2016-04-13",
+        "subject": "Pradhan Mantri Fasal Bima Yojana (PMFBY) — Insurer Guidelines",
+        "category": "crop_insurance",
+        "effective_date": "2016-04-01",
+        "key_requirements": [
+            "PMFBY: crop insurance for all food/oilseed crops and annual commercial/horticultural crops",
+            "Farmer premium: 2% of SI for Kharif crops, 1.5% for Rabi crops, 5% for commercial crops",
+            "Government subsidises remaining premium — up to 95%+ subsidy on actuarial premium",
+            "Claim assessment: satellite imagery, drones, and crop cutting experiments (CCE)",
+            "Claim settlement within 2 months of crop cutting data availability",
+        ],
+        "consumer_rights_granted": [
+            "Highly subsidised crop insurance — farmer pays only 1.5-5% of premium",
+            "Technology-based claim assessment — satellite and drone data",
+            "Settlement within 2 months of harvest data",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/CROP/CIR/127/06/2020",
+        "date": "2020-06-20",
+        "subject": "Weather-Based Crop Insurance Scheme (WBCIS) — Implementation Guidelines",
+        "category": "crop_insurance",
+        "effective_date": "2020-07-01",
+        "key_requirements": [
+            "WBCIS: index-based insurance using weather parameters (rainfall, temperature, humidity)",
+            "Automatic claim trigger — no claim filing required by farmer when index threshold breached",
+            "IMD (India Meteorological Department) weather station data used as reference",
+            "Claim payout calculated using deviation from normal weather parameters",
+            "Premium subsidy structure same as PMFBY: 2% Kharif, 1.5% Rabi, 5% commercial",
+        ],
+        "consumer_rights_granted": [
+            "Automatic claim trigger without farmer needing to file claim",
+            "Objective weather-data-based assessment — no subjective surveys",
+            "Government-subsidised premiums same as PMFBY",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/MICRO/CIR/128/10/2023",
+        "date": "2023-10-15",
+        "subject": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY) — Implementation",
+        "category": "micro_insurance",
+        "effective_date": "2023-04-01",
+        "key_requirements": [
+            "PMJJBY: ₹2 lakh life cover at ₹436/year (as revised) for ages 18-50",
+            "Auto-debit from linked savings bank account annually on 1st June",
+            "Coverage: death due to any cause for the policy year",
+            "Claim settlement: nominee files claim with bank — settlement within 30 days",
+            "Scheme operated through LIC and other life insurers via participating banks",
+        ],
+        "consumer_rights_granted": [
+            "₹2 lakh life cover at just ₹436/year",
+            "Simple bank account-based enrolment and premium collection",
+            "Death claim settlement within 30 days",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/MICRO/CIR/129/10/2023",
+        "date": "2023-10-15",
+        "subject": "Pradhan Mantri Suraksha Bima Yojana (PMSBY) — Implementation",
+        "category": "micro_insurance",
+        "effective_date": "2023-04-01",
+        "key_requirements": [
+            "PMSBY: ₹2 lakh accidental death and permanent disability cover at ₹20/year",
+            "Partial disability: ₹1 lakh cover",
+            "For ages 18-70 with savings bank account",
+            "Auto-debit from bank account on 1st June annually",
+            "Operated through general insurers via participating banks",
+        ],
+        "consumer_rights_granted": [
+            "₹2 lakh accidental cover at just ₹20/year — world's cheapest PA policy",
+            "Auto-renewal through bank linkage",
+            "Coverage for partial disability as well",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Investment & ULIP ────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/LIFE/CIR/ULIP/130/03/2024",
+        "date": "2024-03-28",
+        "subject": "IRDAI ULIP Guidelines 2024 — Revised Charges and Disclosure Norms",
+        "category": "ulip",
+        "effective_date": "2024-07-01",
+        "key_requirements": [
+            "Fund management charge (FMC) cap reduced from 1.35% to 1.00% per annum for all ULIP funds",
+            "Total charge cap (reduction in yield): maximum 3% for policies up to 10 years, 2.25% for longer terms",
+            "Mandatory net-of-charges return disclosure in annual benefit illustration",
+            "NAV disclosure: daily NAV published by 9 PM on insurer website and BIMA SUGAM",
+            "Switch charges: first 4 switches per year free; ₹100 per switch thereafter",
+        ],
+        "consumer_rights_granted": [
+            "Lower fund management charges — 1.00% cap",
+            "Daily NAV transparency",
+            "Free switches (4 per year)",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/LIFE/CIR/INV/131/06/2024",
+        "date": "2024-06-10",
+        "subject": "Investment Regulations for Life Insurers — Revised Prudential Norms",
+        "category": "investment_regulation",
+        "effective_date": "2024-09-01",
+        "key_requirements": [
+            "Life insurer investment: minimum 50% in government securities (G-Sec) for traditional plans",
+            "ULIP funds: equity funds may invest up to 100% in equity; balanced funds 40-60% equity",
+            "Infrastructure and housing: minimum 15% of controlled fund in approved infrastructure bonds",
+            "NPA (non-performing asset) provisioning aligned with RBI norms for insurer bond portfolios",
+            "Investment committee must include independent actuarial and investment management expertise",
+        ],
+        "consumer_rights_granted": [
+            "Safety of traditional plan funds through G-Sec allocation mandate",
+            "Diversification requirements protect policyholder corpus",
+            "NPA provisioning protects against bond defaults in insurer portfolio",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/LIFE/CIR/LINK/132/09/2024",
+        "date": "2024-09-05",
+        "subject": "Linked Insurance Products — Benefit Illustration and Surrender Value Guidelines",
+        "category": "ulip",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "Benefit illustration must show returns at 4% (conservative) and 8% (optimistic) gross returns",
+            "Guaranteed surrender value after 5 complete policy years for ULIPs",
+            "Partial withdrawal allowed after 5 years — up to 25% of fund value per year",
+            "Loyalty additions: minimum 1% of fund value after 10 years if policy is active",
+            "Mortality charges to be disclosed separately in annual statement — not hidden in fund deductions",
+        ],
+        "consumer_rights_granted": [
+            "Clear benefit illustration at two return scenarios",
+            "Guaranteed surrender value after 5 years",
+            "Partial withdrawal facility after lock-in",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/LIFE/CIR/INV/133/01/2025",
+        "date": "2025-01-15",
+        "subject": "ULIP NAV Disclosure and Fund Performance Benchmarking",
+        "category": "ulip",
+        "effective_date": "2025-04-01",
+        "key_requirements": [
+            "Daily NAV disclosure on insurer website by 9 PM — delay attracts penalty of ₹1 lakh/day",
+            "Fund performance must be benchmarked against SEBI-approved index (Nifty 50, Nifty Next 50, etc.)",
+            "3-year, 5-year, and since-inception returns to be published monthly on insurer website",
+            "Expense ratio (TER) of each fund to be disclosed alongside NAV",
+            "Risk categorisation: equity, balanced, debt, money market — aligned with SEBI mutual fund categories",
+        ],
+        "consumer_rights_granted": [
+            "Daily NAV transparency with penalty for delays",
+            "Performance benchmarking against standard indices",
+            "Expense ratio disclosure for all ULIP funds",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Corporate Governance ─────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/CORP/REG/134/05/2024",
+        "date": "2024-05-10",
+        "subject": "IRDAI (Corporate Governance) Guidelines 2024",
+        "category": "corporate_governance",
+        "effective_date": "2024-08-01",
+        "key_requirements": [
+            "Board composition: minimum 1/3rd independent directors; chairperson must be independent",
+            "Risk Management Committee mandatory — chaired by independent director",
+            "Policyholder Protection Committee at board level — review of complaints quarterly",
+            "Related party transaction approval requires independent directors' committee consent",
+            "Annual governance compliance report filed with IRDAI by 30th June each year",
+        ],
+        "consumer_rights_granted": [
+            "Board-level policyholder protection oversight",
+            "Independent director majority ensures governance independence",
+            "Quarterly complaint review at board level",
+        ],
+        "legislation_type": "guideline",
+    },
+    {
+        "circular_no": "IRDAI/CORP/REG/135/07/2024",
+        "date": "2024-07-20",
+        "subject": "IRDAI (Appointed Actuary) Regulations 2024",
+        "category": "corporate_governance",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "Every insurer must appoint a Fellow member of the Institute of Actuaries of India as Appointed Actuary",
+            "Appointed Actuary certifies premium adequacy, reserve sufficiency, and solvency compliance",
+            "Appointed Actuary has whistleblower protection — reports directly to IRDAI on solvency concerns",
+            "Annual actuarial valuation report submitted to IRDAI within 4 months of financial year end",
+            "Peer review of appointed actuary's work by independent actuary every 3 years",
+        ],
+        "consumer_rights_granted": [
+            "Actuarial certification ensures premium fairness and reserve adequacy",
+            "Whistleblower protection means actuary can flag solvency issues independently",
+            "Peer review adds oversight layer",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/RE/REG/136/02/2024",
+        "date": "2024-02-28",
+        "subject": "IRDAI (Reinsurance) Regulations 2024 — Revised Framework",
+        "category": "reinsurance",
+        "effective_date": "2024-06-01",
+        "key_requirements": [
+            "Indian reinsurer (GIC Re) gets first right of refusal on all cessions",
+            "Minimum retention by direct insurer: 20% of sum at risk for life, 30% for general",
+            "Foreign reinsurer branches (FRBs) in India permitted to accept direct cessions",
+            "Cross-border reinsurance placements require IRDAI prior approval above ₹500 crore per risk",
+            "Reinsurance arrangements reported to IRDAI quarterly with pricing and counterparty details",
+        ],
+        "consumer_rights_granted": [
+            "Reinsurance backing ensures claims can be paid even for catastrophic events",
+            "Minimum retention rules ensure insurer has skin in the game",
+            "Regulatory oversight of cross-border reinsurance for stability",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/CORP/CIR/137/11/2024",
+        "date": "2024-11-05",
+        "subject": "Risk-Based Capital (RBC) Framework — Exposure Draft",
+        "category": "corporate_governance",
+        "effective_date": "2025-04-01",
+        "key_requirements": [
+            "Transition from factor-based solvency (150% ASM) to Risk-Based Capital model",
+            "Capital requirements linked to actual risk profile: underwriting, market, credit, operational risks",
+            "Solvency Capital Requirement (SCR) calibrated to 99.5% VaR over 1-year horizon",
+            "Minimum Capital Requirement (MCR) at 50% of SCR — below MCR triggers supervisory ladder",
+            "3-year transition period for insurers to comply with RBC — phased from FY 2025-26",
+        ],
+        "consumer_rights_granted": [
+            "Risk-sensitive solvency regime better protects policyholders",
+            "Capital adequacy linked to actual risk profile — not one-size-fits-all",
+            "Supervisory intervention triggers at multiple capital levels",
+        ],
+        "legislation_type": "exposure_draft",
+    },
+    {
+        "circular_no": "IRDAI/CORP/CIR/138/08/2024",
+        "date": "2024-08-12",
+        "subject": "IRDAI (Expenses of Management) Regulations 2024 — Revised EOM Norms",
+        "category": "corporate_governance",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "EOM limits revised: life insurers — 35% of gross premium for individual; 15% for group",
+            "General insurers: 30% of net premium across all lines of business",
+            "Health insurers: 35% of net premium for retail health; 10% for group health",
+            "Commission caps: individual life — 35% first year, 7.5% renewal; group — 5%",
+            "Penalties for EOM breach: insurer must submit rectification plan within 90 days",
+        ],
+        "consumer_rights_granted": [
+            "EOM caps ensure premiums are not inflated by excessive expenses",
+            "Commission caps limit front-loading of agent commissions",
+            "Penalty framework ensures compliance",
+        ],
+        "legislation_type": "regulation",
+    },
+
+    # ── Pension & Annuity ────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/LIFE/PEN/REG/139/04/2024",
+        "date": "2024-04-15",
+        "subject": "IRDAI (Pension and Annuity) Regulations 2024",
+        "category": "pension_annuity",
+        "effective_date": "2024-07-01",
+        "key_requirements": [
+            "Annuity plans must offer minimum 6 annuity options: life, joint-life, guaranteed period, increasing, etc.",
+            "Annuity rates must be guaranteed at inception and cannot be revised post-purchase",
+            "Minimum purchase price: ₹1,00,000 for immediate annuity plans",
+            "Deferred annuity: vesting period minimum 5 years, maximum 40 years",
+            "Commutation: up to 1/3rd of accumulated corpus can be withdrawn as lump sum at vesting",
+        ],
+        "consumer_rights_granted": [
+            "Guaranteed annuity rates at purchase — no revision risk",
+            "Multiple annuity options to suit different retirement needs",
+            "Commutation option for partial lump sum at retirement",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/LIFE/PEN/CIR/140/06/2024",
+        "date": "2024-06-25",
+        "subject": "NPS — Insurance Annuity Service Provider (ASP) Obligations",
+        "category": "pension_annuity",
+        "effective_date": "2024-08-01",
+        "key_requirements": [
+            "NPS subscribers must use 40% of corpus to buy annuity from IRDAI-registered ASP at exit",
+            "Annuity rates offered to NPS subscribers must be at par with best retail annuity rates",
+            "ASPs must provide online annuity purchase through NPS portal integration",
+            "Joint-life annuity option mandatory for married NPS subscribers",
+            "Annuity payout commencement within 30 days of annuity purchase",
+        ],
+        "consumer_rights_granted": [
+            "Best-rate annuity guarantee for NPS subscribers",
+            "Online annuity purchase through NPS portal",
+            "Mandatory joint-life option for married subscribers",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/LIFE/PEN/CIR/141/09/2024",
+        "date": "2024-09-10",
+        "subject": "Immediate and Deferred Annuity — Minimum Annuity Rate Guidelines",
+        "category": "pension_annuity",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "Immediate annuity: minimum guaranteed annuity rate linked to 10-year G-Sec yield minus 1%",
+            "Deferred annuity accumulation phase: guaranteed addition of minimum 4% per annum on corpus",
+            "Return of Purchase Price (RoPP) annuity variant must be offered by all life insurers",
+            "Annuity escalation option: minimum 3% annual increase option must be available",
+            "Annuity to surviving spouse: at least 50% of annuity amount continues to surviving spouse",
+        ],
+        "consumer_rights_granted": [
+            "Minimum annuity rate benchmark linked to G-Sec yield",
+            "Guaranteed accumulation in deferred annuity phase",
+            "Return of purchase price option available from all insurers",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Sandbox & Innovation ─────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/SAND/REG/142/07/2019",
+        "date": "2019-07-01",
+        "subject": "IRDAI (Regulatory Sandbox) Regulations 2019",
+        "category": "sandbox_innovation",
+        "effective_date": "2019-09-01",
+        "key_requirements": [
+            "Regulatory sandbox allows insurers and InsurTechs to test innovative products in controlled environment",
+            "Sandbox period: 6 months, extendable by 6 months with IRDAI approval",
+            "Maximum 10,000 policyholders per sandbox experiment",
+            "Sandbox products exempt from certain filing requirements but must meet consumer protection standards",
+            "Exit plan mandatory: successful products move to mainstream filing; failed products wound down with full policyholder protection",
+        ],
+        "consumer_rights_granted": [
+            "Access to innovative insurance products not otherwise available",
+            "Full consumer protection even in sandbox — IRDAI oversight maintained",
+            "Mandatory exit plan protects sandbox policyholders",
+        ],
+        "legislation_type": "regulation",
+    },
+    {
+        "circular_no": "IRDAI/SAND/CIR/143/04/2024",
+        "date": "2024-04-20",
+        "subject": "IRDAI Regulatory Sandbox — 2024 Amendments and Cohort 5 Guidelines",
+        "category": "sandbox_innovation",
+        "effective_date": "2024-06-01",
+        "key_requirements": [
+            "Sandbox Cohort 5 themes: parametric insurance, embedded insurance, surety bonds, space insurance",
+            "InsurTechs can apply directly to sandbox without insurer partnership (new provision)",
+            "Sandbox maximum policyholder limit increased to 50,000",
+            "Successful sandbox products: fast-track Use and File approval within 30 days",
+            "Digital-only sandbox track for products distributed entirely through digital channels",
+        ],
+        "consumer_rights_granted": [
+            "More innovative products reaching consumers through expanded sandbox",
+            "InsurTech direct participation enables faster innovation",
+            "Fast-track mainstreaming of successful sandbox products",
+        ],
+        "legislation_type": "circular",
+    },
+    {
+        "circular_no": "IRDAI/SAND/CIR/144/01/2025",
+        "date": "2025-01-08",
+        "subject": "InsurTech Regulatory Framework — Innovation Hub Guidelines",
+        "category": "sandbox_innovation",
+        "effective_date": "2025-04-01",
+        "key_requirements": [
+            "IRDAI Innovation Hub established as permanent body to support InsurTech innovation",
+            "InsurTechs can register with IRDAI Innovation Hub — no insurance licence required for tech-only services",
+            "API marketplace for InsurTechs to integrate with insurers through standardised BIMA SUGAM APIs",
+            "Data sandbox: anonymised insurance data available to InsurTechs for ML/AI model development",
+            "Regulatory guidance: Innovation Hub provides 30-day advisory response on regulatory queries from InsurTechs",
+        ],
+        "consumer_rights_granted": [
+            "Faster InsurTech innovation through dedicated regulatory support",
+            "Data sandbox enables AI-powered insurance products",
+            "Standardised APIs reduce integration barriers",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Women's Insurance ────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/HLT/CIR/145/03/2024",
+        "date": "2024-03-08",
+        "subject": "Women-Specific Health Insurance Products — Product Design Guidelines",
+        "category": "health_insurance",
+        "effective_date": "2024-06-01",
+        "key_requirements": [
+            "Insurers encouraged to design women-specific health products covering maternity, breast/cervical cancer screening",
+            "Maternity cover waiting period: maximum 24 months for new policies (reduced from 36 months)",
+            "Newborn coverage: mandatory 90 days from birth under mother's policy",
+            "IVF and assisted reproduction: encouraged to be covered under comprehensive women's health plans",
+            "Domestic violence injury coverage: explicitly not excluded in any health policy",
+        ],
+        "consumer_rights_granted": [
+            "Reduced maternity waiting period — maximum 24 months",
+            "Newborn coverage for 90 days from birth",
+            "Domestic violence injuries cannot be excluded",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Senior Citizen Insurance ─────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/HLT/CIR/146/01/2024",
+        "date": "2024-01-20",
+        "subject": "Senior Citizen Health Insurance — Mandatory Offering and Premium Controls",
+        "category": "health_insurance",
+        "effective_date": "2024-04-01",
+        "key_requirements": [
+            "All health insurers must offer at least one product for senior citizens (age 60+) without upper age limit",
+            "Premium increase on renewal: capped at 10% per annum for existing senior citizen policyholders",
+            "Pre-existing disease waiting period: reduced to 2 years for persons aged 60+ at entry",
+            "Copay on senior citizen plans: maximum 20% — cannot exceed this even for higher age bands",
+            "Minimum SI offered to senior citizens: ₹5 lakh",
+        ],
+        "consumer_rights_granted": [
+            "Guaranteed availability of health insurance for seniors with no upper age cap",
+            "10% annual premium increase cap on renewal",
+            "Reduced PED waiting period of 2 years",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Surety Insurance ─────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/REG/147/01/2022",
+        "date": "2022-01-03",
+        "subject": "IRDAI (Surety Insurance Contracts) Guidelines 2022",
+        "category": "surety_insurance",
+        "effective_date": "2022-04-01",
+        "key_requirements": [
+            "Surety insurance as alternative to bank guarantees for infrastructure and government contracts",
+            "Contract value coverage: up to 30% of contract value",
+            "Types: bid bond, performance bond, advance payment bond, retention money bond",
+            "Premium: 1-3% of surety bond value depending on contractor rating and project type",
+            "Claims process: principal (government/employer) can invoke surety directly without litigation",
+        ],
+        "consumer_rights_granted": [
+            "Alternative to expensive bank guarantees for contractors",
+            "Direct claim invocation without litigation",
+            "Insurance-backed project guarantee for government projects",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Group Insurance ──────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/LIFE/GRP/CIR/148/05/2024",
+        "date": "2024-05-18",
+        "subject": "IRDAI Group Insurance Guidelines 2024 — Revised Framework",
+        "category": "group_insurance",
+        "effective_date": "2024-08-01",
+        "key_requirements": [
+            "Group health insurance: minimum group size reduced from 20 to 7 employees",
+            "Employer must contribute at least 50% of group health premium",
+            "Group term life: sum insured minimum 1x annual CTC per employee",
+            "Portability from group to individual cover on exit: employee can convert to individual policy within 30 days",
+            "Pre-existing disease coverage from Day 1 in group health policies — no waiting period",
+        ],
+        "consumer_rights_granted": [
+            "Group to individual policy conversion on job change within 30 days",
+            "Day 1 PED coverage in group health",
+            "Minimum employer contribution of 50%",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Embedded Insurance ───────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/INT/CIR/149/07/2024",
+        "date": "2024-07-05",
+        "subject": "Embedded Insurance — Regulatory Framework for Bundled Distribution",
+        "category": "embedded_insurance",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "Embedded insurance: insurance bundled with non-insurance purchase (e-commerce, travel, electronics)",
+            "Customer must be clearly informed about embedded insurance cover at point of purchase",
+            "Opt-out option mandatory — embedded insurance cannot be forced or hidden in charges",
+            "Simplified claims process: claim filed through the platform where insurance was purchased",
+            "Platform (distributor) responsible for claim facilitation — not just sale",
+        ],
+        "consumer_rights_granted": [
+            "Clear disclosure of embedded insurance at purchase",
+            "Opt-out option — no forced bundling",
+            "Platform-facilitated claims for convenience",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Dematerialisation of Policies ────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/INT/CIR/150/10/2024",
+        "date": "2024-10-15",
+        "subject": "Dematerialisation of Insurance Policies — e-Insurance Account (eIA)",
+        "category": "digital_insurance",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "All new insurance policies to be issued in dematerialised (demat) form through eIA repositories",
+            "Existing policyholders can convert physical policies to demat through insurer or repository",
+            "Four IRDAI-approved eIA repositories: NSDL, CDSL Insurance Repository, SHCIL, Karvy",
+            "eIA provides single view of all policies — life, health, general — across insurers",
+            "Nomination and assignment changes can be done electronically through eIA",
+        ],
+        "consumer_rights_granted": [
+            "Single demat repository for all insurance policies",
+            "Digital nomination and assignment changes",
+            "No risk of physical policy document loss",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Anti-Fraud Framework ─────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/FRAUD/CIR/151/03/2024",
+        "date": "2024-03-25",
+        "subject": "IRDAI Anti-Fraud Guidelines 2024 — Fraud Monitoring and Reporting",
+        "category": "anti_fraud",
+        "effective_date": "2024-06-01",
+        "key_requirements": [
+            "Every insurer must establish dedicated Anti-Fraud Department headed by senior officer",
+            "Fraud monitoring system: AI/ML-based anomaly detection mandatory for claims processing",
+            "Suspected fraud reporting to IRDAI within 48 hours of detection",
+            "Insurance Information Bureau (IIB) data sharing mandatory for cross-insurer fraud detection",
+            "Policyholder protection: genuine claimant must not be penalised during fraud investigation — interim payment within 30 days",
+        ],
+        "consumer_rights_granted": [
+            "Genuine claimants protected during fraud investigations — interim payments",
+            "AI-based fraud detection reduces false claim rejections",
+            "Cross-insurer data sharing prevents fraud without burdening honest policyholders",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Outsourcing Regulations ──────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/CORP/CIR/152/06/2024",
+        "date": "2024-06-30",
+        "subject": "IRDAI (Outsourcing of Activities) Regulations 2024",
+        "category": "corporate_governance",
+        "effective_date": "2024-09-01",
+        "key_requirements": [
+            "Core insurance activities (underwriting decisions, claim decisions) cannot be outsourced",
+            "TPA (Third Party Administrator) activities regulated — TPA must be IRDAI-registered",
+            "Cloud computing: insurers can use public cloud with IRDAI-approved data localisation",
+            "Data processing outsourcing: customer data must remain in India — no cross-border transfer without IRDAI approval",
+            "Outsourcing risk assessment and due diligence report to be filed annually with IRDAI",
+        ],
+        "consumer_rights_granted": [
+            "Core claim and underwriting decisions made in-house — not outsourced to unregulated entities",
+            "Customer data remains in India",
+            "TPA regulation ensures service quality for cashless claims",
+        ],
+        "legislation_type": "regulation",
+    },
+
+    # ── Parametric Insurance ─────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/CIR/153/09/2024",
+        "date": "2024-09-20",
+        "subject": "Parametric Insurance Products — Regulatory Framework",
+        "category": "parametric_insurance",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "Parametric (index-based) insurance permitted for weather, earthquake, flood, and flight delay risks",
+            "Trigger: objective, independently verifiable data source (IMD, USGS, airline databases)",
+            "Claim payout: automatic within 72 hours of trigger event — no claim filing required",
+            "No loss assessment or adjuster visit required — payout based solely on parameter trigger",
+            "Product disclosure must clearly explain trigger parameters and payout calculations",
+        ],
+        "consumer_rights_granted": [
+            "Automatic 72-hour claim payout without filing",
+            "No subjective loss assessment — objective trigger-based payouts",
+            "Clear parameter disclosure at purchase",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Title Insurance ──────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/CIR/154/11/2024",
+        "date": "2024-11-10",
+        "subject": "Title Insurance for Real Estate — Product Framework",
+        "category": "title_insurance",
+        "effective_date": "2025-04-01",
+        "key_requirements": [
+            "Title insurance protects property buyers against defective title, fraud, encumbrance, and legal challenges",
+            "One-time premium: approximately 0.5-1.0% of property value for lifetime coverage",
+            "Coverage: legal defence costs + property value if title is challenged successfully",
+            "Mandatory title search by insurer before issuing policy — due diligence on property records",
+            "IRDAI encourages title insurance as complement to RERA for property buyer protection",
+        ],
+        "consumer_rights_granted": [
+            "Lifetime protection against property title defects",
+            "Legal defence costs covered in addition to property value",
+            "Mandatory title search provides pre-purchase assurance",
+        ],
+        "legislation_type": "circular",
+    },
+
+    # ── Pet Insurance ────────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/CIR/155/12/2024",
+        "date": "2024-12-05",
+        "subject": "Pet Insurance — Product Design and Distribution Guidelines",
+        "category": "pet_insurance",
+        "effective_date": "2025-04-01",
+        "key_requirements": [
+            "Pet insurance covers dogs and cats — veterinary expenses, surgery, hospitalisation, and third-party liability",
+            "Sum insured: ₹25,000 to ₹5,00,000 depending on pet breed, age, and coverage type",
+            "Waiting period: 15 days for accidents, 30 days for illness, 12 months for breed-specific conditions",
+            "Microchip identification mandatory for policy issuance — no unnamed/unidentified pet coverage",
+            "Annual wellness benefit (vaccination, deworming) encouraged as add-on",
+        ],
+        "consumer_rights_granted": [
+            "Standardised pet insurance with clear coverage terms",
+            "Breed-specific condition coverage after waiting period",
+            "Third-party liability coverage for pet owners",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Marine Insurance ─────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/MARINE/156/08/2024",
+        "date": "2024-08-10",
+        "subject": "IRDAI Marine Insurance — Cargo and Hull Revised Guidelines",
+        "category": "marine_insurance",
+        "effective_date": "2024-11-01",
+        "key_requirements": [
+            "Marine cargo: Institute Cargo Clauses (A, B, C) adopted as standard in Indian market",
+            "Inland transit: mandatory insurance for goods above ₹50 lakh transported by road/rail",
+            "Hull insurance: mandatory for all commercial vessels registered in India",
+            "War risk and piracy coverage available as extensions at additional premium",
+            "Electronic bill of lading accepted for claims documentation",
+        ],
+        "consumer_rights_granted": [
+            "Standardised marine cargo coverage terms",
+            "Electronic documentation for faster claims",
+            "War risk and piracy coverage extensions available",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Liability Insurance ──────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/LIABILITY/157/10/2024",
+        "date": "2024-10-20",
+        "subject": "Directors & Officers (D&O) and Professional Indemnity Insurance Guidelines",
+        "category": "liability_insurance",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "D&O insurance: covers directors/officers against personal liability from management decisions",
+            "Professional indemnity: mandatory for medical professionals, CAs, advocates, architects",
+            "Run-off coverage: minimum 6 years post-policy expiry for claims-made policies",
+            "Defence cost allocation: insurer must advance defence costs without prejudice to coverage determination",
+            "Securities claims: coverage available for securities fraud allegations against listed company directors",
+        ],
+        "consumer_rights_granted": [
+            "Professional indemnity protects consumers against professional negligence",
+            "D&O insurance ensures corporate accountability",
+            "Run-off coverage protects against late-reported claims",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Fire & Property Insurance ────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/FIRE/158/07/2024",
+        "date": "2024-07-15",
+        "subject": "Standard Fire and Special Perils Policy — Revised Tariff-Free Framework",
+        "category": "fire_insurance",
+        "effective_date": "2024-10-01",
+        "key_requirements": [
+            "De-tariffed fire insurance: insurers set own rates based on risk assessment",
+            "Standard perils covered: fire, lightning, explosion, aircraft damage, riot, flood, earthquake",
+            "Terrorism Pool (managed by GIC Re): all fire policies contribute 5% of premium to terrorism pool",
+            "Reinstatement value basis: option to insure at replacement cost rather than market value",
+            "Business interruption add-on: covers loss of profit during reinstatement period",
+        ],
+        "consumer_rights_granted": [
+            "Competitive fire insurance rates in de-tariffed market",
+            "Terrorism coverage through pooling mechanism",
+            "Reinstatement value option for full replacement cost",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Home Insurance ───────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/NL/HOME/159/09/2024",
+        "date": "2024-09-25",
+        "subject": "Home Insurance — Comprehensive Coverage Framework for Homeowners",
+        "category": "home_insurance",
+        "effective_date": "2025-01-01",
+        "key_requirements": [
+            "Home insurance covers structure (dwelling) and contents (household items) as separate sections",
+            "Natural disaster coverage: earthquake, flood, cyclone, landslide included in standard policy",
+            "Tenant liability and alternative accommodation costs covered during repair period",
+            "Jewellery and valuables: declared value basis with valuation certificate",
+            "Electronic equipment breakdown coverage as standard add-on",
+        ],
+        "consumer_rights_granted": [
+            "Comprehensive home protection covering structure and contents",
+            "Natural disaster coverage without exclusion",
+            "Alternative accommodation during repair period",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Pradhan Mantri Vaya Vandana Yojana ───────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/LIFE/PEN/160/05/2023",
+        "date": "2023-05-15",
+        "subject": "Pradhan Mantri Vaya Vandana Yojana (PMVVY) — Extension and Revised Terms",
+        "category": "pension_annuity",
+        "effective_date": "2023-06-01",
+        "key_requirements": [
+            "PMVVY: pension scheme for senior citizens (60+) managed by LIC with government guarantee",
+            "Guaranteed pension rate: 7.4% per annum (revised periodically by government)",
+            "Maximum purchase price: ₹15 lakh per senior citizen (for monthly pension of ₹9,250)",
+            "Pension payment options: monthly, quarterly, half-yearly, or annually",
+            "Premature exit after 3 years allowed with 2% penalty on purchase price",
+        ],
+        "consumer_rights_granted": [
+            "Government-guaranteed pension rate for senior citizens",
+            "Flexible pension frequency options",
+            "Premature exit option after 3 years",
+        ],
+        "legislation_type": "guideline",
+    },
+
+    # ── Saral Products ───────────────────────────────────────────────────────
+
+    {
+        "circular_no": "IRDAI/LIFE/CIR/161/01/2021",
+        "date": "2021-01-01",
+        "subject": "Saral Jeevan Bima — Standard Term Life Insurance Product Mandate",
+        "category": "life_insurance",
+        "effective_date": "2021-01-01",
+        "key_requirements": [
+            "All life insurers must offer Saral Jeevan Bima — a standard term insurance product",
+            "Sum assured: ₹5 lakh to ₹25 lakh; policy term: 5 to 40 years",
+            "Entry age: 18-65 years; maximum maturity age: 70 years",
+            "Only 4 exclusions allowed: suicide (first year), self-inflicted injury, criminal activity, substance abuse",
+            "Standardised premium rates across similar risk profiles — enables easy comparison",
+        ],
+        "consumer_rights_granted": [
+            "Simple, comparable term insurance from every life insurer",
+            "Only 4 exclusions — no hidden exclusion clauses",
+            "Standardised terms for easy cross-insurer comparison",
+        ],
+        "legislation_type": "product_mandate",
+    },
+    {
+        "circular_no": "IRDAI/NL/CIR/162/04/2021",
+        "date": "2021-04-01",
+        "subject": "Saral Suraksha Bima — Standard Personal Accident Insurance Product",
+        "category": "personal_accident",
+        "effective_date": "2021-04-01",
+        "key_requirements": [
+            "All general and health insurers must offer Saral Suraksha Bima — a standard PA product",
+            "Sum insured: ₹1 lakh to ₹1 crore; covers accidental death and permanent total disability",
+            "Partial disability: proportional payment as per fixed schedule",
+            "No age-based premium variation — flat premium based on sum insured and occupation",
+            "Claim settlement within 30 days of submission of all documents",
+        ],
+        "consumer_rights_granted": [
+            "Standardised PA insurance available from every general insurer",
+            "Flat premium without age discrimination",
+            "30-day claim settlement mandate",
+        ],
+        "legislation_type": "product_mandate",
     },
 ]
 

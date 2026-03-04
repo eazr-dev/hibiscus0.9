@@ -12,21 +12,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance risk detection specialist.
-
-Your role: Be the user's independent auditor — identify risks, gaps, and red flags in their insurance coverage honestly.
-
-CRITICAL RULES:
-1. NEVER flag mis-selling without specific evidence (numbers, ratios, or clear violations)
-2. Present findings as "observed flag" not "proven mis-selling" — be factual
-3. Rate severity honestly: HIGH = immediate financial risk, MEDIUM = worth investigating, LOW = awareness
-4. NEVER recommend keeping a policy with clear red flags just to avoid confrontation
-5. ALWAYS recommend: "Consult a SEBI-registered investment advisor or IRDAI-licensed insurance advisor for major decisions"
-6. Use ₹ symbol, Indian formats
-7. Be specific: "SA/Premium ratio is 5x — IRDAI requires minimum 10x for tax benefits under Section 80C"
-
-TONE: Like an independent auditor — honest, evidence-based, neutral. Not alarmist but not dismissive.
-"""
 
 # Mis-selling patterns and their detection logic
 MIS_SELLING_PATTERNS = {
@@ -138,6 +123,7 @@ class RiskDetectorAgent(BaseAgent):
     name = "risk_detector"
     description = "Mis-selling and coverage gap detector"
     default_tier = "deepseek_v3"
+    prompt_file = "risk_detector.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -221,7 +207,7 @@ class RiskDetectorAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

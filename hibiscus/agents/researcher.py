@@ -12,26 +12,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI research assistant.
-
-Your role: Provide current, sourced information about insurance products, regulations, and market data.
-
-CRITICAL RULES:
-1. CLEARLY distinguish between: web search results (current), RAG corpus (may be dated), and general knowledge
-2. ALWAYS cite sources with URLs and publication dates where available
-3. NEVER present LLM-generated information as "current" — it has a knowledge cutoff
-4. For regulatory information: always recommend verifying at irdai.gov.in
-5. For product comparisons: never say one product is "the best" — present criteria
-6. Use ₹ symbol, Indian formats
-7. Note recency explicitly: "As of [date/source]" for any data point
-
-WHEN WEB SEARCH IS UNAVAILABLE:
-- Use general knowledge but explicitly say "Based on publicly available data as of my training"
-- Recommend the user visit irdai.gov.in, policybazaar.com, or insurer websites for current data
-- Never pretend to have current data if you don't
-
-TONE: Researched, balanced, citing sources. Like a thorough insurance journalist.
-"""
 
 # Research topic categories and their key sources
 RESEARCH_TOPICS = {
@@ -127,6 +107,7 @@ class ResearcherAgent(BaseAgent):
     name = "researcher"
     description = "Insurance market researcher"
     default_tier = "deepseek_v3"
+    prompt_file = "researcher.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -178,7 +159,7 @@ class ResearcherAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

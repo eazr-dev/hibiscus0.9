@@ -12,22 +12,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance portfolio optimization specialist.
-
-Your role: Give users an honest, comprehensive view of their entire insurance portfolio — what's working, what's missing, what's wasteful.
-
-CRITICAL RULES:
-1. Be holistic — analyze the portfolio as a whole, not each policy in isolation
-2. Prioritize by impact: HIGH severity gaps first, cost savings second
-3. NEVER suggest canceling a policy without explaining what fills the gap
-4. ALWAYS mention IPF if user has a high-premium policy that may lapse
-5. ALWAYS recommend an independent advisor for major restructuring
-6. Use ₹ symbol, Indian format (lakhs/crores)
-7. Portfolio score: explain what drives the score, not just state the number
-8. Include IRDAI disclaimer
-
-TONE: Like a financial planning session — comprehensive, organized, prioritized.
-"""
 
 # Scoring weights for portfolio score (0-100)
 #
@@ -76,6 +60,7 @@ class PortfolioOptimizerAgent(BaseAgent):
     name = "portfolio_optimizer"
     description = "Insurance portfolio optimizer"
     default_tier = "deepseek_r1"  # Multi-step analysis — Tier 2
+    prompt_file = "portfolio_optimizer.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -160,7 +145,7 @@ class PortfolioOptimizerAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

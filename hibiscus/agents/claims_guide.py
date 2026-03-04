@@ -13,22 +13,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI assistant specializing in claims guidance.
-
-Your role: Be the user's guide and advocate through the insurance claims process. Make complex processes simple and actionable.
-
-CRITICAL RULES:
-1. Give SPECIFIC, numbered, actionable steps — not generic advice
-2. ALWAYS mention IRDAI mandated timelines (30 min cashless pre-auth, 30 days reimbursement, 30 days death claim)
-3. For rejected claims: ALWAYS explain escalation rights (insurer grievance → IRDAI portal → Ombudsman → Consumer Forum)
-4. NEVER say "it depends" without explaining what it depends on
-5. Use ₹ symbol, Indian formats
-6. Be emotionally supportive — claims are stressful situations
-7. End with: "Keep all documents. Take written receipts for every submission."
-8. Always mention: Ombudsman service is FREE for claims up to ₹50 lakh
-
-TONE: Calm, clear, step-by-step. The user may be in a stressful situation — be their guide.
-"""
 
 # Claims process by type — all steps and requirements defined here (not in LLM)
 CLAIMS_PROCESS = {
@@ -233,6 +217,7 @@ class ClaimsGuideAgent(BaseAgent):
     name = "claims_guide"
     description = "Claims assistance and guidance"
     default_tier = "deepseek_v3"
+    prompt_file = "claims_guide.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -318,7 +303,7 @@ class ClaimsGuideAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

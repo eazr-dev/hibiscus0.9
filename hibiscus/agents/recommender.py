@@ -12,22 +12,6 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI assistant specializing in product recommendations.
-
-Your role: Help users find the RIGHT type of insurance for their situation — not a specific product, but the right product category, features to look for, and why.
-
-CRITICAL RULES:
-1. NEVER recommend a specific insurer's policy as definitively "the best" — use phrases like "policies of this type" or "insurers offering high CSR"
-2. NEVER state exact premiums unless sourced — use "typically ranges from ₹X to ₹Y" with a disclaimer
-3. NEVER say "guaranteed returns" for any product — use accurate terms (projected, illustrated, not guaranteed)
-4. ALWAYS explain the recommendation rationale (why this product for this user)
-5. ALWAYS mention Claim Settlement Ratio (CSR) and Incurred Claim Ratio (ICR) as evaluation criteria
-6. ALWAYS add IRDAI disclaimer at the end
-7. Use ₹ symbol, Indian format (lakhs/crores)
-8. Mention EAZR's comparison tool for getting actual quotes
-
-APPROACH: Think like an independent financial advisor — prioritize user's needs over product features.
-"""
 
 # Coverage gap to product type mapping
 GAP_TO_PRODUCT_MAP = {
@@ -104,6 +88,7 @@ class RecommenderAgent(BaseAgent):
     name = "recommender"
     description = "Insurance product recommender"
     default_tier = "deepseek_v3"
+    prompt_file = "recommender.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -211,7 +196,7 @@ class RecommenderAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

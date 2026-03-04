@@ -1555,5 +1555,4278 @@
       "digital",
       "KYC"
     ]
+  },
+  {
+    "id": "circ_051",
+    "circular_no": "IRDAI/HLT/REG/CIR/001/01/2024",
+    "subject": "Master Circular on Health Insurance — Comprehensive Guidelines 2024",
+    "date": "2024-01-15",
+    "category": "health",
+    "key_points": [
+      "Consolidates all health insurance circulars into a single master reference document",
+      "Mandates minimum sum insured of ₹5 lakh for individual health policies from April 2024",
+      "Standardizes claim settlement timelines: cashless pre-auth within 1 hour, final settlement within 3 hours of discharge",
+      "All health insurers must offer at least one product without room rent sub-limits",
+      "Mandatory coverage of 587 day-care procedures listed in Annexure A",
+      "Proportionate deduction formula must be clearly disclosed in policy schedule"
+    ],
+    "consumer_rights": [
+      "Right to at least one health product without room rent sub-limits from every insurer",
+      "Cashless pre-authorization response within 1 hour for planned procedures",
+      "Claim settlement within 30 days with interest at bank rate for delays"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "master-circular",
+      "claim-settlement",
+      "room-rent",
+      "day-care"
+    ]
+  },
+  {
+    "id": "circ_052",
+    "circular_no": "IRDAI/HLT/REG/CIR/005/02/2024",
+    "subject": "Mandatory Mental Health Coverage — Implementation Guidelines",
+    "date": "2024-02-20",
+    "category": "health",
+    "key_points": [
+      "All health insurance policies must cover mental illness hospitalization from October 2024 without any exclusion",
+      "Coverage must be on the same basis as physical illness — same waiting periods, same sub-limits",
+      "Insurers cannot charge additional premium loading for mental health history disclosure",
+      "OPD mental health consultations to be covered under OPD plans where offered",
+      "De-addiction treatment for substance abuse to be covered when prescribed by qualified psychiatrist",
+      "Telepsychiatry consultations to be treated at par with in-person consultations for claims"
+    ],
+    "consumer_rights": [
+      "Right to mental health coverage without discrimination or additional premium loading",
+      "Mental illness claims cannot be rejected citing policy exclusion — statutory mandate under Mental Healthcare Act 2017",
+      "Right to telepsychiatry coverage under health plans offering telemedicine benefits"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "mental-health",
+      "mandatory-coverage",
+      "mental-healthcare-act"
+    ]
+  },
+  {
+    "id": "circ_053",
+    "circular_no": "IRDAI/HLT/REG/CIR/012/03/2024",
+    "subject": "Modern Treatment Methods — Mandatory Coverage List",
+    "date": "2024-03-10",
+    "category": "health",
+    "key_points": [
+      "All health policies must cover modern treatment methods including robotic surgery, stem cell therapy, immunotherapy, and gene therapy",
+      "Balloon sinuplasty, deep brain stimulation, oral chemotherapy, intra-vitreal injections must be covered",
+      "Insurers cannot exclude treatments solely because they are classified as modern or advanced",
+      "Sub-limits on modern treatments permitted only if explicitly stated in policy schedule",
+      "AYUSH treatments (Ayurveda, Yoga, Unani, Siddha, Homeopathy) must be covered up to sum insured",
+      "Robotic surgery coverage cannot be limited to non-robotic surgery cost equivalent"
+    ],
+    "consumer_rights": [
+      "Right to coverage for modern treatment methods without blanket exclusion",
+      "Right to full coverage of robotic surgery without capping at traditional surgery cost",
+      "Right to AYUSH treatment coverage in NABH/government-accredited AYUSH hospitals"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "modern-treatment",
+      "robotic-surgery",
+      "stem-cell",
+      "AYUSH"
+    ]
+  },
+  {
+    "id": "circ_054",
+    "circular_no": "IRDAI/NL/REG/CIR/018/03/2024",
+    "subject": "Motor Insurance — Revised IDV Computation and Depreciation Schedule 2024",
+    "date": "2024-03-25",
+    "category": "motor",
+    "key_points": [
+      "Revised depreciation schedule for IDV calculation: Year 1: 15%, Year 2: 20%, Year 3: 30%, Year 4: 40%, Year 5: 50%",
+      "Vehicles older than 5 years: IDV to be determined by mutual agreement between insurer and insured",
+      "Electric vehicles (EVs): separate depreciation schedule with lower depreciation rates (5% lower than ICE vehicles per year)",
+      "Battery replacement cost for EVs to be covered under OD section without depreciation for first 5 years",
+      "IDV for modified vehicles must account for declared modifications",
+      "Insurers must provide IDV calculation worksheet to policyholders on request"
+    ],
+    "consumer_rights": [
+      "Right to receive IDV calculation methodology from insurer",
+      "Right to negotiate IDV for vehicles older than 5 years",
+      "EV owners entitled to lower depreciation and battery coverage"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "IDV",
+      "depreciation",
+      "electric-vehicle",
+      "EV"
+    ]
+  },
+  {
+    "id": "circ_055",
+    "circular_no": "IRDAI/NL/REG/CIR/022/04/2024",
+    "subject": "Motor Third-Party Premium Rates — Revision for FY 2024-25",
+    "date": "2024-04-01",
+    "category": "motor",
+    "key_points": [
+      "Revised motor TP premium rates effective 1 April 2024",
+      "Private cars up to 1000cc: ₹2,094 (unchanged from FY24)",
+      "Private cars 1000-1500cc: ₹3,416",
+      "Private cars above 1500cc: ₹7,897",
+      "Two-wheelers up to 150cc: ₹538; 150-350cc: ₹1,381; above 350cc: ₹2,804",
+      "Goods carrying vehicles: premium linked to GVW with revised slabs",
+      "Electric vehicles: 15% discount on TP premium vs equivalent ICE vehicle category"
+    ],
+    "consumer_rights": [
+      "TP premium rates are fixed by IRDAI — no insurer can charge more or less",
+      "Right to 15% TP discount for electric vehicles",
+      "Long-term TP policies (3 years for cars, 5 years for two-wheelers) available at discounted bundled rates"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "third-party",
+      "premium-rates",
+      "electric-vehicle"
+    ]
+  },
+  {
+    "id": "circ_056",
+    "circular_no": "IRDAI/LIFE/REG/CIR/025/04/2024",
+    "subject": "Life Insurance Surrender Value Regulations 2024 — Enhanced Policyholder Returns",
+    "date": "2024-04-10",
+    "category": "life",
+    "key_points": [
+      "Guaranteed Surrender Value (GSV) increased: minimum 30% of premiums paid (excluding first year) for traditional plans from October 2024",
+      "Special Surrender Value (SSV) must be at least equal to GSV at all times",
+      "ULIP surrender: full fund value minus discontinuance charges (capped at ₹6,000 or 1% of fund value for years 1-5)",
+      "Discontinuance charges for ULIPs reduced progressively: Year 1 max ₹3,000, Year 2 ₹2,500, Year 3 ₹2,000, Year 4 ₹1,500, Year 5 ₹1,000",
+      "No surrender charges after 5 completed policy years for any life insurance product",
+      "Surrender value to be paid within 15 days of surrender request — interest payable for delays"
+    ],
+    "consumer_rights": [
+      "Right to enhanced surrender values — minimum 30% of premiums paid for traditional plans",
+      "Zero discontinuance charges on ULIPs after 5 completed years",
+      "Surrender value payment within 15 days mandatory"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "surrender-value",
+      "ULIP",
+      "discontinuance-charges",
+      "GSV",
+      "SSV"
+    ]
+  },
+  {
+    "id": "circ_057",
+    "circular_no": "IRDAI/INT/REG/CIR/030/04/2024",
+    "subject": "Bima Sugam — Unified Insurance Marketplace Implementation Timeline",
+    "date": "2024-04-15",
+    "category": "digital",
+    "key_points": [
+      "Bima Sugam digital platform to go live in phases: Phase 1 (health comparison) by September 2024, Phase 2 (life + motor) by March 2025",
+      "All insurers must integrate product data feeds with Bima Sugam API by July 2024",
+      "Platform enables real-time premium comparison, policy purchase, and claim tracking",
+      "Portability requests can be initiated through Bima Sugam with automated insurer-to-insurer data transfer",
+      "Integrated grievance resolution module linked to Bima Bharosa",
+      "KYC verification through Aadhaar-based e-KYC on the platform"
+    ],
+    "consumer_rights": [
+      "Single platform to compare all insurance products across all insurers",
+      "Seamless portability initiation without manual paperwork",
+      "Integrated grievance tracking and resolution"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "digital",
+      "bima-sugam",
+      "marketplace",
+      "comparison",
+      "portability"
+    ]
+  },
+  {
+    "id": "circ_058",
+    "circular_no": "IRDAI/INT/REG/CIR/035/05/2024",
+    "subject": "Bima Vistaar — Comprehensive Bundled Insurance for Underserved Segments",
+    "date": "2024-05-01",
+    "category": "consumer_protection",
+    "key_points": [
+      "Bima Vistaar is a bundled insurance product combining life, health, property, and personal accident coverage",
+      "Annual premium capped at ₹1,500 for individual coverage",
+      "Life cover: ₹2 lakh (natural death), ₹5 lakh (accidental death)",
+      "Health cover: ₹50,000 hospitalization benefit (fixed benefit, not indemnity)",
+      "Property cover: ₹1 lakh for dwelling damage from fire, flood, earthquake",
+      "Personal accident: ₹5 lakh for permanent total disability",
+      "Available through all insurers, Common Service Centers, and banking correspondents",
+      "No medical examination required; age group 18-70 years"
+    ],
+    "consumer_rights": [
+      "Affordable comprehensive insurance at ₹1,500/year covering life, health, property, and PA",
+      "No medical examination required for enrollment",
+      "Available through banking correspondents and CSCs in rural areas"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "bima-vistaar",
+      "bundled-insurance",
+      "affordable",
+      "rural",
+      "inclusion"
+    ]
+  },
+  {
+    "id": "circ_059",
+    "circular_no": "IRDAI/HLT/REG/CIR/040/05/2024",
+    "subject": "Cashless Everywhere — Expansion of Cashless Facility Beyond Network Hospitals",
+    "date": "2024-05-15",
+    "category": "health",
+    "key_points": [
+      "Insurers directed to extend cashless facility to all hospitals (not just network) in emergency situations",
+      "For emergencies, cashless pre-authorization must be processed within 30 minutes regardless of hospital network status",
+      "Insurers must maintain at least 50% of their network hospitals in Tier 2 and Tier 3 cities",
+      "Hospital empanelment criteria must be transparent and published on insurer websites",
+      "De-empanelment of hospitals must be communicated to policyholders 30 days in advance",
+      "Policyholders should not be penalized for seeking emergency treatment at non-network hospitals"
+    ],
+    "consumer_rights": [
+      "Right to cashless facility in emergencies even at non-network hospitals",
+      "30-day advance notice before hospital de-empanelment",
+      "Network hospital availability in Tier 2 and Tier 3 cities"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "cashless",
+      "network-hospitals",
+      "emergency",
+      "tier-2-cities"
+    ]
+  },
+  {
+    "id": "circ_060",
+    "circular_no": "IRDAI/HLT/REG/CIR/045/06/2024",
+    "subject": "Moratorium Period — 8-Year Absolute Bar on Policy Challenges",
+    "date": "2024-06-01",
+    "category": "health",
+    "key_points": [
+      "After 8 continuous years of policy renewal, no health insurer can reject any claim on grounds of pre-existing disease non-disclosure",
+      "Moratorium applies even if the non-disclosure was material and deliberate (except provable fraud)",
+      "For policies with continuous coverage of 5+ years, PED waiting period (4 years) is deemed completed regardless of original waiting period",
+      "Moratorium credit is portable — transfers to new insurer during portability",
+      "Insurers cannot use investigation findings from beyond the moratorium period to reject claims",
+      "Fraud exception: only applies if insurer proves intentional fraud with documentary evidence in a court of law"
+    ],
+    "consumer_rights": [
+      "After 8 years of continuous coverage, absolute protection from PED-based claim rejections",
+      "Moratorium credit carries over during portability to a new insurer",
+      "Insurers bear burden of proving fraud — policyholder protected by default after moratorium"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "moratorium",
+      "PED",
+      "non-disclosure",
+      "8-year-rule"
+    ]
+  },
+  {
+    "id": "circ_061",
+    "circular_no": "IRDAI/NL/REG/CIR/050/06/2024",
+    "subject": "Cyber Insurance Guidelines — Individual and SME Coverage Standards",
+    "date": "2024-06-15",
+    "category": "cyber",
+    "key_points": [
+      "Framework for individual cyber insurance products covering identity theft, online fraud, cyber stalking, and data breach",
+      "Minimum coverage standards: identity theft restoration up to ₹5 lakh, online financial fraud up to ₹2 lakh",
+      "Coverage for unauthorized social media access, email hacking, and phishing losses",
+      "Cyber bullying and cyber stalking: legal expense coverage up to ₹1 lakh",
+      "SME cyber insurance: data breach notification costs, business interruption from cyber attack, ransomware recovery",
+      "Waiting period for cyber insurance: maximum 15 days from policy inception"
+    ],
+    "consumer_rights": [
+      "Right to individual cyber insurance covering identity theft and online fraud",
+      "Legal expense coverage for cyber stalking and cyber bullying victims",
+      "Fast claims processing — 15-day waiting period maximum"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "cyber",
+      "identity-theft",
+      "online-fraud",
+      "data-breach",
+      "SME"
+    ]
+  },
+  {
+    "id": "circ_062",
+    "circular_no": "IRDAI/LIFE/REG/CIR/055/07/2024",
+    "subject": "Saral Pension — Standard Annuity Product for All Life Insurers",
+    "date": "2024-07-01",
+    "category": "pension",
+    "key_points": [
+      "All life insurers must offer Saral Pension (standard immediate annuity) product",
+      "Minimum purchase price: ₹1,000 per month annuity; No maximum cap",
+      "Two annuity options mandatory: life annuity with return of purchase price, and joint life annuity",
+      "Annuity rates must be published on insurer website and updated quarterly",
+      "No medical examination required for purchasing Saral Pension",
+      "Entry age: 40–80 years; annuity commences within 30 days of purchase"
+    ],
+    "consumer_rights": [
+      "Right to purchase a standardized pension product from any life insurer",
+      "Easy comparison of annuity rates across insurers as product features are identical",
+      "No medical examination required"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "pension",
+      "annuity",
+      "saral-pension",
+      "standardization",
+      "retirement"
+    ]
+  },
+  {
+    "id": "circ_063",
+    "circular_no": "IRDAI/LIFE/REG/CIR/060/07/2024",
+    "subject": "Saral Jeevan Bima — Standard Term Life Insurance Product Revisions",
+    "date": "2024-07-10",
+    "category": "life",
+    "key_points": [
+      "Saral Jeevan Bima (standard term plan) minimum sum assured reduced to ₹5 lakh (from ₹25 lakh) to increase accessibility",
+      "Maximum sum assured: no cap (insurer's discretion based on underwriting)",
+      "Entry age: 18–65 years; Policy term: 5–40 years",
+      "Two payout options: lump sum and staggered (monthly income for 10 years + lump sum)",
+      "No exclusion except suicide within first year (80% premium refund as per IRDAI norms)",
+      "Premium rates must be displayed on insurer websites for easy comparison"
+    ],
+    "consumer_rights": [
+      "Affordable term insurance starting at ₹5 lakh sum assured",
+      "Standardized product — same features across all life insurers",
+      "Transparent premium display for cross-insurer comparison"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "term-insurance",
+      "saral-jeevan-bima",
+      "standardization"
+    ]
+  },
+  {
+    "id": "circ_064",
+    "circular_no": "IRDAI/HLT/REG/CIR/065/07/2024",
+    "subject": "Health Insurance for Senior Citizens — Revised Guidelines",
+    "date": "2024-07-20",
+    "category": "health",
+    "key_points": [
+      "All health insurers must offer at least one product for senior citizens aged 65 and above",
+      "Entry age cannot be restricted below 65 years for senior citizen-specific products",
+      "Copay for senior citizens capped at maximum 20% (previously unregulated)",
+      "PED waiting period for seniors: maximum 2 years (reduced from standard 4 years) for persons above 65",
+      "Guaranteed renewal until age 100 for senior citizen health policies",
+      "Premium increase at renewal capped: maximum 10% increase per year for individual renewal (excluding portfolio-wide revisions)"
+    ],
+    "consumer_rights": [
+      "Every insurer must offer at least one health product for 65+ age group",
+      "Maximum 20% copay for senior citizen policies",
+      "Guaranteed renewal until age 100 with capped premium increases"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "senior-citizen",
+      "copay-cap",
+      "guaranteed-renewal"
+    ]
+  },
+  {
+    "id": "circ_065",
+    "circular_no": "IRDAI/HLT/REG/CIR/070/08/2024",
+    "subject": "Arogya Sanjeevani — Revised Standard Health Product Features 2024",
+    "date": "2024-08-01",
+    "category": "health",
+    "key_points": [
+      "Arogya Sanjeevani sum insured range expanded: ₹1 lakh to ₹10 lakh (previously ₹5 lakh max)",
+      "Copay reduced to 5% for sum insured up to ₹5 lakh; 0% copay option for SI above ₹5 lakh",
+      "AYUSH treatment covered up to 100% of sum insured (previously capped at ₹30,000)",
+      "Modern treatment methods covered (as per IRDAI modern treatment list)",
+      "Cataract sub-limit removed for SI above ₹5 lakh",
+      "Domiciliary treatment covered for conditions requiring bed rest of 3+ days"
+    ],
+    "consumer_rights": [
+      "Higher sum insured options up to ₹10 lakh under standard product",
+      "Reduced copay structure with 0% option above ₹5 lakh SI",
+      "Full AYUSH coverage without sub-limit"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "arogya-sanjeevani",
+      "standardization",
+      "AYUSH",
+      "modern-treatment"
+    ]
+  },
+  {
+    "id": "circ_066",
+    "circular_no": "IRDAI/NL/REG/CIR/075/08/2024",
+    "subject": "Motor Insurance — No Claim Bonus (NCB) Transfer and Portability Rules",
+    "date": "2024-08-10",
+    "category": "motor",
+    "key_points": [
+      "NCB belongs to the policyholder (vehicle owner), not the vehicle — can be transferred to a new vehicle",
+      "NCB earned with one insurer is fully transferable to another insurer at renewal",
+      "NCB slab: 20% (1 year), 25% (2 years), 35% (3 years), 45% (4 years), 50% (5+ years)",
+      "NCB proof: previous insurer must issue NCB certificate within 7 days of policy expiry or non-renewal",
+      "Grace period for NCB retention: 90 days from expiry of previous policy",
+      "NCB applicable to named insured even if vehicle is sold and new vehicle purchased"
+    ],
+    "consumer_rights": [
+      "NCB belongs to you, not your car — transferable to new vehicle and new insurer",
+      "Previous insurer must provide NCB certificate within 7 days",
+      "90-day grace period to retain NCB after policy expiry"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "NCB",
+      "no-claim-bonus",
+      "transfer",
+      "portability"
+    ]
+  },
+  {
+    "id": "circ_067",
+    "circular_no": "IRDAI/NL/REG/CIR/080/08/2024",
+    "subject": "Motor Insurance — Compulsory Personal Accident Cover for Owner-Driver",
+    "date": "2024-08-20",
+    "category": "motor",
+    "key_points": [
+      "Compulsory PA cover of ₹15 lakh for owner-driver in all motor policies (as per Motor Vehicles Act amendment)",
+      "Cover applies only to the registered owner when driving the vehicle",
+      "PA premium is fixed: ₹750/year for private cars, ₹200/year for two-wheelers",
+      "Owner-driver can opt out only if they have a standalone PA policy with equivalent or higher coverage",
+      "Written declaration required to opt out — insurer must verify existing PA coverage",
+      "Death and permanent total disability covered; temporary disability not included in CPA"
+    ],
+    "consumer_rights": [
+      "Mandatory ₹15 lakh PA cover for owner-driver in every motor policy",
+      "Can opt out only with equivalent standalone PA policy — must provide written proof",
+      "Fixed premium: ₹750 for cars, ₹200 for two-wheelers"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "personal-accident",
+      "CPA",
+      "owner-driver",
+      "mandatory"
+    ]
+  },
+  {
+    "id": "circ_068",
+    "circular_no": "IRDAI/HLT/REG/CIR/085/09/2024",
+    "subject": "Waiting Period Rationalization — Health Insurance",
+    "date": "2024-09-01",
+    "category": "health",
+    "key_points": [
+      "Initial waiting period standardized at 30 days across all health products (no insurer can set more than 30 days)",
+      "PED waiting period: maximum 36 months (3 years) from April 2025 — reduced from 48 months",
+      "Specific disease waiting period: maximum 24 months (2 years) — applies to listed conditions like hernia, cataract, etc.",
+      "Maternity waiting period: maximum 24 months (reduced from 36-48 months) from April 2025",
+      "Waiting periods served with previous insurer fully credited during portability",
+      "No additional waiting period on sum insured enhancement up to 50% of existing SI"
+    ],
+    "consumer_rights": [
+      "PED waiting period reduced to 3 years maximum from April 2025",
+      "Maternity waiting period reduced to 2 years maximum",
+      "No fresh waiting period on SI enhancement up to 50%"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "waiting-period",
+      "PED",
+      "maternity",
+      "portability"
+    ]
+  },
+  {
+    "id": "circ_069",
+    "circular_no": "IRDAI/INT/REG/CIR/090/09/2024",
+    "subject": "Insurance Regulatory Sandbox — Framework for Innovation",
+    "date": "2024-09-10",
+    "category": "digital",
+    "key_points": [
+      "Regulatory sandbox allows insurers to test innovative products for 36 months before full regulatory approval",
+      "Products tested in sandbox include parametric insurance, usage-based motor insurance, and on-demand microinsurance",
+      "Maximum 10,000 policyholders per sandbox product during testing phase",
+      "Consumer protection requirements apply equally to sandbox products",
+      "Successful sandbox products can receive fast-track regulatory approval",
+      "Insurtech companies can partner with licensed insurers to offer sandbox products"
+    ],
+    "consumer_rights": [
+      "Full consumer protection rights apply to sandbox products",
+      "Right to clear disclosure that product is under sandbox testing",
+      "Grievance redressal mechanism available for sandbox products"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "sandbox",
+      "innovation",
+      "insurtech",
+      "parametric-insurance",
+      "usage-based"
+    ]
+  },
+  {
+    "id": "circ_070",
+    "circular_no": "IRDAI/HLT/REG/CIR/095/09/2024",
+    "subject": "Wellness and Preventive Healthcare — Integration with Health Insurance",
+    "date": "2024-09-20",
+    "category": "health",
+    "key_points": [
+      "Insurers encouraged to offer wellness benefits: annual health checkup, fitness tracking rewards, chronic disease management",
+      "Premium discount up to 10% for policyholders maintaining healthy lifestyle metrics through insurer wellness apps",
+      "Annual health checkup benefit: minimum coverage ₹5,000 or 1% of SI (whichever is higher)",
+      "Chronic disease management programs for diabetes, hypertension, and cardiac conditions eligible for premium benefits",
+      "Vaccination coverage for specified vaccines (influenza, pneumonia, hepatitis) under wellness benefits",
+      "Wellness data cannot be used to deny coverage or increase premium at renewal"
+    ],
+    "consumer_rights": [
+      "Premium discounts for maintaining healthy lifestyle metrics",
+      "Annual health checkup benefit in all health policies",
+      "Wellness data privacy — cannot be used against policyholder for premium loading or exclusions"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "wellness",
+      "preventive",
+      "health-checkup",
+      "premium-discount"
+    ]
+  },
+  {
+    "id": "circ_071",
+    "circular_no": "IRDAI/NL/REG/CIR/100/10/2024",
+    "subject": "Crop Insurance — Pradhan Mantri Fasal Bima Yojana (PMFBY) Implementation Guidelines",
+    "date": "2024-10-01",
+    "category": "general",
+    "key_points": [
+      "Updated guidelines for PMFBY crop insurance implementation for Rabi 2024-25 season",
+      "Premium rates: Kharif 2% of SI, Rabi 1.5% of SI, commercial/horticultural crops 5%",
+      "Technology-based yield estimation using satellite imagery and drone surveys mandatory from 2024",
+      "Claim settlement within 2 months of crop cutting experiment completion",
+      "Add-on covers for prevented sowing, localized calamities, and post-harvest losses",
+      "Voluntary scheme for all farmers; mandatory for loanee farmers (linked to crop loans)"
+    ],
+    "consumer_rights": [
+      "Government-subsidized crop insurance with farmer premium capped at 1.5-5%",
+      "Claims settled based on area-approach yield estimates — no individual loss assessment needed",
+      "Prevented sowing coverage if crop cannot be planted due to drought or flood"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "crop-insurance",
+      "PMFBY",
+      "agriculture",
+      "farmer",
+      "government-scheme"
+    ]
+  },
+  {
+    "id": "circ_072",
+    "circular_no": "IRDAI/LIFE/REG/CIR/105/10/2024",
+    "subject": "Unit Linked Insurance Plans (ULIP) — Revised Charge Structure and Disclosure",
+    "date": "2024-10-10",
+    "category": "life",
+    "key_points": [
+      "Maximum total charges on ULIPs capped: Year 1-5 average 4% of premium, Year 6+ average 2.25%",
+      "Fund management charge capped at 1.35% per annum of fund value",
+      "Policy administration charge capped at ₹500/month or 0.5% of annual premium (whichever is lower)",
+      "Mortality charges must follow IRDAI published mortality tables — no insurer-specific loading beyond 25%",
+      "Mandatory Benefit Illustration must show IRR at 4% and 8% gross returns with all charges deducted",
+      "Switch charges: first 4 switches per year free; ₹100 per switch thereafter"
+    ],
+    "consumer_rights": [
+      "Capped total charges ensuring better returns on ULIP investments",
+      "Mandatory benefit illustration showing real returns after charges",
+      "4 free fund switches per year"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "ULIP",
+      "charges",
+      "fund-management",
+      "transparency"
+    ]
+  },
+  {
+    "id": "circ_073",
+    "circular_no": "IRDAI/HLT/REG/CIR/110/10/2024",
+    "subject": "Group Health Insurance — Employee Rights and Master Policyholder Obligations",
+    "date": "2024-10-15",
+    "category": "health",
+    "key_points": [
+      "Employees covered under group health must receive individual certificate of insurance within 30 days",
+      "Group health portability: employee leaving organization can port group cover to individual policy without fresh waiting period",
+      "Minimum sum insured in employer group health: ₹3 lakh per employee",
+      "Maternity benefit mandatory in group health policies covering female employees",
+      "Pre-existing disease covered from Day 1 in group health (no PED waiting period)",
+      "Employer must inform employees of exact coverage, exclusions, and claim process in writing"
+    ],
+    "consumer_rights": [
+      "Right to port group health cover to individual policy when leaving employment",
+      "PED covered from Day 1 in group health — no waiting period",
+      "Right to individual certificate of insurance and written coverage details"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "group-insurance",
+      "employer",
+      "portability",
+      "employee-rights"
+    ]
+  },
+  {
+    "id": "circ_074",
+    "circular_no": "IRDAI/NL/REG/CIR/115/10/2024",
+    "subject": "Fire and Property Insurance — Standard Product and Pricing Guidelines",
+    "date": "2024-10-20",
+    "category": "general",
+    "key_points": [
+      "Standard Fire and Special Perils Policy revised with expanded coverage including terrorism and earthquake",
+      "Bharat Griha Raksha — standard homeowner policy covering structure + contents + liability",
+      "Sum insured based on reinstatement value (reconstruction cost), not market value",
+      "Terrorism cover mandatory in all fire policies from 2024 — no separate premium for terrorism pool",
+      "Named perils coverage includes fire, lightning, explosion, aircraft damage, riot, storm, flood, earthquake, and landslide",
+      "All risks coverage available as upgrade with additional premium"
+    ],
+    "consumer_rights": [
+      "Terrorism cover automatically included in fire insurance — no additional premium",
+      "Sum insured based on reconstruction cost — ensures adequate payout",
+      "Standard homeowner product (Bharat Griha Raksha) available from all non-life insurers"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "fire",
+      "property",
+      "homeowner",
+      "terrorism",
+      "bharat-griha-raksha"
+    ]
+  },
+  {
+    "id": "circ_075",
+    "circular_no": "IRDAI/HLT/REG/CIR/120/11/2024",
+    "subject": "Health Insurance — Claim Settlement Performance Disclosure and Monitoring",
+    "date": "2024-11-01",
+    "category": "health",
+    "key_points": [
+      "All health insurers must publish quarterly claim settlement data on their websites",
+      "Metrics to disclose: claims received, settled, repudiated, pending; average settlement time; cashless vs reimbursement ratio",
+      "IRDAI to publish annual Claims Settlement Report ranking insurers by performance",
+      "Insurers with CSR below 90% required to submit corrective action plan within 30 days",
+      "Average claim settlement time target: 30 days for reimbursement, same-day for cashless",
+      "Interest at 2% above bank rate payable on delayed claim settlements beyond 30 days"
+    ],
+    "consumer_rights": [
+      "Right to view insurer's claim settlement performance data before buying",
+      "Interest payment on delayed claim settlements (beyond 30 days)",
+      "IRDAI monitoring of insurers with low claim settlement ratios"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "claim-settlement",
+      "transparency",
+      "disclosure",
+      "CSR"
+    ]
+  },
+  {
+    "id": "circ_076",
+    "circular_no": "IRDAI/LIFE/REG/CIR/125/11/2024",
+    "subject": "Life Insurance — Revival of Lapsed Policies — Consumer-Friendly Norms",
+    "date": "2024-11-10",
+    "category": "life",
+    "key_points": [
+      "Lapsed life policies can be revived within 5 years from date of first unpaid premium (increased from 2 years)",
+      "Revival: policyholder pays all due premiums with interest (simple interest at repo rate + 2%)",
+      "Medical examination for revival: required only if sum assured exceeds ₹5 lakh and lapse period exceeds 6 months",
+      "Insurer cannot deny revival on health grounds if the policyholder's health has not deteriorated since original underwriting",
+      "Online revival process mandatory for all insurers — policyholder should not need to visit branch",
+      "Suicide clause restarts from date of revival, not original policy commencement"
+    ],
+    "consumer_rights": [
+      "5-year window to revive lapsed life insurance policies",
+      "Revival cannot be denied if health is unchanged from original underwriting",
+      "Online revival process without branch visit"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "revival",
+      "lapsed-policy",
+      "premium-payment",
+      "online"
+    ]
+  },
+  {
+    "id": "circ_077",
+    "circular_no": "IRDAI/NL/REG/CIR/130/11/2024",
+    "subject": "Motor Insurance — Long-Term Package Policies and Bundled Products",
+    "date": "2024-11-15",
+    "category": "motor",
+    "key_points": [
+      "Long-term comprehensive motor policies available: 3 years for private cars, 5 years for two-wheelers",
+      "TP portion of long-term policies: fixed premium for entire term (no annual revision)",
+      "OD portion: annual pricing with renewal at each anniversary",
+      "Bundled motor + PA + personal belongings policies encouraged",
+      "Electric vehicle motor policies: specialized add-ons for battery, charging equipment, and wall box charger",
+      "Telematics-based motor insurance (usage-based insurance) guidelines: premium discount based on driving behavior data"
+    ],
+    "consumer_rights": [
+      "Option to buy long-term TP policies to lock in premium rates",
+      "EV-specific add-ons for battery and charging equipment",
+      "Telematics-based premium discounts for safe drivers"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "long-term",
+      "bundled",
+      "electric-vehicle",
+      "telematics",
+      "usage-based"
+    ]
+  },
+  {
+    "id": "circ_078",
+    "circular_no": "IRDAI/HLT/REG/CIR/135/11/2024",
+    "subject": "Health Insurance — OPD Coverage Guidelines",
+    "date": "2024-11-20",
+    "category": "health",
+    "key_points": [
+      "Framework for OPD (outpatient) health insurance coverage including doctor consultations, diagnostics, and pharmacy",
+      "OPD coverage can be offered as standalone product or add-on to hospitalization policy",
+      "E-pharmacy and doorstep medicine delivery eligible under OPD coverage",
+      "Teleconsultation claims eligible under OPD at par with in-person consultations",
+      "Minimum OPD benefit per year: ₹5,000 or 2% of SI (whichever is lower) for policies offering OPD",
+      "Dental and vision OPD: optional — if offered, must cover routine checkups and basic treatments"
+    ],
+    "consumer_rights": [
+      "OPD coverage including teleconsultation, diagnostics, and pharmacy benefits",
+      "E-pharmacy and home delivery of medicines covered under OPD plans",
+      "Teleconsultation treated at par with in-person visits"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "OPD",
+      "outpatient",
+      "teleconsultation",
+      "pharmacy"
+    ]
+  },
+  {
+    "id": "circ_079",
+    "circular_no": "IRDAI/INT/REG/CIR/140/12/2024",
+    "subject": "Grievance Redressal — Enhanced Timelines and Escalation Framework",
+    "date": "2024-12-01",
+    "category": "consumer_protection",
+    "key_points": [
+      "Insurers must acknowledge complaints within 3 working days (reduced from 7 days)",
+      "Resolution timeline: 15 days for simple complaints, 30 days for claim-related complaints",
+      "Bima Bharosa portal upgraded with real-time tracking and escalation to IRDAI after 30 days",
+      "Insurance Ombudsman jurisdiction increased to ₹50 lakh (from ₹30 lakh)",
+      "Video-conference hearings available at Insurance Ombudsman — no physical presence required",
+      "Insurers penalized for recurring complaint patterns: IRDAI can impose corrective action"
+    ],
+    "consumer_rights": [
+      "Complaint acknowledgment within 3 working days",
+      "Resolution within 15-30 days or automatic escalation",
+      "Insurance Ombudsman jurisdiction up to ₹50 lakh with video hearing option"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "consumer-protection",
+      "grievance",
+      "bima-bharosa",
+      "ombudsman",
+      "escalation"
+    ]
+  },
+  {
+    "id": "circ_080",
+    "circular_no": "IRDAI/LIFE/REG/CIR/145/12/2024",
+    "subject": "Life Insurance — Unclaimed Amounts and Policyholder Fund Protection",
+    "date": "2024-12-10",
+    "category": "life",
+    "key_points": [
+      "Unclaimed amounts (maturity, death, survival benefits) to be credited with interest at repo rate + 2%",
+      "Insurers must make proactive efforts to trace beneficiaries: SMS, email, postal, and Aadhaar-linked address",
+      "Unclaimed amounts data to be published on insurer websites and shared with IRDAI annually",
+      "Senior Citizens Welfare Fund: unclaimed amounts transferred after 25 years (previously 10 years for partial transfer)",
+      "Nominee awareness campaign: insurers must encourage nominee registration and update at every renewal/anniversary",
+      "Digital search facility for unclaimed amounts across all insurers via Bima Sugam"
+    ],
+    "consumer_rights": [
+      "Unclaimed funds earn interest at repo rate + 2% until claimed",
+      "Digital search facility to find unclaimed insurance amounts",
+      "Proactive insurer outreach to trace beneficiaries"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "unclaimed-amounts",
+      "beneficiary-tracing",
+      "nominee",
+      "bima-sugam"
+    ]
+  },
+  {
+    "id": "circ_081",
+    "circular_no": "IRDAI/HLT/REG/CIR/150/12/2024",
+    "subject": "Health Insurance — Maternity and Newborn Cover Enhancements",
+    "date": "2024-12-15",
+    "category": "health",
+    "key_points": [
+      "Maternity coverage must include normal delivery, C-section, and related complications without separate sub-limit differentiation",
+      "Newborn baby covered from birth under family floater — no separate enrollment needed for first 90 days",
+      "Pre-natal and post-natal expenses covered: up to 30 days before and 60 days after delivery",
+      "Infertility treatment coverage guidelines: IVF and IUI covered if offered under a specific rider",
+      "Ectopic pregnancy and pregnancy complications covered without waiting period (treated as emergency)",
+      "Vaccination for newborn: covered under wellness benefits if policy includes wellness component"
+    ],
+    "consumer_rights": [
+      "Newborn automatically covered from birth for 90 days under family floater",
+      "Pregnancy complications treated as emergency — no waiting period",
+      "Pre-natal and post-natal expenses covered for 30 days before and 60 days after delivery"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "maternity",
+      "newborn",
+      "pregnancy",
+      "IVF",
+      "complications"
+    ]
+  },
+  {
+    "id": "circ_082",
+    "circular_no": "IRDAI/NL/REG/CIR/155/01/2025",
+    "subject": "Marine Insurance — Inland Transit and Goods in Transit Revised Guidelines",
+    "date": "2025-01-05",
+    "category": "general",
+    "key_points": [
+      "Standard marine transit policy for goods transported by road, rail, and inland waterway",
+      "Coverage: fire, overturning/derailment of vehicle, collision, sinking, loading/unloading damage",
+      "All risks marine transit cover available for high-value goods (electronics, pharmaceuticals)",
+      "Warehouse-to-warehouse coverage: from origin warehouse to destination warehouse including intermediate storage",
+      "Basis of valuation: invoice value plus 10% for incidental expenses",
+      "Claim documentation simplified: invoice, transport receipt, survey report, damage photographs"
+    ],
+    "consumer_rights": [
+      "Warehouse-to-warehouse coverage including intermediate storage",
+      "Valuation at invoice + 10% ensuring adequate coverage",
+      "Simplified claim documentation process"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "marine",
+      "transit",
+      "goods",
+      "inland",
+      "warehouse"
+    ]
+  },
+  {
+    "id": "circ_083",
+    "circular_no": "IRDAI/HLT/REG/CIR/160/01/2025",
+    "subject": "Health Insurance — Organ Transplant and Donor Coverage Mandate",
+    "date": "2025-01-10",
+    "category": "health",
+    "key_points": [
+      "All health insurance policies must cover organ transplant including surgery, hospitalization, and follow-up immunosuppressant drugs",
+      "Living donor expenses: covered up to the insured's sum insured — donor need not be a policyholder",
+      "Organ harvesting, transportation, and preservation costs covered",
+      "Post-transplant immunosuppressant medicines covered for 12 months post-surgery under the same claim",
+      "Second opinion benefit: insurer must cover cost of second opinion before transplant surgery",
+      "Transplant coverage includes heart, liver, kidney, lung, pancreas, and bone marrow transplants"
+    ],
+    "consumer_rights": [
+      "Full organ transplant coverage including donor expenses",
+      "12-month post-transplant medication coverage",
+      "Second opinion benefit before major transplant surgery"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "organ-transplant",
+      "donor",
+      "immunosuppressant",
+      "second-opinion"
+    ]
+  },
+  {
+    "id": "circ_084",
+    "circular_no": "IRDAI/NL/REG/CIR/165/01/2025",
+    "subject": "Home Insurance — Bharat Griha Raksha Standard Product Updates",
+    "date": "2025-01-15",
+    "category": "general",
+    "key_points": [
+      "Bharat Griha Raksha (standard home insurance) updated to cover work-from-home equipment",
+      "Structure coverage: fire, earthquake, flood, storm, riot, terrorism, explosion, aircraft impact, landslide",
+      "Contents coverage: household goods, electronics, furniture, jewellery (with sub-limits)",
+      "Third-party liability: ₹5 lakh coverage for injury/damage to visitors or neighbors",
+      "Rent-for-alternate-accommodation: covered if home becomes uninhabitable due to insured peril",
+      "Premium: approximately ₹1-3 per thousand of sum insured per year depending on construction type"
+    ],
+    "consumer_rights": [
+      "Comprehensive home protection including work-from-home equipment",
+      "Third-party liability coverage for visitors",
+      "Rent for alternate accommodation during home repair"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "home-insurance",
+      "bharat-griha-raksha",
+      "property",
+      "WFH",
+      "contents"
+    ]
+  },
+  {
+    "id": "circ_085",
+    "circular_no": "IRDAI/INT/REG/CIR/170/01/2025",
+    "subject": "Use and File Procedure — Product Approval Reforms",
+    "date": "2025-01-20",
+    "category": "general",
+    "key_points": [
+      "Use and File: insurers can launch new products immediately and file with IRDAI within 15 days (for specified product categories)",
+      "File and Use: IRDAI reviews within 30 days — deemed approved if no objection raised (for complex products)",
+      "Use and File categories: standard products, riders, add-ons, group products, and renewals with minor modifications",
+      "File and Use categories: new product designs, innovative structures, and long-term products",
+      "Product withdrawal: insurer must give 3-month notice to existing policyholders before withdrawing a product",
+      "Actuarial certification mandatory for all product filings — pricing must be actuarially justified"
+    ],
+    "consumer_rights": [
+      "Faster product innovation through simplified approval process",
+      "3-month advance notice before product withdrawal affecting existing policyholders",
+      "Actuarially certified pricing ensuring fair premiums"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "regulation",
+      "use-and-file",
+      "product-approval",
+      "innovation",
+      "actuarial"
+    ]
+  },
+  {
+    "id": "circ_086",
+    "circular_no": "IRDAI/HLT/REG/CIR/175/02/2025",
+    "subject": "Health Insurance — Claim Rejection Transparency and Appeal Process",
+    "date": "2025-02-01",
+    "category": "health",
+    "key_points": [
+      "Every claim rejection must include specific reason with reference to policy clause number",
+      "Generic rejection reasons (e.g., 'not covered under policy') are not acceptable — must cite specific exclusion",
+      "Policyholder has 30 days to appeal a claim rejection to the insurer's internal review panel",
+      "Internal review panel must include a medical practitioner independent of the claims team",
+      "Appeal decision within 15 days of submission with detailed reasoning",
+      "If appeal is also rejected, insurer must provide a step-by-step escalation guide to the policyholder"
+    ],
+    "consumer_rights": [
+      "Right to specific reasons for claim rejection citing exact policy clause",
+      "30-day appeal window with independent medical review",
+      "Insurer must provide escalation guide upon appeal rejection"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "claim-rejection",
+      "transparency",
+      "appeal",
+      "grievance"
+    ]
+  },
+  {
+    "id": "circ_087",
+    "circular_no": "IRDAI/LIFE/REG/CIR/180/02/2025",
+    "subject": "Life Insurance — Commission Disclosure and Mis-selling Prevention",
+    "date": "2025-02-10",
+    "category": "life",
+    "key_points": [
+      "Agent commission on traditional life plans capped at 35% of first year premium, 7.5% renewal premium",
+      "ULIP commission capped at 15% of first year premium (reduced from earlier levels)",
+      "Term insurance commission: flat throughout policy term, no front-loading",
+      "Commission amount (in rupees) must be disclosed to the customer at point of sale",
+      "Mis-selling definition: selling insurance as investment, misrepresenting returns, not explaining charges, replacing existing adequate policy",
+      "Cooling-off: if mis-selling is proven within 3 years, full premium refund with interest"
+    ],
+    "consumer_rights": [
+      "Right to know exact commission amount paid to agent/intermediary",
+      "Full premium refund with interest if mis-selling proven within 3 years",
+      "Clear definition of what constitutes mis-selling"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "commission",
+      "disclosure",
+      "mis-selling",
+      "agent",
+      "transparency"
+    ]
+  },
+  {
+    "id": "circ_088",
+    "circular_no": "IRDAI/NL/REG/CIR/185/02/2025",
+    "subject": "Motor Insurance — Electric Vehicle Insurance Framework",
+    "date": "2025-02-15",
+    "category": "motor",
+    "key_points": [
+      "Specialized motor insurance framework for Battery Electric Vehicles (BEVs) and Plug-in Hybrid Electric Vehicles (PHEVs)",
+      "Battery coverage: separate add-on for battery replacement covering degradation beyond 70% capacity in warranty period",
+      "Charging equipment: home wall box charger and portable charger covered under OD section",
+      "Cyber liability: coverage for hacking of connected vehicle systems leading to accidents",
+      "TP premium: 15% discount for EVs across all vehicle categories",
+      "Roadside assistance for EV: mandatory to include towing to nearest charging point and emergency charging"
+    ],
+    "consumer_rights": [
+      "15% TP premium discount for EVs",
+      "Specialized battery coverage add-on available",
+      "Roadside assistance including emergency charging"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "electric-vehicle",
+      "EV",
+      "battery",
+      "cyber",
+      "charging"
+    ]
+  },
+  {
+    "id": "circ_089",
+    "circular_no": "IRDAI/HLT/REG/CIR/190/02/2025",
+    "subject": "Health Insurance — Portability Enhancement and IRDAI Portability Portal",
+    "date": "2025-02-20",
+    "category": "health",
+    "key_points": [
+      "Health insurance portability made easier: existing insurer must provide portability certificate within 7 days of request",
+      "New insurer must accept/reject portability within 15 days (reduced from 30 days)",
+      "Portability window: 45 days before to 30 days after renewal date",
+      "All waiting period credits, sum insured benefits, and loyalty bonuses transfer during portability",
+      "IRDAI Portability Portal: online platform for submitting portability requests — eliminates manual paperwork",
+      "Group to individual portability: employees leaving organization can port group cover within 30 days of exit"
+    ],
+    "consumer_rights": [
+      "Portability certificate within 7 days from existing insurer",
+      "All waiting period credits and loyalty benefits transfer to new insurer",
+      "Online portability via IRDAI Portability Portal — no manual paperwork"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "portability",
+      "transfer",
+      "waiting-period-credit",
+      "online"
+    ]
+  },
+  {
+    "id": "circ_090",
+    "circular_no": "IRDAI/INT/REG/CIR/195/03/2025",
+    "subject": "Insurance Agents — Digital Licensing, Training, and Continuing Education",
+    "date": "2025-03-01",
+    "category": "general",
+    "key_points": [
+      "Digital licensing for insurance agents: online examination and e-license issuance",
+      "Mandatory 50 hours of pre-licensing training (classroom or online)",
+      "Continuing education: 25 hours per year for license renewal",
+      "Agent can represent maximum of 3 life insurers and 3 non-life insurers simultaneously (multi-tie model)",
+      "Agents must disclose to customers which insurers they represent and any incentive arrangements",
+      "POSP (Point of Sale Person): simplified licensing for selling standard products — 15 hours training"
+    ],
+    "consumer_rights": [
+      "Right to know which insurers the agent represents",
+      "Better-trained agents through mandatory continuing education",
+      "Simplified access through POSP agents in underserved areas"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "agent",
+      "licensing",
+      "training",
+      "POSP",
+      "multi-tie",
+      "digital"
+    ]
+  },
+  {
+    "id": "circ_091",
+    "circular_no": "IRDAI/HLT/REG/CIR/200/03/2025",
+    "subject": "Health Insurance — Super Top-Up and Top-Up Product Guidelines",
+    "date": "2025-03-01",
+    "category": "health",
+    "key_points": [
+      "Clear distinction between top-up and super top-up: top-up deductible applies per claim, super top-up deductible applies per year (aggregate)",
+      "Insurers must clearly explain deductible concept in policy document and sales material",
+      "Super top-up policies cannot have room rent sub-limits different from base policy",
+      "Deductible can be met by any health policy (group or individual) — cross-policy deductible stacking allowed",
+      "Super top-up waiting periods aligned with base policy if purchased from same insurer",
+      "Premium comparison disclosures: insurer must show super top-up vs comprehensive policy cost comparison"
+    ],
+    "consumer_rights": [
+      "Clear disclosure of deductible mechanism — per claim vs per year aggregate",
+      "Cross-policy deductible stacking with group health coverage",
+      "Aligned waiting periods when super top-up from same insurer as base policy"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "super-top-up",
+      "top-up",
+      "deductible",
+      "sum-insured-enhancement"
+    ]
+  },
+  {
+    "id": "circ_092",
+    "circular_no": "IRDAI/NL/REG/CIR/205/03/2025",
+    "subject": "Travel Insurance — Revised Minimum Coverage Standards",
+    "date": "2025-03-01",
+    "category": "general",
+    "key_points": [
+      "Minimum medical coverage for outbound travel: USD 50,000 (for non-Schengen), USD 30,000 (Schengen — unchanged)",
+      "Emergency medical evacuation: mandatory minimum coverage USD 100,000",
+      "Trip cancellation coverage: minimum 100% of non-refundable trip costs",
+      "COVID-related medical expenses: covered as standard (no longer requires separate rider)",
+      "Adventure sports coverage: available as standard add-on (not blanket exclusion)",
+      "Student travel insurance: minimum 12-month policies with academic interruption cover"
+    ],
+    "consumer_rights": [
+      "Minimum USD 50,000 medical coverage for international travel",
+      "COVID-related treatment covered as standard benefit",
+      "Adventure sports add-on available from all travel insurers"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "travel",
+      "medical-emergency",
+      "evacuation",
+      "adventure-sports",
+      "student"
+    ]
+  },
+  {
+    "id": "circ_093",
+    "circular_no": "IRDAI/LIFE/REG/CIR/210/03/2024",
+    "subject": "Annuity and Pension Products — Guaranteed Return Norms",
+    "date": "2024-03-15",
+    "category": "pension",
+    "key_points": [
+      "Guaranteed annuity rate must be locked at purchase and cannot be reduced during payout phase",
+      "Joint life annuity: survivor receives minimum 50% of annuity amount (100% option must also be available)",
+      "Annuity with return of purchase price: nominee receives full purchase price on annuitant's death",
+      "Commutation option: up to 60% of corpus can be withdrawn as lump sum (linked to Income Tax Act Section 10(10A))",
+      "National Pension System (NPS) annuity: at least 40% of corpus must be used for annuity purchase from empaneled insurers",
+      "IRDAI approved annuity service providers: 14 life insurers empaneled for NPS annuity"
+    ],
+    "consumer_rights": [
+      "Guaranteed annuity rate locked at purchase — cannot be reduced",
+      "Joint life annuity with minimum 50% survivor benefit",
+      "60% lump sum commutation option at retirement"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "pension",
+      "annuity",
+      "NPS",
+      "guaranteed-return",
+      "retirement"
+    ]
+  },
+  {
+    "id": "circ_094",
+    "circular_no": "IRDAI/NL/REG/CIR/215/04/2024",
+    "subject": "Liability Insurance — Directors & Officers (D&O) and Professional Indemnity Guidelines",
+    "date": "2024-04-05",
+    "category": "general",
+    "key_points": [
+      "D&O insurance guidelines for listed companies: minimum coverage linked to market capitalization",
+      "Professional indemnity for regulated professionals: doctors, lawyers, architects, CAs must have PI cover",
+      "Run-off cover: mandatory 3-year run-off provision for retired professionals or dissolved entities",
+      "Defense costs covered in addition to the limit of indemnity (not eroding the limit)",
+      "Retroactive date: must cover prior acts from inception of professional practice",
+      "Claims-made basis: standard for PI — incident must be reported during policy period even if act occurred earlier"
+    ],
+    "consumer_rights": [
+      "Defense costs in addition to indemnity limit — not eroding coverage",
+      "3-year run-off provision for retired professionals",
+      "Prior acts coverage from inception of professional practice"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "liability",
+      "D&O",
+      "professional-indemnity",
+      "directors",
+      "claims-made"
+    ]
+  },
+  {
+    "id": "circ_095",
+    "circular_no": "IRDAI/HLT/REG/CIR/220/04/2024",
+    "subject": "Health Insurance — Cancer-Specific and Critical Illness Product Standards",
+    "date": "2024-04-20",
+    "category": "health",
+    "key_points": [
+      "Standardized definitions for 20 critical illnesses aligned with international standards",
+      "Cancer coverage: must cover all stages — early stage (25% payout), intermediate (50%), advanced (100%)",
+      "Heart attack definition aligned with troponin levels and clinical criteria — no ambiguity",
+      "Survival period for CI claims: maximum 30 days from diagnosis (reduced from 45 days in some policies)",
+      "Cancer indemnity products: must cover chemotherapy, radiation, immunotherapy, targeted therapy, and hormonal therapy",
+      "Second opinion benefit mandatory for CI policies with sum insured above ₹10 lakh"
+    ],
+    "consumer_rights": [
+      "Standardized CI definitions preventing interpretation disputes",
+      "Cancer coverage must include all treatment types including immunotherapy",
+      "30-day survival period maximum for critical illness claims"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "critical-illness",
+      "cancer",
+      "heart-attack",
+      "standardization"
+    ]
+  },
+  {
+    "id": "circ_096",
+    "circular_no": "IRDAI/INT/REG/CIR/225/05/2024",
+    "subject": "Insurance Ombudsman — Updated Jurisdiction, Powers, and Digital Hearings",
+    "date": "2024-05-10",
+    "category": "consumer_protection",
+    "key_points": [
+      "Insurance Ombudsman monetary jurisdiction increased to ₹50 lakh (from ₹30 lakh effective 2024)",
+      "17 Ombudsman offices covering all states — online filing available via IGMS portal",
+      "Ombudsman can now adjudicate disputes related to policy terms, mis-selling, and unfair trade practices (in addition to claims)",
+      "Virtual hearings: consumers can attend hearings via video conference — no need to travel",
+      "Ombudsman recommendation is binding on the insurer but not on the complainant (who can still go to consumer forum)",
+      "Time limit for Ombudsman to issue award: 3 months from date of complaint (target)"
+    ],
+    "consumer_rights": [
+      "Free dispute resolution up to ₹50 lakh without hiring a lawyer",
+      "Virtual hearings available — no physical travel required",
+      "Ombudsman decision binding on insurer — consumer retains right to approach consumer forum if unsatisfied"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "ombudsman",
+      "dispute-resolution",
+      "IGMS",
+      "virtual-hearing",
+      "consumer-protection"
+    ]
+  },
+  {
+    "id": "circ_097",
+    "circular_no": "IRDAI/HLT/REG/CIR/230/05/2024",
+    "subject": "Health Insurance — Transgender and LGBTQ+ Coverage Non-Discrimination",
+    "date": "2024-05-20",
+    "category": "consumer_protection",
+    "key_points": [
+      "Health insurers cannot deny coverage based on gender identity or sexual orientation",
+      "Transgender individuals: covered at the gender declared/legally recognized (per Supreme Court NALSA judgment 2014)",
+      "Gender affirmation surgery: covered under health insurance when prescribed by qualified medical professional",
+      "Hormone replacement therapy for gender dysphoria: covered under OPD/hospitalization as applicable",
+      "Family floater policies: same-sex partners covered as family members if legally recognized relationship",
+      "Premium loading based solely on gender identity is prohibited"
+    ],
+    "consumer_rights": [
+      "Non-discrimination in health insurance based on gender identity or sexual orientation",
+      "Gender affirmation surgery and HRT covered when medically prescribed",
+      "No premium loading based on gender identity"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "LGBTQ",
+      "transgender",
+      "non-discrimination",
+      "inclusion"
+    ]
+  },
+  {
+    "id": "circ_098",
+    "circular_no": "IRDAI/NL/REG/CIR/235/06/2024",
+    "subject": "Motor Insurance — Autonomous and Connected Vehicle Insurance Framework",
+    "date": "2024-06-05",
+    "category": "motor",
+    "key_points": [
+      "Preliminary framework for Level 2 and Level 3 autonomous driving feature coverage",
+      "Manufacturer vs driver liability clarification: Level 3+ autonomy shifts partial liability to manufacturer",
+      "Cyber risk coverage for connected vehicles: hacking, remote access, and software malfunction",
+      "OTA (Over-the-Air) software update damage: covered if update causes vehicle malfunction",
+      "ADAS (Advanced Driver Assistance Systems) component: covered under OD for repair/replacement",
+      "Data privacy: vehicle telematics data usage for insurance must follow IRDAI data protection guidelines"
+    ],
+    "consumer_rights": [
+      "Cyber risk coverage for connected vehicle hacking",
+      "ADAS component repair/replacement covered under OD",
+      "Vehicle telematics data usage subject to privacy guidelines"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "autonomous",
+      "connected-vehicle",
+      "cyber",
+      "ADAS",
+      "telematics"
+    ]
+  },
+  {
+    "id": "circ_099",
+    "circular_no": "IRDAI/HLT/REG/CIR/240/06/2024",
+    "subject": "Health Insurance — Global Coverage and International Treatment",
+    "date": "2024-06-20",
+    "category": "health",
+    "key_points": [
+      "Premium health policies (SI above ₹50 lakh) can offer global coverage including treatment abroad",
+      "Coverage for planned international treatment: requires pre-authorization and second opinion from Indian specialist",
+      "Emergency treatment abroad covered without pre-authorization in global coverage plans",
+      "Air ambulance for medical evacuation to India: covered up to sum insured",
+      "Currency conversion: claims denominated in foreign currency settled at RBI reference rate on date of treatment",
+      "Network hospitals abroad: tie-ups with international hospital networks encouraged (Bupa Global, Aetna International)"
+    ],
+    "consumer_rights": [
+      "Global coverage option for high-SI policies",
+      "Emergency treatment abroad without pre-authorization",
+      "Air ambulance and medical evacuation coverage"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "global-coverage",
+      "international",
+      "air-ambulance",
+      "evacuation"
+    ]
+  },
+  {
+    "id": "circ_100",
+    "circular_no": "IRDAI/LIFE/REG/CIR/245/07/2024",
+    "subject": "Life Insurance — Guaranteed Return Products and Non-Linked Savings Norms",
+    "date": "2024-07-05",
+    "category": "life",
+    "key_points": [
+      "Non-linked savings products (endowment, money-back): minimum guaranteed return must be disclosed as IRR in benefit illustration",
+      "Bonus declaration: must reflect actual investment performance and mortality experience of the fund",
+      "Terminal bonus or final addition bonus: must be declared transparently with calculation methodology",
+      "Participating policies: policyholders entitled to minimum 90% of distributable surplus",
+      "With-profit fund segregation: life insurers must maintain separate with-profit fund and shareholders' fund",
+      "Benefit illustration must show guaranteed and non-guaranteed components clearly separated"
+    ],
+    "consumer_rights": [
+      "Minimum guaranteed return disclosed as IRR before purchase",
+      "Entitled to 90% of distributable surplus in participating policies",
+      "Clear separation of guaranteed and non-guaranteed benefits"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "guaranteed-return",
+      "endowment",
+      "bonus",
+      "participating",
+      "IRR"
+    ]
+  },
+  {
+    "id": "circ_101",
+    "circular_no": "IRDAI/INT/REG/CIR/250/07/2024",
+    "subject": "Insurance Intermediaries — Web Aggregator and Insurtech Regulations",
+    "date": "2024-07-15",
+    "category": "digital",
+    "key_points": [
+      "Web aggregators (PolicyBazaar, Acko, Digit) must hold IRDAI registration — revised norms effective 2024",
+      "Web aggregators can compare products from all registered insurers on a single platform",
+      "Lead generation model: aggregator cannot incentivize customers to choose specific insurers over others",
+      "Premium displayed must be final (no hidden charges or conditional discounts)",
+      "Customer data collected by aggregator must be shared with the chosen insurer only — not sold to third parties",
+      "Aggregator's commission and revenue model must be disclosed to customers"
+    ],
+    "consumer_rights": [
+      "Unbiased product comparison across all insurers on aggregator platforms",
+      "Final premium display without hidden charges",
+      "Data privacy — aggregator cannot sell customer data to third parties"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "digital",
+      "web-aggregator",
+      "insurtech",
+      "comparison",
+      "data-privacy"
+    ]
+  },
+  {
+    "id": "circ_102",
+    "circular_no": "IRDAI/HLT/REG/CIR/255/08/2024",
+    "subject": "Health Insurance — HIV/AIDS Coverage Mandate",
+    "date": "2024-08-05",
+    "category": "health",
+    "key_points": [
+      "Health insurers cannot deny coverage to persons living with HIV/AIDS — as per Section 3 of HIV/AIDS (Prevention and Control) Act, 2017",
+      "HIV/AIDS treatment covered on the same basis as any other chronic disease",
+      "Antiretroviral therapy (ART) covered under hospitalization and OPD (where OPD is offered)",
+      "No additional premium loading solely based on HIV status",
+      "Pre-existing disease waiting period applies but cannot be extended beyond standard 4 years for HIV",
+      "Opportunistic infections arising from HIV (tuberculosis, pneumonia, etc.) covered as per policy terms"
+    ],
+    "consumer_rights": [
+      "Cannot be denied health insurance solely due to HIV/AIDS status",
+      "HIV treatment covered on same basis as other chronic diseases",
+      "No additional premium loading for HIV status"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "HIV",
+      "AIDS",
+      "non-discrimination",
+      "chronic-disease"
+    ]
+  },
+  {
+    "id": "circ_103",
+    "circular_no": "IRDAI/NL/REG/CIR/260/08/2024",
+    "subject": "Motor Insurance — Cashless Repair at Network Garages — Standardized Process",
+    "date": "2024-08-15",
+    "category": "motor",
+    "key_points": [
+      "All motor insurers must provide cashless repair facility at network garages",
+      "Minimum network garage requirement: 2,000 garages across India (at least 20% in Tier 2/3 cities)",
+      "Cashless approval timeline: 30 minutes for minor repairs (under ₹50,000), 4 hours for major repairs",
+      "Surveyor appointment within 24 hours of claim intimation — virtual survey accepted for claims under ₹75,000",
+      "Repair completion timeline: 3 working days for minor, 7 working days for major repairs (target)",
+      "Quality guarantee: insurer responsible for repair quality for 6 months post-repair at network garage"
+    ],
+    "consumer_rights": [
+      "Cashless repair at 2,000+ network garages across India",
+      "Quick cashless approval: 30 minutes for minor repairs",
+      "6-month quality guarantee on repairs at network garages"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "cashless-repair",
+      "network-garage",
+      "surveyor",
+      "quality-guarantee"
+    ]
+  },
+  {
+    "id": "circ_104",
+    "circular_no": "IRDAI/HLT/REG/CIR/265/09/2024",
+    "subject": "Health Insurance — Domiciliary Hospitalization Coverage Enhancement",
+    "date": "2024-09-05",
+    "category": "health",
+    "key_points": [
+      "Domiciliary hospitalization coverage mandatory in all indemnity health policies",
+      "Domiciliary treatment eligible when: (a) patient's condition requires bed rest of 3+ days, (b) hospital bed unavailable, or (c) hospital treatment medically inadvisable",
+      "Medical practitioner must certify that domiciliary treatment is medically necessary",
+      "Coverage includes: doctor visits, nursing charges, medicines, diagnostic tests, and medical equipment at home",
+      "ICU-at-home services covered under domiciliary clause when prescribed by treating doctor",
+      "Sub-limit for domiciliary treatment: minimum 10% of sum insured or ₹50,000 (whichever is higher)"
+    ],
+    "consumer_rights": [
+      "Domiciliary treatment coverage when hospitalization is medically inadvisable",
+      "ICU-at-home services covered under domiciliary clause",
+      "Minimum sub-limit of ₹50,000 or 10% of SI for domiciliary treatment"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "domiciliary",
+      "home-treatment",
+      "ICU-at-home",
+      "bed-rest"
+    ]
+  },
+  {
+    "id": "circ_105",
+    "circular_no": "IRDAI/LIFE/REG/CIR/270/09/2024",
+    "subject": "Life Insurance — Accidental Death Benefit Rider Standards",
+    "date": "2024-09-10",
+    "category": "life",
+    "key_points": [
+      "Accidental death benefit rider: payout equal to base sum assured (doubling the death benefit on accidental death)",
+      "Definition of accident aligned across all insurers: 'sudden, unforeseen, external, and visible event causing bodily injury leading to death within 180 days'",
+      "Exclusions standardized: war, nuclear, self-inflicted, criminal act, drunk driving, aviation (non-fare-paying)",
+      "Road accident: covered regardless of driver's valid license status (rider payout; TP coverage separate)",
+      "Accidental dismemberment: partial payout as per IRDAI disability schedule (same as PA policy)",
+      "Rider premium must be clearly shown separately from base policy premium"
+    ],
+    "consumer_rights": [
+      "Standardized accident definition preventing interpretation disputes",
+      "Double death benefit on accidental death (base + rider)",
+      "Clear separate premium disclosure for rider"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "accidental-death",
+      "rider",
+      "dismemberment",
+      "definition"
+    ]
+  },
+  {
+    "id": "circ_106",
+    "circular_no": "IRDAI/INT/REG/CIR/275/09/2024",
+    "subject": "Insurance Awareness — Financial Literacy and Consumer Education Framework",
+    "date": "2024-09-20",
+    "category": "consumer_protection",
+    "key_points": [
+      "Insurance awareness week to be observed annually in the last week of June",
+      "Insurers must allocate 0.5% of gross premium to consumer education initiatives",
+      "Multi-language consumer education materials mandatory: at least in 5 regional languages plus Hindi and English",
+      "Digital literacy campaigns on insurance fraud prevention, claim filing, and grievance resolution",
+      "School and college financial literacy programs with insurance modules",
+      "IRDAI to publish annual 'Handbook of Insurance Information' in 12 languages for free distribution"
+    ],
+    "consumer_rights": [
+      "Consumer education materials available in regional languages",
+      "Insurance awareness campaigns and financial literacy programs",
+      "Free IRDAI Handbook of Insurance Information"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "consumer-protection",
+      "awareness",
+      "financial-literacy",
+      "multi-language",
+      "education"
+    ]
+  },
+  {
+    "id": "circ_107",
+    "circular_no": "IRDAI/HLT/REG/CIR/280/10/2024",
+    "subject": "Health Insurance — Congenital Disease Coverage for Children",
+    "date": "2024-10-05",
+    "category": "health",
+    "key_points": [
+      "Congenital diseases and anomalies in children covered from birth under family floater policies",
+      "No separate exclusion or waiting period for congenital conditions in newborns covered under family floater",
+      "Congenital heart defects (CHD), cleft palate, clubfoot, and other birth defects covered",
+      "Genetic testing for congenital conditions covered when prescribed by pediatric specialist",
+      "Coverage applies to biological and legally adopted children equally",
+      "Insurers can offer standalone pediatric health plans covering congenital conditions with maximum 1-year waiting period"
+    ],
+    "consumer_rights": [
+      "Congenital disease coverage for newborns from birth under family floater",
+      "No separate exclusion for congenital conditions in covered children",
+      "Equal coverage for biological and adopted children"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "congenital",
+      "pediatric",
+      "children",
+      "newborn",
+      "birth-defects"
+    ]
+  },
+  {
+    "id": "circ_108",
+    "circular_no": "IRDAI/NL/REG/CIR/285/10/2024",
+    "subject": "Commercial General Liability (CGL) Insurance — SME Product Standards",
+    "date": "2024-10-10",
+    "category": "general",
+    "key_points": [
+      "Standard CGL product for MSMEs and small businesses: premises liability + products liability + completed operations",
+      "Minimum coverage: ₹25 lakh per occurrence, ₹1 crore aggregate per year",
+      "Premises liability: bodily injury or property damage to visitors, customers, or delivery persons on business premises",
+      "Products liability: claims arising from defective products sold by the business",
+      "Legal defense costs included in addition to indemnity limit",
+      "Professional services exclusion: CGL does not cover professional malpractice (separate PI needed)"
+    ],
+    "consumer_rights": [
+      "Affordable liability protection for small businesses and MSMEs",
+      "Legal defense costs covered separately from indemnity limit",
+      "Comprehensive coverage: premises + products + completed operations"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "liability",
+      "CGL",
+      "SME",
+      "MSME",
+      "premises",
+      "products-liability"
+    ]
+  },
+  {
+    "id": "circ_109",
+    "circular_no": "IRDAI/LIFE/REG/CIR/290/10/2024",
+    "subject": "Life Insurance — Automatic Cover Increase and Life Stage Benefits",
+    "date": "2024-10-20",
+    "category": "life",
+    "key_points": [
+      "Life insurers encouraged to offer automatic sum assured increase at major life events (marriage, child birth, home purchase)",
+      "Automatic increase: typically 25-50% of base sum assured at each qualifying life event",
+      "No medical examination required for automatic increases — only event documentation (marriage certificate, birth certificate, etc.)",
+      "Maximum automatic increase over policy term: 100% of original sum assured",
+      "Premium adjusted proportionately for increased sum assured from next anniversary",
+      "Policyholder can opt out of automatic increase within 30 days of trigger event"
+    ],
+    "consumer_rights": [
+      "Sum assured automatically increases at life events without medical examination",
+      "Opt-out option within 30 days if increase is not desired",
+      "Premium adjustment only from next anniversary — not retrospective"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "automatic-cover",
+      "life-stage",
+      "sum-assured",
+      "marriage",
+      "child-birth"
+    ]
+  },
+  {
+    "id": "circ_110",
+    "circular_no": "IRDAI/HLT/REG/CIR/295/11/2024",
+    "subject": "Health Insurance — No Claim Bonus and Cumulative Bonus Guidelines",
+    "date": "2024-11-05",
+    "category": "health",
+    "key_points": [
+      "Health insurance NCB/cumulative bonus: minimum 5% increase in SI per claim-free year",
+      "Maximum cumulative bonus: up to 100% of base sum insured over 10 claim-free years",
+      "NCB in health insurance increases sum insured (unlike motor NCB which discounts premium)",
+      "Claim in a year: NCB/cumulative bonus reduced by one step (not fully reset to zero)",
+      "Cumulative bonus must transfer during portability to new insurer",
+      "Some insurers offer 'NCB Super' where bonus is retained even after one claim per year"
+    ],
+    "consumer_rights": [
+      "Minimum 5% SI increase per claim-free year as NCB",
+      "NCB not fully reset on one claim — only stepped down",
+      "Cumulative bonus transferable during portability"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "NCB",
+      "cumulative-bonus",
+      "no-claim-bonus",
+      "sum-insured"
+    ]
+  },
+  {
+    "id": "circ_111",
+    "circular_no": "IRDAI/HLT/REG/CIR/300/11/2024",
+    "subject": "Health Insurance — Pre-Authorization and Cashless Enhancement Mandate",
+    "date": "2024-11-10",
+    "category": "health",
+    "key_points": [
+      "Pre-authorization response time: 1 hour for planned admissions, 30 minutes for emergencies (enhanced enforcement)",
+      "100% cashless settlement mandate: insurer cannot convert approved cashless to reimbursement unilaterally",
+      "Discharge process: final bill review and authorization within 2 hours of discharge — patient should not wait",
+      "Cashless amount enhancement during hospitalization: TPA must respond to enhancement request within 2 hours",
+      "Non-medical items list standardized: only items in IRDAI's exhaustive non-medical list can be excluded from cashless",
+      "Hospital cannot charge the patient for amounts already approved under cashless — dispute between hospital and insurer"
+    ],
+    "consumer_rights": [
+      "30-minute emergency cashless response time",
+      "Approved cashless cannot be unilaterally converted to reimbursement",
+      "Patient not responsible for insurer-hospital billing disputes"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "cashless",
+      "pre-authorization",
+      "discharge",
+      "non-medical-items"
+    ]
+  },
+  {
+    "id": "circ_112",
+    "circular_no": "IRDAI/NL/REG/CIR/305/11/2024",
+    "subject": "Parametric Insurance — Weather Index and Trigger-Based Products",
+    "date": "2024-11-15",
+    "category": "general",
+    "key_points": [
+      "Framework for parametric insurance products that pay fixed amounts when predefined triggers are met",
+      "Weather index insurance: payout triggered by rainfall deficit/excess, temperature extremes, or wind speed exceeding threshold",
+      "Earthquake parametric cover: payout triggered by seismic magnitude above specified level within defined radius",
+      "Flood parametric cover: payout when river gauge reading exceeds flood-level threshold",
+      "No loss assessment or survey required — payout based on objective data from IMD/government agencies",
+      "Parametric products can be offered as standalone or as supplement to traditional indemnity insurance"
+    ],
+    "consumer_rights": [
+      "Quick claim settlement — no survey or loss assessment needed",
+      "Objective trigger-based payouts based on government agency data",
+      "Transparent and predictable — payout conditions known upfront"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "parametric",
+      "weather-index",
+      "trigger-based",
+      "earthquake",
+      "flood",
+      "innovation"
+    ]
+  },
+  {
+    "id": "circ_113",
+    "circular_no": "IRDAI/LIFE/REG/CIR/310/11/2024",
+    "subject": "Life Insurance — Premium Payment Grace Period and Reinstatement",
+    "date": "2024-11-20",
+    "category": "life",
+    "key_points": [
+      "Grace period for premium payment: 30 days for monthly/quarterly, 30 days for half-yearly/annual premiums",
+      "During grace period: full policy coverage continues — death claim payable with deduction of unpaid premium",
+      "After grace period: policy lapses — no coverage until revival",
+      "Auto-debit/standing instruction: insurer must send premium due reminder 15 days before due date via SMS and email",
+      "Bounce charge: insurer cannot charge more than ₹500 for premium auto-debit bounce",
+      "Flexible premium payment: option to switch frequency (monthly to annual or vice versa) at any anniversary without penalty"
+    ],
+    "consumer_rights": [
+      "30-day grace period with full coverage during grace period",
+      "Advance premium reminder 15 days before due date",
+      "Flexible premium frequency switching at anniversary"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "grace-period",
+      "premium-payment",
+      "lapse",
+      "reminder"
+    ]
+  },
+  {
+    "id": "circ_114",
+    "circular_no": "IRDAI/HLT/REG/CIR/315/12/2024",
+    "subject": "Health Insurance — Non-Medical Items and Consumables List (Revised)",
+    "date": "2024-12-05",
+    "category": "health",
+    "key_points": [
+      "Exhaustive list of non-medical items that can be excluded from cashless/reimbursement claims published",
+      "Non-medical items include: toiletries, personal comfort items (AC, TV, phone charges), attendant food and bed, gloves, masks (non-surgical)",
+      "Medical consumables that MUST be covered: surgical gloves, sutures, catheters, IV sets, syringes, oxygen masks, blood bags, stents, implants",
+      "Items NOT in IRDAI's non-medical list cannot be excluded by the insurer",
+      "Hospital's 'convenience charges' and 'service charges' must be scrutinized — cannot be blanket-excluded",
+      "Patient's share of non-medical items typically ranges from ₹1,000 to ₹5,000 for standard hospitalization"
+    ],
+    "consumer_rights": [
+      "Clear list of what is and is not covered — no arbitrary exclusions",
+      "Medical consumables (sutures, catheters, stents) must be covered",
+      "Hospital convenience charges must be individually assessed, not blanket-excluded"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "non-medical-items",
+      "consumables",
+      "cashless",
+      "exclusions"
+    ]
+  },
+  {
+    "id": "circ_115",
+    "circular_no": "IRDAI/NL/REG/CIR/320/12/2024",
+    "subject": "Shopkeepers and SME Insurance — Bharat Laghu Udyam Suraksha Standard Product",
+    "date": "2024-12-10",
+    "category": "general",
+    "key_points": [
+      "Bharat Laghu Udyam Suraksha: standard insurance for shops and SMEs covering fire, burglary, money, and liability",
+      "Fire and allied perils: structure + stock + contents covered",
+      "Burglary cover: stock and money in safe covered for theft with violence",
+      "Machinery breakdown cover: optional add-on for manufacturing SMEs",
+      "Public liability: ₹10 lakh coverage for third-party bodily injury/property damage on premises",
+      "Business interruption: loss of profit for up to 6 months during reinstatement period after insured peril"
+    ],
+    "consumer_rights": [
+      "Affordable bundled insurance for shopkeepers and SMEs",
+      "Standard product available from all non-life insurers — easy comparison",
+      "Business interruption coverage during rebuilding/repair period"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "SME",
+      "shopkeeper",
+      "fire",
+      "burglary",
+      "business-interruption",
+      "standard-product"
+    ]
+  },
+  {
+    "id": "circ_116",
+    "circular_no": "IRDAI/HLT/REG/CIR/325/12/2024",
+    "subject": "Health Insurance — Family Floater Policy — Family Definition and Coverage",
+    "date": "2024-12-20",
+    "category": "health",
+    "key_points": [
+      "Family floater definition expanded: self, spouse, dependent children (up to age 25 or until marriage), and parents/parents-in-law",
+      "Dependent children: includes step-children, legally adopted children, and children with disabilities (no age limit)",
+      "Maximum family size under single floater: no cap — insurer cannot restrict to specific number of members",
+      "Sum insured shared among all members — highest-risk member determines base premium",
+      "Individual sum insured option must be available as alternative to shared sum insured",
+      "Newborn addition: automatic from birth until next renewal — no separate enrollment needed"
+    ],
+    "consumer_rights": [
+      "Expanded family definition including parents and parents-in-law",
+      "Dependent children with disabilities covered without age limit",
+      "Automatic newborn coverage from birth"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "family-floater",
+      "family-definition",
+      "dependent",
+      "newborn"
+    ]
+  },
+  {
+    "id": "circ_117",
+    "circular_no": "IRDAI/LIFE/REG/CIR/330/01/2025",
+    "subject": "Life Insurance — Assignment During Home Loan — Borrower Protection",
+    "date": "2025-01-05",
+    "category": "life",
+    "key_points": [
+      "Life insurance assigned to bank as home loan collateral: conditional assignment recommended (absolute assignment discouraged)",
+      "On loan repayment: bank must release assignment within 15 days and notify the insurer",
+      "If loan is repaid but assignment not released: insurer must pay death claim to nominee (not bank) if bank loan account shows nil balance",
+      "Bank cannot mandate purchase of insurance from a specific insurer — borrower free to choose any insurer",
+      "Loan outstanding at death: bank receives loan balance from death benefit, balance paid to nominee",
+      "Credit life insurance at disbursement: must be offered with opt-out option and alternative insurer choice"
+    ],
+    "consumer_rights": [
+      "Freedom to choose any life insurer for home loan protection — bank cannot mandate",
+      "Conditional assignment preferred — policy reverts to policyholder on loan repayment",
+      "Bank must release assignment within 15 days of loan closure"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "assignment",
+      "home-loan",
+      "bank",
+      "credit-life",
+      "borrower-protection"
+    ]
+  },
+  {
+    "id": "circ_118",
+    "circular_no": "IRDAI/NL/REG/CIR/335/01/2025",
+    "subject": "Motor Insurance — Vehicle Age and Renewal Beyond 15 Years",
+    "date": "2025-01-10",
+    "category": "motor",
+    "key_points": [
+      "Motor insurers cannot refuse renewal of OD cover solely based on vehicle age — even for vehicles older than 15 years",
+      "IDV for old vehicles (above 15 years): based on market value assessed by agreed valuation or IRDAI depreciation formula",
+      "Fitness certificate from RTO mandatory for vehicles above 15 years to be eligible for insurance",
+      "Higher voluntary deductible option available for old vehicles to reduce premium",
+      "Vintage/classic vehicles (above 50 years): separate motor insurance product with agreed value basis",
+      "Electric vehicle battery replacement for old EVs: covered if vehicle has valid fitness certificate"
+    ],
+    "consumer_rights": [
+      "Cannot be denied motor insurance renewal based on vehicle age alone",
+      "IDV based on assessed market value for old vehicles",
+      "Vintage vehicle insurance with agreed value basis"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "old-vehicle",
+      "renewal",
+      "vintage",
+      "15-year",
+      "fitness-certificate"
+    ]
+  },
+  {
+    "id": "circ_119",
+    "circular_no": "IRDAI/HLT/REG/CIR/340/01/2025",
+    "subject": "Health Insurance — Hospital Cash Benefit (Daily Allowance) Product Norms",
+    "date": "2025-01-15",
+    "category": "health",
+    "key_points": [
+      "Hospital cash/daily allowance benefit: fixed daily amount paid during hospitalization regardless of actual expenses",
+      "Minimum daily benefit: ₹500; Maximum: no cap (insurer discretion)",
+      "Waiting period: maximum 30 days initial, 12 months for specific diseases, 24 months for PED",
+      "ICU benefit: double the daily allowance during ICU stay",
+      "Convalescence benefit: additional 50% of daily allowance for 15 days post-discharge for specified major surgeries",
+      "Can be purchased as standalone product or rider on health/life policy"
+    ],
+    "consumer_rights": [
+      "Fixed daily benefit regardless of actual hospital expenses",
+      "Double benefit during ICU stay",
+      "Post-discharge convalescence benefit for major surgeries"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "hospital-cash",
+      "daily-allowance",
+      "ICU",
+      "convalescence"
+    ]
+  },
+  {
+    "id": "circ_120",
+    "circular_no": "IRDAI/INT/REG/CIR/345/01/2025",
+    "subject": "Insurance Fraud Detection — AI/ML Framework and Consumer Protection",
+    "date": "2025-01-20",
+    "category": "general",
+    "key_points": [
+      "Insurers permitted to use AI/ML models for fraud detection in claims processing",
+      "AI-flagged claims must be reviewed by human claims assessor before rejection — no automated rejection",
+      "Consumer right to explanation: if claim is flagged by AI, insurer must explain which factors triggered the flag in plain language",
+      "Fraud investigation timeline: maximum 90 days from claim receipt — post that, claim deemed valid and must be settled",
+      "False positive protection: if AI-flagged claim is found genuine after investigation, insurer pays claim with interest",
+      "Common fraud patterns monitored: inflated bills, phantom hospitals, staged accidents, identity fraud"
+    ],
+    "consumer_rights": [
+      "No automated claim rejection by AI — human review mandatory",
+      "Right to plain-language explanation of AI fraud flags",
+      "90-day investigation limit — post that, claim must be settled with interest"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "fraud",
+      "AI",
+      "ML",
+      "detection",
+      "consumer-protection",
+      "investigation"
+    ]
+  },
+  {
+    "id": "circ_121",
+    "circular_no": "IRDAI/HLT/REG/CIR/350/02/2025",
+    "subject": "Health Insurance — Rare Disease and Orphan Drug Coverage Guidelines",
+    "date": "2025-02-01",
+    "category": "health",
+    "key_points": [
+      "Rare diseases as defined by National Policy for Rare Diseases 2021: coverage guidelines for health insurers",
+      "Group 1 rare diseases (one-time treatment): covered up to sum insured (e.g., bone marrow transplant for thalassemia)",
+      "Group 2 rare diseases (requiring long-term treatment): covered with annual sub-limit linked to policy terms",
+      "Group 3 rare diseases (requiring lifelong high-cost treatment): partially covered with government co-pay under NPRD",
+      "Orphan drugs: covered when prescribed by specialist at designated Center of Excellence for rare diseases",
+      "Genetic testing for rare disease diagnosis covered up to ₹50,000 per policy year"
+    ],
+    "consumer_rights": [
+      "Rare disease coverage based on national policy classification",
+      "Genetic testing coverage for rare disease diagnosis",
+      "Orphan drug coverage when prescribed by specialist"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "rare-disease",
+      "orphan-drug",
+      "genetic-testing",
+      "thalassemia"
+    ]
+  },
+  {
+    "id": "circ_122",
+    "circular_no": "IRDAI/LIFE/REG/CIR/355/02/2025",
+    "subject": "Life Insurance — Digital Nomination and Will Integration",
+    "date": "2025-02-05",
+    "category": "life",
+    "key_points": [
+      "Digital nomination: policyholders can update nominee details online through insurer's app/portal with e-KYC",
+      "Multiple nominees with percentage split: allowed (e.g., spouse 50%, child 1: 25%, child 2: 25%)",
+      "Beneficial nominee (spouse, children, parents) is absolute owner of death benefit — other legal heirs cannot contest",
+      "Non-beneficial nominee acts as trustee for legal heirs — death benefit forms part of estate",
+      "Nomination supersedes will for beneficial nominees; follows will for non-beneficial nominees",
+      "Insurer must send annual nomination reminder to policyholders via SMS and email"
+    ],
+    "consumer_rights": [
+      "Online nominee update through insurer app with e-KYC",
+      "Multiple nominees with percentage split allowed",
+      "Beneficial nominees are absolute owners — clean claim settlement"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "nomination",
+      "digital",
+      "beneficial-nominee",
+      "will",
+      "estate"
+    ]
+  },
+  {
+    "id": "circ_123",
+    "circular_no": "IRDAI/NL/REG/CIR/360/02/2025",
+    "subject": "Pet Insurance — Product Guidelines and Standards",
+    "date": "2025-02-10",
+    "category": "general",
+    "key_points": [
+      "Pet insurance product guidelines for dogs and cats (expandable to other domestic animals)",
+      "Coverage: veterinary treatment for illness and accident, surgery, hospitalization at registered veterinary facility",
+      "Third-party liability: coverage for injury/damage caused by pet to third parties (minimum ₹5 lakh)",
+      "Mortality/theft: death or theft of pet covered at declared value (requires registration and microchip)",
+      "Waiting period: 15 days initial, 12 months for breed-specific diseases",
+      "Excluded breeds: no blanket breed exclusions allowed — risk-based pricing permitted"
+    ],
+    "consumer_rights": [
+      "Veterinary treatment coverage for pets including surgery and hospitalization",
+      "Third-party liability coverage for pet-caused damage",
+      "No blanket breed exclusions — only risk-based pricing"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "pet-insurance",
+      "veterinary",
+      "dog",
+      "cat",
+      "liability"
+    ]
+  },
+  {
+    "id": "circ_124",
+    "circular_no": "IRDAI/HLT/REG/CIR/365/02/2025",
+    "subject": "Health Insurance — Ambulance Charges Coverage Mandate",
+    "date": "2025-02-15",
+    "category": "health",
+    "key_points": [
+      "Ambulance charges mandatory in all health policies — cannot be excluded",
+      "Coverage: road ambulance (minimum ₹5,000 per hospitalization), air ambulance (up to 10% of SI or ₹5 lakh)",
+      "Government ambulance services (108/102): charges reimbursed at actual",
+      "Private ambulance: covered at reasonable and customary charges as determined by insurer",
+      "Ambulance for inter-hospital transfer during ongoing treatment: covered",
+      "Dead body transportation from hospital to home/cremation ground: covered up to ₹10,000"
+    ],
+    "consumer_rights": [
+      "Mandatory ambulance coverage in all health policies",
+      "Air ambulance coverage up to 10% of SI or ₹5 lakh",
+      "Dead body transportation coverage up to ₹10,000"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "ambulance",
+      "air-ambulance",
+      "emergency",
+      "transportation"
+    ]
+  },
+  {
+    "id": "circ_125",
+    "circular_no": "IRDAI/INT/REG/CIR/370/02/2025",
+    "subject": "Embedded Insurance — Distribution Through Non-Insurance Platforms",
+    "date": "2025-02-20",
+    "category": "digital",
+    "key_points": [
+      "Framework for embedded insurance: insurance products sold as part of non-insurance purchase (e.g., flight ticket + travel insurance)",
+      "Embedded insurance must be opt-in only — no pre-ticked boxes or auto-enrollment",
+      "Policy document must be delivered within 24 hours of purchase via email/app",
+      "Full free look period (15-30 days) applies to embedded insurance products",
+      "Platform must disclose insurance partner and commission earned on each embedded sale",
+      "Claim process for embedded insurance: same as standalone product — no reduced benefits"
+    ],
+    "consumer_rights": [
+      "Embedded insurance must be opt-in — no pre-ticked boxes",
+      "Full free look period and grievance redressal rights apply",
+      "Same claim benefits as standalone products"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "digital",
+      "embedded-insurance",
+      "distribution",
+      "opt-in",
+      "platform"
+    ]
+  },
+  {
+    "id": "circ_126",
+    "circular_no": "IRDAI/NL/REG/CIR/375/03/2024",
+    "subject": "Motor Insurance — Total Loss and Constructive Total Loss Settlement Norms",
+    "date": "2024-03-05",
+    "category": "motor",
+    "key_points": [
+      "Total loss: when repair cost exceeds 75% of IDV, vehicle is declared total loss/constructive total loss",
+      "Settlement: insurer pays IDV minus salvage value and applicable deductible",
+      "Salvage value determination: based on auction or agreement between insurer and insured",
+      "Policyholder has option to retain salvage: IDV minus mutually agreed salvage value paid",
+      "Total loss settlement timeline: 30 days from surveyor's final report",
+      "RC cancellation and RTO intimation: insurer assists with documentation for cancellation of registration"
+    ],
+    "consumer_rights": [
+      "Total loss declared when repair exceeds 75% of IDV",
+      "Option to retain salvage with reduced settlement",
+      "Settlement within 30 days of final survey report"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "total-loss",
+      "constructive-total-loss",
+      "IDV",
+      "salvage",
+      "settlement"
+    ]
+  },
+  {
+    "id": "circ_127",
+    "circular_no": "IRDAI/HLT/REG/CIR/380/03/2024",
+    "subject": "Health Insurance — Sub-Limits Transparency and Disclosure Mandate",
+    "date": "2024-03-20",
+    "category": "health",
+    "key_points": [
+      "All sub-limits must be listed in the policy schedule — no hidden sub-limits in policy conditions/exclusions section",
+      "Common sub-limits that must be explicitly disclosed: room rent, ICU charges, cataract, ambulance, maternity, implants",
+      "Product comparison on insurer website must highlight sub-limits prominently alongside sum insured and premium",
+      "Agents must verbally explain sub-limits at point of sale — non-compliance is mis-selling",
+      "Proportionate deduction mechanism must be explained with worked example in policy document",
+      "Insurer comparison portals must allow filtering by sub-limit presence/absence"
+    ],
+    "consumer_rights": [
+      "All sub-limits clearly listed in policy schedule",
+      "Sub-limits highlighted in product comparison materials",
+      "Proportionate deduction explained with worked example"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "sub-limits",
+      "transparency",
+      "disclosure",
+      "room-rent",
+      "proportionate-deduction"
+    ]
+  },
+  {
+    "id": "circ_128",
+    "circular_no": "IRDAI/LIFE/REG/CIR/385/04/2024",
+    "subject": "Life Insurance — Tax Benefit Communication and Section 80C/80D/10(10D) Guidelines",
+    "date": "2024-04-25",
+    "category": "life",
+    "key_points": [
+      "Life insurance premium: deduction under Section 80C up to ₹1.5 lakh per year",
+      "Health insurance premium: deduction under Section 80D — ₹25,000 (self), additional ₹25,000 (parents), ₹50,000 for senior citizens",
+      "Death benefit: tax-free under Section 10(10D) regardless of premium amount",
+      "Maturity benefit: tax-free under 10(10D) only if annual premium does not exceed 10% of sum assured",
+      "ULIP maturity: taxable if annual premium exceeds ₹2.5 lakh (as per Finance Act 2021 amendment)",
+      "Insurer must provide tax benefit certificate (Form 16A equivalent) by June 30 of each year"
+    ],
+    "consumer_rights": [
+      "Clear tax benefit communication at point of sale",
+      "Annual tax benefit certificate from insurer",
+      "Understanding of when maturity proceeds are taxable vs tax-free"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "tax",
+      "section-80C",
+      "section-80D",
+      "section-10(10D)",
+      "maturity"
+    ]
+  },
+  {
+    "id": "circ_129",
+    "circular_no": "IRDAI/NL/REG/CIR/390/05/2024",
+    "subject": "Workmen's Compensation Insurance — Revised Limits and ESI Integration",
+    "date": "2024-05-05",
+    "category": "general",
+    "key_points": [
+      "Workmen's compensation for death: minimum ₹15 lakh or 50% of monthly wages x relevant factor (whichever is higher)",
+      "Permanent total disability: minimum ₹18 lakh or 60% of monthly wages x relevant factor",
+      "Temporary total disability: half-monthly payment during disability period (maximum 5 years)",
+      "Employers with more than 10 workers must maintain WC insurance — mandatory under Workmen's Compensation Act 1923",
+      "ESI-covered establishments exempted from separate WC insurance for ESI-eligible workers",
+      "Medical expenses: actual medical treatment costs covered in addition to compensation amount"
+    ],
+    "consumer_rights": [
+      "Enhanced minimum compensation amounts for workplace injuries and death",
+      "Medical expenses covered on actuals basis",
+      "Mandatory coverage for all workers in establishments with 10+ employees"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "workmen-compensation",
+      "employer",
+      "workplace-injury",
+      "ESI",
+      "disability"
+    ]
+  },
+  {
+    "id": "circ_130",
+    "circular_no": "IRDAI/HLT/REG/CIR/395/05/2024",
+    "subject": "Health Insurance — Diabetes and Chronic Disease Management Coverage",
+    "date": "2024-05-15",
+    "category": "health",
+    "key_points": [
+      "Diabetes management program coverage: HbA1c testing, continuous glucose monitoring devices, insulin pumps covered under health insurance",
+      "Chronic disease management for hypertension, asthma, COPD: doctor consultations, regular diagnostics, and medication covered under OPD",
+      "Diabetic foot care: podiatry, wound care, and diabetic footwear covered when prescribed by specialist",
+      "Insulin pump and CGM device: covered as day-care procedure for insulin-dependent diabetic patients",
+      "Preventive screening for diabetic complications (retinopathy screening, renal function tests): covered under wellness benefits",
+      "Obesity treatment linked to diabetes: bariatric surgery covered when BMI > 35 with diabetes as co-morbidity"
+    ],
+    "consumer_rights": [
+      "Comprehensive diabetes management coverage including devices",
+      "Bariatric surgery coverage for BMI > 35 with diabetic co-morbidity",
+      "Preventive screening for diabetic complications"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "diabetes",
+      "chronic-disease",
+      "insulin-pump",
+      "CGM",
+      "bariatric"
+    ]
+  },
+  {
+    "id": "circ_131",
+    "circular_no": "IRDAI/INT/REG/CIR/400/06/2024",
+    "subject": "Microinsurance Regulations — Affordable Products for Low-Income Groups",
+    "date": "2024-06-10",
+    "category": "consumer_protection",
+    "key_points": [
+      "Microinsurance products: maximum sum insured ₹2 lakh (life) and ₹1 lakh (non-life)",
+      "Maximum premium: ₹500/year for non-life, ₹1,000/year for life microinsurance",
+      "Distribution through: self-help groups, microfinance institutions, cooperative banks, and mobile money platforms",
+      "Simplified proposal form: maximum one page; no medical examination required",
+      "Claim settlement: within 15 days for non-life, 30 days for life microinsurance",
+      "Products designed for: agricultural laborers, domestic workers, street vendors, construction workers"
+    ],
+    "consumer_rights": [
+      "Affordable insurance for low-income groups at under ₹1,000/year",
+      "Simplified enrollment with one-page form and no medical examination",
+      "Fast claim settlement within 15-30 days"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "microinsurance",
+      "affordable",
+      "low-income",
+      "SHG",
+      "microfinance",
+      "inclusion"
+    ]
+  },
+  {
+    "id": "circ_132",
+    "circular_no": "IRDAI/NL/REG/CIR/405/06/2024",
+    "subject": "Marine Cargo Insurance — Open Cover and Declaration Policy Norms",
+    "date": "2024-06-25",
+    "category": "general",
+    "key_points": [
+      "Open cover marine cargo policy: blanket cover for all shipments during policy period with monthly declarations",
+      "Coverage on Institute Cargo Clauses: ICC(A) all risks, ICC(B) named perils, ICC(C) restricted perils",
+      "Inland transit extension: automatic for road/rail transit within India",
+      "War and strikes: separate war risk premium — can be included or excluded by agreement",
+      "Valuation: CIF + 10% (insurance value = cost + insurance + freight + 10% profit margin)",
+      "Claim basis: full invoice value or repair cost for partial loss; underinsurance clause applies"
+    ],
+    "consumer_rights": [
+      "Flexible open cover for regular shippers without per-shipment policy",
+      "All-risks coverage under ICC(A) available",
+      "CIF + 10% valuation ensuring adequate coverage"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "marine",
+      "cargo",
+      "open-cover",
+      "ICC",
+      "transit",
+      "trade"
+    ]
+  },
+  {
+    "id": "circ_133",
+    "circular_no": "IRDAI/LIFE/REG/CIR/410/07/2024",
+    "subject": "Life Insurance — Paid-Up Policy Value and Reduced Paid-Up Norms",
+    "date": "2024-07-20",
+    "category": "life",
+    "key_points": [
+      "Paid-up policy: when premium payment is discontinued but policy continues with reduced benefits",
+      "Paid-up sum assured = Original SA x (premiums paid / total premiums payable)",
+      "Minimum paid-up value: after 2 completed years of premium payment, policy acquires paid-up value",
+      "ULIPs: no paid-up concept — policy continues with fund value; mortality charges deducted from fund",
+      "Paid-up policy still earns bonus (for participating policies) but at reduced rate",
+      "Paid-up policy can be surrendered for cash or revived to full sum assured within revival period"
+    ],
+    "consumer_rights": [
+      "Policy continues with reduced benefits even if premiums are stopped after 2 years",
+      "Option to surrender or revive paid-up policy",
+      "Bonus continues to accrue on paid-up participating policies"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "paid-up",
+      "reduced-paid-up",
+      "premium-discontinuation",
+      "surrender"
+    ]
+  },
+  {
+    "id": "circ_134",
+    "circular_no": "IRDAI/HLT/REG/CIR/415/08/2024",
+    "subject": "Health Insurance — Stent and Implant Pricing Cap",
+    "date": "2024-08-25",
+    "category": "health",
+    "key_points": [
+      "Health insurers must cover stents and implants at actual cost — cannot apply arbitrary sub-limits",
+      "NPPA (National Pharmaceutical Pricing Authority) capped stent prices: bare metal ₹7,660, drug-eluting ₹29,600 (revised periodically)",
+      "Implant pricing: covered at hospital invoice price subject to NPPA cap where applicable",
+      "Knee replacement implants, hip replacement implants, cochlear implants: covered at actual up to sum insured",
+      "Insurers cannot specify brand or type of implant — treating doctor's recommendation to be followed",
+      "Imported implants: covered if medically necessary and prescribed by specialist with written justification"
+    ],
+    "consumer_rights": [
+      "Stents and implants covered at actual cost up to sum insured",
+      "No brand/type restriction — doctor's recommendation followed",
+      "NPPA price caps protect against overcharging"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "stent",
+      "implant",
+      "NPPA",
+      "pricing",
+      "knee-replacement"
+    ]
+  },
+  {
+    "id": "circ_135",
+    "circular_no": "IRDAI/INT/REG/CIR/420/09/2024",
+    "subject": "Reinsurance Regulations — Impact on Policyholder Claims",
+    "date": "2024-09-15",
+    "category": "general",
+    "key_points": [
+      "Reinsurance arrangements do not affect policyholder rights — the direct insurer is solely responsible for claims",
+      "Policyholder claim cannot be delayed citing pending reinsurance recovery",
+      "Reinsurance failure does not absolve the direct insurer from claim liability",
+      "Indian insurers must maintain minimum retention of 50% of gross premium in India",
+      "GIC Re (General Insurance Corporation of India) is the national reinsurer with mandatory cession",
+      "Catastrophe reinsurance: mandatory for all non-life insurers for events exceeding ₹100 crore"
+    ],
+    "consumer_rights": [
+      "Claims not affected by insurer's reinsurance arrangements",
+      "No claim delays citing reinsurance recovery timelines",
+      "Direct insurer fully responsible regardless of reinsurance position"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "reinsurance",
+      "GIC-Re",
+      "retention",
+      "catastrophe",
+      "policyholder-protection"
+    ]
+  },
+  {
+    "id": "circ_136",
+    "circular_no": "IRDAI/HLT/REG/CIR/425/10/2024",
+    "subject": "Health Insurance — Outstation Emergency and Cashless Network Reciprocity",
+    "date": "2024-10-25",
+    "category": "health",
+    "key_points": [
+      "Policyholder hospitalized in outstation (different city from residence): entitled to cashless at any network hospital",
+      "TPA must facilitate cashless even if hospital is in a different TPA's network",
+      "No additional documentation required for outstation emergency — standard cashless process applies",
+      "If no network hospital available in outstation location: reimbursement with enhanced timeline (45 days) and no penalty",
+      "Air ambulance for transfer to network hospital: covered if outstation hospital is not equipped for required treatment",
+      "Multi-city policies: policyholder can designate up to 3 cities for preferred hospital network"
+    ],
+    "consumer_rights": [
+      "Cashless facility at any network hospital regardless of location",
+      "No penalty for outstation treatment at non-network hospital if no network hospital available",
+      "Air ambulance for inter-city transfer when required"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "outstation",
+      "emergency",
+      "cashless",
+      "multi-city",
+      "air-ambulance"
+    ]
+  },
+  {
+    "id": "circ_137",
+    "circular_no": "IRDAI/LIFE/REG/CIR/430/11/2024",
+    "subject": "Life Insurance — Claim Investigation Process and Timelines",
+    "date": "2024-11-25",
+    "category": "life",
+    "key_points": [
+      "Investigation permitted only for: death within 3 years of policy inception, suspicious circumstances, large sum assured (above ₹50 lakh)",
+      "Investigation must be completed within 90 days of claim notification",
+      "If investigation not completed in 90 days: interim payment of minimum 50% of claim amount",
+      "Investigator must be registered with IRDAI — no unauthorized third-party investigators",
+      "Nominee/claimant must be informed of investigation in writing with expected timeline",
+      "Post 3-year contestability period: investigation limited to proving fraud (not non-disclosure)"
+    ],
+    "consumer_rights": [
+      "Investigation limited to specific circumstances — not routine",
+      "90-day investigation limit with interim payment if delayed",
+      "Post 3 years: only fraud (not non-disclosure) can be investigated"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "claim-investigation",
+      "contestability",
+      "timeline",
+      "fraud"
+    ]
+  },
+  {
+    "id": "circ_138",
+    "circular_no": "IRDAI/NL/REG/CIR/435/12/2024",
+    "subject": "Motor Insurance — Add-On Covers Standardization",
+    "date": "2024-12-25",
+    "category": "motor",
+    "key_points": [
+      "Standardized add-on covers for motor insurance with uniform definitions across insurers",
+      "Zero depreciation: full parts cost without depreciation deduction (max 2-3 claims/year, vehicle up to 5 years)",
+      "Engine protect: covers engine damage from water ingression/hydrostatic lock",
+      "Roadside assistance: towing, battery jump-start, flat tyre change, fuel delivery, lockout assistance",
+      "Return to invoice (RTI): pays invoice value (not IDV) in case of total loss or theft",
+      "Key replacement: lost/damaged key replacement including reprogramming",
+      "Consumable cover: engine oil, coolant, brake oil, nuts and bolts consumed during repair",
+      "Tyre protect: covers tyre damage from road hazards (not wear and tear)"
+    ],
+    "consumer_rights": [
+      "Standardized add-on definitions — same coverage regardless of insurer",
+      "RTI add-on: invoice value payout instead of depreciated IDV",
+      "Consumable cover: oils, coolants, and small parts covered during repair"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "add-on",
+      "zero-depreciation",
+      "engine-protect",
+      "RTI",
+      "roadside-assistance"
+    ]
+  },
+  {
+    "id": "circ_139",
+    "circular_no": "IRDAI/HLT/REG/CIR/440/01/2025",
+    "subject": "Health Insurance — Second Opinion and e-Opinion Services",
+    "date": "2025-01-25",
+    "category": "health",
+    "key_points": [
+      "Second medical opinion benefit: mandatory in all health policies with SI above ₹10 lakh",
+      "Policyholder can seek second opinion from any specialist (including international specialists via telemedicine)",
+      "Cost of second opinion consultation covered up to ₹10,000 per opinion or 3 opinions per year",
+      "e-Opinion: digital second opinion service through insurer's panel of specialists",
+      "Second opinion for surgery: if second opinion contraindicates surgery, insurer must accept conservative treatment claim",
+      "No penalty or increased copay for seeking second opinion"
+    ],
+    "consumer_rights": [
+      "Free second medical opinion (up to 3 per year) including international telemedicine",
+      "Conservative treatment coverage if second opinion contradicts surgery",
+      "No penalty for seeking second opinion"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "second-opinion",
+      "telemedicine",
+      "surgery",
+      "e-opinion"
+    ]
+  },
+  {
+    "id": "circ_140",
+    "circular_no": "IRDAI/INT/REG/CIR/445/02/2025",
+    "subject": "Insurance Solvency Margin — Revised Requirements and Risk-Based Capital",
+    "date": "2025-02-25",
+    "category": "general",
+    "key_points": [
+      "Minimum solvency ratio: 1.50 for all insurers (maintained from existing requirement)",
+      "Risk-based capital framework: phased implementation from April 2025",
+      "Insurers with solvency below 1.50: restricted from launching new products and declaring dividends",
+      "Solvency data published quarterly on IRDAI website for public access",
+      "Higher solvency requirement (2.0) for insurers with high catastrophe exposure",
+      "Consumer protection: IRDAI Policyholder Protection Fund provides backstop for insurer insolvency"
+    ],
+    "consumer_rights": [
+      "Quarterly solvency data available for insurer financial health assessment",
+      "IRDAI Policyholder Protection Fund backstop in case of insurer failure",
+      "Regulatory restrictions on under-capitalized insurers protect existing policyholders"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "solvency",
+      "capital",
+      "risk-based",
+      "financial-health",
+      "policyholder-protection"
+    ]
+  },
+  {
+    "id": "circ_141",
+    "circular_no": "IRDAI/HLT/REG/CIR/450/03/2024",
+    "subject": "Health Insurance — Dialysis and Chemotherapy Day-Care Coverage Enhancement",
+    "date": "2024-03-30",
+    "category": "health",
+    "key_points": [
+      "Dialysis: covered as day-care procedure without 24-hour hospitalization requirement",
+      "Chemotherapy: all cycles covered under single claim authorization (not separate pre-auth per cycle)",
+      "Radiation therapy: covered as day-care — single pre-auth for entire course",
+      "Cost of chemotherapy drugs (including targeted therapy, immunotherapy): covered at actual without sub-limit",
+      "Home dialysis: covered under domiciliary clause if prescribed by nephrologist",
+      "Cancer treatment annual limit: insurer cannot set separate sub-limit lower than 50% of sum insured"
+    ],
+    "consumer_rights": [
+      "Single pre-authorization for entire chemotherapy/radiation course",
+      "Cancer treatment drugs covered at actual without sub-limit",
+      "Home dialysis covered under domiciliary treatment"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "dialysis",
+      "chemotherapy",
+      "radiation",
+      "day-care",
+      "cancer"
+    ]
+  },
+  {
+    "id": "circ_142",
+    "circular_no": "IRDAI/NL/REG/CIR/455/04/2024",
+    "subject": "Motor Insurance — Two-Wheeler Insurance Simplification",
+    "date": "2024-04-15",
+    "category": "motor",
+    "key_points": [
+      "Simplified two-wheeler insurance: comprehensive policy at affordable premiums for wider adoption",
+      "TP-only premium: ₹538 (up to 150cc), ₹1,381 (150-350cc), ₹2,804 (above 350cc) for FY 2024-25",
+      "Long-term 5-year TP for two-wheelers: available at discounted aggregate premium",
+      "Add-ons for two-wheelers: zero depreciation, engine protect, roadside assistance (same as cars)",
+      "Pillion rider PA cover: automatic ₹1 lakh PA cover for pillion rider in comprehensive policies",
+      "Digital insurance through UPI-linked instant issuance for TP-only two-wheeler policies"
+    ],
+    "consumer_rights": [
+      "Affordable two-wheeler insurance with long-term 5-year TP option",
+      "Automatic ₹1 lakh PA cover for pillion rider",
+      "Instant digital issuance for TP-only policies via UPI"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "two-wheeler",
+      "TP-premium",
+      "pillion",
+      "digital",
+      "simplified"
+    ]
+  },
+  {
+    "id": "circ_143",
+    "circular_no": "IRDAI/LIFE/REG/CIR/460/05/2024",
+    "subject": "Life Insurance — Child Plan Regulations and Minor Policyholder Protection",
+    "date": "2024-05-25",
+    "category": "life",
+    "key_points": [
+      "Child insurance plans: life of parent insured, benefits payable for child's education/marriage/career milestones",
+      "Waiver of premium: mandatory rider in child plans — if parent dies, future premiums waived and benefits continue",
+      "Minimum maturity age: 18 years (plan matures when child turns 18 or later as per plan design)",
+      "Partial withdrawals: allowed after child turns 18 for education expenses (up to 50% of fund value in ULIPs)",
+      "Premium payment term: aligned with child's age milestones (graduation at 21, post-graduation at 23)",
+      "Minor as proposer: not allowed — parent/guardian must be proposer; child is beneficiary"
+    ],
+    "consumer_rights": [
+      "Premium waiver on parent's death — plan continues for child",
+      "Partial withdrawals after child turns 18 for education",
+      "Benefits aligned with child's education milestones"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "child-plan",
+      "education",
+      "premium-waiver",
+      "minor",
+      "guardian"
+    ]
+  },
+  {
+    "id": "circ_144",
+    "circular_no": "IRDAI/HLT/REG/CIR/465/06/2024",
+    "subject": "Health Insurance — Robotic Surgery and Minimally Invasive Procedures Coverage",
+    "date": "2024-06-30",
+    "category": "health",
+    "key_points": [
+      "Robotic surgery (da Vinci, Versius): covered at full cost including robot usage charges under health insurance",
+      "Insurer cannot limit robotic surgery coverage to equivalent open surgery cost",
+      "Minimally invasive surgery (laparoscopic, arthroscopic, endoscopic): covered as standard — no additional pre-auth for technique",
+      "Day-care eligibility: robotic and minimally invasive procedures eligible for day-care coverage",
+      "Training component of robotic surgery cost: not chargeable to patient (hospital absorbs learning curve cost)",
+      "List of 45 robotic surgery procedures covered published by IRDAI — expandable annually"
+    ],
+    "consumer_rights": [
+      "Full robotic surgery coverage including robot usage charges",
+      "Cannot be limited to equivalent open surgery cost",
+      "Day-care eligibility for minimally invasive procedures"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "robotic-surgery",
+      "minimally-invasive",
+      "laparoscopic",
+      "da-vinci"
+    ]
+  },
+  {
+    "id": "circ_145",
+    "circular_no": "IRDAI/INT/REG/CIR/470/07/2024",
+    "subject": "Corporate Insurance — Key Man Insurance and Employee Benefit Regulations",
+    "date": "2024-07-25",
+    "category": "general",
+    "key_points": [
+      "Key man insurance: company can insure life of key employees whose death/disability would cause financial loss",
+      "Sum assured linked to employee's contribution to company revenue/profit — actuarially justified",
+      "Premium paid by employer: treated as business expense under Income Tax Act",
+      "Employee consent required for key man insurance — cannot be taken without employee's knowledge",
+      "Group term life for employees: minimum sum assured 2x annual CTC",
+      "Gratuity fund insurance: insurer-managed gratuity trust products for employer compliance"
+    ],
+    "consumer_rights": [
+      "Employee consent required for key man insurance",
+      "Minimum 2x CTC as group term life sum assured",
+      "Gratuity fund insurance for employer compliance"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "corporate",
+      "key-man",
+      "employee-benefit",
+      "group-term-life",
+      "gratuity"
+    ]
+  },
+  {
+    "id": "circ_146",
+    "circular_no": "IRDAI/HLT/REG/CIR/475/08/2024",
+    "subject": "Health Insurance — Bariatric Surgery and Obesity Treatment Coverage",
+    "date": "2024-08-30",
+    "category": "health",
+    "key_points": [
+      "Bariatric surgery covered under health insurance when BMI exceeds 35 (morbid obesity) or BMI > 30 with co-morbidities",
+      "Co-morbidities qualifying for bariatric coverage: Type 2 diabetes, severe sleep apnea, obesity-related heart disease",
+      "Pre-surgical assessment: 6-month documented weight loss attempt required before surgery approval",
+      "Post-surgical follow-up: nutritional counseling and follow-up consultations covered for 12 months",
+      "Waiting period for bariatric: classified as specific disease waiting period (24 months from policy inception)",
+      "Revision bariatric surgery: covered if first surgery was unsuccessful and medically justified"
+    ],
+    "consumer_rights": [
+      "Bariatric surgery coverage for morbid obesity with documented medical necessity",
+      "12-month post-surgical nutritional follow-up covered",
+      "Revision surgery covered if medically justified"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "bariatric",
+      "obesity",
+      "BMI",
+      "weight-loss",
+      "surgery"
+    ]
+  },
+  {
+    "id": "circ_147",
+    "circular_no": "IRDAI/NL/REG/CIR/480/09/2024",
+    "subject": "Aviation Insurance — Drone and UAV Insurance Framework",
+    "date": "2024-09-25",
+    "category": "general",
+    "key_points": [
+      "Mandatory insurance for commercial drones/UAVs registered with DGCA",
+      "Third-party liability: minimum coverage ₹25 lakh for micro drones, ₹1 crore for small drones",
+      "Hull insurance: optional coverage for drone body and payload equipment",
+      "Payload liability: coverage for damage caused by payload drop or malfunction",
+      "Cyber risk: hacking of drone controls and unauthorized flight path deviation",
+      "DGCA UIN mandatory for insurance: unregistered drones not insurable"
+    ],
+    "consumer_rights": [
+      "Mandatory third-party liability coverage for commercial drones",
+      "Cyber risk coverage for drone hacking",
+      "Payload and hull coverage available as add-ons"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "aviation",
+      "drone",
+      "UAV",
+      "DGCA",
+      "liability",
+      "hull"
+    ]
+  },
+  {
+    "id": "circ_148",
+    "circular_no": "IRDAI/LIFE/REG/CIR/485/10/2024",
+    "subject": "Life Insurance — Term Insurance with Return of Premium (TROP) Norms",
+    "date": "2024-10-30",
+    "category": "life",
+    "key_points": [
+      "TROP: term insurance where all premiums are returned on surviving the policy term (no death claim)",
+      "Premium for TROP: typically 2.5-3x higher than pure term insurance premium",
+      "Return of premium: guaranteed return of total premiums paid (before tax) at maturity",
+      "Death benefit: same as pure term — full sum assured paid to nominee",
+      "Tax benefit: premium qualifies under Section 80C; maturity proceeds under Section 10(10D) if premium < 10% of SA",
+      "Surrender before maturity: reduced refund as per GSV/SSV norms (lower than TROP maturity benefit)"
+    ],
+    "consumer_rights": [
+      "Guaranteed return of all premiums if policyholder survives the term",
+      "Full death benefit (same as pure term) if policyholder dies during term",
+      "Tax benefits on premium and maturity proceeds"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "term-insurance",
+      "TROP",
+      "return-of-premium",
+      "maturity"
+    ]
+  },
+  {
+    "id": "circ_149",
+    "circular_no": "IRDAI/HLT/REG/CIR/490/11/2024",
+    "subject": "Health Insurance — Infertility Treatment and IVF Coverage Framework",
+    "date": "2024-11-30",
+    "category": "health",
+    "key_points": [
+      "IVF (In Vitro Fertilization) coverage available as optional rider in health insurance policies",
+      "Coverage: maximum 3 IVF cycles per lifetime under the policy",
+      "Sub-limit per IVF cycle: insurer-defined but minimum ₹1.5 lakh per cycle",
+      "Eligibility: female insured aged 25-42 years with documented infertility diagnosis of 2+ years",
+      "IUI (Intrauterine Insemination): covered at lower sub-limit (₹25,000-50,000 per cycle)",
+      "Pre-IVF investigations and fertility assessment: covered under OPD or diagnostics benefit"
+    ],
+    "consumer_rights": [
+      "IVF coverage available as rider with minimum 3 cycles",
+      "Pre-IVF investigations covered under diagnostics",
+      "IUI and fertility assessment also covered"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "IVF",
+      "infertility",
+      "IUI",
+      "fertility",
+      "reproductive"
+    ]
+  },
+  {
+    "id": "circ_150",
+    "circular_no": "IRDAI/INT/REG/CIR/495/12/2024",
+    "subject": "Composite License — Single Insurer for Life, Health, and General Insurance",
+    "date": "2024-12-30",
+    "category": "general",
+    "key_points": [
+      "Insurance Laws (Amendment) Act allows composite licensing: single entity can sell life, health, and general insurance",
+      "Phased implementation: existing insurers can apply for composite license from April 2025",
+      "Capital requirement: ₹200 crore minimum for composite license (vs ₹100 crore for single line)",
+      "Separate funds for life and non-life segments mandatory even under composite license",
+      "Consumer benefit: single point of contact for all insurance needs",
+      "Regulatory oversight: separate returns and solvency maintenance for each segment"
+    ],
+    "consumer_rights": [
+      "Single insurer for all insurance needs — life, health, and general",
+      "Separate fund maintenance protects each segment's policyholders",
+      "Simplified insurance management with single point of contact"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "composite-license",
+      "regulation",
+      "life",
+      "general",
+      "health",
+      "reform"
+    ]
+  },
+  {
+    "id": "circ_151",
+    "circular_no": "IRDAI/HLT/REG/CIR/500/01/2025",
+    "subject": "Health Insurance — Palliative Care and End-of-Life Coverage",
+    "date": "2025-01-30",
+    "category": "health",
+    "key_points": [
+      "Palliative care covered under health insurance for terminal illness patients",
+      "Hospice care: inpatient hospice facility charges covered up to 30 days per policy year",
+      "Home-based palliative care: nursing visits, pain management medication, and medical equipment",
+      "Advance directive: policyholder can specify treatment preferences — insurer must honor documented wishes",
+      "Bereavement counseling: up to 5 sessions for family members covered under wellness benefit",
+      "End-of-life care is not experimental treatment — cannot be excluded on grounds of futility"
+    ],
+    "consumer_rights": [
+      "Palliative and hospice care covered for terminal illness",
+      "Home-based palliative care including nursing and pain management",
+      "Bereavement counseling for family members"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "palliative",
+      "hospice",
+      "end-of-life",
+      "terminal-illness"
+    ]
+  },
+  {
+    "id": "circ_152",
+    "circular_no": "IRDAI/NL/REG/CIR/505/01/2025",
+    "subject": "Engineering Insurance — Contractors All Risk and Machinery Breakdown",
+    "date": "2025-01-28",
+    "category": "general",
+    "key_points": [
+      "Contractors All Risk (CAR): covers construction projects against physical loss or damage during construction period",
+      "Erection All Risk (EAR): covers machinery and equipment during installation/erection phase",
+      "Machinery breakdown insurance: covers sudden and unforeseen breakdown of machinery",
+      "Electronic equipment insurance: covers IT equipment, servers, and data processing systems",
+      "Third-party liability extension for construction projects",
+      "Advance loss of profits: business interruption during construction delay due to insured peril"
+    ],
+    "consumer_rights": [
+      "Comprehensive construction project protection",
+      "Machinery and electronic equipment breakdown coverage",
+      "Business interruption coverage for construction delays"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "engineering",
+      "CAR",
+      "EAR",
+      "machinery-breakdown",
+      "construction"
+    ]
+  },
+  {
+    "id": "circ_153",
+    "circular_no": "IRDAI/HLT/REG/CIR/510/02/2025",
+    "subject": "Health Insurance — Dental and Vision Coverage Framework",
+    "date": "2025-02-08",
+    "category": "health",
+    "key_points": [
+      "Dental coverage: available as optional add-on covering routine dental procedures (cleaning, filling, extraction)",
+      "Major dental: root canal, crowns, bridges covered with sub-limit per procedure",
+      "Vision coverage: annual eye examination, corrective lenses (spectacles/contact lenses) covered",
+      "LASIK/refractive surgery: covered under vision add-on after 2-year waiting period",
+      "Dental emergency: covered under hospitalization if requiring emergency admission (e.g., dental abscess)",
+      "Combined dental + vision add-on premium: approximately ₹2,000-5,000 per year"
+    ],
+    "consumer_rights": [
+      "Optional dental and vision add-on coverage available",
+      "Routine eye examination and corrective lenses covered",
+      "LASIK surgery coverage after waiting period"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "dental",
+      "vision",
+      "LASIK",
+      "eye-care",
+      "add-on"
+    ]
+  },
+  {
+    "id": "circ_154",
+    "circular_no": "IRDAI/LIFE/REG/CIR/515/02/2025",
+    "subject": "Life Insurance — Return on Investment (ROI) Disclosure Standards",
+    "date": "2025-02-12",
+    "category": "life",
+    "key_points": [
+      "Mandatory IRR disclosure: all life insurance products must disclose expected IRR at 4% and 8% assumed gross returns",
+      "ULIPs: net return after all charges must be disclosed at point of sale",
+      "Endowment/money-back: guaranteed return component and bonus history must be shared",
+      "Non-participating guaranteed plans: exact maturity value and IRR must be printed in benefit illustration",
+      "Comparison with alternative investments: insurer cannot compare insurance IRR with FD/mutual fund returns in sales material",
+      "Annual performance statement: insurer must send actual return achieved vs projected return each year"
+    ],
+    "consumer_rights": [
+      "Mandatory IRR disclosure showing real returns after charges",
+      "Annual performance statement comparing actual vs projected returns",
+      "No misleading comparisons with FD or mutual fund returns"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "ROI",
+      "IRR",
+      "disclosure",
+      "benefit-illustration",
+      "transparency"
+    ]
+  },
+  {
+    "id": "circ_155",
+    "circular_no": "IRDAI/NL/REG/CIR/520/02/2025",
+    "subject": "Motor Insurance — Hit and Run Compensation Scheme",
+    "date": "2025-02-18",
+    "category": "motor",
+    "key_points": [
+      "Hit and run compensation under Section 161 of Motor Vehicles Act 1988 (as amended 2019)",
+      "Compensation for death in hit and run: ₹2 lakh (fixed by Central Government)",
+      "Compensation for grievous injury in hit and run: ₹50,000",
+      "Claim filed with Claims Enquiry Officer appointed by district authority",
+      "No need to identify the vehicle or driver — compensation from Solatium Fund",
+      "Processing timeline: 6 months from date of application",
+      "Compensation does not affect right to claim from identified vehicle's insurer if later found"
+    ],
+    "consumer_rights": [
+      "₹2 lakh compensation for death in hit-and-run without identifying vehicle",
+      "₹50,000 for grievous injury in hit-and-run",
+      "Claim filed with district authority — no court required"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "hit-and-run",
+      "solatium-fund",
+      "compensation",
+      "MVA"
+    ]
+  },
+  {
+    "id": "circ_156",
+    "circular_no": "IRDAI/HLT/REG/CIR/525/03/2024",
+    "subject": "Health Insurance — Genetic Testing and Genomic Medicine Coverage",
+    "date": "2024-03-15",
+    "category": "health",
+    "key_points": [
+      "Genetic testing covered when prescribed by specialist for diagnostic purposes (cancer markers, rare diseases)",
+      "BRCA1/BRCA2 testing for breast/ovarian cancer risk: covered for patients with family history",
+      "Pharmacogenomic testing: covered when needed to determine drug response for cancer treatment",
+      "Genetic testing cannot be used by insurer for underwriting or premium loading",
+      "Insurer cannot mandate genetic testing as condition for policy issuance",
+      "Genetic data privacy: insurer cannot access or use genetic test results for risk assessment"
+    ],
+    "consumer_rights": [
+      "Genetic testing covered for diagnostic purposes when prescribed by specialist",
+      "Genetic information cannot be used for underwriting or premium loading",
+      "Complete genetic data privacy from insurer access"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "genetic-testing",
+      "genomics",
+      "BRCA",
+      "privacy",
+      "non-discrimination"
+    ]
+  },
+  {
+    "id": "circ_157",
+    "circular_no": "IRDAI/INT/REG/CIR/530/04/2024",
+    "subject": "Insurance Distribution — Bancassurance and Corporate Agent Regulations",
+    "date": "2024-04-30",
+    "category": "general",
+    "key_points": [
+      "Banks can distribute insurance as corporate agents for up to 3 life insurers and 3 non-life insurers",
+      "Bancassurance sales: bank staff must be IRDAI-certified — minimum 25 hours training",
+      "Customer's choice: bank cannot mandate insurance purchase as condition for loan or other banking services",
+      "Tied agent: represents single insurer exclusively — no multi-insurer comparison",
+      "Broker: represents customer, not insurer — must recommend best product for customer's needs",
+      "All intermediaries must disclose commission earned to the customer at point of sale"
+    ],
+    "consumer_rights": [
+      "Bank cannot mandate insurance purchase for loan approval",
+      "Right to know agent/broker commission at point of sale",
+      "Broker must recommend products in customer's best interest"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "bancassurance",
+      "corporate-agent",
+      "broker",
+      "distribution",
+      "commission-disclosure"
+    ]
+  },
+  {
+    "id": "circ_158",
+    "circular_no": "IRDAI/HLT/REG/CIR/535/05/2024",
+    "subject": "Health Insurance — Alternative Medicine and AYUSH Coverage Enhancement",
+    "date": "2024-05-30",
+    "category": "health",
+    "key_points": [
+      "AYUSH coverage mandatory in all health policies: Ayurveda, Yoga, Unani, Siddha, Homeopathy",
+      "Treatment at NABH-accredited AYUSH hospitals covered up to sum insured (no separate sub-limit from 2024)",
+      "AYUSH OPD: covered at par with allopathic OPD where OPD benefit exists",
+      "Panchakarma treatment: covered when prescribed by registered Ayurveda practitioner for specific conditions",
+      "Naturopathy: covered only at registered naturopathy hospitals/centers",
+      "AYUSH practitioner must be registered with respective state board/council"
+    ],
+    "consumer_rights": [
+      "AYUSH coverage at par with allopathic treatment up to full sum insured",
+      "Panchakarma covered when medically prescribed",
+      "AYUSH OPD at par with allopathic OPD"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "AYUSH",
+      "Ayurveda",
+      "Homeopathy",
+      "Unani",
+      "Siddha",
+      "Panchakarma"
+    ]
+  },
+  {
+    "id": "circ_159",
+    "circular_no": "IRDAI/LIFE/REG/CIR/540/06/2024",
+    "subject": "Life Insurance — Married Women's Property Act (MWP Act) Policy Guidelines",
+    "date": "2024-06-15",
+    "category": "life",
+    "key_points": [
+      "Life insurance under MWP Act (Section 6): creates a trust for wife and/or children — protected from creditors",
+      "MWP Act policy: death benefit paid directly to wife/children as trust beneficiaries — not part of deceased's estate",
+      "Creditors, courts, or income tax authorities cannot attach MWP Act policy proceeds",
+      "MWP Act endorsement available on any life insurance policy — must be opted at inception",
+      "No stamp duty on MWP Act trust deed in most states",
+      "Nominee under MWP policy cannot be changed once assigned — irrevocable trust"
+    ],
+    "consumer_rights": [
+      "Death benefit protected from creditors and legal claims under MWP Act",
+      "Proceeds go directly to wife/children as trust beneficiaries",
+      "MWP endorsement available on any life insurance policy"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "MWP-Act",
+      "trust",
+      "women",
+      "creditor-protection",
+      "estate"
+    ]
+  },
+  {
+    "id": "circ_160",
+    "circular_no": "IRDAI/NL/REG/CIR/545/07/2024",
+    "subject": "Motor Insurance — Commercial Vehicle Insurance Reforms",
+    "date": "2024-07-30",
+    "category": "motor",
+    "key_points": [
+      "Commercial vehicle (CV) motor insurance: mandatory comprehensive cover for goods-carrying and passenger vehicles",
+      "TP premium for CVs: linked to Gross Vehicle Weight (GVW) — heavier vehicles pay higher premium",
+      "Passenger-carrying vehicles: minimum TP per passenger ₹100 per seat for buses",
+      "Fleet insurance: discounted rates for operators with 10+ vehicles under single policy",
+      "Driver PA cover: ₹15 lakh mandatory for CV drivers in addition to owner-driver CPA",
+      "Goods in transit: optional add-on covering goods damage during transit (separate from cargo insurance)"
+    ],
+    "consumer_rights": [
+      "Mandatory comprehensive cover for commercial vehicles",
+      "Fleet discounts for 10+ vehicle operators",
+      "₹15 lakh PA cover for CV drivers"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "commercial-vehicle",
+      "fleet",
+      "GVW",
+      "bus",
+      "goods-carrying"
+    ]
+  },
+  {
+    "id": "circ_161",
+    "circular_no": "IRDAI/HLT/REG/CIR/550/08/2024",
+    "subject": "Health Insurance — Cross-Selling Restrictions and Anti-Churning Measures",
+    "date": "2024-08-10",
+    "category": "consumer_protection",
+    "key_points": [
+      "Anti-churning: agents cannot induce customers to replace existing adequate policy with new policy for commission",
+      "Replacement policy: insurer must verify if customer has existing coverage and assess replacement suitability",
+      "30-day comparison period: customer gets 30 days to compare new and existing policy before old policy lapses",
+      "Cross-selling restriction: health claim data cannot be used to push life or other insurance products",
+      "Policy replacement form: mandatory disclosure of existing coverage and reason for replacement",
+      "Agent penalty: license suspension for proven churning/forced replacement cases"
+    ],
+    "consumer_rights": [
+      "30-day comparison period before existing policy cancellation for replacement",
+      "Existing claim data cannot be used for cross-selling other products",
+      "Agent accountable for forced replacement/churning"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "consumer-protection",
+      "churning",
+      "replacement",
+      "cross-selling",
+      "anti-churning"
+    ]
+  },
+  {
+    "id": "circ_162",
+    "circular_no": "IRDAI/INT/REG/CIR/555/09/2024",
+    "subject": "Climate Risk Insurance — Natural Disaster and Climate Adaptation Products",
+    "date": "2024-09-30",
+    "category": "general",
+    "key_points": [
+      "Climate risk insurance framework: products addressing increasing frequency of extreme weather events",
+      "Parametric flood insurance: trigger-based payout when rainfall exceeds 200mm in 24 hours in insured location",
+      "Heat wave insurance: payable to outdoor workers/farmers when temperature exceeds 45°C for 3+ consecutive days",
+      "Cyclone insurance: parametric cover triggered by wind speed exceeding 100 km/h at insured location",
+      "Climate adaptation: premium discounts for properties with climate-resilient construction",
+      "Green building insurance: coverage for eco-friendly reconstruction after natural disaster"
+    ],
+    "consumer_rights": [
+      "Parametric climate insurance with quick payouts",
+      "Premium discounts for climate-resilient construction",
+      "Green rebuilding coverage after natural disaster"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "climate",
+      "natural-disaster",
+      "parametric",
+      "flood",
+      "cyclone",
+      "heat-wave"
+    ]
+  },
+  {
+    "id": "circ_163",
+    "circular_no": "IRDAI/HLT/REG/CIR/560/10/2024",
+    "subject": "Health Insurance — International Second Opinion and Cross-Border Treatment",
+    "date": "2024-10-05",
+    "category": "health",
+    "key_points": [
+      "International second opinion: covered via telemedicine for policies with SI above ₹25 lakh",
+      "Cross-border treatment: covered for conditions where treatment is not available in India",
+      "Pre-authorization mandatory for planned international treatment — emergency covered without pre-auth",
+      "Coverage includes: treatment cost, travel, accommodation for patient and one attendant",
+      "Currency conversion at RBI reference rate on date of treatment",
+      "Network of international hospitals: insurers encouraged to tie up with global hospital networks"
+    ],
+    "consumer_rights": [
+      "International second opinion via telemedicine for high-SI policies",
+      "Cross-border treatment when not available in India",
+      "Travel and accommodation for patient and attendant covered"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "international",
+      "cross-border",
+      "second-opinion",
+      "telemedicine",
+      "global"
+    ]
+  },
+  {
+    "id": "circ_164",
+    "circular_no": "IRDAI/LIFE/REG/CIR/565/11/2024",
+    "subject": "Life Insurance — Non-Resident Indian (NRI) Policyholder Rights",
+    "date": "2024-11-05",
+    "category": "life",
+    "key_points": [
+      "NRIs can purchase life insurance from Indian insurers — payment in Indian rupees from NRE/NRO account",
+      "Sum assured: subject to income documentation and maximum 20x annual income",
+      "Premium payment: through NRE/NRO account; auto-debit from Indian bank account allowed",
+      "Claim settlement: death benefit paid to nominee's Indian bank account (or NRE account of foreign nominee)",
+      "Tax implications: premiums qualify for Section 80C if Indian income exists; death benefit tax-free",
+      "Repatriation: death benefit can be repatriated abroad by nominee subject to FEMA regulations"
+    ],
+    "consumer_rights": [
+      "NRIs can buy Indian life insurance with Indian rupee payment",
+      "Death benefit repatriable subject to FEMA regulations",
+      "Same Section 80C and 10(10D) tax benefits for NRI policyholders"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "NRI",
+      "non-resident",
+      "FEMA",
+      "repatriation",
+      "premium-payment"
+    ]
+  },
+  {
+    "id": "circ_165",
+    "circular_no": "IRDAI/NL/REG/CIR/570/12/2024",
+    "subject": "Motor Insurance — Vintage and Classic Car Insurance Standards",
+    "date": "2024-12-05",
+    "category": "motor",
+    "key_points": [
+      "Vintage vehicle: registered with FHRAI/VSCCI, manufactured more than 50 years ago",
+      "Classic vehicle: 25-50 years old, maintained in original or restored condition",
+      "Agreed value basis: sum insured based on professional valuation (not IDV depreciation)",
+      "Limited use coverage: lower premium for vehicles driven less than 3,000 km per year",
+      "Restoration coverage: cost of restoring vintage vehicle after accidental damage at specialized workshops",
+      "Event coverage: comprehensive cover for rallies, exhibitions, and concours events"
+    ],
+    "consumer_rights": [
+      "Agreed value basis instead of depreciated IDV for vintage cars",
+      "Lower premium for limited annual usage",
+      "Restoration coverage at specialized workshops"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "vintage",
+      "classic-car",
+      "agreed-value",
+      "limited-use",
+      "restoration"
+    ]
+  },
+  {
+    "id": "circ_166",
+    "circular_no": "IRDAI/HLT/REG/CIR/575/01/2025",
+    "subject": "Health Insurance — Hearing Aid and Cochlear Implant Coverage",
+    "date": "2025-01-08",
+    "category": "health",
+    "key_points": [
+      "Hearing aids covered under health insurance: up to ₹25,000 per ear per 3 years",
+      "Cochlear implant surgery: covered as hospitalization procedure up to sum insured",
+      "Post-implant rehabilitation: speech therapy and audiology follow-up covered for 12 months",
+      "Bilateral hearing aid/implant: both ears covered (not limited to unilateral)",
+      "Children with congenital hearing loss: cochlear implant covered from Day 1 under family floater",
+      "Battery replacement for hearing aids: covered under consumables benefit"
+    ],
+    "consumer_rights": [
+      "Hearing aid coverage up to ₹25,000 per ear every 3 years",
+      "Cochlear implant surgery covered up to sum insured",
+      "Post-implant speech therapy and rehabilitation covered"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "hearing-aid",
+      "cochlear-implant",
+      "audiology",
+      "speech-therapy"
+    ]
+  },
+  {
+    "id": "circ_167",
+    "circular_no": "IRDAI/INT/REG/CIR/580/01/2025",
+    "subject": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY) — Updated Guidelines",
+    "date": "2025-01-12",
+    "category": "life",
+    "key_points": [
+      "PMJJBY: government-subsidized term life insurance for savings bank account holders aged 18-50",
+      "Premium: ₹436/year (auto-debit from savings account) — covers June 1 to May 31",
+      "Death benefit: ₹2 lakh on death from any cause",
+      "Enrollment: through participating banks — opt-in at account opening or renewal",
+      "No medical examination required — self-declaration of good health sufficient",
+      "Coverage ceases at age 55 or on closing the savings bank account"
+    ],
+    "consumer_rights": [
+      "₹2 lakh life cover at ₹436/year for savings account holders",
+      "No medical examination — self-declaration sufficient",
+      "Auto-debit from savings account — hassle-free renewal"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "PMJJBY",
+      "government-scheme",
+      "term-insurance",
+      "affordable",
+      "savings-account"
+    ]
+  },
+  {
+    "id": "circ_168",
+    "circular_no": "IRDAI/INT/REG/CIR/585/01/2025",
+    "subject": "Pradhan Mantri Suraksha Bima Yojana (PMSBY) — Updated Guidelines",
+    "date": "2025-01-14",
+    "category": "general",
+    "key_points": [
+      "PMSBY: government personal accident insurance for savings bank account holders aged 18-70",
+      "Premium: ₹20/year (auto-debit from savings account)",
+      "Accidental death benefit: ₹2 lakh",
+      "Permanent total disability: ₹2 lakh",
+      "Permanent partial disability (loss of one eye or one limb): ₹1 lakh",
+      "Coverage period: June 1 to May 31; annual renewal by auto-debit"
+    ],
+    "consumer_rights": [
+      "₹2 lakh accident cover at just ₹20/year",
+      "Auto-debit renewal from savings account",
+      "Covers accidental death and permanent disability"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "PMSBY",
+      "government-scheme",
+      "personal-accident",
+      "affordable",
+      "savings-account"
+    ]
+  },
+  {
+    "id": "circ_169",
+    "circular_no": "IRDAI/HLT/REG/CIR/590/02/2025",
+    "subject": "Health Insurance — Preventive Health Checkup Benefit Standards",
+    "date": "2025-02-03",
+    "category": "health",
+    "key_points": [
+      "Annual preventive health checkup mandatory in all health policies — minimum benefit ₹5,000 or 1% of SI",
+      "Checkup includes: complete blood count, lipid profile, blood sugar, liver function, kidney function, urine analysis",
+      "Additional tests for age 40+: ECG, chest X-ray, PSA (men), mammography (women above 40)",
+      "Family floater: each covered member entitled to individual health checkup",
+      "Checkup at insurer-empaneled diagnostic centers at no cost to policyholder",
+      "Health checkup data shared with policyholder — insurer cannot use for underwriting/exclusion at renewal"
+    ],
+    "consumer_rights": [
+      "Annual health checkup benefit for every policyholder",
+      "Comprehensive test panel including age-appropriate screening",
+      "Health data privacy — cannot be used for adverse underwriting"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "preventive",
+      "health-checkup",
+      "screening",
+      "diagnostics",
+      "wellness"
+    ]
+  },
+  {
+    "id": "circ_170",
+    "circular_no": "IRDAI/LIFE/REG/CIR/595/02/2025",
+    "subject": "Life Insurance — Whole Life Policy and Endowment Product Modernization",
+    "date": "2025-02-22",
+    "category": "life",
+    "key_points": [
+      "Whole life policies: coverage until age 99 or 100 with premium payment for limited term (10-20 years)",
+      "Endowment policies: maturity benefit = guaranteed sum assured + accumulated bonus",
+      "Minimum maturity sum assured: must equal at least 105% of total premiums paid (excluding taxes)",
+      "Reversionary bonus: declared annually — once declared, cannot be reduced",
+      "Terminal bonus: payable only at claim/maturity — can vary based on investment performance",
+      "Paid-up value after 2 years: policy continues with reduced benefits if premiums stopped"
+    ],
+    "consumer_rights": [
+      "Minimum maturity benefit of 105% of total premiums for endowment",
+      "Reversionary bonus once declared is guaranteed",
+      "Paid-up option after 2 completed years"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "whole-life",
+      "endowment",
+      "bonus",
+      "guaranteed",
+      "maturity"
+    ]
+  },
+  {
+    "id": "circ_171",
+    "circular_no": "IRDAI/NL/REG/CIR/600/03/2024",
+    "subject": "Motor Insurance — Ride-Sharing and Aggregator Vehicle Insurance",
+    "date": "2024-03-10",
+    "category": "motor",
+    "key_points": [
+      "Vehicles used for ride-sharing (Ola, Uber, Rapido): must have commercial vehicle insurance — private car policy invalid",
+      "Special insurance product for aggregator-linked vehicles: hybrid personal + commercial use cover",
+      "TP premium for aggregator vehicles: commercial rate applicable for the period vehicle is on-trip",
+      "OD coverage: available at commercial vehicle rates — premium higher than private vehicle",
+      "Personal accident for passengers: ₹5 lakh PA cover mandatory for each passenger seat in aggregator vehicles",
+      "Aggregator platform must verify valid insurance before allowing driver to go online on the app"
+    ],
+    "consumer_rights": [
+      "Dedicated insurance product for ride-sharing vehicles",
+      "₹5 lakh PA cover for each passenger in aggregator vehicles",
+      "Aggregator must verify valid insurance before driver goes online"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "ride-sharing",
+      "aggregator",
+      "Ola",
+      "Uber",
+      "commercial"
+    ]
+  },
+  {
+    "id": "circ_172",
+    "circular_no": "IRDAI/HLT/REG/CIR/605/04/2024",
+    "subject": "Health Insurance — Accident and Trauma Care Coverage",
+    "date": "2024-04-10",
+    "category": "health",
+    "key_points": [
+      "Road accident emergency treatment: covered without pre-authorization at any hospital",
+      "Golden hour treatment: no documentation required for initial emergency treatment — insurer settles based on hospital records",
+      "Trauma care including emergency surgery, blood transfusion, and ICU: covered at actual",
+      "Reconstructive surgery after accident: covered when medically necessary (not cosmetic)",
+      "Physiotherapy and rehabilitation after accident: covered for up to 90 days post-discharge",
+      "Prosthetic limbs and assistive devices: covered at actual up to sub-limit per device"
+    ],
+    "consumer_rights": [
+      "Emergency accident treatment without pre-authorization at any hospital",
+      "Reconstructive surgery covered when medically necessary",
+      "Physiotherapy and rehabilitation for 90 days post-discharge"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "accident",
+      "trauma",
+      "emergency",
+      "golden-hour",
+      "rehabilitation"
+    ]
+  },
+  {
+    "id": "circ_173",
+    "circular_no": "IRDAI/INT/REG/CIR/610/05/2024",
+    "subject": "Insurance Technology — API Standards and Open Insurance Framework",
+    "date": "2024-05-08",
+    "category": "digital",
+    "key_points": [
+      "Open Insurance API framework: standardized APIs for product data, quote generation, and policy issuance",
+      "Account Aggregator integration: insurance data accessible through AA framework with customer consent",
+      "API security: OAuth 2.0 mandatory for all insurance APIs with data encryption in transit and at rest",
+      "Real-time policy issuance: API must support real-time policy issuance with digital KYC",
+      "Claims status API: customer-facing API for real-time claim tracking mandatory for all insurers",
+      "Sandbox API environment: available for insurtechs and fintech developers to test integrations"
+    ],
+    "consumer_rights": [
+      "Real-time policy issuance through digital APIs",
+      "Real-time claim status tracking via API",
+      "Insurance data accessible through Account Aggregator with consent"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "digital",
+      "API",
+      "open-insurance",
+      "account-aggregator",
+      "real-time",
+      "sandbox"
+    ]
+  },
+  {
+    "id": "circ_174",
+    "circular_no": "IRDAI/HLT/REG/CIR/615/06/2024",
+    "subject": "Health Insurance — Gender-Specific Health Coverage",
+    "date": "2024-06-08",
+    "category": "health",
+    "key_points": [
+      "Women-specific coverage: breast cancer screening (mammography), cervical cancer screening (Pap smear/HPV) covered annually",
+      "PCOS/endometriosis treatment: covered under hospitalization and day-care",
+      "Hysterectomy: covered without restriction on type (abdominal, laparoscopic, robotic)",
+      "Men-specific: prostate screening (PSA test) covered annually after age 50",
+      "Menopause management: HRT covered when prescribed by gynecologist",
+      "Contraceptive device insertion/removal (IUD/implant): covered as day-care procedure"
+    ],
+    "consumer_rights": [
+      "Annual gender-specific cancer screening covered",
+      "PCOS and endometriosis treatment coverage",
+      "Menopause management including HRT when prescribed"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "women",
+      "gender-specific",
+      "breast-cancer",
+      "cervical-cancer",
+      "PCOS"
+    ]
+  },
+  {
+    "id": "circ_175",
+    "circular_no": "IRDAI/LIFE/REG/CIR/620/07/2024",
+    "subject": "Life Insurance — Group Credit Life Insurance (GCLI) Consumer Protection",
+    "date": "2024-07-10",
+    "category": "life",
+    "key_points": [
+      "GCLI: life insurance linked to loan repayment — death benefit equals outstanding loan balance",
+      "Lender cannot mandate specific insurer for GCLI — borrower free to choose",
+      "Premium: single premium at loan disbursement or annual renewable premium",
+      "Refund of unearned premium: if loan is prepaid before tenure, proportionate unearned premium refunded",
+      "Reducing cover: sum assured decreases in line with reducing loan balance — premium reflects this",
+      "Joint borrower: both borrowers covered under single GCLI policy"
+    ],
+    "consumer_rights": [
+      "Freedom to choose GCLI insurer — lender cannot mandate",
+      "Proportionate premium refund on loan prepayment",
+      "Joint borrower coverage under single policy"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "credit-life",
+      "GCLI",
+      "loan",
+      "lender",
+      "prepayment-refund"
+    ]
+  },
+  {
+    "id": "circ_176",
+    "circular_no": "IRDAI/NL/REG/CIR/625/08/2024",
+    "subject": "Motor Insurance — Claim Surveyors Appointment and Survey Standards",
+    "date": "2024-08-05",
+    "category": "motor",
+    "key_points": [
+      "Surveyor appointment within 24 hours of claim intimation (IRDAI mandate)",
+      "Survey completion: 7 days for straightforward claims, 30 days for complex claims",
+      "Video survey permitted for claims under ₹75,000 — reduces processing time",
+      "Surveyor must be IRDAI licensed — qualification: passing A/B/C surveyor examination",
+      "Surveyor fee: borne by the insurer, not the policyholder",
+      "Dispute on survey assessment: policyholder can request re-survey or independent surveyor at insurer's cost"
+    ],
+    "consumer_rights": [
+      "Surveyor appointment within 24 hours of claim",
+      "Video survey for smaller claims reducing processing time",
+      "Right to request re-survey if disputing assessment"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "surveyor",
+      "survey",
+      "claim-assessment",
+      "video-survey",
+      "timeline"
+    ]
+  },
+  {
+    "id": "circ_177",
+    "circular_no": "IRDAI/HLT/REG/CIR/630/09/2024",
+    "subject": "Health Insurance — Rehabilitation and Physiotherapy Coverage",
+    "date": "2024-09-05",
+    "category": "health",
+    "key_points": [
+      "Post-surgical rehabilitation: covered for up to 90 days post-discharge as post-hospitalization expenses",
+      "Physiotherapy during hospitalization: covered at actual as part of inpatient treatment",
+      "Outpatient physiotherapy: covered under OPD benefit (where offered) — up to 20 sessions per condition",
+      "Cardiac rehabilitation after heart surgery: covered for 12 weeks (36 sessions)",
+      "Stroke rehabilitation: covered for 6 months post-discharge including speech therapy, occupational therapy",
+      "Prosthetic and orthotic devices: covered at actual up to sub-limit per device per year"
+    ],
+    "consumer_rights": [
+      "90-day post-discharge rehabilitation coverage",
+      "Cardiac rehabilitation for 12 weeks after heart surgery",
+      "Stroke rehabilitation including speech and occupational therapy"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "rehabilitation",
+      "physiotherapy",
+      "cardiac-rehab",
+      "stroke-rehab",
+      "post-surgical"
+    ]
+  },
+  {
+    "id": "circ_178",
+    "circular_no": "IRDAI/INT/REG/CIR/635/10/2024",
+    "subject": "Aadhaar-Based Insurance — e-KYC and DigiLocker Integration",
+    "date": "2024-10-15",
+    "category": "digital",
+    "key_points": [
+      "Aadhaar e-KYC mandatory for all digital insurance purchases above ₹5 lakh sum insured",
+      "DigiLocker integration: policy documents stored in DigiLocker with policyholder consent",
+      "Offline Aadhaar XML: accepted as valid KYC for privacy-conscious customers (no biometric sharing)",
+      "Video KYC: accepted for high-value policies (SI above ₹1 crore) as alternative to in-person KYC",
+      "Simplified KYC for microinsurance and PMJJBY/PMSBY: PAN/Aadhaar number sufficient",
+      "KYC data retention: insurer must delete KYC data within 8 years of policy termination"
+    ],
+    "consumer_rights": [
+      "Digital KYC via Aadhaar — no physical document submission",
+      "Policy documents accessible via DigiLocker",
+      "KYC data deleted 8 years after policy termination"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "digital",
+      "Aadhaar",
+      "e-KYC",
+      "DigiLocker",
+      "video-KYC",
+      "privacy"
+    ]
+  },
+  {
+    "id": "circ_179",
+    "circular_no": "IRDAI/HLT/REG/CIR/640/11/2024",
+    "subject": "Health Insurance — Prosthetic and Medical Device Coverage",
+    "date": "2024-11-08",
+    "category": "health",
+    "key_points": [
+      "Prosthetic limbs (upper and lower): covered at actual up to ₹3 lakh per limb",
+      "Artificial joints (knee, hip, shoulder): implant cost covered at actual — no arbitrary sub-limit",
+      "Cardiac devices (pacemaker, ICD, CRT): covered at actual up to sum insured",
+      "Insulin pumps and continuous glucose monitors: covered as medical devices",
+      "Hearing aids and cochlear implants: covered (see separate hearing aid circular)",
+      "Maintenance and replacement of devices: covered at 50% of original cost after device warranty period"
+    ],
+    "consumer_rights": [
+      "Prosthetic limbs covered up to ₹3 lakh per limb",
+      "Cardiac devices covered at actual up to sum insured",
+      "Device maintenance covered at 50% after warranty"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "prosthetic",
+      "medical-device",
+      "pacemaker",
+      "insulin-pump",
+      "implant"
+    ]
+  },
+  {
+    "id": "circ_180",
+    "circular_no": "IRDAI/LIFE/REG/CIR/645/12/2024",
+    "subject": "Life Insurance — Terminal Illness Benefit Rider Standards",
+    "date": "2024-12-08",
+    "category": "life",
+    "key_points": [
+      "Terminal illness rider: advance payment of death benefit when policyholder diagnosed with terminal illness",
+      "Terminal illness definition: condition expected to result in death within 12 months as certified by specialist",
+      "Advance payment: up to 100% of sum assured or ₹1 crore (whichever is lower)",
+      "No additional premium for terminal illness rider — included in base term/whole life plans from 2025",
+      "Diagnosis requirements: certification by two independent specialists (one must be unrelated to insurance)",
+      "If policyholder survives beyond 12 months: no claw-back of terminal illness payment"
+    ],
+    "consumer_rights": [
+      "Advance death benefit upon terminal illness diagnosis",
+      "No additional premium for terminal illness rider",
+      "No claw-back if policyholder survives beyond expected timeline"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "terminal-illness",
+      "rider",
+      "advance-payment",
+      "death-benefit"
+    ]
+  },
+  {
+    "id": "circ_181",
+    "circular_no": "IRDAI/NL/REG/CIR/650/01/2025",
+    "subject": "Weather Insurance — Agricultural and Non-Agricultural Products",
+    "date": "2025-01-02",
+    "category": "general",
+    "key_points": [
+      "Weather insurance: parametric products triggered by weather parameter deviation from normal",
+      "Rainfall deficit insurance: payout when rainfall falls below 75% of normal in designated period",
+      "Excess rainfall insurance: payout when rainfall exceeds 125% of normal causing crop damage or flooding",
+      "Temperature insurance: payout when temperature exceeds/falls below thresholds for extended periods",
+      "Wind speed insurance: triggered by sustained winds above specified threshold (cyclone, storm)",
+      "Data source: India Meteorological Department (IMD) automated weather stations — objective trigger"
+    ],
+    "consumer_rights": [
+      "Quick payouts based on objective IMD weather data",
+      "No loss assessment or survey required",
+      "Transparent trigger-based mechanism known upfront"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "weather",
+      "parametric",
+      "rainfall",
+      "temperature",
+      "agriculture",
+      "IMD"
+    ]
+  },
+  {
+    "id": "circ_182",
+    "circular_no": "IRDAI/HLT/REG/CIR/655/01/2025",
+    "subject": "Health Insurance — Wearable Device Integration and Premium Benefits",
+    "date": "2025-01-18",
+    "category": "health",
+    "key_points": [
+      "Wearable device data (steps, heart rate, sleep) can be used for wellness rewards — not for underwriting",
+      "Premium discount up to 15% for policyholders maintaining target wellness scores through approved wearables",
+      "Insurer-approved wearables: Fitbit, Apple Watch, Samsung Galaxy Watch, Mi Band",
+      "Daily step target: 8,000-10,000 steps for premium discount eligibility",
+      "Heart rate anomaly detection: insurer wellness app can send health alerts (advisory only, not mandatory)",
+      "Data privacy: wearable data is anonymized and cannot be used to deny claims or load premium"
+    ],
+    "consumer_rights": [
+      "Premium discounts for maintaining wellness metrics via wearables",
+      "Wearable data privacy — cannot be used for claim denial or premium loading",
+      "Health alerts from anomaly detection (advisory only)"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "wearable",
+      "wellness",
+      "premium-discount",
+      "fitness",
+      "privacy"
+    ]
+  },
+  {
+    "id": "circ_183",
+    "circular_no": "IRDAI/INT/REG/CIR/660/02/2025",
+    "subject": "Surety Bond Insurance — Government Contract Performance Guarantee",
+    "date": "2025-02-05",
+    "category": "general",
+    "key_points": [
+      "Surety bond insurance: replaces bank guarantees for government contract performance guarantees",
+      "Contract performance surety: guarantees contractor will complete work as per contract terms",
+      "Advance payment surety: guarantees repayment of mobilization advance if contractor defaults",
+      "Bid bond: guarantees bidder will honor the bid if selected — protects government from bid withdrawal",
+      "Maximum surety bond: 30% of contract value",
+      "Premium: 1-3% of surety bond amount depending on contractor's track record and project risk"
+    ],
+    "consumer_rights": [
+      "Alternative to bank guarantee for government contracts",
+      "Lower cost than bank guarantee (1-3% vs 2-5% bank commission)",
+      "Faster issuance than bank guarantee process"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "surety-bond",
+      "government-contract",
+      "performance",
+      "bid-bond",
+      "bank-guarantee"
+    ]
+  },
+  {
+    "id": "circ_184",
+    "circular_no": "IRDAI/HLT/REG/CIR/665/02/2025",
+    "subject": "Health Insurance — Emergency Room Visit Coverage Standards",
+    "date": "2025-02-15",
+    "category": "health",
+    "key_points": [
+      "ER visit for genuine emergency: covered even if hospitalization does not follow (consultation + initial treatment)",
+      "Emergency definition: condition requiring immediate medical attention — chest pain, stroke symptoms, severe injury, breathing difficulty",
+      "ER visit copay: maximum 10% for non-admitted emergency visits (to discourage non-emergency ER use)",
+      "Ambulance to ER: covered as per ambulance benefit clause",
+      "ER stabilization charges: covered at actual regardless of subsequent admission",
+      "Follow-up after ER visit: covered under post-hospitalization benefit for 7 days"
+    ],
+    "consumer_rights": [
+      "ER visits covered even without subsequent hospitalization for genuine emergencies",
+      "Maximum 10% copay for non-admitted ER visits",
+      "7-day follow-up covered after ER visit"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "emergency-room",
+      "ER",
+      "ambulance",
+      "stabilization",
+      "copay"
+    ]
+  },
+  {
+    "id": "circ_185",
+    "circular_no": "IRDAI/LIFE/REG/CIR/670/03/2025",
+    "subject": "Life Insurance — Pension Plan Minimum Guarantee and Vesting Benefits",
+    "date": "2025-03-01",
+    "category": "pension",
+    "key_points": [
+      "Pension plans: minimum guaranteed annuity rate must be disclosed at inception — locked for policy term",
+      "Vesting benefit: at maturity, policyholder can commute up to 60% of corpus as lump sum (tax-free up to limit)",
+      "Remaining 40% must be used for annuity purchase from same or different insurer",
+      "Guaranteed addition: minimum 1% per year addition to pension corpus for non-linked pension plans",
+      "Death before vesting: nominee receives higher of (a) fund value or (b) total premiums paid with interest",
+      "NPS integration: pension plans can be integrated with NPS Tier-II for additional tax benefits"
+    ],
+    "consumer_rights": [
+      "Minimum guaranteed annuity rate locked at inception",
+      "60% lump sum commutation at maturity",
+      "Death benefit: higher of fund value or premiums with interest"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "pension",
+      "guaranteed-annuity",
+      "vesting",
+      "commutation",
+      "NPS",
+      "retirement"
+    ]
+  },
+  {
+    "id": "circ_186",
+    "circular_no": "IRDAI/NL/REG/CIR/675/03/2024",
+    "subject": "Motor Insurance — Pay-As-You-Drive and Telematics Pricing",
+    "date": "2024-03-28",
+    "category": "motor",
+    "key_points": [
+      "Pay-as-you-drive (PAYD): OD premium linked to kilometers driven — lower km = lower premium",
+      "Pay-how-you-drive (PHYD): premium discount based on driving behavior (speed, braking, time of driving)",
+      "Telematics device or smartphone app required for PAYD/PHYD pricing",
+      "Data privacy: driving data used only for premium calculation — not shared with third parties",
+      "Maximum discount through telematics: 25% of standard OD premium",
+      "Minimum usage for discount eligibility: at least 6 months of telematics data collection"
+    ],
+    "consumer_rights": [
+      "Premium linked to actual driving — low-mileage drivers pay less",
+      "Up to 25% discount for safe driving behavior",
+      "Driving data privacy — not shared with third parties"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "telematics",
+      "pay-as-you-drive",
+      "usage-based",
+      "driving-behavior",
+      "premium-discount"
+    ]
+  },
+  {
+    "id": "circ_187",
+    "circular_no": "IRDAI/HLT/REG/CIR/680/04/2024",
+    "subject": "Health Insurance — Arogya Sanjeevani — Family Floater Option Addition",
+    "date": "2024-04-08",
+    "category": "health",
+    "key_points": [
+      "Arogya Sanjeevani now available as family floater (previously individual only)",
+      "Family floater covers: self, spouse, up to 3 dependent children under single sum insured",
+      "Sum insured range for family floater: ₹1 lakh to ₹10 lakh",
+      "Premium: approximately 35-40% higher than individual for family of 4",
+      "No sub-limit on any specific treatment — standard 5% copay applies to all claims",
+      "All IRDAI-mandated benefits applicable: AYUSH, modern treatment, mental health, maternity"
+    ],
+    "consumer_rights": [
+      "Standard product now available as family floater for easy comparison",
+      "No hidden sub-limits — standard 5% copay on all claims",
+      "All IRDAI-mandated benefits included"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "arogya-sanjeevani",
+      "family-floater",
+      "standard-product",
+      "copay"
+    ]
+  },
+  {
+    "id": "circ_188",
+    "circular_no": "IRDAI/INT/REG/CIR/685/05/2024",
+    "subject": "Insurance Penetration — Rural and Semi-Urban Distribution Strategy",
+    "date": "2024-05-12",
+    "category": "consumer_protection",
+    "key_points": [
+      "Insurers must ensure 20% of new policies from rural and semi-urban areas",
+      "Common Service Centers (CSCs) empowered to sell insurance in rural areas",
+      "Mobile-first insurance distribution: simplified mobile app for rural agents",
+      "Vernacular language support: policy documents and customer service in 12 Indian languages",
+      "Premium collection through UPI, mobile money, and bank correspondents",
+      "Microinsurance and government schemes (PMJJBY, PMSBY, PMFBY) prioritized for rural distribution"
+    ],
+    "consumer_rights": [
+      "Insurance available in rural areas through CSCs and mobile agents",
+      "Policy documents in 12 Indian languages",
+      "Premium payment through UPI and mobile money"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "rural",
+      "semi-urban",
+      "CSC",
+      "distribution",
+      "vernacular",
+      "mobile-first"
+    ]
+  },
+  {
+    "id": "circ_189",
+    "circular_no": "IRDAI/HLT/REG/CIR/690/06/2024",
+    "subject": "Health Insurance — Pre-Policy Medical Screening and Underwriting Standards",
+    "date": "2024-06-12",
+    "category": "health",
+    "key_points": [
+      "Pre-policy medical screening: mandatory only for sum insured above ₹10 lakh or applicant age above 45 years",
+      "Below ₹10 lakh SI and age under 45: self-declaration of health sufficient — no medical tests required",
+      "Insurer-specified diagnostic panel: complete blood count, blood sugar, lipid profile, kidney/liver function, urine analysis",
+      "Additional tests for age 45-55: ECG, TMT (treadmill test), chest X-ray",
+      "Above age 55: comprehensive panel including echocardiography, HbA1c, PSA (men)",
+      "Medical screening cost borne by the insurer — not by the applicant"
+    ],
+    "consumer_rights": [
+      "No medical tests required for SI under ₹10 lakh and age under 45",
+      "Medical screening cost borne by insurer, not applicant",
+      "Standardized diagnostic panel for fair underwriting"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "medical-screening",
+      "underwriting",
+      "self-declaration",
+      "diagnostics"
+    ]
+  },
+  {
+    "id": "circ_190",
+    "circular_no": "IRDAI/LIFE/REG/CIR/695/07/2024",
+    "subject": "Life Insurance — Smoker vs Non-Smoker Premium Differentiation",
+    "date": "2024-07-08",
+    "category": "life",
+    "key_points": [
+      "Smoker/non-smoker differential pricing allowed: smokers can be charged up to 50% higher premium for term insurance",
+      "Smoker definition: regular use of tobacco products (cigarettes, beedis, cigars, chewing tobacco, gutka) in past 12 months",
+      "Non-smoker declaration: self-declaration at proposal stage — verified through cotinine test if sum assured above ₹50 lakh",
+      "Status change: smoker can re-classify as non-smoker after 12 months of cessation with medical evidence",
+      "Misrepresentation: claiming non-smoker while being smoker — claim can be rejected within 3-year contestability period",
+      "Post 3 years: smoker status misrepresentation cannot be grounds for claim rejection (Section 45 protection)"
+    ],
+    "consumer_rights": [
+      "Lower premium for non-smokers (up to 50% less than smokers)",
+      "Re-classification to non-smoker after 12 months of cessation",
+      "Section 45 protection after 3 years regardless of smoker status disclosure"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "smoker",
+      "non-smoker",
+      "premium",
+      "tobacco",
+      "cotinine-test"
+    ]
+  },
+  {
+    "id": "circ_191",
+    "circular_no": "IRDAI/NL/REG/CIR/700/08/2024",
+    "subject": "Motor Insurance — Green Channel Express Claim Settlement",
+    "date": "2024-08-12",
+    "category": "motor",
+    "key_points": [
+      "Green Channel: express claim settlement without surveyor for minor OD claims up to ₹75,000",
+      "Policyholder submits damage photos and repair estimate via insurer app",
+      "AI-based damage assessment validates claim and estimate",
+      "Claim approval within 30 minutes of submission for qualifying claims",
+      "Cashless repair authorization issued digitally to network garage",
+      "No deduction for wear and tear on Green Channel claims — full parts cost covered"
+    ],
+    "consumer_rights": [
+      "Express claim settlement within 30 minutes for minor claims",
+      "No surveyor visit required — photo-based assessment",
+      "Full parts cost without depreciation deduction"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "green-channel",
+      "express-claim",
+      "AI-assessment",
+      "cashless",
+      "minor-repair"
+    ]
+  },
+  {
+    "id": "circ_192",
+    "circular_no": "IRDAI/HLT/REG/CIR/705/09/2024",
+    "subject": "Health Insurance — Chronic Disease Management Program Coverage",
+    "date": "2024-09-08",
+    "category": "health",
+    "key_points": [
+      "Chronic Disease Management Programs (CDMPs) covered under health insurance for: diabetes, hypertension, asthma, COPD, heart disease",
+      "CDMP coverage: regular doctor consultations, diagnostic monitoring, medication, and lifestyle coaching",
+      "Insurer-administered CDMPs: policyholder enrolled in structured program with monitoring milestones",
+      "Premium discount for CDMP adherence: up to 10% at renewal for policyholders meeting program targets",
+      "Digital CDMPs: mobile app-based monitoring with connected devices (glucometer, BP monitor, peak flow meter)",
+      "CDMP does not replace hospitalization coverage — supplements it with outpatient chronic care"
+    ],
+    "consumer_rights": [
+      "Chronic disease management program coverage including consultations and diagnostics",
+      "Up to 10% premium discount for CDMP adherence",
+      "Digital monitoring through connected devices"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "chronic-disease",
+      "CDMP",
+      "diabetes",
+      "hypertension",
+      "premium-discount"
+    ]
+  },
+  {
+    "id": "circ_193",
+    "circular_no": "IRDAI/INT/REG/CIR/710/10/2024",
+    "subject": "Insurance Data Protection — Consumer Data Rights and DPDP Act Compliance",
+    "date": "2024-10-08",
+    "category": "consumer_protection",
+    "key_points": [
+      "Insurance data subject to Digital Personal Data Protection Act 2023 (DPDP Act)",
+      "Policyholder rights: right to access, correct, and delete personal data held by insurer",
+      "Data processing: only for insurance-related purposes — no third-party marketing without explicit consent",
+      "Consent management: separate opt-in required for each data usage purpose",
+      "Data breach notification: insurer must notify policyholder and IRDAI within 72 hours of data breach",
+      "Cross-border data transfer: policyholder data must be stored in India — overseas processing only with consent and safeguards"
+    ],
+    "consumer_rights": [
+      "Right to access, correct, and delete personal data held by insurer",
+      "72-hour data breach notification mandatory",
+      "Data stored in India — overseas transfer only with consent"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "data-protection",
+      "DPDP-Act",
+      "privacy",
+      "consent",
+      "data-breach",
+      "consumer-rights"
+    ]
+  },
+  {
+    "id": "circ_194",
+    "circular_no": "IRDAI/HLT/REG/CIR/715/11/2024",
+    "subject": "Health Insurance — COVID Long-Hauler and Post-COVID Complications Coverage",
+    "date": "2024-11-12",
+    "category": "health",
+    "key_points": [
+      "Post-COVID complications (long COVID): covered as standard health insurance claim — not excluded as pandemic-related",
+      "Long COVID conditions covered: pulmonary fibrosis, cardiac inflammation, neurological symptoms, chronic fatigue",
+      "No separate waiting period for post-COVID conditions — treated as any other illness",
+      "Hospitalization for post-COVID rehabilitation: covered including pulmonary rehabilitation",
+      "Outpatient follow-up for long COVID: covered under OPD benefit where available",
+      "COVID vaccination complications: adverse event requiring hospitalization is covered"
+    ],
+    "consumer_rights": [
+      "Long COVID complications covered without separate exclusion",
+      "Post-COVID rehabilitation and follow-up covered",
+      "COVID vaccination adverse events requiring hospitalization covered"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "COVID",
+      "long-COVID",
+      "post-COVID",
+      "rehabilitation",
+      "vaccination"
+    ]
+  },
+  {
+    "id": "circ_195",
+    "circular_no": "IRDAI/LIFE/REG/CIR/720/12/2024",
+    "subject": "Life Insurance — Digital Policy Issuance and E-Signature Standards",
+    "date": "2024-12-12",
+    "category": "digital",
+    "key_points": [
+      "Fully digital policy issuance: e-application, e-KYC, e-payment, e-policy — zero paper process",
+      "Aadhaar-based e-signature: valid for insurance proposals up to ₹50 lakh sum assured",
+      "DSC (Digital Signature Certificate): required for proposals above ₹50 lakh sum assured",
+      "E-policy delivered via email and available in DigiLocker — has same legal validity as paper policy",
+      "Digital underwriting: AI-assisted underwriting with instant decision for standard risk profiles",
+      "Video-PIVC (Pre-Issuance Verification Call): mandatory for proposals above ₹1 crore — recorded and stored"
+    ],
+    "consumer_rights": [
+      "Fully paperless insurance purchase experience",
+      "E-policy has same legal validity as paper policy",
+      "Instant underwriting decision for standard risk profiles"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "digital",
+      "e-signature",
+      "e-policy",
+      "DigiLocker",
+      "Aadhaar",
+      "video-PIVC"
+    ]
+  },
+  {
+    "id": "circ_196",
+    "circular_no": "IRDAI/NL/REG/CIR/725/01/2025",
+    "subject": "Motor Insurance — Natural Catastrophe Claim Procedures",
+    "date": "2025-01-06",
+    "category": "motor",
+    "key_points": [
+      "Catastrophe claim procedure: activated when natural disaster is declared by state/central government",
+      "Simplified claim process: single-page claim form for catastrophe events",
+      "Surveyor deployment: within 48 hours of disaster declaration in affected area",
+      "Interim payment: minimum 50% of estimated claim within 7 days of survey for catastrophe claims",
+      "Multiple vehicle claims: single claim form for fleet owners with multiple damaged vehicles",
+      "Special provisions: no additional deductible for catastrophe claims beyond standard policy deductible"
+    ],
+    "consumer_rights": [
+      "Simplified single-page claim form during declared catastrophes",
+      "50% interim payment within 7 days of survey",
+      "No additional catastrophe deductible"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "catastrophe",
+      "natural-disaster",
+      "flood",
+      "interim-payment",
+      "simplified"
+    ]
+  },
+  {
+    "id": "circ_197",
+    "circular_no": "IRDAI/HLT/REG/CIR/730/01/2025",
+    "subject": "Health Insurance — Organ Donation and Living Donor Protection",
+    "date": "2025-01-22",
+    "category": "health",
+    "key_points": [
+      "Living organ donor: all medical expenses for organ extraction covered by recipient's health insurance",
+      "Donor hospitalization: covered for up to 30 days including pre-operative assessment and post-operative care",
+      "Donor does not need to be a policyholder — coverage extends from recipient's policy",
+      "Donor complications arising from organ donation: covered for 12 months post-donation",
+      "Follow-up consultations for donor: 4 consultations covered for 12 months post-donation",
+      "Donor transportation: travel costs covered if donor is from different city (up to ₹50,000)"
+    ],
+    "consumer_rights": [
+      "Living donor expenses fully covered by recipient's insurance",
+      "12-month complication coverage for organ donor",
+      "Donor travel expenses covered up to ₹50,000"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "organ-donation",
+      "living-donor",
+      "transplant",
+      "donor-protection"
+    ]
+  },
+  {
+    "id": "circ_198",
+    "circular_no": "IRDAI/INT/REG/CIR/735/02/2025",
+    "subject": "Insurance Ombudsman — Enhanced Digital Access and Expedited Resolution",
+    "date": "2025-02-08",
+    "category": "consumer_protection",
+    "key_points": [
+      "Online complaint filing through IGMS (Integrated Grievance Management System) portal",
+      "Track complaint status online in real-time with estimated resolution timeline",
+      "Document submission: digital upload of all supporting documents — no physical copies required",
+      "Video hearing: available on request — scheduled within 30 days of complaint acceptance",
+      "Ombudsman recommendation: issued within 30 days of last hearing",
+      "Compliance tracking: insurer compliance with Ombudsman recommendation tracked and published quarterly"
+    ],
+    "consumer_rights": [
+      "Fully digital complaint filing and document submission",
+      "Video hearings available within 30 days",
+      "Real-time complaint status tracking online"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "ombudsman",
+      "digital",
+      "IGMS",
+      "video-hearing",
+      "complaint",
+      "resolution"
+    ]
+  },
+  {
+    "id": "circ_199",
+    "circular_no": "IRDAI/HLT/REG/CIR/740/02/2025",
+    "subject": "Health Insurance — Home Healthcare and Nursing Services Coverage",
+    "date": "2025-02-18",
+    "category": "health",
+    "key_points": [
+      "Home healthcare services: covered for post-hospitalization recovery when prescribed by treating doctor",
+      "Qualified nursing care at home: up to 30 days post-discharge at actual cost",
+      "Home-based IV therapy and wound care: covered as post-hospitalization treatment",
+      "Physiotherapy at home: covered for up to 20 sessions post-hospitalization",
+      "Medical equipment rental at home: hospital bed, oxygen concentrator, wheelchair — covered during recovery",
+      "Home healthcare must be from registered home healthcare provider (qualified nurses and technicians)"
+    ],
+    "consumer_rights": [
+      "30 days of home nursing post-discharge covered",
+      "Medical equipment rental at home during recovery",
+      "Home physiotherapy up to 20 sessions post-hospitalization"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "home-healthcare",
+      "nursing",
+      "post-hospitalization",
+      "physiotherapy",
+      "equipment"
+    ]
+  },
+  {
+    "id": "circ_200",
+    "circular_no": "IRDAI/INT/REG/CIR/745/03/2025",
+    "subject": "Insurance Industry — Annual Report Disclosure and Public Transparency Standards",
+    "date": "2025-03-01",
+    "category": "general",
+    "key_points": [
+      "All insurers must publish annual report with: claims data, grievance data, financial performance, and solvency ratio",
+      "IRDAI Annual Report consolidates industry-wide data — available on irdai.gov.in",
+      "Claim Settlement Ratio (CSR): published insurer-wise for life and health separately",
+      "Grievance data: complaints received, resolved, pending — published quarterly",
+      "Financial statements: audited balance sheet and P&L available for public review",
+      "Consumer-facing dashboard: simplified performance indicators for easy insurer comparison"
+    ],
+    "consumer_rights": [
+      "Access to insurer-wise claims and grievance data for informed decision-making",
+      "Quarterly performance data published by IRDAI",
+      "Consumer-facing dashboard for easy insurer comparison"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "transparency",
+      "annual-report",
+      "disclosure",
+      "CSR",
+      "grievance",
+      "public-data"
+    ]
   }
 ]

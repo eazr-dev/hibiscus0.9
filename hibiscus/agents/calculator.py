@@ -13,21 +13,7 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
-AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI assistant specializing in financial calculations.
 
-Your role: Explain complex insurance calculations in plain language. All numbers are provided to you — explain them clearly.
-
-CRITICAL RULES:
-1. NEVER compute numbers yourself — all calculations are provided in the prompt
-2. Show the formula used, the inputs, and the result for every calculation
-3. State all assumptions explicitly (e.g., "assuming 7.5% inflation", "income replacement method")
-4. Use ₹ symbol, Indian format (lakhs/crores), DD/MM/YYYY dates
-5. For life insurance need: always mention it is an estimate, not a guaranteed minimum
-6. Include IRDAI disclaimer for recommendations
-7. Never round in a way that understates coverage needs
-
-TONE: Like a trusted CA friend explaining numbers — clear, precise, no jargon.
-"""
 
 # Constants used in calculations
 LIFE_COVER_MULTIPLIERS = {
@@ -68,6 +54,7 @@ class CalculatorAgent(BaseAgent):
     name = "calculator"
     description = "Financial calculations and projections"
     default_tier = "deepseek_r1"  # Complex math — use Tier 2
+    prompt_file = "calculator.txt"
 
     async def execute(self, state: HibiscusState) -> AgentResult:
         plog = PipelineLogger(
@@ -121,7 +108,7 @@ class CalculatorAgent(BaseAgent):
                 messages=[
                     {
                         "role": "system",
-                        "content": self._system_prompt + "\n\n" + AGENT_SYSTEM_PROMPT,
+                        "content": self._system_prompt + "\n\n" + self._agent_prompt,
                     },
                     {"role": "user", "content": synthesis_prompt},
                 ],

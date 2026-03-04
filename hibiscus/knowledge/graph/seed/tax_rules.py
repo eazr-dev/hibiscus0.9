@@ -1,6 +1,6 @@
 """
 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
-KG seed: tax rules — 32 Section 80C/80D/10(10D) rules with conditions and limits.
+KG seed: tax rules — 42 Section 80C/80D/10(10D) rules with conditions and limits.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
@@ -1061,6 +1061,303 @@ TAX_RULES: List[Dict[str, Any]] = [
         ],
         "fy_applicable": "2024-25",
         "relevant_products": ["annuity", "pension", "nps"],
+    },
+
+
+    # ── New Tax Regime (Section 115BAC) ──────────────────────────────────────
+
+    {
+        "section": "115BAC",
+        "subsection": "new_tax_regime_default",
+        "title": "Section 115BAC — New Tax Regime (Default from FY 2024-25)",
+        "max_deduction": 75000,
+        "max_deduction_formatted": "Standard deduction of INR75,000 only (no 80C/80D)",
+        "applicable_to": ["individual", "HUF"],
+        "regime": "new_tax_regime",
+        "tax_saving_at_30pct_bracket": 0,
+        "conditions": [
+            "New tax regime is default from FY 2024-25 — must opt out to use old regime",
+            "Lower tax rates: 0% up to 3L, 5% 3-7L, 10% 7-10L, 15% 10-12L, 20% 12-15L, 30% above 15L",
+            "Standard deduction of INR75,000 for salaried employees (raised from 50K in Budget 2024)",
+            "No deductions under 80C, 80D, 80CCC, 80CCD(1B), 80DD, 80DDB, etc.",
+            "Section 80CCD(2) employer NPS contribution — available even in new regime (up to 14% of salary for govt, 10% for others)",
+        ],
+        "disqualification_conditions": [
+            "Insurance premium deductions (80C, 80D) are NOT available in new regime",
+            "Health insurance premium gives no tax benefit under new regime",
+            "Life insurance premium gives no 80C benefit under new regime",
+        ],
+        "examples": [
+            "Income 15L: New regime tax ~1,87,500; Old regime with 80C(1.5L)+80D(25K) deductions: ~1,95,000 — New regime wins here",
+            "Income 15L with heavy insurance (80C 1.5L + 80D 75K + HRA 3L): Old regime ~87,000 — Old regime wins",
+            "Income 10L, no insurance/deductions: New regime ~60,000; Old regime ~1,12,500 — New regime significantly better",
+        ],
+        "key_traps": [
+            "Most insurance buyers benefit more from OLD regime due to 80C + 80D deductions",
+            "Must actively opt out of new regime when filing ITR to use old regime",
+            "Salaried employees must inform employer at beginning of FY to apply old regime TDS",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["all"],
+    },
+    {
+        "section": "115BAC",
+        "subsection": "old_vs_new_regime_comparison",
+        "title": "Old vs New Tax Regime — Insurance Buyer Decision Framework",
+        "max_deduction": None,
+        "max_deduction_formatted": "Comparison framework — not a deduction",
+        "applicable_to": ["individual"],
+        "regime": "both_regimes",
+        "tax_saving_at_30pct_bracket": None,
+        "conditions": [
+            "Old regime is better when total deductions (80C+80D+80CCD+HRA+others) exceed INR3.75 lakh for income above 15L",
+            "Break-even point: if total deductions < INR2.5L, new regime is usually better for income 10-15L",
+            "Insurance-heavy taxpayers (LIC premium + health premium + NPS) almost always benefit from old regime",
+            "Employer NPS 80CCD(2) works in BOTH regimes — not a deciding factor",
+            "If income is below INR7.5L: new regime effectively zero tax with rebate under 87A",
+        ],
+        "disqualification_conditions": [],
+        "examples": [
+            "Income 12L, deductions: 80C 1.5L + 80D 50K + 80CCD(1B) 50K = 2.5L deductions → Old regime saves INR22,500 more",
+            "Income 8L, deductions: 80C 50K + 80D 15K = 65K → New regime better (lower rates outweigh small deductions)",
+        ],
+        "key_traps": [
+            "Many taxpayers default to new regime without comparing — insurance deductions wasted",
+            "Use EAZR tax regime comparison tool to calculate optimal regime based on actual deductions",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["all"],
+    },
+
+    # ── NPS-Linked Rules ─────────────────────────────────────────────────────
+
+    {
+        "section": "80CCD(1B)",
+        "subsection": "additional_nps_deduction",
+        "title": "Section 80CCD(1B) — Additional INR50,000 NPS Deduction",
+        "max_deduction": 50000,
+        "max_deduction_formatted": "INR50,000 (over and above 80C limit)",
+        "applicable_to": ["individual"],
+        "regime": "old_tax_regime_only",
+        "tax_saving_at_30pct_bracket": 15600,
+        "conditions": [
+            "Additional INR50,000 deduction for contribution to National Pension System (NPS) Tier-I",
+            "This is OVER AND ABOVE the INR1.5L limit under 80C/80CCC/80CCD(1)",
+            "Total NPS deduction possible: INR1.5L (under 80CCD(1) within 80C limit) + INR50K (under 80CCD(1B)) = INR2L self",
+            "Only NPS Tier-I contributions qualify — Tier-II does not",
+            "Can be claimed by salaried and self-employed individuals",
+        ],
+        "disqualification_conditions": [
+            "New tax regime: 80CCD(1B) deduction NOT available",
+            "NPS Tier-II contributions do not qualify",
+        ],
+        "examples": [
+            "Taxpayer in 30% bracket: INR50K NPS → saves INR15,600 in tax",
+            "Combined: 80C (1.5L) + 80CCD(1B) (50K) + 80D (25K) = INR2.25L deductions = INR70,200 tax savings at 30% bracket",
+        ],
+        "key_traps": [
+            "At NPS exit: 60% corpus is tax-free lump sum, 40% must buy annuity (annuity payout is taxable)",
+            "NPS is locked until 60 — partial withdrawal allowed only for specific purposes after 3 years",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["nps"],
+    },
+    {
+        "section": "80CCD(2)",
+        "subsection": "employer_nps_contribution",
+        "title": "Section 80CCD(2) — Employer NPS Contribution (Both Regimes)",
+        "max_deduction": None,
+        "max_deduction_formatted": "Up to 14% of salary (govt) or 10% of salary (others)",
+        "applicable_to": ["individual"],
+        "regime": "both_regimes",
+        "tax_saving_at_30pct_bracket": None,
+        "conditions": [
+            "Employer contribution to NPS on behalf of employee: deductible by employee under 80CCD(2)",
+            "Government employees: up to 14% of salary (basic + DA)",
+            "Private sector employees: up to 10% of salary (basic + DA)",
+            "This deduction is AVAILABLE IN BOTH old and new tax regimes — unique advantage",
+            "No overall cap — depends on salary level (10% or 14%)",
+        ],
+        "disqualification_conditions": [
+            "Only employer contribution qualifies — not employee self-contribution",
+            "Salary means basic pay + dearness allowance only",
+        ],
+        "examples": [
+            "Basic salary 8L: employer contributes 80K (10%) to NPS → full 80K deductible even in new regime",
+            "Govt employee basic 6L: employer contributes 84K (14%) → full 84K deductible in both regimes",
+        ],
+        "key_traps": [
+            "This is one of the few deductions available in new tax regime — negotiate with employer",
+            "Employer NPS contribution is also tax-free as perquisite for employee",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["nps"],
+    },
+    {
+        "section": "10(12A)",
+        "subsection": "nps_maturity_taxation",
+        "title": "NPS Maturity Taxation — 60% Lump Sum Exempt, 40% Annuity Taxable",
+        "max_deduction": None,
+        "max_deduction_formatted": "NA — maturity taxation rule",
+        "applicable_to": ["individual"],
+        "regime": "both_regimes",
+        "tax_saving_at_30pct_bracket": None,
+        "conditions": [
+            "At NPS maturity (age 60): up to 60% of corpus can be withdrawn as lump sum — fully TAX-FREE",
+            "Remaining 40% (minimum) must be used to purchase annuity from IRDAI-registered insurer",
+            "Annuity payouts received from the 40% annuity portion are FULLY TAXABLE as income",
+            "Partial withdrawal before maturity (up to 25% after 3 years): tax-free for specified purposes",
+            "If total corpus is INR5L or less: entire amount can be withdrawn as lump sum, tax-free",
+        ],
+        "disqualification_conditions": [
+            "Premature exit before 60: only 20% lump sum (was 60% earlier for pre-2024 rules); 80% must buy annuity",
+        ],
+        "examples": [
+            "NPS corpus at 60: INR1Cr → INR60L lump sum (tax-free) + INR40L annuity (payouts taxable)",
+            "INR40L annuity at 6% rate = INR2.4L/year — fully taxable at slab rate",
+        ],
+        "key_traps": [
+            "The 60% tax-free lump sum makes NPS attractive vs PPF/FD for retirement",
+            "But 40% mandatory annuity creates taxable income in retirement — plan accordingly",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["nps", "annuity"],
+    },
+
+    # ── GST on Insurance ─────────────────────────────────────────────────────
+
+    {
+        "section": "GST",
+        "subsection": "gst_health_motor_travel",
+        "title": "GST on Insurance Premiums — 18% on Health, Motor, Travel",
+        "max_deduction": None,
+        "max_deduction_formatted": "NA — tax on premium (not a deduction)",
+        "applicable_to": ["individual", "corporate"],
+        "regime": "both_regimes",
+        "tax_saving_at_30pct_bracket": None,
+        "conditions": [
+            "18% GST on health insurance premiums (individual and group)",
+            "18% GST on motor insurance premiums (OD and TP components)",
+            "18% GST on travel, fire, marine, and other general insurance premiums",
+            "Life insurance: 18% GST on first year premium; 18% on renewal but only on risk portion for ULIPs",
+            "GST is included in the premium amount quoted by most insurers — verify if GST is extra",
+        ],
+        "disqualification_conditions": [],
+        "examples": [
+            "Health premium INR25,000 + 18% GST = INR29,500 total payable",
+            "Motor comprehensive INR15,000 + 18% GST = INR17,700 total payable",
+            "80D deduction: claimed on premium INCLUDING GST — so GST portion also gets tax benefit (in old regime)",
+        ],
+        "key_traps": [
+            "GST adds 18% to all non-life insurance costs — factor this into premium comparison",
+            "Corporate buyers can claim Input Tax Credit (ITC) on insurance GST",
+            "Government has been considering reducing GST on health insurance — watch for changes",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["health_individual", "health_family_floater", "motor", "travel"],
+    },
+
+    # ── Corporate Insurance Tax ──────────────────────────────────────────────
+
+    {
+        "section": "36(1)(ib)",
+        "subsection": "group_health_business_expense",
+        "title": "Section 36(1)(ib) — Group Health Insurance as Business Expense",
+        "max_deduction": None,
+        "max_deduction_formatted": "Full premium deductible as business expense — no cap",
+        "applicable_to": ["company", "firm", "employer"],
+        "regime": "both_regimes",
+        "tax_saving_at_30pct_bracket": None,
+        "conditions": [
+            "Employer-paid group health insurance premium is fully deductible as business expense under 36(1)(ib)",
+            "Covers employees and optionally their families",
+            "No upper limit on premium amount — entire premium is a business deduction",
+            "Employee does not pay tax on this benefit (exempt perquisite under Section 17(2))",
+            "Group term life insurance premium paid by employer: also deductible as business expense",
+        ],
+        "disqualification_conditions": [
+            "Premium must be for employees — cannot cover non-employees under group policy",
+        ],
+        "examples": [
+            "Company pays INR50L group health premium for 100 employees → entire INR50L deductible from business income",
+            "At 25% corporate tax rate: INR50L deduction saves INR12.5L in tax",
+        ],
+        "key_traps": [
+            "Employees often don't know group health insurance is a tax-free benefit",
+            "Group to individual portability available on exit — use this right",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["health_group", "life_group_term"],
+    },
+
+    # ── Section 80DD ─────────────────────────────────────────────────────────
+
+    {
+        "section": "80DD",
+        "subsection": "disabled_dependent_insurance",
+        "title": "Section 80DD — Insurance/Treatment for Disabled Dependent",
+        "max_deduction": 125000,
+        "max_deduction_formatted": "INR75,000 (disability) or INR1,25,000 (severe disability)",
+        "applicable_to": ["individual", "HUF"],
+        "regime": "old_tax_regime_only",
+        "tax_saving_at_30pct_bracket": 39000,
+        "conditions": [
+            "Deduction for insurance premium or medical treatment of dependent with disability (40%+)",
+            "Dependent: spouse, children, parents, siblings of individual; any member of HUF",
+            "Disability 40-79%: flat deduction INR75,000; Severe disability 80%+: flat deduction INR1,25,000",
+            "Includes premium paid for insurance policies designed for disabled dependents (e.g., special needs plans)",
+            "Disability certificate from prescribed medical authority required",
+        ],
+        "disqualification_conditions": [
+            "New tax regime: 80DD not available",
+            "Dependent must be a person with disability as defined under applicable disability laws",
+        ],
+        "examples": [
+            "Child with autism (severe disability 80%+): flat INR1,25,000 deduction — saves INR39,000 at 30% bracket",
+            "Parent with 50% disability: flat INR75,000 deduction — saves INR23,400 at 30% bracket",
+        ],
+        "key_traps": [
+            "80DD is a FLAT deduction — actual expense or premium amount is irrelevant",
+            "80DD (dependent disability) and 80U (self disability) are separate — both can be claimed",
+            "Disability insurance plans designed for special needs children are gaining popularity",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["disability_insurance", "special_needs_plan"],
+    },
+
+    # ── TDS on Insurance Payouts ─────────────────────────────────────────────
+
+    {
+        "section": "194DA",
+        "subsection": "tds_on_insurance_maturity_non_exempt",
+        "title": "Section 194DA — TDS on Non-Exempt Insurance Maturity Payouts",
+        "max_deduction": None,
+        "max_deduction_formatted": "5% TDS on non-exempt maturity proceeds above INR1L",
+        "applicable_to": ["individual"],
+        "regime": "both_regimes",
+        "tax_saving_at_30pct_bracket": None,
+        "conditions": [
+            "5% TDS deducted on insurance maturity proceeds that are NOT exempt under 10(10D)",
+            "Applies when annual premium exceeds 10% of sum assured (for policies after 1 April 2012)",
+            "TDS only on the income component (maturity value minus total premiums paid), not entire payout",
+            "Threshold: no TDS if total payout is INR1L or less",
+            "Insurer deducts TDS before paying maturity amount to policyholder",
+        ],
+        "disqualification_conditions": [
+            "Term insurance death claims: never subject to TDS (always exempt)",
+            "Policies where premium <= 10% of SA: maturity exempt under 10(10D), no TDS",
+        ],
+        "examples": [
+            "Endowment maturity INR8L, total premium paid INR6L: income = INR2L; TDS = 5% of 2L = INR10,000",
+            "ULIP maturity (post-Feb-2021, premium >2.5L/year): treated as equity — but insurer still deducts 5% TDS on income component",
+        ],
+        "key_traps": [
+            "Many policyholders are surprised by TDS deduction at maturity",
+            "TDS is NOT the final tax — actual tax depends on slab rate; excess TDS can be claimed as refund",
+            "High-premium endowment plans almost always attract TDS at maturity",
+        ],
+        "fy_applicable": "2024-25",
+        "relevant_products": ["life_endowment", "life_money_back", "ulip"],
     },
 ]
 

@@ -72,11 +72,11 @@ The architecture is **strong** — LangGraph orchestration, 12-agent multi-speci
 - **Action:** Whitelist specific origins. Add env-based toggle.
 - **Fix:** Rewrote `cors.py` with env-based whitelist via `settings.cors_allowed_origins`. Removed `["*"]` default.
 
-### SEC-6: Unencrypted Session State in Redis (HIGH) ✅ FIXED
+### SEC-6: Unencrypted Session State in Redis (HIGH) ⚠️ PLAN DOCUMENTED
 - **File:** `memory/layers/session.py` lines 72-83
 - **Impact:** PII (user profiles, document refs, conversation history) stored as plaintext JSON
 - **Action:** Encrypt session data at rest. Use Redis AUTH + TLS.
-- **Fix:** Added encryption TODO with implementation plan (Redis AUTH via URL password, TLS config, field-level encryption strategy documented).
+- **Status:** ⚠️ PLAN DOCUMENTED — Encryption at rest deferred pending key management infrastructure. TODO added with implementation plan (Redis AUTH via URL password, TLS config, field-level encryption strategy).
 
 ### SEC-7: PII Regex Detection Incomplete (HIGH) ✅ FIXED
 - **File:** `guardrails/pii.py`
@@ -303,11 +303,11 @@ The architecture is **strong** — LangGraph orchestration, 12-agent multi-speci
 
 ## 6. MEMORY SYSTEM
 
-### MEM-1: No Encryption at Rest (HIGH) ✅ FIXED
+### MEM-1: No Encryption at Rest (HIGH) ⚠️ PLAN DOCUMENTED
 - **Files:** `memory/layers/session.py`, `memory/layers/profile.py`, `memory/layers/document.py`
 - **Issue:** User PII, policy data, conversation history stored unencrypted in Redis, PostgreSQL, MongoDB.
 - **Action:** Encrypt sensitive fields. Use DB-level encryption.
-- **Fix:** Added encryption TODOs with implementation plans to all 3 files: Redis AUTH via URL password + TLS config, PostgreSQL field-level encryption for PII, MongoDB encryption at rest for extraction fields.
+- **Status:** ⚠️ PLAN DOCUMENTED — Implementation deferred pending key management infrastructure. TODOs added to all 3 files documenting encryption strategy (Redis AUTH + TLS, PostgreSQL field-level encryption, MongoDB encryption at rest).
 
 ### MEM-2: Memory Assembler Has No Size Limit (MEDIUM) ✅ FIXED
 - **File:** `memory/assembler.py`
@@ -383,11 +383,11 @@ The architecture is **strong** — LangGraph orchestration, 12-agent multi-speci
 - **Action:** Add Neo4j + Qdrant connectivity checks.
 - **Fix:** Already implemented — `_check_neo4j` and `_check_qdrant` connectivity checks exist at lines 62-95. No change needed (issue was pre-existing false positive in audit).
 
-### API-5: No Distributed Tracing (LOW) ✅ FIXED
+### API-5: No Distributed Tracing (LOW) ⚠️ PLAN DOCUMENTED
 - **File:** `observability/`
 - **Issue:** Request ID propagated but no OpenTelemetry spans for cross-service tracing.
 - **Action:** Add OTEL integration for end-to-end latency visibility.
-- **Fix:** Added detailed OTEL integration plan as TODO in `observability/__init__.py` (7 steps: TracerProvider, FastAPI instrumentation, manual spans, Prometheus export, sampling config).
+- **Status:** ⚠️ PLAN DOCUMENTED — OTEL integration plan documented, implementation deferred. TODO in `observability/__init__.py` outlines 7 steps: TracerProvider, FastAPI instrumentation, manual spans, Prometheus export, sampling config.
 
 ---
 
@@ -400,17 +400,17 @@ The architecture is **strong** — LangGraph orchestration, 12-agent multi-speci
 - **Action:** Reset baselines to 0.0. Re-run benchmark. Establish true baseline.
 - **Fix:** Reset all baselines to 0.0: accuracy (was 0.8), helpfulness (was 0.8), grounding (was 0.5). Added positive scoring logic — scores now earned via check pass ratio, response quality, and source presence.
 
-### TST-2: Adversarial Coverage Only 12% (HIGH) ✅ FIXED
+### TST-2: Adversarial Coverage Only 12% (HIGH) ⚠️ PLAN DOCUMENTED
 - **File:** `evaluation/test_cases/adversarial/`
 - **Issue:** 17/140 test cases. Only string matching ("guaranteed" substring). No semantic adversarial testing.
 - **Action:** Add 40+ adversarial cases: hallucination traps, prompt injection, edge cases.
-- **Fix:** Added TODO with comprehensive adversarial test plan in `tests/__init__.py`: hallucination traps, prompt injection, boundary cases, cross-language attacks, PII probing.
+- **Status:** ⚠️ PLAN DOCUMENTED — Adversarial test plan documented in `tests/__init__.py`. Covers hallucination traps, prompt injection, boundary cases, cross-language attacks, PII probing. Implementation pending.
 
-### TST-3: Guardrail Tests Mock Everything (HIGH) ✅ FIXED
+### TST-3: Guardrail Tests Mock Everything (HIGH) ⚠️ PLAN DOCUMENTED
 - **File:** `tests/unit/test_guardrails.py`
 - **Issue:** Tests call guardrails with synthetic data. Never tests real agent -> guardrail flow.
 - **Action:** Add integration tests with actual agent pipeline.
-- **Fix:** Added TODO for integration test infrastructure in `tests/__init__.py`. Fixed the broken guardrail test assertion (GRD-2).
+- **Status:** ⚠️ PLAN DOCUMENTED — Integration test plan documented in `tests/__init__.py`. Broken guardrail test assertion fixed (GRD-2), but end-to-end agent->guardrail integration tests not yet implemented.
 
 ### TST-4: Model Router Tests Don't Validate Routing (HIGH) ✅ FIXED
 - **File:** `tests/unit/test_model_router.py`
@@ -418,22 +418,22 @@ The architecture is **strong** — LangGraph orchestration, 12-agent multi-speci
 - **Action:** Add assertion that complexity=L3 routes to Tier 2, complexity=L4 routes to Tier 3.
 - **Fix:** Added 2 new test cases: `test_high_complexity_overrides_default_tier1` (verifies L4 overrides Tier 1) and `test_high_complexity_with_low_confidence_escalates_to_tier3` (verifies L4 + low confidence routes to Tier 3).
 
-### TST-5: Extraction Tests Use Hand-Crafted Data (HIGH) ✅ FIXED
+### TST-5: Extraction Tests Use Hand-Crafted Data (HIGH) ⚠️ PLAN DOCUMENTED
 - **File:** `tests/unit/test_validation.py`
 - **Issue:** 118/118 pass — but all use synthetic perfect dicts. Never calls actual PDF -> extraction pipeline.
 - **Action:** Add integration test with real PDF files.
-- **Fix:** Added TODO for real PDF test fixtures in `tests/__init__.py` with plan for sample policy PDFs and end-to-end extraction validation.
+- **Status:** ⚠️ PLAN DOCUMENTED — Real PDF test plan documented in `tests/__init__.py`. Plan covers sample policy PDFs and end-to-end extraction validation. Implementation pending.
 
-### TST-6: No Concurrent Session Tests (MEDIUM) ✅ FIXED
+### TST-6: No Concurrent Session Tests (MEDIUM) ⚠️ PLAN DOCUMENTED
 - **Issue:** User A and User B simultaneous sessions untested. Memory collision / context bleeding not validated.
 - **Action:** Add multi-user concurrency test.
-- **Fix:** Added TODO for concurrent session test plan in `tests/__init__.py`: multi-user async tests, memory isolation verification, context bleeding detection.
+- **Status:** ⚠️ PLAN DOCUMENTED — Concurrent session test plan documented in `tests/__init__.py`. Covers multi-user async tests, memory isolation verification, context bleeding detection. Implementation pending.
 
-### TST-7: Load Test Unrealistic (MEDIUM) ✅ FIXED
+### TST-7: Load Test Unrealistic (MEDIUM) ⚠️ PLAN DOCUMENTED
 - **File:** `tests/load/load_test.py`
 - **Issue:** 4 fixed queries, n=20 concurrency. Doesn't stress DB connections, Redis memory, or Neo4j query depth.
 - **Action:** Realistic profile with 100+ concurrent users, backend monitoring.
-- **Fix:** Added TODO for realistic load test plan in `tests/__init__.py`: 100+ concurrent users, varied query patterns, DB connection pool monitoring, Redis memory tracking.
+- **Status:** ⚠️ PLAN DOCUMENTED — Load test plan documented in `tests/__init__.py`. Covers 100+ concurrent users, varied query patterns, DB connection pool monitoring, Redis memory tracking. Implementation pending.
 
 ---
 
@@ -507,13 +507,13 @@ The architecture is **strong** — LangGraph orchestration, 12-agent multi-speci
 
 ## ISSUE COUNTS BY SEVERITY — REMEDIATION STATUS
 
-| Severity | Count | Status |
-|----------|-------|--------|
-| CRITICAL | 18 | ✅ 18/18 FIXED |
-| HIGH | 22 | ✅ 22/22 FIXED |
-| MEDIUM | 28 | ✅ 28/28 FIXED |
-| LOW | 12 | ✅ 12/12 FIXED |
-| **TOTAL** | **80** | **✅ 80/80 FIXED** |
+| Severity | Count | Fully Fixed | Plan Documented | Status |
+|----------|-------|-------------|-----------------|--------|
+| CRITICAL | 18 | 18 | 0 | ✅ 18/18 FIXED |
+| HIGH | 22 | 17 | 5 | ⚠️ 17 FIXED, 5 PLAN DOCUMENTED |
+| MEDIUM | 28 | 26 | 2 | ⚠️ 26 FIXED, 2 PLAN DOCUMENTED |
+| LOW | 12 | 11 | 1 | ⚠️ 11 FIXED, 1 PLAN DOCUMENTED |
+| **TOTAL** | **80** | **72** | **8** | **72 FIXED + 8 PLAN DOCUMENTED** |
 
 ---
 
