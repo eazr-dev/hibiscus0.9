@@ -3,6 +3,8 @@
 Chat endpoint — primary interface between frontend and AI engine (JSON + SSE streaming).
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
+from __future__ import annotations
+
 import json
 import time
 import uuid

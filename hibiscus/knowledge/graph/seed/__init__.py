@@ -61,6 +61,7 @@ async def seed_all(client: Neo4jClient) -> None:
         ("ombudsman", seed_ombudsman),
         ("tpas", lambda c: seed_tpas()),
         ("botproject", lambda c: seed_from_botproject(c)),
+        ("irdai_registry", _seed_from_irdai_registry),
     ]
 
     logger.info("seed_all_start", seeder_count=len(seeders))
@@ -97,6 +98,16 @@ async def seed_all(client: Neo4jClient) -> None:
         )
 
     logger.info("seed_all_complete")
+
+
+async def _seed_from_irdai_registry(client: Neo4jClient) -> None:
+    """Seed IRDAI product registry (8,524 products from CSV files)."""
+    try:
+        from hibiscus.scripts.ingest_irdai_registry import main as irdai_main
+        result = await irdai_main(dry_run=False)
+        logger.info("seed_irdai_registry_ok", **{k: v for k, v in result.items() if not isinstance(v, bool)})
+    except Exception as exc:
+        logger.error("seed_irdai_registry_failed", error=str(exc))
 
 
 async def _seed_relationships(client: Neo4jClient) -> None:
@@ -162,6 +173,14 @@ async def _seed_relationships(client: Neo4jClient) -> None:
             MATCH (p:Product), (d:PolicyDocument)
             WHERE p.uin = d.uin
             MERGE (p)-[:HAS_DOCUMENT]->(d)
+            RETURN count(*) AS count
+            """,
+        ),
+        # SUPERSEDES: Newer product revisions supersede older ones (same UIN prefix)
+        (
+            "product_supersedes",
+            """
+            MATCH (newer:Product)-[:SUPERSEDES]->(older:Product)
             RETURN count(*) AS count
             """,
         ),

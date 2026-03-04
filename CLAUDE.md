@@ -121,6 +121,7 @@ Single `HibiscusSettings(BaseSettings)` with `.env` loading. Accessed via `setti
 ### Knowledge Infrastructure
 
 - **KG (Neo4j):** Seeded via `python -m hibiscus.knowledge.graph.seed`. Uses MERGE (idempotent, safe to re-run). Client in `knowledge/graph/client.py` with async driver, 50-connection pool, LRU cache (256 entries, 5-min TTL).
+- **IRDAI Product Registry:** 8,524 products (1,820 health + 1,513 life + 5,191 non-life) ingested from `Seed/irdai_*.csv` via `python -m hibiscus.scripts.ingest_irdai_registry`. Integrated into `make seed-kg`. Produces ~7,500+ Product nodes, ~7,000+ PolicyDocument nodes with PDF links, and ~127 SUPERSEDES relationships. Insurer name normalization uses `hibiscus/knowledge/data/insurer_name_map.json` (~399 variants → ~65 canonical). Supports `--dry-run` for parse-only mode.
 - **RAG (Qdrant):** Ingested via `python -m hibiscus.knowledge.rag.ingestion`. Uses `fastembed` with `BAAI/bge-large-en-v1.5` (local, no API key, 1024-dim). Stable chunk IDs (MD5-based UUID) prevent duplicates on re-run. Corpus in `knowledge/rag/corpus/`.
 - **Embeddings:** All vector stores (RAG, conversation memory, knowledge memory) use `fastembed` with `BAAI/bge-large-en-v1.5` (1024-dim). No OpenAI/GLM embedding dependency.
 

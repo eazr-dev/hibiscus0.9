@@ -25,12 +25,18 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Copy full package (pyproject.toml + source) — hatchling needs source to resolve packages
+# Copy pyproject.toml to /app/ so hatchling resolves packages = ["hibiscus"] correctly
+COPY hibiscus/pyproject.toml /app/pyproject.toml
+
+# Copy package source into /app/hibiscus/ (matches hatchling packages config)
 COPY hibiscus/ /app/hibiscus/
 
-# Install package with dependencies
+# Copy seed data (IRDAI registry CSVs) for knowledge graph ingestion
+COPY Seed/ /app/Seed/
+
+# Install package with dependencies from /app/ where structure is correct
 RUN pip install --no-cache-dir --upgrade pip && \
-    cd /app/hibiscus && pip install --no-cache-dir .
+    pip install --no-cache-dir .
 
 # Create non-root user
 RUN adduser --disabled-password --gecos "" hibiscus && \

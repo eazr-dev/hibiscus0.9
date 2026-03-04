@@ -3,6 +3,8 @@
 Response aggregation node — merges multi-agent outputs into a single coherent response.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
+from __future__ import annotations
+
 import time
 from typing import Any, Dict, List
 

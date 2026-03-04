@@ -3,6 +3,8 @@
 Insurer lookup tool — retrieves insurer details, ratings, and contact info from Neo4j.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
+from __future__ import annotations
+
 from typing import Any, Dict, List, Optional
 
 from hibiscus.knowledge.graph.client import kg_client
