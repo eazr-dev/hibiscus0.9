@@ -307,6 +307,10 @@ class RecommenderAgent(BaseAgent):
                     amount *= 100_000
                 elif unit in ("crore", "cr"):
                     amount *= 10_000_000
+                elif amount > 100_000:
+                    # No unit suffix but amount > 1 lakh — treat as absolute rupees.
+                    # e.g. "income 1200000" or "salary 800000" is already in rupees.
+                    pass  # amount is already correct
                 profile["annual_income"] = amount
                 break
 

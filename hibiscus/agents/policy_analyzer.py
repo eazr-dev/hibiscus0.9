@@ -371,6 +371,11 @@ INSTRUCTIONS:
 6. Include the coverage gaps analysis with severity levels
 7. End with IRDAI disclaimer
 
+HARD CONSTRAINT — ANTI-HALLUCINATION:
+EVERY number in your response must appear verbatim in EXTRACTED_POLICY_DATA above.
+If data is not found, say "Not found in uploaded document."
+NEVER invent or estimate numbers.
+
 CRITICAL: If user asked "what did I upload?" → summarize the policy in 2-3 sentences first."""
 
     def _compute_confidence(

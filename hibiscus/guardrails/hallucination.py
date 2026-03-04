@@ -4,7 +4,7 @@ Hallucination guardrail — cross-references claims against KG/RAG sources, flag
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 
@@ -14,6 +14,7 @@ class HallucinationCheckResult:
     reason: str
     modified_response: Optional[str] = None
     confidence_adjustment: float = 0.0
+    suspicious_numbers: List[str] = field(default_factory=list)
 
 
 # ── Patterns that indicate potentially hallucinated numbers ────────────────
@@ -27,6 +28,28 @@ _SUSPICIOUS_NUMBER_PATTERNS = [
     r'waiting\s+period\s+(?:of\s+)?(\d+)\s+(?:years?|months?)',
     r'network\s+(?:of\s+)?(\d[\d,]*)\s+hospitals?',
 ]
+
+# ── Domain-aware number ranges (for context-sensitive suspicious number detection)
+# CSR (Claim Settlement Ratio) should be 50-100%
+# Premiums: health ₹3K-5L, life ₹1K-50L, motor ₹500-10L
+# Sum Insured: health ₹1L-5Cr, life ₹50K-50Cr, motor ₹10K-1Cr
+_DOMAIN_RANGES = {
+    "csr": {
+        "pattern": r'(?:claim\s+settlement\s+ratio|csr)\s*(?:of\s+)?(\d+(?:\.\d+)?)\s*%',
+        "range": (50.0, 100.0),
+        "label": "CSR",
+    },
+    "copay": {
+        "pattern": r'copay(?:ment)?\s+(?:of\s+)?(\d+(?:\.\d+)?)\s*%',
+        "range": (0.0, 50.0),
+        "label": "Copay percentage",
+    },
+    "ncb": {
+        "pattern": r'(?:no\s+claim\s+bonus|ncb)\s*(?:of\s+)?(\d+(?:\.\d+)?)\s*%',
+        "range": (0.0, 65.0),
+        "label": "NCB percentage",
+    },
+}
 
 # ── Phrase patterns indicating confident assertions ─────────────────────────
 _CONFIDENT_ASSERTION_MARKERS = [
@@ -87,7 +110,30 @@ def check_hallucination(
             confidence_adjustment=-0.1,
         )
 
-    # ── Check 2: Specific number claims without document source ───────────
+    # ── Check 2: Domain-aware suspicious number detection ─────────────────
+    suspicious_numbers: List[str] = []
+    for domain_key, domain_info in _DOMAIN_RANGES.items():
+        for match in re.finditer(domain_info["pattern"], response_lower):
+            try:
+                value = float(match.group(1))
+                lo, hi = domain_info["range"]
+                if value < lo or value > hi:
+                    suspicious_numbers.append(
+                        f"{domain_info['label']} {value}% outside expected range [{lo}-{hi}%]"
+                    )
+            except (ValueError, IndexError):
+                pass
+
+    if suspicious_numbers:
+        return HallucinationCheckResult(
+            passed=False,
+            reason=f"Domain-implausible numbers detected: {suspicious_numbers}",
+            modified_response=_add_verification_caveat(response),
+            confidence_adjustment=-0.2,
+            suspicious_numbers=suspicious_numbers,
+        )
+
+    # ── Check 3: Specific number claims without document source ───────────
     source_types = [s.get("type", "unknown") for s in sources]
     has_doc_source = "document_extraction" in source_types or "knowledge_graph" in source_types
 
@@ -102,9 +148,10 @@ def check_hallucination(
                     reason=f"Specific financial numbers without document source: {matches}",
                     modified_response=_add_verification_caveat(response),
                     confidence_adjustment=-0.15,
+                    suspicious_numbers=[str(m) for m in matches],
                 )
 
-    # ── Check 3: Confident assertions about specific policy details ────────
+    # ── Check 4: Confident assertions about specific policy details ────────
     has_confident_assertions = any(
         marker in response_lower
         for marker in _CONFIDENT_ASSERTION_MARKERS
@@ -117,7 +164,7 @@ def check_hallucination(
             modified_response=_add_verification_caveat(response),
         )
 
-    # ── Check 4: Is the response already expressing appropriate uncertainty? ──
+    # ── Check 5: Is the response already expressing appropriate uncertainty? ──
     if confidence < 0.70:
         has_uncertainty_phrase = any(
             phrase in response_lower

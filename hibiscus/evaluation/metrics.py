@@ -177,71 +177,106 @@ def evaluate_response(
     failures.extend(compliance_failures)
 
     # ── Accuracy score ───────────────────────────────────────────────────────
-    accuracy_score = 0.8  # Default — human review needed for full accuracy
+    accuracy_score = 0.0  # Start at 0 — earned by passing checks
     accuracy_failures = []
+    accuracy_checks_total = 0
+    accuracy_checks_passed = 0
 
     # Check: must contain specific substrings
-    for phrase in criteria.get("must_contain", []):
-        if phrase.lower() not in response_lower:
-            accuracy_score -= 0.15
+    must_contain = criteria.get("must_contain", [])
+    for phrase in must_contain:
+        accuracy_checks_total += 1
+        if phrase.lower() in response_lower:
+            accuracy_checks_passed += 1
+        else:
             accuracy_failures.append(f"Missing expected content: '{phrase}'")
 
     # Check: must NOT contain specific phrases
-    for phrase in criteria.get("must_not_contain", []):
+    must_not_contain = criteria.get("must_not_contain", [])
+    for phrase in must_not_contain:
+        accuracy_checks_total += 1
         if phrase.lower() in response_lower:
-            accuracy_score -= 0.2
             accuracy_failures.append(f"Contains forbidden phrase: '{phrase}'")
+        else:
+            accuracy_checks_passed += 1
 
     # Check: must acknowledge unknown insurer
     if criteria.get("must_acknowledge_unknown_insurer") or criteria.get("must_not_fabricate_csr"):
+        accuracy_checks_total += 1
         acceptable = criteria.get("acceptable_responses", [])
-        if acceptable and not any(a.lower() in response_lower for a in acceptable):
-            accuracy_score -= 0.3
+        if acceptable and any(a.lower() in response_lower for a in acceptable):
+            accuracy_checks_passed += 1
+        elif acceptable:
             accuracy_failures.append("Did not acknowledge unknown entity")
 
     # Check: must have numbered steps
     if criteria.get("must_have_steps"):
-        if not re.search(r'\b(step\s*\d|^\d+\.|1\.|first)', response_lower):
-            accuracy_score -= 0.2
+        accuracy_checks_total += 1
+        if re.search(r'\b(step\s*\d|^\d+\.|1\.|first)', response_lower):
+            accuracy_checks_passed += 1
+        else:
             accuracy_failures.append("Missing step-by-step guidance")
 
     # Check: must have numeric data
     if criteria.get("must_have_numbers"):
-        if not re.search(r'₹|lakh|crore|\d+,\d+|\d+%', response):
-            accuracy_score -= 0.2
-            accuracy_failures.append("Missing numeric data (₹ amounts)")
+        accuracy_checks_total += 1
+        if re.search(r'₹|lakh|crore|\d+,\d+|\d+%', response):
+            accuracy_checks_passed += 1
+        else:
+            accuracy_failures.append("Missing numeric data (amounts)")
+
+    # Compute accuracy as ratio of passed checks (0.0 if no checks defined)
+    if accuracy_checks_total > 0:
+        accuracy_score = accuracy_checks_passed / accuracy_checks_total
+    else:
+        # No specific checks defined — give moderate score for non-empty response
+        accuracy_score = 0.5 if len(response) > 50 else 0.0
 
     accuracy_score = max(0.0, min(1.0, accuracy_score))
     failures.extend(accuracy_failures)
 
     # ── Grounding score ──────────────────────────────────────────────────────
-    grounding_score = 0.5  # Start neutral
+    grounding_score = 0.0  # Start at 0 — earned by having sources and citations
 
     if sources:
-        grounding_score += 0.3  # Has sources
+        grounding_score += 0.5  # Has sources — strong signal
 
     if criteria.get("must_cite_source"):
         source_words = ["irdai", "section", "circular", "annual report", "as per", "according to",
                         "under section", "per irdai", "regulation"]
         if any(w in response_lower for w in source_words):
-            grounding_score += 0.2
+            grounding_score += 0.3
         else:
-            grounding_score -= 0.2
             failures.append("Missing source citation in response text")
+    else:
+        # No citation requirement — give partial credit for having any sources
+        if sources:
+            grounding_score += 0.2
 
     grounding_score = max(0.0, min(1.0, grounding_score))
 
     # ── Helpfulness score ────────────────────────────────────────────────────
-    helpfulness_score = 0.8  # Default — response likely helpful if other checks pass
+    helpfulness_score = 0.0  # Start at 0 — earned by passing checks
 
-    # Response too short
-    if len(response) < 100:
-        helpfulness_score -= 0.3
+    # Response length — longer, substantive responses score higher
+    if len(response) >= 500:
+        helpfulness_score += 0.6
+    elif len(response) >= 200:
+        helpfulness_score += 0.4
+    elif len(response) >= 100:
+        helpfulness_score += 0.2
+    else:
         failures.append("Response too short (< 100 chars)")
 
-    # Response is an error message
+    # Response is NOT an error message — earns credit
     if "error" in response_lower[:50] or "sorry, i" in response_lower[:50]:
         helpfulness_score -= 0.2
+    else:
+        helpfulness_score += 0.2
+
+    # Actionable content (steps, recommendations, specific advice)
+    if re.search(r'\b(step\s*\d|you\s+(?:can|should|may)|recommend|consider)\b', response_lower):
+        helpfulness_score += 0.2
 
     helpfulness_score = max(0.0, min(1.0, helpfulness_score))
 

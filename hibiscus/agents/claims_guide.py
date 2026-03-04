@@ -8,6 +8,7 @@ import time
 from typing import Any, Dict, List, Optional, Tuple
 
 from hibiscus.agents.base import BaseAgent, AgentResult
+from hibiscus.knowledge.escalation_paths import CLAIM_REJECTION_ESCALATION_LADDER
 from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
@@ -194,13 +195,7 @@ CLAIMS_PROCESS = {
             "Insurance Ombudsman offices are in every state — fully free process",
             "Consumer Forum: NCDRC for claims above ₹20 lakh, SCDRC for ₹1L to ₹20L",
         ],
-        "escalation_ladder": [
-            "Level 1: Internal grievance to insurer (15-day SLA)",
-            "Level 2: IRDAI Bima Bharosa portal — bimabharosaportal.irdai.gov.in",
-            "Level 3: Insurance Ombudsman — FREE, within 3 months of rejection, up to ₹50L",
-            "Level 4: Consumer Forum — NCDRC for >₹20L claims",
-            "Level 5: Civil court (last resort)",
-        ],
+        "escalation_ladder": CLAIM_REJECTION_ESCALATION_LADDER,
     },
 }
 

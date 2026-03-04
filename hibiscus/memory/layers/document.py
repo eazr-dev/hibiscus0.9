@@ -13,6 +13,11 @@ from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
 
+# TODO: [SECURITY] Document memory stores extracted policy data which may contain
+# PII. Ensure MongoDB has encryption at rest enabled (e.g., WiredTiger encryption
+# or cloud-managed encryption). Consider field-level encryption for sensitive
+# extraction fields (policyholder name, PAN, DOB, etc.).
+
 # ── MongoDB connection singleton ──────────────────────────────────────────
 _mongo_client: Optional[AsyncIOMotorClient] = None
 _db: Optional[AsyncIOMotorDatabase] = None

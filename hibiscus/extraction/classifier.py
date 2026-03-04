@@ -322,7 +322,13 @@ class PolicyClassifier:
             count = 0
             neg = 0
             for keyword, weight in features:
-                if keyword in text_lower:
+                # Use word-boundary regex for short keywords that cause
+                # false positives with substring matching (e.g. "idv", "nav")
+                if len(keyword) <= 4:
+                    found = bool(re.search(r'\b' + re.escape(keyword) + r'\b', text_lower))
+                else:
+                    found = keyword in text_lower
+                if found:
                     score += weight
                     if weight > 0:
                         count += 1
@@ -387,7 +393,7 @@ class PolicyClassifier:
         try:
             response = await call_llm(
                 messages=[{"role": "user", "content": prompt}],
-                tier="tier1",
+                tier="tier3",
                 extra_kwargs={"max_tokens": 150, "timeout": 8},
             )
 

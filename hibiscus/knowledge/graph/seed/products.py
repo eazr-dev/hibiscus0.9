@@ -1,7 +1,12 @@
 """
 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
-KG seed: products — 1,207 insurance products with UINs, categories, and features.
+KG seed: products — 193 insurance products with UINs, categories, and features.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+
+Data Integrity Note (2026-03-04):
+  - 8 VERIFY comments remain — approximate premiums and feature details pending verification.
+  - 7 duplicate product entries removed (DI-1).
+  - 10 orphaned insurer_name references fixed to match insurers.py (DI-2).
 """
 from typing import Any, Dict, List, Optional
 
@@ -296,29 +301,6 @@ PRODUCTS: List[Dict[str, Any]] = [
         "eazr_score": 8.6,
         "wellness_benefits": True,
         "health_returns": True,
-    },
-    {
-        "name": "ICICI Lombard Complete Health Insurance",
-        "insurer_name": "ICICI Lombard General Insurance",
-        "category": "health",
-        "type": "individual_health",
-        "sum_insured_min": L(3),
-        "sum_insured_max": L(50),
-        "premium_range_min": 6800,
-        "premium_range_max": 52000,
-        "key_features": [
-            "Cashless at 8000+ hospitals",
-            "Day-care procedures",
-            "AYUSH covered",
-            "Annual health check-up",
-            "Restoration benefit",
-        ],
-        "exclusion_count": 15,
-        "sub_limit_count": 6,
-        "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30},
-        "copay_structure": "0%",
-        "room_rent_limit": "Single AC room",
-        "eazr_score": 7.7,
     },
     {
         "name": "Digit Health Insurance",
@@ -1296,42 +1278,6 @@ PRODUCTS: List[Dict[str, Any]] = [
         "restore_benefit": True,
     },
     {
-        "name": "Niva Bupa ReAssure 2.0",
-        "insurer_name": "Niva Bupa Health Insurance",
-        "category": "health",
-        "type": "individual_health",
-        "sum_insured_min": L(5),
-        "sum_insured_max": Cr(1),
-        "premium_range_min": 8000,
-        "premium_range_max": 110000,
-        "key_features": ["Lock the clock benefit", "Unlimited restore", "No copay", "No room rent limit", "Booster benefit"],
-        "exclusion_count": 12,
-        "sub_limit_count": 1,
-        "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30},
-        "copay_structure": "0%",
-        "room_rent_limit": "No limit",
-        "eazr_score": 9.0,
-        "restore_benefit": True,
-    },
-    {
-        "name": "Care Supreme Health Insurance",
-        "insurer_name": "Care Health Insurance",
-        "category": "health",
-        "type": "individual_health",
-        "sum_insured_min": L(5),
-        "sum_insured_max": Cr(6),
-        "premium_range_min": 7500,
-        "premium_range_max": 120000,
-        "key_features": ["No room rent limit", "No copay", "Unlimited restore", "Air ambulance cover", "Annual health check"],
-        "exclusion_count": 13,
-        "sub_limit_count": 2,
-        "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30},
-        "copay_structure": "0%",
-        "room_rent_limit": "No limit",
-        "eazr_score": 8.7,
-        "restore_benefit": True,
-    },
-    {
         "name": "Care Advantage Health Insurance",
         "insurer_name": "Care Health Insurance",
         "category": "health",
@@ -1548,26 +1494,8 @@ PRODUCTS: List[Dict[str, Any]] = [
         "restore_benefit": True,
     },
     {
-        "name": "New India Floater Mediclaim Policy",
-        "insurer_name": "New India Assurance",
-        "category": "health",
-        "type": "family_floater",
-        "sum_insured_min": L(1),
-        "sum_insured_max": L(15),
-        "premium_range_min": 4000,
-        "premium_range_max": 35000,
-        "key_features": ["PSU insurer — government backed", "Cashless + reimbursement", "Pre/post cover 30/60 days", "AYUSH cover", "Critical illness add-on"],
-        "exclusion_count": 16,
-        "sub_limit_count": 8,
-        "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30},
-        "copay_structure": "0%",
-        "room_rent_limit": "₹4,000/day",
-        "eazr_score": 7.0,
-        "restore_benefit": False,
-    },
-    {
         "name": "Digit Health Plus Insurance",
-        "insurer_name": "Digit General Insurance",
+        "insurer_name": "Digit Insurance",
         "category": "health",
         "type": "individual_health",
         "sum_insured_min": L(2),
@@ -1621,23 +1549,6 @@ PRODUCTS: List[Dict[str, Any]] = [
         "eazr_score": 7.8,
     },
     {
-        "name": "SBI Life eShield Next",
-        "insurer_name": "SBI Life Insurance",
-        "category": "life_term",
-        "type": "pure_term",
-        "sum_insured_min": L(50),
-        "sum_insured_max": None,
-        "premium_range_min": 5500,
-        "premium_range_max": 75000,
-        "key_features": ["Level/increasing/decreasing cover", "Accidental death benefit", "Terminal illness benefit", "Joint life option", "Waiver of premium rider"],
-        "exclusion_count": 5,
-        "sub_limit_count": 0,
-        "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0},
-        "copay_structure": "N/A",
-        "room_rent_limit": "N/A",
-        "eazr_score": 8.3,
-    },
-    {
         "name": "Bajaj Allianz Life Smart Protect Goal",
         "insurer_name": "Bajaj Allianz Life Insurance",
         "category": "life_term",
@@ -1689,23 +1600,6 @@ PRODUCTS: List[Dict[str, Any]] = [
         "eazr_score": 8.1,
     },
     {
-        "name": "PNB MetLife Mera Term Plan Plus",
-        "insurer_name": "PNB MetLife India Insurance",
-        "category": "life_term",
-        "type": "pure_term",
-        "sum_insured_min": L(25),
-        "sum_insured_max": None,
-        "premium_range_min": 4700,
-        "premium_range_max": 66000,
-        "key_features": ["Spouse coverage option", "Child education benefit", "Critical illness add-on", "Income benefit payout option", "Accidental total disability"],
-        "exclusion_count": 5,
-        "sub_limit_count": 0,
-        "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0},
-        "copay_structure": "N/A",
-        "room_rent_limit": "N/A",
-        "eazr_score": 7.9,
-    },
-    {
         "name": "Canara HSBC OBC iSelect Star Term Plan",
         "insurer_name": "Canara HSBC Life Insurance",
         "category": "life_term",
@@ -1741,7 +1635,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Reliance Nippon Life Digi-Term Plan",
-        "insurer_name": "Reliance Nippon Life Insurance",
+        "insurer_name": "Reliance General Insurance",
         "category": "life_term",
         "type": "pure_term",
         "sum_insured_min": L(25),
@@ -1812,7 +1706,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Digit Comprehensive Car Insurance",
-        "insurer_name": "Digit General Insurance",
+        "insurer_name": "Digit Insurance",
         "category": "motor",
         "type": "car_comprehensive",
         "sum_insured_min": 100000,
@@ -1829,7 +1723,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Tata AIG Motor Insurance",
-        "insurer_name": "Tata AIG General Insurance",
+        "insurer_name": "TATA AIG General Insurance",
         "category": "motor",
         "type": "car_comprehensive",
         "sum_insured_min": 100000,
@@ -1934,7 +1828,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Reliance Nippon Travel Insurance",
-        "insurer_name": "Reliance Nippon Life Insurance",
+        "insurer_name": "Reliance General Insurance",
         "category": "travel",
         "type": "domestic_travel",
         "sum_insured_min": 0,
@@ -1988,7 +1882,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Tata AIG Personal Accident Insurance",
-        "insurer_name": "Tata AIG General Insurance",
+        "insurer_name": "TATA AIG General Insurance",
         "category": "personal_accident",
         "type": "individual_pa",
         "sum_insured_min": L(5),
@@ -2022,7 +1916,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Digit Group Personal Accident Insurance",
-        "insurer_name": "Digit General Insurance",
+        "insurer_name": "Digit Insurance",
         "category": "personal_accident",
         "type": "group_pa",
         "sum_insured_min": L(5),
@@ -2094,23 +1988,6 @@ PRODUCTS: List[Dict[str, Any]] = [
 
     # ── ULIP / Life Savings — Extended ───────────────────────────────────────
 
-    {
-        "name": "LIC New Endowment Plan",
-        "insurer_name": "Life Insurance Corporation of India",
-        "category": "life_endowment",
-        "type": "traditional_endowment",
-        "sum_insured_min": L(1),
-        "sum_insured_max": None,
-        "premium_range_min": 8000,
-        "premium_range_max": 150000,
-        "key_features": ["Government backed", "Bonus additions", "Loan facility", "Guaranteed maturity", "Surrender value after 3 years"],
-        "exclusion_count": 3,
-        "sub_limit_count": 0,
-        "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0},
-        "copay_structure": "N/A",
-        "room_rent_limit": "N/A",
-        "eazr_score": 6.8,
-    },
     {
         "name": "LIC New Jeevan Anand",
         "insurer_name": "Life Insurance Corporation of India",
@@ -2369,7 +2246,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Chola MS Healthline Insurance",
-        "insurer_name": "Cholamandalam MS General Insurance",
+        "insurer_name": "Chola MS General Insurance",
         "category": "health",
         "type": "individual_health",
         "sum_insured_min": L(2),
@@ -2405,7 +2282,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "National Insurance Mediclaim Plus",
-        "insurer_name": "National Insurance Company",
+        "insurer_name": "National Insurance",
         "category": "health",
         "type": "individual_health",
         "sum_insured_min": L(1),
@@ -2423,7 +2300,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Oriental Health Insurance Plan",
-        "insurer_name": "Oriental Insurance Company",
+        "insurer_name": "Oriental Insurance",
         "category": "health",
         "type": "individual_health",
         "sum_insured_min": L(1),
@@ -2514,7 +2391,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Aviva Life Shield Advantage",
-        "insurer_name": "Aviva Life Insurance",
+        "insurer_name": "Aviva Life Insurance India",
         "category": "life_term",
         "type": "pure_term",
         "sum_insured_min": L(25),
@@ -2725,7 +2602,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Oriental Motor Insurance",
-        "insurer_name": "Oriental Insurance Company",
+        "insurer_name": "Oriental Insurance",
         "category": "motor",
         "type": "car_comprehensive",
         "sum_insured_min": 100000,
@@ -2745,7 +2622,7 @@ PRODUCTS: List[Dict[str, Any]] = [
 
     {
         "name": "Digit International Travel Insurance",
-        "insurer_name": "Digit General Insurance",
+        "insurer_name": "Digit Insurance",
         "category": "travel",
         "type": "international_travel",
         "sum_insured_min": 0,
@@ -2779,7 +2656,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     },
     {
         "name": "Tata AIG Travel Guard Annual Multi-trip",
-        "insurer_name": "Tata AIG General Insurance",
+        "insurer_name": "TATA AIG General Insurance",
         "category": "travel",
         "type": "annual_multitrip",
         "sum_insured_min": 0,
@@ -2928,7 +2805,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     {"name": "Bajaj Allianz Health Guard Gold", "insurer_name": "Bajaj Allianz General Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(3), "sum_insured_max": L(50), "premium_range_min": 6500, "premium_range_max": 80000, "key_features": ["Gold plan", "No room rent cap", "Restore benefit", "Global emergency", "No copay"], "exclusion_count": 13, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.1, "restore_benefit": True},
     {"name": "Manipal Cigna ProHealth Select", "insurer_name": "ManipalCigna Health Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(2), "sum_insured_max": L(50), "premium_range_min": 5500, "premium_range_max": 70000, "key_features": ["Wellness rewards", "No room rent limit", "No copay", "Annual checkup", "Emergency ambulance"], "exclusion_count": 14, "sub_limit_count": 3, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 7.9, "restore_benefit": False},
     {"name": "Reliance Health Gain Plus", "insurer_name": "Reliance General Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(3), "sum_insured_max": L(50), "premium_range_min": 5500, "premium_range_max": 72000, "key_features": ["No room rent limit", "No copay", "Restore benefit", "Day care 540+ procedures", "Health check benefit"], "exclusion_count": 13, "sub_limit_count": 3, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 7.8, "restore_benefit": True},
-    {"name": "Tata AIG MediCare Protect", "insurer_name": "Tata AIG General Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(3), "sum_insured_max": Cr(1), "premium_range_min": 6200, "premium_range_max": 88000, "key_features": ["No room rent limit", "Restore 100%", "No copay", "Maternity optional", "OPD optional"], "exclusion_count": 13, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.2, "restore_benefit": True},
+    {"name": "Tata AIG MediCare Protect", "insurer_name": "TATA AIG General Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(3), "sum_insured_max": Cr(1), "premium_range_min": 6200, "premium_range_max": 88000, "key_features": ["No room rent limit", "Restore 100%", "No copay", "Maternity optional", "OPD optional"], "exclusion_count": 13, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.2, "restore_benefit": True},
 
     # ── Super Top-Up Plans ────────────────────────────────────────────────────
 
@@ -2955,7 +2832,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     # ── Motor — EV & Commercial ────────────────────────────────────────────────
 
     {"name": "Acko Electric Vehicle Insurance", "insurer_name": "Acko General Insurance", "category": "motor", "type": "ev_car_comprehensive", "sum_insured_min": 200000, "sum_insured_max": 8000000, "premium_range_min": 4000, "premium_range_max": 85000, "key_features": ["EV battery cover", "Charging equipment cover", "Zero dep", "Digital first", "Roadside assistance"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.5},
-    {"name": "Digit EV Car Insurance", "insurer_name": "Digit General Insurance", "category": "motor", "type": "ev_car_comprehensive", "sum_insured_min": 200000, "sum_insured_max": 8000000, "premium_range_min": 3900, "premium_range_max": 82000, "key_features": ["Electric vehicle specialist", "Battery protection", "Zero dep included", "Spot claims app", "Charging station assist"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.4},
+    {"name": "Digit EV Car Insurance", "insurer_name": "Digit Insurance", "category": "motor", "type": "ev_car_comprehensive", "sum_insured_min": 200000, "sum_insured_max": 8000000, "premium_range_min": 3900, "premium_range_max": 82000, "key_features": ["Electric vehicle specialist", "Battery protection", "Zero dep included", "Spot claims app", "Charging station assist"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.4},
     {"name": "New India Commercial Vehicle Insurance", "insurer_name": "New India Assurance", "category": "motor", "type": "commercial_vehicle", "sum_insured_min": 200000, "sum_insured_max": 20000000, "premium_range_min": 8000, "premium_range_max": 200000, "key_features": ["Goods/passenger commercial vehicles", "Third party liability", "Own damage", "PA owner-driver", "Cashless garages"], "exclusion_count": 10, "sub_limit_count": 3, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.1},
     {"name": "HDFC ERGO Two Wheeler Insurance", "insurer_name": "HDFC ERGO General Insurance", "category": "motor", "type": "two_wheeler_comprehensive", "sum_insured_min": 20000, "sum_insured_max": 200000, "premium_range_min": 1100, "premium_range_max": 5200, "key_features": ["Comprehensive two-wheeler", "Zero dep add-on", "NCB protection", "Roadside assistance", "Cashless 8000+ garages"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.2},
     {"name": "ICICI Lombard Two Wheeler Insurance", "insurer_name": "ICICI Lombard General Insurance", "category": "motor", "type": "two_wheeler_comprehensive", "sum_insured_min": 20000, "sum_insured_max": 200000, "premium_range_min": 1000, "premium_range_max": 5000, "key_features": ["Comprehensive cover", "Zero dep optional", "Return to invoice", "NCB protect", "Cashless garages"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.1},
@@ -2970,7 +2847,7 @@ PRODUCTS: List[Dict[str, Any]] = [
 
     {"name": "HDFC ERGO Critical Illness Insurance", "insurer_name": "HDFC ERGO General Insurance", "category": "health", "type": "critical_illness", "sum_insured_min": L(5), "sum_insured_max": Cr(1), "premium_range_min": 3200, "premium_range_max": 48000, "key_features": ["20 critical illnesses", "Lump sum on diagnosis", "30-day survival period", "No hospitalization required", "Income protection"], "exclusion_count": 8, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 1095, "specific": 90, "initial": 90}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.0},
     {"name": "Bajaj Allianz Critical Illness Insurance", "insurer_name": "Bajaj Allianz General Insurance", "category": "health", "type": "critical_illness", "sum_insured_min": L(5), "sum_insured_max": Cr(2), "premium_range_min": 3500, "premium_range_max": 52000, "key_features": ["10 listed CIs", "Lump sum payout", "Survival 30 days", "Tax benefit 80D", "No hospitalization needed"], "exclusion_count": 8, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 1095, "specific": 90, "initial": 90}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.9},
-    {"name": "Tata AIG Critical Illness Insurance", "insurer_name": "Tata AIG General Insurance", "category": "health", "type": "critical_illness", "sum_insured_min": L(5), "sum_insured_max": Cr(1), "premium_range_min": 3800, "premium_range_max": 55000, "key_features": ["36 CIs covered", "No survival period for some CIs", "Income benefit option", "Return of premium optional", "Global coverage"], "exclusion_count": 7, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 1095, "specific": 90, "initial": 90}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.4},
+    {"name": "Tata AIG Critical Illness Insurance", "insurer_name": "TATA AIG General Insurance", "category": "health", "type": "critical_illness", "sum_insured_min": L(5), "sum_insured_max": Cr(1), "premium_range_min": 3800, "premium_range_max": 55000, "key_features": ["36 CIs covered", "No survival period for some CIs", "Income benefit option", "Return of premium optional", "Global coverage"], "exclusion_count": 7, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 1095, "specific": 90, "initial": 90}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.4},
 
     # ── PA — Micro / Specific Use ──────────────────────────────────────────────
 
@@ -2983,7 +2860,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     {"name": "Star Health Assure Insurance Policy", "insurer_name": "Star Health and Allied Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(5), "sum_insured_max": Cr(2), "premium_range_min": 8000, "premium_range_max": 100000, "key_features": ["No room rent limit", "OPD cover", "Annual health check", "Restore benefit", "No copay"], "exclusion_count": 12, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.4, "restore_benefit": True},
     {"name": "Care Freedom Health Insurance", "insurer_name": "Care Health Insurance", "category": "health", "type": "senior_citizen_health", "sum_insured_min": L(3), "sum_insured_max": L(10), "premium_range_min": 16000, "premium_range_max": 90000, "key_features": ["Pre-existing from day 1", "Home care treatment", "Cumulative bonus", "Daycare procedures", "PED waiver"], "exclusion_count": 10, "sub_limit_count": 4, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "20%", "room_rent_limit": "No limit", "eazr_score": 7.9, "restore_benefit": False},
     {"name": "Niva Bupa Pulse Health Plan", "insurer_name": "Niva Bupa Health Insurance", "category": "health", "type": "individual_health", "sum_insured_min": L(3), "sum_insured_max": L(25), "premium_range_min": 5500, "premium_range_max": 70000, "key_features": ["Entry-level plan", "Cashless network", "Pre/post hospitalization", "Day care", "Annual checkup"], "exclusion_count": 13, "sub_limit_count": 4, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 7.8, "restore_benefit": False},
-    {"name": "Digit Health Plus Floater", "insurer_name": "Digit General Insurance", "category": "health", "type": "family_floater", "sum_insured_min": L(5), "sum_insured_max": Cr(1), "premium_range_min": 13000, "premium_range_max": 150000, "key_features": ["Family floater", "Unlimited restore", "No room rent cap", "OPD telemedicine", "Annual check-up"], "exclusion_count": 12, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.3, "restore_benefit": True},
+    {"name": "Digit Health Plus Floater", "insurer_name": "Digit Insurance", "category": "health", "type": "family_floater", "sum_insured_min": L(5), "sum_insured_max": Cr(1), "premium_range_min": 13000, "premium_range_max": 150000, "key_features": ["Family floater", "Unlimited restore", "No room rent cap", "OPD telemedicine", "Annual check-up"], "exclusion_count": 12, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.3, "restore_benefit": True},
     {"name": "SBI General Arogya Top-Up", "insurer_name": "SBI General Insurance", "category": "health", "type": "super_top_up", "sum_insured_min": L(5), "sum_insured_max": Cr(2), "premium_range_min": 2400, "premium_range_max": 32000, "key_features": ["Super top-up", "Aggregate deductible", "No room rent limit", "Pre/post hospitalization", "Daycare"], "exclusion_count": 13, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 7.9, "restore_benefit": False},
 
     # ── Life — Child / Wealth Plans ───────────────────────────────────────────
@@ -2995,13 +2872,13 @@ PRODUCTS: List[Dict[str, Any]] = [
     # ── Motor — Additional Two-Wheeler ─────────────────────────────────────────
 
     {"name": "Star Union Dai-ichi Two Wheeler Policy", "insurer_name": "Star Union Dai-ichi Life Insurance", "category": "motor", "type": "two_wheeler_comprehensive", "sum_insured_min": 20000, "sum_insured_max": 150000, "premium_range_min": 900, "premium_range_max": 4200, "key_features": ["Comprehensive two-wheeler", "Third party", "PA owner-driver", "NCB up to 50%", "Cashless garages"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.4},
-    {"name": "Tata AIG Two Wheeler Insurance", "insurer_name": "Tata AIG General Insurance", "category": "motor", "type": "two_wheeler_comprehensive", "sum_insured_min": 20000, "sum_insured_max": 200000, "premium_range_min": 1000, "premium_range_max": 4800, "key_features": ["Comprehensive cover", "Zero dep optional", "NCB protect", "Roadside assistance", "Cashless garages"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.9},
+    {"name": "Tata AIG Two Wheeler Insurance", "insurer_name": "TATA AIG General Insurance", "category": "motor", "type": "two_wheeler_comprehensive", "sum_insured_min": 20000, "sum_insured_max": 200000, "premium_range_min": 1000, "premium_range_max": 4800, "key_features": ["Comprehensive cover", "Zero dep optional", "NCB protect", "Roadside assistance", "Cashless garages"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.9},
     {"name": "Royal Sundaram Two Wheeler Insurance", "insurer_name": "Royal Sundaram General Insurance", "category": "motor", "type": "two_wheeler_comprehensive", "sum_insured_min": 20000, "sum_insured_max": 180000, "premium_range_min": 950, "premium_range_max": 4600, "key_features": ["Comprehensive cover", "NCB up to 50%", "Zero dep add-on", "Third party + OD", "Cashless repairs"], "exclusion_count": 8, "sub_limit_count": 1, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.7},
 
     # ── Specialty / Niche Products ────────────────────────────────────────────
 
     {"name": "ICICI Lombard Home Insurance", "insurer_name": "ICICI Lombard General Insurance", "category": "health", "type": "home_insurance", "sum_insured_min": L(10), "sum_insured_max": Cr(5), "premium_range_min": 2000, "premium_range_max": 25000, "key_features": ["Structure + contents cover", "Natural disaster cover", "Burglary protection", "Personal liability", "Temporary accommodation"], "exclusion_count": 10, "sub_limit_count": 4, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 7.8},
-    {"name": "Digit Home Insurance", "insurer_name": "Digit General Insurance", "category": "health", "type": "home_insurance", "sum_insured_min": L(5), "sum_insured_max": Cr(5), "premium_range_min": 1800, "premium_range_max": 22000, "key_features": ["Digital-first home insurance", "Fire + flood + theft", "Jewellery cover", "Electronic equipment", "Personal accident family"], "exclusion_count": 9, "sub_limit_count": 3, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.0},
+    {"name": "Digit Home Insurance", "insurer_name": "Digit Insurance", "category": "health", "type": "home_insurance", "sum_insured_min": L(5), "sum_insured_max": Cr(5), "premium_range_min": 1800, "premium_range_max": 22000, "key_features": ["Digital-first home insurance", "Fire + flood + theft", "Jewellery cover", "Electronic equipment", "Personal accident family"], "exclusion_count": 9, "sub_limit_count": 3, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.0},
     {"name": "Aditya Birla Sun Life Guaranteed Milestone Plan", "insurer_name": "Aditya Birla Sun Life Insurance", "category": "life_savings", "type": "non_par_savings", "sum_insured_min": L(5), "sum_insured_max": None, "premium_range_min": 20000, "premium_range_max": 500000, "key_features": ["Guaranteed maturity benefit", "Milestone payouts", "Flexible premium term", "Tax benefit 80C/10(10D)", "Loan after 3 years"], "exclusion_count": 3, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 7.0},
     {"name": "Max Life Smart Term Plan", "insurer_name": "Max Life Insurance", "category": "life_term", "type": "pure_term", "sum_insured_min": L(25), "sum_insured_max": None, "premium_range_min": 4900, "premium_range_max": 67000, "key_features": ["Multiple cover options", "Critical illness add-on", "Accidental death benefit", "Return of premium option", "CSR 99.35%"], "exclusion_count": 5, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 8.5},
     {"name": "Pramerica Life TruShield Term Plan", "insurer_name": "Pramerica Life Insurance", "category": "life_term", "type": "pure_term", "sum_insured_min": L(25), "sum_insured_max": None, "premium_range_min": 4400, "premium_range_max": 61000, "key_features": ["Online term plan", "Level + increasing cover", "Accidental death add-on", "Tax benefit 80C", "Renewable term"], "exclusion_count": 5, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 7.6},
@@ -3011,7 +2888,7 @@ PRODUCTS: List[Dict[str, Any]] = [
     {"name": "Edelweiss Tokio Life Guaranteed Income Plan", "insurer_name": "Edelweiss Tokio Life Insurance", "category": "life_savings", "type": "non_par_savings", "sum_insured_min": L(5), "sum_insured_max": None, "premium_range_min": 18000, "premium_range_max": 450000, "key_features": ["Guaranteed income", "Short premium payment", "Life cover", "Tax benefit 80C/10(10D)", "Flexible payout options"], "exclusion_count": 3, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 7.1},
     {"name": "ICICI Lombard Personal Accident Protect Plus", "insurer_name": "ICICI Lombard General Insurance", "category": "personal_accident", "type": "individual_pa", "sum_insured_min": L(5), "sum_insured_max": Cr(3), "premium_range_min": 1100, "premium_range_max": 16000, "key_features": ["Comprehensive PA", "Fracture benefit", "Burns benefit", "EMI protection", "Global cover"], "exclusion_count": 9, "sub_limit_count": 3, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "0%", "room_rent_limit": "N/A", "eazr_score": 8.2},
     {"name": "Niva Bupa Health Companion Family Floater", "insurer_name": "Niva Bupa Health Insurance", "category": "health", "type": "family_floater", "sum_insured_min": L(5), "sum_insured_max": L(50), "premium_range_min": 12000, "premium_range_max": 140000, "key_features": ["Family floater", "No room rent limit", "Restore benefit", "Annual health check", "No copay"], "exclusion_count": 12, "sub_limit_count": 2, "waiting_periods": {"pre_existing": 1095, "specific": 730, "initial": 30}, "copay_structure": "0%", "room_rent_limit": "No limit", "eazr_score": 8.5, "restore_benefit": True},
-    {"name": "Digit Life Term Plan", "insurer_name": "Digit General Insurance", "category": "life_term", "type": "pure_term", "sum_insured_min": L(25), "sum_insured_max": None, "premium_range_min": 4300, "premium_range_max": 60000, "key_features": ["Simplified process", "Accidental death optional", "Return of premium option", "Digital policy management", "Instant approval"], "exclusion_count": 5, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 7.7},
+    {"name": "Digit Life Term Plan", "insurer_name": "Digit Insurance", "category": "life_term", "type": "pure_term", "sum_insured_min": L(25), "sum_insured_max": None, "premium_range_min": 4300, "premium_range_max": 60000, "key_features": ["Simplified process", "Accidental death optional", "Return of premium option", "Digital policy management", "Instant approval"], "exclusion_count": 5, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 7.7},
     {"name": "Bajaj Allianz Life Goal Assure II ULIP", "insurer_name": "Bajaj Allianz Life Insurance", "category": "ulip", "type": "ulip", "sum_insured_min": L(7), "sum_insured_max": None, "premium_range_min": 30000, "premium_range_max": 1000000, "key_features": ["11 fund options", "Dynamic asset allocation", "Partial withdrawal year 6+", "Loyalty additions from year 6", "Waiver of premium on CI"], "exclusion_count": 4, "sub_limit_count": 0, "waiting_periods": {"pre_existing": 0, "specific": 0, "initial": 0}, "copay_structure": "N/A", "room_rent_limit": "N/A", "eazr_score": 7.3},
 
 ]

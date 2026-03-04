@@ -102,8 +102,10 @@ class TestFinancialGuard:
         result = check_financial(
             "Your premium is ₹5 for a sum insured of ₹50 lakh."
         )
-        # Very low premium for high coverage — suspicious
-        assert len(result.suspicious_numbers) >= 0  # Might or might not flag (depends on context)
+        # Very low premium (₹5) for high coverage (₹50L) — should flag as suspicious
+        assert result.passed is False
+        assert len(result.suspicious_numbers) > 0
+        assert any("sum insured" in s.lower() or "low" in s.lower() for s in result.suspicious_numbers)
 
     def test_response_without_numbers_passes(self):
         result = check_financial(

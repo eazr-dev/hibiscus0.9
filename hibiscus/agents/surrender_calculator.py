@@ -18,6 +18,10 @@ from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
+# Approximate SBI FD benchmark rate for opportunity-cost comparison.
+# Date-stamped: as of 2026-03-04. Update when RBI rate cycle changes materially.
+INDICATIVE_FD_RATE = 0.075  # 7.5% p.a. — approximate, not guaranteed
+
 AGENT_SYSTEM_PROMPT = """You are Hibiscus, EAZR's insurance AI assistant specializing in surrender value analysis.
 
 Your role: Explain surrender value calculations clearly and help users decide whether to keep or exit a policy.
@@ -410,12 +414,14 @@ class SurrenderCalculatorAgent(BaseAgent):
         current_year_result: Optional[SurrenderValueResult],
     ) -> Dict[str, Any]:
         """
-        Compare: if user had invested all premiums in FD at 7.5% p.a. compounded annually.
+        Compare: if user had invested all premiums in FD at the indicative rate,
+        compounded annually.  Rate sourced from INDICATIVE_FD_RATE constant.
         """
         if not current_year_result:
             return {}
 
-        fd_rate = 0.075
+        fd_rate = INDICATIVE_FD_RATE
+        fd_rate_pct = f"{fd_rate * 100:.1f}%"
         fd_value = 0.0
         for i in range(min(policy_year, premium_term)):
             # Each year's premium invested for remaining years
@@ -429,11 +435,12 @@ class SurrenderCalculatorAgent(BaseAgent):
             "fd_corpus_if_invested": round(fd_value, 2),
             "gsv_now": gsv,
             "paid_premiums": paid_premiums,
-            "fd_rate_used": "7.5% p.a. (indicative SBI FD rate)",
+            "fd_rate_used": f"{fd_rate_pct} p.a. (approximate SBI FD rate as of 2026-03-04)",
             "fd_vs_gsv_difference": round(fd_value - gsv, 2),
             "note": (
-                "FD comparison assumes all premiums invested from day one at 7.5% compounding. "
-                "Actual FD rates vary. Policy also provides life cover which pure investment does not."
+                f"FD comparison assumes all premiums invested from day one at {fd_rate_pct} compounding. "
+                "Actual FD rates vary by bank and tenure. "
+                "Policy also provides life cover which pure investment does not."
             ),
         }
 
@@ -480,7 +487,7 @@ class SurrenderCalculatorAgent(BaseAgent):
             comps = irr_interpretation.get("comparisons", {})
             if comps:
                 vs_fd = comps.get("vs_fd", 0)
-                irr_text += f"\n  vs FD (7.5%): {'+' if vs_fd >= 0 else ''}{vs_fd:.2f}% difference"
+                irr_text += f"\n  vs FD ({INDICATIVE_FD_RATE * 100:.1f}%): {'+' if vs_fd >= 0 else ''}{vs_fd:.2f}% difference"
 
         # FD comparison text
         fd_text = ""

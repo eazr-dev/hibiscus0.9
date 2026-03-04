@@ -23,12 +23,34 @@ class AdequacyResult:
         self.gap = max(0.0, self.gap)
 
 
+# Age-adjusted income growth rates (Indian market context, as of 2025)
+# Younger professionals: higher income growth trajectory
+# Mid-career: moderate growth
+# Pre-retirement: lower growth, focus on stability
+_AGE_GROWTH_RATES = {
+    (25, 35): 0.09,  # 9% — early career, high growth
+    (35, 45): 0.07,  # 7% — mid career, moderate growth
+    (45, 999): 0.05,  # 5% — late career, stability
+}
+
+DEFAULT_GROWTH_RATE = 0.06  # Fallback if age not provided
+
+
+def _get_age_adjusted_growth_rate(age: int) -> float:
+    """Return income growth rate adjusted for the person's age band."""
+    for (lo, hi), rate in _AGE_GROWTH_RATES.items():
+        if lo <= age < hi:
+            return rate
+    return DEFAULT_GROWTH_RATE
+
+
 def hlv_method(
     annual_income: float,
     years_to_retirement: int,
     inflation: float = 0.06,
     discount: float = 0.08,
     existing_coverage: float = 0.0,
+    age: int = 0,
 ) -> AdequacyResult:
     """
     Human Life Value method — PV of future income streams.
@@ -38,13 +60,18 @@ def hlv_method(
     Args:
         annual_income: Current annual income
         years_to_retirement: Working years remaining
-        inflation: Expected income growth / inflation rate (default 6%)
+        inflation: Expected income growth / inflation rate (default 6%).
+                   If age is provided, this is overridden by age-adjusted rate.
         discount: Discount rate (default 8% — risk-free + premium)
         existing_coverage: Existing life cover (deducted from recommendation)
+        age: User's age (if >0, overrides inflation with age-adjusted growth rate)
 
     Returns:
         AdequacyResult with HLV-based recommendation
     """
+    # Use age-adjusted growth rate if age is provided
+    if age > 0:
+        inflation = _get_age_adjusted_growth_rate(age)
     if years_to_retirement <= 0:
         return AdequacyResult(
             current_coverage=existing_coverage,

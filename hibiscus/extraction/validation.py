@@ -234,10 +234,11 @@ class ValidationEngine:
         if category == "motor":
             product_type = str(_val("productType") or "").lower()
             tp = _num("tpPremium")
-            if "standalone" in product_type and tp > 0:
-                result.warnings.append(ValidationIssue(
-                    field="tpPremium", check="logic", severity="warning",
-                    message=f"Standalone OD should have tpPremium=0, got {tp}",
+            if "standalone" in product_type and "od" in product_type and tp > 0:
+                result.errors.append(ValidationIssue(
+                    field="tpPremium", check="logic", severity="error",
+                    message=f"Standalone OD policy must have tpPremium=0, got {tp}. "
+                            f"This may indicate misclassification — verify productType.",
                 ))
 
             # PAN check: 4th char must be 'P' for personal
@@ -328,12 +329,19 @@ class ValidationEngine:
                 except (ValueError, TypeError):
                     pass
 
-            # UIN format check
-            if field_name == "uin" and isinstance(v, str) and len(v) < 5:
-                result.warnings.append(ValidationIssue(
-                    field="uin", check="format", severity="warning",
-                    message=f"UIN too short ({len(v)} chars), expected IRDAI format",
+            # UIN format check — IRDAI UIN pattern: e.g. IRDAI/HLT/123/P-H/V.I/2025
+            # or compact form like SHAHLIP23456V012345 or numeric like 123N456V01
+            if field_name == "uin" and isinstance(v, str):
+                _uin_valid = bool(re.match(
+                    r'^(?:IRDA[IN][\d/A-Z.\-]+|[A-Z0-9]{5,30})$',
+                    v.strip(),
+                    re.IGNORECASE,
                 ))
+                if not _uin_valid or len(v.strip()) < 5:
+                    result.warnings.append(ValidationIssue(
+                        field="uin", check="format", severity="warning",
+                        message=f"UIN '{v}' does not match expected IRDAI format (e.g. IRDAN123HLIP... or compact alphanumeric 5-30 chars)",
+                    ))
 
     # ── Check 4: Range Validation ────────────────────────────────────
 

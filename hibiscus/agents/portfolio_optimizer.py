@@ -30,13 +30,31 @@ TONE: Like a financial planning session — comprehensive, organized, prioritize
 """
 
 # Scoring weights for portfolio score (0-100)
+#
+# Weight rationale (based on Indian insurance advisory best practices):
+#   life_cover_adequacy  (30%) — Breadwinner protection: income replacement is the
+#       single most catastrophic gap; losing an earner with no term cover can
+#       devastate a family financially.
+#   health_cover_adequacy (30%) — Medical inflation in India runs at ~15% p.a.;
+#       an uninsured hospitalization (especially in metros) is a top cause of
+#       household financial distress.
+#   critical_illness     (15%) — CI events (cancer, cardiac) incur lump-sum costs
+#       of ₹5L-₹50L+ that regular health policies may only partially cover.
+#   personal_accident    (10%) — PA/disability cover is very low cost yet protects
+#       against income loss from disability; lower weight because the premium
+#       outlay is minimal and risk is narrower than life/health.
+#   no_redundancy        (10%) — Overlapping policies waste premium without adding
+#       meaningful coverage; consolidation improves cost efficiency.
+#   premium_efficiency    (5%) — Spending within the 5-10% of income guideline
+#       ensures sustainability; lowest weight because it is a soft guideline,
+#       not a coverage gap.
 PORTFOLIO_SCORING_WEIGHTS = {
-    "life_cover_adequacy": 30,      # Has adequate term life? (10-15x income)
-    "health_cover_adequacy": 30,    # Has adequate health? (city-based)
-    "critical_illness": 15,         # Has CI cover?
-    "personal_accident": 10,        # Has PA cover?
-    "no_redundancy": 10,            # No wasteful overlapping policies
-    "premium_efficiency": 5,        # Premium within 5-10% income budget
+    "life_cover_adequacy": 30,      # Breadwinner protection (10-15x income)
+    "health_cover_adequacy": 30,    # Medical inflation hedge (city-based)
+    "critical_illness": 15,         # Lump-sum CI event protection
+    "personal_accident": 10,        # Low-cost disability / accidental death cover
+    "no_redundancy": 10,            # Eliminate wasteful overlapping policies
+    "premium_efficiency": 5,        # Keep spend within 5-10% of income
 }
 
 # Minimum health cover benchmarks

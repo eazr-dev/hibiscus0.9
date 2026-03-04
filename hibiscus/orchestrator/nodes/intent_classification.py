@@ -77,6 +77,26 @@ _EMOTIONAL_KEYWORDS = {
     "concerned": ["worried", "confused", "not sure", "scared", "help me understand"],
 }
 
+# ORCH-4: Valid values for LLM-returned classification fields. If the LLM returns
+# a value outside these sets, we fall back to the keyword-based result.
+_VALID_CATEGORIES = {"health", "life", "motor", "travel", "pa", "cross", "general"}
+_VALID_INTENTS = set(_INTENT_KEYWORDS.keys()) | {"general_chat"}
+_VALID_EMOTIONAL_STATES = {"neutral", "curious", "concerned", "distressed", "urgent", "frustrated"}
+_VALID_COMPLEXITIES = {"L1", "L2", "L3", "L4"}
+
+
+def _keyword_match(keyword: str, text: str) -> bool:
+    """
+    ORCH-9: Word-bounded keyword matching. Prevents false positives where a keyword
+    is a substring of a longer word (e.g. 'car' matching 'cardiac', 'pa' matching 'pass').
+    Multi-word keywords use simple substring matching since word boundaries
+    only apply to single tokens.
+    """
+    if " " in keyword:
+        # Multi-word phrases: substring match is appropriate
+        return keyword in text
+    return bool(re.search(r'\b' + re.escape(keyword) + r'\b', text))
+
 
 def _fast_classify(message: str, uploaded_files: list) -> dict:
     """Fast keyword-based classification. Returns partial result."""
@@ -85,14 +105,14 @@ def _fast_classify(message: str, uploaded_files: list) -> dict:
     # Category detection
     category = "general"
     for cat, keywords in _CATEGORY_KEYWORDS.items():
-        if any(kw in msg_lower for kw in keywords):
+        if any(_keyword_match(kw, msg_lower) for kw in keywords):
             category = cat
             break
 
     # Intent detection
     intent = "general_chat"
     for intnt, keywords in _INTENT_KEYWORDS.items():
-        if any(kw in msg_lower for kw in keywords):
+        if any(_keyword_match(kw, msg_lower) for kw in keywords):
             intent = intnt
             break
 
@@ -103,7 +123,7 @@ def _fast_classify(message: str, uploaded_files: list) -> dict:
     # Emotional state
     emotional_state = "neutral"
     for state, keywords in _EMOTIONAL_KEYWORDS.items():
-        if any(kw in msg_lower for kw in keywords):
+        if any(_keyword_match(kw, msg_lower) for kw in keywords):
             emotional_state = state
             break
     if "?" in message and emotional_state == "neutral":
@@ -111,7 +131,7 @@ def _fast_classify(message: str, uploaded_files: list) -> dict:
 
     # Has document
     has_document = bool(uploaded_files) or any(
-        kw in msg_lower for kw in ["my policy", "this policy", "the document", "uploaded"]
+        _keyword_match(kw, msg_lower) for kw in ["my policy", "this policy", "the document", "uploaded"]
     )
 
     return {
@@ -257,9 +277,29 @@ RECENT CONTEXT: {session_context or 'None'}
             plog.warning("intent_llm_fallback", error=str(e), using="keyword_rules")
 
     # ── Step 3: Merge results (LLM overrides keyword if available) ────────
-    category = llm_result.get("category", fast_result["category"])
-    intent = llm_result.get("intent", fast_result["intent"])
-    emotional_state = llm_result.get("emotional_state", fast_result["emotional_state"])
+    # ORCH-4: Validate LLM-returned values against known valid sets.
+    # If the LLM returns an unexpected category/intent, fall back to keyword result.
+    llm_category = llm_result.get("category")
+    llm_intent = llm_result.get("intent")
+    llm_emotional = llm_result.get("emotional_state")
+    llm_complexity = llm_result.get("complexity")
+
+    if llm_category and llm_category not in _VALID_CATEGORIES:
+        plog.warning("intent_llm_invalid_category", value=llm_category,
+                     valid=list(_VALID_CATEGORIES), fallback=fast_result["category"])
+        llm_category = None
+    if llm_intent and llm_intent not in _VALID_INTENTS:
+        plog.warning("intent_llm_invalid_intent", value=llm_intent,
+                     valid=list(_VALID_INTENTS), fallback=fast_result["intent"])
+        llm_intent = None
+    if llm_emotional and llm_emotional not in _VALID_EMOTIONAL_STATES:
+        llm_emotional = None
+    if llm_complexity and llm_complexity not in _VALID_COMPLEXITIES:
+        llm_complexity = None
+
+    category = llm_category or fast_result["category"]
+    intent = llm_intent or fast_result["intent"]
+    emotional_state = llm_emotional or fast_result["emotional_state"]
     has_document = llm_result.get("has_document", fast_result["has_document"])
     # Ground truth: if no files were uploaded, has_document MUST be False.
     # Prevents LLM from hallucinating has_document=True for "my health insurance" queries
@@ -271,7 +311,7 @@ RECENT CONTEXT: {session_context or 'None'}
     # Always use our deterministic agent mapping — LLM agents_needed is unreliable
     # (LLM tends to default to policy_analyzer for everything)
     agents_needed = _determine_agents(intent, category, has_document)
-    complexity = llm_result.get("complexity", _determine_complexity(intent, has_document, agents_needed))
+    complexity = llm_complexity or _determine_complexity(intent, has_document, agents_needed)
 
     # ── Step 4: Model selection ──────────────────────────────────────────
     from hibiscus.llm.model_selector import select_tier

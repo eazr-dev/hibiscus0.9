@@ -61,7 +61,7 @@ class DocumentProcessor:
     # Minimum chars per page to consider extraction successful
     MIN_CHARS_PER_PAGE = 50
     # Minimum total chars for the document
-    MIN_TOTAL_CHARS = 200
+    MIN_TOTAL_CHARS = 2000
 
     async def process(
         self,
@@ -182,9 +182,20 @@ class DocumentProcessor:
 
             return result
 
-        except ImportError:
-            result.errors.append("OCR dependencies not available (pytesseract/pdf2image)")
-            logger.warning("ocr_deps_missing")
+        except ImportError as e:
+            error_msg = (
+                "OCR dependencies not available (pytesseract/pdf2image). "
+                "Install with: pip install pytesseract pdf2image Pillow. "
+                "Document text extraction may be incomplete."
+            )
+            result.errors.append(error_msg)
+            result.extraction_method = "failed_ocr_unavailable"
+            logger.error(
+                "ocr_deps_missing",
+                error=str(e),
+                resolution="pip install pytesseract pdf2image Pillow",
+                char_count=result.char_count,
+            )
             return result
         except Exception as e:
             result.errors.append(f"OCR failed: {e}")

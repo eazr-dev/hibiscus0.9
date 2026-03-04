@@ -1,7 +1,11 @@
 """
 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
-KG seed: insurers — 62 Indian insurance companies with registration and contact details.
+KG seed: insurers — 52 Indian insurance companies with registration and contact details.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+
+Data Integrity Note (2026-03-04):
+  - 11 VERIFY comments remain — CSR and solvency ratios pending verification against IRDAI Annual Report.
+  - 4 insurers with zero products marked catalog_status="pending" (DI-4).
 """
 from typing import Any, Dict, List
 
@@ -485,6 +489,7 @@ INSURERS: List[Dict[str, Any]] = [
         "irdai_reg_no": "152",
         "headquarters": "Mumbai",
         "established_year": 2015,
+        "catalog_status": "pending",
     },
     {
         "name": "SBI General Insurance",
@@ -533,6 +538,7 @@ INSURERS: List[Dict[str, Any]] = [
         "irdai_reg_no": "159",
         "headquarters": "Bengaluru",
         "established_year": 2021,
+        "catalog_status": "pending",
     },
     {
         "name": "Acko General Insurance",
@@ -663,6 +669,7 @@ INSURERS: List[Dict[str, Any]] = [
         "irdai_reg_no": "138",
         "headquarters": "Mumbai",
         "established_year": 2008,
+        "catalog_status": "pending",
     },
     {
         "name": "Pramerica Life Insurance",
@@ -873,6 +880,7 @@ INSURERS: List[Dict[str, Any]] = [
         "irdai_reg_no": "160",
         "headquarters": "Chennai",
         "established_year": 2019,
+        "catalog_status": "pending",
     },
 ]
 

@@ -134,12 +134,18 @@ async def _call_glm_embed(texts: List[str]) -> openai.types.CreateEmbeddingRespo
     reraise=True,
 )
 async def _call_openai_embed(texts: List[str]) -> openai.types.CreateEmbeddingResponse:
-    """OpenAI embedding API call (final fallback)."""
+    """OpenAI embedding API call (final fallback).
+
+    Uses the `dimensions` parameter to request EMBEDDING_DIMENSIONS directly
+    from the API, avoiding post-hoc truncation which discards information
+    suboptimally. text-embedding-3-small supports Matryoshka dimensions.
+    """
     client = _get_openai_client()
     response = await client.embeddings.create(
         model=EMBEDDING_MODEL_OAI,
         input=texts,
         encoding_format="float",
+        dimensions=EMBEDDING_DIMENSIONS,
     )
     return response
 
@@ -200,8 +206,7 @@ async def get_embedding(text: str) -> List[float]:
                 latency_ms=latency_ms,
                 model="openai_text_embedding_3_small",
             )
-            if len(embedding) > EMBEDDING_DIMENSIONS:
-                embedding = embedding[:EMBEDDING_DIMENSIONS]
+            # No post-hoc truncation needed: dimensions parameter is set in the API call
             return embedding
         except Exception as exc:
             logger.warning("openai_embedding_failed", error=str(exc), fallback="zero_vector")
@@ -271,10 +276,8 @@ async def get_embeddings_batch(texts: List[str]) -> List[List[float]]:
             try:
                 response = await _call_openai_embed(batch_texts)
                 for response_idx, global_idx in enumerate(batch_indices):
-                    emb = response.data[response_idx].embedding
-                    if len(emb) > EMBEDDING_DIMENSIONS:
-                        emb = emb[:EMBEDDING_DIMENSIONS]
-                    results[global_idx] = emb
+                    # No post-hoc truncation: dimensions parameter is set in the API call
+                    results[global_idx] = response.data[response_idx].embedding
                 batch_ok = True
             except Exception as exc:
                 logger.warning(

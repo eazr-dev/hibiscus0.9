@@ -6,6 +6,7 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 import json
 import time
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlparse
 
 import redis.asyncio as aioredis
 
@@ -13,6 +14,38 @@ from hibiscus.config import settings
 from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
+
+
+def _safe_log_url(url: str) -> str:
+    """Return a Redis URL safe for logging (password redacted)."""
+    parsed = urlparse(url)
+    if parsed.password:
+        return url.replace(f":{parsed.password}@", ":***@")
+    return url.split("@")[-1] if "@" in url else url
+
+# ── Security: Redis AUTH ────────────────────────────────────────────────────
+# Redis AUTH is configured via the password component of REDIS_URL, e.g.:
+#   redis://:strongpassword@host:6379/1
+# The docker-compose.yml supports REDIS_PASSWORD env var to enable
+# --requirepass automatically. In production, ALWAYS set a strong password.
+#
+# ── Security: At-rest encryption (TODO SEC-6) ──────────────────────────────
+# Session payloads may contain conversation history with PII (names, policy
+# numbers, Aadhaar references, etc.). Currently stored as plaintext JSON.
+#
+# Recommended future approach:
+#   1. Use Fernet symmetric encryption (cryptography.fernet) with a dedicated
+#      HIBISCUS_SESSION_ENCRYPTION_KEY sourced from a secrets manager
+#      (AWS KMS, HashiCorp Vault — NOT .env).
+#   2. Encrypt the serialized JSON blob before SET, decrypt after GET.
+#   3. Support key rotation: accept a list of decryption keys (current +
+#      previous) so sessions encrypted with an old key remain readable.
+#   4. Enable Redis TLS (rediss:// scheme) for encryption in transit.
+#
+# This is deferred until key management infrastructure is in place.
+
+# ── Default session TTL (configurable) ────────────────────────────────────
+DEFAULT_SESSION_TTL: int = 3600  # 1 hour
 
 # ── Redis connection singleton ────────────────────────────────────────────
 _redis_client: Optional[aioredis.Redis] = None
@@ -31,7 +64,7 @@ async def init_redis() -> None:
             max_connections=20,
         )
         await _redis_client.ping()
-        logger.info("redis_connected", url=settings.redis_url.split("@")[-1])
+        logger.info("redis_connected", url=_safe_log_url(settings.redis_url))
     except Exception as e:
         logger.warning("redis_connection_failed", error=str(e), fallback="in_memory")
         _redis_client = None  # Will use in-memory fallback
@@ -69,13 +102,20 @@ async def get_session(session_id: str) -> Optional[Dict[str, Any]]:
     return None
 
 
-async def save_session(session_id: str, data: Dict[str, Any]) -> None:
-    """Save full session data with TTL."""
+async def save_session(session_id: str, data: Dict[str, Any], ttl: Optional[int] = None) -> None:
+    """Save full session data with TTL.
+
+    Args:
+        session_id: Session identifier.
+        data: Session data dict.
+        ttl: TTL in seconds. Defaults to settings.redis_session_ttl.
+    """
     key = _session_key(session_id)
+    effective_ttl = ttl if ttl is not None else settings.redis_session_ttl
     serialized = json.dumps(data, ensure_ascii=False, default=str)
     try:
         if _redis_client:
-            await _redis_client.setex(key, settings.redis_session_ttl, serialized)
+            await _redis_client.setex(key, effective_ttl, serialized)
         else:
             _memory_store[key] = data
     except Exception as e:

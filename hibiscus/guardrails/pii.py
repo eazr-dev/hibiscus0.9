@@ -1,6 +1,7 @@
 """
-🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
-PII guardrail — detects and redacts Aadhaar, PAN, phone numbers, email addresses.
+Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+PII guardrail — detects and redacts Indian-specific PII: Aadhaar, PAN, IFSC,
+UPI/VPA, passport, phone numbers, email addresses, and more.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
@@ -17,28 +18,59 @@ class PIICheckResult:
 
 
 # ── PII patterns (pattern, replacement, label) ────────────────────────────────
+# Order matters: more specific patterns should come before generic ones to avoid
+# false positives (e.g., Aadhaar before generic digit sequences).
 
 _PII_PATTERNS = [
-    # Aadhaar: 12 digits with optional spaces/hyphens between groups of 4
+    # ── Indian-specific identifiers ────────────────────────────────────────
+
+    # Aadhaar: 12 digits in groups of 4, with optional spaces or hyphens.
+    # Covers: "1234 5678 9012", "1234-5678-9012", "123456789012"
+    # Uses word boundary + digit-group anchoring to avoid matching inside
+    # longer numbers (e.g., bank account numbers already have their own rule).
     (r"\b\d{4}[\s\-]?\d{4}[\s\-]?\d{4}\b", "XXXX-XXXX-XXXX", "aadhaar"),
 
-    # PAN: 5 uppercase letters, 4 digits, 1 uppercase letter
+    # PAN: 5 uppercase letters, 4 digits, 1 uppercase letter.
+    # The 4th character encodes entity type: C=Company, P=Person, H=HUF, etc.
+    # e.g. ABCDE1234F
     (r"\b[A-Z]{5}[0-9]{4}[A-Z]\b", "XXXXXXXXXX", "pan"),
 
-    # Indian mobile: starts with 6-9, total 10 digits
-    (r"\b[6-9]\d{9}\b", "XXXXXXXXXX", "phone"),
+    # IFSC Code: 4 uppercase letters (bank code) + "0" + 6 alphanumeric chars.
+    # e.g. SBIN0001234, HDFC0BRANCH
+    (r"\b[A-Z]{4}0[A-Z0-9]{6}\b", "XXXXXXXXXXX", "ifsc"),
+
+    # UPI / VPA ID: user@provider pattern, e.g. name@okicici, phone@ybl
+    # Kept before email to catch VPA-style addresses with known UPI handles.
+    (r"\b[A-Za-z0-9._\-]+@(?:ok(?:icici|axis|sbi|hdfc)|ybl|upi|paytm|apl|ibl|axl|freecharge|okhdfcbank|oksbi)\b",
+     "user@***.upi", "vpa_upi"),
+
+    # Indian Passport: single uppercase letter + 7 digits.
+    # e.g. J1234567, K9876543. Indian passports follow [A-Z]\d{7}.
+    (r"\b[A-PR-WY-Z][0-9]{7}\b", "X0000000", "indian_passport"),
+
+    # Indian mobile: starts with 6-9, total 10 digits.
+    # With optional +91 or 0 prefix.
+    (r"\b(?:\+91[\s\-]?|0)?[6-9]\d{9}\b", "XXXXXXXXXX", "phone"),
+
+    # ── Financial identifiers ──────────────────────────────────────────────
 
     # Policy number heuristic: 2-4 uppercase letters optionally followed by / or -, then 6-12 digits
     # e.g. HDFC/123456789, STAR-123456, NB0123456789
     (r"\b[A-Z]{2,4}[/\-]?\d{6,12}\b", "POL-XXXXXXXX", "policy_number"),
 
-    # Email address
+    # Credit/Debit card number: 13-19 digits with optional spaces/hyphens
+    (r"\b\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{1,7}\b", "XXXX-XXXX-XXXX-XXXX", "card_number"),
+
+    # ── Contact / personal ─────────────────────────────────────────────────
+
+    # Email address (general — placed after VPA so UPI handles are caught first)
     (r"\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b", "user@***.com", "email"),
 
     # Date of birth (DD/MM/YYYY or DD-MM-YYYY)
     (r"\b\d{2}[/\-]\d{2}[/\-]\d{4}\b", "XX/XX/XXXX", "dob"),
 
-    # Bank account number heuristic: 9-18 digit sequence (standalone)
+    # Bank account number heuristic: 9-18 digit sequence (standalone).
+    # Placed last since it is the most generic numeric pattern.
     (r"(?<!\d)\d{9,18}(?!\d)", "XXXXXXXXXX", "account_number"),
 ]
 

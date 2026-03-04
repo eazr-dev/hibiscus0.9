@@ -452,19 +452,24 @@ class ScoringEngine:
             score += 10  # Unknown
 
         # NCB/Cumulative Bonus (25 pts)
+        # NOTE: NCB (No Claim Bonus) and Cumulative Bonus are distinct concepts.
+        # NCB is a discount on renewal premium for claim-free years.
+        # Cumulative Bonus is an increase to Sum Insured for claim-free years.
+        # They should NOT be auto-derived from each other.
         ncb = _num(e, "ncbPercentage")
-        if ncb == 0:
-            # Check cumulative bonus
-            cb = _num(e, "cumulativeBonusAmount")
-            si = _num(e, "sumInsured")
-            if cb > 0 and si > 0:
-                ncb = (cb / si) * 100
+        cb = _num(e, "cumulativeBonusAmount")
 
-        if ncb >= 50:
+        # Score whichever is present (they are independent benefits)
+        effective_bonus_pct = ncb
+        if effective_bonus_pct == 0 and cb > 0:
+            # Use cumulative bonus as a separate signal, but do NOT convert to NCB %
+            effective_bonus_pct = min(cb / max(_num(e, "sumInsured"), 1) * 100, 100)
+
+        if effective_bonus_pct >= 50:
             score += 25
-        elif ncb >= 25:
+        elif effective_bonus_pct >= 25:
             score += 18
-        elif ncb > 0:
+        elif effective_bonus_pct > 0:
             score += 10
         else:
             score += 3

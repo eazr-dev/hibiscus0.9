@@ -7,6 +7,24 @@ import operator
 from enum import Enum
 from typing import Annotated, Any, Dict, List, Optional, TypedDict
 
+from pydantic import BaseModel, Field
+
+
+class AgentOutput(BaseModel):
+    """Structured output from a specialist agent."""
+    agent: str
+    success: bool
+    confidence: float = Field(default=0.0, ge=0.0, le=1.0)
+    response: str = ""
+    error: str = ""
+    latency_ms: int = 0
+    tokens_in: int = 0
+    tokens_out: int = 0
+    sources: List[Dict[str, Any]] = Field(default_factory=list)
+    structured_data: Dict[str, Any] = Field(default_factory=dict)
+    follow_up_suggestions: List[str] = Field(default_factory=list)
+    products_relevant: List[str] = Field(default_factory=list)
+
 
 class Complexity(str, Enum):
     L1 = "L1"  # Simple FAQ — direct LLM fast path
@@ -61,7 +79,11 @@ class HibiscusState(TypedDict, total=False):
 
     # ── EXECUTION ────────────────────────────────────────────────────────
     execution_plan: List[Dict[str, Any]]  # [{agent, task, priority, parallel_group}]
-    # agent_outputs accumulates across parallel agent calls (using add operator)
+    # agent_outputs accumulates across parallel agent calls via operator.add.
+    # This is safe despite concurrent node execution because LangGraph serializes
+    # state updates internally — each node receives an immutable snapshot and returns
+    # a partial update dict. The framework merges updates sequentially using the
+    # annotated reducer (operator.add), so no race condition can occur.
     agent_outputs: Annotated[List[Dict[str, Any]], operator.add]
 
     # ── MODEL SELECTION ───────────────────────────────────────────────────

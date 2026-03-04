@@ -33,10 +33,20 @@ MIS_SELLING_PATTERNS = {
     "low_sa_ratio": {
         "flag": "Low Sum Assured to Premium Ratio",
         "severity": "HIGH",
-        "description": "Sum assured is less than 10x the annual premium",
+        "description": "Sum assured is below type-specific minimum SA/Premium ratio",
         "implication": "Policy does not qualify for Section 80C tax benefit in full; not adequate as life cover",
-        "irdai_reference": "Section 80C Income Tax Act — 10x SA/Premium ratio required",
-        "threshold": 10,
+        "irdai_reference": "Section 80C Income Tax Act — SA/Premium ratio requirement",
+        # Type-specific thresholds: term policies naturally have high SA/premium
+        # ratios (often 100x+), so 8x flags only truly broken products.
+        # Endowment/ULIP/money-back have lower ratios by design; 10x is the
+        # Section 80C floor for full tax benefit eligibility.
+        "threshold": 10,  # default; overridden per-type in detection logic
+        "threshold_by_type": {
+            "term": 8,
+            "endowment": 10,
+            "ulip": 10,
+            "money back": 10,
+        },
         "metric": "sa_to_premium_ratio",
     },
     "ulip_high_charges": {
@@ -322,17 +332,27 @@ class RiskDetectorAgent(BaseAgent):
             copay = self._safe_float(policy.get("copay") or policy.get("co_payment"))
             room_rent_limit = policy.get("room_rent_sublimit") or policy.get("room_rent_limit")
 
-            # Check 1: SA/Premium ratio (life insurance)
+            # Check 1: SA/Premium ratio (life insurance) — type-specific thresholds
             if annual_premium and sum_assured and any(
                 t in policy_type for t in ["life", "endowment", "ulip", "term", "money back"]
             ):
                 ratio = sum_assured / annual_premium
-                if ratio < MIS_SELLING_PATTERNS["low_sa_ratio"]["threshold"]:
+                # Determine the applicable threshold for this policy type
+                type_thresholds = MIS_SELLING_PATTERNS["low_sa_ratio"]["threshold_by_type"]
+                applicable_threshold = MIS_SELLING_PATTERNS["low_sa_ratio"]["threshold"]
+                for ptype_key, ptype_threshold in type_thresholds.items():
+                    if ptype_key in policy_type:
+                        applicable_threshold = ptype_threshold
+                        break
+                if ratio < applicable_threshold:
                     flags.append({
                         "flag": MIS_SELLING_PATTERNS["low_sa_ratio"]["flag"],
                         "category": "mis_selling",
                         "severity": MIS_SELLING_PATTERNS["low_sa_ratio"]["severity"],
-                        "evidence": f"SA/Premium ratio = {ratio:.1f}x (minimum 10x required for full 80C benefit)",
+                        "evidence": (
+                            f"SA/Premium ratio = {ratio:.1f}x "
+                            f"(minimum {applicable_threshold}x required for {policy_type} for full 80C benefit)"
+                        ),
                         "implication": MIS_SELLING_PATTERNS["low_sa_ratio"]["implication"],
                         "reference": MIS_SELLING_PATTERNS["low_sa_ratio"]["irdai_reference"],
                         "policy_type": policy_type,

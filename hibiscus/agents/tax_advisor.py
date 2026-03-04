@@ -675,6 +675,10 @@ INSTRUCTIONS FOR RESPONSE:
    "Tax computations are indicative. Actual tax benefit depends on your total income,
    other deductions, and choice of tax regime. Consult a CA for precise computation."
 
+NRI DISCLAIMER (always include):
+Note: This advice assumes Indian resident tax status. NRI tax treatment differs
+materially for Sections 80C/80D — consult a CA for NRI-specific guidance.
+
 DO NOT change or recompute any numbers. Present what is computed above.
 """
 

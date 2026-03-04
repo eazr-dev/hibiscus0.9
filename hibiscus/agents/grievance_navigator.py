@@ -8,6 +8,7 @@ import time
 from typing import Any, Dict, List, Optional, Tuple
 
 from hibiscus.agents.base import BaseAgent, AgentResult
+from hibiscus.knowledge.escalation_paths import ESCALATION_LADDER
 from hibiscus.llm.router import call_llm
 from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
@@ -30,98 +31,7 @@ TONE: Empathetic, empowering, specific. The user is frustrated — be their cham
 Opening: "I understand how frustrating this is. Here's exactly how to fight this..."
 """
 
-# Complete grievance escalation ladder
-ESCALATION_LADDER = [
-    {
-        "level": 1,
-        "name": "Internal Grievance — Insurer's GRO",
-        "applicable_when": "First step — mandatory before approaching IRDAI or Ombudsman",
-        "timeline": "Insurer must respond within 15 days (IRDAI mandate)",
-        "cost": "Free",
-        "how_to": [
-            "Write a formal grievance letter to the insurer's Grievance Redressal Officer (GRO)",
-            "Include: Policy number, nature of complaint, documents, expected resolution",
-            "Send via: Registered post + email (keep tracking number and email timestamps)",
-            "Also file through insurer's app/website grievance portal",
-            "Get a written acknowledgment with reference number — this is your evidence",
-        ],
-        "contact": "Find GRO contact at insurer's website → Customer Service → Grievance Redressal",
-        "escalation_trigger": "No response in 15 days OR unsatisfactory response",
-        "irdai_reference": "IRDAI (Protection of Policyholders' Interests) Regulations 2017 — Regulation 13",
-    },
-    {
-        "level": 2,
-        "name": "IRDAI Bima Bharosa Portal",
-        "applicable_when": "Insurer did not respond in 15 days, OR response is unsatisfactory",
-        "timeline": "IRDAI forwards to insurer; insurer must resolve within 15 days",
-        "cost": "Free",
-        "how_to": [
-            "Visit: bimabharosaportal.irdai.gov.in",
-            "Register/login with your email or mobile",
-            "Select 'Register Complaint' → choose insurer → fill complaint details",
-            "Attach: Insurer's response (if any), your original documents, correspondence",
-            "Note your complaint reference number",
-            "IRDAI tracks resolution and intervenes if insurer does not respond",
-        ],
-        "contact": "bimabharosaportal.irdai.gov.in | IRDAI helpline: 155255 or 1800-4254-732",
-        "escalation_trigger": "Not resolved within 30 days of IRDAI complaint",
-        "irdai_reference": "IRDAI IGMS — Integrated Grievance Management System",
-    },
-    {
-        "level": 3,
-        "name": "Insurance Ombudsman",
-        "applicable_when": [
-            "Insurer rejected/ignored the complaint",
-            "Within 3 months of insurer's final rejection letter",
-            "Claim amount up to ₹50 lakh",
-        ],
-        "timeline": "Ombudsman must pass award within 3 months of receiving complete documents",
-        "cost": "Completely FREE — no fees, no lawyers required",
-        "how_to": [
-            "Identify the Ombudsman office for your state (list at irdai.gov.in)",
-            "Download the complaint form from irdai.gov.in/ombudsman",
-            "Fill form and submit with all documents",
-            "You can appear in person or submit written arguments",
-            "Ombudsman holds hearings and passes a binding award",
-            "Insurer must comply with award within 30 days",
-        ],
-        "contact": "17 offices across India — contact by state (see below)",
-        "escalation_trigger": "Unhappy with ombudsman award, or claim above ₹50L",
-        "irdai_reference": "Insurance Ombudsman Rules 2017",
-        "important_note": "DO NOT exceed 3 months from insurer rejection — you lose the right to approach ombudsman",
-    },
-    {
-        "level": 4,
-        "name": "Consumer Forum",
-        "applicable_when": "Claims above ₹50 lakh, or if ombudsman approach is not suitable",
-        "timeline": "Variable — typically 6-18 months",
-        "cost": "Small filing fee; lawyers recommended for complex cases",
-        "how_to": [
-            "DCDRC (District Consumer Disputes Redressal Commission): Claims up to ₹1 crore",
-            "SCDRC (State Consumer Disputes Redressal Commission): Claims ₹1 crore to ₹10 crore",
-            "NCDRC (National Consumer Disputes Redressal Commission): Claims above ₹10 crore",
-            "Consumer complaint under Consumer Protection Act 2019",
-            "Insurer can be held liable for deficiency in service",
-        ],
-        "contact": "consumerhelpline.gov.in | edaakhil.nic.in (online filing)",
-        "escalation_trigger": "Dissatisfied with forum order",
-        "irdai_reference": "Consumer Protection Act 2019",
-    },
-    {
-        "level": 5,
-        "name": "Civil Court",
-        "applicable_when": "Last resort when all other remedies exhausted",
-        "timeline": "2-10 years typically",
-        "cost": "Filing fees + lawyer fees — significant",
-        "how_to": [
-            "Consult a lawyer with insurance litigation experience",
-            "File civil suit in appropriate court",
-        ],
-        "contact": "Local civil court / High Court",
-        "escalation_trigger": "Final option",
-        "irdai_reference": "Code of Civil Procedure 1908",
-    },
-]
+# ESCALATION_LADDER is imported from hibiscus.knowledge.escalation_paths
 
 # State-wise ombudsman offices (partial list — most major states)
 OMBUDSMAN_OFFICES = {
@@ -224,8 +134,8 @@ class GrievanceNavigatorAgent(BaseAgent):
             ombudsman_office = self._get_ombudsman_office(user_state)
 
             # ── Step 3: Build relevant escalation steps ────────────────────
-            # Show current level + next 2 levels
-            relevant_steps = ESCALATION_LADDER[max(0, current_level - 1):]
+            # Show current level + next 2 levels (bounded window, not unbounded tail)
+            relevant_steps = ESCALATION_LADDER[current_level - 1 : current_level + 2]
 
             # ── Step 4: LLM synthesis ──────────────────────────────────────
             plog.step_start("llm_synthesis")

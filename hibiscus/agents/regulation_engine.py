@@ -28,6 +28,10 @@ CRITICAL RULES:
 TONE: Authoritative but accessible. Like a legal aid advocate who explains rights in plain language.
 """
 
+# ── Knowledge base version metadata ──────────────────────────────────────
+_LAST_VERIFIED = "2026-03-04"
+_SOURCE = "IRDAI circulars via training data"
+
 # Core IRDAI regulation knowledge base
 # This is the ground truth — LLM only synthesizes from this, never adds to it
 REGULATION_KNOWLEDGE_BASE = {
@@ -464,6 +468,9 @@ Structure your response in these sections:
 **5. Verify Current Rules**
    - "For the most current version of this regulation, visit irdai.gov.in"
    - Note if any recent amendments are expected
+
+DATA FRESHNESS: Regulation knowledge base last verified {_LAST_VERIFIED} (source: {_SOURCE}).
+Include in your response: "Regulation data last verified: {_LAST_VERIFIED}. Always confirm at irdai.gov.in for the latest version."
 
 CRITICAL: Only cite regulations from the data above. Do not invent regulation numbers or rules.
 """

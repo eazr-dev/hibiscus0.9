@@ -130,13 +130,19 @@ class BaseExtractor:
         text = match.group() if match else cleaned
         # Remove trailing commas
         text = re.sub(r",\s*([}\]])", r"\1", text)
-        # Fix unmatched brackets
-        open_braces = text.count("{") - text.count("}")
-        open_brackets = text.count("[") - text.count("]")
-        if open_braces > 0:
-            text += "}" * open_braces
-        if open_brackets > 0:
-            text += "]" * open_brackets
+        # Depth-aware bracket closing: track open/close order and close in reverse
+        stack = []
+        for ch in text:
+            if ch == "{":
+                stack.append("}")
+            elif ch == "[":
+                stack.append("]")
+            elif ch in ("}", "]"):
+                if stack and stack[-1] == ch:
+                    stack.pop()
+        # Close unclosed brackets in reverse order (innermost first)
+        if stack:
+            text += "".join(reversed(stack))
 
         try:
             return json.loads(text)

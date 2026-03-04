@@ -32,6 +32,17 @@ class TestModelSelector:
         tier = select_tier("policy_analysis", complexity="L4")
         assert tier == Tier.T2
 
+    def test_high_complexity_overrides_default_tier1(self):
+        """Tasks normally routed to Tier 1 should escalate to Tier 2+ with high complexity."""
+        # education normally routes to Tier 1, but L4 complexity should override
+        tier = select_tier("education", complexity="L4")
+        assert tier in (Tier.T2, Tier.T3), f"High complexity should route to Tier 2 or 3, got {tier}"
+
+    def test_high_complexity_with_low_confidence_escalates_to_tier3(self):
+        """High complexity + low confidence on critical task should escalate to Tier 3."""
+        tier = select_tier("surrender_calculation", complexity="L4", confidence=0.50)
+        assert tier == Tier.T3
+
     def test_l1_uses_tier1(self):
         tier = select_tier("l1_response", complexity="L1")
         assert tier == Tier.T1

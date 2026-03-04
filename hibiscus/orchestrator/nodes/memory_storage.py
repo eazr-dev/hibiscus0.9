@@ -158,8 +158,20 @@ async def run(state: HibiscusState) -> dict:
     )
     plog.step_start("memory_storage")
 
-    # Schedule background storage — non-blocking
-    asyncio.create_task(_do_store(state, plog))
+    # ORCH-7: Schedule background storage — non-blocking, with error logging.
+    # Without a done_callback, exceptions in fire-and-forget tasks are silently
+    # swallowed (only logged as "Task exception was never retrieved" on GC).
+    def _on_store_done(task: asyncio.Task) -> None:
+        if task.cancelled():
+            plog.warning("memory_storage_cancelled")
+            return
+        exc = task.exception()
+        if exc is not None:
+            plog.error("memory_storage_background_error", error=str(exc),
+                       error_type=type(exc).__name__)
+
+    task = asyncio.create_task(_do_store(state, plog))
+    task.add_done_callback(_on_store_done)
 
     # Return immediately; memory_storage never modifies state
     return {}

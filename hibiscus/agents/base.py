@@ -149,7 +149,12 @@ class BaseAgent(ABC):
             return f"₹{amount:,.0f}"
 
     def _confidence_qualifier(self, confidence: float) -> str:
-        """Return appropriate qualifier phrase based on confidence."""
+        """
+        Return appropriate qualifier phrase based on confidence.
+
+        Below confidence_threshold_low (0.50): refuse to answer entirely to
+        prevent low-confidence hallucinations from reaching the user.
+        """
         from hibiscus.config import settings
         if confidence >= settings.confidence_threshold_high:
             return ""  # State as fact, no qualifier needed
@@ -158,4 +163,8 @@ class BaseAgent(ABC):
         elif confidence >= settings.confidence_threshold_low:
             return "I believe, though please verify: "
         else:
-            return "I'm not certain, but: "
+            # Below 0.50 — refuse to answer rather than risk misinformation.
+            return (
+                "I do not have enough reliable data to answer this confidently. "
+                "Please provide more details or rephrase your question so I can help accurately."
+            )

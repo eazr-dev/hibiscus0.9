@@ -5,7 +5,7 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass
@@ -35,7 +35,10 @@ _EMPATHY_PREFIXES = {
 }
 
 # ── Empathy phrases that indicate response already leads with empathy ──────────
-_EMPATHY_ALREADY_PRESENT = [
+# These are matched as full phrases (not individual words) to avoid false
+# positives. For example, "passed away" must match as a complete phrase,
+# not "passed" + "away" independently.
+_EMPATHY_ALREADY_PRESENT_PHRASES = [
     "i'm sorry",
     "i'm truly sorry",
     "i understand this",
@@ -50,6 +53,20 @@ _EMPATHY_ALREADY_PRESENT = [
     "my deepest sympathies",
     "i hear you",
 ]
+
+# Compile phrase patterns with word boundaries for accurate matching
+_EMPATHY_PHRASE_PATTERNS: List[re.Pattern] = [
+    re.compile(r'\b' + re.escape(phrase) + r'\b', re.IGNORECASE)
+    for phrase in _EMPATHY_ALREADY_PRESENT_PHRASES
+]
+
+
+def _has_empathy_phrase(text: str) -> bool:
+    """Check if text contains any empathy phrase using full-phrase matching."""
+    for pattern in _EMPATHY_PHRASE_PATTERNS:
+        if pattern.search(text):
+            return True
+    return False
 
 # ── Defensive language patterns that frustrate users ──────────────────────────
 _DEFENSIVE_PATTERNS = [
@@ -96,10 +113,7 @@ def check_emotional(
         empathy_prefix = _EMPATHY_PREFIXES.get(emotional_state, _EMPATHY_PREFIXES["distressed"])
 
         # Check if response already leads with empathy — don't double up
-        already_empathetic = any(
-            phrase in response_lower[:200]  # Only check first 200 chars (the lead)
-            for phrase in _EMPATHY_ALREADY_PRESENT
-        )
+        already_empathetic = _has_empathy_phrase(response_lower[:200])
 
         if already_empathetic:
             return EmotionalCheckResult(
@@ -131,10 +145,7 @@ def check_emotional(
             modified = re.sub(pattern, replacement, modified, flags=re.IGNORECASE)
 
         # Prepend acknowledgment unless response already acknowledges
-        already_acknowledges = any(
-            phrase in response_lower[:200]
-            for phrase in _EMPATHY_ALREADY_PRESENT
-        )
+        already_acknowledges = _has_empathy_phrase(response_lower[:200])
         if not already_acknowledges:
             modified = empathy_prefix + modified
 

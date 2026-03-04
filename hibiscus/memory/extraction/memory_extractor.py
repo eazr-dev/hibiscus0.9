@@ -162,6 +162,9 @@ async def _run_extraction(
         logger.info("memory_nothing_extracted", user_id=user_id, session_id=session_id)
         return
 
+    # ── Step 2b: Validate extracted values ────────────────────────────────────
+    extracted = _validate_extracted_values(extracted)
+
     # ── Step 3: Store profile updates (L3) ───────────────────────────────────
     profile_updates = extracted.get("profile_updates", {})
     if profile_updates:
@@ -250,6 +253,119 @@ async def _run_extraction(
         policies=stored_policies,
         elapsed_s=elapsed,
     )
+
+
+# ── Extracted value validation ────────────────────────────────────────────────
+
+# Reasonable ranges for Indian insurance context
+_VALIDATION_RULES = {
+    "age": (0, 120),
+    "num_dependents": (0, 20),
+    "city_tier": (1, 3),
+}
+
+# Income must be between ~₹50K and ₹100Cr (50_000 - 1_000_000_000)
+_INCOME_BANDS = {"0-3l", "3-7l", "7-15l", "15l+", "0-3L", "3-7L", "7-15L", "15L+"}
+
+# Valid gender values
+_VALID_GENDERS = {"male", "female", "other", "m", "f"}
+
+# Valid risk tolerance
+_VALID_RISK_TOLERANCE = {"low", "medium", "high"}
+
+
+def _validate_extracted_values(extracted: Dict[str, Any]) -> Dict[str, Any]:
+    """Validate extracted memory values and remove obviously wrong ones.
+
+    Prevents bad LLM extractions from polluting the user profile.
+    """
+    profile = extracted.get("profile_updates", {})
+    if not isinstance(profile, dict):
+        extracted["profile_updates"] = {}
+        return extracted
+
+    cleaned_profile = {}
+    for key, value in profile.items():
+        # Range checks for numeric fields
+        if key in _VALIDATION_RULES and value is not None:
+            lo, hi = _VALIDATION_RULES[key]
+            try:
+                num_val = int(value)
+                if lo <= num_val <= hi:
+                    cleaned_profile[key] = num_val
+                else:
+                    logger.warning(
+                        "memory_validation_rejected",
+                        field=key, value=value,
+                        reason=f"out of range [{lo}, {hi}]",
+                    )
+            except (ValueError, TypeError):
+                logger.warning("memory_validation_rejected", field=key, value=value, reason="not numeric")
+            continue
+
+        # Income band validation
+        if key == "income_band" and value is not None:
+            if str(value).lower().replace(" ", "") in {b.lower() for b in _INCOME_BANDS}:
+                cleaned_profile[key] = value
+            else:
+                logger.warning("memory_validation_rejected", field=key, value=value, reason="invalid income band")
+            continue
+
+        # Gender validation
+        if key == "gender" and value is not None:
+            if str(value).lower() in _VALID_GENDERS:
+                cleaned_profile[key] = value
+            else:
+                logger.warning("memory_validation_rejected", field=key, value=value, reason="invalid gender")
+            continue
+
+        # Risk tolerance validation
+        if key == "risk_tolerance" and value is not None:
+            if str(value).lower() in _VALID_RISK_TOLERANCE:
+                cleaned_profile[key] = value
+            else:
+                logger.warning("memory_validation_rejected", field=key, value=value, reason="invalid risk tolerance")
+            continue
+
+        # Pass through other fields
+        if value is not None:
+            cleaned_profile[key] = value
+
+    extracted["profile_updates"] = cleaned_profile
+
+    # Validate portfolio entries: sum_insured and annual_premium must be reasonable
+    portfolio = extracted.get("portfolio_updates", [])
+    if isinstance(portfolio, list):
+        validated_portfolio = []
+        for entry in portfolio:
+            if not isinstance(entry, dict):
+                continue
+            si = entry.get("sum_insured")
+            if si is not None:
+                try:
+                    si_val = int(si)
+                    # Sum insured: ₹10K - ₹100Cr
+                    if not (10_000 <= si_val <= 100_00_00_000):
+                        logger.warning("memory_validation_rejected", field="sum_insured", value=si, reason="out of range")
+                        entry["sum_insured"] = None
+                except (ValueError, TypeError):
+                    entry["sum_insured"] = None
+
+            ap = entry.get("annual_premium")
+            if ap is not None:
+                try:
+                    ap_val = int(ap)
+                    # Premium: ₹100 - ₹1Cr
+                    if not (100 <= ap_val <= 1_00_00_000):
+                        logger.warning("memory_validation_rejected", field="annual_premium", value=ap, reason="out of range")
+                        entry["annual_premium"] = None
+                except (ValueError, TypeError):
+                    entry["annual_premium"] = None
+
+            validated_portfolio.append(entry)
+        extracted["portfolio_updates"] = validated_portfolio
+
+    return extracted
 
 
 # ── JSON parsing helpers ──────────────────────────────────────────────────────

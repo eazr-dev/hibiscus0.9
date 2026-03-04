@@ -33,6 +33,13 @@ MODEL_COSTS: Dict[str, Dict[str, float]] = {
 
 USD_TO_INR = 85.0
 
+# ── Budget enforcement limits ────────────────────────────────────────────────
+# Per-conversation limit in INR — prevents runaway conversations
+CONVERSATION_BUDGET_INR = 10.0  # ₹10 per conversation
+
+# Daily limit across all conversations in INR
+DAILY_BUDGET_INR = 5000.0  # ₹5,000 per day
+
 
 @dataclass
 class LLMCall:
@@ -77,6 +84,60 @@ class ConversationCost:
 # In-memory store for current session (in production, persist to Redis/PostgreSQL)
 _conversation_costs: Dict[str, ConversationCost] = {}
 
+# Daily spend tracking
+_daily_spend_inr: float = 0.0
+_daily_spend_reset_timestamp: float = 0.0
+
+
+class BudgetExceededError(Exception):
+    """Raised when a cost budget (per-conversation or daily) is exceeded."""
+
+    def __init__(self, message: str, budget_type: str, current_spend: float, limit: float):
+        super().__init__(message)
+        self.budget_type = budget_type
+        self.current_spend = current_spend
+        self.limit = limit
+
+
+def _reset_daily_if_needed() -> None:
+    """Reset daily spend counter if a new day has started."""
+    global _daily_spend_inr, _daily_spend_reset_timestamp
+    import time as _time
+    from datetime import datetime
+    now = _time.time()
+    today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()
+    if _daily_spend_reset_timestamp < today_start:
+        _daily_spend_inr = 0.0
+        _daily_spend_reset_timestamp = now
+
+
+def check_budget(conversation_id: str) -> None:
+    """Check if budget limits allow another LLM call.
+
+    Raises BudgetExceededError if either the per-conversation or daily limit
+    would be exceeded.
+    """
+    _reset_daily_if_needed()
+
+    # Check daily budget
+    if _daily_spend_inr >= DAILY_BUDGET_INR:
+        raise BudgetExceededError(
+            f"Daily budget exceeded: ₹{_daily_spend_inr:.2f} >= ₹{DAILY_BUDGET_INR:.2f}",
+            budget_type="daily",
+            current_spend=_daily_spend_inr,
+            limit=DAILY_BUDGET_INR,
+        )
+
+    # Check per-conversation budget
+    conv = _conversation_costs.get(conversation_id)
+    if conv and conv.total_cost_inr >= CONVERSATION_BUDGET_INR:
+        raise BudgetExceededError(
+            f"Conversation budget exceeded: ₹{conv.total_cost_inr:.2f} >= ₹{CONVERSATION_BUDGET_INR:.2f}",
+            budget_type="conversation",
+            current_spend=conv.total_cost_inr,
+            limit=CONVERSATION_BUDGET_INR,
+        )
+
 
 def compute_cost(model: str, tokens_in: int, tokens_out: int) -> tuple[float, float]:
     """Compute cost in USD and INR for an LLM call."""
@@ -93,7 +154,11 @@ def track_llm_call(
     tokens_out: int,
     agent: str = "unknown",
 ) -> LLMCall:
-    """Record an LLM API call and accumulate conversation cost."""
+    """Record an LLM API call and accumulate conversation cost.
+
+    Also updates the daily spend counter for budget enforcement.
+    """
+    global _daily_spend_inr
     cost_usd, cost_inr = compute_cost(model, tokens_in, tokens_out)
 
     call = LLMCall(
@@ -110,6 +175,10 @@ def track_llm_call(
 
     _conversation_costs[conversation_id].calls.append(call)
 
+    # Update daily spend
+    _reset_daily_if_needed()
+    _daily_spend_inr += cost_inr
+
     logger.info(
         "llm_cost_tracked",
         conversation_id=conversation_id,
@@ -119,6 +188,7 @@ def track_llm_call(
         tokens_out=tokens_out,
         cost_usd=round(cost_usd, 6),
         cost_inr=round(cost_inr, 4),
+        daily_spend_inr=round(_daily_spend_inr, 4),
     )
 
     return call

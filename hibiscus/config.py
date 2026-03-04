@@ -3,6 +3,7 @@
 Centralized configuration — every setting validated at startup via Pydantic BaseSettings.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
+import secrets
 from functools import lru_cache
 from typing import Optional
 from pydantic import Field, field_validator
@@ -88,9 +89,39 @@ class HibiscusSettings(BaseSettings):
     tavily_api_key: str = Field(default="", alias="TAVILY_API_KEY")
 
     # ── Auth / Security ───────────────────────────────────────────────
-    # JWT secret for API authentication. Empty string = dev mode (auth skipped).
+    # JWT secret for API authentication. A random secret is generated at
+    # startup if none is provided — this ensures auth is NEVER silently
+    # disabled.  Set JWT_SECRET explicitly in .env for stable tokens across
+    # restarts.
     jwt_secret: str = Field(default="", alias="JWT_SECRET")
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
+
+    # CORS allowed origins (comma-separated). Defaults to localhost dev servers.
+    cors_allowed_origins: str = Field(
+        default="http://localhost:3000,http://localhost:8080,http://localhost:8001",
+        alias="CORS_ALLOWED_ORIGINS",
+    )
+
+    @field_validator("jwt_secret", mode="before")
+    @classmethod
+    def _ensure_jwt_secret(cls, v: str) -> str:
+        """Generate a random JWT secret if none is configured.
+
+        This prevents the dangerous situation where an empty secret silently
+        disables authentication.  The generated secret is ephemeral (lost on
+        restart), so production deployments MUST set JWT_SECRET in .env.
+        """
+        if not v or not v.strip():
+            import warnings
+            generated = secrets.token_urlsafe(32)
+            warnings.warn(
+                "JWT_SECRET is not set — a random ephemeral secret has been "
+                "generated. Set JWT_SECRET in .env for stable token validation "
+                "across restarts.",
+                stacklevel=2,
+            )
+            return generated
+        return v
 
     # ── Existing EAZR API (Node.js) ───────────────────────────────────
     existing_api_base_url: str = Field(
@@ -101,6 +132,9 @@ class HibiscusSettings(BaseSettings):
     # ── Insurer API Integrations ──────────────────────────────────────
     insurer_api_enabled: bool = Field(default=False, alias="INSURER_API_ENABLED")
     insurer_api_timeout: int = Field(default=10, alias="INSURER_API_TIMEOUT")
+
+    # ── File Upload Limits ─────────────────────────────────────────────
+    max_file_size_mb: int = Field(default=10, alias="MAX_FILE_SIZE_MB")
 
     # ── Guardrails ────────────────────────────────────────────────────
     confidence_threshold_high: float = 0.85    # State as fact

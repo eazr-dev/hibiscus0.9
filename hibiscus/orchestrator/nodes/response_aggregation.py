@@ -122,21 +122,33 @@ async def run(state: HibiscusState) -> dict:
 
         content = llm_response["content"]
 
-        # Extract follow-up suggestions
+        # ORCH-5: Extract follow-up suggestions with robust JSON parsing.
+        # Use a greedy match for the JSON array to handle nested brackets and
+        # multi-line content, then validate with json.loads().
         import json
         import re
         follow_ups = []
-        json_match = re.search(r'---FOLLOW_UP_JSON---\s*(\[.*?\])', content, re.DOTALL)
+        json_match = re.search(r'---FOLLOW_UP_JSON---\s*(\[[\s\S]*\])', content)
         if json_match:
             try:
-                follow_ups = json.loads(json_match.group(1))
+                parsed = json.loads(json_match.group(1))
+                if isinstance(parsed, list) and all(isinstance(s, str) for s in parsed):
+                    follow_ups = parsed
                 content = content[:content.find("---FOLLOW_UP_JSON---")].strip()
-            except json.JSONDecodeError:
-                pass
+            except (json.JSONDecodeError, ValueError):
+                # Malformed JSON from LLM — strip the marker but leave follow_ups empty
+                content = content[:content.find("---FOLLOW_UP_JSON---")].strip()
 
-        # Aggregate confidence (weighted average)
+        # Aggregate confidence (weighted average), penalized by agent failure rate.
         confidences = [o.get("confidence", 0.0) for o in successful]
         avg_confidence = sum(confidences) / len(confidences) if confidences else 0.0
+
+        # ORCH-10: Penalize confidence when agents failed. If 2 of 3 agents
+        # succeeded, completeness_ratio = 0.67, reducing overall confidence.
+        total_agents = len(agent_outputs)
+        if total_agents > 0:
+            completeness_ratio = len(successful) / total_agents
+            avg_confidence *= completeness_ratio
 
         # Merge sources from all agents
         all_sources = []

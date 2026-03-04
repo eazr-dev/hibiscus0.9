@@ -12,6 +12,11 @@ from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
 
+# TODO: [SECURITY] Profile data contains PII (age, city, health conditions).
+# Ensure PostgreSQL has encryption at rest enabled (e.g., LUKS or cloud-managed
+# encryption). Consider application-level encryption for sensitive fields like
+# health_conditions_categories before storage.
+
 # ── In-memory fallback (when PostgreSQL is unavailable) ───────────────────────
 _profile_store: Dict[str, Dict[str, Any]] = {}
 

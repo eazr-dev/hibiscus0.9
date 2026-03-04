@@ -10,6 +10,21 @@ from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
 
+# Maximum total characters across all layers to prevent context overflow.
+# At ~4 chars per token, 12000 chars is roughly 3000 tokens.
+MAX_CONTEXT_CHARS = 12000
+
+# Priority-based character limits per layer (higher priority = more budget).
+# Must sum to <= MAX_CONTEXT_CHARS.
+_LAYER_CHAR_LIMITS = {
+    "document_context": 4000,     # Highest priority — active policy data
+    "session_history": 3000,      # Recent conversation for continuity
+    "user_profile": 800,          # Compact demographics
+    "policy_portfolio": 1500,     # Known policies
+    "knowledge_memories": 1500,   # Relevant past insights
+    "conversation_history": 1200, # Past session context
+}
+
 # Max tokens to allocate per memory layer
 TOKEN_BUDGET = {
     "session_history": 8000,      # ~40 turns at 200 tokens/turn
@@ -172,35 +187,55 @@ def estimate_tokens(text: str) -> int:
     return len(text) // 3
 
 
+def _truncate_section(text: str, max_chars: int) -> str:
+    """Truncate a context section to max_chars, preserving whole lines."""
+    if len(text) <= max_chars:
+        return text
+    # Truncate at the last newline before the limit
+    truncated = text[:max_chars]
+    last_nl = truncated.rfind("\n")
+    if last_nl > max_chars // 2:
+        truncated = truncated[:last_nl]
+    return truncated + "\n... (truncated)"
+
+
 def format_context_for_prompt(context: Dict[str, Any]) -> str:
-    """Format assembled context as a string for injection into prompts."""
+    """Format assembled context as a string for injection into prompts.
+
+    Each layer is truncated to its priority-based character limit
+    (see _LAYER_CHAR_LIMITS) so the total stays under MAX_CONTEXT_CHARS.
+    """
     parts = []
 
     # ── Session history ───────────────────────────────────────────────────────
     if context.get("session_history"):
-        parts.append("## Recent Conversation History")
+        section_parts = ["## Recent Conversation History"]
         for msg in context["session_history"][-6:]:   # Last 6 for context
             role = "User" if msg.get("role") == "user" else "Hibiscus"
             content = msg.get("content", "")[:300]     # Truncate long messages
-            parts.append(f"{role}: {content}")
+            section_parts.append(f"{role}: {content}")
+        section_text = _truncate_section("\n".join(section_parts), _LAYER_CHAR_LIMITS["session_history"])
+        parts.append(section_text)
 
     # ── Document context ──────────────────────────────────────────────────────
     if context.get("document_context"):
         doc = context["document_context"]
-        parts.append("\n## User's Policy Document")
+        doc_parts = ["\n## User's Policy Document"]
         if doc.get("filename"):
-            parts.append(f"File: {doc['filename']}")
+            doc_parts.append(f"File: {doc['filename']}")
         if doc.get("extraction"):
             extraction = doc["extraction"]
-            parts.append(f"Policy Type: {extraction.get('policy_type', 'Insurance Policy')}")
-            parts.append(f"Insurer: {extraction.get('insurer', 'Unknown')}")
+            doc_parts.append(f"Policy Type: {extraction.get('policy_type', 'Insurance Policy')}")
+            doc_parts.append(f"Insurer: {extraction.get('insurer', 'Unknown')}")
             if extraction.get("sum_insured"):
-                parts.append(f"Sum Insured: ₹{extraction['sum_insured']:,}")
+                doc_parts.append(f"Sum Insured: ₹{extraction['sum_insured']:,}")
+        section_text = _truncate_section("\n".join(doc_parts), _LAYER_CHAR_LIMITS["document_context"])
+        parts.append(section_text)
 
     # ── User profile ──────────────────────────────────────────────────────────
     if context.get("user_profile"):
         profile = context["user_profile"]
-        parts.append("\n## User Profile")
+        profile_section = ["\n## User Profile"]
         profile_parts = []
         if profile.get("age"):
             profile_parts.append(f"Age: {profile['age']}")
@@ -224,12 +259,14 @@ def format_context_for_prompt(context: Dict[str, Any]) -> str:
             cats = ", ".join(profile["health_conditions_categories"])
             profile_parts.append(f"Health categories: {cats}")
         if profile_parts:
-            parts.append(", ".join(profile_parts))
+            profile_section.append(", ".join(profile_parts))
+        section_text = _truncate_section("\n".join(profile_section), _LAYER_CHAR_LIMITS["user_profile"])
+        parts.append(section_text)
 
     # ── Policy portfolio ──────────────────────────────────────────────────────
     if context.get("policy_portfolio"):
         portfolio = context["policy_portfolio"]
-        parts.append("\n## Known Policies")
+        port_parts = ["\n## Known Policies"]
         for p in portfolio[:5]:   # Cap at 5 to guard token budget
             line_parts = []
             if p.get("policy_type"):
@@ -242,25 +279,35 @@ def format_context_for_prompt(context: Dict[str, Any]) -> str:
                 line_parts.append(f"Premium: ₹{int(p['annual_premium']):,}/yr")
             if p.get("payment_status"):
                 line_parts.append(f"[{p['payment_status']}]")
-            parts.append("  - " + ", ".join(line_parts))
+            port_parts.append("  - " + ", ".join(line_parts))
+        section_text = _truncate_section("\n".join(port_parts), _LAYER_CHAR_LIMITS["policy_portfolio"])
+        parts.append(section_text)
 
     # ── Knowledge insights ────────────────────────────────────────────────────
     if context.get("relevant_memories"):
-        parts.append("\n## User Insights (from past conversations)")
+        know_parts = ["\n## User Insights (from past conversations)"]
         for ins in context["relevant_memories"][:5]:
             itype = ins.get("type", "fact").upper()
             content = ins.get("content", "")[:200]
-            parts.append(f"  [{itype}] {content}")
+            know_parts.append(f"  [{itype}] {content}")
+        section_text = _truncate_section("\n".join(know_parts), _LAYER_CHAR_LIMITS["knowledge_memories"])
+        parts.append(section_text)
 
     # ── Relevant past conversations ───────────────────────────────────────────
     if context.get("relevant_conversations"):
-        parts.append("\n## Relevant Past Sessions")
+        conv_parts = ["\n## Relevant Past Sessions"]
         for conv in context["relevant_conversations"][:3]:
             content = conv.get("content", "")[:200]
             intent = conv.get("intent", "")
             if intent:
-                parts.append(f"  [{intent}] {content}")
+                conv_parts.append(f"  [{intent}] {content}")
             else:
-                parts.append(f"  {content}")
+                conv_parts.append(f"  {content}")
+        section_text = _truncate_section("\n".join(conv_parts), _LAYER_CHAR_LIMITS["conversation_history"])
+        parts.append(section_text)
 
-    return "\n".join(parts) if parts else ""
+    # Final safety: truncate entire context to MAX_CONTEXT_CHARS
+    result = "\n".join(parts) if parts else ""
+    if len(result) > MAX_CONTEXT_CHARS:
+        result = result[:MAX_CONTEXT_CHARS] + "\n... (context truncated)"
+    return result

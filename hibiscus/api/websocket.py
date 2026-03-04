@@ -6,6 +6,7 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 import json
 import time
 import uuid
+from collections import deque
 from typing import Any, Dict
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
@@ -16,6 +17,30 @@ from hibiscus.orchestrator.state import initial_state
 logger = get_logger(__name__)
 router = APIRouter()
 
+# ── Per-connection rate limiter ──────────────────────────────────────────────
+MAX_MESSAGES_PER_MINUTE = 30
+_RATE_WINDOW_SECONDS = 60
+
+
+class ConnectionRateLimiter:
+    """Sliding-window rate limiter for a single WebSocket connection."""
+
+    def __init__(self, max_messages: int = MAX_MESSAGES_PER_MINUTE, window_seconds: int = _RATE_WINDOW_SECONDS):
+        self.max_messages = max_messages
+        self.window_seconds = window_seconds
+        self._timestamps: deque = deque()
+
+    def is_allowed(self) -> bool:
+        """Check if a new message is allowed. Returns False if rate limit exceeded."""
+        now = time.time()
+        # Remove timestamps outside the window
+        while self._timestamps and self._timestamps[0] < now - self.window_seconds:
+            self._timestamps.popleft()
+        if len(self._timestamps) >= self.max_messages:
+            return False
+        self._timestamps.append(now)
+        return True
+
 
 @router.websocket("/ws")
 async def websocket_chat(websocket: WebSocket):
@@ -24,14 +49,26 @@ async def websocket_chat(websocket: WebSocket):
 
     Maintains a persistent connection for the duration of the session.
     Each message goes through the full Hibiscus pipeline with token streaming.
+    Rate limited to MAX_MESSAGES_PER_MINUTE messages per connection.
     """
     await websocket.accept()
     session_id = str(uuid.uuid4())
+    rate_limiter = ConnectionRateLimiter()
     logger.info("websocket_connected", session_id=session_id)
 
     try:
         while True:
             raw = await websocket.receive_text()
+
+            # Rate limit check
+            if not rate_limiter.is_allowed():
+                await websocket.send_json({
+                    "type": "error",
+                    "message": f"Rate limit exceeded ({MAX_MESSAGES_PER_MINUTE} messages/minute). Please slow down.",
+                })
+                logger.warning("websocket_rate_limited", session_id=session_id)
+                continue
+
             try:
                 data = json.loads(raw)
             except json.JSONDecodeError:

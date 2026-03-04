@@ -79,6 +79,25 @@ _DISCLAIMER_PATTERNS = [
     "disclaimer",
 ]
 
+# ── IRDAI mandatory disclaimer patterns ──────────────────────────────────────
+# Per IRDAI (Insurance Regulatory and Development Authority of India) guidelines,
+# insurance-related content must include appropriate disclaimers:
+_IRDAI_MANDATORY_PATTERNS = [
+    # Must state that past performance does not guarantee future results
+    r"past\s+performance\s+(?:does\s+not|doesn't)\s+guarantee",
+    # Must state subject to policy terms and conditions
+    r"subject\s+to\s+(?:policy\s+)?terms\s+and\s+conditions",
+    # Must not promise guaranteed returns (unless explicitly guaranteed by insurer)
+    r"returns?\s+(?:are|is)\s+subject\s+to\s+market",
+    # Insurance is subject to solicitation
+    r"(?:for\s+more\s+details\s+)?(?:refer\s+to|read)\s+(?:the\s+)?policy\s+(?:document|wording)",
+]
+
+# Intents where IRDAI mandatory patterns should be checked
+_IRDAI_MANDATORY_INTENTS = {
+    "recommend", "surrender", "portfolio", "calculate", "tax",
+}
+
 
 def check_compliance(
     response: str,

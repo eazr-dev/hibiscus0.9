@@ -74,9 +74,15 @@ async def run(state: HibiscusState) -> dict:
         uploaded_files=state.get("uploaded_files", []),
         document_context=state.get("document_context"),
     )
+    # ORCH-8: Cache key includes user_id and category so different users and
+    # different insurance categories don't share cached responses.
+    user_id = state.get("user_id", "anon")
+    cache_category = state.get("category", "general")
+    cache_key = f"{user_id}:{cache_category}:{message}"
+
     # Only serve from cache if there is no user-specific context in the prompt
     if use_cache and not context:
-        cached = await get_cached_response(message)
+        cached = await get_cached_response(cache_key)
         if cached:
             plog.step_complete("direct_llm", latency_ms=int((time.time() - start) * 1000),
                                cache_hit=True)
@@ -137,7 +143,7 @@ async def run(state: HibiscusState) -> dict:
 
         # Store in cache for future identical queries (only for cacheable queries)
         if use_cache and not context:
-            await set_cached_response(message, result)
+            await set_cached_response(cache_key, result)
 
         return result
 

@@ -12,27 +12,41 @@ from hibiscus.orchestrator.state import HibiscusState
 
 
 # ── Agent registry ────────────────────────────────────────────────────────
+_AGENT_MAP = {
+    "policy_analyzer": "hibiscus.agents.policy_analyzer",
+    "recommender": "hibiscus.agents.recommender",
+    "claims_guide": "hibiscus.agents.claims_guide",
+    "calculator": "hibiscus.agents.calculator",
+    "surrender_calculator": "hibiscus.agents.surrender_calculator",
+    "researcher": "hibiscus.agents.researcher",
+    "regulation_engine": "hibiscus.agents.regulation_engine",
+    "risk_detector": "hibiscus.agents.risk_detector",
+    "educator": "hibiscus.agents.educator",
+    "portfolio_optimizer": "hibiscus.agents.portfolio_optimizer",
+    "tax_advisor": "hibiscus.agents.tax_advisor",
+    "grievance_navigator": "hibiscus.agents.grievance_navigator",
+}
+
+# ORCH-2: Module-level cache to avoid repeated importlib.import_module() calls
+# in the hot path. Once an agent module is loaded, subsequent dispatches reuse it.
+_AGENT_MODULE_CACHE: Dict[str, Any] = {}
+
+# ORCH-3: Per-agent timeout in seconds. Individual agent calls that exceed this
+# are cancelled to prevent a single slow agent from blocking the entire group.
+_AGENT_TIMEOUT_SECONDS = 30
+
+
 async def _get_agent(agent_name: str):
-    """Lazy-load agent to avoid circular imports."""
-    agent_map = {
-        "policy_analyzer": "hibiscus.agents.policy_analyzer",
-        "recommender": "hibiscus.agents.recommender",
-        "claims_guide": "hibiscus.agents.claims_guide",
-        "calculator": "hibiscus.agents.calculator",
-        "surrender_calculator": "hibiscus.agents.surrender_calculator",
-        "researcher": "hibiscus.agents.researcher",
-        "regulation_engine": "hibiscus.agents.regulation_engine",
-        "risk_detector": "hibiscus.agents.risk_detector",
-        "educator": "hibiscus.agents.educator",
-        "portfolio_optimizer": "hibiscus.agents.portfolio_optimizer",
-        "tax_advisor": "hibiscus.agents.tax_advisor",
-        "grievance_navigator": "hibiscus.agents.grievance_navigator",
-    }
-    module_path = agent_map.get(agent_name)
+    """Lazy-load agent to avoid circular imports, with module-level caching."""
+    if agent_name in _AGENT_MODULE_CACHE:
+        return _AGENT_MODULE_CACHE[agent_name]
+
+    module_path = _AGENT_MAP.get(agent_name)
     if not module_path:
         raise ValueError(f"Unknown agent: {agent_name}")
     import importlib
     module = importlib.import_module(module_path)
+    _AGENT_MODULE_CACHE[agent_name] = module
     return module
 
 
@@ -52,7 +66,12 @@ async def _dispatch_agent(
 
     try:
         module = await _get_agent(agent_name)
-        result = await module.run(state)
+        # ORCH-3: Enforce per-agent timeout to prevent a single slow agent
+        # from blocking the entire parallel group.
+        result = await asyncio.wait_for(
+            module.run(state),
+            timeout=_AGENT_TIMEOUT_SECONDS,
+        )
 
         latency_ms = int((time.time() - start) * 1000)
         confidence = result.get("confidence", 0.0)
@@ -70,6 +89,17 @@ async def _dispatch_agent(
             "success": True,
             "latency_ms": latency_ms,
             **result,
+        }
+
+    except asyncio.TimeoutError:
+        latency_ms = int((time.time() - start) * 1000)
+        plog.error(f"agent_{agent_name}", error=f"Timed out after {_AGENT_TIMEOUT_SECONDS}s")
+        return {
+            "agent": agent_name,
+            "success": False,
+            "error": f"Agent timed out after {_AGENT_TIMEOUT_SECONDS}s",
+            "confidence": 0.0,
+            "latency_ms": latency_ms,
         }
 
     except Exception as e:

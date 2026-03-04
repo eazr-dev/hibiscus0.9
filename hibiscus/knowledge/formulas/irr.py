@@ -5,6 +5,10 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Optional
 
+from hibiscus.observability.logger import get_logger
+
+logger = get_logger(__name__)
+
 
 def compute_irr(cash_flows: list[float], initial_guess: float = 0.1, max_iter: int = 1000) -> Optional[float]:
     """
@@ -21,7 +25,7 @@ def compute_irr(cash_flows: list[float], initial_guess: float = 0.1, max_iter: i
     """
     rate = initial_guess
 
-    for _ in range(max_iter):
+    for iteration in range(max_iter):
         npv = sum(cf / (1 + rate) ** t for t, cf in enumerate(cash_flows))
         npv_derivative = sum(
             -t * cf / (1 + rate) ** (t + 1)
@@ -30,6 +34,14 @@ def compute_irr(cash_flows: list[float], initial_guess: float = 0.1, max_iter: i
         )
 
         if abs(npv_derivative) < 1e-10:
+            logger.warning(
+                "irr_convergence_failed",
+                reason="zero_derivative",
+                iteration=iteration,
+                last_rate=round(rate, 6),
+                last_npv=round(npv, 4),
+                num_cash_flows=len(cash_flows),
+            )
             return None
 
         new_rate = rate - npv / npv_derivative
@@ -39,6 +51,15 @@ def compute_irr(cash_flows: list[float], initial_guess: float = 0.1, max_iter: i
 
         rate = new_rate
 
+    logger.warning(
+        "irr_convergence_failed",
+        reason="max_iterations_exceeded",
+        max_iter=max_iter,
+        last_rate=round(rate, 6),
+        last_npv=round(npv, 4),
+        num_cash_flows=len(cash_flows),
+        initial_guess=initial_guess,
+    )
     return None
 
 
