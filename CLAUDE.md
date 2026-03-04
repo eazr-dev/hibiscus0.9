@@ -53,7 +53,7 @@ hibiscus/                          # Root repository (standalone — no botproje
 - **Native Extraction (ABSORB)** — PDF → text → classify → extract → validate → score → gap analysis. Zero external dependencies.
 - **6-Layer Memory** — Session (Redis), Conversation History (Qdrant), User Profile (PostgreSQL), Knowledge Memory (Qdrant), Outcome Memory (PostgreSQL), Document Memory (MongoDB)
 - **Knowledge Graph** — Neo4j: 62 insurers, 1,207 products (1,041 with UINs), 100 regulations, 760 benchmarks, 32 tax rules, 17 ombudsman offices, 60 CSR time-series
-- **RAG Pipeline** — Qdrant: 847 chunks, IRDAI circulars, policy wordings, glossary, tax rules, claims processes, case law
+- **RAG Pipeline** — Qdrant: 750+ corpus entries (50 IRDAI circulars, 500 glossary terms, 100 claims processes, 100 case law), policy wordings, tax rules
 - **Guardrails** — Hallucination, Compliance (IRDAI), Financial, Emotional, PII
 
 ### Quality Standards
@@ -83,7 +83,7 @@ Hibiscus v0.9 — standalone product. Phases 1-3 complete, Phase 4 scaffolded.
 | Streaming TTFT | **2.0s** |
 | KG Products | **1,207** (1,041 with UINs) |
 | KG Insurers | **62** |
-| RAG Chunks | **847** |
+| RAG Corpus Entries | **750** (50 circulars, 500 glossary, 100 claims, 100 case law) |
 
 ### Knowledge Graph (Neo4j, live-verified)
 | Node Type | Count |
@@ -127,6 +127,19 @@ LANGSMITH_PROJECT=hibiscus
 # Web Search (Researcher agent)
 TAVILY_API_KEY=
 ```
+
+## KNOWLEDGE ENRICHMENT (2026-03-04)
+
+Sprint completed across 4 phases:
+
+| Phase | What | Details |
+|-------|------|---------|
+| 1. Agent Prompts | 17 files enriched | 5 extraction prompts + 12 agent system prompts with embedded domain expertise (IRDAI exclusions, depreciation, tax, NCB, CSR, ombudsman, benchmarks) |
+| 2. KG Data | 3 seed files updated | 10 insurer CSRs updated to FY 2024-25, premium examples added to top 7 products, benchmark dates updated, hospital cost benchmarks added |
+| 3. RAG Corpus | 4 JSON files expanded | Circulars 20→50, Glossary 202→500, Claims 31→100, Case law 40→100 |
+| 4. Formula Files | depreciation.py created | IDV computation, part-wise depreciation, claim breakdown, salvage value, NCB discount. All 10 formula modules complete |
+
+All approximate data marked with `# VERIFY` comments for production verification against IRDAI/insurer sources.
 
 ## COMMON COMMANDS
 
