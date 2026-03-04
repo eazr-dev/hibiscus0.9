@@ -5,7 +5,7 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List
 
 from hibiscus.observability.logger import get_logger
 
@@ -373,6 +373,236 @@ def parse_policy_documents(sql_text: str) -> List[Dict[str, Any]]:
     return documents
 
 
+# ── Premium Examples ──────────────────────────────────────────────────────────
+
+
+def parse_premium_examples(sql_text: str) -> List[Dict[str, Any]]:
+    """
+    Parse premium_examples from 05_supplementary.sql.
+    Handles two INSERT variants:
+      - Life (8-col VALUES): age, gender, sum_insured, annual_premium, policy_term, ppt, smoker, plan_option
+      - Health/motor (5-col VALUES): age, gender, sum_insured, annual_premium, plan_option
+    Returns list of premium example dicts with product linkage.
+    """
+    examples: List[Dict[str, Any]] = []
+
+    # Split on each INSERT INTO insurance.premium_examples block
+    blocks = re.split(
+        r"(?=INSERT INTO insurance\.premium_examples\s*\()",
+        sql_text,
+    )
+
+    for block in blocks:
+        if not block.strip().startswith("INSERT INTO insurance.premium_examples"):
+            continue
+
+        # Detect variant by checking AS pe(...) column list
+        alias_match = re.search(
+            r"\)\s*AS\s+pe\s*\(([^)]+)\)",
+            block,
+        )
+        if not alias_match:
+            continue
+        col_names = [c.strip() for c in alias_match.group(1).split(",")]
+        is_life = len(col_names) >= 8  # life has smoker + policy_term cols
+
+        # Extract source_url and data_confidence from SELECT clause
+        source_match = re.search(
+            r"'(https?://[^']+)'\s*,\s*'(\w+)'\s*\n\s*FROM\s+\(VALUES",
+            block,
+        )
+        source_url = source_match.group(1) if source_match else ""
+        data_confidence = source_match.group(2) if source_match else "verified"
+
+        # Extract product linkage from WHERE clause
+        where_match = re.search(
+            r"WHERE\s+p\.product_name\s*=\s*'([^']*(?:''[^']*)*)'"
+            r"\s+AND\s+p\.uin\s*=\s*'([^']*)'",
+            block,
+        )
+        if not where_match:
+            continue
+        product_name = _unescape_sql_string(where_match.group(1))
+        uin = where_match.group(2)
+
+        # Extract VALUES block
+        values_match = re.search(
+            r"FROM\s+\(VALUES\s*\n(.*?)\)\s*AS\s+pe",
+            block,
+            re.DOTALL,
+        )
+        if not values_match:
+            continue
+        values_block = values_match.group(1)
+
+        # Parse each VALUES row
+        if is_life:
+            # (age, gender, sum_insured, annual_premium, policy_term, ppt, smoker, plan_option)
+            row_pattern = re.compile(
+                r"\(\s*(\d+)\s*,"            # age
+                r"\s*'(\w+)'\s*,"            # gender
+                r"\s*(\d+)\s*,"              # sum_insured
+                r"\s*(\d+)\s*,"              # annual_premium
+                r"\s*(\d+)\s*,"              # policy_term
+                r"\s*(\d+)\s*,"              # ppt
+                r"\s*'([^']*)'\s*,"          # smoker
+                r"\s*'([^']*)'\s*\)"         # plan_option
+            )
+            for row in row_pattern.finditer(values_block):
+                examples.append({
+                    "product_name": product_name,
+                    "uin": uin,
+                    "age": int(row.group(1)),
+                    "gender": row.group(2),
+                    "sum_insured": int(row.group(3)),
+                    "annual_premium": int(row.group(4)),
+                    "policy_term": int(row.group(5)),
+                    "premium_payment_term": int(row.group(6)),
+                    "smoker_status": row.group(7),
+                    "plan_option": row.group(8),
+                    "source_url": source_url,
+                    "data_confidence": data_confidence,
+                })
+        else:
+            # (age, gender, sum_insured, annual_premium, plan_option)
+            row_pattern = re.compile(
+                r"\(\s*(\d+)\s*,"            # age
+                r"\s*'(\w+)'\s*,"            # gender
+                r"\s*(\d+)\s*,"              # sum_insured
+                r"\s*(\d+)\s*,"              # annual_premium
+                r"\s*'([^']*)'\s*\)"         # plan_option
+            )
+            for row in row_pattern.finditer(values_block):
+                examples.append({
+                    "product_name": product_name,
+                    "uin": uin,
+                    "age": int(row.group(1)),
+                    "gender": row.group(2),
+                    "sum_insured": int(row.group(3)),
+                    "annual_premium": int(row.group(4)),
+                    "policy_term": 1,
+                    "premium_payment_term": 1,
+                    "smoker_status": None,
+                    "plan_option": row.group(5),
+                    "source_url": source_url,
+                    "data_confidence": data_confidence,
+                })
+
+    logger.info("parse_premium_examples_complete", count=len(examples))
+    return examples
+
+
+# ── Source Citations ──────────────────────────────────────────────────────────
+
+
+def parse_source_citations(sql_text: str) -> List[Dict[str, Any]]:
+    """
+    Parse source_citations from 05_supplementary.sql.
+    Handles multiple INSERT variants — extracts entity_type, source_url,
+    source_name, source_type, access_date, data_confidence, and WHERE-clause
+    context (legal_name, company_type) for relationship mapping.
+    """
+    citations: List[Dict[str, Any]] = []
+
+    # Split on each INSERT INTO insurance.source_citations block
+    blocks = re.split(
+        r"(?=INSERT INTO insurance\.source_citations\s*\()",
+        sql_text,
+    )
+
+    for block in blocks:
+        if not block.strip().startswith("INSERT INTO insurance.source_citations"):
+            continue
+
+        # Extract entity_type from SELECT clause
+        entity_type_match = re.search(
+            r"SELECT\s+'(\w+)'::insurance\.entity_type_enum",
+            block,
+        )
+        if not entity_type_match:
+            continue
+        entity_type = entity_type_match.group(1)
+
+        # Extract source_url
+        url_match = re.search(
+            r"'(https?://[^']+)'\s*,\s*\n",
+            block,
+        )
+        if not url_match:
+            # Try alternate pattern without newline
+            url_match = re.search(r"'(https?://[^']+)'", block)
+        source_url = url_match.group(1) if url_match else ""
+
+        # Extract source_name (quoted string after source_url line)
+        name_match = re.search(
+            r"'(https?://[^']+)'\s*,\s*\n\s*'([^']*(?:''[^']*)*)'",
+            block,
+        )
+        source_name = _unescape_sql_string(name_match.group(2)) if name_match else ""
+
+        # Extract source_type
+        type_match = re.search(
+            r"'(regulatory|company_official|industry_report|government|aggregator)'\s*,",
+            block,
+        )
+        source_type = type_match.group(1) if type_match else "regulatory"
+
+        # Extract access_date
+        date_match = re.search(
+            r"'(\d{4}-\d{2}-\d{2})'\s*,\s*'(?:verified|high|medium)",
+            block,
+        )
+        access_date = date_match.group(1) if date_match else None
+
+        # Extract publication_date if present
+        pub_match = re.search(
+            r"publication_date.*?'(\d{4}-\d{2}-\d{2})'",
+            block,
+            re.DOTALL,
+        )
+        publication_date = pub_match.group(1) if pub_match else None
+
+        # Extract data_confidence
+        conf_match = re.search(
+            r"'(verified|high|medium|low)'::insurance\.confidence_enum",
+            block,
+        )
+        data_confidence = conf_match.group(1) if conf_match else "verified"
+
+        # Extract WHERE context for relationship mapping
+        legal_name = None
+        company_type = None
+
+        legal_match = re.search(
+            r"c\.legal_name\s*=\s*'([^']*(?:''[^']*)*)'",
+            block,
+        )
+        if legal_match:
+            legal_name = _unescape_sql_string(legal_match.group(1))
+
+        type_ctx_match = re.search(
+            r"c\.company_type\s*=\s*'(\w+)'",
+            block,
+        )
+        if type_ctx_match:
+            company_type = type_ctx_match.group(1)
+
+        citations.append({
+            "entity_type": entity_type,
+            "source_url": source_url,
+            "source_name": source_name,
+            "source_type": source_type,
+            "access_date": access_date,
+            "publication_date": publication_date,
+            "data_confidence": data_confidence,
+            "legal_name": legal_name,
+            "company_type": company_type,
+        })
+
+    logger.info("parse_source_citations_complete", count=len(citations))
+    return citations
+
+
 # ── Master Parse Function ─────────────────────────────────────────────────────
 
 
@@ -399,6 +629,8 @@ def parse_all_seed_files(
         "products": [],
         "csr_entries": [],
         "policy_documents": [],
+        "premium_examples": [],
+        "source_citations": [],
     }
 
     # 01_foundation.sql
@@ -409,19 +641,22 @@ def parse_all_seed_files(
         result["sub_categories"] = parse_sub_categories(text)
         result["companies"] = parse_companies(text)
 
-    # Product files (02, 03, 04)
+    # Product files (02, 03, 04) — also contain policy documents
     for fname in ["02_life_insurance.sql", "03_health_insurance.sql", "04_general_insurance.sql"]:
         fpath = seed_dir / fname
         if fpath.exists():
             text = fpath.read_text(encoding="utf-8")
             result["products"].extend(parse_products(text))
+            result["policy_documents"].extend(parse_policy_documents(text))
 
     # 05_supplementary.sql
     supp_path = seed_dir / "05_supplementary.sql"
     if supp_path.exists():
         text = supp_path.read_text(encoding="utf-8")
         result["csr_entries"] = parse_csr_entries(text)
-        result["policy_documents"] = parse_policy_documents(text)
+        result["policy_documents"].extend(parse_policy_documents(text))
+        result["premium_examples"] = parse_premium_examples(text)
+        result["source_citations"] = parse_source_citations(text)
 
     logger.info(
         "parse_all_complete",
@@ -431,5 +666,7 @@ def parse_all_seed_files(
         products=len(result["products"]),
         csr_entries=len(result["csr_entries"]),
         policy_documents=len(result["policy_documents"]),
+        premium_examples=len(result["premium_examples"]),
+        source_citations=len(result["source_citations"]),
     )
     return result

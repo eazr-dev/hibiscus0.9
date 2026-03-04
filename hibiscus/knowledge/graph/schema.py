@@ -34,6 +34,15 @@ _CONSTRAINTS: List[str] = [
 
     "CREATE CONSTRAINT csr_entry_unique IF NOT EXISTS "
     "FOR (n:CSREntry) REQUIRE (n.insurer_name, n.financial_year, n.csr_type) IS UNIQUE",
+
+    "CREATE CONSTRAINT policy_document_unique IF NOT EXISTS "
+    "FOR (n:PolicyDocument) REQUIRE (n.uin, n.title) IS UNIQUE",
+
+    "CREATE CONSTRAINT premium_example_unique IF NOT EXISTS "
+    "FOR (n:PremiumExample) REQUIRE (n.product_name, n.age, n.gender, n.sum_insured, n.plan_option) IS UNIQUE",
+
+    "CREATE CONSTRAINT source_unique IF NOT EXISTS "
+    "FOR (n:Source) REQUIRE (n.source_url, n.source_name) IS UNIQUE",
 ]
 
 _INDEXES: List[str] = [
@@ -104,6 +113,27 @@ _INDEXES: List[str] = [
     # ── OmbudsmanOffice ──────────────────────────────────────────────────
     "CREATE INDEX ombudsman_jurisdiction IF NOT EXISTS "
     "FOR (n:OmbudsmanOffice) ON (n.jurisdiction)",
+
+    # ── PolicyDocument ────────────────────────────────────────────────────
+    "CREATE INDEX policydoc_uin IF NOT EXISTS "
+    "FOR (n:PolicyDocument) ON (n.uin)",
+
+    "CREATE INDEX policydoc_doc_type IF NOT EXISTS "
+    "FOR (n:PolicyDocument) ON (n.doc_type)",
+
+    # ── PremiumExample ────────────────────────────────────────────────────
+    "CREATE INDEX premium_product_name IF NOT EXISTS "
+    "FOR (n:PremiumExample) ON (n.product_name)",
+
+    "CREATE INDEX premium_age IF NOT EXISTS "
+    "FOR (n:PremiumExample) ON (n.age)",
+
+    # ── Source ────────────────────────────────────────────────────────────
+    "CREATE INDEX source_type IF NOT EXISTS "
+    "FOR (n:Source) ON (n.source_type)",
+
+    "CREATE INDEX source_entity_type IF NOT EXISTS "
+    "FOR (n:Source) ON (n.entity_type)",
 ]
 
 # Full-text search indexes (Neo4j 4.x+)
@@ -218,6 +248,12 @@ async def drop_schema(client: Neo4jClient) -> None:
         "DROP INDEX product_source IF EXISTS",
         "DROP INDEX csr_insurer IF EXISTS",
         "DROP INDEX csr_financial_year IF EXISTS",
+        "DROP INDEX policydoc_uin IF EXISTS",
+        "DROP INDEX policydoc_doc_type IF EXISTS",
+        "DROP INDEX premium_product_name IF EXISTS",
+        "DROP INDEX premium_age IF EXISTS",
+        "DROP INDEX source_type IF EXISTS",
+        "DROP INDEX source_entity_type IF EXISTS",
         # Drop constraints
         "DROP CONSTRAINT insurer_name_unique IF EXISTS",
         "DROP CONSTRAINT product_name_unique IF EXISTS",
@@ -226,6 +262,9 @@ async def drop_schema(client: Neo4jClient) -> None:
         "DROP CONSTRAINT ombudsman_city_unique IF EXISTS",
         "DROP CONSTRAINT tax_rule_section_unique IF EXISTS",
         "DROP CONSTRAINT csr_entry_unique IF EXISTS",
+        "DROP CONSTRAINT policy_document_unique IF EXISTS",
+        "DROP CONSTRAINT premium_example_unique IF EXISTS",
+        "DROP CONSTRAINT source_unique IF EXISTS",
         # Delete all nodes and relationships
         "MATCH (n) DETACH DELETE n",
     ]
