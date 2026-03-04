@@ -1,16 +1,6 @@
 """
-Hibiscus Model Selector
-=======================
-Determines which LLM tier to use for each task type.
-
-Task → Tier mapping:
-  Tier 1 (DeepSeek V3.2): intent classification, L1/L2 responses,
-                           policy analysis (tool-grounded), education,
-                           claims guidance, regulation lookup, education
-  Tier 2 (DeepSeek R1):   surrender calculations, portfolio optimization,
-                           tax computation, complex multi-step math
-  Tier 3 (Claude Sonnet): low confidence escalation, distressed users,
-                           API fallback
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+LLM model selector — picks DeepSeek V3/R1/Claude based on task complexity and cost budget.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from enum import Enum

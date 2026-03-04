@@ -1,7 +1,6 @@
 """
-IRR Calculator Tool
-====================
-Agent-callable tool wrapping knowledge/formulas/irr.py.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+IRR calculator tool — computes internal rate of return for ULIP/endowment evaluation.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

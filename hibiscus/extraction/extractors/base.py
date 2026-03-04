@@ -1,6 +1,6 @@
 """
-Base Extractor — shared LLM extraction logic for all policy types.
-Category-specific extractors inherit and customize.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Base extractor — abstract class for type-specific policy data extraction via LLM.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

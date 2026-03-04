@@ -1,20 +1,6 @@
 """
-CalculatorAgent — Agent 5
-==========================
-Financial calculations for insurance planning.
-
-Covers:
-- Life insurance need calculation (income replacement method)
-- Health insurance adequacy check (city-based)
-- Premium affordability (5-10% of income guideline)
-- EMI calculation for Insurance Premium Financing (IPF)
-- Policy IRR for existing policies
-- Sum insured vs inflation adequacy
-
-GROUND TRUTH RULE:
-All numbers come from deterministic formulas — NEVER from LLM guessing.
-DeepSeek R1 (Tier 2) is used because this involves multi-step calculations
-where chain-of-thought reasoning improves accuracy.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Calculator agent — EMI, IRR, inflation-adjusted returns, opportunity cost analysis.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

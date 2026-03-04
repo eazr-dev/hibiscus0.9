@@ -1,11 +1,6 @@
 """
-EMI Formulas — Insurance Premium Financing
-==========================================
-Calculate EMIs for Insurance Premium Financing (IPF) and
-Surrender Value Financing (SVF) loans.
-
-Deterministic reducing-balance calculations only.
-NEVER let LLM generate loan repayment numbers.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+EMI formula — equated monthly installment calculator for premium financing.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field

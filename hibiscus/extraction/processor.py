@@ -1,12 +1,6 @@
 """
-Document Processor — PDF intake, text extraction, page markers.
-
-Pipeline:
-1. PDF → text via pdfplumber (digital PDFs)
-2. Fallback: PyPDF2 for encrypted/damaged PDFs
-3. Fallback: OCR via pytesseract for scanned documents
-4. Page boundary markers preserved: [PAGE 1], [PAGE 2], etc.
-5. Text cleaning: remove headers/footers, fix encoding
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Extraction processor — orchestrates PDF→text→classify→extract→validate→score pipeline.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

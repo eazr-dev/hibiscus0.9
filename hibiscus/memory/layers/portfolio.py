@@ -1,16 +1,6 @@
 """
-Policy Portfolio Memory — Layer 3b (PostgreSQL)
-================================================
-Stores all known user policies across all product lines.
-Table: hibiscus_policy_portfolio
-Updated after every policy analysis so coverage picture is always current.
-
-Why a separate table from profiles?  A user can have many policies (1:N).
-The portfolio is the source of truth for:
-  - Coverage gap calculations
-  - Renewal reminders
-  - Total premium load
-  - IPF / SVF eligibility assessment
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Portfolio memory (L4) — PostgreSQL storage of user's active policies and coverage gaps.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

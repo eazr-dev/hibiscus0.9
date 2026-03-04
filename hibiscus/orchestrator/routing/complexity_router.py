@@ -1,11 +1,6 @@
 """
-Complexity Router
-==================
-Routes queries by complexity level:
-- L1/L2 (simple) → direct_llm fast path (skip agent pipeline)
-- L3/L4 (complex) → full agent pipeline (plan → dispatch → aggregate)
-
-Used by the conditional edge in graph.py after intent classification.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Complexity router — classifies queries into L1-L4 tiers for resource allocation.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from hibiscus.orchestrator.state import HibiscusState

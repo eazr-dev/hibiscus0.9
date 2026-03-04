@@ -1,14 +1,6 @@
 """
-KG Enrichment Validator
-=======================
-Validates enrichment data before writing to the Knowledge Graph.
-Prevents bad data from corrupting the KG.
-
-Checks:
-- Fuzzy match insurer names against known list
-- Validate product categories
-- Validate numeric ranges (premium, sum insured)
-- Flag anomalies for manual review
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG enrichment validator — verifies extracted facts before writing to knowledge graph.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

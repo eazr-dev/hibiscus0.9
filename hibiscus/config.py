@@ -1,13 +1,20 @@
 """
-Hibiscus Configuration
-======================
-All settings via Pydantic BaseSettings — validates env vars at startup.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Centralized configuration — every setting validated at startup via Pydantic BaseSettings.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from functools import lru_cache
 from typing import Optional
 from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# ── Engine Identity (single source of truth — no hardcoded strings) ──
+ENGINE_NAME = "Hibiscus"
+ENGINE_VERSION = "0.9.0"
+ENGINE_VENDOR = "EAZR Digipayments Pvt Ltd"
+ENGINE_URL = "https://eazr.in"
+ENGINE_LABEL_COMPACT = f"🌺 {ENGINE_NAME} v{ENGINE_VERSION} | EAZR AI Insurance Intelligence Engine"
+ENGINE_LABEL_INLINE = f"[{ENGINE_NAME} v{ENGINE_VERSION}]"
 
 
 class HibiscusSettings(BaseSettings):
@@ -19,8 +26,8 @@ class HibiscusSettings(BaseSettings):
     )
 
     # ── Service Identity ────────────────────────────────────────────
-    app_name: str = "hibiscus"
-    app_version: str = "0.9.0"
+    app_name: str = ENGINE_NAME.lower()
+    app_version: str = ENGINE_VERSION
     hibiscus_env: str = Field(default="development", alias="HIBISCUS_ENV")
     hibiscus_port: int = Field(default=8001, alias="HIBISCUS_PORT")
     hibiscus_log_level: str = Field(default="INFO", alias="HIBISCUS_LOG_LEVEL")

@@ -1,21 +1,6 @@
 """
-RegulationEngineAgent — Agent 7
-=================================
-IRDAI regulation lookup and consumer rights explainer.
-
-Answers questions about:
-- Free look period (15/30 days)
-- Policy portability rights
-- Waiting periods and exclusions
-- Grievance and Ombudsman process
-- IRDAI compliance requirements
-- Consumer protection regulations
-- Grace period, revival, lapse rules
-
-Sources hierarchy:
-1. Built-in regulation knowledge base (always available)
-2. RAG corpus search (if Qdrant available)
-3. LLM synthesis of the above (NEVER invents regulations)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Regulation engine agent — IRDAI circular lookup, compliance checking, regulatory guidance.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

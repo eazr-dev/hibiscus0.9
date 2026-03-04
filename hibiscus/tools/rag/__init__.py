@@ -1,19 +1,4 @@
-"""
-RAG search tools for Hibiscus agents.
-
-Primary knowledge retrieval interface — all agents that make factual claims
-about insurance must use these tools to ground their responses.
-
-Usage:
-    from hibiscus.tools.rag import (
-        search_knowledge,
-        search_glossary,
-        search_regulations,
-        search_claim_process,
-        search_benchmarks,
-    )
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 from .search import (
     # Primary search (alias with extended signature)
     search_knowledge,

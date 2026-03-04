@@ -1,20 +1,6 @@
 """
-Context Assembly Node
-=====================
-Pulls context from all available memory layers and assembles
-the optimal context window for each request.
-
-Priority order (blueprint spec):
-1. Session memory (always — current conversation)
-2. Document memory (always if doc uploaded)
-3. User profile (always if exists)
-4. Policy portfolio (always if exists)
-5. Knowledge memories (semantic search — relevant past insights)
-6. Conversation history (semantic search — relevant past conversations)
-7. Outcome memories (if relevant)
-
-All 6 layers are fetched in parallel with asyncio.gather() — ~5x faster
-than sequential I/O.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Context assembly node — gathers memory, KG context, and RAG chunks before LLM calls.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

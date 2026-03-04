@@ -1,23 +1,6 @@
 """
-Outcome Memory — Layer 5 (PostgreSQL)
-=======================================
-Tracks what happened after advice was given.
-Enables the self-improving data flywheel.
-
-Table: hibiscus_outcomes
-
-How the flywheel works:
-1. Hibiscus gives advice (recommendation, calculation, claim guidance, etc.)
-2. `record_outcome()` is called immediately — outcome is "pending"
-3. User later reports what happened (purchased, filed claim, etc.)
-4. `update_outcome()` records the real-world result + satisfaction score
-5. `get_outcome_stats()` feeds aggregate signal back to the evaluation loop
-   so agents can be ranked/tuned by their real-world effectiveness
-
-This enables Phase 3/4 features:
-  - "This recommendation has a 78% purchase rate for users like you"
-  - Auto-detection of hallucinated advice (recommended product that doesn't exist)
-  - Insurer ranking by actual claim settlement experience
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Outcome memory (L5) — PostgreSQL tracking of advice outcomes for self-improvement loop.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

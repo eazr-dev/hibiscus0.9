@@ -1,8 +1,6 @@
 """
-Agent Dispatch Node
-===================
-Dispatches tasks to specialist agents according to the execution plan.
-Runs agents in parallel within each parallel_group, sequential across groups.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Agent dispatch node — fans out to specialist agents and collects structured outputs.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

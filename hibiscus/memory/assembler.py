@@ -1,19 +1,6 @@
 """
-Context Assembler
-=================
-Builds the optimal context window for each query by pulling from all 6 memory layers.
-
-ASSEMBLY PRIORITY ORDER (blueprint spec):
-1. Session memory (always — current conversation)
-2. Document memory (always if doc uploaded)
-3. User profile (always if exists)
-4. Policy portfolio (always if exists)
-5. Knowledge memories (semantic search — relevant past insights)
-6. Conversation history (semantic search — past relevant convos)
-7. Outcome memories [Phase 2 — stats only, not full records]
-
-TOKEN BUDGET:
-128K context - 4K system prompt - 2K tools - 4K response reserve = ~118K available
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Memory assembler — merges 6 memory layers into unified context for each conversation turn.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

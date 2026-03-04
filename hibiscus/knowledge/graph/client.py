@@ -1,14 +1,6 @@
 """
-Neo4j Knowledge Graph Client
-=============================
-Async connection, query execution, connection pooling, LRU caching.
-
-Usage:
-    from hibiscus.knowledge.graph.client import kg_client, init_kg, close_kg
-
-    await init_kg()
-    results = await kg_client.query("MATCH (n:Insurer) RETURN n LIMIT 10")
-    await close_kg()
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Neo4j client — async graph queries with connection pooling and retry logic.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

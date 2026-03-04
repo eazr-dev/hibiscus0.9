@@ -1,10 +1,6 @@
 """
-User Portfolio Tool
-====================
-Fetch and update user insurance portfolio from PostgreSQL.
-Delegates to memory/layers/portfolio.py — uses graceful no-op pattern.
-
-Returns [] when PostgreSQL is unavailable (dev mode).
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Portfolio tool — retrieves and analyzes user's active policy portfolio from PostgreSQL.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

@@ -1,10 +1,6 @@
 """
-Inflation Formulas
-==================
-Adjust monetary amounts for inflation over time.
-Used for projecting future coverage needs and real cost of insurance.
-
-NEVER invent inflation rates — always use stated assumptions.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Inflation adjustment formula — real vs nominal return calculations for Indian CPI.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass

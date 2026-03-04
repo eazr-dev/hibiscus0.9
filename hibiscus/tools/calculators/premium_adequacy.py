@@ -1,7 +1,6 @@
 """
-Premium Adequacy Tool
-=====================
-Agent-callable tool wrapping knowledge/formulas/premium_adequacy.py.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Premium adequacy tool — validates coverage against income multiples and life stage.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional

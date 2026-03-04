@@ -1,18 +1,6 @@
 """
-PII Guard — Personally Identifiable Information Protection
-==========================================================
-Two functions:
-1. mask_pii_for_logging(text) — mask PII before writing to logs
-2. check_pii(response, user_id) — ensure PII isn't leaked in response text
-
-Patterns masked:
-- Aadhaar number
-- PAN card number
-- Indian mobile number
-- Policy number (heuristic)
-- Email address
-- Date of birth
-- Bank account number (heuristic)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+PII guardrail — detects and redacts Aadhaar, PAN, phone numbers, email addresses.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

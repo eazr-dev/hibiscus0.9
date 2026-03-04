@@ -1,14 +1,6 @@
 """
-5-Check Validation Engine.
-
-Absorbs botproject's four_check_validator.py and adds KG cross-reference.
-
-Checks:
-1. Evidence Grounding — critical/important fields must have source_page
-2. Cross-Field Logic — values make logical sense (dates, premium/SI ratio, PAN)
-3. Format Validation — dates, currency, percentages in correct format
-4. Range Validation — values within reasonable ranges per category
-5. Confidence Scoring — weighted average using criticality map
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Extraction validation — cross-checks extracted data against document text for accuracy.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

@@ -1,20 +1,6 @@
 """
-Fraud & Anomaly Detection Service
-===================================
-Detects suspicious documents and behavioral patterns.
-
-Document-level signals:
-- Inconsistent data (policy dates, numbers, insurer patterns)
-- Suspicious premium/SI ratio (too cheap or too expensive)
-- Missing expected insurance fields (non-insurance document)
-- Duplicate policy numbers across uploads
-
-Behavioral signals:
-- Rapid uploads (>5 in one session)
-- Testing patterns (sequential probing queries)
-
-Alerts are logged and available for admin review — NEVER surfaced to users.
-The risk_detector agent merges fraud alerts into its risk_flags.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Fraud alert service — detects suspicious patterns in policy documents and claims.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field

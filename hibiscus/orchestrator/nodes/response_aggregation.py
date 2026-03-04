@@ -1,8 +1,6 @@
 """
-Response Aggregation Node
-=========================
-Combines outputs from multiple agents into a single coherent response.
-Uses DeepSeek V3.2 to synthesize agent outputs.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Response aggregation node — merges multi-agent outputs into a single coherent response.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

@@ -1,15 +1,6 @@
 """
-Tool: Product Lookup — Neo4j Knowledge Graph
-=============================================
-Look up and search insurance product data from the KG.
-Used by: PolicyAnalyzer, Recommender, RiskDetector, PortfolioOptimizer agents.
-
-Functions
----------
-lookup_product(name, insurer_name)        — find product by name (fuzzy)
-search_products(category, filters)        — search by category with filters
-compare_products(product_ids)             — side-by-side comparison
-get_product_by_insurer(insurer_name, cat) — list products from one insurer
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Product lookup tool — searches 1,207 insurance products by name, UIN, or category.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

@@ -1,21 +1,6 @@
 """
-Emotional Router
-=================
-Detects user emotional state and adjusts routing accordingly.
-
-Emotional states:
-- neutral: Standard processing
-- curious: Educational tone
-- concerned: Reassuring tone
-- distressed: Empathy-first, escalate to Claude, simplified response
-- urgent: Fast-track, action-oriented
-- frustrated: Acknowledge, direct, actionable
-
-Distressed/urgent users get:
-1. Tier 3 model (Claude) for more nuanced empathy
-2. Empathy-first response structure
-3. Simplified, action-oriented guidance
-4. Offer to connect with human support
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Emotional router — detects user sentiment to adjust response tone and agent selection.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Dict, Any, Optional

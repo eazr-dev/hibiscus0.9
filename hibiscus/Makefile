@@ -1,6 +1,5 @@
-# =============================================================
-# Hibiscus v0.9 — Developer Makefile
-# =============================================================
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+# Developer Makefile — dev, test, seed, eval, monitoring
 # Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 
 .PHONY: dev dev-hibiscus down test test-unit test-integration eval \

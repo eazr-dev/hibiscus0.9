@@ -1,12 +1,6 @@
 """
-Surrender Value Formulas
-=========================
-Guaranteed Surrender Value (GSV) and Special Surrender Value (SSV) calculations.
-
-These are the core financial formulas used by the SurrenderCalculatorAgent.
-
-NEVER pass these results to LLM and ask it to make up numbers.
-Every output is based on deterministic formulas with stated assumptions.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Surrender value formula — guaranteed and special surrender value calculations.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass

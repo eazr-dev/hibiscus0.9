@@ -1,10 +1,6 @@
 """
-Execution Planning Node
-=======================
-Takes the classified intent + agents_needed and creates a concrete execution plan:
-  [{agent, task, priority, parallel_group}]
-
-Agents in the same parallel_group can run concurrently.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Execution planning node — determines which agents and tools are needed for the query.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

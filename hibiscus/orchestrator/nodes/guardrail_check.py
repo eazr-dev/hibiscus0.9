@@ -1,8 +1,6 @@
 """
-Guardrail Check Node
-====================
-Runs all active guardrails on the assembled response before sending.
-Guardrails: hallucination, compliance, financial, PII.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Guardrail check node — runs all 5 guardrails on the response before returning to user.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

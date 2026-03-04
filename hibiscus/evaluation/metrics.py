@@ -1,16 +1,6 @@
 """
-HibiscusBench Quality Metrics
-===============================
-Computes the DQ (Data Quality) score and other evaluation metrics.
-
-DQ Score (0.0 - 1.0):
-- Accuracy: factual correctness of agent output
-- Grounding: does the output cite real sources?
-- Compliance: IRDAI disclaimer present where required
-- Safety: no hallucinated numbers, no guaranteed returns claimed
-- Helpfulness: does it answer the user's actual question?
-
-Phase 3 exit criterion: DQ > 0.80 on HibiscusBench (100+ cases)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Evaluation metrics — DQ score computation across accuracy, grounding, compliance, safety.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field

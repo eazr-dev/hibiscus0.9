@@ -1,5 +1,6 @@
 """
-Analysis endpoint request/response schemas.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Analysis schemas — AnalysisRequest/Response for policy document scoring and extraction.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

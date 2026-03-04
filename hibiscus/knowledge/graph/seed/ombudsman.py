@@ -1,18 +1,6 @@
 """
-Insurance Ombudsman Office Seed Data
-======================================
-All 17 IRDAI Insurance Ombudsman offices across India.
-
-Sources: IRDAI official website — https://www.irdai.gov.in/insurance-ombudsman
-Insurance Ombudsman Rules 2017 (amended 2021).
-
-Key rules:
-- Disputes up to ₹50 lakh
-- Complaint within 1 year of insurer's final rejection
-- Free service for policyholders
-- Award within 3 months; binding on the insurer
-
-Run via: python -m hibiscus.knowledge.graph.seed
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: ombudsman — 17 IRDAI ombudsman offices with jurisdiction mapping.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List

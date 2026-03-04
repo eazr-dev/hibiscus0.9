@@ -1,8 +1,6 @@
-"""Shared async PostgreSQL connection pool for all memory layers.
-
-A single pool is shared by profile.py, portfolio.py, and outcome.py so that
-we don't open dozens of connections on every import.  Call `get_pool()` to
-borrow a connection from the pool.  Call `close_pool()` at app shutdown.
+"""
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Memory database — PostgreSQL async session factory for profile and outcome persistence.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncpg

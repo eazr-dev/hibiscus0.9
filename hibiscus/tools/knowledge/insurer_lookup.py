@@ -1,15 +1,6 @@
 """
-Tool: Insurer Lookup — Neo4j Knowledge Graph
-=============================================
-Look up insurer data from the KG.
-Used by: PolicyAnalyzer, Recommender, RiskDetector agents.
-
-Functions
----------
-lookup_insurer(name)                    — fuzzy match by name/alias
-get_insurer_benchmarks(insurer_id)      — CSR/ICR vs industry benchmarks
-list_insurers_by_category(category)     — all insurers in a category
-compare_insurers(names)                 — side-by-side comparison dict
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Insurer lookup tool — retrieves insurer details, ratings, and contact info from Neo4j.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

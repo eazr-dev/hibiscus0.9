@@ -1,10 +1,6 @@
 """
-CORS Middleware Configuration
-==============================
-Configures Cross-Origin Resource Sharing for the Hibiscus API.
-
-In development: allows all origins.
-In production: restricts to EAZR frontend domains only.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+CORS middleware — configures allowed origins for frontend integration.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from fastapi import FastAPI

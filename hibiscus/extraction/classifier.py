@@ -1,9 +1,6 @@
 """
-Policy Type Classifier — 3-tier cascading classification.
-
-Tier 1: UIN / product name regex (0.90-0.98 confidence)
-Tier 2: Multi-signal weighted keyword scoring (0.50-0.90)
-Tier 3: LLM chain-of-thought for ambiguous cases (< 0.50)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Policy classifier — determines insurance type (health/life/motor/travel/PA) from PDF text.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

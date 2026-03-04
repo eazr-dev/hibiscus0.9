@@ -1,12 +1,6 @@
 """
-Hibiscus Structured Logger
-==========================
-Every pipeline step logs here. Where logs stop = where the pipeline is broken.
-
-Every log entry includes:
-  request_id, session_id, user_id, timestamp, level, component,
-  agent_name (if applicable), model_used, tokens_in, tokens_out,
-  latency_ms, confidence, message
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Structured logging — every pipeline step logs here. Where logs stop = where the pipeline broke.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import logging
@@ -15,6 +9,15 @@ import time
 from typing import Any, Optional
 
 import structlog
+
+from hibiscus.config import ENGINE_NAME, ENGINE_VERSION
+
+
+def _add_engine_identity(logger, method_name, event_dict):
+    """Inject engine identity into every log entry."""
+    event_dict["engine"] = ENGINE_NAME.lower()
+    event_dict["version"] = ENGINE_VERSION
+    return event_dict
 
 
 def configure_logging(log_level: str = "INFO") -> None:
@@ -31,6 +34,7 @@ def configure_logging(log_level: str = "INFO") -> None:
     # Structlog processors
     processors = [
         structlog.contextvars.merge_contextvars,
+        _add_engine_identity,
         structlog.stdlib.add_log_level,
         structlog.processors.TimeStamper(fmt="iso"),
         structlog.processors.StackInfoRenderer(),

@@ -1,14 +1,6 @@
 """
-Hibiscus Health Endpoint
-========================
-GET /hibiscus/health — Comprehensive dependency health check
-
-Checks all dependencies:
-- LLM providers (DeepSeek, Claude)
-- Redis (session memory)
-- MongoDB (document memory)
-- Neo4j (Knowledge Graph)
-- Qdrant (RAG vectors)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Health endpoint — comprehensive dependency check for Redis, MongoDB, Neo4j, Qdrant, LLM providers.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
@@ -18,7 +10,7 @@ from typing import Any, Dict
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse, PlainTextResponse
 
-from hibiscus.config import settings
+from hibiscus.config import settings, ENGINE_NAME, ENGINE_VERSION, ENGINE_VENDOR, ENGINE_URL
 from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
@@ -157,9 +149,10 @@ async def health() -> JSONResponse:
     total_latency_ms = int((time.time() - start) * 1000)
 
     response = {
-        "engine": "Hibiscus",
-        "version": settings.app_version,
-        "vendor": "EAZR Digipayments Pvt Ltd",
+        "engine": ENGINE_NAME.lower(),
+        "version": ENGINE_VERSION,
+        "vendor": ENGINE_VENDOR,
+        "url": ENGINE_URL,
         "status": overall_status,
         "environment": settings.hibiscus_env,
         "latency_ms": total_latency_ms,

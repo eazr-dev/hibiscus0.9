@@ -1,22 +1,6 @@
 """
-Hibiscus WebSocket Endpoint
-============================
-WS /hibiscus/ws — Real-time streaming conversation endpoint.
-
-Alternative to the SSE-based streaming in chat.py.
-Provides full bidirectional communication for the Flutter/Next.js frontend.
-
-Protocol:
-  Client → Server (JSON):
-    {"type": "message", "session_id": "...", "user_id": "...", "message": "...", "uploaded_files": []}
-    {"type": "ping"}
-
-  Server → Client (JSON):
-    {"type": "token", "content": "..."}           # Streaming token
-    {"type": "metadata", "confidence": 0.85, ...} # Response metadata
-    {"type": "complete", "response": "..."}        # Full response
-    {"type": "error", "message": "..."}            # Error
-    {"type": "pong"}                               # Keepalive
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+WebSocket endpoint — real-time bidirectional chat with session persistence.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

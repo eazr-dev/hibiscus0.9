@@ -1,21 +1,6 @@
 """
-Botproject Seed → Hibiscus KG Ingestion
-=========================================
-Parses botproject/seed/*.sql files and merges the data into the
-Hibiscus Knowledge Graph (Neo4j).
-
-This adds:
-  - 8 new Insurer nodes (companies not already in KG)
-  - ~870 new Product nodes (with UINs, summaries, source URLs)
-  - Enriches ~193 existing Product nodes with UINs where matched
-  - 60+ CSREntry time-series nodes with HAS_CSR relationships
-  - Enriches existing Insurer nodes with website, CEO, IRDAI page
-
-All operations are idempotent (MERGE-based) — safe to re-run.
-
-Usage:
-    from hibiscus.knowledge.graph.seed.botproject_seed import seed_from_botproject
-    await seed_from_botproject(kg_client, seed_dir=Path("botproject/seed"))
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: botproject loader — imports parsed SQL data into Neo4j graph nodes.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from pathlib import Path

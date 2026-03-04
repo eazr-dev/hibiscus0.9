@@ -1,8 +1,6 @@
 """
-E2E tests: policy upload → analyze → follow-up multi-turn.
-
-Mocks botproject analysis call to return deterministic extraction data.
-Uses live Hibiscus container at port 8001.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+E2E tests: policy upload — PDF upload through extraction to scored analysis.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

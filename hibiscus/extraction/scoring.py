@@ -1,9 +1,6 @@
 """
-EAZR Protection Score Calculator — native scoring using KG benchmarks.
-
-Absorbs botproject's protection_score_calculator.py and universal_scores.py.
-
-Output: EAZR Score 0-100 with component breakdown per category.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Extraction scoring — computes coverage adequacy, value-for-money, and EAZR protection scores.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

@@ -1,14 +1,6 @@
 """
-Insurer Integration Registry
-=============================
-Maps insurer names to their integration classes.
-
-Usage:
-    from hibiscus.integrations.registry import get_integration
-
-    integration = get_integration("Star Health")
-    if integration:
-        quote = await integration.get_quote(age=30, sum_insured=1000000)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Insurer integration registry — discovers and routes to available insurer API clients.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Dict, Optional

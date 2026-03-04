@@ -1,10 +1,6 @@
 """
-Rate Limit Middleware
-=====================
-Redis sliding window rate limiter — 60 requests/minute per user/IP.
-
-Only applied to chat and analyze endpoints.
-Graceful fallback: if Redis is unavailable, requests pass through (logged).
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Rate limit middleware — 60 req/min per IP with Redis-backed sliding window.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from starlette.middleware.base import BaseHTTPMiddleware

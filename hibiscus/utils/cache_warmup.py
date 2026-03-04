@@ -1,17 +1,6 @@
 """
-Response Cache Warmup
-=====================
-Pre-warms Redis response cache with answers to the top 100 common L1
-educational queries so repeat questions are answered in <50ms from
-the first user who asks them.
-
-Called as a background task on startup (non-blocking).
-
-Warmup strategy:
-- Only warm queries classified as "educate" or "general_chat"
-- Skip if already cached (idempotent — safe to call every restart)
-- Process in batches to avoid hammering the LLM API at startup
-- Log progress so we can track warmup coverage over time
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Cache warmup — pre-populates Redis response cache with common insurance questions on startup.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

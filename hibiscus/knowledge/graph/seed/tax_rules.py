@@ -1,16 +1,6 @@
 """
-Tax Rules Seed Data
-====================
-Indian income tax rules applicable to insurance premiums and proceeds.
-Sources: Income Tax Act 1961 (as amended), Finance Act 2021, Finance Act 2023,
-Finance Act 2024.
-
-Contains 30+ entries covering: 80C, 80CCC, 80D, 80CCD, 80CCE, 80DDB, 80GG, 80U,
-10(10D), 10(23AAB), 37(1), 24(b), 80CCE, GST, 194DA, new tax regime, surrender/
-annuity taxation.
-
-All deduction limits in INR. Tax rules as of Financial Year 2024-25.
-Run via: python -m hibiscus.knowledge.graph.seed
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: tax rules — 32 Section 80C/80D/10(10D) rules with conditions and limits.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List

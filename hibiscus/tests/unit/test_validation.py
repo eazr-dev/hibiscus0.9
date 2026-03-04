@@ -1,5 +1,6 @@
 """
-Unit tests for ValidationEngine — 5-check validation.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Unit tests: extraction validation — cross-referencing extracted data with source text.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

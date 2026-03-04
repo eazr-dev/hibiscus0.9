@@ -1,5 +1,6 @@
 """
-Motor Insurance Extraction Schema — 97 fields.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Motor extraction schema — structured output for motor insurance policy data.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

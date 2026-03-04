@@ -1,27 +1,17 @@
 """
-HibiscusBench Evaluator
-========================
-Runs test cases against a live Hibiscus endpoint and scores responses.
-
-Usage:
-    # Evaluate all test cases
-    evaluator = HibiscusEvaluator(base_url="http://localhost:8001")
-    results = await evaluator.run_suite()
-
-    # Evaluate specific category
-    results = await evaluator.run_category("life")
-
-    # Evaluate single test case
-    result = await evaluator.run_test_case(test_case)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+HibiscusBench evaluator — runs 120 test cases against a live endpoint and scores responses.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
+import datetime
 import json
 import time
 from pathlib import Path
 from typing import Optional
 import httpx
 from .metrics import evaluate_response, aggregate_results, EvalResult
+from ..config import ENGINE_NAME, ENGINE_VERSION, ENGINE_LABEL_COMPACT
 from ..observability.logger import get_logger
 
 logger = get_logger("evaluation.evaluator")
@@ -185,13 +175,23 @@ class HibiscusEvaluator:
 
     def _save_report(self, results: list[EvalResult], summary: dict) -> None:
         """Save evaluation report to JSON file."""
-        import datetime
         REPORTS_DIR.mkdir(exist_ok=True)
 
         ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        run_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
         report_file = REPORTS_DIR / f"eval_{ts}.json"
 
+        # Print branded header
+        print(f"\n{'=' * 60}")
+        print(f"  {ENGINE_LABEL_COMPACT}")
+        print(f"  HibiscusBench Report — {run_date}")
+        print(f"  {summary['total']} test cases · DQ {summary['dq_score']:.3f}")
+        print(f"{'=' * 60}")
+
         report = {
+            "engine": ENGINE_NAME.lower(),
+            "engine_version": ENGINE_VERSION,
+            "run_date": run_date,
             "timestamp": ts,
             "summary": summary,
             "results": [

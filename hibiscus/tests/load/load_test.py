@@ -1,32 +1,6 @@
 """
-Hibiscus Load Test Scaffold
-============================
-Sends concurrent requests to the Hibiscus chat API and measures latency
-distribution across the four complexity tiers (L1–L4).
-
-The script drives load for a fixed duration and collects per-request wall-clock
-latency.  At the end it prints a table of P50/P95/P99 latency and error counts
-per tier — giving enough signal to verify Phase 3 latency targets:
-
-    L1/L2  →  P95 < 5s
-    L3/L4  →  P95 < 15s
-
-Usage:
-    python hibiscus/tests/load/load_test.py
-    python hibiscus/tests/load/load_test.py --host localhost --port 8001
-    python hibiscus/tests/load/load_test.py --n 50 --duration 30
-    python hibiscus/tests/load/load_test.py --host localhost --port 8001 --n 100 --duration 60
-
-Arguments:
-    --host        Hibiscus API host (default: localhost)
-    --port        Hibiscus API port (default: 8001)
-    --n           Number of concurrent workers per batch (default: 20)
-    --duration    How many seconds to run the test (default: 60)
-    --tier        Restrict to a single tier: L1 | L2 | L3 | L4 (default: all)
-    --timeout     Per-request timeout in seconds (default: 90)
-    --no-stream   Disable streaming and use standard JSON response (default: streaming on)
-
-No dependencies beyond httpx (already in pyproject.toml) and the Python stdlib.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Load tests — concurrent request throughput and latency under sustained load.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 

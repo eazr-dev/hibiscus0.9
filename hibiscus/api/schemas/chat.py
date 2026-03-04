@@ -1,9 +1,11 @@
 """
-Chat request/response schemas.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Chat request/response schemas — defines the contract between frontend and AI engine.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 from pydantic import BaseModel, Field
+from hibiscus.config import ENGINE_NAME, ENGINE_VERSION, ENGINE_VENDOR
 from hibiscus.api.schemas.common import Source, UploadedFile
 
 
@@ -56,8 +58,9 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     """Structured response from the Hibiscus AI engine."""
-    engine: str = Field(default="hibiscus", description="Engine identifier")
-    version: str = Field(default="0.9.0", description="Engine version")
+    engine: str = Field(default=ENGINE_NAME.lower(), description="Engine identifier")
+    version: str = Field(default=ENGINE_VERSION, description="Engine version")
+    vendor: str = Field(default=ENGINE_VENDOR, description="Engine vendor")
     response: str = Field(description="The AI-generated response text (markdown)")
     session_id: str = Field(description="Echo of the session ID")
     request_id: str = Field(description="Unique request ID for tracing")

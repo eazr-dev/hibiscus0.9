@@ -1,21 +1,4 @@
-"""
-Hibiscus Knowledge Graph
-=========================
-Neo4j-backed knowledge graph with insurers, products, regulations,
-benchmarks, tax rules, and ombudsman offices.
-
-Quick start:
-    from hibiscus.knowledge.graph import kg_client, init_kg, close_kg
-
-    await init_kg()
-    result = await kg_client.query(
-        "MATCH (i:Insurer {name: $name}) RETURN i",
-        params={"name": "HDFC Life Insurance"},
-        query_name="get_hdfc_life",
-    )
-    await close_kg()
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 from hibiscus.knowledge.graph.client import kg_client, init_kg, close_kg, Neo4jClient
 from hibiscus.knowledge.graph.schema import create_schema
 

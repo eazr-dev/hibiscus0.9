@@ -1,20 +1,6 @@
 """
-RiskDetectorAgent — Agent 8
-=============================
-Mis-selling, coverage gap, and policy risk detector.
-
-Analyzes an insurance policy (from document extraction or user description)
-to identify:
-  a) Coverage gaps (missing critical illness, personal accident, underinsured)
-  b) Mis-selling indicators (ULIP sold as FD, guaranteed returns claim, over-insurance)
-  c) Policy red flags (low SA vs premium, excessive charges, unfair exclusions)
-  d) Over-insurance (redundant policies wasting premium)
-
-CRITICAL RULES:
-- NEVER flag something as mis-selling unless specific quantitative evidence exists
-- ALWAYS back each flag with the specific metric that triggered it
-- NEVER suggest "keep this policy" if clear red flags exist
-- ALWAYS recommend independent financial advisor review for major decisions
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Risk detector agent — identifies coverage gaps, under-insurance, and hidden exclusions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

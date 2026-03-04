@@ -1,25 +1,6 @@
 """
-Auto-KG Enrichment Service
-===========================
-Every policy Hibiscus analyzes makes the Knowledge Graph smarter.
-
-Architecture:
-- Queue-and-flush: extraction data is queued on analysis, flushed to Neo4j every 5 min
-- Only high-confidence extractions (≥0.85) are accepted
-- Validated before write: fuzzy match insurer names, check numeric ranges
-- Enriched nodes tagged with source="enriched" for audit trail
-- Never overwrites verified seed data (supplements only)
-
-Usage:
-    from hibiscus.services.kg_enrichment import kg_enrichment
-
-    # In memory_storage node (fire-and-forget):
-    kg_enrichment.enqueue(extraction_data, confidence, user_id)
-
-    # In main.py lifespan:
-    await kg_enrichment.start_flush_loop()
-    # On shutdown:
-    await kg_enrichment.stop()
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG enrichment service — background loop that adds new facts to Neo4j from conversations.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

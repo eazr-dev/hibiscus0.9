@@ -1,12 +1,6 @@
 """
-Name Mapper — botproject legal_name → Hibiscus KG insurer_name
-===============================================================
-Maps the full legal names used in botproject SQL to the shorter
-names used in the Hibiscus Knowledge Graph.
-
-Strategy:
-1. Exact match from pre-built map (covers all 60 companies)
-2. Token-overlap fuzzy fallback for future additions
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: name mapper — normalizes insurer names between data sources.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

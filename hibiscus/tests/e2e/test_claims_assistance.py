@@ -1,7 +1,6 @@
 """
-E2E tests: claims assistance flow.
-
-Tests: cashless claim → reimbursement → distressed tone → disclaimer present.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+E2E tests: claims assistance — full conversation flow for claims guidance.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

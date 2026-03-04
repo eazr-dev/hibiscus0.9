@@ -1,6 +1,6 @@
 """
-Common extraction types shared across all policy categories.
-Mirrors botproject's ConfidenceField pattern with Pydantic v2.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Common extraction schemas — shared fields across all insurance type extractions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

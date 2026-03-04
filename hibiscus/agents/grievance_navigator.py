@@ -1,22 +1,6 @@
 """
-GrievanceNavigatorAgent — Agent 12
-=====================================
-IRDAI complaint and ombudsman navigator.
-
-Guides users through the complete grievance escalation ladder for insurance disputes.
-Provides state-specific ombudsman contact information, template guidance, and
-empathetic support for frustrated users.
-
-Escalation Levels:
-  Level 1: Internal grievance to insurer (15-day SLA)
-  Level 2: IRDAI Bima Bharosa portal (bimabharosaportal.irdai.gov.in)
-  Level 3: Insurance Ombudsman (FREE, within 3 months, up to ₹50L)
-  Level 4: Consumer Forum (NCDRC for >₹20L; SCDRC for ₹1L-₹20L; DCDRC for <₹1L)
-  Level 5: Civil court
-
-Intent triggers:
-  - "complaint", "not resolved", "ombudsman", "IRDAI complaint", "IGMS"
-  - "my claim was rejected unfairly", "insurer not responding", "cheated"
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Grievance navigator agent — IRDAI complaint process, ombudsman routing, escalation paths.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

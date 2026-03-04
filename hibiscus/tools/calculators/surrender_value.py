@@ -1,7 +1,6 @@
 """
-Surrender Value Calculator Tool
-================================
-Agent-callable tool wrapping knowledge/formulas/surrender_value.py.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Surrender value tool — calculates guaranteed and special surrender values.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

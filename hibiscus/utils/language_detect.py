@@ -1,17 +1,6 @@
 """
-Language Detection — Script-Based + Keyword Heuristic
-=====================================================
-Detects: English (en), Hindi (hi), Hinglish (hinglish), Tamil (ta), Telugu (te), Marathi (mr)
-
-Algorithm:
-1. Count characters per Unicode script
-2. >30% Devanagari + >30% Latin → Hinglish
-3. >50% Devanagari → check Marathi keywords → "mr" or "hi"
-4. >50% Tamil script → "ta"
-5. >50% Telugu script → "te"
-6. Default: English
-
-No LLM call. Pure computation. Microsecond latency.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Language detection — identifies Hindi, Hinglish, and regional language queries for routing.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

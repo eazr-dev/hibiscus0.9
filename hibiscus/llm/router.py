@@ -1,12 +1,6 @@
 """
-Hibiscus LLM Router
-===================
-LiteLLM-based tiered routing:
-  Tier 1: DeepSeek V3.2 — 80% of calls (primary)
-  Tier 2: DeepSeek R1   — 15% of calls (complex reasoning)
-  Tier 3: Claude Sonnet — 5% of calls  (safety net / fallback)
-
-Fallback chain: DeepSeek V3.2 → DeepSeek R1 → Claude Sonnet
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+LLM router — LiteLLM-based routing with automatic fallback chain and cost tracking.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

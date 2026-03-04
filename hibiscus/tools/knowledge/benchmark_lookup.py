@@ -1,16 +1,6 @@
 """
-Tool: Benchmark Lookup — Neo4j Knowledge Graph
-===============================================
-Retrieve and evaluate insurance benchmarks from the KG.
-Used by: PolicyAnalyzer, Recommender, RiskDetector, Calculator agents.
-
-Functions
----------
-get_benchmark(metric, category, age_group, year)    — fetch a specific benchmark
-evaluate_against_benchmark(metric, value, category) — classify value vs benchmark
-get_coverage_recommendation(category, age_group)    — recommended SI for a profile
-get_premium_benchmark(category, age_group)          — typical premium for a profile
-list_benchmarks_by_category(category)               — all benchmarks in a category
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Benchmark lookup tool — queries CSR claim settlement ratios from Neo4j.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

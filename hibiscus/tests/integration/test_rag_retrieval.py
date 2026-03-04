@@ -1,8 +1,6 @@
 """
-Integration tests: RAG retrieval correctness.
-
-Tests that Qdrant semantic search returns relevant chunks for known queries.
-Requires Qdrant with insurance_knowledge collection seeded.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Integration tests: RAG retrieval — Qdrant semantic search relevance.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

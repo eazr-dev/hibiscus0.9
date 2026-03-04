@@ -1,30 +1,6 @@
 """
-Knowledge Memory — Layer 4 (Qdrant)
-=====================================
-Stores key facts extracted from conversations about the user.
-
-Examples:
-  "User's primary concern is child's education planning"
-  "User was mis-sold a ULIP by SBI agent in 2019"
-  "User's company provides ₹5L group health cover"
-  "User prefers term insurance over investment-linked"
-
-Collection: user_knowledge
-Lifetime:   Indefinite — user preferences don't expire quickly.
-            However, `get_relevant_insights` weights recent entries higher
-            by boosting the score with a recency factor.
-
-Why Qdrant?  Insights are free-text facts.  A new question about "best
-coverage for children" should surface the stored insight "User concerned about
-child's education" even though the wording differs.  Semantic search enables
-this without manual keyword matching.
-
-Insight types:
-  preference  — things the user explicitly prefers ("I prefer online insurers")
-  concern     — worries or fears ("worried about cancer coverage")
-  fact        — objective facts ("company provides ₹5L group cover")
-  history     — past events ("filed a claim in 2021, rejected")
-  family      — family structure facts ("wife is diabetic, 2 kids")
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Knowledge memory (L4) — Qdrant vector store for user-specific insurance insights.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

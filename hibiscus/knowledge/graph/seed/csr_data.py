@@ -1,10 +1,6 @@
 """
-CSR Time-Series Seed Data
-==========================
-Seeds CSREntry nodes from botproject's claim_settlement_ratios table.
-Each entry is (insurer_name, financial_year, csr_type) → csr_value.
-
-This replaces the single `csr` float on Insurer with time-series data.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: CSR data — claim settlement ratio time-series for insurer benchmarking.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List

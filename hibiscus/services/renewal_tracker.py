@@ -1,17 +1,6 @@
 """
-Renewal/Lapse Tracker
-=====================
-Checks user's policy portfolio for upcoming renewals and potential lapses.
-Generates proactive alerts to inject into conversation context.
-
-Alert levels:
-- LAPSED: past due (red)
-- URGENT: 1-7 days (orange)
-- DUE_SOON: 8-30 days (yellow)
-
-Data sources:
-1. Policy portfolio (PostgreSQL via portfolio layer)
-2. Document memory extractions (MongoDB via document layer)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Renewal tracker — monitors policy expiry dates and triggers proactive renewal nudges.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

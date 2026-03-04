@@ -1,17 +1,6 @@
 """
-Qdrant RAG Client
-=================
-Async Qdrant connection with hybrid search (dense + sparse BM25 RRF fusion).
-
-Collections:
-  - insurance_knowledge   : IRDAI circulars, policy wordings, glossary, tax rules, claims processes
-  - user_conversations    : Per-user conversation history for retrieval
-  - user_knowledge        : Per-user extracted policy facts and insights
-
-Hybrid search strategy:
-  - Dense  : GLM embedding-2 (1024 dims) via Zhipu AI
-  - Sparse : BM25 via Qdrant's built-in sparse vectors
-  - Fusion : Reciprocal Rank Fusion (RRF) — balances semantic + keyword matching
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Qdrant RAG client — vector search with async connection pooling and collection management.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

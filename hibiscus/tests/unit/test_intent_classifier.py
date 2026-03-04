@@ -1,8 +1,6 @@
 """
-Unit Tests — Intent Classifier
-================================
-Tests keyword classification, complexity routing, and agent assignment.
-These tests use keyword rules only (no LLM call required).
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Unit tests: intent classifier — query routing accuracy across insurance intents.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

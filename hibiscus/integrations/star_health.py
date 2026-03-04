@@ -1,8 +1,6 @@
 """
-Star Health Mock Integration
-=============================
-Returns realistic data from KG seed data.
-Swap to live API when partnership is established.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Star Health integration — health quote API, network hospital lookup, claim tracking.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

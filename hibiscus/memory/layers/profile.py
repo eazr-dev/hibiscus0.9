@@ -1,18 +1,6 @@
 """
-User Profile Memory — Layer 3 (PostgreSQL)
-==========================================
-Structured user demographics and preferences.
-Table: hibiscus_user_profiles
-Encrypted at rest for PII fields (handled by the DB-level encryption and TLS
-in transit; the application layer does not store raw PII beyond what is shown
-in the schema below).
-
-Why PostgreSQL?  Profile data is structured, relational, and mutated
-incrementally (one field at a time).  It also needs to join with the portfolio
-table in Phase 2 analytics queries.
-
-Health conditions are stored as **categories** only ("diabetes", "hypertension")
-— never as free-text verbatim data from the user.  This limits PII exposure.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Profile memory (L3) — PostgreSQL storage of user demographics, preferences, risk tolerance.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

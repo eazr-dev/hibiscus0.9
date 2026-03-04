@@ -1,18 +1,6 @@
 """
-Conversation Memory — Layer 2 (Qdrant)
-=======================================
-Stores past conversation summaries indexed semantically.
-Enables: "As we discussed last time..." cross-session memory.
-
-Collection: user_conversations
-Lifetime:   90 days (TTL filter on retrieval)
-Key:        user_id + semantic query for retrieval
-
-Why Qdrant?  Every summary is embedded so the system can surface the most
-semantically *relevant* past session, not just the most *recent* one.  A user
-asking about maternity benefits today should get context from the session three
-months ago where they also asked about maternity — even if they had many other
-sessions in between.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Conversation memory (L2) — Qdrant vector store for semantic conversation history search.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

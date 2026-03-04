@@ -1,11 +1,6 @@
 """
-Hibiscus State Definition
-=========================
-HibiscusState is the shared state TypedDict passed through every node
-in the LangGraph orchestration graph.
-
-Every field here is accessible by every node.
-Fields are populated progressively as the graph executes.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Orchestrator state — TypedDict defining the shared state flowing through LangGraph nodes.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import operator

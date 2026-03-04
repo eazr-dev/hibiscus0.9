@@ -1,13 +1,6 @@
 """
-HibiscusBench — Main Entry Point
-==================================
-Run with: python -m hibiscus.evaluation.bench [options]
-
-Options:
-    --category health|life|motor|travel|adversarial|cross
-    --url http://localhost:8001
-    --dry-run  (load test cases, don't call API)
-    --ci       (exit 1 if DQ < 0.80)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+HibiscusBench CLI — run evaluation suite against a live Hibiscus endpoint.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import argparse

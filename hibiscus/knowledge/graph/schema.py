@@ -1,29 +1,6 @@
 """
-Neo4j Knowledge Graph Schema
-=============================
-Creates all constraints and indexes for the Hibiscus KG.
-
-Run once at startup (idempotent — uses CREATE CONSTRAINT IF NOT EXISTS).
-
-Node types
-----------
-(:Insurer)          — 60 Indian insurers
-(:Product)          — 1200+ insurance products (with UINs)
-(:Regulation)       — IRDAI circulars and rules
-(:Benchmark)        — Market benchmarks by category / age-group
-(:TaxRule)          — Sections 80C, 80D, 10(10D) etc.
-(:TPA)              — Third-Party Administrators
-(:OmbudsmanOffice)  — 17 IRDAI Ombudsman offices
-(:CSREntry)         — Claim Settlement Ratio time-series by FY
-
-Relationships
--------------
-(:Insurer)-[:OFFERS]->(:Product)
-(:Insurer)-[:HAS_CSR]->(:CSREntry)
-(:Product)-[:GOVERNED_BY]->(:Regulation)
-(:Product)-[:BENCHMARKED_AGAINST]->(:Benchmark)
-(:Insurer)-[:USES_TPA]->(:TPA)
-(:Product)-[:COVERS {condition}]->(:TaxRule)   # e.g. COVERS 80D
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG schema — node types (Insurer, Product, Regulation) and relationship definitions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import List

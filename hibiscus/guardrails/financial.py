@@ -1,11 +1,6 @@
 """
-Financial Guard — Number Validation
-=====================================
-Validates financial numbers in responses for sanity:
-- Range checking (no negative amounts, no impossible figures)
-- Unit checking (Indian rupee format: ₹, lakhs/crores)
-- Consistency (premium-to-coverage ratio check)
-- Flags suspicious extraction (e.g., ₹50 premium for ₹50L coverage)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Financial guardrail — validates numerical claims, prevents misleading projections.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

@@ -1,13 +1,6 @@
 """
-Market Benchmark Seed Data
-===========================
-Indian insurance market benchmarks — premiums, coverage recommendations,
-IRR comparisons, mis-selling detection thresholds.
-
-All premium figures are approximate annual premiums in INR for the stated coverage.
-Sources: IRDAI Annual Reports, public insurer data, industry averages.
-
-Run via: python -m hibiscus.knowledge.graph.seed
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: benchmarks — 760 CSR claim settlement ratio entries across insurers.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List

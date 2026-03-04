@@ -1,8 +1,6 @@
 """
-Integration tests: agent pipeline routing and response format.
-
-Tests: intent routing → agent selection → response format (not LLM quality).
-Uses a live Hibiscus container on port 8001.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Integration tests: agent pipeline — end-to-end multi-agent orchestration flow.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

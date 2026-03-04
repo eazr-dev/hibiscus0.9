@@ -1,8 +1,6 @@
 """
-Integration test for the native extraction pipeline.
-
-Tests the full flow: ProcessedDocument → classify → validate → score → gap analyze.
-Extraction step is mocked (requires LLM), but all other steps run for real.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Integration tests: extraction pipeline — PDF to structured data accuracy.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

@@ -1,11 +1,14 @@
-# Hibiscus v0.9 — EAZR AI Insurance Intelligence Engine
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 # Production container image
 # Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 
 FROM python:3.12-slim
 
 LABEL maintainer="EAZR AI Engineering"
-LABEL description="Hibiscus v0.9 — EAZR AI Intelligence Engine"
+LABEL com.hibiscus.engine="hibiscus"
+LABEL com.hibiscus.version="0.9.0"
+LABEL com.hibiscus.vendor="EAZR Digipayments Pvt Ltd"
+LABEL com.hibiscus.url="https://eazr.in"
 LABEL org.opencontainers.image.title="Hibiscus"
 LABEL org.opencontainers.image.description="EAZR AI Insurance Intelligence Engine"
 LABEL org.opencontainers.image.version="0.9.0"

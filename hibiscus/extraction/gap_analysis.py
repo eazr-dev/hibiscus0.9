@@ -1,8 +1,6 @@
 """
-Coverage Gap Detection Engine.
-
-Identifies gaps in insurance coverage with severity, financial impact,
-and actionable recommendations. Uses KG benchmarks for comparison.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Gap analysis — identifies missing coverage, exclusion risks, and improvement opportunities.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

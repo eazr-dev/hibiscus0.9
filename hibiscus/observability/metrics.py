@@ -1,29 +1,6 @@
 """
-Prometheus Metrics
-==================
-All Hibiscus operational metrics exposed at GET /hibiscus/metrics.
-
-Uses prometheus_client library. Metrics are process-global singletons
-registered against the default REGISTRY so they accumulate across requests
-within the same process lifetime.
-
-Instrumented:
-- conversations_total (Counter) — by complexity, category
-- llm_calls_total (Counter) — by model, agent
-- llm_cost_total_inr (Gauge) — rolling total LLM spend in INR
-- guardrail_failures_total (Counter) — by guardrail_type
-- errors_total (Counter) — by error_type
-- response_latency_seconds (Histogram) — by complexity tier
-- confidence_score (Histogram) — by agent_name
-- agent_latency_seconds (Histogram) — by agent_name
-- cache_hits_total (Counter) — response cache hits
-- cache_misses_total (Counter) — response cache misses
-
-All helper functions are safe to call from async context —
-prometheus_client metrics are backed by thread-safe atomic operations.
-
-If prometheus_client is not installed, all functions silently become no-ops
-so the application continues to run without instrumentation.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Prometheus metrics — request latency, agent invocations, cache hit rates, error counts.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 

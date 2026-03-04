@@ -1,13 +1,6 @@
 """
-Outcome Collector Service
-=========================
-Generates follow-up prompts for pending outcomes older than a threshold.
-Injected into conversation context so Hibiscus naturally asks about results.
-
-Pattern follows renewal_tracker.py:
-- Module-level singleton
-- Async methods with graceful degradation
-- Returns formatted string for context injection
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Outcome collector — gathers follow-up signals to measure recommendation effectiveness.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

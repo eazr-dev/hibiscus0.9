@@ -1,21 +1,6 @@
 """
-RecommenderAgent — Agent 3
-===========================
-Insurance product recommender.
-
-Suggests appropriate insurance products based on user profile, coverage gaps,
-existing policies, and financial situation.
-
-Depends on PolicyAnalyzerAgent output when a document is uploaded — the gaps
-identified by the analyzer feed directly into the recommendation logic.
-
-RULES:
-- NEVER state specific premium without a verified source
-- NEVER say "guaranteed returns"
-- NEVER recommend a specific policy as "the best"
-- ALWAYS add IRDAI disclaimer
-- ALWAYS explain WHY each product is recommended
-- ALWAYS mention that comparison is based on available data
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Recommender agent — personalized product recommendations from 1,207 KG products.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

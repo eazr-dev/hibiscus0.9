@@ -1,20 +1,6 @@
 """
-ClaimsGuideAgent — Agent 4
-===========================
-Step-by-step insurance claims guide.
-
-Guides users through the claims process for any insurance type and situation,
-including cashless hospitalization, reimbursement, death claims, maturity claims,
-and claim rejection escalation.
-
-IRDAI Mandated Timelines (non-negotiable — cite these):
-- Cashless pre-authorization: 30 minutes (emergency), 4 hours (planned)
-- Cashless claim settlement decision: within 3 hours of discharge
-- Reimbursement claim settlement: 30 days from last document submission
-- Death claim settlement: 30 days from document submission (no investigation)
-- Investigation cases: 90 days maximum
-- Insurer grievance response: 15 days
-- Ombudsman approach: within 3 months of insurer rejection
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Claims guide agent — step-by-step claims filing assistance with document checklists.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

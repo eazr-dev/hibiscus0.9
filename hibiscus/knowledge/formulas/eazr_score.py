@@ -1,19 +1,6 @@
 """
-EAZR Protection Score Formula
-==============================
-Proprietary 1-10 scoring for insurance policy quality.
-
-Dimensions (weights vary by category):
-  - coverage_comprehensiveness
-  - sublimit_freedom
-  - exclusion_fairness
-  - insurer_quality
-  - premium_value
-  - claim_process_quality
-
-Grade mapping: A+(9-10), A(8-8.9), B+(7-7.9), B(6-6.9), C(5-5.9), D(<5)
-
-All scoring is deterministic — LLM only explains, never computes.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+EAZR protection score — proprietary 0-100 composite score across 6 dimensions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field

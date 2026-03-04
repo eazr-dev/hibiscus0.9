@@ -1,12 +1,6 @@
 """
-User Portfolio API Endpoint
-============================
-GET  /hibiscus/portfolio        — fetch user's insurance portfolio
-POST /hibiscus/portfolio        — add a policy to the portfolio
-DELETE /hibiscus/portfolio/{id} — remove a policy from the portfolio
-
-Backed by tools/user/portfolio.py which wraps the PostgreSQL memory layer
-with graceful no-op fallback when PG is unavailable.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Portfolio endpoint — user portfolio breakdown, coverage analysis, optimization suggestions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import uuid

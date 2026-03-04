@@ -1,5 +1,6 @@
 """
-Life insurance extractor — 60 fields.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Life insurance extractor — sum assured, maturity benefit, riders, surrender value schedule.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from hibiscus.extraction.extractors.base import BaseExtractor

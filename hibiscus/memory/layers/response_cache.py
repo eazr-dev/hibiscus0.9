@@ -1,19 +1,6 @@
 """
-Response Cache — L1 Hot Cache (Redis)
-======================================
-Caches LLM responses for L1 educational/general queries where the answer
-is factual and independent of user-specific context.
-
-Only caches when:
-- Intent is "educate" or "general_chat"
-- No uploaded files
-- No document context loaded
-- Response confidence >= 0.70
-
-Cache key: hibiscus:resp_cache:{sha256(normalized_message)}
-TTL: 24h for educational facts (insurance definitions don't change daily)
-
-Impact: Repeat questions (e.g. "what is copay?") answered in <50ms vs ~15s.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Response cache (L1) — Redis-backed cache for instant replay of common insurance questions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import hashlib

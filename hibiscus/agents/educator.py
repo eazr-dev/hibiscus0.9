@@ -1,18 +1,6 @@
 """
-EducatorAgent — Agent 9
-========================
-Insurance concepts educator.
-
-Explains insurance terms, concepts, and product types in plain language
-with Indian context, practical examples using ₹ amounts, and relevant
-analogies. Targets users with zero prior insurance knowledge.
-
-Source hierarchy:
-1. Built-in glossary (deterministic, always available)
-2. LLM explanation with concrete Indian examples
-3. Practical implication for the user's policy
-
-L1/L2 query fast path — uses Tier 1 (DeepSeek V3.2) for speed.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Educator agent — plain-language insurance concepts tailored to user's knowledge level.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

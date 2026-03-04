@@ -1,5 +1,6 @@
 """
-Travel insurance extractor — 71 fields.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Travel insurance extractor — trip coverage, medical limits, baggage, cancellation terms.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from hibiscus.extraction.extractors.base import BaseExtractor

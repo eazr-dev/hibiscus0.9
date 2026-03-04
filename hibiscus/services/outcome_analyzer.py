@@ -1,13 +1,6 @@
 """
-Outcome Analyzer Service
-========================
-Analyzes outcome patterns to improve recommendations.
-Computes: conversion rates, satisfaction by agent, recommendation accuracy.
-
-Used by:
-- Recommender agent (injects stats into synthesis prompt)
-- Admin dashboard (aggregate effectiveness metrics)
-- HibiscusBench evaluation (cross-reference with DQ scores)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Outcome analyzer — tracks whether advice led to positive user actions for self-improvement.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional

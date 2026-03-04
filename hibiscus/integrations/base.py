@@ -1,12 +1,6 @@
 """
-Insurer Integration Base
-========================
-Abstract base class for all insurer API integrations.
-
-When real API access is granted, swap the mock implementation →
-live implementation. Agent code stays unchanged.
-
-All methods return Optional results — None means "data not available".
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Base insurer integration — abstract API client for real-time quotes and policy status.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

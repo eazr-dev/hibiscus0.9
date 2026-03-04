@@ -1,14 +1,6 @@
 """
-Quote Comparison Tool
-======================
-Compares insurance products side-by-side based on user requirements.
-
-Queries the Knowledge Graph (Neo4j) for matching products, filters by
-coverage requirements, ranks by EAZR Score, and returns a formatted
-comparison table.
-
-IMPORTANT: Premium figures are estimates from KG seed data.
-Always label as "estimated annual premium range" — never state as exact.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Quote comparison tool — fetches and compares real-time quotes from insurer APIs.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

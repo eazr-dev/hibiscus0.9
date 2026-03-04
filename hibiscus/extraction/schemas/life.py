@@ -1,5 +1,6 @@
 """
-Life Insurance Extraction Schema — 60 fields.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Life extraction schema — structured output for life insurance policy data.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations

@@ -1,15 +1,6 @@
 """
-Premium Adequacy Formulas
-==========================
-Determine whether life/health coverage is adequate for a user's profile.
-
-Methods:
-  - HLV (Human Life Value) — income replacement approach
-  - Income Multiple — quick rule-of-thumb
-  - Health cover needed — age/city/family-size heuristic
-
-All amounts in INR. Inflation/discount rates as decimals.
-NEVER pass results to LLM without confidence attribution.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Premium adequacy formula — validates if coverage matches income and lifestyle needs.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import math

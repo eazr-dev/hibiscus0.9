@@ -1,13 +1,6 @@
 """
-Memory Storage Node
-===================
-After generating a response, stores:
-1. The conversation turn in session memory (Redis)
-2. Key insights extracted from the conversation
-3. Document analysis results if a document was processed
-
-All storage is fire-and-forget via asyncio.create_task() — returns immediately
-so the response is not delayed by memory I/O.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Memory storage node — persists conversation, profile updates, and outcomes post-response.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

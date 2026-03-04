@@ -1,14 +1,6 @@
 """
-Intent Classification Node
-==========================
-Classifies user message into:
-- category (health/life/motor/travel/pa/cross/general)
-- intent (analyze/recommend/claim/calculate/surrender/...)
-- complexity (L1/L2/L3/L4)
-- emotional_state (neutral/curious/concerned/distressed/urgent/frustrated)
-- agents_needed
-
-Uses keyword rules for fast classification, DeepSeek V3.2 as fallback.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Intent classification node — fast keyword + LLM intent detection to route queries.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

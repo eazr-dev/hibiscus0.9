@@ -1,10 +1,6 @@
 """
-Compound Growth Formulas
-=========================
-Time-value-of-money calculations for insurance and investment analysis.
-
-Used by: PortfolioOptimizer, TaxAdvisor, OpportunityCostCalculator.
-All values in INR. All rates as decimals (0.12 = 12%).
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Compound growth formula — CAGR projections for investment-linked insurance returns.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import math

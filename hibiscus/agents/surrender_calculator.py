@@ -1,21 +1,6 @@
 """
-SurrenderCalculatorAgent — Agent 2
-===================================
-Surrender value and hold-vs-surrender analyzer.
-
-Calculates the Guaranteed Surrender Value (GSV) using IRDAI-mandated formulas,
-computes the policy IRR if held to maturity, and presents a data-grounded
-hold-vs-surrender recommendation including a comparison against FD returns.
-
-GROUND TRUTH RULE:
-Every number in the output comes from the deterministic formula files — NEVER
-from LLM imagination. The LLM is only used to synthesize and explain the
-numbers that have already been computed.
-
-Answers questions like:
-  - "Should I surrender my policy?"
-  - "What will I get if I surrender now?"
-  - "Is it better to keep my policy or take the money?"
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Surrender calculator agent — paid-up value, surrender penalties, opportunity cost of exit.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

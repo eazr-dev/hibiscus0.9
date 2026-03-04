@@ -1,12 +1,6 @@
 """
-Session Memory — Layer 1 (Redis)
-=================================
-Stores current conversation state: message history, active agent states, uploaded file refs.
-
-Key: session:{session_id}
-Lifetime: session duration (TTL from settings)
-
-This is the L1 memory — always retrieved for every request.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Session memory (L1) — Redis-backed ephemeral state for active conversation context.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

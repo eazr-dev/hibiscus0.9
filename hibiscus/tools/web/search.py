@@ -1,11 +1,6 @@
 """
-Web Search Tool — Tavily Integration
-=======================================
-Used by ResearcherAgent for current insurance news, IRDAI announcements,
-and real-time product comparisons.
-
-Falls back to empty results (gracefully) if Tavily is unavailable.
-All results are tagged with source URL and publication date.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Web search tool — Tavily-powered real-time insurance market and news search.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import os

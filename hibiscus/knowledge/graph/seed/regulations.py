@@ -1,12 +1,6 @@
 """
-IRDAI Regulations Seed Data
-============================
-100+ IRDAI circulars, regulations, and guidelines relevant to Indian insurance consumers.
-Includes 85+ IRDAI circular additions for Phase 3 covering health, life, motor, grievance,
-mis-selling, portability, travel, policyholder rights, and general IRDAI regulations.
-
-All circular numbers and dates are from IRDAI public records.
-Run via: python -m hibiscus.knowledge.graph.seed
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: regulations — 100+ IRDAI circulars, guidelines, and master regulations.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List

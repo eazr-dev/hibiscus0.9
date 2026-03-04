@@ -1,7 +1,4 @@
-"""
-HibiscusBench — Evaluation suite for Hibiscus AI engine.
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 from .evaluator import HibiscusEvaluator
 from .metrics import evaluate_response, aggregate_results, EvalResult
 

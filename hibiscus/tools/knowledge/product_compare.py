@@ -1,13 +1,6 @@
 """
-Tool: Product Compare — Markdown Comparison Tables
-===================================================
-Wraps compare_products() from product_lookup with rich markdown formatting.
-Used by Recommender and Researcher agents to render comparison tables.
-
-Functions
----------
-compare_products_table(product_names)   — side-by-side markdown table
-compare_products_summary(product_names) — structured comparison dict
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Product compare tool — side-by-side feature comparison of insurance products from KG.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List

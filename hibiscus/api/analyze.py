@@ -1,11 +1,6 @@
 """
-Direct Policy Analysis Endpoint
-================================
-POST /hibiscus/analyze
-
-Loads a stored document from MongoDB and runs the policy_analyzer agent
-directly, bypassing the chat pipeline. Used for document-first analysis
-flows triggered from botproject after PDF upload.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Analysis endpoint — PDF upload, extraction pipeline trigger, structured scoring response.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

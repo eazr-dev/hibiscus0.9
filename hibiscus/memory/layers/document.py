@@ -1,14 +1,6 @@
 """
-Document Memory — Layer 6 (MongoDB)
-=====================================
-Stores uploaded policy documents and their analysis results.
-This is why "what did I upload?" MUST work.
-
-Collections:
-  hibiscus_documents: Original file refs + extraction results
-  hibiscus_analyses: EAZR analysis results (score, gaps, recommendations)
-
-Lifetime: permanent (user's document vault)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Document memory (L6) — MongoDB storage for extracted policy data and analysis results.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

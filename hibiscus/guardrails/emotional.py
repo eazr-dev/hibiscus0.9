@@ -1,12 +1,6 @@
 """
-Emotional Guard — Distress Detection & Tone Adaptation
-=======================================================
-Detects user's emotional state and adapts response tone:
-- distressed/urgent → prepend empathy prefix + flag Claude escalation
-- frustrated → soften defensive language + prepend acknowledgment
-- neutral/curious/concerned → pass through unchanged
-
-This guard does NOT block responses. It modifies tone only.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Emotional guardrail — detects distress signals, adjusts tone, suggests professional help.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

@@ -1,14 +1,6 @@
 """
-Hibiscus Chat Endpoint
-======================
-POST /hibiscus/chat — Main conversation endpoint
-GET  /hibiscus/chat/history/{session_id} — Conversation history
-
-This is the primary interface between the frontend and the Hibiscus AI engine.
-
-Supports both:
-1. Standard JSON response (stream=false)
-2. Server-Sent Events streaming (stream=true)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Chat endpoint — primary interface between frontend and AI engine (JSON + SSE streaming).
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
@@ -21,6 +13,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 
 from hibiscus.api.schemas.chat import ChatRequest, ChatResponse, StreamChunk
 from hibiscus.api.schemas.common import Source
+from hibiscus.config import ENGINE_LABEL_INLINE
 from hibiscus.observability.logger import get_logger, PipelineLogger
 from hibiscus.orchestrator.state import initial_state
 
@@ -144,7 +137,7 @@ async def chat(request: ChatRequest, http_request: Request) -> JSONResponse:
         logger.error("chat_pipeline_error", request_id=request_id, error=str(e))
         raise HTTPException(
             status_code=500,
-            detail=f"Hibiscus pipeline error: {str(e)}. Please try again.",
+            detail=f"{ENGINE_LABEL_INLINE} Pipeline error: {str(e)}. Please try again.",
         )
 
 

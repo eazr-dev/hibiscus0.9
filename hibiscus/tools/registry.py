@@ -1,18 +1,6 @@
 """
-Tool Registry
-=============
-Central registry for all Hibiscus tools.
-
-Tools register themselves via the @register decorator.
-Agents call get_tool(name) to retrieve a callable by name.
-Called once at startup via register_all().
-
-Usage:
-    from hibiscus.tools.registry import get_tool, list_tools, register_all
-
-    await register_all()
-    search_fn = get_tool("search_insurance_knowledge")
-    result = await search_fn(query="deductible")
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Tool registry — discovers and registers all agent tools (KG, RAG, calculators, web, user).
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Callable, Dict, List, Optional

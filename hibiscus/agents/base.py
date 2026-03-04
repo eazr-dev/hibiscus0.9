@@ -1,14 +1,6 @@
 """
-Hibiscus Base Agent
-===================
-ABC for all 12 specialist agents.
-
-Every agent:
-- Logs on entry, tool calls, and exit
-- Returns: {response, confidence, sources, latency_ms, tokens_in, tokens_out}
-- Has confidence scoring
-- Handles timeouts and LLM failures gracefully
-- Never invents numbers — only presents what tools provide
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Base agent class — confidence scoring, tool binding, structured output for all 12 specialists.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

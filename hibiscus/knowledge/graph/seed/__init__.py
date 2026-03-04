@@ -1,31 +1,4 @@
-"""
-Knowledge Graph Seed Data
-==========================
-Orchestrates seeding of all KG node types in the correct order.
-
-Order matters:
-  1. Insurers    — base nodes referenced by Products
-  2. Products    — creates OFFERS relationships to Insurers
-  3. Regulations — standalone nodes
-  4. Benchmarks  — standalone nodes
-  5. Tax Rules   — standalone nodes
-  6. Ombudsman   — standalone nodes
-
-Usage:
-    from hibiscus.knowledge.graph.seed import seed_all
-    await seed_all(kg_client)
-
-    # Or use individual seeders:
-    from hibiscus.knowledge.graph.seed import (
-        INSURERS, seed_insurers,
-        PRODUCTS, seed_products,
-        REGULATIONS, seed_regulations,
-        BENCHMARKS, seed_benchmarks,
-        TAX_RULES, seed_tax_rules,
-        OMBUDSMAN_OFFICES, seed_ombudsman,
-    )
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 from hibiscus.knowledge.graph.client import Neo4jClient
 from hibiscus.observability.logger import get_logger
 

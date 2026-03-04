@@ -1,21 +1,6 @@
 """
-Knowledge Graph Seed — CLI Entry Point
-========================================
-Run the full KG seed pipeline from the command line.
-
-Usage:
-    python -m hibiscus.knowledge.graph.seed
-
-This will:
-  1. Connect to Neo4j (using settings from .env / environment)
-  2. Create all schema constraints and indexes
-  3. Seed all data: 30+ insurers, 50+ products, 14 regulations,
-     19 benchmarks, 9 tax rules, 17 ombudsman offices
-  4. Close connection cleanly
-
-Requires:
-  - Neo4j running (bolt://localhost:7687 by default)
-  - NEO4J_PASSWORD set in .env or environment
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed CLI — python -m hibiscus.knowledge.graph.seed to populate Neo4j.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

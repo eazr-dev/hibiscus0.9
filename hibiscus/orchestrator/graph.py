@@ -1,15 +1,6 @@
 """
-Hibiscus LangGraph Supervisor — THE BRAIN
-==========================================
-Every user message flows through this graph.
-
-Flow:
-  assemble_context
-    → classify_intent
-    → [simple: direct_llm | complex: plan_execution → dispatch_agents → aggregate_response]
-    → check_guardrails
-    → store_memory
-    → END
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+LangGraph supervisor — the main StateGraph that routes queries through the full pipeline.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from langgraph.graph import StateGraph, END

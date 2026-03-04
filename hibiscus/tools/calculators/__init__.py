@@ -1,7 +1,4 @@
-"""
-Insurance financial formula tools.
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 from hibiscus.knowledge.formulas.surrender_value import calculate_gsv, calculate_surrender_projection
 from hibiscus.knowledge.formulas.irr import compute_irr, compute_policy_irr, interpret_irr
 from hibiscus.knowledge.formulas.tax_benefit import (

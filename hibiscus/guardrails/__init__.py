@@ -1,7 +1,4 @@
-"""
-Hibiscus guardrails — safety layer for all responses.
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 from hibiscus.guardrails.emotional import check_emotional, EmotionalCheckResult
 from hibiscus.guardrails.pii import check_pii, mask_pii_for_logging, PIICheckResult
 

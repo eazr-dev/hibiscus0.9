@@ -1,5 +1,2 @@
-"""
-Hibiscus v0.9 — hibiscus.tools.quote.__init__
-Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
-"""
+# 🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
 # Quote comparison tools

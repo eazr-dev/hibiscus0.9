@@ -1,20 +1,6 @@
 """
-PortfolioOptimizerAgent — Agent 10
-=====================================
-Insurance portfolio reviewer and optimizer.
-
-Analyzes the user's complete insurance portfolio to identify:
-  a) Coverage adequacy (life, health, motor — vs income/family needs)
-  b) Redundancy (overlapping covers, unnecessary policies)
-  c) Cost optimization (same coverage at lower premium)
-  d) Missing covers (term plan, health for family, CI)
-  e) IPF/SVF relevance (lapse risk on high-value policies)
-
-Outputs a portfolio_score (0-100), improvements list, estimated_savings,
-and priority_actions.
-
-Uses Tier 2 (DeepSeek R1) because this is multi-step analytical reasoning
-across multiple policies and income/family data.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Portfolio optimizer agent — coverage gap detection, rebalancing, family-wide optimization.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

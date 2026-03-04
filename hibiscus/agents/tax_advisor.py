@@ -1,16 +1,6 @@
 """
-TaxAdvisorAgent — Agent 11
-============================
-Insurance tax benefits advisor.
-
-Computes Section 80C, 80D, and 10(10D) tax benefits using deterministic
-formulas from knowledge/formulas/tax_benefit.py. Never uses LLM for math.
-Provides new regime vs old regime comparison and maturity taxability check.
-
-Uses Tier 2 (DeepSeek R1) for complex tax scenarios involving multiple
-sections, regimes, and edge cases.
-
-ALWAYS ends with: "Consult a CA for precise computation."
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Tax advisor agent — Section 80C/80D/10(10D) optimization, HUF strategies, NRI rules.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

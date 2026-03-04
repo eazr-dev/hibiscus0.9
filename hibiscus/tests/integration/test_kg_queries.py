@@ -1,8 +1,6 @@
 """
-Integration tests: Neo4j Knowledge Graph query correctness.
-
-Tests that KG tools return expected data for seeded insurers, products, regulations.
-Requires Neo4j running with seed data loaded via make seed-kg.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Integration tests: knowledge graph — Neo4j query correctness and performance.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest

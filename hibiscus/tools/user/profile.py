@@ -1,10 +1,6 @@
 """
-User Profile Tool
-==================
-Fetch and update user profiles from PostgreSQL.
-Delegates to memory/layers/profile.py — uses same graceful no-op pattern.
-
-Returns None / False when PostgreSQL is unavailable (dev mode).
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Profile tool — fetches user demographics, preferences, and risk tolerance from PostgreSQL.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional

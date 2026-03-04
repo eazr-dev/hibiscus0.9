@@ -1,8 +1,6 @@
 """
-Hibiscus API Router
-===================
-Aggregates all sub-routers into the main APIRouter.
-All routes mounted under /hibiscus/ prefix in main.py.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+API router — mounts chat, analysis, portfolio, health, WebSocket, and metrics endpoints.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from fastapi import APIRouter

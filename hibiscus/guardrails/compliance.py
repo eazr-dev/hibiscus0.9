@@ -1,19 +1,6 @@
 """
-Compliance Guard — IRDAI Guardrails
-=====================================
-Ensures every response complies with IRDAI regulations:
-
-1. Every recommendation includes disclaimer
-2. Never say "you should buy X" → "based on your profile, X may suit your needs"
-3. Never guarantee returns on any insurance product
-4. Never guarantee claim settlement
-5. Always disclose: "EAZR provides information, not insurance advice"
-6. Flag if conversation drifts into regulated territory
-
-IRDAI Disclaimer (inject on recommendations):
-"This information is provided for educational purposes only. EAZR is not a
-licensed insurance distributor. Please consult a licensed insurance advisor
-before making any insurance purchase decision."
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+IRDAI compliance guardrail — ensures disclaimers, prevents unauthorized advice.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

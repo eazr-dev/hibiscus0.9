@@ -1,26 +1,6 @@
 """
-Embedding Model Configuration
-==============================
-BAAI/bge-large-en-v1.5 (1024 dims) — primary via fastembed (local, no API key).
-GLM (Zhipu AI) embedding-2 — fallback if fastembed unavailable.
-OpenAI text-embedding-3-small (1536 dims) — final fallback.
-
-Design decisions:
-  - fastembed chosen as primary: local inference, no API key, no cost, 1024 dims
-  - BAAI/bge-large-en-v1.5 matches our Qdrant collection dimension (1024)
-  - Model is downloaded once and cached in ~/.cache/fastembed/
-  - Sync fastembed.embed() called via asyncio.get_event_loop().run_in_executor()
-  - Batch size 32 for local CPU (100 is fine for API; smaller batch = lower memory)
-  - Fallback chain: fastembed -> GLM API -> OpenAI API -> zero vector
-    Zero vector consequence: chunks won't match semantically -- acceptable graceful degradation
-
-Costs:
-  - fastembed (local): $0 — runs on CPU inside container
-  - GLM embedding-2: ~$0.005 per million tokens (if key is valid)
-  - OpenAI text-embedding-3-small: ~$0.020 per million tokens (if key is valid)
-
-IMPORTANT: Qdrant collection dimension = 1024 (bge-large-en-v1.5).
-If switching to OpenAI (1536 dims), recreate Qdrant collections.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+RAG embeddings — fastembed (BAAI/bge-large-en-v1.5) with GLM fallback for vector generation.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

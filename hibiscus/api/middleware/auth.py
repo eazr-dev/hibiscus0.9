@@ -1,10 +1,6 @@
 """
-JWT Auth Middleware
-===================
-Validates Bearer tokens issued by botproject.
-In dev mode (no jwt_secret configured), all requests pass through.
-
-Token payload expected: {"user_id": "...", "sub": "..."} or {"sub": "..."}
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+JWT auth middleware — token validation, dev-mode bypass, user context injection.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from starlette.middleware.base import BaseHTTPMiddleware

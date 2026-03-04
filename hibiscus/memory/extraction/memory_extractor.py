@@ -1,20 +1,6 @@
 """
-Memory Extractor
-================
-After every conversation turn, extracts:
-1. Profile updates (age, family, city, income band, etc.)
-2. Knowledge insights (preferences, concerns, facts, history, family)
-3. Portfolio updates (new policy info mentioned in conversation)
-4. Conversation summary (stored in L2 for cross-session recall)
-
-Design principles:
-  - Runs asynchronously — does NOT block response delivery.
-  - Called via asyncio.create_task() from the memory_storage orchestrator node.
-  - Uses DeepSeek V3.2 (cheap, fast, good enough for structured extraction).
-  - Extraction prompt returns strict JSON; any parse failure is logged and
-    dropped — never raises to the caller.
-  - All extracted values go through the appropriate memory layer's validation
-    before persistence; this module does not write to storage directly.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Memory extractor — identifies facts, preferences, and outcomes from conversation for storage.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

@@ -1,7 +1,6 @@
 """
-Opportunity Cost Calculator Tool
-=================================
-Agent-callable tool wrapping knowledge/formulas/opportunity_cost.py.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Opportunity cost tool — compares insurance vs alternative investment returns.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict

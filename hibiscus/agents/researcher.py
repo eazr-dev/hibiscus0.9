@@ -1,22 +1,6 @@
 """
-ResearcherAgent — Agent 6
-==========================
-Insurance market researcher.
-
-Fetches current insurance news, IRDAI announcements, product comparisons,
-and market data. Uses Tavily web search as primary source (if available),
-falls back to RAG corpus with a recency disclaimer.
-
-Answers questions like:
-  - "What are the latest IRDAI changes?"
-  - "Which health insurance is best in 2024?"
-  - "New insurance rules this year"
-  - "Compare Niva Bupa vs Star Health"
-
-SOURCING RULES:
-- Web search results: cite URL and publication date
-- RAG corpus: note "As of last corpus update — may not reflect latest changes"
-- LLM reasoning alone: NEVER used for factual insurance data
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Researcher agent — web search + RAG for real-time insurance market intelligence.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

@@ -1,22 +1,6 @@
 """
-LangSmith Tracing Integration
-================================
-Provides distributed tracing for the Hibiscus pipeline via LangSmith.
-
-Each conversation is traced as a LangSmith run, with child spans for:
-- Intent classification
-- Agent execution (each agent = child run)
-- LLM calls (logged via LiteLLM callbacks)
-- Guardrail checks
-
-Disabled gracefully if LANGSMITH_API_KEY is not set.
-
-Usage:
-    from hibiscus.observability.langsmith import tracer
-
-    async with tracer.pipeline_run(session_id, user_message) as run:
-        # ... pipeline execution ...
-        run.add_metadata({"agents": ["policy_analyzer"]})
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+LangSmith integration — trace export for debugging agent chains and prompt quality.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import os

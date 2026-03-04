@@ -1,8 +1,6 @@
 """
-Sub-Category Mapper — botproject sub_category → KG category + type
-====================================================================
-Maps the formal IRDAI sub-category taxonomy from botproject SQL
-to the KG's simpler category/type scheme.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: subcategory mapper — maps product types to standardized insurance categories.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Dict, Tuple

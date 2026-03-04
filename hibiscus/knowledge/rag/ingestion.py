@@ -1,23 +1,6 @@
 """
-Document Ingestion Pipeline
-=============================
-Transforms raw insurance documents into searchable vector chunks in Qdrant.
-
-Pipeline:
-  1. Load raw content (JSON corpus files or text)
-  2. Chunk with RecursiveCharacterTextSplitter (800 tokens, 100 overlap)
-  3. Prepend contextual prefix to each chunk (improves retrieval by ~40%)
-  4. Batch embed chunks (OpenAI text-embedding-3-small)
-  5. Upsert to Qdrant insurance_knowledge collection
-
-Contextual prefix pattern (per Anthropic contextual retrieval research):
-  "This is from [source], section [section], about [category]. "
-  Attaches document-level context to each chunk so retrieval works
-  even when the chunk itself is missing key identifying info.
-
-Run:
-  python -m hibiscus.knowledge.rag.ingestion            # ingest all corpus
-  python -m hibiscus.knowledge.rag.ingestion --file X   # ingest single file
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+RAG ingestion — chunks IRDAI circulars, glossary, tax rules into Qdrant vectors.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

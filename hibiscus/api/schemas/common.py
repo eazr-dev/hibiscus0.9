@@ -1,9 +1,11 @@
 """
-Shared schema models used across Hibiscus API.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Shared schema models — Source, UploadedFile, ErrorResponse used across all API endpoints.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 from pydantic import BaseModel, Field
+from hibiscus.config import ENGINE_NAME, ENGINE_VERSION, ENGINE_VENDOR, ENGINE_LABEL_INLINE
 
 
 class Source(BaseModel):
@@ -23,8 +25,17 @@ class UploadedFile(BaseModel):
     s3_path: Optional[str] = Field(None, description="S3 storage path (internal)")
 
 
+class EngineMetadata(BaseModel):
+    """Engine identity included in API responses."""
+    engine: str = Field(default=ENGINE_NAME.lower(), description="Engine identifier")
+    version: str = Field(default=ENGINE_VERSION, description="Engine version")
+    vendor: str = Field(default=ENGINE_VENDOR, description="Engine vendor")
+
+
 class ErrorResponse(BaseModel):
-    """Standard error response."""
+    """Standard error response — prefixed with engine label for traceability."""
     error: str = Field(description="Error message")
     detail: Optional[str] = Field(None, description="Detailed error information")
     request_id: Optional[str] = Field(None, description="Request ID for tracing")
+    engine: str = Field(default=ENGINE_NAME.lower(), description="Engine identifier")
+    version: str = Field(default=ENGINE_VERSION, description="Engine version")

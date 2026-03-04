@@ -1,13 +1,6 @@
 """
-Insurance Tax Benefit Calculator
-==================================
-Computes tax benefits under Indian Income Tax Act for insurance premiums.
-
-Sections:
-- 80C: Life insurance premium (max ₹1.5L, combined with other 80C investments)
-- 80D: Health insurance premium (max ₹25K/₹50K/₹1L depending on age)
-- 10(10D): Maturity proceeds exemption (conditions apply)
-- 80CCC: Pension fund (within 80C limit)
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Tax benefit formula — Section 80C/80D/10(10D) deduction and exemption calculator.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass

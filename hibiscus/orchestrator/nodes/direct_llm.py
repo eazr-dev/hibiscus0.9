@@ -1,11 +1,6 @@
 """
-Direct LLM Node — Fast Path
-============================
-For L1/L2 queries that don't need specialist agents.
-Examples: "What is a deductible?", "How does copay work?"
-
-Skips the full agent pipeline for speed and cost.
-Still uses the hallucination and compliance guardrails.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Direct LLM node — handles simple queries without agent dispatch (L1/L2 complexity).
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

@@ -1,7 +1,6 @@
 """
-Hibiscus v0.9 — EAZR AI Insurance Intelligence Engine
-Module: main
-Purpose: FastAPI application entry point and lifespan management
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+FastAPI application entry point — lifespan management, middleware stack, OpenAPI setup.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
@@ -12,11 +11,33 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from hibiscus.config import settings
+from hibiscus.config import (
+    settings, ENGINE_NAME, ENGINE_VERSION, ENGINE_VENDOR, ENGINE_URL,
+)
 from hibiscus.observability.logger import get_logger, configure_logging
 from hibiscus.api.router import router as api_router
 
 logger = get_logger(__name__)
+
+
+async def _get_kg_stats() -> dict:
+    """Query live KG counts for startup banner. Falls back to static values."""
+    try:
+        from hibiscus.knowledge.graph.client import kg_client
+        if not kg_client.is_connected:
+            raise RuntimeError("not connected")
+        rows = await kg_client.query(
+            "MATCH (n) RETURN labels(n)[0] AS label, count(n) AS cnt",
+            query_name="startup_stats",
+        )
+        counts = {r["label"]: r["cnt"] for r in rows}
+        return {
+            "products": counts.get("Product", 1207),
+            "regulations": counts.get("Regulation", 102),
+            "insurers": counts.get("Insurer", 62),
+        }
+    except Exception:
+        return {"products": 1207, "regulations": 102, "insurers": 62}
 
 
 @asynccontextmanager
@@ -24,21 +45,30 @@ async def lifespan(app: FastAPI):
     """Application startup and shutdown."""
     configure_logging(settings.hibiscus_log_level)
 
-    # ── Startup banner ────────────────────────────────────────────
-    print(
+    # ── Startup banner (dynamic stats from KG when available) ─────
+    stats = await _get_kg_stats()
+    banner = (
         "\n"
-        "╔══════════════════════════════════════════════════╗\n"
-        "║  Hibiscus v0.9 — EAZR AI Intelligence Engine    ║\n"
-        "║  12 Agents | 1,207 Products | 100 Regulations   ║\n"
-        "║  Copyright (c) 2026 EAZR Digipayments Pvt Ltd   ║\n"
-        "╚══════════════════════════════════════════════════╝\n",
-        file=sys.stderr,
-        flush=True,
+        "┌─────────────────────────────────────────────────────┐\n"
+        f"│  🌺 {ENGINE_NAME.upper()} v{ENGINE_VERSION}"
+        f"{'':>{42 - len(ENGINE_NAME) - len(ENGINE_VERSION)}}│\n"
+        "│  EAZR AI Insurance Intelligence Engine              │\n"
+        "│  ─────────────────────────────────────               │\n"
+        f"│  12 Agents · {stats['products']:,} Products · {stats['regulations']} Regulations"
+        f"{'':>{8 - len(str(stats['regulations']))}}│\n"
+        f"│  Built in India · {ENGINE_VENDOR}"
+        f"{'':>{33 - len(ENGINE_VENDOR)}}│\n"
+        f"│  {ENGINE_URL}"
+        f"{'':>{50 - len(ENGINE_URL)}}│\n"
+        "└─────────────────────────────────────────────────────┘\n"
     )
+    print(banner, file=sys.stderr, flush=True)
 
     logger.info(
         "hibiscus_starting",
-        version=settings.app_version,
+        engine=ENGINE_NAME,
+        version=ENGINE_VERSION,
+        vendor=ENGINE_VENDOR,
         environment=settings.hibiscus_env,
     )
 
@@ -87,7 +117,7 @@ async def lifespan(app: FastAPI):
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="Hibiscus v0.9 — EAZR AI Intelligence Engine",
+        title=f"{ENGINE_NAME} v{ENGINE_VERSION} — EAZR AI Intelligence Engine",
         description=(
             "Hibiscus is EAZR's AI insurance intelligence engine — a 12-agent orchestration system "
             "that provides policy analysis, product recommendations, claims guidance, tax advisory, "

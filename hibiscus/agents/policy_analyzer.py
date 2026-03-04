@@ -1,20 +1,6 @@
 """
-PolicyAnalyzer — Agent 1 (THE MOST CRITICAL AGENT)
-====================================================
-Analyzes an uploaded insurance policy document using NATIVE extraction.
-
-FLOW:
-1. Get PDF data (from upload or cached)
-2. Process PDF → text with page markers (native)
-3. Classify policy type (native, 3-tier)
-4. Extract structured data (native, DeepSeek V3.2)
-5. Validate extraction (native, 5-check)
-6. Score (native, using KG benchmarks)
-7. Gap analysis (native)
-8. Synthesize response with LLM
-
-GROUND TRUTH RULE:
-Every number in the output comes from extraction (with page ref) or KG — NEVER LLM imagination.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Policy analyzer agent — deep PDF extraction, scoring, gap analysis, verdict generation.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json

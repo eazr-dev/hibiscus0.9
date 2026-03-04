@@ -1,17 +1,6 @@
 """
-Run all Knowledge Graph seeding.
-
-Usage:
-    python -m hibiscus.knowledge.graph
-
-This script:
-  1. Connects to Neo4j
-  2. Creates schema (constraints + indexes)
-  3. Seeds all node types in dependency order:
-       Insurers -> Products -> Regulations -> Benchmarks -> TaxRules -> Ombudsman
-  4. Closes connection
-
-Safe to re-run — all seeders use MERGE (idempotent).
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG CLI entry — python -m hibiscus.knowledge.graph to inspect graph statistics.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio

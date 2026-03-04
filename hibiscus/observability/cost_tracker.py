@@ -1,10 +1,6 @@
 """
-Hibiscus Cost Tracker
-=====================
-Tracks LLM token usage and cost per conversation.
-Board-level metric: cost per intelligent insurance conversation.
-
-INR exchange rate assumption: 1 USD = 85 INR
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Cost tracker — per-conversation LLM spend in INR with tier-level breakdown.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

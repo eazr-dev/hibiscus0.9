@@ -1,10 +1,6 @@
 """
-Product Seed Data
-==================
-200+ real Indian insurance products across categories.
-All sum-insured figures in INR (raw), premium figures are annual approximations.
-
-Run via: python -m hibiscus.knowledge.graph.seed
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: products — 1,207 insurance products with UINs, categories, and features.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

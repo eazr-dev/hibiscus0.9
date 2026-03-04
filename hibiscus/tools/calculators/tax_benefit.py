@@ -1,7 +1,6 @@
 """
-Tax Benefit Calculator Tool
-============================
-Agent-callable tool wrapping knowledge/formulas/tax_benefit.py.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Tax benefit tool — computes Section 80C/80D deductions and 10(10D) exemptions.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional

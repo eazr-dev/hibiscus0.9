@@ -1,21 +1,6 @@
 """
-RAG Search Tools for Hibiscus Agents
-======================================
-Provides search functions that agents use to ground responses in the knowledge base.
-
-These are the primary RAG interface for all 12 Hibiscus agents. Every factual claim
-about insurance must trace to a source — these tools provide that grounding.
-
-All functions:
-  - Return [] on Qdrant unavailability (graceful degradation)
-  - Log every search call with query, results, and latency
-  - Apply category filtering where relevant to improve precision
-  - Return structured dicts with content, source, confidence, metadata
-
-Usage by agents:
-    results = await search_insurance_knowledge("what is copay in health insurance")
-    context = format_rag_context(results)
-    # Pass context to LLM prompt
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+RAG search tool — semantic search across 847 chunks of IRDAI circulars and policy docs.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time

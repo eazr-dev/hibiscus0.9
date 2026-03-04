@@ -1,16 +1,6 @@
 """
-Tool: Regulation Lookup — Neo4j Knowledge Graph
-================================================
-Look up IRDAI regulations and policyholder rights from the KG.
-Used by: RegulationEngine, GrievanceNavigator, Educator agents.
-
-Functions
----------
-lookup_regulation(topic)                    — find regulation by keyword
-get_rights_for_situation(situation)         — get applicable rights/regs for a user situation
-lookup_ombudsman_for_state(state)           — find ombudsman office by state
-get_consumer_rights_summary()              — full list of key policyholder rights
-search_regulations_by_category(category)   — all regulations in a category
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Regulation lookup tool — queries IRDAI circulars and guidelines from Neo4j.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional

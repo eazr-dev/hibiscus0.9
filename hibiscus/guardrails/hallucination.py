@@ -1,25 +1,6 @@
 """
-Hallucination Guard — PRIORITY ZERO GUARDRAIL
-=============================================
-Rule: Every factual claim must have a source.
-
-Sources (in order of trust):
-1. Document extraction (confidence 0.85-0.95)
-2. Knowledge Graph (confidence 0.90+, pre-verified)
-3. RAG retrieval (confidence = similarity × source trust)
-4. Web search (confidence 0.60-0.80)
-5. LLM reasoning only (confidence 0.30-0.50)
-6. No source → NEVER present as fact
-
-BEHAVIOR:
-  confidence ≥ 0.85 → State as fact
-  0.70 ≤ confidence < 0.85 → Add caveat
-  0.50 ≤ confidence < 0.70 → Explicit uncertainty
-  confidence < 0.50 → Don't state, ask user
-
-SPECIAL RULE FOR NUMBERS:
-Copay %, sub-limits, premiums, sum insured → MUST come from extraction or KG.
-If LLM-only → flag and don't present as specific numbers.
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+Hallucination guardrail — cross-references claims against KG/RAG sources, flags unsupported facts.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re

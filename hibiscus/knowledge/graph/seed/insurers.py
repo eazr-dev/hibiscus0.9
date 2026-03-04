@@ -1,11 +1,6 @@
 """
-Insurer Seed Data
-==================
-50+ Indian insurers with accurate IRDAI public data.
-Sources: IRDAI Annual Report 2022-23, insurer disclosures.
-
-All CSR/ICR figures are annual averages from IRDAI published data.
-Run via: python -m hibiscus.knowledge.graph.seed
+🌺 Hibiscus v0.9 | EAZR AI Insurance Intelligence Engine
+KG seed: insurers — 62 Indian insurance companies with registration and contact details.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
