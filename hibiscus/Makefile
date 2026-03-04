@@ -6,7 +6,7 @@
         seed-kg seed-rag seed-all health-check logs costs metrics \
         refresh-kg refresh-rag eval-report
 
-COMPOSE = docker compose
+COMPOSE = docker compose -f ../docker-compose.yml
 
 # ── Development ──────────────────────────────────────────────────
 dev:

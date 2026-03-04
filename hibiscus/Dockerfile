@@ -25,19 +25,12 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Copy dependency files first (cache layer)
-COPY hibiscus/pyproject.toml /app/hibiscus/pyproject.toml
+# Copy full package (pyproject.toml + source) — hatchling needs source to resolve packages
+COPY hibiscus/ /app/hibiscus/
 
-# Install dependencies from pyproject.toml
+# Install package with dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     cd /app/hibiscus && pip install --no-cache-dir .
-
-# Pre-download fastembed model (BAAI/bge-large-en-v1.5) during build — cached in image
-# This avoids a ~2s model download on first request after container start
-RUN python -c "from fastembed import TextEmbedding; TextEmbedding('BAAI/bge-large-en-v1.5')" 2>/dev/null || true
-
-# Copy application code
-COPY hibiscus/ /app/hibiscus/
 
 # Create non-root user
 RUN adduser --disabled-password --gecos "" hibiscus && \
@@ -46,7 +39,7 @@ RUN adduser --disabled-password --gecos "" hibiscus && \
 USER hibiscus
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:8001/hibiscus/health || exit 1
 
 EXPOSE 8001
