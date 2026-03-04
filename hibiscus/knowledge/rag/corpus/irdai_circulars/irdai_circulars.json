@@ -19,7 +19,12 @@
       "5% copay applies to all claims under Arogya Sanjeevani"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "standardization", "arogya-sanjeevani", "covid"]
+    "tags": [
+      "health",
+      "standardization",
+      "arogya-sanjeevani",
+      "covid"
+    ]
   },
   {
     "id": "circ_002",
@@ -41,7 +46,12 @@
       "Must receive clear communication about free look period rights"
     ],
     "source": "irdai.gov.in",
-    "tags": ["life", "free-look", "consumer-protection", "distance-selling"]
+    "tags": [
+      "life",
+      "free-look",
+      "consumer-protection",
+      "distance-selling"
+    ]
   },
   {
     "id": "circ_003",
@@ -63,7 +73,13 @@
       "Maximum PED waiting period cannot exceed 4 years regardless of condition severity"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "portability", "PED", "moratorium", "waiting-period"]
+    "tags": [
+      "health",
+      "portability",
+      "PED",
+      "moratorium",
+      "waiting-period"
+    ]
   },
   {
     "id": "circ_004",
@@ -86,7 +102,13 @@
       "Right to receive specific written reasons for any claim rejection"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "claim-settlement", "timelines", "cashless", "reimbursement"]
+    "tags": [
+      "health",
+      "claim-settlement",
+      "timelines",
+      "cashless",
+      "reimbursement"
+    ]
   },
   {
     "id": "circ_005",
@@ -109,7 +131,13 @@
       "Right to partial withdrawals after 5-year lock-in without surrender penalty"
     ],
     "source": "irdai.gov.in",
-    "tags": ["life", "ULIP", "charges", "fund-management", "lock-in"]
+    "tags": [
+      "life",
+      "ULIP",
+      "charges",
+      "fund-management",
+      "lock-in"
+    ]
   },
   {
     "id": "circ_006",
@@ -133,7 +161,13 @@
       "Protection against large value loss when surrendering a policy after 5+ years"
     ],
     "source": "irdai.gov.in",
-    "tags": ["life", "surrender-value", "GSV", "traditional", "2024-regulations"]
+    "tags": [
+      "life",
+      "surrender-value",
+      "GSV",
+      "traditional",
+      "2024-regulations"
+    ]
   },
   {
     "id": "circ_007",
@@ -158,7 +192,13 @@
       "Insurer cannot charge for Ombudsman proceedings"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "grievance", "ombudsman", "consumer-rights", "bima-bharosa"]
+    "tags": [
+      "general",
+      "grievance",
+      "ombudsman",
+      "consumer-rights",
+      "bima-bharosa"
+    ]
   },
   {
     "id": "circ_008",
@@ -182,7 +222,13 @@
       "30-day survival clause must be disclosed clearly in policy document"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "critical-illness", "cancer", "standardization", "definitions"]
+    "tags": [
+      "health",
+      "critical-illness",
+      "cancer",
+      "standardization",
+      "definitions"
+    ]
   },
   {
     "id": "circ_009",
@@ -205,7 +251,13 @@
       "Right to use telemedicine without loss of insurance benefit"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "telemedicine", "OPD", "digital-health", "COVID"]
+    "tags": [
+      "health",
+      "telemedicine",
+      "OPD",
+      "digital-health",
+      "COVID"
+    ]
   },
   {
     "id": "circ_010",
@@ -228,7 +280,13 @@
       "Mental illness OPD covered where other OPD is covered"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "mental-health", "Mental-Healthcare-Act", "exclusions", "hospitalization"]
+    "tags": [
+      "health",
+      "mental-health",
+      "Mental-Healthcare-Act",
+      "exclusions",
+      "hospitalization"
+    ]
   },
   {
     "id": "circ_011",
@@ -251,7 +309,13 @@
       "PPE and associated medical equipment cost is claimable"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "COVID", "corona-kavach", "corona-rakshak", "pandemic"]
+    "tags": [
+      "health",
+      "COVID",
+      "corona-kavach",
+      "corona-rakshak",
+      "pandemic"
+    ]
   },
   {
     "id": "circ_012",
@@ -274,7 +338,13 @@
       "Option to buy through fee-only advisors (NIAs) who charge flat fee, no commission"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "commission", "disclosure", "transparency", "mis-selling"]
+    "tags": [
+      "general",
+      "commission",
+      "disclosure",
+      "transparency",
+      "mis-selling"
+    ]
   },
   {
     "id": "circ_013",
@@ -298,7 +368,13 @@
       "Nominees can find all policies through eIA repository"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "e-insurance", "digital", "repository", "eIA"]
+    "tags": [
+      "general",
+      "e-insurance",
+      "digital",
+      "repository",
+      "eIA"
+    ]
   },
   {
     "id": "circ_014",
@@ -321,7 +397,13 @@
       "Video KYC right — no need to visit insurer's branch for identity verification"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "digital", "online-insurance", "e-signature", "paperless"]
+    "tags": [
+      "general",
+      "digital",
+      "online-insurance",
+      "e-signature",
+      "paperless"
+    ]
   },
   {
     "id": "circ_015",
@@ -343,7 +425,13 @@
       "Reduced risk of losing physical policy documents"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "repository", "eIA", "digitization", "DigiLocker"]
+    "tags": [
+      "general",
+      "repository",
+      "eIA",
+      "digitization",
+      "DigiLocker"
+    ]
   },
   {
     "id": "circ_016",
@@ -366,7 +454,13 @@
       "Faster AI-assisted claim settlement for small claims"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "wellness", "day-care", "chronic-disease", "digital-health"]
+    "tags": [
+      "health",
+      "wellness",
+      "day-care",
+      "chronic-disease",
+      "digital-health"
+    ]
   },
   {
     "id": "circ_017",
@@ -389,7 +483,13 @@
       "Affordable Bima Vistar product for uninsured population"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "bima-sugam", "digital-platform", "har-ghar-bima", "bima-vistar"]
+    "tags": [
+      "general",
+      "bima-sugam",
+      "digital-platform",
+      "har-ghar-bima",
+      "bima-vistar"
+    ]
   },
   {
     "id": "circ_018",
@@ -412,7 +512,13 @@
       "Maximum 2-year waiting period for specific listed conditions (not 4 years)"
     ],
     "source": "irdai.gov.in",
-    "tags": ["health", "PED", "waiting-period", "definition", "specific-disease"]
+    "tags": [
+      "health",
+      "PED",
+      "waiting-period",
+      "definition",
+      "specific-disease"
+    ]
   },
   {
     "id": "circ_019",
@@ -435,7 +541,14 @@
       "Legal recourse for mis-selling if return projections were misrepresented"
     ],
     "source": "irdai.gov.in",
-    "tags": ["life", "benefit-illustration", "IRR", "disclosure", "transparency", "mis-selling"]
+    "tags": [
+      "life",
+      "benefit-illustration",
+      "IRR",
+      "disclosure",
+      "transparency",
+      "mis-selling"
+    ]
   },
   {
     "id": "circ_020",
@@ -460,6 +573,987 @@
       "Free and easy access to Ombudsman through Bima Bharosa"
     ],
     "source": "irdai.gov.in",
-    "tags": ["general", "bima-bharosa", "grievance", "ombudsman", "consumer-rights"]
+    "tags": [
+      "general",
+      "bima-bharosa",
+      "grievance",
+      "ombudsman",
+      "consumer-rights"
+    ]
+  },
+  {
+    "id": "circ_021",
+    "circular_no": "IRDAI/HLT/CIR/090/03/2024  # VERIFY",
+    "subject": "Master Circular on Health Insurance Products (2024) — Standardized Exclusions, Sub-Limits, and Portability Norms",
+    "date": "2024-03-15",
+    "category": "health",
+    "key_points": [
+      "Consolidates all prior health insurance product guidelines into a single master circular effective 1 April 2024",
+      "Standardized Exclusion List I: 16 permanent exclusions (cosmetic surgery, war/nuclear, adventure sports without rider, self-inflicted injury, substance abuse, obesity treatment, change-of-gender, sterility/infertility, unproven treatments, etc.)",
+      "Standardized Exclusion List II: 17 time-bound exclusions with 2-year specific disease waiting period (hernia, cataract, joint replacement, tonsillectomy, etc.)",
+      "Moratorium period reduced to 5 years for policies issued from 1 April 2024 — after 5 continuous years, insurer cannot contest claims citing non-disclosure except proven fraud",
+      "Sub-limits: insurers must disclose all sub-limits prominently on policy schedule front page — room rent, ICU, ambulance, cataract, maternity",
+      "Portability: policyholder can port within 45 days before renewal; new insurer must give full waiting period credit for continuous coverage",
+      "Day care procedures list expanded to 180+ mandatory coverages; insurers cannot exclude listed day care procedures",
+      "Restoration benefit: must restore sum insured at least once per policy year; restoration cannot be denied for same illness if used by different family member"
+    ],
+    "consumer_rights": [
+      "Right to transparent sub-limit disclosure on policy schedule front page",
+      "5-year moratorium protection — claims cannot be contested after 5 continuous years (except fraud)",
+      "Right to port health policy to any insurer without losing waiting period credit",
+      "Mandatory coverage of 180+ day care procedures across all health policies"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "master-circular",
+      "exclusions",
+      "sub-limits",
+      "portability",
+      "moratorium",
+      "2024"
+    ]
+  },
+  {
+    "id": "circ_022",
+    "circular_no": "IRDAI/REG/CIR/PPR/077/02/2024  # VERIFY",
+    "subject": "Policyholder Protection Regulations (2024) — Claim Settlement Timelines, Free Look, and Grievance Mechanism",
+    "date": "2024-02-20",
+    "category": "consumer_protection",
+    "key_points": [
+      "Claim settlement: insurer must settle or reject claim within 30 days of receiving all required documents — mandatory for life, health, and general insurance",
+      "Interest on delayed settlement: if insurer fails to settle within 30 days, must pay interest at 2% above bank rate on the claim amount for the delay period",
+      "Free look period: 15 days for policies sold in person/branch; 30 days for policies sold through distance mode (online, telephone, email)",
+      "Grievance redressal: insurer must acknowledge complaint within 3 working days and resolve within 15 days (fast-track) or 30 days (standard)",
+      "Policy document issuance: must be issued within 30 days of acceptance of proposal; digital issuance within 48 hours where e-KYC is completed",
+      "Nomination: insurer must facilitate online nomination changes; beneficial nominee concept introduced — specific beneficiary identification",
+      "Unclaimed amounts: insurers must trace and pay unclaimed amounts proactively; annual disclosure of unclaimed amounts to IRDAI",
+      "Policyholder information: annual statement showing premiums paid, benefits accrued, surrender value, and policy status must be sent to every policyholder"
+    ],
+    "consumer_rights": [
+      "Right to claim settlement or rejection within 30 days with written reasons",
+      "Right to interest compensation on delayed claim settlements",
+      "Right to 15/30-day free look cancellation with full refund (minus stamp duty and proportionate risk premium)",
+      "Right to annual policy statement with complete benefit and value information"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "consumer_protection",
+      "policyholder-protection",
+      "claim-settlement",
+      "free-look",
+      "grievance",
+      "2024"
+    ]
+  },
+  {
+    "id": "circ_023",
+    "circular_no": "IRDAI/HLT/CIR/CLAIMS/115/06/2021  # VERIFY",
+    "subject": "Claim Settlement Guidelines — 30-Day Mandate, Interest on Delays, and Document Requirements",
+    "date": "2021-06-10",
+    "category": "health",
+    "key_points": [
+      "Cashless claims: insurer must respond to pre-authorization within 1 hour for planned hospitalization and 30 minutes for emergency",
+      "Final cashless settlement: within 3 hours of discharge or by end of same working day, whichever is later",
+      "Reimbursement claims: complete settlement within 30 days of receiving all documents; if additional documents needed, request within 7 days of claim intimation",
+      "Interest on delay: 2% above prevailing bank rate per annum for every day of delay beyond 30 days",
+      "Standard document list: claim form, hospital discharge summary, investigation reports, original bills, pharmacy bills, FIR (if accident) — insurer cannot demand documents beyond this standard list without specific justification",
+      "Rejection communication: written rejection with specific reasons, citing exact policy clause, within 30 days; oral rejection is not valid",
+      "Partial settlement: if part of claim is admissible, insurer must settle admissible portion within 30 days while disputing the balance",
+      "TPA responsibility: Third Party Administrator is agent of insurer — TPA delays are insurer's liability"
+    ],
+    "consumer_rights": [
+      "Right to cashless pre-authorization response within 1 hour (planned) or 30 minutes (emergency)",
+      "Right to written rejection with specific policy clause citation — oral rejection is invalid",
+      "Right to interest at 2% above bank rate for delays beyond 30 days",
+      "Right to partial settlement of admissible claim portion even while balance is disputed"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "claim-settlement",
+      "30-day-mandate",
+      "interest",
+      "cashless",
+      "reimbursement"
+    ]
+  },
+  {
+    "id": "circ_024",
+    "circular_no": "IRDAI/MISC/CIR/OMBUDSMAN/117/05/2017  # VERIFY",
+    "subject": "Insurance Ombudsman Rules 2017 (as Amended 2023) — Jurisdiction, Process, and Timelines",
+    "date": "2017-05-11",
+    "category": "general",
+    "key_points": [
+      "Jurisdiction: Ombudsman can hear complaints on policies with risk coverage up to ₹50 lakh (enhanced from ₹30 lakh by 2023 amendment)",
+      "Award limit: Ombudsman can award compensation up to ₹50 lakh (enhanced from ₹30 lakh by 2023 amendment)",
+      "17 Ombudsman offices across India; jurisdiction based on policyholder's residential address",
+      "Eligibility: complainant must first approach insurer's grievance cell; if no response in 30 days or unsatisfactory response, can approach Ombudsman",
+      "Time limit: complaint must be filed within 1 year of insurer's final response or 1 year and 30 days of complaint to insurer (whichever is later)",
+      "Process: Ombudsman first attempts mediation/conciliation; if unsuccessful, passes a binding award within 3 months of receiving complaint",
+      "Award is binding on insurer if accepted by complainant; insurer must comply within 30 days of award",
+      "No lawyer needed: process is informal, policyholder can represent themselves; no court fees",
+      "Online filing through Bima Bharosa portal (igms.irda.gov.in) or in person at Ombudsman office"
+    ],
+    "consumer_rights": [
+      "Free dispute resolution without lawyers or court fees",
+      "Award up to ₹50 lakh binding on insurer (2023 amendment)",
+      "3-month resolution timeline from Ombudsman",
+      "Online complaint filing through Bima Bharosa / IGMS portal"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "ombudsman",
+      "grievance",
+      "dispute-resolution",
+      "bima-bharosa",
+      "2017",
+      "2023-amendment"
+    ]
+  },
+  {
+    "id": "circ_025",
+    "circular_no": "IRDAI/LIFE/CIR/ULIP/155/09/2024  # VERIFY",
+    "subject": "ULIP Disclosure Regulations — Charge Transparency, NAV Reporting, and Benefit Illustration Standards",
+    "date": "2024-09-20",
+    "category": "life",
+    "key_points": [
+      "Fund Management Charge (FMC) capped at 1.35% per annum across all ULIP funds — no exceptions",
+      "All charges must be disclosed in a standardized charge schedule: premium allocation charge, policy administration charge, fund management charge, mortality charge, fund switching charge, discontinuance charge",
+      "NAV must be published daily on insurer's website by 10 PM; historical NAV data for past 5 years must be freely accessible",
+      "Benefit illustration mandatory at 4% and 8% gross return scenarios, shown NET of all charges including FMC",
+      "IRR (Internal Rate of Return) of the illustration must be disclosed alongside gross return assumption",
+      "Reduction in Yield (RiY): total impact of charges on returns must be expressed as percentage points per annum — e.g., 'charges reduce your return by 2.3% per year'",
+      "Discontinuance charge: maximum ₹6,000 or 2% of fund value (whichever is lower) in years 1-3; nil from year 4 onwards for regular premium ULIPs",
+      "Minimum 5-year lock-in: discontinued funds held in Discontinued Policy Fund earning minimum 4% per annum until completion of lock-in"
+    ],
+    "consumer_rights": [
+      "Right to daily NAV publication and 5-year NAV history",
+      "Right to benefit illustration showing returns NET of all charges",
+      "Right to clear disclosure of how charges reduce investment returns (Reduction in Yield)",
+      "Right to discontinuance fund earning minimum 4% during lock-in if policy is surrendered early"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "ULIP",
+      "charges",
+      "NAV",
+      "disclosure",
+      "FMC",
+      "benefit-illustration"
+    ]
+  },
+  {
+    "id": "circ_026",
+    "circular_no": "IRDAI/LIFE/CIR/GDL/081/02/2024  # VERIFY",
+    "subject": "Surrender Value Regulations (Revised 2024) — Enhanced GSV/SSV Norms for Traditional Life Policies",
+    "date": "2024-02-15",
+    "category": "life",
+    "key_points": [
+      "New Guaranteed Surrender Value (GSV) factors effective 1 October 2024 for all new traditional life policies",
+      "Year 2 surrender: minimum 30% of total premiums paid (up from ~20% under old norms)",
+      "Year 3 surrender: minimum 35% of total premiums paid",
+      "Year 5 surrender: minimum 50% of total premiums paid",
+      "Year 7 surrender: minimum 65% of total premiums paid",
+      "Year 10+: minimum 75-90% of total premiums paid depending on policy term",
+      "Special Surrender Value (SSV) = higher of GSV and (paid-up sum assured + accrued bonuses) discounted to present value",
+      "Insurer must pay the HIGHER of GSV and SSV — consumer always gets the better value",
+      "Annual statement must clearly show current GSV and SSV values",
+      "Single premium policies: minimum 90% of single premium as surrender value after 1 year"
+    ],
+    "consumer_rights": [
+      "Right to significantly higher guaranteed surrender values under 2024 norms",
+      "Right to the HIGHER of GSV and SSV — insurer cannot pay the lower amount",
+      "Right to clear annual communication of current surrender value (both GSV and SSV)",
+      "Protection against large value loss when exiting policies — minimum 50% return at year 5"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "surrender-value",
+      "GSV",
+      "SSV",
+      "2024-regulations",
+      "traditional"
+    ]
+  },
+  {
+    "id": "circ_027",
+    "circular_no": "IRDAI/MISC/CIR/MISSELL/169/08/2023  # VERIFY",
+    "subject": "Mis-selling Prevention Guidelines — Definition, Red Flags, Remedies, and Insurer Accountability",
+    "date": "2023-08-25",
+    "category": "consumer_protection",
+    "key_points": [
+      "Mis-selling defined: selling insurance product that does not meet the customer's stated needs, providing misleading information, or withholding material information",
+      "Specific mis-selling acts: guaranteeing returns on market-linked products, not disclosing charges, selling endowment/ULIP when customer needs term insurance, selling to ineligible persons (age/health), forging signatures on proposal forms",
+      "Insurer liability: insurer is liable for mis-selling by its agents, corporate agents, and distributors — cannot disclaim responsibility",
+      "Remedy: policyholder can file mis-selling complaint within 3 years of policy purchase; insurer must investigate and respond within 30 days",
+      "If mis-selling proved: full premium refund with interest at bank rate + compensation for financial loss suffered",
+      "Agent penalty: license cancellation, blacklisting from industry, financial penalty up to ₹1 crore on insurer for systemic mis-selling",
+      "Call recording: all telephonic sales calls must be recorded and stored for 3 years as evidence",
+      "Need analysis: mandatory need analysis document to be signed by customer before purchase of investment-cum-insurance products (ULIPs, endowments)"
+    ],
+    "consumer_rights": [
+      "Right to full premium refund with interest if mis-selling is proved",
+      "Right to file mis-selling complaint within 3 years of policy purchase",
+      "Right to access recorded sales call as evidence in dispute",
+      "Right to need analysis documentation before being sold investment-linked insurance products"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "consumer_protection",
+      "mis-selling",
+      "agent-liability",
+      "refund",
+      "need-analysis"
+    ]
+  },
+  {
+    "id": "circ_028",
+    "circular_no": "IRDAI/MISC/CIR/ADV/044/03/2021  # VERIFY",
+    "subject": "Insurance Advertisements and Disclosure Regulations 2021 — What Insurers Can and Cannot Claim",
+    "date": "2021-03-18",
+    "category": "general",
+    "key_points": [
+      "No insurance advertisement may use the word 'guaranteed' for non-guaranteed benefits or market-linked returns",
+      "Benefit illustrations in advertisements must show both 4% and 8% scenarios; cannot show only the higher scenario",
+      "Past performance disclaimers mandatory for ULIPs: 'Past performance does not guarantee future results'",
+      "Premium shown in ads must be for a clearly specified profile (age, SI, term) — no 'starting from ₹X/day' without full context",
+      "Claim settlement ratio can be advertised but must cite IRDAI source and financial year — cannot cherry-pick metrics",
+      "Comparative advertisements: cannot name competitor products; comparison must be fair and based on publicly available IRDAI data",
+      "Celebrity endorsements: celebrity must have actually purchased the product; disclosure of paid endorsement mandatory",
+      "Social media and digital ads: same rules apply as print/TV — IRDAI can penalize for misleading social media campaigns",
+      "Penalty: ₹25 lakh per violation for insurer; advertisement removal within 24 hours of IRDAI direction"
+    ],
+    "consumer_rights": [
+      "Right to truthful advertising — no misleading 'guaranteed return' claims on market-linked products",
+      "Right to see complete premium information (not just 'starting from' figures) in any advertisement",
+      "Right to complain to IRDAI about misleading insurance advertisements",
+      "Protection from misleading CSR/performance claims in insurer marketing"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "advertisements",
+      "disclosure",
+      "misleading-claims",
+      "social-media",
+      "2021"
+    ]
+  },
+  {
+    "id": "circ_029",
+    "circular_no": "IRDAI/NL/CIR/MOT/058/04/2023  # VERIFY",
+    "subject": "Motor Insurance Guidelines — Third Party Premium, IDV Computation, and NCB Transfer Rules",
+    "date": "2023-04-10",
+    "category": "motor",
+    "key_points": [
+      "Third Party (TP) premium rates fixed by IRDAI annually: private car ≤1000cc ₹2,094, 1000-1500cc ₹3,416, >1500cc ₹7,897; two-wheeler ≤75cc ₹538, 75-150cc ₹714, 150-350cc ₹1,366, >350cc ₹2,804",
+      "IDV (Insured Declared Value) = manufacturer's listed selling price minus IRDAI depreciation: <6 months 5%, 6-12 months 15%, 1-2 years 20%, 2-3 years 30%, 3-4 years 40%, 4-5 years 50%, >5 years by mutual agreement",
+      "NCB (No Claim Bonus) slabs: 20% after 1 claim-free year, 25% after 2, 35% after 3, 45% after 4, 50% after 5+ years — applies to OD premium only",
+      "NCB transfer: NCB belongs to the OWNER not the vehicle; can be transferred to new vehicle upon sale of old vehicle",
+      "Compulsory Personal Accident (CPA) cover: ₹15 lakh for owner-driver of private car and two-wheeler — mandatory",
+      "Own Damage (OD) and TP can be purchased from different insurers — standalone OD policy and standalone TP policy allowed",
+      "Long-term TP: 3-year TP for new private cars, 5-year TP for new two-wheelers — available at time of vehicle purchase",
+      "Salvage: insurer must offer policyholder option to retain salvage with agreed deduction in total loss claims"
+    ],
+    "consumer_rights": [
+      "Right to NCB belonging to owner — transferable to new vehicle upon sale",
+      "Right to purchase OD and TP from different insurers for competitive pricing",
+      "Right to retain salvage with deduction in total loss claims",
+      "Right to IRDAI-fixed TP premium rates — no insurer can charge more than scheduled rates"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "third-party",
+      "IDV",
+      "NCB",
+      "depreciation",
+      "CPA",
+      "TP-premium"
+    ]
+  },
+  {
+    "id": "circ_030",
+    "circular_no": "IRDAI/NL/CIR/TRAVEL/072/05/2020  # VERIFY",
+    "subject": "Travel Insurance Guidelines — Minimum Coverage Standards, Standard Benefits, and Claim Procedures",
+    "date": "2020-05-15",
+    "category": "general",
+    "key_points": [
+      "Schengen visa requirement: minimum EUR 30,000 (approximately ₹27 lakh) medical coverage mandatory for all Schengen country travel",
+      "Standard coverage categories mandated: medical emergency and hospitalization, emergency medical evacuation, repatriation of remains, trip cancellation/interruption, baggage loss/delay, passport loss, personal liability, hijack distress allowance",
+      "Minimum coverage amounts for comprehensive travel plans: medical $50,000-500,000, trip cancellation $1,000-10,000, baggage loss $500-3,000, personal liability $50,000-200,000",
+      "Pre-existing condition coverage: most policies exclude PED; policies covering PED must clearly state terms (typically 50% copay, specific conditions only)",
+      "Adventure sports: excluded by default; optional rider available for trekking, skiing, scuba diving, bungee jumping at additional premium (20-50% extra)",
+      "Claim process: intimate insurer within 24 hours of incident; medical emergency claims processed through international TPA network; reimbursement within 30 days",
+      "Policy inception: coverage starts from departure (some policies from home to airport); ends on return to India",
+      "Student travel: extended policies up to 2 years for students with mental health coverage included from 2023"
+    ],
+    "consumer_rights": [
+      "Right to clearly stated coverage limits for all standard benefit categories",
+      "Right to 24-hour emergency assistance helpline (mandatory for all travel insurers)",
+      "Right to claim reimbursement within 30 days of document submission",
+      "Right to clear disclosure of PED exclusions and adventure sports limitations before purchase"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "travel",
+      "schengen",
+      "medical-emergency",
+      "baggage",
+      "trip-cancellation"
+    ]
+  },
+  {
+    "id": "circ_031",
+    "circular_no": "IRDAI/HLT/CIR/GRP/134/09/2022  # VERIFY",
+    "subject": "Group Insurance Regulations — Employer Group Health, Master Policyholder Rights, and Exit Coverage",
+    "date": "2022-09-28",
+    "category": "health",
+    "key_points": [
+      "Master policyholder (employer) must provide certificate of insurance to each group member with full coverage details",
+      "Group health policies must provide minimum ₹3 lakh sum insured per employee (IRDAI recommendation for employer groups >500 members)",
+      "Exit coverage: when employee leaves employer group, insurer must offer individual migration policy without fresh waiting periods — credit for all waiting periods served under group policy",
+      "Pre-existing disease coverage: group policies typically cover PED from day 1 with no waiting period (unlike individual policies)",
+      "Maternity coverage in group health: mandatory for groups >20 employees; typically covers normal delivery ₹25,000-50,000 and C-section ₹50,000-75,000",
+      "Dependents: spouse, dependent children (up to 25 years), and dependent parents can be covered under employer group policy",
+      "Claim process: TPA appointed by insurer handles claims; cashless network of insurer applies to group members",
+      "Renewal: insurer can increase premium based on claims experience but cannot refuse renewal mid-term or without 60-day notice"
+    ],
+    "consumer_rights": [
+      "Right to certificate of insurance with full coverage details from employer/master policyholder",
+      "Right to migrate to individual policy without losing waiting period credit upon leaving employment",
+      "Right to PED coverage from day 1 under most employer group health policies",
+      "Right to 60-day advance notice before renewal premium change or non-renewal"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "group-insurance",
+      "employer",
+      "migration",
+      "PED",
+      "exit-coverage"
+    ]
+  },
+  {
+    "id": "circ_032",
+    "circular_no": "IRDAI/MISC/CIR/MICRO/048/03/2015  # VERIFY",
+    "subject": "Micro Insurance Regulations — Affordable Products for Low-Income Segments",
+    "date": "2015-03-20",
+    "category": "general",
+    "key_points": [
+      "Micro insurance products designed for economically vulnerable sections with simple terms and low premiums",
+      "Life micro insurance: sum insured ₹5,000 to ₹2,00,000; premium ₹100-1,000 per year; simple terms with minimal exclusions",
+      "General micro insurance: sum insured ₹5,000 to ₹1,00,000 for health/PA/property; premium ₹50-500 per year",
+      "Distribution: can be sold through NGOs, self-help groups, microfinance institutions, rural banks, and business correspondents",
+      "Simplified proposal form: minimal documentation required; no medical test for life micro up to ₹50,000 SI",
+      "Claim settlement: simplified process; claim must be settled within 10 days for micro products (faster than standard 30 days)",
+      "Bima Vistar: IRDAI's proposed composite micro-insurance product covering life, health, and property in single policy at ₹1-2/day",
+      "Government schemes: PMJJBY (₹436/year, ₹2L life cover) and PMSBY (₹20/year, ₹2L accident cover) as micro insurance benchmarks"
+    ],
+    "consumer_rights": [
+      "Right to affordable insurance products with simplified terms and minimal exclusions",
+      "Right to faster claim settlement (10 days) for micro insurance products",
+      "Right to purchase micro insurance through local institutions (NGOs, SHGs, cooperatives)",
+      "No medical test requirement for life micro insurance up to ₹50,000 sum insured"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "micro-insurance",
+      "low-income",
+      "bima-vistar",
+      "PMJJBY",
+      "PMSBY",
+      "rural"
+    ]
+  },
+  {
+    "id": "circ_033",
+    "circular_no": "IRDAI/HLT/CIR/PED/201/11/2021  # VERIFY",
+    "subject": "Pre-Existing Disease (PED) Definition Circular — What Counts as PED, Moratorium, and Disclosure Requirements",
+    "date": "2021-11-08",
+    "category": "health",
+    "key_points": [
+      "PED defined: any condition, ailment, injury, or disease diagnosed or for which medical advice/treatment was received within 48 months prior to the date of first policy inception",
+      "48-month lookback: only conditions diagnosed/treated in the 48 months BEFORE first policy issuance qualify as PED — conditions before that window do not count",
+      "Moratorium period: after 8 continuous years of coverage (pre-2024 policies), insurer cannot reject claims citing non-disclosure of PED except in cases of proven fraud",
+      "2024 update: moratorium reduced to 5 years for policies issued from 1 April 2024",
+      "PED waiting period: maximum 4 years (48 months) from first policy inception — IRDAI cap applies universally",
+      "Portability credit: if policyholder has served 3 years PED waiting period with insurer A, insurer B must give credit for those 3 years upon portability",
+      "Disclosure obligation: policyholder must disclose all known PED in proposal form honestly; non-disclosure is different from misrepresentation",
+      "Insurer obligation: insurer should conduct pre-policy medical screening for high-risk applicants — cannot later claim non-disclosure if no medical was conducted"
+    ],
+    "consumer_rights": [
+      "Right to clear 48-month PED lookback — conditions before that window are not PED",
+      "Right to moratorium protection (8 years pre-2024, 5 years from 2024) — no PED rejection after continuous coverage",
+      "Right to PED waiting period credit upon portability to new insurer",
+      "Right to protection from PED rejection if insurer failed to conduct pre-policy medical screening"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "PED",
+      "moratorium",
+      "waiting-period",
+      "disclosure",
+      "48-month-lookback"
+    ]
+  },
+  {
+    "id": "circ_034",
+    "circular_no": "IRDAI/HLT/CIR/STD/153/07/2020  # VERIFY",
+    "subject": "Standard Product Guidelines — Arogya Sanjeevani (Health) and Saral Jeevan Bima (Life) Mandatory Products",
+    "date": "2020-07-15",
+    "category": "health",
+    "key_points": [
+      "Arogya Sanjeevani: mandatory standard health insurance product offered by all general and standalone health insurers from 1 April 2020",
+      "Arogya Sanjeevani features: SI ₹1 lakh to ₹5 lakh, 5% copay, no room rent sub-limit, AYUSH coverage, 30-day initial waiting, 48-month PED waiting, 24-month specific disease waiting",
+      "Product features identical across all insurers — only premium varies, enabling true comparison shopping",
+      "Saral Jeevan Bima: mandatory standard term life insurance product from all life insurers from 1 January 2021",
+      "Saral Jeevan Bima features: pure term plan, SI ₹5 lakh to ₹25 lakh, age 18-65 entry, term 5-40 years, minimal exclusions (only suicide in first year)",
+      "Saral Jeevan Bima: no policy administration charge, no medical test up to ₹5 lakh SI for age below 45",
+      "Standard Personal Accident (Saral Suraksha Bima): mandatory PA product from 1 April 2021, SI ₹1 lakh to ₹1 crore",
+      "Purpose: ensure every Indian has access to basic, understandable insurance products at competitive prices"
+    ],
+    "consumer_rights": [
+      "Right to buy Arogya Sanjeevani from any non-life/health insurer — cannot be refused",
+      "Right to buy Saral Jeevan Bima (standard term) from any life insurer — cannot be refused",
+      "True comparison shopping: identical product features across insurers, only premium differs",
+      "Simple, transparent products with no hidden sub-limits or complex terms"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "life",
+      "standard-products",
+      "arogya-sanjeevani",
+      "saral-jeevan-bima",
+      "saral-suraksha-bima"
+    ]
+  },
+  {
+    "id": "circ_035",
+    "circular_no": "IRDAI/NL/CIR/SURV/088/06/2019  # VERIFY",
+    "subject": "Insurance Surveyor and Loss Assessor Regulations — Motor Claims Survey Process and Timelines",
+    "date": "2019-06-14",
+    "category": "motor",
+    "key_points": [
+      "Surveyor must be appointed within 72 hours of claim intimation for motor own-damage claims",
+      "Survey must be completed within 48 hours of surveyor appointment (total 5 days from intimation to survey completion)",
+      "Surveyor must provide detailed assessment report including: damage extent, repair vs replacement recommendation, fair market cost of repairs, depreciation applied per IRDAI schedule",
+      "Re-inspection: policyholder can request second survey if dissatisfied with first assessment; insurer must appoint independent surveyor",
+      "Spot survey for minor claims (under ₹50,000): can be done through photographs and video — no physical surveyor visit needed",
+      "Cashless motor repair: surveyor authorizes repair at network garage; insurer settles directly with garage",
+      "Total loss: if repair cost exceeds 75% of IDV, vehicle is declared total loss; insurer pays IDV minus salvage value",
+      "Surveyor independence: surveyor is licensed by IRDAI and must not have financial interest in insurer or garage"
+    ],
+    "consumer_rights": [
+      "Right to surveyor appointment within 72 hours of claim intimation",
+      "Right to request re-inspection by independent surveyor if dissatisfied",
+      "Right to photo/video-based spot survey for minor claims without waiting for physical survey",
+      "Right to choose between repair and total loss settlement when repair cost exceeds 75% of IDV"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "motor",
+      "surveyor",
+      "loss-assessor",
+      "survey-timeline",
+      "total-loss",
+      "cashless-repair"
+    ]
+  },
+  {
+    "id": "circ_036",
+    "circular_no": "IRDAI/MISC/CIR/AML/162/10/2022  # VERIFY",
+    "subject": "KYC and Anti-Money Laundering (AML) Guidelines for Insurance — Verification Requirements",
+    "date": "2022-10-05",
+    "category": "general",
+    "key_points": [
+      "KYC mandatory for all insurance policies: identity proof (Aadhaar, PAN, Passport, Voter ID) and address proof required",
+      "Video KYC (VKYC): permitted for individual policy issuance — live video verification with geo-tagging replaces in-person KYC",
+      "Aadhaar e-KYC: Aadhaar OTP-based verification accepted for instant policy issuance (with UIDAI consent)",
+      "PAN mandatory for: single premium >₹50,000, annual premium >₹50,000, any life policy with SA >₹5 lakh",
+      "Simplified KYC for micro insurance: self-certification with any one government ID sufficient for policies up to ₹50,000 SI",
+      "Enhanced Due Diligence (EDD): required for high-value policies (premium >₹10 lakh/year), politically exposed persons, and high-risk customers",
+      "Suspicious Transaction Reports (STR): insurers must file STR with Financial Intelligence Unit (FIU) for unusual premium payments or policy transactions",
+      "Beneficial ownership: for corporate/trust policies, ultimate beneficial owner must be identified and verified"
+    ],
+    "consumer_rights": [
+      "Right to Video KYC — no mandatory branch visit for identity verification",
+      "Right to Aadhaar e-KYC for instant policy issuance without physical document submission",
+      "Right to simplified KYC for micro insurance products (single government ID sufficient)",
+      "Right to privacy — insurer can collect only KYC data necessary for insurance, not extraneous personal data"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "KYC",
+      "AML",
+      "Aadhaar",
+      "video-KYC",
+      "PAN",
+      "verification"
+    ]
+  },
+  {
+    "id": "circ_037",
+    "circular_no": "IRDAI/MISC/CIR/DIGI/122/07/2021  # VERIFY",
+    "subject": "Digital Insurance Regulations — E-Policy Issuance, Electronic Records, and Digital-First Processes",
+    "date": "2021-07-30",
+    "category": "general",
+    "key_points": [
+      "E-policy has same legal validity as physical policy under IT Act 2000 and Indian Evidence Act amendments",
+      "All insurers must offer digital policy issuance option — cannot force physical-only issuance",
+      "Policy document must be issued electronically within 48 hours of premium payment confirmation",
+      "E-signature (Aadhaar OTP or DSC) acceptable for proposal form, policy document, and endorsements",
+      "Digital claims: WhatsApp, app-based, email claim intimation accepted; insurer cannot insist on physical forms",
+      "Electronic premium payment: UPI, net banking, auto-debit mandate, digital wallets all recognized",
+      "Policy storage: insurers must provide online portal/app for policyholders to access all policy documents digitally",
+      "Consent framework: digital consent (OTP-based or click-to-accept) valid for policy purchase, with full terms displayed before consent"
+    ],
+    "consumer_rights": [
+      "Right to fully digital policy purchase, service, and claims without branch visit",
+      "Right to electronic policy document within 48 hours of payment",
+      "Right to digital claim intimation through WhatsApp, app, or email",
+      "Right to access all policy documents online through insurer portal/app at any time"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "digital",
+      "e-policy",
+      "e-signature",
+      "IT-Act",
+      "paperless",
+      "WhatsApp"
+    ]
+  },
+  {
+    "id": "circ_038",
+    "circular_no": "IRDAI/HLT/CIR/MHA/229/11/2019  # VERIFY",
+    "subject": "Mental Healthcare Act 2017 Compliance — Mandatory Mental Health Coverage in Insurance",
+    "date": "2019-11-25",
+    "category": "health",
+    "key_points": [
+      "Section 21(4) of Mental Healthcare Act 2017: every insurer must make provision for medical insurance for treatment of mental illness on the same basis as for physical illness",
+      "Mental illness hospitalization must be covered identically to physical illness hospitalization — same sub-limits, same copay, same room category",
+      "Cannot exclude mental illness as a standard permanent exclusion — such exclusion violates the Mental Healthcare Act and is void",
+      "Psychiatric hospitalization in recognized mental health establishments covered — both government and private facilities",
+      "OPD psychiatric consultations: covered where policy covers general OPD — cannot selectively exclude mental health OPD",
+      "No separate or additional waiting period for mental illness beyond what applies to other conditions",
+      "Substance abuse treatment: IRDAI allows exclusion of substance abuse/addiction treatment as a separate exclusion (not linked to mental health exclusion)",
+      "Insurer cannot charge higher premium, refuse to issue policy, or apply discriminatory terms solely based on mental illness history"
+    ],
+    "consumer_rights": [
+      "Right to mental health hospitalization coverage at par with physical health — no discrimination",
+      "Right to not be denied insurance or charged higher premium solely due to mental illness history",
+      "Right to psychiatric OPD coverage where general OPD is covered in the policy",
+      "Mental illness exclusion clause in any health policy is legally void under Mental Healthcare Act 2017"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "mental-health",
+      "Mental-Healthcare-Act-2017",
+      "Section-21",
+      "psychiatric",
+      "non-discrimination"
+    ]
+  },
+  {
+    "id": "circ_039",
+    "circular_no": "IRDAI/HLT/CIR/SEN/178/12/2023  # VERIFY",
+    "subject": "Senior Citizen Health Insurance Guidelines — Mandatory Coverage, Pricing Norms, and Renewal Guarantees",
+    "date": "2023-12-10",
+    "category": "health",
+    "key_points": [
+      "Insurers must offer at least one health insurance product for entry age 65+ (many insurers now offer entry up to 80 years)",
+      "Lifelong renewal guarantee: once issued, insurer cannot refuse renewal at any age — guaranteed renewal for life",
+      "Premium increase at renewal: must be actuarially justified and filed with IRDAI; cannot increase premium beyond 25% in any single renewal year without IRDAI approval",
+      "Copay for senior citizens: maximum 20% copay allowed for individual senior citizen policies (some insurers charge 10-20% above age 60)",
+      "PED coverage: standard 48-month PED waiting applies; insurers encouraged to offer reduced PED waiting (24 months) for senior products",
+      "Government subsidy: under Ayushman Bharat PM-JAY, senior citizens from eligible families get ₹5 lakh free health cover per family per year",
+      "Section 80D tax benefit: senior citizens get enhanced deduction of ₹50,000 (vs ₹25,000 for non-seniors) for health insurance premium",
+      "Day care and domiciliary treatment: particularly important for seniors — must be covered without additional exclusions"
+    ],
+    "consumer_rights": [
+      "Right to lifelong guaranteed renewal — insurer cannot refuse renewal based on age or claims history",
+      "Right to actuarially justified premium increases — no arbitrary senior citizen premium hikes",
+      "Right to buy health insurance up to age 65+ from at least one product per insurer",
+      "Enhanced ₹50,000 tax deduction under Section 80D for senior citizen health insurance premium"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "senior-citizen",
+      "lifelong-renewal",
+      "80D",
+      "copay",
+      "Ayushman-Bharat"
+    ]
+  },
+  {
+    "id": "circ_040",
+    "circular_no": "IRDAI/HLT/CIR/REN/145/08/2022  # VERIFY",
+    "subject": "Renewable Policy Guidelines — Guaranteed Renewal Rights, Grace Period, and Non-Renewal Protections",
+    "date": "2022-08-15",
+    "category": "health",
+    "key_points": [
+      "All individual health insurance policies (indemnity type) must be offered with lifelong renewal guarantee from 2022",
+      "Grace period: minimum 30 days from premium due date for renewal payment without loss of coverage; policy remains active during grace period",
+      "Claims during grace period: if hospitalization occurs during 30-day grace period and premium is paid subsequently, claim is valid",
+      "Non-renewal by insurer: insurer can only non-renew for fraud or misrepresentation — cannot non-renew based on claims experience or age",
+      "Premium revision at renewal: insurer can revise premium only with IRDAI-approved revised rate tables — individual risk-based repricing not allowed",
+      "Continuity benefit: all waiting periods, PED credit, and no-claim bonuses carry forward on renewal without interruption",
+      "Lapsed policy revival: if policy lapses (premium not paid within grace period), can be revived within 15-30 days with underwriting; waiting periods restart for revival after 30 days",
+      "Migration within insurer: policyholder can migrate to a higher/different plan from same insurer at renewal with waiting period credit"
+    ],
+    "consumer_rights": [
+      "Right to lifelong guaranteed renewal of individual health policies",
+      "Right to 30-day grace period for renewal payment without loss of coverage",
+      "Right to valid claim if hospitalized during grace period and premium subsequently paid",
+      "Right to not be non-renewed based on claims history or age — only fraud-based non-renewal allowed"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "renewal",
+      "guaranteed-renewal",
+      "grace-period",
+      "lapse",
+      "continuity"
+    ]
+  },
+  {
+    "id": "circ_041",
+    "circular_no": "IRDAI/MISC/CIR/WOMEN/195/01/2024  # VERIFY",
+    "subject": "Women-Specific Insurance Product Guidelines — Maternity, Critical Illness, and Financial Independence",
+    "date": "2024-01-15",
+    "category": "health",
+    "key_points": [
+      "Insurers encouraged to design women-centric health products covering: maternity (normal + C-section + complications), women-specific cancers (breast, cervical, ovarian), osteoporosis, PCOS, thyroid disorders",
+      "Maternity coverage: mandatory in all comprehensive health plans with SI above ₹10 lakh (sub-limits apply: normal delivery ₹25,000-50,000, C-section ₹50,000-75,000, new-born cover 90 days)",
+      "Women-specific critical illness riders: must cover breast cancer, cervical cancer, ovarian cancer, and complications of pregnancy at defined benefit amounts",
+      "Premium discount for women: insurers may offer 5-10% premium discount for female policyholders in term and health insurance (reflecting lower mortality/morbidity)",
+      "Working women's group insurance: employer must provide maternity leave coverage and health benefits for women employees as per Maternity Benefit Act 2017",
+      "Single women / widows / divorcees: cannot be charged higher premium or denied coverage based on marital status",
+      "IRDAI directive: at least one product per insurer should be designed specifically addressing women's health and financial protection needs"
+    ],
+    "consumer_rights": [
+      "Right to maternity coverage in comprehensive health plans above ₹10 lakh SI",
+      "Right to not be discriminated in premium or coverage based on gender or marital status",
+      "Right to women-specific critical illness coverage including breast and cervical cancer",
+      "Right to new-born baby coverage for 90 days from birth under mother's health policy"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "women",
+      "maternity",
+      "cancer",
+      "gender-parity",
+      "critical-illness"
+    ]
+  },
+  {
+    "id": "circ_042",
+    "circular_no": "IRDAI/LIFE/CIR/SEC45/175/10/2023  # VERIFY",
+    "subject": "Section 45 — Contestability Period Guidelines for Life Insurance Policies",
+    "date": "2023-10-20",
+    "category": "life",
+    "key_points": [
+      "Section 45 of Insurance Act 1938 (as amended 2015): no life insurance policy can be called into question after 3 years from date of policy issuance",
+      "Within 3 years (contestability period): insurer can investigate and reject claim for misrepresentation, fraud, or non-disclosure in proposal form",
+      "Burden of proof on insurer: insurer must prove that (a) statement was material, (b) statement was inaccurate/false, and (c) policyholder knew it was inaccurate at time of declaration",
+      "After 3 years: policy is incontestable — insurer cannot reject death claim or maturity claim citing non-disclosure, even if non-disclosure is discovered",
+      "Exception: fraud with intent to deceive can be contested even after 3 years, but burden of proof remains on insurer and is extremely high",
+      "Pre-2015 policies: 2-year contestability period applied (Section 45 amended in 2015 to extend to 3 years)",
+      "Practical impact: if policyholder dies in year 4 and insurer discovers undisclosed diabetes, claim MUST be paid — policy is incontestable",
+      "Distinction from health moratorium: health insurance has 8-year (now 5-year) moratorium under IRDAI circular; life insurance has statutory 3-year contestability under Section 45"
+    ],
+    "consumer_rights": [
+      "Right to incontestable life policy after 3 years — insurer cannot reject claims citing non-disclosure",
+      "Burden of proof always on insurer during contestability period — policyholder presumed honest",
+      "Death claim must be paid after 3 years regardless of any non-disclosure discovered later (except proven fraud)",
+      "Clear statutory protection under Section 45 of Insurance Act — overrides any policy terms to the contrary"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "life",
+      "Section-45",
+      "contestability",
+      "non-disclosure",
+      "incontestable",
+      "fraud"
+    ]
+  },
+  {
+    "id": "circ_043",
+    "circular_no": "IRDAI/MISC/CIR/BRK/160/09/2022  # VERIFY",
+    "subject": "Insurance Broker Regulations — Licensing, Duties, Disclosure, and Client Protection",
+    "date": "2022-09-10",
+    "category": "general",
+    "key_points": [
+      "Insurance broker: licensed intermediary who can sell products from multiple insurers (unlike agent who represents one insurer)",
+      "Broker categories: direct broker (works with policyholder), reinsurance broker, composite broker (both direct and reinsurance)",
+      "Fiduciary duty: broker must act in the best interest of the client, not the insurer — unlike agent who represents insurer",
+      "Disclosure: broker must disclose commission/remuneration received from insurer to the client before policy issuance",
+      "Needs analysis: broker must conduct documented needs analysis to recommend suitable products — liability for mis-selling",
+      "Claim assistance: broker must assist client in claim filing, documentation, and follow-up with insurer as part of service obligation",
+      "Minimum capital: ₹75 lakh for direct broker, ₹2 crore for reinsurance broker, ₹2.5 crore for composite broker",
+      "E&O insurance: brokers must maintain Errors & Omissions professional liability insurance to compensate clients for broker negligence",
+      "IRDAI web aggregator: online platforms that compare insurance products must be licensed as web aggregators; comparison must be fair and unbiased"
+    ],
+    "consumer_rights": [
+      "Right to broker's fiduciary duty — broker must act in your interest, not insurer's",
+      "Right to commission disclosure — know what your broker earns from recommending a product",
+      "Right to claim assistance from broker throughout the claims process",
+      "Right to compensation through broker's E&O insurance if broker's negligence causes financial loss"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "broker",
+      "intermediary",
+      "fiduciary",
+      "commission-disclosure",
+      "web-aggregator"
+    ]
+  },
+  {
+    "id": "circ_044",
+    "circular_no": "IRDAI/MISC/CIR/REIN/140/07/2022  # VERIFY",
+    "subject": "Reinsurance Guidelines — Consumer Impact of Reinsurance Arrangements on Claim Settlement",
+    "date": "2022-07-20",
+    "category": "general",
+    "key_points": [
+      "Reinsurance is insurance for insurers — primary insurer transfers part of risk to reinsurer; does NOT affect policyholder's claim rights",
+      "Policyholder's claim is ALWAYS against the primary insurer — reinsurer has no direct obligation to policyholder",
+      "Primary insurer cannot delay or deny claim citing pending reinsurance settlement — must pay from own funds first",
+      "GIC Re (General Insurance Corporation of India): India's sole national reinsurer; provides mandatory cession of 5% of all general insurance premiums",
+      "Solvency ratio: reinsurance helps insurers maintain required 1.5x solvency margin — protects policyholder against insurer insolvency",
+      "Catastrophe coverage: reinsurance ensures insurers can pay large-scale claims (floods, earthquakes, pandemics) without going bankrupt",
+      "IRDAI oversight: reinsurance arrangements are approved by IRDAI; cross-border reinsurance with foreign reinsurers requires IRDAI clearance",
+      "Policyholder protection fund: in event of insurer insolvency, policyholder protection fund (maintained by IRDAI) provides safety net up to defined limits"
+    ],
+    "consumer_rights": [
+      "Right to claim payment from primary insurer regardless of reinsurance arrangement status",
+      "Right to insurer solvency protection through mandatory reinsurance requirements",
+      "Right to policyholder protection fund coverage in event of insurer insolvency",
+      "Insurer cannot cite reinsurance delays as reason to delay your claim settlement"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "reinsurance",
+      "GIC-Re",
+      "solvency",
+      "policyholder-protection-fund",
+      "insolvency"
+    ]
+  },
+  {
+    "id": "circ_045",
+    "circular_no": "IRDAI/MISC/CIR/FRAUD/182/11/2023  # VERIFY",
+    "subject": "Anti-Fraud Framework for Insurance — Detection, Prevention, and Policyholder Protection",
+    "date": "2023-11-20",
+    "category": "general",
+    "key_points": [
+      "Every insurer must establish an anti-fraud policy with dedicated fraud investigation unit",
+      "Types of insurance fraud: policyholder fraud (inflated claims, staged accidents), intermediary fraud (forgery, premium misappropriation), insurer fraud (claim rejection without basis)",
+      "Fraud investigation timeline: insurer must complete investigation and communicate findings within 45 days of suspecting fraud — cannot indefinitely hold claims",
+      "If fraud NOT proved within 45 days: insurer must settle the claim and can pursue separate legal action later",
+      "Policyholder protection: legitimate claim cannot be delayed beyond 45 days on suspicion of fraud — anti-fraud process cannot be used as claim delay tactic",
+      "Data analytics: IRDAI mandates insurers use data analytics and AI for fraud detection while protecting genuine claimants",
+      "IIB (Insurance Information Bureau): central fraud database maintained by IIB for cross-insurer fraud detection",
+      "Whistleblower protection: insurers must have mechanism for employees and policyholders to report fraud anonymously",
+      "Penalty for fraudulent claims: policy voidance, claim forfeiture, criminal prosecution under IPC Sections 420/468"
+    ],
+    "consumer_rights": [
+      "Right to claim settlement within 45 days even if fraud investigation is underway (unless fraud is proven)",
+      "Right to not have legitimate claims delayed under guise of fraud investigation",
+      "Right to report insurance fraud anonymously through whistleblower mechanism",
+      "Right to due process — insurer must prove fraud; burden of proof is on insurer, not policyholder"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "anti-fraud",
+      "investigation",
+      "IIB",
+      "fraud-detection",
+      "whistleblower"
+    ]
+  },
+  {
+    "id": "circ_046",
+    "circular_no": "IRDAI/HLT/CIR/TELE/190/01/2024  # VERIFY",
+    "subject": "Telemedicine and OPD Coverage Guidelines — Digital Consultation, E-Pharmacy, and Outpatient Benefits",
+    "date": "2024-01-25",
+    "category": "health",
+    "key_points": [
+      "Telemedicine consultations via registered medical practitioners are valid for all insurance purposes: claim filing, prescription, referral, and pre-authorization",
+      "OPD (Outpatient Department) coverage: insurers encouraged to offer OPD benefit covering consultations, diagnostics, pharmacy, and physiotherapy up to defined annual limits",
+      "E-pharmacy: medicines purchased from licensed e-pharmacies (1mg, PharmEasy, Netmeds, Apollo Pharmacy online) with valid prescription are reimbursable",
+      "Annual health check-up: policies with OPD benefit must cover at least one annual health check-up — preventive health as part of insurance",
+      "Teleconsultation platforms: insurers may partner with telemedicine platforms to provide free/subsidized consultations as wellness benefit",
+      "OPD claim process: simplified claim — submit prescription, bills, and consultation record via app; settlement within 7 days for OPD claims under ₹5,000",
+      "Mental health teleconsultation: psychiatric and psychological counseling via telemedicine must be covered at par with in-person consultation",
+      "Second medical opinion via telemedicine: covered as part of claim process — policyholder can get second opinion before surgery/major treatment"
+    ],
+    "consumer_rights": [
+      "Right to use telemedicine consultations without loss of insurance coverage or claim validity",
+      "Right to e-pharmacy reimbursement with valid prescription from licensed online pharmacies",
+      "Right to mental health teleconsultation coverage at par with in-person psychiatric visits",
+      "Right to second medical opinion via telemedicine as part of claim evaluation process"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "health",
+      "telemedicine",
+      "OPD",
+      "e-pharmacy",
+      "teleconsultation",
+      "digital-health",
+      "wellness"
+    ]
+  },
+  {
+    "id": "circ_047",
+    "circular_no": "IRDAI/MISC/CIR/PROD/168/09/2023  # VERIFY",
+    "subject": "Insurance Product Withdrawal Guidelines — Policyholder Protection During Product Discontinuation",
+    "date": "2023-09-15",
+    "category": "general",
+    "key_points": [
+      "Insurer cannot withdraw/discontinue a product without 90-day prior intimation to IRDAI and existing policyholders",
+      "Existing policyholders' rights: withdrawal of product does NOT affect existing policies — all policies continue until maturity/expiry on same terms",
+      "Renewal guarantee: even if product is withdrawn from sale, existing policyholders' renewal rights are protected — insurer must continue renewing",
+      "Migration option: insurer must offer migration to a comparable or superior product at renewal if original product is withdrawn",
+      "ULIP fund closure: if ULIP fund is being merged/closed, policyholder must be given 30 days to switch to another fund without charge",
+      "Premium rates: existing premium guarantee (if any) is honored even after product withdrawal — insurer cannot revise premium for withdrawn product",
+      "Group policies: if group product is withdrawn, master policyholder must be informed 90 days before renewal with migration alternatives",
+      "IRDAI approval: product withdrawal must be approved by IRDAI; IRDAI can refuse withdrawal if it harms policyholder interests"
+    ],
+    "consumer_rights": [
+      "Right to continued policy terms even after product is withdrawn from market",
+      "Right to guaranteed renewal of withdrawn product on same terms",
+      "Right to migrate to comparable or superior product at no extra cost upon product withdrawal",
+      "Right to 90-day advance notice before any product withdrawal or discontinuation"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "product-withdrawal",
+      "discontinuation",
+      "migration",
+      "renewal-protection"
+    ]
+  },
+  {
+    "id": "circ_048",
+    "circular_no": "IRDAI/MISC/CIR/DATA/185/12/2023  # VERIFY",
+    "subject": "Data Protection and Privacy in Insurance — Policyholder Data Rights and Insurer Obligations",
+    "date": "2023-12-20",
+    "category": "general",
+    "key_points": [
+      "Policyholder data (health records, financial data, personal details) is confidential — insurer must maintain strict data protection protocols",
+      "Consent-based collection: insurer can collect only data necessary for underwriting, claims, and servicing — cannot collect extraneous personal data without explicit consent",
+      "Data sharing: policyholder health data cannot be shared with third parties (employers, other insurers, marketers) without explicit written consent",
+      "DPDP Act 2023 alignment: insurers must comply with Digital Personal Data Protection Act 2023 — data principal (policyholder) rights of access, correction, and erasure apply",
+      "Data retention: insurer must retain policyholder records for minimum 8 years after policy expiry; after retention period, data must be securely deleted/anonymized",
+      "Breach notification: insurer must notify IRDAI and affected policyholders within 72 hours of any data breach affecting personal data",
+      "Cross-border data transfer: policyholder data cannot be transferred outside India except to IRDAI-approved jurisdictions with adequate data protection",
+      "Data portability: policyholder has right to receive their complete policy and claims data in machine-readable format for portability to another insurer"
+    ],
+    "consumer_rights": [
+      "Right to data privacy — health records and personal data cannot be shared without explicit consent",
+      "Right to data access, correction, and erasure under DPDP Act 2023",
+      "Right to 72-hour breach notification if personal insurance data is compromised",
+      "Right to data portability — receive complete policy and claims data in portable format"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "data-protection",
+      "privacy",
+      "DPDP-Act",
+      "consent",
+      "breach-notification",
+      "portability"
+    ]
+  },
+  {
+    "id": "circ_049",
+    "circular_no": "IRDAI/MISC/CIR/DISAB/192/01/2024  # VERIFY",
+    "subject": "Insurance for Persons with Disabilities — Non-Discrimination, Accessibility, and Reasonable Accommodation",
+    "date": "2024-01-10",
+    "category": "consumer_protection",
+    "key_points": [
+      "Rights of Persons with Disabilities Act 2016 (RPwD Act): insurers cannot deny insurance to persons with disabilities on grounds of disability alone",
+      "Underwriting: disability-based loading or exclusion must be actuarially justified and specific to the disability's impact on insured risk — blanket rejection prohibited",
+      "Physical disability and health insurance: persons with physical disability (locomotor, visual, hearing) cannot be denied health insurance — physical disability is not a pre-existing disease",
+      "Mental disability: covered under Mental Healthcare Act 2017 for health insurance; cannot be excluded (see circ_038)",
+      "Accessible formats: policy documents must be available in accessible formats — large print, Braille, audio, and screen-reader-compatible digital format upon request",
+      "Online accessibility: insurer websites and apps must meet WCAG 2.1 AA accessibility standards for visually impaired users",
+      "Premium loading: if disability-based premium loading is applied, insurer must provide written actuarial justification; policyholder can challenge with IRDAI",
+      "Claim process: insurer must provide reasonable accommodation in claim process for persons with disabilities — home visits for survey, accessible communication"
+    ],
+    "consumer_rights": [
+      "Right to not be denied insurance solely on grounds of disability — blanket rejection is illegal",
+      "Right to policy documents in accessible formats (Braille, audio, large print, screen-reader compatible)",
+      "Right to challenge disability-based premium loading with IRDAI if actuarial justification is inadequate",
+      "Right to reasonable accommodation in claim filing and settlement process"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "consumer_protection",
+      "disability",
+      "RPwD-Act",
+      "non-discrimination",
+      "accessibility",
+      "reasonable-accommodation"
+    ]
+  },
+  {
+    "id": "circ_050",
+    "circular_no": "IRDAI/MISC/CIR/eIA/001/01/2016  # VERIFY",
+    "subject": "E-Insurance Account (eIA) Regulations — Digital Policy Repository, Operations, and Consumer Benefits",
+    "date": "2016-01-15",
+    "category": "general",
+    "key_points": [
+      "eIA (e-Insurance Account): unique 10-digit electronic account to hold all insurance policies in dematerialized form",
+      "Four approved Insurance Repositories: NSDL Insurance Repository (formerly SHCIL), CDSL Insurance Repository, CAMS Insurance Repository, KFin Technologies Insurance Repository",
+      "Free to open and maintain — no annual charges; policyholder can open eIA with any one repository",
+      "Single KYC: KYC done once with repository is valid for all policies — no need for separate KYC for each insurer",
+      "Centralized view: all life, health, motor, and general insurance policies visible in one dashboard",
+      "Operations through eIA: nomination changes, contact updates, premium payments, and policy servicing can be done centrally",
+      "Nominee benefit: in event of policyholder's death, nominee/legal heir can access all policies through eIA — prevents policy loss/unknown policy problem",
+      "DigiLocker integration: insurance policies in eIA can be linked to Aadhaar-based DigiLocker for additional digital access",
+      "Mandatory conversion: IRDAI encourages all existing physical policies to be converted to electronic form through eIA",
+      "eIA is portable — policyholder can switch repository while retaining all policy records"
+    ],
+    "consumer_rights": [
+      "Right to free eIA account with any approved Insurance Repository",
+      "Right to hold all insurance policies digitally in one consolidated view",
+      "Right to single KYC valid across all insurers through eIA repository",
+      "Nominee's right to discover all policyholder's policies through eIA in event of death"
+    ],
+    "source": "irdai.gov.in",
+    "tags": [
+      "general",
+      "eIA",
+      "e-insurance-account",
+      "repository",
+      "DigiLocker",
+      "digital",
+      "KYC"
+    ]
   }
 ]

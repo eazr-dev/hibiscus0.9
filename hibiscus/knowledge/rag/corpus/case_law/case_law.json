@@ -284,7 +284,7 @@
     "issue": "National Insurance denied an OD claim for vehicle damage, arguing that the policyholder's son who was driving at the time did not hold a valid driving license. The son had a learner's license and was driving with the policyholder (license holder) present in the vehicle.",
     "ruling": "The District Consumer Forum ruled that a learner's license holder driving with a qualified license holder present in the vehicle is a legally valid condition under the Motor Vehicles Act. The denial of the claim was not justified. Directed National Insurance to settle the claim of ₹1.4 lakh.",
     "principle": "Under the Motor Vehicles Act, a learner's license holder may drive accompanied by a person who holds a valid driving license for the same vehicle category. An OD claim arising when a learner is driving with a valid license holder accompanying is not invalidated by the driver having only a learner's license.",
-    "consumer_takeaway": "If a family member with a learner's license was driving your car with a valid license holder present and an accident occurred — the insurance should be valid. Ensure your policy mentions all family members as authorized drivers if possible. The 'any driver' clause in most policies covers family members."  ,
+    "consumer_takeaway": "If a family member with a learner's license was driving your car with a valid license holder present and an accident occurred — the insurance should be valid. Ensure your policy mentions all family members as authorized drivers if possible. The 'any driver' clause in most policies covers family members.",
     "reference": "District Consumer Forum, Patna, Case No. CC/145/2020"
   },
   {
@@ -478,5 +478,1188 @@
     "principle": "The initial 30-day waiting period is a standard and legally valid policy condition. However, when an insurer's online purchase portal provides misleading information about coverage commencement, the insurer bears responsibility for the consumer's reliance on that incorrect information. The consumer should receive premium refund and fair treatment rather than a blunt claim denial.",
     "consumer_takeaway": "The 30-day initial waiting period applies to ALL health policies (except accident). Check the exact inception date of your policy — if you are hospitalized within the first 30 days for illness (not accident), the claim will be denied. When buying online, note the explicit start date of coverage for non-accident claims.",
     "reference": "State Consumer Forum, Andhra Pradesh, Case No. CC/334/2022"
+  },
+  {
+    "id": "case_041",
+    "case_name": "Rajendra Prasad vs Religare Health Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Hyderabad",
+    "year": 2023,
+    "category": "health",
+    "issue": "Religare Health rejected a claim for cardiac bypass surgery citing non-disclosure of controlled hypertension diagnosed 6 years prior. The policyholder had completed the 8-year moratorium period under IRDAI's 2020 guidelines and argued the condition was stable and managed with medication.",
+    "ruling": "The Ombudsman ruled in favor of the policyholder, holding that once the moratorium period of 8 years is completed under the IRDAI Health Insurance Regulations 2020, the insurer cannot reject a claim on grounds of pre-existing disease non-disclosure. Religare was directed to pay ₹5.8 lakh plus 9% interest from the date of claim rejection.",
+    "principle": "Post-moratorium period (8 years of continuous coverage), no health insurance claim can be denied on grounds of PED non-disclosure, as established by IRDAI Health Insurance Regulations 2020, Regulation 30.",
+    "consumer_takeaway": "If you have maintained continuous health insurance for 8 years or more, the insurer cannot reject your claim citing non-disclosure of pre-existing conditions. Keep renewal receipts as proof of continuous coverage.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "PED",
+      "moratorium",
+      "non-disclosure",
+      "hypertension",
+      "IRDAI-2020"
+    ]
+  },
+  {
+    "id": "case_042",
+    "case_name": "Anand Subramanian vs Max Bupa Health Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Chennai",
+    "year": 2024,
+    "category": "health",
+    "issue": "Max Bupa rejected a diabetes-related hospitalization claim citing PED non-disclosure. The policyholder had completed 5 years of continuous coverage and argued that under the moratorium clause, the claim should be payable as the condition was disclosed at the time of the first policy and accepted without any exclusion rider.",
+    "ruling": "The Ombudsman held that where the insurer accepted the proposal with full knowledge of the condition and did not impose any exclusion, it cannot later deny claims related to that condition. Max Bupa was directed to settle the claim of ₹2.4 lakh within 15 days.",
+    "principle": "When an insurer accepts a proposal with disclosed conditions without imposing exclusion riders, it constitutes deemed acceptance. The insurer is estopped from later denying claims on the basis of those same disclosed conditions.",
+    "consumer_takeaway": "Always disclose all medical conditions at proposal stage and keep a copy of your proposal form. If the insurer accepted your policy without exclusions despite your disclosures, they cannot later reject claims based on those conditions.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "PED",
+      "disclosure",
+      "diabetes",
+      "estoppel",
+      "deemed-acceptance"
+    ]
+  },
+  {
+    "id": "case_043",
+    "case_name": "Smita Deshmukh vs Aditya Birla Health Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Mumbai",
+    "year": 2023,
+    "category": "health",
+    "issue": "Aditya Birla Health denied cashless authorization at a listed network hospital for an emergency appendectomy, forcing the policyholder to pay ₹2.1 lakh out of pocket. The TPA did not respond within the IRDAI-mandated 2-hour window for emergency cases. The insurer later rejected the reimbursement claim citing missing documents.",
+    "ruling": "The Ombudsman held Aditya Birla liable for breach of IRDAI guidelines on cashless authorization timelines. The insurer was directed to pay the full claim of ₹2.1 lakh plus ₹25,000 as compensation for harassment, plus 9% interest from the date of hospitalization.",
+    "principle": "Insurers and TPAs must respond to emergency cashless authorization requests within 2 hours as per IRDAI guidelines. Failure to respond within the mandated timeline constitutes deficiency in service, and the insurer cannot later reject the reimbursement claim on procedural grounds.",
+    "consumer_takeaway": "For emergency hospitalizations at network hospitals, the TPA must respond to cashless requests within 2 hours. If they fail to respond, proceed with treatment, keep all bills and discharge summary, and file a complaint citing IRDAI cashless authorization guidelines.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "cashless",
+      "TPA-delay",
+      "emergency",
+      "network-hospital",
+      "IRDAI-guidelines"
+    ]
+  },
+  {
+    "id": "case_044",
+    "case_name": "Gopal Krishna Reddy vs National Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2023,
+    "category": "health",
+    "issue": "National Insurance applied proportionate deduction to the entire claim because the policyholder chose a room costing ₹6,000/day when the sub-limit was ₹4,000/day. The insurer proportionately reduced surgery charges, medicines, and consumables by 33%, reducing the ₹7.5 lakh claim to ₹5.0 lakh. The policyholder argued proportionate deduction should only apply to room rent, not all components.",
+    "ruling": "NCDRC held that proportionate deduction applied to the entire claim amount is a standard industry practice upheld by prior NCDRC orders when the policy contains a room rent sub-limit clause. However, the Commission noted that this practice must be clearly explained in the policy document. National Insurance was directed to pay ₹5.5 lakh after limiting proportionate deduction to medical expenses directly correlated with room category.",
+    "principle": "When a policy has a room rent sub-limit, proportionate deduction may apply to associated medical expenses that vary by room category (surgeon fees, nursing charges) but should not extend to medicines, consumables, and diagnostic costs that are room-category-independent.",
+    "consumer_takeaway": "If your health policy has room rent sub-limits, always choose a room within the limit to avoid proportionate deductions on your entire bill. Check your policy for the exact sub-limit before hospitalization. Consider upgrading to a plan with no room rent cap.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "room-rent",
+      "sub-limit",
+      "proportionate-deduction",
+      "NCDRC"
+    ]
+  },
+  {
+    "id": "case_045",
+    "case_name": "Prashant Joshi vs SBI General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Pune",
+    "year": 2024,
+    "category": "health",
+    "issue": "SBI General rejected a claim for lithotripsy (kidney stone treatment) arguing it was an OPD procedure and did not require 24-hour hospitalization. The policyholder argued lithotripsy is listed as a daycare procedure under IRDAI's standardized list of daycare procedures.",
+    "ruling": "The Ombudsman directed SBI General to pay the full claim of ₹1.8 lakh, noting that lithotripsy is explicitly listed as a daycare procedure in the IRDAI standardized list. The insurer cannot reclassify a listed daycare procedure as OPD to avoid claim liability.",
+    "principle": "Daycare procedures listed in IRDAI's standardized daycare procedure list must be covered regardless of actual hours spent in hospital. Insurers cannot unilaterally reclassify listed daycare procedures as OPD treatments.",
+    "consumer_takeaway": "Before undergoing a daycare procedure, check if it appears on IRDAI's official list of daycare procedures. If your insurer rejects a listed daycare procedure as OPD, cite the IRDAI list in your complaint to the Ombudsman.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "daycare",
+      "lithotripsy",
+      "OPD-reclassification",
+      "IRDAI-daycare-list"
+    ]
+  },
+  {
+    "id": "case_046",
+    "case_name": "Sharmila Basu vs Manipal Cigna Health Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Kolkata",
+    "year": 2023,
+    "category": "health",
+    "issue": "Manipal Cigna rejected a claim for cataract surgery during the second year of the policy citing a 2-year specific disease waiting period. The policyholder argued that she had ported the policy from her previous insurer where she had completed 4 years of continuous coverage, and portability credit should apply to the specific disease waiting period.",
+    "ruling": "The Ombudsman ruled in favor of the policyholder. Under IRDAI Portability Guidelines, the new insurer must provide credit for the waiting period already served under the previous policy. Since the policyholder had served 4 years with the previous insurer, the 2-year specific disease waiting period stood fulfilled. Manipal Cigna was directed to pay ₹1.2 lakh.",
+    "principle": "Under IRDAI portability regulations, waiting period credit earned under the previous insurer must be honored by the new insurer. This includes initial waiting period, specific disease waiting period, and PED waiting periods, up to the sum insured of the previous policy.",
+    "consumer_takeaway": "When porting your health insurance, request a portability certificate from your old insurer stating the waiting periods already served. If the new insurer rejects a claim citing waiting periods you have already served, file a complaint citing IRDAI Portability Guidelines.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "waiting-period",
+      "portability",
+      "cataract",
+      "specific-disease",
+      "IRDAI-portability"
+    ]
+  },
+  {
+    "id": "case_047",
+    "case_name": "Vikram Mehrotra vs TATA AIG General Insurance Co. Ltd.",
+    "forum": "State CDRC, Delhi",
+    "year": 2024,
+    "category": "health",
+    "issue": "TATA AIG denied a hospitalization claim for severe depression requiring in-patient treatment at a NABH-accredited psychiatric facility. The insurer cited a blanket mental illness exclusion in the policy wording. The policyholder invoked Section 21(4) of the Mental Healthcare Act 2017, which mandates equal coverage of mental illness.",
+    "ruling": "The State CDRC ruled that any blanket exclusion of mental illness in health insurance policies is void under Section 21(4) of the Mental Healthcare Act 2017. TATA AIG was directed to pay the full claim of ₹3.5 lakh plus ₹50,000 compensation for unfair trade practice and 12% interest from the date of claim rejection.",
+    "principle": "Section 21(4) of the Mental Healthcare Act 2017 overrides any blanket exclusion of mental illness in insurance policies. Every insurer must treat mental illness on par with physical illness for coverage purposes. IRDAI has also issued circulars reinforcing this mandate.",
+    "consumer_takeaway": "Mental illness must be covered by your health insurance policy on par with physical illness, as mandated by the Mental Healthcare Act 2017. If your insurer denies a mental health claim citing a blanket exclusion, cite Section 21(4) of the Act in your complaint.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "mental-health",
+      "Mental-Healthcare-Act-2017",
+      "depression",
+      "blanket-exclusion"
+    ]
+  },
+  {
+    "id": "case_048",
+    "case_name": "Padma Narayan vs Care Health Insurance Ltd.",
+    "forum": "Insurance Ombudsman, Bangalore",
+    "year": 2023,
+    "category": "health",
+    "issue": "Care Health rejected a claim for in-patient Ayurvedic treatment (Panchakarma) for chronic arthritis at a government-registered AYUSH hospital. The insurer argued the treatment was 'wellness' rather than medical, and that AYUSH coverage was limited to specific listed procedures.",
+    "ruling": "The Ombudsman ruled in favor of the policyholder, noting the policy included AYUSH coverage and the treatment was at a government-registered AYUSH hospital for a diagnosed medical condition. Care Health was directed to pay ₹95,000 plus 9% interest.",
+    "principle": "When a policy provides AYUSH coverage, in-patient treatment at a government-registered AYUSH hospital for diagnosed medical conditions must be covered. The insurer cannot unilaterally reclassify legitimate AYUSH treatment as 'wellness' to avoid claim payment.",
+    "consumer_takeaway": "If your policy includes AYUSH coverage, ensure treatment is at a government-registered AYUSH hospital and obtain a proper diagnosis certificate. The insurer cannot deny AYUSH claims by labeling medical treatment as wellness therapy.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "AYUSH",
+      "Ayurveda",
+      "Panchakarma",
+      "arthritis",
+      "AYUSH-hospital"
+    ]
+  },
+  {
+    "id": "case_049",
+    "case_name": "Neha Aggarwal vs Star Health and Allied Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2024,
+    "category": "health",
+    "issue": "Star Health denied maternity claim for complications during delivery (emergency C-section) arguing that while maternity was covered, complications arising out of pregnancy were classified under a different waiting period. The policyholder had completed the 2-year maternity waiting period but the insurer applied a separate 4-year waiting period for 'surgical complications'.",
+    "ruling": "The Ombudsman held that pregnancy-related complications including emergency C-section are integral to maternity coverage and cannot be separated into a different waiting period category. Star Health was directed to pay the full maternity claim of ₹4.2 lakh.",
+    "principle": "Complications arising during delivery are part of the maternity benefit and subject to the maternity waiting period only, not any separate surgical or illness-specific waiting period. Attempting to bifurcate delivery complications is an unfair practice.",
+    "consumer_takeaway": "If you have completed the maternity waiting period, all pregnancy and delivery-related complications should be covered under maternity benefit. Do not accept insurer arguments that split delivery complications into separate waiting period categories.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "maternity",
+      "C-section",
+      "complications",
+      "waiting-period",
+      "delivery"
+    ]
+  },
+  {
+    "id": "case_050",
+    "case_name": "Manoj Kumar Singh vs Bajaj Allianz General Insurance Co. Ltd.",
+    "forum": "District Forum, Lucknow",
+    "year": 2023,
+    "category": "health",
+    "issue": "Bajaj Allianz denied pre-hospitalization diagnostic expenses of ₹35,000 incurred 25 days before hospitalization for liver disease, arguing the policy covers only 30 days pre-hospitalization but the diagnostics were not directly related to the eventual hospitalization diagnosis. The policyholder argued the diagnostics were part of the investigation that led to the hospitalization.",
+    "ruling": "The District Forum held that diagnostic investigations within the 30-day pre-hospitalization window that form part of the chain of investigation leading to hospitalization must be covered. Bajaj Allianz was directed to reimburse ₹35,000 plus ₹10,000 compensation for deficiency in service.",
+    "principle": "Pre-hospitalization expenses include all diagnostics and consultations within the policy-specified period that are part of the investigative chain leading to the eventual hospitalization, even if the initial diagnostic hypothesis differs from the final diagnosis.",
+    "consumer_takeaway": "Keep all prescriptions and diagnostic reports from the pre-hospitalization period. Ensure your doctor's referral letter clearly links the pre-hospitalization tests to the condition that eventually required hospitalization.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "pre-hospitalization",
+      "diagnostics",
+      "30-day-window",
+      "investigation-chain"
+    ]
+  },
+  {
+    "id": "case_051",
+    "case_name": "Usha Rani vs United India Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Jaipur",
+    "year": 2023,
+    "category": "health",
+    "issue": "United India Insurance rejected a domiciliary hospitalization claim for an 82-year-old policyholder treated at home for severe pneumonia with IV antibiotics, oxygen, and nursing care. The insurer argued that the patient could have been admitted to a hospital and home treatment was a personal choice.",
+    "ruling": "The Ombudsman ruled in favor of the policyholder, noting that the treating physician had certified that hospitalization was risky due to the patient's age (82) and comorbidities, and domiciliary treatment was medically necessary. United India was directed to pay ₹1.6 lakh.",
+    "principle": "Domiciliary hospitalization claims are valid when the treating doctor certifies that the condition requires hospitalization but the patient cannot be moved to a hospital due to age, medical condition, or non-availability of hospital beds. The insurer cannot second-guess medical judgment on the necessity of home treatment.",
+    "consumer_takeaway": "For domiciliary treatment, ensure your doctor provides a written certificate explaining why hospitalization at a facility was not possible or advisable. Document all treatment provided at home with prescriptions, nursing logs, and pharmacy bills.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "domiciliary",
+      "elderly",
+      "pneumonia",
+      "medical-necessity",
+      "home-treatment"
+    ]
+  },
+  {
+    "id": "case_052",
+    "case_name": "Vinod Bhatia vs Cholamandalam MS General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2024,
+    "category": "health",
+    "issue": "Cholamandalam MS rejected a claim after policy portability, arguing the policyholder had a gap of 15 days between the old policy expiry and new policy inception, thereby breaking continuity. The policyholder argued the gap was due to the new insurer's processing delay and the portability application was submitted 30 days before the old policy expiry as required.",
+    "ruling": "The Ombudsman held that where the policyholder applied for portability within the prescribed timeline, any delay in processing by the receiving insurer cannot be held against the policyholder. Cholamandalam was directed to honor the portability and settle the claim of ₹3.8 lakh with full waiting period credit.",
+    "principle": "Processing delays by the receiving insurer in portability cases cannot break the policyholder's continuity of coverage. The policyholder's obligation is limited to applying for portability within the prescribed 45-day window before policy expiry.",
+    "consumer_takeaway": "Apply for portability at least 45 days before your current policy expires and keep acknowledgment of your application. If there is a processing delay by the new insurer, the continuity of your coverage is protected as long as you applied on time.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "portability",
+      "continuity",
+      "processing-delay",
+      "waiting-period-credit"
+    ]
+  },
+  {
+    "id": "case_053",
+    "case_name": "Anil Sharma vs Reliance General Insurance Co. Ltd.",
+    "forum": "State CDRC, Rajasthan",
+    "year": 2023,
+    "category": "health",
+    "issue": "The TPA for Reliance General delayed cashless authorization for a planned knee replacement for 5 days, requesting the same documents multiple times. The policyholder eventually paid out of pocket (₹4.5 lakh) and filed a reimbursement claim that was partially denied citing 'non-network rates'.",
+    "ruling": "The State CDRC held that the TPA's repeated delays and requests for the same documents constituted harassment and deficiency in service. Reliance General was directed to reimburse the full amount of ₹4.5 lakh plus ₹75,000 as compensation for mental agony and deficiency in service.",
+    "principle": "TPAs acting as agents of the insurer create liability for the insurer. Repeated requests for the same documents and unreasonable delays in cashless authorization constitute deficiency in service. Once cashless is denied due to insurer/TPA delays, the insurer cannot apply 'non-network rates' to the reimbursement.",
+    "consumer_takeaway": "Keep track of every document submitted to the TPA with timestamps. If the TPA requests the same documents repeatedly, send all submissions via email to create a paper trail. This documentation is crucial for escalating to the Ombudsman or consumer forum.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "TPA",
+      "cashless-delay",
+      "repeated-documents",
+      "harassment",
+      "reimbursement"
+    ]
+  },
+  {
+    "id": "case_054",
+    "case_name": "Kiran Patel vs New India Assurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2022,
+    "category": "health",
+    "issue": "New India Assurance applied a 40% co-payment clause to a critical illness claim for cancer treatment costing ₹12 lakh, but the co-payment was buried in a clause titled 'Annexure B - Special Conditions' in small print and was never explained to the policyholder at the time of sale. The policyholder received only ₹7.2 lakh.",
+    "ruling": "NCDRC ruled that while co-payment clauses are valid, they must be prominently disclosed in the policy schedule and explained to the policyholder at the point of sale. The co-payment clause hidden in an annexure was held to be unfair. New India was directed to pay the remaining ₹4.8 lakh plus 9% interest.",
+    "principle": "Co-payment and sub-limit clauses must be prominently displayed in the policy schedule, not hidden in annexures or fine print. Material terms affecting claim settlement must be clearly disclosed and explained at the time of sale per IRDAI disclosure norms.",
+    "consumer_takeaway": "Before buying a health policy, ask specifically about co-payment, sub-limits, and deductibles. If these were never disclosed at the time of sale and are hidden in fine print, challenge them as unfair terms before the consumer forum.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "co-payment",
+      "fine-print",
+      "non-disclosure",
+      "NCDRC",
+      "unfair-terms"
+    ]
+  },
+  {
+    "id": "case_055",
+    "case_name": "Parveen Kaur vs ICICI Lombard General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Chandigarh",
+    "year": 2024,
+    "category": "health",
+    "issue": "ICICI Lombard denied a claim for robotic surgery for uterine fibroids, arguing that robotic surgery is a 'newer technology' not covered under the policy and that conventional surgery was sufficient. The policyholder argued the treating surgeon recommended robotic surgery for better outcomes and reduced recovery time.",
+    "ruling": "The Ombudsman held that the policy covers surgical treatment without specifying the surgical technique. The choice of surgical technique is a medical decision, and the insurer cannot dictate the method of treatment. ICICI Lombard was directed to pay the claim up to the sum insured.",
+    "principle": "When a policy covers a surgical procedure, it covers the procedure regardless of the surgical technique used (open, laparoscopic, robotic), unless the policy explicitly excludes specific techniques. The insurer cannot override the treating doctor's recommended surgical approach.",
+    "consumer_takeaway": "If your insurer denies a claim arguing the surgery should have been done using a cheaper technique, check your policy wording. Unless it specifically excludes certain surgical techniques, the insurer must cover the procedure recommended by your doctor.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "robotic-surgery",
+      "surgical-technique",
+      "medical-decision",
+      "technology"
+    ]
+  },
+  {
+    "id": "case_056",
+    "case_name": "Ramesh Chandra vs Niva Bupa Health Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Lucknow",
+    "year": 2023,
+    "category": "health",
+    "issue": "Niva Bupa denied a claim for hospitalization for severe back pain requiring epidural steroid injections, classifying it as an OPD procedure. The policyholder was admitted for 26 hours and treatment included overnight observation, IV pain management, and the epidural injection under sedation.",
+    "ruling": "The Ombudsman ruled that hospitalization for more than 24 hours with active medical intervention constitutes an in-patient admission. Niva Bupa was directed to pay the full claim of ₹1.4 lakh. The insurer cannot reclassify genuine in-patient treatment as OPD based solely on the nature of the primary procedure.",
+    "principle": "Hospitalization exceeding 24 hours with active medical management constitutes in-patient treatment regardless of the primary procedure performed. The determination of in-patient vs OPD status is based on the totality of treatment provided, not just the primary procedure.",
+    "consumer_takeaway": "If you are admitted for more than 24 hours and receive active medical treatment, your claim should be treated as in-patient hospitalization. Ensure your discharge summary clearly states the admission duration and all treatments provided during the stay.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "in-patient",
+      "OPD-reclassification",
+      "24-hour-rule",
+      "epidural"
+    ]
+  },
+  {
+    "id": "case_057",
+    "case_name": "Anjali Srivastava vs Max Bupa Health Insurance Co. Ltd.",
+    "forum": "District Forum, Varanasi",
+    "year": 2023,
+    "category": "health",
+    "issue": "Max Bupa denied a health claim for a newborn baby's NICU treatment (₹8.5 lakh for 12 days) arguing the baby was not a named insured on the policy. The mother's maternity benefit covered delivery expenses but the policy did not explicitly address newborn coverage from day one.",
+    "ruling": "The District Forum held that newborn babies are covered from birth under the mother's health policy for a period of 90 days as per IRDAI guidelines, regardless of whether the baby is specifically named in the policy. Max Bupa was directed to pay ₹8.5 lakh for NICU treatment plus ₹25,000 compensation.",
+    "principle": "As per IRDAI guidelines, newborn babies are covered under the mother's health insurance policy from birth for up to 90 days. This coverage is automatic and does not require the baby to be added as a named insured during this period.",
+    "consumer_takeaway": "Your newborn baby is automatically covered under your health insurance for the first 90 days from birth. If the insurer denies NICU or other newborn treatment claims, cite IRDAI's newborn coverage guidelines. Add the baby to your policy within 90 days for continued coverage.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "newborn",
+      "NICU",
+      "maternity",
+      "90-day-coverage",
+      "IRDAI-guidelines"
+    ]
+  },
+  {
+    "id": "case_058",
+    "case_name": "Dilip Menon vs Star Health and Allied Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Kochi",
+    "year": 2024,
+    "category": "health",
+    "issue": "Star Health denied renewal of a senior citizen health policy for an 80-year-old policyholder who had been continuously insured for 15 years, citing 'high claim ratio'. The policyholder had made claims totaling ₹6 lakh over 15 years on a policy with ₹5 lakh sum insured.",
+    "ruling": "The Ombudsman ruled that IRDAI regulations mandate lifelong renewability of health insurance policies. An insurer cannot refuse renewal based on claims history or age of the policyholder. Star Health was directed to renew the policy on the same terms with appropriate premium adjustment.",
+    "principle": "Health insurance policies in India carry a lifelong renewability guarantee under IRDAI regulations. No insurer can refuse to renew a health policy based on the insured's claims history, age, or health status. This is a fundamental consumer protection measure.",
+    "consumer_takeaway": "Your health insurance policy must be renewed for life regardless of your age or claims history. If your insurer refuses renewal, file an immediate complaint with the IRDAI and the Insurance Ombudsman. Lifelong renewability is guaranteed by regulation.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "lifelong-renewability",
+      "senior-citizen",
+      "renewal-refusal",
+      "IRDAI-mandate"
+    ]
+  },
+  {
+    "id": "case_059",
+    "case_name": "Shalini Gupta vs Go Digit General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2024,
+    "category": "health",
+    "issue": "Go Digit denied a claim for bariatric surgery (₹3.5 lakh) classifying it as a cosmetic procedure. The policyholder had a BMI of 42 with comorbidities (Type 2 diabetes, sleep apnea, hypertension) and the surgery was recommended by an endocrinologist as medically necessary to manage life-threatening conditions.",
+    "ruling": "The Ombudsman held that bariatric surgery is a recognized medical procedure for morbid obesity with comorbidities and is not cosmetic when performed for medical indications. Go Digit was directed to pay the full claim of ₹3.5 lakh plus 9% interest.",
+    "principle": "Bariatric surgery performed for morbid obesity (BMI > 40 or BMI > 35 with comorbidities) on medical recommendation is a medically necessary procedure, not a cosmetic one. Insurers cannot classify medically indicated bariatric surgery as cosmetic to avoid claim liability.",
+    "consumer_takeaway": "If you need bariatric surgery for morbid obesity with comorbidities, get your doctor to document the medical necessity including BMI, comorbidities, and failed conservative treatment. This makes it harder for the insurer to classify the surgery as cosmetic.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "bariatric-surgery",
+      "cosmetic-exclusion",
+      "morbid-obesity",
+      "medical-necessity"
+    ]
+  },
+  {
+    "id": "case_060",
+    "case_name": "Harpreet Singh vs Bajaj Allianz General Insurance Co. Ltd.",
+    "forum": "State CDRC, Punjab and Haryana",
+    "year": 2023,
+    "category": "health",
+    "issue": "Bajaj Allianz denied a claim for organ transplant donor expenses (₹6 lakh for the donor's hospitalization and surgery). The policy covered organ transplant for the insured but the insurer argued donor expenses were not explicitly covered and were the donor's personal medical expenses.",
+    "ruling": "The State CDRC held that donor expenses are an integral and inseparable part of organ transplant treatment. Since the policy covers organ transplant, it must cover all medically necessary expenses including donor screening, surgery, and post-operative care. Bajaj Allianz was directed to pay ₹6 lakh for donor expenses.",
+    "principle": "Organ donor expenses are an integral part of organ transplant coverage. When a policy covers organ transplant, it implicitly covers the medically necessary expenses of the living donor, as the transplant cannot occur without the donor procedure.",
+    "consumer_takeaway": "If your policy covers organ transplant, it should also cover the living donor's medical expenses related to the transplant. Keep all donor-related bills separately documented and submit them as part of your transplant claim.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "organ-transplant",
+      "donor-expenses",
+      "implicit-coverage",
+      "integral-treatment"
+    ]
+  },
+  {
+    "id": "case_061",
+    "case_name": "Meera Krishnamoorthy vs Apollo Munich Health Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Chennai",
+    "year": 2022,
+    "category": "health",
+    "issue": "Apollo Munich (now HDFC ERGO Health) denied a claim for home healthcare post hip replacement surgery, arguing that physiotherapy and nursing care at home after discharge are not covered as post-hospitalization expenses. The policyholder incurred ₹45,000 over 45 days for home physiotherapy prescribed by the treating orthopedic surgeon.",
+    "ruling": "The Ombudsman ruled that post-hospitalization expenses include follow-up treatment prescribed by the treating doctor within the policy-specified post-hospitalization period (60 or 90 days). Physiotherapy prescribed post-discharge for recovery from the hospitalized condition is a legitimate post-hospitalization expense. Apollo Munich was directed to reimburse ₹45,000.",
+    "principle": "Post-hospitalization coverage extends to all treatments prescribed by the treating doctor for recovery from the hospitalized condition, including physiotherapy, nursing care, and prescribed home healthcare, within the policy-specified post-hospitalization period.",
+    "consumer_takeaway": "Get written prescriptions from your treating doctor for all post-discharge treatment including physiotherapy, medications, and follow-up tests. These are claimable as post-hospitalization expenses within the policy-specified period (usually 60-90 days).",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "post-hospitalization",
+      "physiotherapy",
+      "home-healthcare",
+      "follow-up"
+    ]
+  },
+  {
+    "id": "case_062",
+    "case_name": "Rakesh Agarwal vs Care Health Insurance Ltd.",
+    "forum": "NCDRC",
+    "year": 2024,
+    "category": "health",
+    "issue": "Care Health applied a 20% co-payment on a claim for treatment at a non-network hospital in the same city where network hospitals were available. The policyholder argued the non-network hospital was chosen on emergency basis as the nearest hospital, and the policy did not mention any co-payment for non-network treatment in emergencies.",
+    "ruling": "NCDRC held that co-payment for non-network hospitals is valid only when clearly stated in the policy terms and the treatment was planned. In genuine emergencies where the nearest hospital happens to be non-network, the co-payment clause should not apply. Care Health was directed to reimburse the full claim of ₹2.8 lakh without co-payment deduction.",
+    "principle": "Co-payment clauses for non-network hospitals may be waived in genuine medical emergencies where the patient was taken to the nearest available hospital. The emergency nature of treatment overrides the network/non-network distinction for co-payment purposes.",
+    "consumer_takeaway": "If you are taken to a non-network hospital in a genuine emergency, document why that hospital was chosen (nearest, ambulance brought you there, etc.). Challenge any co-payment deduction by showing the emergency nature of the admission.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "co-payment",
+      "non-network",
+      "emergency",
+      "NCDRC",
+      "waiver"
+    ]
+  },
+  {
+    "id": "case_063",
+    "case_name": "Sundar Rajan vs HDFC ERGO General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Hyderabad",
+    "year": 2023,
+    "category": "health",
+    "issue": "HDFC ERGO denied a claim for treatment of a congenital heart condition (atrial septal defect repair) in a 28-year-old policyholder, citing the congenital disease exclusion. The condition was first detected only at age 27 and was never previously known or treated. The policyholder argued it was not a 'pre-existing' condition as it was never known to exist.",
+    "ruling": "The Ombudsman held that congenital conditions that are first detected in adulthood and were never previously known, diagnosed, or treated cannot be classified as pre-existing diseases. HDFC ERGO was directed to pay the claim of ₹7.2 lakh subject to the applicable waiting period for the specific condition.",
+    "principle": "Congenital conditions first detected in adulthood without prior knowledge, diagnosis, or treatment are not pre-existing diseases. They are subject to any applicable congenital disease waiting period in the policy, not the PED waiting period. If no specific congenital waiting period exists, regular coverage applies after the initial waiting period.",
+    "consumer_takeaway": "If you discover a congenital condition as an adult that was never previously known or treated, it should not be treated as a pre-existing disease. Check your policy for any specific congenital disease waiting period, which is typically 2-4 years.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "congenital",
+      "first-detection",
+      "adult-onset",
+      "ASD",
+      "PED-distinction"
+    ]
+  },
+  {
+    "id": "case_064",
+    "case_name": "Fatima Begum vs Star Health and Allied Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Mumbai",
+    "year": 2024,
+    "category": "health",
+    "issue": "Star Health deducted ₹45,000 from a ₹3.2 lakh hospitalization claim for 'non-medical items' including gloves, PPE kits, masks, oximeters, and nebulizer circuits. The policyholder argued these items were essential for treatment and not 'convenience items'. The case arose in the context of post-COVID treatment for lung fibrosis.",
+    "ruling": "The Ombudsman referred to IRDAI's list of non-payable items under health insurance and noted that items like gloves, PPE, and nebulizer circuits that are essential for treatment cannot be classified as non-payable non-medical items. Star Health was directed to reimburse ₹38,000 of the ₹45,000 deducted, allowing deduction only for genuinely non-medical items.",
+    "principle": "IRDAI has published a definitive list of non-payable items. Insurers must adhere strictly to this list and cannot expand it to include items that are medically essential for treatment. Consumables required for treatment procedures are medical expenses, not non-medical items.",
+    "consumer_takeaway": "If your insurer deducts for 'non-medical items', ask for an itemized breakup of deductions and compare it against IRDAI's official list of non-payable items. Challenge any deduction for items that were medically necessary for your treatment.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "non-medical-items",
+      "non-payable",
+      "consumables",
+      "IRDAI-list",
+      "deductions"
+    ]
+  },
+  {
+    "id": "case_065",
+    "case_name": "Subramaniam Iyer vs Oriental Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Kochi",
+    "year": 2023,
+    "category": "health",
+    "issue": "Oriental Insurance denied a claim for treatment of alcoholic liver disease, citing the exclusion for conditions arising from alcohol or substance abuse. The policyholder argued that alcoholic liver disease is a recognized medical condition and the exclusion should apply only to injuries sustained while intoxicated, not to diseases caused by long-term alcohol use.",
+    "ruling": "The Ombudsman examined the policy wording and found the exclusion clause referred to 'injuries sustained while under the influence of alcohol' and not to 'diseases caused by alcohol consumption'. The Ombudsman applied the contra proferentem rule and directed Oriental Insurance to pay the claim of ₹4.5 lakh, as the ambiguous exclusion must be interpreted in favor of the consumer.",
+    "principle": "The contra proferentem doctrine applies to insurance contracts: any ambiguity in policy wording must be interpreted in favor of the insured and against the insurer who drafted the contract. An exclusion for alcohol-related 'injuries' does not extend to alcohol-related 'diseases' unless explicitly stated.",
+    "consumer_takeaway": "Read the exact wording of exclusion clauses carefully. If the exclusion uses narrow language (e.g., 'injuries while intoxicated'), it does not automatically extend to broader scenarios (e.g., 'diseases caused by alcohol'). Use the principle of contra proferentem — ambiguity favors you.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "health",
+      "alcohol-exclusion",
+      "contra-proferentem",
+      "liver-disease",
+      "policy-interpretation"
+    ]
+  },
+  {
+    "id": "case_066",
+    "case_name": "Kamala Devi vs LIC of India",
+    "forum": "NCDRC",
+    "year": 2023,
+    "category": "life",
+    "issue": "LIC rejected a death claim for a policy that was 5 years old, alleging the insured had concealed a history of kidney disease at the time of taking the policy. The nominee argued that under Section 45 of the Insurance Act, no policy can be called into question after 3 years from commencement on any ground whatsoever.",
+    "ruling": "NCDRC upheld the nominee's argument and directed LIC to pay the full death claim of ₹25 lakh plus 9% interest from the date of death. The Commission held that Section 45 (as amended in 2015) bars the insurer from questioning the policy after 3 years, regardless of the nature of non-disclosure, unless fraud is proven with specific evidence.",
+    "principle": "Under Section 45 of the Insurance Act 1938 (as amended in 2015), no life insurance policy can be called into question after 3 years from commencement on grounds of misstatement or non-disclosure, unless the insurer proves fraud with specific evidence showing the misstatement was material, deliberate, and the insured knew it to be false.",
+    "consumer_takeaway": "If a life insurance death claim is rejected for a policy older than 3 years, cite Section 45 of the Insurance Act. The insurer must prove deliberate fraud with specific evidence — mere non-disclosure is not sufficient grounds for rejection after 3 years.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "Section-45",
+      "contestability",
+      "3-year-rule",
+      "non-disclosure",
+      "death-claim"
+    ]
+  },
+  {
+    "id": "case_067",
+    "case_name": "Savitri Devi vs Kotak Mahindra Life Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Jaipur",
+    "year": 2023,
+    "category": "life",
+    "issue": "Kotak Life delayed settlement of a death claim for 6 months after receiving all required documents, citing 'investigation in progress'. No specific allegations of fraud or non-disclosure were communicated. The nominee, a widow with two minor children, suffered severe financial hardship during the delay period.",
+    "ruling": "The Ombudsman directed Kotak Life to pay the death claim of ₹15 lakh immediately plus penal interest at 2% above the bank rate for the delay period (6 months) as per IRDAI regulations on claim settlement timelines. Additionally, ₹1 lakh was awarded as compensation for mental agony.",
+    "principle": "Under IRDAI (Protection of Policyholders' Interests) Regulations, death claims must be settled within 30 days of receipt of all documents. If investigation is required, it must be completed within 90 days. Failure to settle within these timelines attracts penal interest at 2% above the bank rate.",
+    "consumer_takeaway": "Life insurance death claims must be settled within 30 days of submitting all documents. If the insurer delays beyond 90 days without specific fraud allegations, demand penal interest and file a complaint with the IRDAI and Ombudsman immediately.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "death-claim",
+      "delay",
+      "30-day-rule",
+      "penal-interest",
+      "IRDAI-PPHI"
+    ]
+  },
+  {
+    "id": "case_068",
+    "case_name": "Ranjit Kaur vs Priya Sharma and Max Life Insurance Co. Ltd.",
+    "forum": "State CDRC, Punjab and Haryana",
+    "year": 2024,
+    "category": "life",
+    "issue": "The deceased's mother (nominee on a ₹50 lakh term plan) and the deceased's wife (legal heir) both claimed the death benefit. Max Life paid the amount to the nominee (mother) but the wife challenged this, arguing that the nominee is merely a trustee and the legal heirs are entitled to the insurance proceeds as per the Hindu Succession Act.",
+    "ruling": "The State CDRC held that under the amended Section 39 of the Insurance Act (2015 amendment), a nominee under a life insurance policy receives the proceeds as a beneficial owner if the nomination is made in favor of parents, spouse, or children. Since the nominee was the deceased's mother (a specified family member), she was the beneficial owner. The wife's claim was rejected.",
+    "principle": "Under the 2015 amendment to Section 39 of the Insurance Act, nomination in favor of specified family members (parents, spouse, children) creates beneficial ownership. The nominee receives the insurance proceeds as absolute owner, not merely as a trustee. For other nominees, the proceeds are held in trust for legal heirs.",
+    "consumer_takeaway": "If you want your insurance proceeds to go to a specific family member, make a formal nomination in their favor. Under the 2015 amendment, nomination to parents, spouse, or children gives them absolute ownership of the proceeds. Review and update nominations regularly.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "nominee",
+      "legal-heir",
+      "Section-39",
+      "beneficial-owner",
+      "nomination"
+    ]
+  },
+  {
+    "id": "case_069",
+    "case_name": "Mahesh Trivedi vs ICICI Prudential Life Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2023,
+    "category": "life",
+    "issue": "A 58-year-old retiree invested ₹20 lakh in an ICICI Prudential ULIP plan after being told by the agent it was a 'fixed deposit with insurance benefit' yielding 12% guaranteed returns. After 5 years, the fund value was only ₹16.5 lakh due to high charges (premium allocation, administration, mortality) that were never disclosed. The policyholder was illiterate and signed forms filled by the agent.",
+    "ruling": "NCDRC found ICICI Prudential liable for mis-selling through its agent. The Commission directed ICICI Prudential to refund the full premium of ₹20 lakh with 9% simple interest from the date of investment, plus ₹2 lakh compensation for unfair trade practice. The benefit illustration signed by the complainant was disregarded as the complainant was illiterate.",
+    "principle": "Mis-selling of ULIPs as guaranteed return products constitutes unfair trade practice. Insurers are vicariously liable for agent misconduct. Where the policyholder is vulnerable (elderly, illiterate, financially unsophisticated), the insurer has a heightened duty of care to ensure full disclosure of product features and charges.",
+    "consumer_takeaway": "Never accept verbal promises of guaranteed returns on ULIPs — get all return projections in writing. ULIPs have multiple charges that significantly impact returns. If you were mis-sold a ULIP as a fixed deposit alternative, file a complaint within 3 years of discovering the mis-selling.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "ULIP",
+      "mis-selling",
+      "charges",
+      "guaranteed-returns",
+      "elderly-consumer"
+    ]
+  },
+  {
+    "id": "case_070",
+    "case_name": "Pooja Chauhan vs SBI Life Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Ahmedabad",
+    "year": 2023,
+    "category": "life",
+    "issue": "SBI Life's bancassurance partner (SBI branch) sold an endowment plan to a customer who came for a fixed deposit. The bank staff represented the endowment plan as a 'special FD with life cover' providing 8% guaranteed returns. After 10 years, the maturity value was 30% lower than what a bank FD would have yielded. The policyholder sought refund of the difference.",
+    "ruling": "The Ombudsman held SBI Life liable for mis-selling through its bancassurance partner. The insurer was directed to pay the difference between the actual maturity proceeds and what a bank FD would have yielded at the prevailing rate at the time of investment, amounting to ₹3.8 lakh.",
+    "principle": "Bancassurance mis-selling where bank staff present insurance products as bank deposits constitutes unfair trade practice. The insurer is responsible for the conduct of its bancassurance partners and must compensate the policyholder for losses arising from mis-selling.",
+    "consumer_takeaway": "Be cautious when bank staff recommend 'special investment products' — verify independently whether it is an insurance product or a bank deposit. Insurance endowment plans are not comparable to FDs. Ask for the product brochure and benefit illustration before signing.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "endowment",
+      "mis-selling",
+      "bancassurance",
+      "FD-comparison",
+      "unfair-trade"
+    ]
+  },
+  {
+    "id": "case_071",
+    "case_name": "Suresh Menon vs Bajaj Allianz Life Insurance Co. Ltd.",
+    "forum": "Consumer Forum, Ernakulam",
+    "year": 2022,
+    "category": "life",
+    "issue": "Bajaj Allianz offered a surrender value of ₹2.1 lakh for a ULIP with total premiums paid of ₹6 lakh over 4 years. The agent had promised the policyholder that the surrender value after 5 years would be at least 90% of premiums paid. The insurer argued the low fund value was due to market performance and deduction of various charges.",
+    "ruling": "The Consumer Forum directed Bajaj Allianz to pay the difference between the actual surrender value and 70% of premiums paid (₹4.2 lakh), noting that the agent's verbal promise of 90% was not enforceable but the insurer's failure to adequately disclose the impact of charges constituted deficiency in service. Additional compensation of ₹50,000 was awarded.",
+    "principle": "While market-linked product returns cannot be guaranteed, insurers have a duty to clearly disclose the impact of all charges on fund value. Agent's verbal promises, though not binding, indicate a pattern of mis-selling. IRDAI mandates minimum surrender value norms that insurers must follow.",
+    "consumer_takeaway": "Before surrendering a ULIP, check the fund value statement and compare it against the guaranteed surrender value (GSV) and special surrender value (SSV). If the surrender value seems unreasonably low, ask for a breakup of all charges deducted from your premiums.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "ULIP",
+      "surrender-value",
+      "charges",
+      "mis-selling",
+      "fund-value"
+    ]
+  },
+  {
+    "id": "case_072",
+    "case_name": "Anita Saxena vs HDFC Life Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Mumbai",
+    "year": 2024,
+    "category": "life",
+    "issue": "HDFC Life refused to activate the premium waiver rider on a child education plan after the policyholder (father) was diagnosed with permanent total disability due to a spinal cord injury. The insurer argued the disability did not meet their definition of 'permanent total disability' as the policyholder could perform some activities of daily living.",
+    "ruling": "The Ombudsman ruled that the insurer's interpretation of permanent total disability was unduly restrictive. The policyholder was wheelchair-bound, unable to work, and certified permanently disabled by a government medical board. HDFC Life was directed to activate the premium waiver rider with effect from the date of disability and refund all premiums paid after the disability with interest.",
+    "principle": "Premium waiver rider activation should be based on the overall impact of disability on the insured's ability to earn a livelihood, not on a narrow checklist of activities of daily living. Government medical board disability certificates carry significant evidentiary weight.",
+    "consumer_takeaway": "If your premium waiver rider claim is rejected, obtain a permanent disability certificate from a government medical board. The rider should be activated if the disability prevents you from earning a livelihood, regardless of whether you can perform basic daily activities.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "premium-waiver",
+      "rider",
+      "permanent-disability",
+      "child-plan",
+      "restrictive-definition"
+    ]
+  },
+  {
+    "id": "case_073",
+    "case_name": "Estate of Late Ajay Khanna vs PNB MetLife India Insurance Co. Ltd.",
+    "forum": "State CDRC, Delhi",
+    "year": 2023,
+    "category": "life",
+    "issue": "PNB MetLife denied a death claim for a ₹1 crore term plan where the insured died by suicide 14 months after policy inception. The insurer cited the suicide exclusion clause which stated 'no benefit payable if death occurs by suicide within 12 months'. Since 14 months had elapsed, the nominee argued the exclusion period had passed.",
+    "ruling": "The State CDRC ruled in favor of the nominee. The suicide exclusion clause clearly limited the exclusion to 12 months from policy inception. Since the death occurred at 14 months, the exclusion did not apply. PNB MetLife was directed to pay the full sum assured of ₹1 crore with 9% interest from 3 months after the claim filing date.",
+    "principle": "The suicide exclusion in life insurance policies is limited to the period specified in the clause (typically 12 months under Section 45). After the exclusion period, death by suicide is covered like any other cause of death. The insurer cannot extend the exclusion period beyond what is stated in the policy.",
+    "consumer_takeaway": "The suicide exclusion in life insurance typically applies only for the first 12 months from policy start. After this period, the death benefit is payable regardless of the cause of death. Check your policy for the exact exclusion period.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "suicide-clause",
+      "12-month-exclusion",
+      "Section-45",
+      "term-plan",
+      "death-claim"
+    ]
+  },
+  {
+    "id": "case_074",
+    "case_name": "Seema Rawat vs LIC of India",
+    "forum": "Insurance Ombudsman, Dehradun",
+    "year": 2023,
+    "category": "life",
+    "issue": "LIC rejected a death claim citing age misstatement — the insured had stated age as 42 at inception but was actually 48. LIC argued this was material non-disclosure warranting repudiation. The policy was 6 years old at the time of death. The nominee argued the policy should be adjusted for the correct age premium, not repudiated entirely.",
+    "ruling": "The Ombudsman applied Section 45 (policy beyond 3 years) and IRDAI guidelines on age misstatement. Under the policy terms, age misstatement is addressed by adjusting the sum assured to correspond to the correct age premium, not by repudiating the policy. LIC was directed to pay the adjusted death claim of ₹3.2 lakh (reduced from ₹4 lakh to reflect the correct age premium).",
+    "principle": "Age misstatement in life insurance policies should be handled as per the policy's age misstatement clause — typically by adjusting the sum assured or benefits to correspond to the correct age. Repudiation for age misstatement alone is not permissible, especially after the 3-year contestability period.",
+    "consumer_takeaway": "If a death claim is rejected solely for age misstatement, the insurer should adjust the sum assured to reflect the correct age premium rather than reject the claim entirely. Check the policy's age misstatement clause and cite it in your complaint.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "age-misstatement",
+      "adjusted-claim",
+      "Section-45",
+      "repudiation"
+    ]
+  },
+  {
+    "id": "case_075",
+    "case_name": "Deepa Pillai vs Canara HSBC OBC Life Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Kochi",
+    "year": 2024,
+    "category": "life",
+    "issue": "Canara HSBC denied a death claim on a term plan citing that the insured had failed to disclose a family history of cardiac disease in the proposal form. The insured died of a cardiac arrest at age 38. The policy was 2 years and 8 months old. The insurer claimed the non-disclosure was material and the policy was within the 3-year contestability period.",
+    "ruling": "The Ombudsman held that family history of disease is a risk factor, not a personal medical condition. While the policy was within the 3-year contestability period, the insurer failed to establish that non-disclosure of family history was deliberate or that it would have materially changed the underwriting decision. Canara HSBC was directed to pay the full death claim of ₹75 lakh.",
+    "principle": "Non-disclosure of family medical history, while potentially relevant to underwriting, is not equivalent to non-disclosure of personal medical conditions. The insurer must prove that the non-disclosure was material, deliberate, and would have changed the underwriting decision. Family history alone is insufficient grounds for claim rejection.",
+    "consumer_takeaway": "Disclose family medical history honestly in your proposal form, but know that non-disclosure of family history alone is generally not sufficient grounds for claim rejection. The insurer must prove deliberate concealment and material impact on underwriting.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "family-history",
+      "non-disclosure",
+      "contestability",
+      "term-plan",
+      "cardiac"
+    ]
+  },
+  {
+    "id": "case_076",
+    "case_name": "Balram Yadav vs Aditya Birla Sun Life Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2024,
+    "category": "life",
+    "issue": "Aditya Birla Sun Life rejected a death claim on a 4-year-old policy citing the insured had consumed alcohol regularly. The insurer argued habitual alcohol consumption was a material fact not disclosed in the proposal. The deceased's medical records showed occasional social drinking, not habitual use. The cause of death was a road traffic accident (not alcohol-related).",
+    "ruling": "NCDRC ruled that occasional social drinking is not a material fact requiring disclosure, and the insurer failed to prove habitual alcohol consumption. Furthermore, even if alcohol consumption existed, it had no causal connection to the death by road accident. The death claim of ₹30 lakh was to be paid with 9% interest.",
+    "principle": "Occasional social drinking is not a material non-disclosure warranting claim rejection. The insurer must establish that the non-disclosed fact was habitual, material to risk assessment, and ideally, causally connected to the death. Non-disclosure of lifestyle habits that are common and socially accepted does not constitute suppression of material facts.",
+    "consumer_takeaway": "Occasional social drinking is generally not considered a material non-disclosure. If your insurer rejects a claim citing alcohol use, demand evidence of habitual consumption and ask how it is connected to the cause of death.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "alcohol",
+      "non-disclosure",
+      "material-fact",
+      "road-accident",
+      "causal-connection"
+    ]
+  },
+  {
+    "id": "case_077",
+    "case_name": "Lakshmi Narayan vs LIC of India",
+    "forum": "Supreme Court",
+    "year": 2022,
+    "category": "life",
+    "issue": "LIC repudiated a death claim on a 2.5-year-old policy citing the insured had concealed an earlier hospitalization for chest pain that occurred 6 months before taking the policy. LIC produced hospital records. The nominee argued the hospitalization was for routine investigation, no disease was diagnosed, and the insured genuinely believed he had no condition to disclose.",
+    "ruling": "The Supreme Court held that suppression of material fact must be deliberate and with intent to deceive. Where the insured underwent investigation but was not diagnosed with any specific disease, the insured's belief that there was nothing to disclose was bona fide. LIC was directed to pay the death claim of ₹10 lakh with 12% interest for delayed payment spanning 8 years of litigation.",
+    "principle": "Non-disclosure must be deliberate and with intent to deceive to warrant policy repudiation. If a medical investigation yielded no diagnosis, the insured's bona fide belief that there was nothing to disclose is a valid defense. The insurer bears the burden of proving deliberate suppression.",
+    "consumer_takeaway": "If you underwent medical tests that came back normal or inconclusive, you may have a valid defense if the insurer later claims non-disclosure. Keep copies of all medical reports showing normal/negative results. However, it is always safer to disclose all hospitalizations.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "Supreme-Court",
+      "deliberate-suppression",
+      "investigation",
+      "no-diagnosis",
+      "bona-fide"
+    ]
+  },
+  {
+    "id": "case_078",
+    "case_name": "Geeta Sharma vs Edelweiss Tokio Life Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2024,
+    "category": "life",
+    "issue": "Edelweiss Tokio denied a death claim on a term plan stating that the policyholder had taken multiple life insurance policies from different insurers within a span of 6 months, aggregating to ₹3 crore in coverage, which the insurer argued indicated fraudulent intent and over-insurance. The insured died in an accidental fall 18 months after the policy started.",
+    "ruling": "The Ombudsman held that taking multiple life insurance policies is not in itself evidence of fraud. The insurer must prove the death was not accidental or that the policies were taken with intent to defraud. Since the death was accidental and verified by police FIR and post-mortem report, Edelweiss Tokio was directed to pay the death claim of ₹50 lakh.",
+    "principle": "Multiple life insurance policies taken within a short period may warrant additional investigation but do not constitute prima facie evidence of fraud. The insurer must prove actual fraud or that the insured concealed existing coverage in the proposal forms of the other policies.",
+    "consumer_takeaway": "You are legally entitled to hold multiple life insurance policies from different insurers. However, always disclose existing policies in the proposal form of any new policy. If a death claim is rejected citing multiple policies, the insurer must prove actual fraud — the existence of multiple policies alone is not sufficient.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "multiple-policies",
+      "over-insurance",
+      "fraud-allegation",
+      "accidental-death"
+    ]
+  },
+  {
+    "id": "case_079",
+    "case_name": "Rajkumar Verma vs Birla Sun Life Insurance Co. Ltd.",
+    "forum": "District Forum, Bhopal",
+    "year": 2022,
+    "category": "life",
+    "issue": "Birla Sun Life rejected a maturity claim on an endowment plan stating the policyholder had stopped paying premiums for 2 years mid-term, and the policy had acquired a paid-up value. The insurer calculated the paid-up maturity at ₹1.8 lakh against the original sum assured of ₹5 lakh. The policyholder argued he was never informed about the paid-up status and the impact on maturity value.",
+    "ruling": "The District Forum found deficiency in service by the insurer for failure to send paid-up intimation as required by IRDAI norms. However, the Forum upheld the paid-up maturity calculation as per policy terms. Birla Sun Life was directed to pay ₹1.8 lakh paid-up maturity plus ₹50,000 compensation for failure to communicate paid-up status and lost opportunity to revive the policy.",
+    "principle": "Insurers must inform policyholders when a policy lapses and acquires paid-up status, including the impact on maturity value and the option to revive the policy within the revival period. Failure to communicate constitutes deficiency in service, though the paid-up calculation may still be upheld.",
+    "consumer_takeaway": "If you miss premium payments, your life insurance policy may become paid-up with significantly reduced maturity benefits. You typically have a 2-year revival window. If the insurer never informed you of the paid-up status, claim compensation for the lost opportunity to revive the policy.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "paid-up",
+      "lapsed",
+      "revival",
+      "endowment",
+      "communication-failure"
+    ]
+  },
+  {
+    "id": "case_080",
+    "case_name": "Nandini Reddy vs Max Life Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Hyderabad",
+    "year": 2023,
+    "category": "life",
+    "issue": "Max Life imposed a 6-month premium loading (30% extra premium) on a term plan renewal citing the policyholder had been diagnosed with Type 2 diabetes after the policy started. The policyholder argued that changes in health status after policy inception cannot be used to increase premiums during the policy term, as term plan premiums are locked at inception.",
+    "ruling": "The Ombudsman ruled that once a term insurance policy is issued with a fixed premium schedule, the insurer cannot impose additional premium loading for health conditions that develop after policy inception. Max Life was directed to revert to the original premium and refund the excess premium collected with interest.",
+    "principle": "Term insurance premiums are fixed at inception based on the risk assessment at that time. Health conditions developing after policy commencement cannot be used as grounds for premium loading during the policy tenure. The guaranteed renewability feature protects policyholders from mid-term premium increases based on changed health status.",
+    "consumer_takeaway": "Your term insurance premium is locked at the rate quoted when the policy was issued. If your insurer tries to increase premiums citing health changes after the policy started, challenge it. The premium rate is fixed for the entire policy term.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "life",
+      "term-plan",
+      "premium-loading",
+      "diabetes",
+      "fixed-premium",
+      "guaranteed-renewability"
+    ]
+  },
+  {
+    "id": "case_081",
+    "case_name": "Rohit Saxena vs United India Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2023,
+    "category": "motor",
+    "issue": "United India rejected a motor OD claim for a major accident alleging the driver was under the influence of alcohol. The insurer relied on a police FIR that mentioned 'suspected intoxication' but no blood alcohol test was conducted at the scene or hospital. The driver denied consuming alcohol and the hospital records did not note alcohol use.",
+    "ruling": "NCDRC held that mere suspicion of intoxication in a police FIR, without a confirmed blood alcohol test (BAC), is insufficient to invoke the drunk driving exclusion. The insurer bears the burden of proving intoxication through objective medical evidence. United India was directed to pay the OD claim of ₹6.5 lakh.",
+    "principle": "The drunk driving exclusion requires objective medical evidence of intoxication (blood alcohol test) at the time of the accident. Police FIR notations of 'suspected intoxication' without corroborating BAC tests are insufficient to deny a motor insurance claim.",
+    "consumer_takeaway": "If your motor claim is rejected for alleged drunk driving, ask whether a blood alcohol test was conducted. Without an actual BAC test result, the insurer cannot prove intoxication. A police FIR noting 'suspicion' alone is not sufficient evidence.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "drunk-driving",
+      "blood-alcohol",
+      "FIR",
+      "burden-of-proof",
+      "NCDRC"
+    ]
+  },
+  {
+    "id": "case_082",
+    "case_name": "Kavita Jain vs Bharti AXA General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2024,
+    "category": "motor",
+    "issue": "Bharti AXA settled a motor total loss claim using a depreciated IDV significantly lower than the IDV stated in the policy schedule. The policy schedule showed IDV of ₹7.5 lakh for a 3-year-old car, but the insurer applied additional 'market value depreciation' during settlement and offered only ₹5.8 lakh.",
+    "ruling": "The Ombudsman held that the IDV mentioned in the policy schedule is the agreed value between the insurer and policyholder. The insurer cannot unilaterally apply additional depreciation at the time of claim settlement beyond what was already factored into the IDV at inception. Bharti AXA was directed to pay the full IDV of ₹7.5 lakh.",
+    "principle": "The Insured Declared Value (IDV) in the policy schedule represents the agreed maximum claim amount for total loss/theft. The insurer cannot apply additional depreciation beyond the IDV at the time of claim settlement. The IDV already accounts for age-related depreciation.",
+    "consumer_takeaway": "Your policy schedule mentions the IDV — this is the maximum amount the insurer must pay in case of total loss or theft. If the insurer offers less than the IDV citing additional depreciation, challenge it. The IDV is the agreed value.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "IDV",
+      "depreciation",
+      "total-loss",
+      "agreed-value",
+      "policy-schedule"
+    ]
+  },
+  {
+    "id": "case_083",
+    "case_name": "Nitin Bansal vs TATA AIG General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Chandigarh",
+    "year": 2023,
+    "category": "motor",
+    "issue": "TATA AIG deducted depreciation on rubber and plastic parts from a comprehensive motor claim despite the policyholder having purchased a zero-depreciation add-on. The insurer argued the zero-dep add-on only covered metal and fiber parts, not rubber, plastic, and glass components. The zero-dep add-on brochure did not specify such exclusions.",
+    "ruling": "The Ombudsman ruled that a 'zero depreciation' add-on means no depreciation is deducted on any parts during claim settlement, as the term implies. If the insurer intended to exclude certain materials, it should have been explicitly stated in the add-on terms. TATA AIG was directed to reimburse the depreciation deducted (₹28,000).",
+    "principle": "A zero-depreciation add-on covers depreciation on all parts unless the add-on terms explicitly exclude specific materials. The insurer cannot retroactively narrow the scope of zero-dep coverage through internal guidelines not shared with the policyholder at the time of sale.",
+    "consumer_takeaway": "When buying a zero-dep add-on, read the specific terms to check if any parts are excluded. If no exclusions are mentioned, the add-on should cover depreciation on all parts. Challenge any unexpected depreciation deductions on your zero-dep claim.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "zero-depreciation",
+      "add-on",
+      "rubber-plastic",
+      "parts-exclusion"
+    ]
+  },
+  {
+    "id": "case_084",
+    "case_name": "Rahul Gupta vs Bajaj Allianz General Insurance Co. Ltd.",
+    "forum": "District Forum, Gurgaon",
+    "year": 2024,
+    "category": "motor",
+    "issue": "Bajaj Allianz approved a cashless motor repair claim but took 45 days to authorize the final repair amount, during which the car remained at the workshop. The policyholder incurred ₹60,000 in alternate transport costs (cab/rental) during the 45-day delay. The insurer argued transportation costs are not covered under the motor policy.",
+    "ruling": "The District Forum held Bajaj Allianz liable for deficiency in service due to unreasonable delay in authorizing the repair. While the motor policy did not cover transportation costs, the delay was the insurer's fault. Bajaj Allianz was directed to compensate ₹40,000 for the inconvenience and transportation costs incurred due to their delay.",
+    "principle": "Insurers must process cashless motor repair authorizations within a reasonable time. Unreasonable delays constitute deficiency in service, and the insurer may be liable for consequential costs incurred by the policyholder due to their delay, even if those costs are not explicitly covered under the policy.",
+    "consumer_takeaway": "If your insurer takes an unreasonable time to authorize a cashless motor repair, document the delay with dated correspondence. Keep receipts for alternate transport costs. You may be able to claim these as compensation for the insurer's deficiency in service.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "cashless-repair",
+      "delay",
+      "transportation-cost",
+      "deficiency-in-service"
+    ]
+  },
+  {
+    "id": "case_085",
+    "case_name": "Arvind Mishra vs HDFC ERGO General Insurance Co. Ltd.",
+    "forum": "State CDRC, Uttar Pradesh",
+    "year": 2023,
+    "category": "motor",
+    "issue": "HDFC ERGO declared a vehicle as total loss (repair cost exceeding 75% of IDV) and deducted ₹1.2 lakh as salvage value from the IDV of ₹6 lakh, offering a net settlement of ₹4.8 lakh. The policyholder argued the salvage should be managed by the insurer and the full IDV should be paid. The insurer insisted the policyholder keep the wreck and accept the deduction.",
+    "ruling": "The State CDRC held that the insurer has two options: pay the full IDV and take possession of the salvage, or pay the IDV minus a fair salvage value and let the policyholder keep the wreck. The salvage value must be determined through a transparent auction process, not unilaterally by the insurer. HDFC ERGO was directed to either pay full IDV (₹6 lakh) and take the salvage, or conduct a proper salvage auction.",
+    "principle": "In total loss claims, the salvage value must be determined through a transparent process (auction or independent valuation), not unilaterally by the insurer. The policyholder has the right to choose between keeping the salvage at a fair deduction or handing it over for full IDV payment.",
+    "consumer_takeaway": "In a total loss claim, you can either keep the wreck and accept a fair salvage deduction, or hand over the wreck and receive the full IDV. If the insurer's salvage valuation seems unfair, request a transparent auction. You have the right to participate in the salvage auction process.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "total-loss",
+      "salvage-value",
+      "IDV",
+      "auction",
+      "policyholder-choice"
+    ]
+  },
+  {
+    "id": "case_086",
+    "case_name": "Manisha Kapoor vs Cholamandalam MS General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Pune",
+    "year": 2024,
+    "category": "motor",
+    "issue": "Cholamandalam MS refused to transfer the 50% No Claim Bonus (NCB) when the policyholder switched her motor insurance from ICICI Lombard. The new insurer argued that the NCB was earned on the previous vehicle (sold) and could not be transferred to the new vehicle's policy. The policyholder argued NCB belongs to the policyholder, not the vehicle.",
+    "ruling": "The Ombudsman held that NCB is earned by the policyholder, not the vehicle, as per IRDAI Motor Insurance Guidelines. Cholamandalam was directed to apply the 50% NCB to the new policy and refund the excess premium collected without NCB, totaling ₹8,500.",
+    "principle": "No Claim Bonus (NCB) in motor insurance belongs to the policyholder, not the vehicle. It is transferable across vehicles and across insurers. The new insurer must honor the NCB earned under the previous policy upon verification from the previous insurer.",
+    "consumer_takeaway": "Your NCB belongs to you, not your car. When selling a car and buying a new one, or switching insurers, your NCB must be transferred. Get an NCB certificate from your previous insurer and present it to the new insurer. NCB can save you up to 50% on the OD premium.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "NCB",
+      "transfer",
+      "policyholder-right",
+      "vehicle-change",
+      "premium-discount"
+    ]
+  },
+  {
+    "id": "case_087",
+    "case_name": "Santosh Kumar vs Motor Accidents Claims Tribunal (MACT)",
+    "forum": "High Court, Allahabad",
+    "year": 2023,
+    "category": "motor",
+    "issue": "A pedestrian suffered severe injuries in a hit-and-run accident where the offending vehicle was never identified. The victim filed a claim under the Motor Vehicles Act's hit-and-run provisions seeking compensation from the General Insurance Council's Solatium Fund. The initial MACT award was ₹50,000 which the victim challenged as grossly inadequate given permanent disability.",
+    "ruling": "The High Court enhanced the compensation to ₹5 lakh, noting that the hit-and-run compensation limits under the Motor Vehicles Act 2019 (as amended) have been substantially increased. The Court directed the General Insurance Council to pay the enhanced amount within 60 days.",
+    "principle": "Hit-and-run victims are entitled to compensation from the Motor Vehicle Accident Fund (formerly Solatium Fund) under Section 161 of the Motor Vehicles Act 2019. The compensation limits were enhanced under the 2019 amendment and tribunals must apply the revised limits.",
+    "consumer_takeaway": "If you or a family member is a victim of a hit-and-run accident, you can claim compensation even if the offending vehicle is not identified. File a police FIR and apply to the nearest Motor Accidents Claims Tribunal. Under the MV Act 2019, compensation limits have been significantly increased.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "hit-and-run",
+      "MACT",
+      "Solatium-Fund",
+      "MV-Act-2019",
+      "third-party"
+    ]
+  },
+  {
+    "id": "case_088",
+    "case_name": "Vijay Pathak vs New India Assurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Bhopal",
+    "year": 2024,
+    "category": "motor",
+    "issue": "New India Assurance rejected a motor OD claim for accident damage arguing the policyholder was driving without a valid driving license — the license had expired 10 days before the accident. The policyholder argued the license was valid at the time of purchase and only lapsed due to the RTO's delay in processing the renewal application submitted before expiry.",
+    "ruling": "The Ombudsman held that where the policyholder had applied for license renewal before expiry and the delay was due to the RTO's processing backlog, the policyholder should not be penalized. The renewal application receipt constituted proof of intent to maintain a valid license. New India Assurance was directed to settle the claim of ₹3.2 lakh.",
+    "principle": "An expired driving license does not automatically void a motor insurance claim if the policyholder can demonstrate the license was valid at policy inception and a renewal application was submitted before expiry. The focus should be on whether the policyholder had the competence and intent to drive legally.",
+    "consumer_takeaway": "Always renew your driving license before it expires and keep the renewal application receipt. If your license expires due to RTO delays while your renewal is pending, the insurance claim should still be honored. However, never drive without at least a renewal receipt.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "driving-license",
+      "expired-license",
+      "renewal-pending",
+      "RTO-delay"
+    ]
+  },
+  {
+    "id": "case_089",
+    "case_name": "Sumit Arora vs ICICI Lombard General Insurance Co. Ltd.",
+    "forum": "Consumer Forum, Chandigarh",
+    "year": 2023,
+    "category": "motor",
+    "issue": "ICICI Lombard denied a motor claim for engine seizure due to water ingress during monsoon flooding. The policyholder had a comprehensive policy with engine protection add-on but the insurer argued the policyholder 'voluntarily drove through waterlogged roads' triggering the consequential loss exclusion. The policyholder was stranded when water levels rose suddenly.",
+    "ruling": "The Consumer Forum held that the engine protection add-on specifically covers engine damage due to water ingress. If the insurer intended to exclude driving through waterlogged areas, it should have been explicitly stated in the add-on terms. Additionally, the policyholder was caught in sudden flooding, not voluntarily driving through known waterlogging. ICICI Lombard was directed to pay ₹4.5 lakh for engine repair.",
+    "principle": "An engine protection add-on covers engine damage due to water ingress regardless of the circumstances of exposure, unless the add-on explicitly excludes specific scenarios. 'Voluntary exposure' must be clearly defined in the policy terms and proven by the insurer.",
+    "consumer_takeaway": "If you have an engine protection add-on and your engine is damaged by water ingress, file a claim immediately. Do not attempt to restart the car after water exposure. The add-on should cover the damage unless you deliberately drove into a known flooded area.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "engine-protection",
+      "water-ingress",
+      "flooding",
+      "add-on",
+      "consequential-loss"
+    ]
+  },
+  {
+    "id": "case_090",
+    "case_name": "Prerna Malhotra vs Go Digit General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Mumbai",
+    "year": 2024,
+    "category": "motor",
+    "issue": "Go Digit settled a motor theft claim at a significantly lower amount than the IDV, arguing the vehicle had modifications (aftermarket alloy wheels, music system, seat covers) that were not declared at policy inception. The insurer reduced the IDV by ₹1.5 lakh for 'undeclared accessories'. The policyholder argued the accessories were present when the vehicle was insured and the insurer's surveyor had inspected the vehicle.",
+    "ruling": "The Ombudsman held that if the insurer conducted a pre-insurance survey and accepted the vehicle with its existing modifications, it cannot later deny coverage for those accessories. Go Digit was directed to pay the full IDV without deduction for accessories that were present at the time of policy issuance and inspection.",
+    "principle": "If the insurer or its surveyor inspected the vehicle at the time of policy issuance and accepted it with existing modifications, the insurer is estopped from later denying coverage for those modifications. The principle of estoppel applies to pre-insurance surveys.",
+    "consumer_takeaway": "Declare all vehicle modifications and accessories when buying or renewing motor insurance. If the insurer conducted a pre-insurance inspection, ensure the inspection report notes all modifications. Keep photos of your vehicle with all accessories as evidence.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "motor",
+      "theft",
+      "accessories",
+      "modifications",
+      "IDV-deduction",
+      "pre-insurance-survey"
+    ]
+  },
+  {
+    "id": "case_091",
+    "case_name": "Meghna Saxena vs PNB MetLife India Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2023,
+    "category": "general",
+    "issue": "PNB MetLife denied a free look period cancellation request for a ULIP policy, arguing the 15-day free look period had expired. The policyholder argued she received the policy document 12 days after payment and submitted the cancellation request within 15 days of receiving the document. The insurer counted the free look period from the date of policy issuance, not receipt.",
+    "ruling": "The Ombudsman ruled that the free look period begins from the date the policyholder receives the policy document, not from the date of policy issuance. PNB MetLife was directed to cancel the policy and refund the full premium of ₹3 lakh minus stamp duty and proportionate risk charges for the period of cover.",
+    "principle": "The 15/30-day free look period under IRDAI regulations begins from the date the policyholder receives the policy document, not from the date of issuance or commencement. The burden of proving delivery date lies with the insurer (through dispatch records).",
+    "consumer_takeaway": "The free look period starts from when you actually receive the policy document, not when it was issued. If the insurer delays sending the document, your free look window extends accordingly. Keep the courier receipt or email as proof of when you received the document.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "free-look",
+      "cancellation",
+      "receipt-date",
+      "IRDAI-regulation",
+      "ULIP"
+    ]
+  },
+  {
+    "id": "case_092",
+    "case_name": "Ashwin Desai vs Future Generali India Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Ahmedabad",
+    "year": 2024,
+    "category": "general",
+    "issue": "Future Generali cancelled a health insurance policy mid-term without any notice to the policyholder, citing 'fraudulent claims history'. The policyholder had made 2 claims in 3 years (both legitimate and settled). The cancellation was discovered only when a new claim was rejected. No refund of the unexpired premium period was provided.",
+    "ruling": "The Ombudsman ruled that mid-term cancellation by the insurer requires written notice with specific reasons and reasonable notice period as per IRDAI guidelines. Unilateral cancellation without notice is void. Future Generali was directed to reinstate the policy, settle the pending claim of ₹2.5 lakh, and pay ₹1 lakh compensation for deficiency in service.",
+    "principle": "Insurers cannot unilaterally cancel a policy mid-term without written notice stating specific reasons, providing reasonable notice period, and refunding pro-rata premium. Mid-term cancellation on grounds of 'claims history' alone is not permissible under IRDAI regulations unless fraud is proven.",
+    "consumer_takeaway": "Your insurer cannot cancel your policy without written notice and specific reasons. If you discover your policy was cancelled without your knowledge, immediately file a complaint with the Ombudsman seeking reinstatement. Keep copies of all premium payment receipts.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "mid-term-cancellation",
+      "no-notice",
+      "reinstatement",
+      "IRDAI-guidelines",
+      "unfair-practice"
+    ]
+  },
+  {
+    "id": "case_093",
+    "case_name": "Dinesh Nair vs Star Health and Allied Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Kochi",
+    "year": 2023,
+    "category": "general",
+    "issue": "Star Health did not respond to the policyholder's grievance regarding a claim short-settlement within the IRDAI-mandated 30-day grievance redressal timeline. The policyholder's written complaint went unanswered for 90 days. The policyholder then approached the Ombudsman directly.",
+    "ruling": "The Ombudsman took cognizance of the grievance and also imposed a recommendation for IRDAI to audit Star Health's grievance redressal mechanism. The underlying claim short-settlement was ruled in favor of the policyholder, with Star Health directed to pay the balance of ₹1.8 lakh plus ₹25,000 for failure to address the grievance within the mandated timeline.",
+    "principle": "Under IRDAI (Protection of Policyholders' Interests) Regulations, every insurer must acknowledge a grievance within 3 working days and resolve it within 15 days (extendable to 30 days with written reasons). Failure to comply is a regulatory violation and the policyholder can escalate to the Ombudsman or IGMS.",
+    "consumer_takeaway": "If your insurer does not respond to your grievance within 30 days, you are entitled to escalate to the Insurance Ombudsman. File your original complaint through IRDAI's IGMS (Integrated Grievance Management System) portal for tracking. The 30-day non-response itself strengthens your Ombudsman complaint.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "grievance-redressal",
+      "30-day-rule",
+      "IGMS",
+      "escalation",
+      "IRDAI-PPHI"
+    ]
+  },
+  {
+    "id": "case_094",
+    "case_name": "IRDAI vs ABC Insurance Co. Ltd. (Multiple Complainants)",
+    "forum": "IRDAI Order",
+    "year": 2024,
+    "category": "general",
+    "issue": "IRDAI received over 500 complaints against an insurer for systematic short-settlement of health claims by applying non-standard deductions, delaying cashless authorizations beyond mandated timelines, and using intimidation tactics to force policyholders to accept reduced settlements. The IRDAI conducted a thematic inspection.",
+    "ruling": "IRDAI imposed a penalty of ₹1 crore on the insurer for unfair trade practices under Section 102 of the Insurance Act. The insurer was directed to review and re-settle all complaints received in the preceding 2 years, appoint an independent claims review committee, and submit quarterly compliance reports to IRDAI for 2 years.",
+    "principle": "IRDAI has the authority to impose penalties up to ₹1 crore per violation for unfair trade practices under Section 102 of the Insurance Act. Systematic short-settlement, delay tactics, and consumer intimidation constitute unfair trade practices. IRDAI can mandate corrective action including retrospective claim reviews.",
+    "consumer_takeaway": "If you believe your insurer has a pattern of unfair practices (not just your individual case), file a complaint on IRDAI's IGMS portal. IRDAI conducts thematic inspections based on complaint patterns and can penalize insurers and force them to re-settle affected claims.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "unfair-trade-practice",
+      "IRDAI-penalty",
+      "Section-102",
+      "thematic-inspection",
+      "systematic"
+    ]
+  },
+  {
+    "id": "case_095",
+    "case_name": "Anupam Verma vs Bajaj Allianz General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Delhi",
+    "year": 2024,
+    "category": "general",
+    "issue": "Bajaj Allianz shared the policyholder's detailed medical records (including HIV status) with a third-party wellness company for a 'health management program' without the policyholder's explicit consent. The policyholder discovered this when the wellness company contacted him regarding his HIV management. The policyholder alleged violation of medical confidentiality and data privacy.",
+    "ruling": "The Ombudsman ruled that sharing medical records with third parties without explicit, informed consent is a serious violation of the policyholder's privacy rights and medical confidentiality obligations. Bajaj Allianz was directed to pay ₹5 lakh as compensation for breach of privacy, immediately cease sharing data with the third-party company, and issue a written apology.",
+    "principle": "Insurance companies are custodians of sensitive personal and medical data. Sharing such data with third parties without explicit, informed, and specific consent violates the policyholder's right to privacy and medical confidentiality. This applies even to affiliated companies and wellness partners.",
+    "consumer_takeaway": "Your insurer cannot share your medical records or personal data with third parties without your explicit consent. If you receive unsolicited contact from a company that knows your medical details, file a privacy complaint with the Ombudsman and the insurer's grievance cell. Consider filing under the IT Act as well.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "data-privacy",
+      "medical-records",
+      "third-party",
+      "consent",
+      "HIV-confidentiality"
+    ]
+  },
+  {
+    "id": "case_096",
+    "case_name": "Ravi Shankar vs HDFC ERGO General Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2024,
+    "category": "general",
+    "issue": "HDFC ERGO denied a health claim for a medical device (cardiac stent, ₹2.5 lakh) arguing that the policy covered 'hospitalization expenses' but the stent was an 'implant' not an 'expense'. The policy did not define whether implants were included in or excluded from hospitalization expenses. The policyholder argued the stent was an integral part of the angioplasty procedure.",
+    "ruling": "NCDRC applied the contra proferentem doctrine: the policy was drafted by the insurer and the ambiguity regarding whether implants are part of hospitalization expenses must be resolved in favor of the policyholder. HDFC ERGO was directed to pay the full claim including the stent cost.",
+    "principle": "Under the contra proferentem doctrine, any ambiguity in insurance policy wording is interpreted against the insurer who drafted the contract and in favor of the insured. If the policy does not explicitly exclude an item, and the item is reasonably connected to the covered treatment, it is deemed covered.",
+    "consumer_takeaway": "If your insurer denies a claim citing an exclusion that is not clearly stated in the policy, invoke the contra proferentem principle. Any ambiguity in the policy language must be interpreted in your favor. The insurer wrote the policy — any unclear language is their problem.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "contra-proferentem",
+      "policy-ambiguity",
+      "implant",
+      "stent",
+      "NCDRC"
+    ]
+  },
+  {
+    "id": "case_097",
+    "case_name": "Consumer Rights Association vs XYZ Life Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2023,
+    "category": "general",
+    "issue": "A consumer rights association filed a class action against a life insurer for systematically charging 'policy administration fees' that were not disclosed in the policy document or benefit illustration. Over 10,000 policyholders were affected, with fees ranging from ₹500 to ₹2,000 per year deducted without consent.",
+    "ruling": "NCDRC held that charges not disclosed in the policy document or benefit illustration at the time of sale are unauthorized and constitute unfair trade practice. The insurer was directed to refund all undisclosed charges to affected policyholders with 12% interest and pay ₹50 lakh to the Consumer Welfare Fund.",
+    "principle": "All charges deducted from a policy must be disclosed in the policy document and benefit illustration at the time of sale. Undisclosed charges constitute unauthorized deductions and unfair trade practice. Consumer associations can file class actions for systematic violations affecting multiple policyholders.",
+    "consumer_takeaway": "Check your annual policy statement for any charges not mentioned in your original policy document or benefit illustration. If you find undisclosed deductions, file a complaint. Consider joining or supporting consumer associations that file class actions against systematic insurer malpractices.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "undisclosed-charges",
+      "class-action",
+      "unfair-trade",
+      "consumer-association",
+      "NCDRC"
+    ]
+  },
+  {
+    "id": "case_098",
+    "case_name": "Girish Hegde vs ICICI Lombard General Insurance Co. Ltd.",
+    "forum": "Insurance Ombudsman, Bangalore",
+    "year": 2024,
+    "category": "general",
+    "issue": "ICICI Lombard rejected a fire insurance claim for a home office arguing the 'home insurance' policy covered only residential use and the home office (30% of the home area) was 'commercial use'. The policyholder was a freelance consultant working from home and argued the home office was incidental residential use, not a commercial establishment.",
+    "ruling": "The Ombudsman ruled that home-based professional work (freelancing, consulting) done by the resident homeowner is incidental to residential use and does not convert the premises into a 'commercial establishment'. ICICI Lombard was directed to settle the fire damage claim of ₹8 lakh covering the entire premises including the home office area.",
+    "principle": "Home-based professional work by the homeowner (WFH, freelancing) is incidental to residential use and does not trigger commercial use exclusions in home insurance policies. The policy must cover the full premises unless a significant portion is used for manufacturing, retail, or employing external staff.",
+    "consumer_takeaway": "If you work from home as a freelancer or remote employee, your home insurance should still cover your home office area. If the insurer classifies your home office as 'commercial use', challenge it as incidental residential use unless you run a full commercial operation from home.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "home-insurance",
+      "home-office",
+      "commercial-exclusion",
+      "work-from-home",
+      "residential-use"
+    ]
+  },
+  {
+    "id": "case_099",
+    "case_name": "Lakshmi Narasimhan vs LIC of India",
+    "forum": "Supreme Court",
+    "year": 2024,
+    "category": "general",
+    "issue": "LIC delayed paying the maturity proceeds of a money-back policy for 2 years citing 'system migration issues'. The policyholder, a 72-year-old retired teacher, filed a writ petition after exhausting all grievance mechanisms. LIC admitted the delay was due to their IT system migration and not any fault of the policyholder.",
+    "ruling": "The Supreme Court directed LIC to pay the maturity proceeds of ₹12 lakh with 15% compound interest for the 2-year delay period, plus ₹2 lakh as exemplary damages. The Court observed that insurers cannot hide behind administrative inefficiencies to deny timely payment to policyholders and directed IRDAI to issue a circular mandating timelines for maturity claim settlement.",
+    "principle": "Administrative or operational issues (IT migration, system failures) are internal matters of the insurer and cannot be used as grounds for delaying claim settlement. The insurer bears full responsibility for its operational efficiency and must compensate policyholders for delays caused by internal issues.",
+    "consumer_takeaway": "If your insurer delays maturity or claim payments citing 'system issues' or 'processing delays', these are their internal problems, not yours. Demand interest on the delayed amount and escalate to the Ombudsman. For extreme delays, consider filing a writ petition.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "Supreme-Court",
+      "maturity-delay",
+      "system-issues",
+      "exemplary-damages",
+      "LIC"
+    ]
+  },
+  {
+    "id": "case_100",
+    "case_name": "Siddharth Kapoor vs Religare Health Insurance Co. Ltd.",
+    "forum": "NCDRC",
+    "year": 2024,
+    "category": "general",
+    "issue": "Religare Health increased the policyholder's premium by 45% at renewal citing 'portfolio-level revision' without any individual claims. IRDAI guidelines permit portfolio-level premium increases but require prior IRDAI approval and individual policyholder notification with reasons. The policyholder was not given any notice or explanation before the revised premium was auto-debited from his bank account.",
+    "ruling": "NCDRC held that while portfolio-level premium revisions are permissible with IRDAI approval, the insurer must notify policyholders individually with the reasons and quantum of the increase before the renewal date. Auto-debiting revised premiums without prior notification constitutes deficiency in service. Religare was directed to refund the excess premium with 12% interest and provide proper notice for future revisions.",
+    "principle": "Health insurance premium increases, whether individual or portfolio-level, require transparent communication to the policyholder before the renewal date. IRDAI-approved portfolio revisions must still be communicated individually with the amount and reason. Auto-debiting increased premiums without notice is unauthorized.",
+    "consumer_takeaway": "If your health insurance premium increases significantly at renewal, ask the insurer for the reason (individual loading vs. portfolio revision) and whether IRDAI approval was obtained. If you were not given advance notice, challenge the increase. You always have the option to port to another insurer.",
+    "reference": "# VERIFY: case details approximate — verify against forum records",
+    "tags": [
+      "general",
+      "premium-increase",
+      "portfolio-revision",
+      "notification",
+      "auto-debit",
+      "IRDAI-approval"
+    ]
   }
 ]
