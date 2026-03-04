@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_005",
+  "name": "Own damage claim process after accident",
+  "description": "User had a car accident and needs guidance on own damage claim",
+  "category": "motor",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "I had a minor accident and my car's bumper and headlight are damaged. I have comprehensive insurance with HDFC ERGO. How do I file an own damage claim? Will it affect my NCB?",
+    "session_id": "test_session_motor_005",
+    "user_id": "test_user_motor_005"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["own damage", "NCB", "claim", "surveyor"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain: 1) Intimate insurer within 24-48 hrs, 2) FIR if needed, 3) Surveyor visit, 4) Workshop estimate, 5) Claim settlement. Must warn NCB will reset to 0% after claim."
+}

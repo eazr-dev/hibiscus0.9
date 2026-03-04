@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_008",
+  "name": "Student travel insurance for studying abroad",
+  "description": "Parent asking about insurance for child going to study in USA",
+  "category": "travel",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "My son got admission in a US university for 2 years. He needs travel insurance. What coverage should we look for? The university requires minimum $100,000 medical coverage.",
+    "session_id": "test_session_travel_008",
+    "user_id": "test_user_travel_008"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["student", "medical coverage", "$100,000"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must recommend: 1) Student travel insurance (not regular travel), 2) Minimum $100K medical as per university, 3) Mental health coverage, 4) Study interruption benefit, 5) Personal liability, 6) Compare TATA AIG, Bajaj Allianz, ICICI Lombard student plans. Must mention J1/F1 visa requirements."
+}

@@ -1,0 +1,20 @@
+{
+  "test_id": "life_013",
+  "name": "Whole life insurance vs term insurance comparison",
+  "description": "User confused between whole life and term insurance",
+  "category": "life",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "What's the difference between whole life insurance and term insurance? My bank RM says whole life is better because it covers me forever. Is that true?",
+    "session_id": "test_session_life_013",
+    "user_id": "test_user_life_013"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["whole life", "term", "premium"],
+    "must_not_contain": ["you should definitely buy"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain: term = pure protection, cheap. Whole life = lifelong, expensive, has savings. Must flag that bank RM may have commission incentive. Must explain that most people don't need coverage past 60-65."
+}

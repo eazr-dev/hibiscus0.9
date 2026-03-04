@@ -92,6 +92,12 @@ class HibiscusSettings(BaseSettings):
     jwt_secret: str = Field(default="", alias="JWT_SECRET")
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
 
+    # ── Existing EAZR API (Node.js) ───────────────────────────────────
+    existing_api_base_url: str = Field(
+        default="http://localhost:3000",
+        alias="EXISTING_API_BASE_URL",
+    )
+
     # ── Insurer API Integrations ──────────────────────────────────────
     insurer_api_enabled: bool = Field(default=False, alias="INSURER_API_ENABLED")
     insurer_api_timeout: int = Field(default=10, alias="INSURER_API_TIMEOUT")

@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_006",
+  "name": "Lost passport while abroad — travel insurance coverage",
+  "description": "User lost passport in a foreign country",
+  "category": "travel",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "I lost my passport in Barcelona. I have travel insurance with ICICI Lombard. Does my travel insurance cover passport loss? What should I do?",
+    "session_id": "test_session_travel_006",
+    "user_id": "test_user_travel_006"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["passport", "embassy", "FIR", "insurance"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must provide actionable steps: 1) File police report (denuncia in Spain), 2) Contact Indian Embassy/Consulate for emergency certificate, 3) Travel insurance typically covers passport replacement costs, emergency hotel, rebooking. 4) Call insurer helpline. Must be empathetic."
+}

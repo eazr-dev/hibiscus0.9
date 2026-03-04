@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_008",
+  "name": "Transfer of motor insurance on second-hand car purchase",
+  "description": "User bought a used car and needs to transfer insurance",
+  "category": "motor",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "I bought a second-hand car. The previous owner's insurance has 4 months left. Can I use his policy or do I need to transfer it? How does the transfer work?",
+    "session_id": "test_session_motor_008",
+    "user_id": "test_user_motor_008"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["transfer", "14 days", "Form 29/30"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain: Transfer mandatory within 14 days of RC transfer. Need Form 29/30, RC copy, ID proof. Can transfer NCB too. Insurer cannot refuse transfer. If policy expired, need fresh policy."
+}

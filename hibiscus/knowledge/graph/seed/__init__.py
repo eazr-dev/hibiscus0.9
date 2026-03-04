@@ -10,6 +10,7 @@ from .benchmarks import BENCHMARKS, seed_benchmarks
 from .tax_rules import TAX_RULES, seed_tax_rules
 from .ombudsman import OMBUDSMAN_OFFICES, seed_ombudsman
 from .botproject_seed import seed_from_botproject
+from .tpa import TPA_DATA, seed_tpas
 
 __all__ = [
     "INSURERS",
@@ -24,6 +25,8 @@ __all__ = [
     "seed_tax_rules",
     "OMBUDSMAN_OFFICES",
     "seed_ombudsman",
+    "TPA_DATA",
+    "seed_tpas",
     "seed_from_botproject",
     "seed_all",
 ]
@@ -46,6 +49,8 @@ async def seed_all(client: Neo4jClient) -> None:
     from hibiscus.knowledge.graph.seed.tax_rules import seed_tax_rules
     from hibiscus.knowledge.graph.seed.ombudsman import seed_ombudsman
 
+    from hibiscus.knowledge.graph.seed.tpa import seed_tpas
+
     seeders = [
         ("insurers", seed_insurers),
         ("products", seed_products),
@@ -53,6 +58,7 @@ async def seed_all(client: Neo4jClient) -> None:
         ("benchmarks", seed_benchmarks),
         ("tax_rules", seed_tax_rules),
         ("ombudsman", seed_ombudsman),
+        ("tpas", lambda c: seed_tpas()),
         ("botproject", lambda c: seed_from_botproject(c)),
     ]
 

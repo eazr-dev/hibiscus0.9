@@ -1,0 +1,19 @@
+{
+  "test_id": "life_011",
+  "name": "Taxability of life insurance maturity proceeds",
+  "description": "User's endowment policy maturing and they want to understand tax implications",
+  "category": "life",
+  "intent": "calculate",
+  "complexity": "L3",
+  "input": {
+    "message": "My LIC Jeevan Umang policy with ₹15 lakh sum assured is maturing next month. Annual premium was ₹1,50,000. Will I have to pay any tax on the maturity amount? I bought it in 2012.",
+    "session_id": "test_session_life_011",
+    "user_id": "test_user_life_011"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["10(10D)", "tax", "exempt"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Section 10(10D) exempts maturity if annual premium <= 10% of SA for policies after 01/04/2012. Premium 1.5L vs SA 15L = exactly 10%. Must check this boundary carefully. For pre-2012 policies, limit was 20%."
+}

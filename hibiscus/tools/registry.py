@@ -35,6 +35,37 @@ def register_all() -> None:
     """
     errors = []
 
+    # ── Existing API Tools (EAZR Node.js bridge) ────────────────────
+    try:
+        from hibiscus.tools.existing_api.extraction import extract_policy
+        _REGISTRY["extract_policy"] = extract_policy
+    except Exception as e:
+        errors.append(f"existing_api.extraction: {e}")
+
+    try:
+        from hibiscus.tools.existing_api.scoring import calculate_protection_score
+        _REGISTRY["calculate_protection_score"] = calculate_protection_score
+    except Exception as e:
+        errors.append(f"existing_api.scoring: {e}")
+
+    try:
+        from hibiscus.tools.existing_api.reporting import generate_report
+        _REGISTRY["generate_report"] = generate_report
+    except Exception as e:
+        errors.append(f"existing_api.reporting: {e}")
+
+    try:
+        from hibiscus.tools.existing_api.compliance import check_irdai_compliance
+        _REGISTRY["check_irdai_compliance"] = check_irdai_compliance
+    except Exception as e:
+        errors.append(f"existing_api.compliance: {e}")
+
+    try:
+        from hibiscus.tools.existing_api.billing import audit_bill
+        _REGISTRY["audit_bill"] = audit_bill
+    except Exception as e:
+        errors.append(f"existing_api.billing: {e}")
+
     # ── RAG Search ─────────────────────────────────────────────────
     try:
         from hibiscus.tools.rag.search import search_insurance_knowledge
@@ -66,6 +97,13 @@ def register_all() -> None:
         _REGISTRY["get_regulation"] = get_regulation
     except Exception as e:
         errors.append(f"regulation_lookup: {e}")
+
+    try:
+        from hibiscus.tools.knowledge.tpa_lookup import lookup_tpa, get_tpa_contact
+        _REGISTRY["lookup_tpa"] = lookup_tpa
+        _REGISTRY["get_tpa_contact"] = get_tpa_contact
+    except Exception as e:
+        errors.append(f"tpa_lookup: {e}")
 
     # ── Web Search ─────────────────────────────────────────────────
     try:

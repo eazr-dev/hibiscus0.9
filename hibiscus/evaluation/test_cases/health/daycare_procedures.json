@@ -1,0 +1,20 @@
+{
+  "test_id": "health_020",
+  "name": "Daycare procedures coverage clarification",
+  "description": "User asks about daycare procedure coverage in health insurance",
+  "category": "health",
+  "intent": "educate",
+  "complexity": "L2",
+  "input": {
+    "message": "I need a knee arthroscopy which is a daycare procedure — no hospitalisation needed. My health insurance says it covers daycare but what exactly counts as daycare? Will my arthroscopy be covered?",
+    "session_id": "test_session_health_020",
+    "user_id": "test_user_health_020"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["daycare", "24 hours", "arthroscopy", "covered"],
+    "must_not_contain": ["I cannot determine"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain: Daycare = procedures requiring < 24 hours hospitalisation. IRDAI mandates 541+ daycare procedures be covered. Arthroscopy is in the standard list. Must mention pre-authorisation requirement. May have sub-limits depending on policy."
+}

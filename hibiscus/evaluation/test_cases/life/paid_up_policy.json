@@ -1,0 +1,20 @@
+{
+  "test_id": "life_009",
+  "name": "Paid-up policy value and options",
+  "description": "User stopped paying premiums and wants to understand paid-up status",
+  "category": "life",
+  "intent": "calculate",
+  "complexity": "L3",
+  "input": {
+    "message": "I stopped paying my LIC Jeevan Anand premium after 7 years. Premium was ₹40,000/year, sum assured ₹4 lakhs, 20-year term. What happens now? What are my options?",
+    "session_id": "test_session_life_009",
+    "user_id": "test_user_life_009"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["paid-up", "reduced", "revival"],
+    "must_have_numbers": true,
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Paid-up SA = (premiums paid / total premiums) × SA = (7/20) × 4L = ₹1.4L. Must explain revival option (within 5 years typically), paid-up continuation, and surrender option."
+}

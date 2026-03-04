@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_006",
+  "name": "Motor insurance add-on covers explained",
+  "description": "User wants to understand which add-on covers are worth buying",
+  "category": "motor",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "I'm renewing my car insurance. The insurer is offering zero depreciation, engine protect, roadside assistance, return to invoice, and consumables cover as add-ons. Which ones are actually worth the extra premium?",
+    "session_id": "test_session_motor_006",
+    "user_id": "test_user_motor_006"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["zero depreciation", "engine protect", "add-on"],
+    "must_not_contain": ["you must buy all"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must recommend zero-dep as most important (saves 40-50% on parts claim). Engine protect for new/expensive cars. RSA for long-distance drivers. Return to invoice for cars < 3 years. Must be objective, not push all add-ons."
+}

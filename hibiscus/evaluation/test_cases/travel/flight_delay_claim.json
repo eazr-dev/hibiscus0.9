@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_007",
+  "name": "Flight delay — travel insurance claim",
+  "description": "User's international flight was delayed by 12 hours",
+  "category": "travel",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "My flight from Delhi to London was delayed by 12 hours. I had to spend extra on food and a hotel room at the airport. Can I claim this under my travel insurance?",
+    "session_id": "test_session_travel_007",
+    "user_id": "test_user_travel_007"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["flight delay", "hours", "claim", "receipts"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Most travel policies cover flight delay after 6-12 hours. Covers meals, accommodation, essential purchases. Need: airline delay certificate, receipts, boarding pass. Amount typically capped (₹5,000-15,000 per incident)."
+}

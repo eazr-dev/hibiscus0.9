@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_005",
+  "name": "Medical emergency while travelling abroad",
+  "description": "User is abroad and needs emergency medical help — what does travel insurance cover",
+  "category": "travel",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "I'm in Thailand and got food poisoning. I need to go to a hospital. I have Bajaj Allianz travel insurance with ₹50 lakh cover. What should I do? Will the insurance pay directly?",
+    "session_id": "test_session_travel_005",
+    "user_id": "test_user_travel_005"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["emergency", "helpline", "cashless", "hospital"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "URGENT scenario — must lead with action steps: 1) Call 24x7 helpline number immediately, 2) Go to nearest hospital, 3) Insurer may arrange cashless at network hospitals, 4) Keep all bills/prescriptions, 5) File claim within specified period after return."
+}

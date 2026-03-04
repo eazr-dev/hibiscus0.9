@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hibiscus Health Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --hibiscus-50:  #fdf2f8;
+  --hibiscus-100: #fce7f3;
+  --hibiscus-400: #f472b6;
+  --hibiscus-500: #ec4899;
+  --hibiscus-600: #db2777;
+  --slate-50:  #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --emerald-50: #ecfdf5;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --amber-50:  #fffbeb;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --red-50:    #fef2f2;
+  --red-400:   #f87171;
+  --red-500:   #ef4444;
+  --blue-500:  #3b82f6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--slate-50);
+  color: var(--slate-800);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.topbar {
+  background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar-logo { font-size: 28px; }
+.topbar-title {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.topbar-nav {
+  display: flex;
+  gap: 8px;
+}
+.topbar-nav a {
+  color: var(--slate-400);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+.topbar-nav a:hover {
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+.topbar-nav a.active {
+  color: white;
+  background: rgba(236, 72, 153, 0.2);
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+}
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-healthy {
+  background: var(--emerald-50);
+  color: var(--emerald-600);
+  border: 1px solid var(--emerald-400);
+}
+.badge-degraded {
+  background: var(--amber-50);
+  color: var(--amber-500);
+  border: 1px solid var(--amber-400);
+}
+.badge-error {
+  background: var(--red-50);
+  color: var(--red-500);
+  border: 1px solid var(--red-400);
+}
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+.badge-healthy .badge-dot { background: var(--emerald-500); }
+.badge-degraded .badge-dot { background: var(--amber-500); }
+.badge-error .badge-dot { background: var(--red-500); }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.latency {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--slate-500);
+}
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.summary-card {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.summary-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.summary-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+}
+.summary-card-sub {
+  font-size: 12px;
+  color: var(--slate-400);
+  margin-top: 4px;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--slate-700);
+  margin-bottom: 16px;
+}
+.deps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.dep-card {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: box-shadow 0.15s ease;
+}
+.dep-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.dep-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.dep-icon-ok { background: var(--emerald-50); }
+.dep-icon-degraded { background: var(--amber-50); }
+.dep-icon-error { background: var(--red-50); }
+.dep-icon-config { background: var(--slate-100); }
+.dep-info { flex: 1; min-width: 0; }
+.dep-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-800);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dep-status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.dep-status-ok { background: var(--emerald-50); color: var(--emerald-600); }
+.dep-status-degraded { background: var(--amber-50); color: var(--amber-500); }
+.dep-status-error { background: var(--red-50); color: var(--red-500); }
+.dep-status-config { background: var(--slate-100); color: var(--slate-500); }
+.dep-detail {
+  font-size: 12px;
+  color: var(--slate-500);
+  font-family: 'JetBrains Mono', monospace;
+}
+.caps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.cap-item {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-700);
+}
+.cap-icon { font-size: 16px; }
+.engine-info {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.engine-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.engine-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.engine-info-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-700);
+  font-family: 'JetBrains Mono', monospace;
+}
+.refresh-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, var(--hibiscus-500), var(--hibiscus-600));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.refresh-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(219, 39, 119, 0.4);
+}
+.loading { opacity: 0.5; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">🌺</span>
+    <span class="topbar-title">Hibiscus v0.9 — EAZR AI Intelligence Engine</span>
+  </div>
+  <nav class="topbar-nav">
+    <a href="/hibiscus/">Home</a>
+    <a href="/hibiscus/docs">API Docs</a>
+    <a href="/hibiscus/health" class="active">Health</a>
+    <a href="/hibiscus/metrics">Metrics</a>
+  </nav>
+</div>
+
+<div class="container" id="app">
+  <div class="header">
+    <h1>System Health</h1>
+    <div class="header-meta">
+      <span class="latency" id="latency"></span>
+      <span class="badge" id="overall-badge">
+        <span class="badge-dot"></span>
+        <span id="overall-text">Loading...</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="summary-row" id="summary-row"></div>
+
+  <div class="section-title">Dependencies</div>
+  <div class="deps-grid" id="deps-grid"></div>
+
+  <div class="section-title">Capabilities</div>
+  <div class="caps-grid" id="caps-grid"></div>
+
+  <div class="section-title">Engine</div>
+  <div class="engine-info" id="engine-info"></div>
+</div>
+
+<button class="refresh-btn" onclick="loadHealth()">
+  <span>↻</span> Refresh
+</button>
+
+<script>
+const DEP_META = {
+  redis:     { icon: '⚡', label: 'Redis',     role: 'Session Memory' },
+  mongodb:   { icon: '🗄️', label: 'MongoDB',   role: 'Document Memory' },
+  neo4j:     { icon: '🔗', label: 'Neo4j',     role: 'Knowledge Graph' },
+  qdrant:    { icon: '🔍', label: 'Qdrant',    role: 'RAG + Vectors' },
+  deepseek:  { icon: '🧠', label: 'DeepSeek',  role: 'Primary LLM (Tier 1-2)' },
+  anthropic: { icon: '🛡️', label: 'Anthropic', role: 'Safety Net (Tier 3)' },
+};
+
+function statusClass(s) {
+  if (s === 'ok' || s === 'configured') return 'ok';
+  if (s === 'degraded') return 'degraded';
+  if (s === 'error') return 'error';
+  return 'config';
+}
+
+function statusLabel(s) {
+  if (s === 'ok') return 'Healthy';
+  if (s === 'configured') return 'Ready';
+  if (s === 'degraded') return 'Degraded';
+  if (s === 'error') return 'Error';
+  if (s === 'not_configured') return 'Not Set';
+  if (s === 'not_initialized') return 'Not Init';
+  return s;
+}
+
+function depDetail(dep) {
+  if (dep.latency_ms !== undefined) return dep.latency_ms + 'ms';
+  if (dep.model) return dep.model;
+  if (dep.reason) return dep.reason;
+  if (dep.note) return dep.note;
+  if (dep.error) return dep.error.substring(0, 60);
+  if (dep.collections) return dep.collections.length + ' collections';
+  return '';
+}
+
+function renderHealth(data) {
+  // Overall badge
+  const badge = document.getElementById('overall-badge');
+  const cls = data.status === 'healthy' ? 'healthy' : (data.status === 'degraded' ? 'degraded' : 'error');
+  badge.className = 'badge badge-' + cls;
+  document.getElementById('overall-text').textContent = data.status.charAt(0).toUpperCase() + data.status.slice(1);
+  document.getElementById('latency').textContent = data.latency_ms + 'ms';
+
+  // Summary cards
+  const deps = data.dependencies;
+  const okCount = Object.values(deps).filter(d => d.status === 'ok' || d.status === 'configured').length;
+  const totalCount = Object.keys(deps).length;
+
+  document.getElementById('summary-row').innerHTML =
+    '<div class="summary-card">' +
+      '<div class="summary-card-label">Services</div>' +
+      '<div class="summary-card-value">' + okCount + '/' + totalCount + '</div>' +
+      '<div class="summary-card-sub">dependencies ready</div>' +
+    '</div>' +
+    '<div class="summary-card">' +
+      '<div class="summary-card-label">Response</div>' +
+      '<div class="summary-card-value">' + data.latency_ms + '<span style="font-size:14px;color:var(--slate-400)">ms</span></div>' +
+      '<div class="summary-card-sub">health check latency</div>' +
+    '</div>' +
+    '<div class="summary-card">' +
+      '<div class="summary-card-label">Version</div>' +
+      '<div class="summary-card-value">v' + data.version + '</div>' +
+      '<div class="summary-card-sub">' + data.environment + '</div>' +
+    '</div>' +
+    '<div class="summary-card">' +
+      '<div class="summary-card-label">Environment</div>' +
+      '<div class="summary-card-value" style="font-size:20px">' + data.environment + '</div>' +
+      '<div class="summary-card-sub">' + data.engine + '</div>' +
+    '</div>';
+
+  // Dependency cards
+  let depsHTML = '';
+  for (const [key, dep] of Object.entries(deps)) {
+    const meta = DEP_META[key] || { icon: '📦', label: key, role: '' };
+    const sc = statusClass(dep.status);
+    depsHTML +=
+      '<div class="dep-card">' +
+        '<div class="dep-icon dep-icon-' + sc + '">' + meta.icon + '</div>' +
+        '<div class="dep-info">' +
+          '<div class="dep-name">' + meta.label +
+            ' <span class="dep-status-pill dep-status-' + sc + '">' + statusLabel(dep.status) + '</span>' +
+          '</div>' +
+          '<div class="dep-detail">' + meta.role + (depDetail(dep) ? ' · ' + depDetail(dep) : '') + '</div>' +
+        '</div>' +
+      '</div>';
+  }
+  document.getElementById('deps-grid').innerHTML = depsHTML;
+
+  // Capabilities
+  const caps = data.capabilities || {};
+  let capsHTML = '';
+  const capMeta = {
+    phase_1_ready: { icon: '✅', label: 'Phase 1: Foundation' },
+    phase_2_ready: { icon: '✅', label: 'Phase 2: Intelligence' },
+    streaming:     { icon: '⚡', label: 'Streaming SSE' },
+    multi_agent:   { icon: '🤖', label: 'Multi-Agent' },
+  };
+  for (const [key, val] of Object.entries(caps)) {
+    const cm = capMeta[key] || { icon: '📦', label: key };
+    capsHTML +=
+      '<div class="cap-item">' +
+        '<span class="cap-icon">' + (val ? cm.icon : '⭕') + '</span>' +
+        cm.label +
+      '</div>';
+  }
+  document.getElementById('caps-grid').innerHTML = capsHTML;
+
+  // Engine info
+  document.getElementById('engine-info').innerHTML =
+    '<div class="engine-info-item"><div class="engine-info-label">Engine</div><div class="engine-info-value">' + data.engine + '</div></div>' +
+    '<div class="engine-info-item"><div class="engine-info-label">Version</div><div class="engine-info-value">' + data.version + '</div></div>' +
+    '<div class="engine-info-item"><div class="engine-info-label">Vendor</div><div class="engine-info-value">' + data.vendor + '</div></div>' +
+    '<div class="engine-info-item"><div class="engine-info-label">URL</div><div class="engine-info-value"><a href="' + data.url + '" style="color:var(--hibiscus-600);text-decoration:none">' + data.url + '</a></div></div>';
+}
+
+async function loadHealth() {
+  const app = document.getElementById('app');
+  app.classList.add('loading');
+  try {
+    const resp = await fetch('/hibiscus/health/json');
+    const data = await resp.json();
+    renderHealth(data);
+  } catch (e) {
+    document.getElementById('overall-text').textContent = 'Fetch Error';
+    document.getElementById('overall-badge').className = 'badge badge-error';
+  }
+  app.classList.remove('loading');
+}
+
+loadHealth();
+setInterval(loadHealth, 15000);
+</script>
+</body>
+</html>

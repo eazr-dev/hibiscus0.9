@@ -1,0 +1,20 @@
+{
+  "test_id": "motor_007",
+  "name": "Two-wheeler insurance — TP only vs comprehensive",
+  "description": "User buying a new scooter and confused about insurance options",
+  "category": "motor",
+  "intent": "recommend",
+  "complexity": "L2",
+  "input": {
+    "message": "I just bought a Honda Activa 6G for ₹85,000. The dealer is offering comprehensive insurance for ₹4,500 or just third party for ₹1,200. Which should I get? Is third party enough?",
+    "session_id": "test_session_motor_007",
+    "user_id": "test_user_motor_007"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["third party", "comprehensive", "own damage"],
+    "must_not_contain": ["you must"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain TP is mandatory by law. Comprehensive = TP + own damage. For new vehicle, comprehensive strongly recommended. TP only covers third party damage/injury, not own scooter. Must mention Motor Vehicles Act requirement."
+}

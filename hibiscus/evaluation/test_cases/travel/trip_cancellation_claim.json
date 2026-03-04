@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_004",
+  "name": "Trip cancellation claim process",
+  "description": "User had to cancel trip due to medical emergency and wants to claim",
+  "category": "travel",
+  "intent": "claim",
+  "complexity": "L2",
+  "input": {
+    "message": "I had to cancel my international trip to Europe because my father was hospitalised. I have TATA AIG travel insurance. Can I claim trip cancellation? What documents do I need?",
+    "session_id": "test_session_travel_004",
+    "user_id": "test_user_travel_004"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["trip cancellation", "documents", "claim"],
+    "must_not_contain": ["I cannot help"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain: Trip cancellation due to family medical emergency is typically covered. Documents: medical certificate, hospital admission proof, flight/hotel cancellation receipts, original booking confirmations, policy copy. Must file within 30 days typically."
+}

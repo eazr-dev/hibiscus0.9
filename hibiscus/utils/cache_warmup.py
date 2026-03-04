@@ -164,12 +164,17 @@ async def _warm_query(query: str, system_prompt: str) -> bool:
         from hibiscus.llm.router import call_llm
         from hibiscus.memory.layers.response_cache import set_cached_response
 
-        response_text = await call_llm(
-            system_prompt=system_prompt,
-            user_message=query,
-            tier=1,
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": query},
+        ]
+        result = await call_llm(
+            messages=messages,
+            tier="deepseek_v3",
+            agent="cache_warmup",
             extra_kwargs={"max_tokens": 800},
         )
+        response_text = result.get("content", "")
         if response_text:
             payload = {
                 "response": response_text,

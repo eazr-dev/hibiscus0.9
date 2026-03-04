@@ -7,8 +7,10 @@ import asyncio
 import time
 from typing import Any, Dict
 
-from fastapi import APIRouter
-from fastapi.responses import JSONResponse, PlainTextResponse
+from pathlib import Path
+
+from fastapi import APIRouter, Request
+from fastapi.responses import JSONResponse, HTMLResponse, PlainTextResponse
 
 from hibiscus.config import settings, ENGINE_NAME, ENGINE_VERSION, ENGINE_VENDOR, ENGINE_URL
 from hibiscus.observability.logger import get_logger
@@ -93,18 +95,10 @@ async def _check_qdrant() -> Dict[str, Any]:
         return {"status": "error", "error": str(e)}
 
 
-@router.get(
-    "/health",
-    summary="Hibiscus health check — all dependencies",
-)
-async def health() -> JSONResponse:
-    """
-    Comprehensive health check of all Hibiscus dependencies.
-    Returns 200 if all critical services are healthy, 503 if any critical service is down.
-    """
+async def _build_health_response() -> tuple:
+    """Build the health check response data. Returns (response_dict, http_status)."""
     start = time.time()
 
-    # Run all checks in parallel
     results = await asyncio.gather(
         _check_redis(),
         _check_mongodb(),
@@ -116,7 +110,6 @@ async def health() -> JSONResponse:
     )
     redis_result, mongo_result, ds_result, claude_result, neo4j_result, qdrant_result = results
 
-    # Handle exceptions from gather
     def safe_result(r, name):
         if isinstance(r, Exception):
             return {"status": "error", "error": str(r)}
@@ -137,7 +130,6 @@ async def health() -> JSONResponse:
         for k in critical
     )
 
-    # LLM: at least one must be configured
     llm_ready = (
         dependencies["deepseek"].get("status") == "configured" or
         dependencies["anthropic"].get("status") == "configured"
@@ -169,7 +161,36 @@ async def health() -> JSONResponse:
     }
 
     logger.info("health_check", status=overall_status, latency_ms=total_latency_ms)
+    return response, http_status
 
+
+@router.get(
+    "/health/json",
+    summary="Health check (JSON only)",
+    include_in_schema=False,
+)
+async def health_json() -> JSONResponse:
+    """JSON-only health endpoint used by the HTML dashboard."""
+    response, http_status = await _build_health_response()
+    return JSONResponse(content=response, status_code=http_status)
+
+
+@router.get(
+    "/health",
+    summary="Hibiscus health check — all dependencies",
+)
+async def health(request: Request) -> JSONResponse:
+    """
+    Comprehensive health check of all Hibiscus dependencies.
+    Returns HTML dashboard for browsers, JSON for API clients.
+    """
+    accept = request.headers.get("accept", "")
+
+    if "text/html" in accept:
+        dashboard_path = Path(__file__).parent / "static" / "health-dashboard.html"
+        return HTMLResponse(content=dashboard_path.read_text())
+
+    response, http_status = await _build_health_response()
     return JSONResponse(content=response, status_code=http_status)
 
 

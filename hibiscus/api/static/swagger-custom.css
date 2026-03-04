@@ -1,0 +1,628 @@
+/* 🌺 Hibiscus v0.9 — Premium Swagger UI Theme */
+/* Clean, airy, sophisticated design for Series A presentation */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --hibiscus-50:  #fdf2f8;
+  --hibiscus-100: #fce7f3;
+  --hibiscus-200: #fbcfe8;
+  --hibiscus-300: #f9a8d4;
+  --hibiscus-400: #f472b6;
+  --hibiscus-500: #ec4899;
+  --hibiscus-600: #db2777;
+  --hibiscus-700: #be185d;
+  --slate-50:  #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --emerald-500: #10b981;
+  --amber-500: #f59e0b;
+  --blue-500: #3b82f6;
+  --radius: 12px;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  background: var(--slate-50) !important;
+  color: var(--slate-800) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Top bar ─────────────────────────────────────────────── */
+.swagger-ui .topbar {
+  background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%) !important;
+  padding: 16px 0 !important;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.swagger-ui .topbar .download-url-wrapper { display: none !important; }
+
+.swagger-ui .topbar a { display: flex; align-items: center; }
+
+.swagger-ui .topbar a::before {
+  content: '🌺';
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.swagger-ui .topbar a span { display: none; }
+
+.swagger-ui .topbar a::after {
+  content: 'Hibiscus v0.9 — EAZR AI Intelligence Engine';
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ── Info section ────────────────────────────────────────── */
+.swagger-ui .information-container {
+  background: white !important;
+  margin: 32px auto !important;
+  max-width: 1200px !important;
+  border-radius: var(--radius) !important;
+  padding: 40px 48px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04) !important;
+  border: 1px solid var(--slate-200);
+}
+
+.swagger-ui .info .title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 28px !important;
+  color: var(--slate-900) !important;
+  letter-spacing: -0.02em;
+}
+
+.swagger-ui .info .title small {
+  background: linear-gradient(135deg, var(--hibiscus-500), var(--hibiscus-600)) !important;
+  color: white !important;
+  padding: 3px 10px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  vertical-align: middle;
+  margin-left: 12px;
+}
+
+.swagger-ui .info .description p {
+  color: var(--slate-600) !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.swagger-ui .info .description code {
+  background: var(--slate-100) !important;
+  color: var(--hibiscus-600) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+}
+
+/* ── Sections / Tags ─────────────────────────────────────── */
+.swagger-ui .opblock-tag-section {
+  margin: 16px auto !important;
+  max-width: 1200px !important;
+}
+
+.swagger-ui .opblock-tag {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--slate-800) !important;
+  border-bottom: 2px solid var(--slate-200) !important;
+  padding: 16px 0 !important;
+  margin: 0 !important;
+}
+
+.swagger-ui .opblock-tag:hover {
+  background: var(--slate-50) !important;
+}
+
+.swagger-ui .opblock-tag small {
+  font-size: 13px !important;
+  color: var(--slate-500) !important;
+  font-weight: 400 !important;
+}
+
+/* ── Operation blocks ────────────────────────────────────── */
+.swagger-ui .opblock {
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--slate-200) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+  margin: 12px 0 !important;
+  overflow: hidden;
+}
+
+.swagger-ui .opblock .opblock-summary {
+  padding: 12px 20px !important;
+}
+
+.swagger-ui .opblock .opblock-summary-method {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 6px 14px !important;
+  border-radius: 6px !important;
+  min-width: 64px !important;
+  text-align: center;
+}
+
+.swagger-ui .opblock .opblock-summary-path {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--slate-700) !important;
+}
+
+.swagger-ui .opblock .opblock-summary-description {
+  font-size: 13px !important;
+  color: var(--slate-500) !important;
+}
+
+/* Method colors */
+.swagger-ui .opblock.opblock-post {
+  background: rgba(16, 185, 129, 0.04) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+  background: var(--emerald-500) !important;
+}
+
+.swagger-ui .opblock.opblock-get {
+  background: rgba(59, 130, 246, 0.04) !important;
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+  background: var(--blue-500) !important;
+}
+
+/* ── Models / Schemas — NUCLEAR OVERRIDES ────────────────── */
+/* Uses doubled class selectors for maximum specificity */
+
+/* Outer container */
+.swagger-ui.swagger-ui section.models {
+  max-width: 1200px !important;
+  margin: 32px auto !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
+}
+
+.swagger-ui.swagger-ui section.models.is-open {
+  padding: 0 0 20px !important;
+}
+
+/* "Schemas" heading */
+.swagger-ui.swagger-ui section.models h4 {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  padding: 18px 24px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  background: transparent !important;
+}
+
+.swagger-ui.swagger-ui section.models.is-open h4 {
+  margin: 0 0 5px !important;
+}
+
+.swagger-ui.swagger-ui section.models h4:hover {
+  background: transparent !important;
+}
+
+/* ── GRAY BAND: .model-container ─────────────────────────── */
+.swagger-ui.swagger-ui section.models .model-container,
+.swagger-ui section.models .model-container,
+div.swagger-ui section.models .model-container {
+  background: #fff !important;
+  background-color: #fff !important;
+  border-radius: 8px !important;
+  margin: 4px 20px !important;
+  transition: none !important;
+}
+
+.swagger-ui.swagger-ui section.models .model-container:hover,
+.swagger-ui section.models .model-container:hover,
+div.swagger-ui section.models .model-container:hover {
+  background: #f8fafc !important;
+  background-color: #f8fafc !important;
+}
+
+.swagger-ui.swagger-ui section.models .model-container:first-of-type {
+  margin-top: 12px !important;
+}
+
+/* ── GRAY PILL: .model-box ───────────────────────────────── */
+.swagger-ui.swagger-ui .model-box,
+.swagger-ui .model-box,
+div.swagger-ui .model-box {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 6px 4px !important;
+}
+
+.swagger-ui.swagger-ui section.models .model-box,
+div.swagger-ui section.models .model-box {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ── model-box-control: has all:inherit which is the real villain ── */
+.swagger-ui.swagger-ui .model-box-control,
+.swagger-ui .model-box-control,
+div.swagger-ui .model-box-control {
+  all: unset !important;
+  cursor: pointer !important;
+  display: flex !important;
+  flex: 1 !important;
+  align-items: center !important;
+  padding: 8px 4px !important;
+  background: transparent !important;
+}
+
+/* ── Schema name text ────────────────────────────────────── */
+.swagger-ui.swagger-ui span.model-title__text,
+.swagger-ui span.model-title__text {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: #1e293b !important;
+}
+
+/* ── "Expand all" / "Collapse all" button ────────────────── */
+.swagger-ui.swagger-ui .json-schema-2020-12-expand-deep-button,
+.swagger-ui .json-schema-2020-12-expand-deep-button {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  color: #94a3b8 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 4px !important;
+  padding: 2px 8px !important;
+  background: #f8fafc !important;
+  cursor: pointer !important;
+}
+
+/* ── "object" / type labels ──────────────────────────────── */
+.swagger-ui.swagger-ui .model .prop-type,
+.swagger-ui .model .prop-type {
+  color: #94a3b8 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+}
+
+/* ── JSON Schema 2020-12 specific ────────────────────────── */
+.swagger-ui .json-schema-2020-12__title {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+}
+
+.swagger-ui .json-schema-2020-12-property .json-schema-2020-12__title {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+}
+
+.swagger-ui .json-schema-2020-12-keyword__name--primary {
+  color: #334155 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.swagger-ui .json-schema-2020-12-keyword__name--secondary {
+  color: #94a3b8 !important;
+  font-style: normal !important;
+}
+
+.swagger-ui .json-schema-2020-12-keyword--description {
+  color: #64748b !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+}
+
+.swagger-ui .json-schema-2020-12-keyword__value {
+  color: #64748b !important;
+  font-size: 12px !important;
+}
+
+.swagger-ui .json-schema-2020-12__constraint {
+  background-color: #e2e8f0 !important;
+  color: #475569 !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+}
+
+.swagger-ui .json-schema-2020-12-property--required > .json-schema-2020-12:first-of-type > .json-schema-2020-12-head .json-schema-2020-12__title:after {
+  color: #ec4899 !important;
+}
+
+.swagger-ui .json-schema-2020-12-keyword__children {
+  border-left: 1px dashed #e2e8f0 !important;
+}
+
+.swagger-ui .json-schema-2020-12-accordion {
+  background: transparent !important;
+}
+
+/* ── model-toggle arrow ──────────────────────────────────── */
+.swagger-ui .model-toggle {
+  opacity: 0.4 !important;
+}
+
+/* ── model-hint tooltip ──────────────────────────────────── */
+.swagger-ui .model-hint {
+  background: #1e293b !important;
+  border-radius: 6px !important;
+}
+
+/* ── Expanded schema detail ─────────────────────────────── */
+.swagger-ui .model {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  color: #334155 !important;
+  font-weight: 400 !important;
+}
+
+/* Property table */
+.swagger-ui table.model tbody tr td {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  padding: 8px 12px !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  vertical-align: top !important;
+  background: transparent !important;
+}
+
+.swagger-ui table.model tr.property-row td:first-child {
+  font-weight: 600 !important;
+  color: #1e293b !important;
+}
+
+.swagger-ui table.model tr.property-row .star {
+  color: #ec4899 !important;
+}
+
+.swagger-ui table.model tr.description {
+  color: #64748b !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+}
+
+/* Braces */
+.swagger-ui .brace-open,
+.swagger-ui .brace-close {
+  color: #cbd5e1 !important;
+}
+
+/* Nested */
+.swagger-ui .inner-object {
+  padding-left: 16px !important;
+  border-left: 2px solid #e2e8f0 !important;
+  margin-left: 8px !important;
+}
+
+/* Properties */
+.swagger-ui .model .property {
+  color: #64748b !important;
+}
+
+.swagger-ui .model .property.primitive {
+  color: #475569 !important;
+}
+
+/* Example values */
+.swagger-ui .model-example {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  line-height: 1.6;
+}
+
+/* Tab switcher */
+.swagger-ui .tab li {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+}
+
+.swagger-ui .tab li.active {
+  color: #1e293b !important;
+  border-bottom: 2px solid #ec4899 !important;
+}
+
+/* ── Response sections inside operations ─────────────────── */
+.swagger-ui .opblock .opblock-section-header {
+  background: var(--slate-50) !important;
+  border-bottom: 1px solid var(--slate-200) !important;
+  padding: 10px 20px !important;
+}
+
+.swagger-ui .opblock .opblock-section-header h4 {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--slate-700) !important;
+}
+
+.swagger-ui .opblock-body pre.microlight {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  background: var(--slate-900) !important;
+  color: #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  line-height: 1.6;
+  border: none !important;
+}
+
+/* Select dropdowns */
+.swagger-ui select {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  border: 1px solid var(--slate-300) !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  background: white !important;
+  color: var(--slate-700) !important;
+}
+
+.swagger-ui select:focus {
+  border-color: var(--hibiscus-400) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1) !important;
+}
+
+/* Response status codes */
+.swagger-ui .responses-table .response-col_status {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+}
+
+.swagger-ui .responses-table .response-col_description {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  color: var(--slate-600) !important;
+}
+
+/* Loading */
+.swagger-ui .loading-container .loading::after {
+  color: var(--hibiscus-500) !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────── */
+.swagger-ui table thead tr th,
+.swagger-ui table thead tr td {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--slate-600) !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 2px solid var(--slate-200) !important;
+  padding: 12px 16px !important;
+}
+
+.swagger-ui table tbody tr td {
+  font-size: 13px !important;
+  padding: 10px 16px !important;
+  border-bottom: 1px solid var(--slate-100) !important;
+}
+
+/* ── Parameters ──────────────────────────────────────────── */
+.swagger-ui .parameters-col_description input,
+.swagger-ui .parameters-col_description textarea,
+.swagger-ui .body-param textarea {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  border: 1px solid var(--slate-300) !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  background: var(--slate-50) !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.swagger-ui .parameters-col_description input:focus,
+.swagger-ui .body-param textarea:focus {
+  border-color: var(--hibiscus-400) !important;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1) !important;
+  outline: none !important;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.swagger-ui .btn {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  transition: all 0.15s ease;
+}
+
+.swagger-ui .btn.execute {
+  background: linear-gradient(135deg, var(--hibiscus-500), var(--hibiscus-600)) !important;
+  border: none !important;
+  color: white !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+}
+
+.swagger-ui .btn.execute:hover {
+  background: linear-gradient(135deg, var(--hibiscus-600), var(--hibiscus-700)) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3) !important;
+}
+
+.swagger-ui .btn.cancel {
+  border-radius: 8px !important;
+}
+
+/* ── Response section ────────────────────────────────────── */
+.swagger-ui .responses-inner {
+  padding: 16px !important;
+}
+
+.swagger-ui .response-col_status {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600 !important;
+}
+
+.swagger-ui .highlight-code pre {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  background: var(--slate-900) !important;
+  color: #e2e8f0 !important;
+  line-height: 1.6;
+}
+
+/* ── Authorize button ────────────────────────────────────── */
+.swagger-ui .auth-wrapper .authorize {
+  background: transparent !important;
+  border: 1.5px solid var(--hibiscus-400) !important;
+  color: var(--hibiscus-600) !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 8px 20px !important;
+}
+
+.swagger-ui .auth-wrapper .authorize:hover {
+  background: var(--hibiscus-50) !important;
+}
+
+.swagger-ui .auth-wrapper .authorize svg { fill: var(--hibiscus-500) !important; }
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--slate-400); }
+
+/* ── Footer spacing ──────────────────────────────────────── */
+.swagger-ui .wrapper { padding-bottom: 80px !important; }

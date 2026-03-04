@@ -18,7 +18,7 @@ dev:
 	@echo "  Neo4j Browser: http://localhost:7474"
 	@echo "  Qdrant UI:     http://localhost:6333/dashboard"
 
-dev-local:
+dev-hibiscus:
 	@echo "Starting Hibiscus API locally (fast reload)..."
 	uvicorn hibiscus.main:app --host 0.0.0.0 --port 8001 --reload
 

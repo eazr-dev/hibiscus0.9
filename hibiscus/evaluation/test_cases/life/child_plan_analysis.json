@@ -1,0 +1,20 @@
+{
+  "test_id": "life_012",
+  "name": "Child education plan vs direct investment",
+  "description": "User considering child plan and wants analysis",
+  "category": "life",
+  "intent": "recommend",
+  "complexity": "L3",
+  "input": {
+    "message": "My daughter is 3 years old. An agent is pushing HDFC Life Youngstar Super Premium for ₹50,000/year. He says she'll get ₹25 lakhs when she turns 18. Is this a good plan or should I invest directly in SIP?",
+    "session_id": "test_session_life_012",
+    "user_id": "test_user_life_012"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["child plan", "SIP", "return"],
+    "must_not_contain": ["guaranteed returns from equity"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must calculate IRR of child plan (typically 5-7%). Must compare with term + SIP strategy. Must flag that child plans have high charges. Must recommend adequate term cover for parent separately."
+}

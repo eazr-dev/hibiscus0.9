@@ -7,9 +7,11 @@ import asyncio
 import os
 import sys
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from hibiscus.config import (
     settings, ENGINE_NAME, ENGINE_VERSION, ENGINE_VENDOR, ENGINE_URL,
@@ -152,7 +154,7 @@ def create_app() -> FastAPI:
         ],
         default_response_class=ORJSONResponse,
         lifespan=lifespan,
-        docs_url="/hibiscus/docs",
+        docs_url=None,  # We serve custom docs below
         redoc_url="/hibiscus/redoc",
         openapi_url="/hibiscus/openapi.json",
     )
@@ -201,8 +203,55 @@ def create_app() -> FastAPI:
     from hibiscus.api.middleware.auth import JWTAuthMiddleware
     app.add_middleware(JWTAuthMiddleware)
 
+    # ── Static files (CSS, HTML, images) ─────────────────────────
+    static_dir = Path(__file__).parent / "api" / "static"
+    app.mount("/hibiscus/static", StaticFiles(directory=str(static_dir)), name="static")
+
     # ── Routes ───────────────────────────────────────────────────
     app.include_router(api_router, prefix="/hibiscus")
+
+    # ── Custom Swagger UI with premium theme ─────────────────────
+    from fastapi.responses import HTMLResponse
+
+    @app.get("/hibiscus/docs", include_in_schema=False)
+    async def custom_swagger_ui():
+        css_path = static_dir / "swagger-custom.css"
+        custom_css = css_path.read_text()
+        return HTMLResponse(content=f"""
+<!DOCTYPE html>
+<html>
+<head>
+<title>{ENGINE_NAME} v{ENGINE_VERSION} — API Docs</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">
+</head>
+<body>
+<div id="swagger-ui"></div>
+<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+<script>
+SwaggerUIBundle({{
+    url: "/hibiscus/openapi.json",
+    dom_id: "#swagger-ui",
+    presets: [SwaggerUIBundle.presets.apis],
+    layout: "BaseLayout",
+    docExpansion: "list",
+    defaultModelsExpandDepth: 1,
+    filter: true,
+    tryItOutEnabled: true,
+    persistAuthorization: true,
+    displayRequestDuration: true,
+}});
+</script>
+<style>{custom_css}</style>
+</body>
+</html>""")
+
+    # ── Landing page ─────────────────────────────────────────────
+    @app.get("/hibiscus/", response_class=HTMLResponse, include_in_schema=False)
+    async def landing_page():
+        html_path = static_dir / "landing.html"
+        return HTMLResponse(content=html_path.read_text())
 
     return app
 

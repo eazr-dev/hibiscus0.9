@@ -25,6 +25,10 @@ from .regulation_lookup import (
     get_consumer_rights_summary,
     search_regulations_by_category,
 )
+from .tpa_lookup import (
+    lookup_tpa,
+    get_tpa_contact,
+)
 
 __all__ = [
     # Insurer
@@ -49,4 +53,7 @@ __all__ = [
     "lookup_ombudsman_for_state",
     "get_consumer_rights_summary",
     "search_regulations_by_category",
+    # TPA
+    "lookup_tpa",
+    "get_tpa_contact",
 ]

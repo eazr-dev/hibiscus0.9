@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hibiscus — EAZR AI Insurance Intelligence Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --hibiscus-50:  #fdf2f8;
+  --hibiscus-100: #fce7f3;
+  --hibiscus-400: #f472b6;
+  --hibiscus-500: #ec4899;
+  --hibiscus-600: #db2777;
+  --hibiscus-700: #be185d;
+  --slate-50:  #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --emerald-500: #10b981;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--slate-50);
+  color: var(--slate-800);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.hero {
+  background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
+  padding: 80px 32px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-logo { font-size: 64px; margin-bottom: 16px; }
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.hero-title span {
+  background: linear-gradient(135deg, var(--hibiscus-400), var(--hibiscus-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-subtitle {
+  font-size: 16px;
+  color: var(--slate-400);
+  font-weight: 400;
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.hero-version {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: var(--slate-300);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+}
+.hero-version .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald-500);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.container {
+  max-width: 900px;
+  margin: -32px auto 0;
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 2;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.card {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: var(--hibiscus-400);
+}
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+.card-icon-docs { background: linear-gradient(135deg, var(--hibiscus-50), var(--hibiscus-100)); }
+.card-icon-health { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+.card-icon-metrics { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+.card-icon-kg { background: linear-gradient(135deg, #f5f3ff, #ede9fe); }
+.card-icon-rag { background: linear-gradient(135deg, #fff7ed, #ffedd5); }
+.card-icon-redoc { background: linear-gradient(135deg, #fef2f2, #fee2e2); }
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--slate-800);
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--slate-500);
+  line-height: 1.6;
+}
+.card-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--slate-400);
+  margin-top: auto;
+}
+.stats-bar {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 14px;
+  padding: 24px 32px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.stat {
+  text-align: center;
+}
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+.footer {
+  text-align: center;
+  color: var(--slate-400);
+  font-size: 12px;
+  margin-top: 16px;
+}
+.footer a {
+  color: var(--hibiscus-500);
+  text-decoration: none;
+}
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-logo">🌺</div>
+    <h1 class="hero-title">Hibiscus <span>v0.9</span></h1>
+    <p class="hero-subtitle">
+      EAZR AI Insurance Intelligence Engine — 12-agent orchestration
+      for policy analysis, recommendations, and claims guidance.
+    </p>
+    <div class="hero-version">
+      <span class="dot"></span>
+      v0.9.0 · Built in India
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="stats-bar" id="stats-bar">
+    <div class="stat"><div class="stat-value">12</div><div class="stat-label">Agents</div></div>
+    <div class="stat"><div class="stat-value">1,207</div><div class="stat-label">Products</div></div>
+    <div class="stat"><div class="stat-value">62</div><div class="stat-label">Insurers</div></div>
+    <div class="stat"><div class="stat-value">847</div><div class="stat-label">RAG Chunks</div></div>
+    <div class="stat"><div class="stat-value">140</div><div class="stat-label">Test Cases</div></div>
+    <div class="stat"><div class="stat-value">0.841</div><div class="stat-label">DQ Score</div></div>
+  </div>
+
+  <div class="cards-grid">
+    <a href="/hibiscus/docs" class="card">
+      <div class="card-icon card-icon-docs">📖</div>
+      <div class="card-title">API Documentation</div>
+      <div class="card-desc">Interactive Swagger UI — explore and test all endpoints with live examples.</div>
+      <div class="card-url">/hibiscus/docs</div>
+    </a>
+
+    <a href="/hibiscus/health" class="card">
+      <div class="card-icon card-icon-health">💚</div>
+      <div class="card-title">Health Dashboard</div>
+      <div class="card-desc">Real-time status of all dependencies — Redis, MongoDB, Neo4j, Qdrant, LLM providers.</div>
+      <div class="card-url">/hibiscus/health</div>
+    </a>
+
+    <a href="/hibiscus/metrics" class="card">
+      <div class="card-icon card-icon-metrics">📊</div>
+      <div class="card-title">Prometheus Metrics</div>
+      <div class="card-desc">Prometheus-format metrics for monitoring — request rates, latencies, LLM costs.</div>
+      <div class="card-url">/hibiscus/metrics</div>
+    </a>
+
+    <a href="/hibiscus/redoc" class="card">
+      <div class="card-icon card-icon-redoc">📕</div>
+      <div class="card-title">ReDoc Reference</div>
+      <div class="card-desc">Clean, printable API reference with schema documentation and examples.</div>
+      <div class="card-url">/hibiscus/redoc</div>
+    </a>
+
+    <a href="http://localhost:7474" class="card" target="_blank">
+      <div class="card-icon card-icon-kg">🔗</div>
+      <div class="card-title">Knowledge Graph</div>
+      <div class="card-desc">Neo4j Browser — explore insurers, products, regulations, and relationships visually.</div>
+      <div class="card-url">localhost:7474</div>
+    </a>
+
+    <a href="http://localhost:6333/dashboard" class="card" target="_blank">
+      <div class="card-icon card-icon-rag">🔍</div>
+      <div class="card-title">Vector Store</div>
+      <div class="card-desc">Qdrant Dashboard — browse RAG collections, vectors, and similarity search.</div>
+      <div class="card-url">localhost:6333/dashboard</div>
+    </a>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 <a href="https://eazr.in">EAZR Digipayments Pvt Ltd</a>. All rights reserved.
+  </div>
+</div>
+
+</body>
+</html>

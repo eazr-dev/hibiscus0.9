@@ -1,0 +1,20 @@
+{
+  "test_id": "travel_003",
+  "name": "Domestic travel insurance necessity",
+  "description": "User asks if travel insurance is needed for domestic trips",
+  "category": "travel",
+  "intent": "educate",
+  "complexity": "L1",
+  "input": {
+    "message": "I'm going on a trip to Ladakh next month. Do I need travel insurance for domestic travel? I already have health insurance with Star Health.",
+    "session_id": "test_session_travel_003",
+    "user_id": "test_user_travel_003"
+  },
+  "expected_response_criteria": {
+    "must_contain": ["domestic travel", "health insurance", "adventure"],
+    "must_not_contain": ["you must buy"],
+    "must_have_irdai_disclaimer": true,
+    "min_confidence": 0.7
+  },
+  "notes": "Must explain: Health insurance covers hospitalisation but not trip cancellation, baggage loss, adventure sports. Ladakh = high altitude = adventure activity exclusion in most health policies. Domestic travel insurance covers evacuation, trip interruption. Recommend for adventure/remote destinations."
+}
