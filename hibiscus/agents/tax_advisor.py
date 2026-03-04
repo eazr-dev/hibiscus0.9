@@ -11,6 +11,7 @@ Uses Tier 2 (DeepSeek R1) for complex tax scenarios involving multiple
 sections, regimes, and edge cases.
 
 ALWAYS ends with: "Consult a CA for precise computation."
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import re

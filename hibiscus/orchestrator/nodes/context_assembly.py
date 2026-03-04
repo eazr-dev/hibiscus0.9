@@ -15,6 +15,7 @@ Priority order (blueprint spec):
 
 All 6 layers are fetched in parallel with asyncio.gather() — ~5x faster
 than sequential I/O.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

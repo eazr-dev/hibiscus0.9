@@ -6,6 +6,7 @@ POST /hibiscus/analyze
 Loads a stored document from MongoDB and runs the policy_analyzer agent
 directly, bypassing the chat pipeline. Used for document-first analysis
 flows triggered from botproject after PDF upload.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 import uuid

@@ -1,4 +1,7 @@
-"""Hibiscus guardrails — safety layer for all responses."""
+"""
+Hibiscus guardrails — safety layer for all responses.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+"""
 from hibiscus.guardrails.emotional import check_emotional, EmotionalCheckResult
 from hibiscus.guardrails.pii import check_pii, mask_pii_for_logging, PIICheckResult
 

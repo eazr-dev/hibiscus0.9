@@ -1,4 +1,7 @@
-"""Request ID middleware — injects unique request_id for tracing."""
+"""
+Request ID middleware — injects unique request_id for tracing.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+"""
 import uuid
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request

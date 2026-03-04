@@ -15,6 +15,7 @@ Behavioral signals:
 
 Alerts are logged and available for admin review — NEVER surfaced to users.
 The risk_detector agent merges fraud alerts into its risk_flags.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field
 from enum import Enum

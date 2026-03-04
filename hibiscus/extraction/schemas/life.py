@@ -1,5 +1,6 @@
 """
 Life Insurance Extraction Schema — 60 fields.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

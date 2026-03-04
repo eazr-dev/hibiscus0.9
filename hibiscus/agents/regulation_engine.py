@@ -16,6 +16,7 @@ Sources hierarchy:
 1. Built-in regulation knowledge base (always available)
 2. RAG corpus search (if Qdrant available)
 3. LLM synthesis of the above (NEVER invents regulations)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time

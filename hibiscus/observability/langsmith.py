@@ -17,6 +17,7 @@ Usage:
     async with tracer.pipeline_run(session_id, user_message) as run:
         # ... pipeline execution ...
         run.add_metadata({"agents": ["policy_analyzer"]})
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import os
 import time

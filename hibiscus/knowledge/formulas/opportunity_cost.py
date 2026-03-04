@@ -8,6 +8,7 @@ would have generated significantly higher wealth.
 
 NEVER present this as definitive financial advice — always disclaim.
 All amounts in INR. Rates as decimals.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass
 

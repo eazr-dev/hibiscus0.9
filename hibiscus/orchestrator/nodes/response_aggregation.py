@@ -3,6 +3,7 @@ Response Aggregation Node
 =========================
 Combines outputs from multiple agents into a single coherent response.
 Uses DeepSeek V3.2 to synthesize agent outputs.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Any, Dict, List
@@ -102,7 +103,7 @@ async def run(state: HibiscusState) -> dict:
             "confidence": output.get("confidence", 0.0),
             "sources": sources,
             "follow_up_suggestions": output.get("follow_up_suggestions", []),
-            "eazr_products_relevant": output.get("eazr_products_relevant", []),
+            "products_relevant": output.get("products_relevant", []),
         }
 
     # Multiple agents → synthesize with LLM

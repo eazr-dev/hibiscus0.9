@@ -13,10 +13,9 @@ FLOW:
 7. Gap analysis (native)
 8. Synthesize response with LLM
 
-FALLBACK: If native extraction fails → fall back to botproject HTTP API.
-
 GROUND TRUTH RULE:
 Every number in the output comes from extraction (with page ref) or KG — NEVER LLM imagination.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time
@@ -90,17 +89,7 @@ class PolicyAnalyzerAgent(BaseAgent):
                     "category": native_result.get("category", ""),
                 })
             else:
-                # Fallback to botproject HTTP API
-                plog.warning("native_failed_trying_botproject")
-                fallback = await self._botproject_fallback(file_info, state, plog)
-                if fallback:
-                    extraction_data = fallback["extraction"]
-                    extraction_confidence = 0.85
-                    sources.append({
-                        "type": "botproject_fallback",
-                        "reference": f"Botproject API: {doc_id}",
-                        "confidence": 0.85,
-                    })
+                plog.warning("native_extraction_returned_none")
 
         # ── Handle no data ────────────────────────────────────────────────
         if not extraction_data and not doc_context:
@@ -169,7 +158,7 @@ class PolicyAnalyzerAgent(BaseAgent):
                     "validation": validation_data,
                 },
                 follow_up_suggestions=self._follow_ups(extraction_data),
-                eazr_products_relevant=self._check_ipf_svf_relevance(extraction_data),
+                products_relevant=self._check_ipf_svf_relevance(extraction_data),
             )
 
         except Exception as e:
@@ -342,40 +331,6 @@ class PolicyAnalyzerAgent(BaseAgent):
             "pa": pa_extractor,
         }
         return extractors.get(category, health_extractor)
-
-    # ── Botproject Fallback ─────────────────────────────────────────────
-
-    async def _botproject_fallback(
-        self, file_info: Dict, state: HibiscusState, plog: PipelineLogger
-    ) -> Optional[Dict]:
-        """Fall back to botproject HTTP API for extraction."""
-        try:
-            from hibiscus.tools.existing_api.client import EAZRClient
-
-            client = EAZRClient()
-            if "analysis_id" in file_info:
-                analysis_result = await client.get_analysis(
-                    analysis_id=file_info["analysis_id"],
-                    user_id=state.get("user_id", ""),
-                )
-                if analysis_result.get("success") and analysis_result.get("policy"):
-                    bp_policy = analysis_result["policy"]
-                    bp_provider = analysis_result.get("provider", {})
-                    extraction = {
-                        "insurer": {"value": bp_policy.get("insuranceProvider", ""), "source_page": None, "confidence": 0.9},
-                        "product_name": {"value": bp_policy.get("productName", ""), "source_page": None, "confidence": 0.9},
-                        "policy_type": {"value": bp_policy.get("policyType", ""), "source_page": None, "confidence": 0.9},
-                        "policyNumber": {"value": bp_policy.get("policyNumber", ""), "source_page": None, "confidence": 0.9},
-                        "sumInsured": {"value": bp_policy.get("coverageAmount") or bp_policy.get("sumAssured", 0), "source_page": None, "confidence": 0.9},
-                        "totalPremium": {"value": bp_policy.get("premium", 0), "source_page": None, "confidence": 0.9},
-                        "policyPeriodStart": {"value": bp_policy.get("startDate", ""), "source_page": None, "confidence": 0.9},
-                        "policyPeriodEnd": {"value": bp_policy.get("endDate", ""), "source_page": None, "confidence": 0.9},
-                    }
-                    return {"extraction": extraction}
-            return None
-        except Exception as e:
-            plog.error("botproject_fallback_failed", error=str(e))
-            return None
 
     # ── Synthesis ───────────────────────────────────────────────────────
 

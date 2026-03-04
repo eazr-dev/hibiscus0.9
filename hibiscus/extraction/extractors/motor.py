@@ -1,4 +1,7 @@
-"""Motor insurance extractor — 97 fields."""
+"""
+Motor insurance extractor — 97 fields.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+"""
 from hibiscus.extraction.extractors.base import BaseExtractor
 
 

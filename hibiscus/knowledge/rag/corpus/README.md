@@ -1,3 +1,6 @@
+<!-- Hibiscus v0.9 — EAZR AI Insurance Intelligence Engine -->
+<!-- Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved. -->
+
 # Hibiscus RAG Corpus
 
 This directory contains the knowledge corpus for Hibiscus's RAG (Retrieval-Augmented Generation) pipeline. All content here is ingested into Qdrant's `insurance_knowledge` collection for semantic + keyword hybrid search.

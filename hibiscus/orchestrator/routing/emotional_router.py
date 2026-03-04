@@ -16,6 +16,7 @@ Distressed/urgent users get:
 2. Empathy-first response structure
 3. Simplified, action-oriented guidance
 4. Offer to connect with human support
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Dict, Any, Optional
 import re

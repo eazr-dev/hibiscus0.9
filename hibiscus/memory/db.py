@@ -3,6 +3,7 @@
 A single pool is shared by profile.py, portfolio.py, and outcome.py so that
 we don't open dozens of connections on every import.  Call `get_pool()` to
 borrow a connection from the pool.  Call `close_pool()` at app shutdown.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncpg
 

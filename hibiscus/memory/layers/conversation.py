@@ -13,6 +13,7 @@ semantically *relevant* past session, not just the most *recent* one.  A user
 asking about maternity benefits today should get context from the session three
 months ago where they also asked about maternity — even if they had many other
 sessions in between.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 import uuid

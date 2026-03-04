@@ -8,6 +8,7 @@ Used by:
 - Recommender agent (injects stats into synthesis prompt)
 - Admin dashboard (aggregate effectiveness metrics)
 - HibiscusBench evaluation (cross-reference with DQ scores)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional
 

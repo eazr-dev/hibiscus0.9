@@ -12,6 +12,7 @@ Hybrid search strategy:
   - Dense  : GLM embedding-2 (1024 dims) via Zhipu AI
   - Sparse : BM25 via Qdrant's built-in sparse vectors
   - Fusion : Reciprocal Rank Fusion (RRF) — balances semantic + keyword matching
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

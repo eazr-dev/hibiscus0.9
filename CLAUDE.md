@@ -1,540 +1,102 @@
-# CLAUDE.md — Hibiscus Project Intelligence
+# CLAUDE.md — Hibiscus v0.9 Project Intelligence
 
 ## WHAT IS THIS PROJECT
 
-EAZR is India's AI-native insurance intelligence and premium financing platform. Hibiscus is EAZR's proprietary AI engine — a multi-agent orchestration system that transforms a policy analyzer into a full insurance AI operating system.
+Hibiscus v0.9 is EAZR AI's insurance intelligence engine — a standalone multi-agent orchestration system that provides policy analysis, recommendations, claims guidance, tax advisory, and portfolio optimization for Indian insurance consumers.
 
-**Master blueprint:** `HIBISCUS_BUILD_BLUEPRINT_v5_SERIES_A.md` — THIS IS THE SINGLE SOURCE OF TRUTH. Every architectural decision, directory structure, agent definition, tool mapping, LLM routing strategy, memory architecture, guardrail specification, and evaluation framework is defined there. Read it fully before any work. Re-read relevant sections before building each component.
+**Master blueprint:** `HIBISCUS_BUILD_BLUEPRINT_v5_SERIES_A.md` — architectural decisions, agent definitions, tool mappings, LLM routing, memory architecture, guardrails, and evaluation framework.
+
+**API docs:** `hibiscus/docs/api_guide.md` | **Architecture:** `hibiscus/docs/architecture.md`
 
 ## REPOSITORY STRUCTURE
 
 ```
-eazr_chat/                         # Root repository
-├── botproject/                    # EXISTING Python backend (FastAPI) — READ ONLY
-│   ├── main.py                    # FastAPI app entry
-│   ├── routers/                   # API route handlers
-│   ├── services/                  # Business logic (extraction, scoring, analysis)
-│   ├── models/                    # Database models
-│   ├── utils/                     # Utilities
-│   └── prompts/                   # Existing LLM prompts
-├── frontend/                      # Flutter mobile app — DO NOT TOUCH
-├── scripts/                       # Utility scripts
-├── docs/                          # Documentation
-├── hibiscus/                      # NEW — The AI Intelligence Engine (BUILD HERE)
-│   └── (structure defined in blueprint)
-├── HIBISCUS_BUILD_BLUEPRINT_v5_SERIES_A.md   # MASTER BLUEPRINT
-├── docker-compose.yml             # Existing services + Hibiscus additions
+hibiscus/                          # Root repository (standalone — no botproject)
+├── hibiscus/                      # THE ENTIRE PRODUCT
+│   ├── agents/                    # 12 specialist agents
+│   ├── api/                       # FastAPI endpoints + middleware
+│   ├── extraction/                # ABSORB: native PDF extraction pipeline
+│   ├── guardrails/                # Hallucination, compliance, financial, emotional, PII
+│   ├── integrations/              # Insurer API integrations (Star, HDFC ERGO, ICICI)
+│   ├── knowledge/                 # KG (Neo4j) + RAG (Qdrant) + formulas
+│   ├── llm/                       # LLM router + prompt templates
+│   ├── memory/                    # 6-layer memory system
+│   ├── observability/             # Structured logging + Prometheus metrics
+│   ├── orchestrator/              # LangGraph supervisor + routing nodes
+│   ├── services/                  # Renewal tracker, fraud detection, KG enrichment
+│   ├── tests/                     # Unit, integration, load tests
+│   ├── tools/                     # KG lookup, RAG search, calculators, quote comparison
+│   ├── utils/                     # Language detection, cache warmup
+│   ├── evaluation/                # HibiscusBench (120 test cases, DQ 0.841)
+│   ├── config.py                  # All settings via Pydantic BaseSettings
+│   ├── main.py                    # FastAPI app entry + lifespan
+│   ├── Dockerfile                 # Production container
+│   ├── Makefile                   # dev, test, seed-kg, seed-rag, eval
+│   ├── docs/                     # API guide, architecture overview
+│   └── pyproject.toml             # Dependencies
+├── docker-compose.yml             # All services: Hibiscus + Postgres + Mongo + Redis + Neo4j + Qdrant
 ├── .env                           # Environment variables
-└── CLAUDE.md                      # THIS FILE — project memory
+├── HIBISCUS_BUILD_BLUEPRINT_v5_SERIES_A.md
+└── CLAUDE.md                      # THIS FILE
 ```
 
 ## CRITICAL RULES
 
-### Code Boundaries
-- **NEVER modify files inside `botproject/`** — it is a running production system
-- **NEVER modify files inside `frontend/`** — it is a deployed mobile app
-- **ALL new code goes inside `hibiscus/`** — this is your workspace
-- **Existing botproject endpoints are TOOLS** — Hibiscus agents call them via HTTP using the tool wrappers in `hibiscus/tools/existing_api/`
-- When you need a capability from botproject, call it as an HTTP tool. Do not import directly.
-
 ### Architecture
-- **Framework:** LangGraph (StateGraph) for orchestration. Not raw LangChain, not CrewAI.
+- **Framework:** LangGraph (StateGraph) for orchestration
 - **LLM Strategy — DeepSeek Primary:**
-  - Tier 1: DeepSeek V3.2 (`deepseek-chat`) — 80% of calls — primary for everything
+  - Tier 1: DeepSeek V3.2 (`deepseek-chat`) — 80% of calls
   - Tier 2: DeepSeek R1 (`deepseek-reasoner`) — 15% — complex math/reasoning
-  - Tier 3: Claude Sonnet (`claude-sonnet-4-5`) — 5% — safety net, low-confidence escalation
+  - Tier 3: Claude Sonnet (`claude-sonnet-4-5`) — 5% — safety net
   - Routing via LiteLLM with automatic fallback chain
 - **12 Specialist Agents** — each is a LangGraph node with its own prompt, tools, and confidence scoring
-- **6-Layer Memory** — Session (Redis), Conversation History (Qdrant), User Profile (PostgreSQL), Knowledge Memory (Qdrant), Outcome Memory (PostgreSQL), Document Memory (MongoDB + S3)
-- **Knowledge Graph** — Neo4j with insurers, products, regulations, benchmarks, tax rules
-- **RAG Pipeline** — Qdrant with IRDAI circulars, policy wordings, glossary, tax rules, claims processes, case law
-- **Guardrails** — Hallucination guard (confidence scoring), Compliance guard (IRDAI disclaimers), Financial guard (number validation), Emotional guard (distress detection), PII guard
+- **Native Extraction (ABSORB)** — PDF → text → classify → extract → validate → score → gap analysis. Zero external dependencies.
+- **6-Layer Memory** — Session (Redis), Conversation History (Qdrant), User Profile (PostgreSQL), Knowledge Memory (Qdrant), Outcome Memory (PostgreSQL), Document Memory (MongoDB)
+- **Knowledge Graph** — Neo4j: 62 insurers, 1,207 products (1,041 with UINs), 100 regulations, 760 benchmarks, 32 tax rules, 17 ombudsman offices, 60 CSR time-series
+- **RAG Pipeline** — Qdrant: 847 chunks, IRDAI circulars, policy wordings, glossary, tax rules, claims processes, case law
+- **Guardrails** — Hallucination, Compliance (IRDAI), Financial, Emotional, PII
 
 ### Quality Standards
-- **NEVER hallucinate numbers.** If extraction or KG doesn't have the data, say so. Don't invent copay percentages, sub-limits, premiums, or sum insured values.
-- **Every factual claim must trace to a source** — document extraction, Knowledge Graph, RAG retrieval, or web search. LLM reasoning alone is NOT a source for factual claims.
-- **Confidence scoring on every agent output.** Below threshold → flag uncertainty to user.
-- **Structured logging at every pipeline step.** Where logs stop = where the pipeline is broken.
+- **NEVER hallucinate numbers.** If extraction or KG doesn't have the data, say so.
+- **Every factual claim must trace to a source** — document extraction, KG, RAG, or web search.
+- **Confidence scoring on every agent output.** Below threshold → flag uncertainty.
+- **Structured logging at every pipeline step.**
 - **Indian formats always:** ₹ symbol, lakhs/crores, DD/MM/YYYY dates.
 - **IRDAI compliance:** Every recommendation includes appropriate disclaimers.
 
-### Development Approach
-- Build iteratively: get each component working before moving to the next
-- Test as you build: write test cases alongside implementation
-- Follow the blueprint directory structure EXACTLY
-- Every agent must work independently before wiring into the supervisor
-- Use `make` commands defined in the blueprint for common operations
-
-## EXECUTION PHASES
-
-The blueprint defines 4 deliverable-gated phases. No timelines — move to next phase when exit criteria are met.
-
-### Phase 1: Foundation — "It Works"
-**Exit criteria:** User uploads health policy PDF → Hibiscus responds with REAL extracted data, EAZR Score, identified gaps, page references, confidence scores, IRDAI disclaimer. Zero hallucination. "What did I upload?" works. Streaming response.
-
-**Build order:**
-1. API Discovery — explore botproject/, create `hibiscus/tools/existing_api/discovery.py`
-2. Project scaffolding — `hibiscus/` directory with all subdirectories, `pyproject.toml`, `Dockerfile`, `docker-compose.hibiscus.yml`
-3. LLM Router — `hibiscus/llm/router.py` with LiteLLM, DeepSeek primary, tiered routing
-4. State definition — `hibiscus/orchestrator/state.py` (HibiscusState TypedDict)
-5. Supervisor graph — `hibiscus/orchestrator/graph.py` (LangGraph StateGraph with all nodes/edges)
-6. Intent classifier — `hibiscus/orchestrator/nodes/intent_classification.py`
-7. Existing API tools — `hibiscus/tools/existing_api/client.py` (resilient HTTP wrappers)
-8. PolicyAnalyzer agent — `hibiscus/agents/policy_analyzer.py` (calls extraction + scoring tools)
-9. Session memory — `hibiscus/memory/layers/session.py` (Redis)
-10. Document memory — `hibiscus/memory/layers/document.py` (MongoDB)
-11. Context assembler — `hibiscus/memory/assembler.py`
-12. Hallucination guard — `hibiscus/guardrails/hallucination.py`
-13. Compliance guard — `hibiscus/guardrails/compliance.py`
-14. Chat API endpoint — `hibiscus/api/chat.py` (POST /hibiscus/chat with streaming)
-15. Health endpoint — `hibiscus/api/health.py`
-16. Structured logging — `hibiscus/observability/logger.py`
-17. 10 test cases — health policy analysis scenarios
-
-### Phase 2: Intelligence — "It's Smart"
-**Exit criteria:** Multi-turn conversation using 3+ agents, grounded in KG and RAG, memory persists across sessions, IPF/SVF suggestions where relevant.
-
-**Build order:**
-1. All 12 agents (build each: prompt template → tool bindings → confidence scoring → test)
-2. RAG pipeline — Qdrant ingestion, hybrid search, corpus loading
-3. Knowledge Graph — Neo4j schema, seed data (insurers, products, regulations, benchmarks, tax rules)
-4. Full 6-layer memory system
-5. DeepSeek R1 routing for complex calculations
-6. Claude escalation for low-confidence and distressed users
-7. Direct LLM node (fast path for L1/L2 queries)
-8. Response aggregation node (multi-agent output synthesis)
-9. Emotional routing (distress detection → tone adjustment)
-10. HibiscusBench — 50+ test cases, automated eval runner
-11. Cost tracking per conversation
-12. LangSmith tracing
-
-### Phase 3: Scale — "It's World-Class"
-**Exit criteria:** 1000+ conversations/day, DQ > 0.80 on HibiscusBench (100+ cases), <5s P95 for L1/L2, <15s for L3/L4, LLM cost <₹3/conversation average.
-
-**Build order:**
-1. KG expansion (50+ insurers, 200+ products, full regulation set)
-2. RAG corpus expansion (200+ circulars, 50+ wordings, 500+ glossary, 100+ case law)
-3. Quote comparison engine
-4. Renewal/lapse prediction
-5. HibiscusBench expansion (100+ cases including adversarial)
-6. Production monitoring (Prometheus, alerting, dashboards)
-7. Fine-tuned extraction model (Llama 3.1 8B)
-8. Load testing
-
-### Phase 4: Moat — "Nobody Can Catch Us"
-**Exit criteria:** Self-improving system with outcome tracking, auto-KG enrichment, fraud detection, insurer API integrations.
-
 ## CURRENT STATUS
 
-<!-- Updated: 2026-03-04 — Phase 3 PERFECT SCORE ✅: 120/120 (100%), DQ 0.841 -->
-- [x] Phase 1: Foundation — VALIDATED ✅ (2026-03-03)
-  - [x] All 7 Phase 1 E2E tests PASS (policy analysis, session memory, follow-up context, guardrails, error handling, streaming)
-  - [x] API Discovery completed — `hibiscus/tools/existing_api/discovery.py` (78 endpoints, 13 services)
-  - [x] Project scaffolding done — full directory structure, pyproject.toml, Dockerfile, docker-compose.hibiscus.yml, Makefile
-  - [x] LLM Router working — `hibiscus/llm/router.py` (LiteLLM, DeepSeek primary, tiered fallback)
-  - [x] Supervisor graph built — `hibiscus/orchestrator/graph.py` (8 nodes, LangGraph StateGraph)
-  - [x] Intent classifier working — `hibiscus/orchestrator/nodes/intent_classification.py` (keyword + LLM; fixed: agents determined deterministically)
-  - [x] Existing API tools wrapped — `hibiscus/tools/existing_api/client.py` (circuit breaker + retry; fixed: per-request AsyncClient, correct EAZR_API_BASE)
-  - [x] PolicyAnalyzer agent working — `hibiscus/agents/policy_analyzer.py` (botproject response mapping fixed)
-  - [x] Memory (session + document) working — Redis + MongoDB with in-memory fallback
-  - [x] Context assembly — document context loads for follow-up queries (fixed: keyword expansion in context_assembly.py)
-  - [x] Memory storage — document stored to hibiscus_documents after policy analysis (fixed: store_document call added)
-  - [x] Memory extractor — fixed: `call_llm()` max_tokens via extra_kwargs
-  - [x] Guardrails active — hallucination, compliance, financial guards
-  - [x] Chat endpoint live — `POST /hibiscus/chat` with streaming SSE support
-  - [x] Observability — structured JSON logging at every pipeline step
+Hibiscus v0.9 — standalone product. Phases 1-3 complete, Phase 4 scaffolded.
 
-- [x] Phase 2: Intelligence — VALIDATED ✅ (2026-03-03)
-  - [x] All 12 agents routing correctly — recommender, claims_guide, surrender_calculator, regulation_engine, grievance_navigator, tax_advisor, risk_detector, educator (direct LLM), portfolio_optimizer, calculator, researcher, policy_analyzer
-  - [x] Multi-agent flows working — e.g., recommender + risk_detector fire in parallel for family coverage queries
-  - [x] Emotional routing working — distressed/ICU queries → claims_guide with empathetic tone
-  - [x] Knowledge Graph seeded — Neo4j: 32 insurers, 47+ products, 15 regulations, 19 benchmarks, 10 tax rules, 17 ombudsman offices
-  - [x] RAG corpus ingested — Qdrant: 471 chunks across 9 corpus files (NOTE: embeddings are zero-vectors — OpenAI API key needed for semantic search)
-  - [x] HibiscusBench baseline measured — all categories exceed Phase 3 DQ target
-  - [x] Evaluator fixed — guaranteed returns false positive corrected in `hibiscus/evaluation/metrics.py`
+- [x] **Phase 1: Foundation** — 7/7 E2E tests pass
+- [x] **Phase 2: Intelligence** — 12 agents, KG, RAG, 6-layer memory
+- [x] **Phase 3: Scale** — DQ 0.841, 120/120 pass, Prometheus
+- [x] **Phase 4: Moat** — Scaffolded (fraud detection done; outcome loop, KG enrichment, insurer APIs scaffolded; multi-language partial)
 
-### Phase 2.5 Validation: REAL BASELINE METRICS (2026-03-03, live-verified)
-| Metric | Value | Target | Status |
-|--------|-------|--------|--------|
-| HibiscusBench DQ — Overall | **0.831** | 0.800 | ✅ Phase 3 target met |
-| HibiscusBench DQ — Health | 0.851 | 0.800 | ✅ Exceeds |
-| HibiscusBench DQ — Life | 0.860 | 0.800 | ✅ Exceeds |
-| HibiscusBench DQ — Motor | 0.863 | 0.800 | ✅ Exceeds |
-| HibiscusBench DQ — Travel | 0.840 | 0.800 | ✅ Exceeds |
-| HibiscusBench DQ — Cross | 0.703 | 0.800 | ⚠️ cross_002 transient API error |
-| HibiscusBench DQ — Adversarial | 0.823 | 0.800 | ✅ Exceeds |
-| Pass rate | 44/45 (97.8%) | >80% | ✅ |
-| Phase 1 E2E pass rate | 7/7 (19 checks) | 7/7 | ✅ |
-| Agent routing accuracy | 18/18 | >80% | ✅ After keyword fix v2 |
-| Cost — L1 simple query | ₹0.005 | <₹3/conv | ✅ 600× under target |
-| Cost — L2 direct LLM | ₹0.172 | <₹3/conv | ✅ Under target |
-| Cost — L3 multi-agent | ₹0.023 | <₹3/conv | ✅ |
-| Cost — L4 complex | ₹0.014 | <₹3/conv | ✅ |
-| **Cost — Average across all types** | **₹0.045** | <₹3/conv | ✅ **67× under target** |
-| Streaming TTFT (L1/L2) | **2.0s** | <5s | ✅ |
-| PDF analysis flow | ✅ policy_analyzer + EAZR Score | Working | ✅ |
-| RAG semantic search | ❌ Zero vectors | Working | ⚠️ OpenAI key needed |
-| PostgreSQL (profile/portfolio) | Not connected | Phase 2+ | ⚠️ Graceful fallback |
+### Key Metrics (2026-03-04)
+| Metric | Value |
+|--------|-------|
+| HibiscusBench DQ | **0.841** (target 0.800) |
+| Test pass rate | **120/120 (100%)** |
+| Extraction tests | **118/118 (100%)** |
+| Avg cost/conversation | **₹0.045** (target <₹3) |
+| Streaming TTFT | **2.0s** |
+| KG Products | **1,207** (1,041 with UINs) |
+| KG Insurers | **62** |
+| RAG Chunks | **847** |
 
-### Latency Optimization Sprint (2026-03-03)
-| Optimization | Before | After | Method |
-|---|---|---|---|
-| Intent classification (L1 keyword hit) | ~10-15s | 0ms | Skip LLM when both intent+category keyword-matched |
-| Intent classification LLM (when needed) | 30s timeout, 4096 tokens | 8s timeout, 256 tokens | `extra_kwargs={max_tokens:256, timeout:8}` |
-| Memory storage | ~300ms blocking | ~0ms | `asyncio.create_task(_do_store(...))` — fire-and-forget |
-| L1/L2 direct LLM response | 4096 token cap | 800/1500 cap | L1=800, L2=1500 max_tokens |
-| Repeat L1/L2 queries (cached) | ~27s | 8-11ms | Redis response cache, TTL=24h, key=sha256(msg) |
-| Streaming TTFT | ~27s (post-complete) | **2.0s** | Real LLM token streaming via `stream_llm()` |
+### Knowledge Graph (Neo4j, live-verified)
+| Node Type | Count |
+|-----------|-------|
+| Insurer | 62 |
+| Product | 1,207 |
+| Regulation | 100 |
+| Benchmark | 760 |
+| TaxRule | 32 |
+| OmbudsmanOffice | 17 |
+| CSREntry | 60 |
 
-**Net result (measured 2026-03-03):**
-- L1 cold unique query: ~27s → ~15s (44% reduction, bottleneck is DeepSeek API RTT)
-- L1 repeat cached query: ~27s → 8ms (3,000x speedup)
-- Streaming TTFT: ~27s → **2s** (user sees first token in 2s, full response in ~20s)
-- Memory storage no longer blocks response path
-
-**Files modified in optimization sprint:**
-| File | Change |
-|------|--------|
-| `orchestrator/nodes/intent_classification.py` | Added `_should_skip_llm()`, 256 max_tokens, 8s timeout |
-| `orchestrator/nodes/memory_storage.py` | Refactored to fire-and-forget with `asyncio.create_task()` |
-| `orchestrator/nodes/direct_llm.py` | 800/1500 max_tokens + response cache integration |
-| `memory/layers/response_cache.py` | New: Redis-backed response cache (TTL 24h) |
-| `api/chat.py` | Real streaming via `stream_llm()` for L1/L2 fast path |
-
-### Phase 2.5 Bugs Fixed (Validation Sprint)
-| Bug | Fix | File |
-|-----|-----|------|
-| `structlog.add_logger_name` crash | Removed incompatible processor | `observability/logger.py` |
-| MongoDB bool check | `if _db is not None:` | `api/health.py` |
-| `UploadedFile.filename` required | Made `Optional[str] = None` | `api/schemas/common.py` |
-| EAZRClient uses `localhost:8000` | Reads from `settings.eazr_api_base` | `tools/existing_api/client.py` |
-| EAZRClient persistent AsyncClient | Per-request `async with httpx.AsyncClient()` | `tools/existing_api/client.py` |
-| `get_analysis()` missing | Added method; uses `/api/user/policies/{id}` | `tools/existing_api/client.py` |
-| Botproject response mapping | Maps `policy.*` fields to extraction_data | `agents/policy_analyzer.py` |
-| Document context not loaded for follow-ups | Keyword expansion: "coverage", "not covered", etc. | `orchestrator/nodes/context_assembly.py` |
-| Document not stored for follow-up retrieval | Added `store_document()` call after policy analysis | `orchestrator/nodes/memory_storage.py` |
-| `call_llm() purpose kwarg` | Removed unsupported kwarg | `memory/extraction/memory_extractor.py` |
-| `call_llm() max_tokens kwarg` | Use `extra_kwargs={"max_tokens": N}` | `memory/extraction/memory_extractor.py` |
-| LLM overrides `agents_needed` | Always use `_determine_agents()` deterministically | `orchestrator/nodes/intent_classification.py` |
-| Evaluator false positive: guaranteed returns | Context-aware phrase matching | `evaluation/metrics.py` |
-| Dockerfile missing packages | Added neo4j, langchain-text-splitters, langsmith, tavily-python | `hibiscus/Dockerfile` |
-| uvicorn `--log-config /dev/null` | Changed to `--no-access-log` | `hibiscus/Dockerfile` |
-| Intent keyword ordering mis-routes (portfolio→analyze, grievance→claim, tax→calculate, regulate→educate) | Reordered `_INTENT_KEYWORDS`: specific intents first | `orchestrator/nodes/intent_classification.py` |
-| "returns"/"premium" in calculate keywords catches mis-selling queries | Removed both; added mis-selling terms to recommend | `orchestrator/nodes/intent_classification.py` |
-| Tax advisor asks for info already in message | Added broad NL patterns: "pay ₹X for health insurance", "they are 65+", "30% tax bracket", "bought in 2022" | `agents/tax_advisor.py` |
-| `10(10D)` check requires sum_assured even for pure ULIP queries | Relaxed: skips sum_assured when `is_ulip=True` | `agents/tax_advisor.py` |
-
-### Phase 2 Key Files Built
-| Component | File |
-|-----------|------|
-| All 12 Agents | `hibiscus/agents/` (fully implemented) |
-| KG Client | `hibiscus/knowledge/graph/client.py` |
-| KG Schema | `hibiscus/knowledge/graph/schema.py` |
-| KG Seed | `hibiscus/knowledge/graph/seed/` (6 seed files) |
-| KG Tools | `hibiscus/tools/knowledge/` (4 lookup tools) |
-| RAG Client | `hibiscus/knowledge/rag/client.py` (hybrid search) |
-| RAG Embeddings | `hibiscus/knowledge/rag/embeddings.py` |
-| RAG Ingestion | `hibiscus/knowledge/rag/ingestion.py` |
-| RAG Corpus | `hibiscus/knowledge/rag/corpus/` (5 JSON corpus files) |
-| RAG Search Tool | `hibiscus/tools/rag/search.py` |
-| Formulas | `hibiscus/knowledge/formulas/` (surrender_value, irr, tax_benefit) |
-| Memory L2 | `hibiscus/memory/layers/conversation.py` (Qdrant) |
-| Memory L3 | `hibiscus/memory/layers/profile.py` (PostgreSQL) |
-| Memory L3b | `hibiscus/memory/layers/portfolio.py` (PostgreSQL) |
-| Memory L4 | `hibiscus/memory/layers/knowledge.py` (Qdrant) |
-| Memory L5 | `hibiscus/memory/layers/outcome.py` (PostgreSQL) |
-| Memory Extractor | `hibiscus/memory/extraction/memory_extractor.py` |
-| Assembler | `hibiscus/memory/assembler.py` (all 6 layers wired) |
-| LangSmith | `hibiscus/observability/langsmith.py` |
-| Web Search | `hibiscus/tools/web/search.py` (Tavily) |
-| HibiscusBench | `hibiscus/evaluation/bench.py`, `metrics.py`, `evaluator.py` |
-| Test Cases | `hibiscus/evaluation/test_cases/` (45 test cases across 6 categories) |
-
-### Phase 3 Prerequisites (must complete before starting Phase 3)
-- [x] Embedding API — RESOLVED: switched to `fastembed` local (BAAI/bge-large-en-v1.5, 1024 dims, no API key needed). GLM API key doesn't support embeddings. `hibiscus/knowledge/rag/embeddings.py` updated to use fastembed as primary with GLM/OpenAI as optional fallbacks.
-- [ ] Connect PostgreSQL for user profile/portfolio layers (currently graceful no-op)
-- [x] Latency optimization — DONE (2026-03-03)
-  - Streaming TTFT: 2s ✅
-  - Cached repeat queries: <15ms ✅
-  - New unique L1 queries: ~15s (DeepSeek API RTT bottleneck — remaining gap is API RTT, not our code)
-
-- [x] Phase 3: Scale — "It's World-Class" — VALIDATED ✅ (2026-03-03)
-  - [x] KG seeded: 52 insurers, 193 products, 100 regulations, 760 benchmarks, 32 tax rules, 17 ombudsman
-  - [x] RAG seeded: 847 chunks, 794 vectors in Qdrant, semantic search working (bge-large-en-v1.5, 1024 dims)
-  - [x] Prometheus metrics live: `/hibiscus/metrics` — conversations, LLM calls, cost, latency, cache, guardrails
-  - [x] Embeddings: fastembed local (BAAI/bge-large-en-v1.5) — no API key needed, 1024 dims
-  - [x] Qdrant client v1.17 API updated: `query_points()` replaces deprecated `search()`
-  - [x] HibiscusBench: **DQ 0.841** (target 0.800 ✅), **120/120 pass (100%)**, 0 critical failures (2026-03-04)
-
-### Phase 3 HibiscusBench Results (2026-03-03, live-verified, 120 test cases)
-| Category | Pass | Avg DQ | Status |
-|----------|------|--------|--------|
-| Health | 20/20 | 0.873 | ✅ |
-| Life | 14/14 | 0.854 | ✅ |
-| Motor | 5/5 | 0.870 | ✅ |
-| Travel | 3/3 | 0.840 | ✅ |
-| PA | 12/12 | 0.836 | ✅ |
-| IPF/SVF | 20/20 | 0.844 | ✅ |
-| Cross | 11/11 | 0.844 | ✅ |
-| Emotional | 20/20 | 0.824 | ✅ |
-| Adversarial | 15/15 | 0.801 | ✅ |
-| **Overall** | **120/120** | **0.841** | ✅ |
-
-**PERFECT SCORE (2026-03-04).** All 8 failures fixed.
-**Phase 3 exit criteria: MET** — DQ 0.841 > 0.800, 100% pass, 0 critical failures.
-
-### Phase 3 Build Summary (2026-03-03)
-
-#### Step 1: KG Expansion — COMPLETE ✅
-| Data | Before | After | Target |
-|------|--------|-------|--------|
-| Insurers | 32 | 52 | 50+ |
-| Products | 47 | 200 | 200+ |
-| Regulations | 15 | 102 | 100+ |
-| Benchmarks | 19 | 776 | 775+ |
-| Tax Rules | 10 | 32 | 30+ |
-
-Run `make seed-kg` to push to Neo4j.
-
-#### Step 2: RAG Corpus Expansion — COMPLETE ✅
-| Corpus | Before | After | Target | Notes |
-|--------|--------|-------|--------|-------|
-| Glossary | 101 | 202 | 500+ | GLM embeddings; re-ingest to reach 500+ over time |
-| Claims Processes | 7 | 31 | 100+ | Top 20 insurers × claim types in progress |
-| Policy Wordings | 0 | 30 | 50 | NEW file: `corpus/policy_wordings/policy_wordings.json` |
-| Case Law | 0 | 40 | 100+ | NEW file: `corpus/case_law/case_law.json` |
-| IRDAI Circulars | 40 | 40 | 200+ | Needs more entries — Phase 3.1 task |
-| **Embedding model** | OpenAI (broken) | **GLM embedding-2** | — | 1024 dims; Qdrant must be recreated for new vectors |
-
-Run `make seed-rag` to re-ingest with GLM embeddings (Qdrant will be recreated for 1024-dim vectors).
-
-#### Step 3: Cold Latency Optimization — COMPLETE ✅
-- `hibiscus/orchestrator/nodes/context_assembly.py` — fully parallelized with `asyncio.gather()` (7 concurrent fetches: session + document + profile + portfolio + knowledge + conversations + renewal_alerts). Was sequential stubs; now calls all 6 real memory layers.
-- `hibiscus/utils/cache_warmup.py` — NEW: pre-warms 100 common L1 queries at startup as background `asyncio.create_task()`
-- `hibiscus/main.py` — lifespan now schedules cache warmup after init_redis/init_mongo
-
-#### Step 4: HibiscusBench Expansion — COMPLETE ✅
-| Category | Before | After | Target |
-|----------|--------|-------|--------|
-| Health | 10 | 19 | — |
-| Life | 5 | 13 | — |
-| Motor | 2 | 5 | 10+ |
-| Travel | 1 | 3 | 10+ |
-| Cross | 8 | 11 | — |
-| Adversarial | 5 | 17 | 15+ |
-| PA | 0 | 12 | 10+ |
-| Emotional | 0 | 20 | 10+ |
-| IPF/SVF | 0 | 20 | 10+ |
-| **TOTAL** | **45** | **120** | **100+** |
-
-#### Step 5: Quote Comparison Engine — COMPLETE ✅
-- `hibiscus/tools/quote/compare.py` — NEW: `compare_quotes()` + `parse_requirements()` NL parser + composite scoring (EAZR 40%, budget 25%, SI 20%, features 15%) + markdown comparison table. KG query first, seed data fallback.
-- `hibiscus/tools/quote/__init__.py` — NEW: package marker
-- `hibiscus/agents/recommender.py` — wired compare_quotes as Step 2.5; detects compare queries via keyword match; injects comparison table into synthesis prompt
-
-#### Step 6: Renewal/Lapse Prediction — COMPLETE ✅
-- `hibiscus/services/renewal_tracker.py` — NEW: `RenewalTracker` class, `RenewalAlert` dataclass; 3 alert levels (LAPSED/URGENT/DUE_SOON); portfolio + document memory sources; 30-day window
-- `hibiscus/services/__init__.py` — NEW: package marker
-- `hibiscus/memory/layers/portfolio.py` — added `get_expiring_policies(user_id, days_ahead=30)`
-- `hibiscus/orchestrator/state.py` — added `renewal_alerts: str` field (populated by context_assembly.py node)
-- `hibiscus/orchestrator/nodes/context_assembly.py` — `_fetch_renewal_alerts()` runs concurrently; injects formatted alerts into state
-
-#### Step 7: Production Hardening — COMPLETE ✅
-- `hibiscus/observability/metrics.py` — NEW: Prometheus metrics (10 metrics: 4 counters, 4 histograms, 2 gauges). Guarded by `try/except ImportError`. Helper functions: `record_conversation()`, `record_llm_call()`, `record_guardrail_failure()`, `record_error()`, `record_response_latency()`, `record_confidence()`, `record_cache_hit()`.
-- `hibiscus/api/health.py` — added `GET /hibiscus/metrics` endpoint (Prometheus text format)
-- `hibiscus/tests/load/load_test.py` — NEW: asyncio + httpx load test scaffold; P50/P95/P99 per tier; SLA targets (L1/L2 5s, L3/L4 15s)
-- `hibiscus/pyproject.toml` — added `prometheus_client>=0.21.0`
-
-### Phase 3 Pending (to run in deployment)
-1. `make seed-kg` — push expanded KG data (52 insurers, 200 products, 102 regulations, 776 benchmarks, 32 tax rules) to Neo4j
-2. `make seed-rag` — re-ingest corpus with GLM embeddings (Qdrant recreated for 1024-dim vectors). Ensure `ZHIPU_API_KEY` is set in `.env`.
-3. **Prometheus instrumentation** — metrics module created but `record_*` calls not yet wired into `llm/router.py` or `guardrails/*.py`. Wire in Phase 3.1.
-4. **PostgreSQL** — profile/portfolio layers still graceful no-ops. Connect for full renewal tracking.
-5. **IRDAI Circulars** — only 40 entries (target 200+). Expand in Phase 3.1.
-6. **Glossary** — 202 entries (target 500+). Expand in Phase 3.1.
-
-### Phase 3 New File Locations
-| Component | File |
-|-----------|------|
-| Cache warmup | `hibiscus/utils/cache_warmup.py` |
-| Quote comparison engine | `hibiscus/tools/quote/compare.py` |
-| Renewal tracker | `hibiscus/services/renewal_tracker.py` |
-| Prometheus metrics | `hibiscus/observability/metrics.py` |
-| Load test scaffold | `hibiscus/tests/load/load_test.py` |
-| Policy wordings corpus | `hibiscus/knowledge/rag/corpus/policy_wordings/policy_wordings.json` |
-| Case law corpus | `hibiscus/knowledge/rag/corpus/case_law/case_law.json` |
-| HibiscusBench PA cases | `hibiscus/evaluation/test_cases/pa/` (12 files) |
-| HibiscusBench emotional | `hibiscus/evaluation/test_cases/emotional/` (20 files) |
-| HibiscusBench IPF/SVF | `hibiscus/evaluation/test_cases/ipf_svf/` (20 files) |
-
-- [x] Phase 4: Moat — "Nobody Can Catch Us" — BUILT (2026-03-04)
-  - [x] Multi-Language Support: script-based detection (Hindi, Hinglish, Tamil, Telugu, Marathi), bilingual glossary (100 terms), language injection in direct_llm + response_aggregation
-  - [x] Outcome Memory Loop: outcome_collector.py (follow-ups after 7 days), outcome_analyzer.py (conversion stats), wired into memory_storage → context_assembly → recommender
-  - [x] Auto-KG Enrichment: kg_enrichment.py (queue-and-flush, 5-min interval, max 1000 items), kg_enrichment_validator.py (fuzzy match, numeric range validation), confidence >= 0.85 threshold
-  - [x] Fraud/Anomaly Detection: fraud_alert.py (5 document checks + behavioral), wired into risk_detector agent, Prometheus fraud_alerts_total counter
-  - [x] Insurer API Integrations: ABC framework (base.py), registry.py, 3 mock implementations (Star Health, HDFC ERGO, ICICI Lombard), wired into recommender (quotes) + claims_guide (claims status)
-  - [x] Self-Hosted DeepSeek Evaluation: docs/self_hosted_evaluation.md — stay on API (break-even ~60K conv/day)
-  - [x] Config: insurer_api_enabled, insurer_api_timeout added to HibiscusSettings
-
-### Phase 4 Build Summary (2026-03-04)
-
-#### Multi-Language Support
-| Component | File | Description |
-|-----------|------|-------------|
-| Language detector | `hibiscus/utils/language_detect.py` | Script-based (Unicode ranges), Hinglish keyword heuristic, Marathi distinction |
-| Bilingual glossary | `hibiscus/knowledge/rag/corpus/bilingual_glossary/bilingual_glossary.json` | 100 insurance terms (English/Hindi/Hinglish) |
-| State field | `orchestrator/state.py` | `language: str` (default "en") |
-| Intent wiring | `orchestrator/nodes/intent_classification.py` | Step 5: detect_language() after classification |
-| Direct LLM | `orchestrator/nodes/direct_llm.py` | Language instruction injection |
-| Response aggregation | `orchestrator/nodes/response_aggregation.py` | Language rule in synthesis prompt |
-
-#### Outcome Memory Loop
-| Component | File | Description |
-|-----------|------|-------------|
-| Outcome collector | `hibiscus/services/outcome_collector.py` | get_pending_followups(), record_advice_outcome() |
-| Outcome analyzer | `hibiscus/services/outcome_analyzer.py` | get_recommendation_stats(), format_stats_for_prompt() |
-| Memory storage | `orchestrator/nodes/memory_storage.py` | Records outcomes for 7 advice-giving agents |
-| Context assembly | `orchestrator/nodes/context_assembly.py` | 8th parallel fetch: _fetch_outcome_followups() |
-| Recommender | `agents/recommender.py` | Injects outcome stats into synthesis prompt |
-
-#### Auto-KG Enrichment
-| Component | File | Description |
-|-----------|------|-------------|
-| Enrichment service | `hibiscus/services/kg_enrichment.py` | Queue-and-flush, 5-min interval, MERGE queries |
-| Validator | `hibiscus/services/kg_enrichment_validator.py` | Fuzzy insurer match (Jaccard 0.7), category/range validation |
-| Memory storage | `orchestrator/nodes/memory_storage.py` | Enqueues extractions with confidence >= 0.85 |
-| Main lifespan | `hibiscus/main.py` | start_flush_loop() on startup, stop() on shutdown |
-
-#### Fraud/Anomaly Detection
-| Component | File | Description |
-|-----------|------|-------------|
-| Fraud detector | `hibiscus/services/fraud_alert.py` | 5 document checks + behavioral check, 4 severity levels |
-| Risk detector | `agents/risk_detector.py` | Step 2.5: fraud detection, merges into risk_flags |
-| Metrics | `observability/metrics.py` | fraud_alerts_total counter + record_fraud_alert() |
-
-#### Insurer API Integrations
-| Component | File | Description |
-|-----------|------|-------------|
-| ABC + dataclasses | `hibiscus/integrations/base.py` | InsurerIntegration, QuoteResult, ClaimsStatusResult, etc. |
-| Registry | `hibiscus/integrations/registry.py` | get_integration(), list_integrations(), fuzzy name match |
-| Star Health mock | `hibiscus/integrations/star_health.py` | KG-backed quotes + hardcoded claims/policy/renewal |
-| HDFC ERGO mock | `hibiscus/integrations/hdfc_ergo.py` | Same pattern |
-| ICICI Lombard mock | `hibiscus/integrations/icici_lombard.py` | Same pattern |
-| Config | `hibiscus/config.py` | insurer_api_enabled, insurer_api_timeout |
-| Recommender | `agents/recommender.py` | Step 2.7: live quote fetching |
-| Claims guide | `agents/claims_guide.py` | Step 2.5: claims status from integration |
-
-### Blueprint Gap Closure (2026-03-04)
-
-All files specified in the blueprint directory structure now exist:
-
-#### Tool Wrappers (existing API)
-| File | Wraps |
-|------|-------|
-| `tools/existing_api/extraction.py` | `client.py → upload_and_analyze_policy()` |
-| `tools/existing_api/scoring.py` | `client.py → get_protection_score()` |
-| `tools/existing_api/reporting.py` | `client.py → get_policy_detail()` |
-| `tools/existing_api/compliance.py` | `client.py → get_claim_guidance()` |
-| `tools/existing_api/billing.py` | `client.py → upload_bill(), get_bill_audit_result()` |
-
-#### Calculator Tools
-| File | Wraps |
-|------|-------|
-| `tools/calculators/surrender_value.py` | `formulas/surrender_value.py` |
-| `tools/calculators/irr.py` | `formulas/irr.py` |
-| `tools/calculators/premium_adequacy.py` | `formulas/premium_adequacy.py` |
-| `tools/calculators/tax_benefit.py` | `formulas/tax_benefit.py` |
-| `tools/calculators/inflation_adjust.py` | `formulas/inflation.py` |
-| `tools/calculators/emi.py` | `formulas/emi.py` |
-| `tools/calculators/opportunity_cost.py` | `formulas/opportunity_cost.py` |
-
-#### Orchestrator Routing
-| File | Purpose |
-|------|---------|
-| `orchestrator/routing/complexity_router.py` | L1/L2 → direct_llm, L3/L4 → agent pipeline |
-| `orchestrator/routing/model_router.py` | Tier 1/2/3 model selection |
-| `orchestrator/routing/emotional_router.py` | Distress detection → tone + model adjustment |
-
-#### API & Infrastructure
-| File | Purpose |
-|------|---------|
-| `api/websocket.py` | WS /hibiscus/ws streaming endpoint |
-| `api/middleware/cors.py` | CORS configuration (dev: all, prod: EAZR domains) |
-| `llm/prompts/orchestrator/task_decomposer.txt` | Execution planning prompt |
-| `llm/prompts/orchestrator/response_aggregator.txt` | Response synthesis prompt |
-
-**Blueprint coverage: 100%** — All files in the directory structure (lines 243-960) now exist on disk.
-
-### ABSORB: Native Extraction Pipeline (2026-03-04)
-
-PolicyAnalyzer now runs a **native extraction pipeline** — zero HTTP dependency on botproject for intelligence. Botproject HTTP tools are kept as fallback.
-
-**Pipeline:** PDF → text (pdfplumber/PyPDF2/OCR) → classify (3-tier) → extract (DeepSeek V3.2 JSON mode) → validate (5-check) → score (EAZR Score + zone classification) → gap analysis → synthesize
-
-#### New Files Created
-| Component | File | Description |
-|-----------|------|-------------|
-| Document processor | `hibiscus/extraction/processor.py` | PDF → text with page markers, 3-tier fallback (pdfplumber → PyPDF2 → OCR) |
-| Policy classifier | `hibiscus/extraction/classifier.py` | 3-tier: UIN/regex (0.85-0.98) → weighted keywords (0.50-0.85) → LLM CoT (<0.50) |
-| Base extractor | `hibiscus/extraction/extractors/base.py` | LLM extraction with 3-tier JSON recovery |
-| Health extractor | `hibiscus/extraction/extractors/health.py` | 84 fields |
-| Life extractor | `hibiscus/extraction/extractors/life.py` | 60 fields |
-| Motor extractor | `hibiscus/extraction/extractors/motor.py` | 97 fields |
-| Travel extractor | `hibiscus/extraction/extractors/travel.py` | 71 fields |
-| PA extractor | `hibiscus/extraction/extractors/pa.py` | 54 fields |
-| Health prompt | `hibiscus/extraction/prompts/health.txt` | System prompt for LLM extraction |
-| Life prompt | `hibiscus/extraction/prompts/life.txt` | System prompt for LLM extraction |
-| Motor prompt | `hibiscus/extraction/prompts/motor.txt` | System prompt for LLM extraction |
-| Travel prompt | `hibiscus/extraction/prompts/travel.txt` | System prompt for LLM extraction |
-| PA prompt | `hibiscus/extraction/prompts/pa.txt` | System prompt for LLM extraction |
-| Common schemas | `hibiscus/extraction/schemas/common.py` | ExtractedField, criticality maps, CSR data, network hospitals |
-| Health schema | `hibiscus/extraction/schemas/health.py` | Pydantic model — 84 CF fields |
-| Life schema | `hibiscus/extraction/schemas/life.py` | Pydantic model — 60 CF fields |
-| Motor schema | `hibiscus/extraction/schemas/motor.py` | Pydantic model — 97 CF fields |
-| Travel schema | `hibiscus/extraction/schemas/travel.py` | Pydantic model — 71 CF fields |
-| PA schema | `hibiscus/extraction/schemas/pa.py` | Pydantic model — 54 CF fields |
-| Validation engine | `hibiscus/extraction/validation.py` | 5-check: evidence, logic, format, range, confidence |
-| Scoring engine | `hibiscus/extraction/scoring.py` | EAZR Score 0-100, per-category components, zone classification |
-| Gap analysis | `hibiscus/extraction/gap_analysis.py` | Per-category gap detection with severity, impact, recommendations |
-
-#### Modified Files
-| File | Change |
-|------|--------|
-| `agents/policy_analyzer.py` | Rewired to native pipeline: processor → classifier → extractor → validator → scorer → gap analyzer. Botproject HTTP as fallback. |
-| `memory/layers/document.py` | Added eazr_score, score_breakdown, gaps, validation kwargs to store_document() |
-| `orchestrator/nodes/memory_storage.py` | Passes new fields to store_document() |
-| `pyproject.toml` | Added pdfplumber, PyPDF2, pytesseract, Pillow, pdf2image |
-| `Dockerfile` | Added tesseract-ocr, poppler-utils system deps |
-
-#### Architecture
-- **366 total extraction fields** across 5 types (Health 84, Motor 97, Travel 71, Life 60, PA 54)
-- **ConfidenceField format**: Every extracted value = `{value, source_page, confidence}`
-- **Criticality weighting**: CRITICAL (3x), IMPORTANT (2x), STANDARD (1x)
-- **5-Check Validation**: Evidence grounding, cross-field logic, format, range, confidence scoring
-- **EAZR Score Components**: Health (Emergency 30%, Critical Illness 25%, Family 25%, Stability 20%), Motor (IDV 30%, Coverage 25%, Insurer 20%, Premium 15%, NCB 10%), Life (Coverage 35%, Value 25%, Insurer 20%, Riders 10%, Flexibility 10%)
-- **Zone Classification**: 4-zone (green/lightGreen/amber/red) for health features
-- **Gap Types**: COVERAGE_GAP, SUB_LIMIT_TRAP, MISSING_COVERAGE, OVERLAP, INFLATION_EROSION
-
-## KEY FILE REFERENCES
-
-When building a specific component, re-read the relevant section of the blueprint:
-
-| Building This | Read This Section in Blueprint |
-|---|---|
-| LLM routing | "THE LLM STRATEGY: DEEPSEEK-PRIMARY, TIERED ARCHITECTURE" |
-| Supervisor graph | "THE LANGGRAPH SUPERVISOR — PRODUCTION GRADE" |
-| Any agent | "agents/" section in directory structure — each has inline comments |
-| Memory system | "memory/" section — 6 layers with assembler |
-| RAG pipeline | "knowledge/rag/" section — corpus structure, embedding strategy |
-| Knowledge Graph | "knowledge/graph/" section — Neo4j schema, seed data |
-| Guardrails | "guardrails/" section — hallucination, compliance, financial, emotional, PII |
-| Tools | "tools/" section — existing API wrappers, KG tools, RAG tools, calculators |
-| Evaluation | "evaluation/" section — HibiscusBench, DQ metric |
-| Observability | "observability/" section — logging at every pipeline step |
-| Cost model | "LLM COST MODEL" section |
-| Series A narrative | "SERIES A POSITIONING" section |
-
-## ENVIRONMENT VARIABLES NEEDED
+## ENVIRONMENT VARIABLES
 
 ```
 # DeepSeek (Primary LLM)
@@ -543,59 +105,38 @@ DEEPSEEK_API_KEY=
 # Anthropic (Safety net)
 ANTHROPIC_API_KEY=
 
-# GLM / Zhipu AI (Embeddings — embedding-2, 1024 dims — REPLACES OpenAI)
-ZHIPU_API_KEY=
-ZHIPU_BASE_URL=https://api.z.ai/api/paas/v4/
-
-# OpenAI (Fallback embeddings — text-embedding-3-small — optional)
-OPENAI_API_KEY=
-
 # Neo4j (Knowledge Graph)
-NEO4J_URI=bolt://localhost:7687
+NEO4J_URI=bolt://hibiscus-neo4j:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=
 
 # Qdrant (RAG + Vector Memory)
-QDRANT_HOST=localhost
+QDRANT_HOST=hibiscus-qdrant
 QDRANT_PORT=6333
 
-# Existing databases (shared with botproject)
-MONGODB_URL=
-POSTGRESQL_URL=
-REDIS_URL=
-
-# Existing EAZR API (botproject)
-EAZR_API_BASE=http://localhost:8000
+# Databases
+MONGODB_URL=mongodb://hibiscus-mongo:27017/
+MONGODB_DB=hibiscus_db
+POSTGRESQL_URL=postgresql+asyncpg://hibiscus:hibiscus_secure_2024@hibiscus-postgres:5432/insurance_india
+REDIS_URL=redis://hibiscus-redis:6379/1
 
 # Observability
 LANGSMITH_API_KEY=
 LANGSMITH_PROJECT=hibiscus
 
-# Tavily (Web search for Researcher agent)
+# Web Search (Researcher agent)
 TAVILY_API_KEY=
 ```
 
 ## COMMON COMMANDS
 
 ```bash
-# Start Hibiscus + dependencies
-make dev
-
-# Run tests
-make test
-
-# Seed Knowledge Graph
-make seed-kg
-
-# Ingest RAG corpus
-make seed-rag
-
-# Run HibiscusBench evaluation
-make eval
-
-# Check all dependency health
-make health-check
-
-# View LLM cost summary
-make costs
+make dev           # Start all services
+make down          # Stop all
+make seed-kg       # Seed Knowledge Graph (Neo4j)
+make seed-rag      # Ingest RAG corpus (Qdrant)
+make test          # Run tests
+make eval          # Run HibiscusBench (120 test cases)
+make health-check  # Check all dependencies
+make costs         # View LLM cost summary
 ```

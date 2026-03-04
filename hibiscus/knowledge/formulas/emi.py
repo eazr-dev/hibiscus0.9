@@ -6,6 +6,7 @@ Surrender Value Financing (SVF) loans.
 
 Deterministic reducing-balance calculations only.
 NEVER let LLM generate loan repayment numbers.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field
 from typing import List

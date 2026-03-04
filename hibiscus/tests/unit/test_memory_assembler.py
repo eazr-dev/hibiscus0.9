@@ -3,6 +3,7 @@ Unit Tests — Memory Assembler
 ==============================
 Tests that assemble_context() returns the correct structure
 and handles each memory layer gracefully (including when they're unavailable).
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import pytest

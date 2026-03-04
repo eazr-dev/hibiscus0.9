@@ -1,7 +1,16 @@
+# Hibiscus v0.9 — EAZR AI Insurance Intelligence Engine
+# Production container image
+# Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+
 FROM python:3.12-slim
 
-LABEL maintainer="EAZR Engineering"
-LABEL description="Hibiscus v5.0 — AI Intelligence Engine"
+LABEL maintainer="EAZR AI Engineering"
+LABEL description="Hibiscus v0.9 — EAZR AI Intelligence Engine"
+LABEL org.opencontainers.image.title="Hibiscus"
+LABEL org.opencontainers.image.description="EAZR AI Insurance Intelligence Engine"
+LABEL org.opencontainers.image.version="0.9.0"
+LABEL org.opencontainers.image.vendor="EAZR Digipayments Pvt Ltd"
+LABEL org.opencontainers.image.url="https://eazr.in"
 
 # System dependencies (including Tesseract for OCR fallback and poppler for pdf2image)
 RUN apt-get update && apt-get install -y \

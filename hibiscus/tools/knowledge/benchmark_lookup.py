@@ -11,6 +11,7 @@ evaluate_against_benchmark(metric, value, category) — classify value vs benchm
 get_coverage_recommendation(category, age_group)    — recommended SI for a profile
 get_premium_benchmark(category, age_group)          — typical premium for a profile
 list_benchmarks_by_category(category)               — all benchmarks in a category
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 

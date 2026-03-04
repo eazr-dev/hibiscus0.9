@@ -15,6 +15,7 @@ and priority_actions.
 
 Uses Tier 2 (DeepSeek R1) because this is multi-step analytical reasoning
 across multiple policies and income/family data.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time
@@ -210,7 +211,7 @@ class PortfolioOptimizerAgent(BaseAgent):
                     "Should I calculate the tax benefits across your entire portfolio?",
                     "Want me to recommend specific products to fill the identified gaps?",
                 ],
-                eazr_products_relevant=self._check_eazr_relevance(portfolio, user_profile),
+                products_relevant=self._check_product_relevance(portfolio, user_profile),
             )
 
         except Exception as e:
@@ -603,7 +604,7 @@ Use the numbers provided — do not invent or estimate figures not in the analys
         except (ValueError, TypeError):
             return 0.0
 
-    def _check_eazr_relevance(
+    def _check_product_relevance(
         self, portfolio: List[Dict[str, Any]], user_profile: Dict[str, Any]
     ) -> List[str]:
         """Check if IPF or SVF is relevant."""

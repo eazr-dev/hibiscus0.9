@@ -7,6 +7,7 @@ mis-selling, portability, travel, policyholder rights, and general IRDAI regulat
 
 All circular numbers and dates are from IRDAI public records.
 Run via: python -m hibiscus.knowledge.graph.seed
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
 

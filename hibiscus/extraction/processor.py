@@ -7,6 +7,7 @@ Pipeline:
 3. Fallback: OCR via pytesseract for scanned documents
 4. Page boundary markers preserved: [PAGE 1], [PAGE 2], etc.
 5. Text cleaning: remove headers/footers, fix encoding
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

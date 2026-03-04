@@ -3,6 +3,7 @@ Guardrail Check Node
 ====================
 Runs all active guardrails on the assembled response before sending.
 Guardrails: hallucination, compliance, financial, PII.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 

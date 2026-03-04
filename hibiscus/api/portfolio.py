@@ -7,6 +7,7 @@ DELETE /hibiscus/portfolio/{id} — remove a policy from the portfolio
 
 Backed by tools/user/portfolio.py which wraps the PostgreSQL memory layer
 with graceful no-op fallback when PG is unavailable.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import uuid
 from typing import Any, Dict, List, Optional

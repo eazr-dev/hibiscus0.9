@@ -18,6 +18,7 @@ Contextual prefix pattern (per Anthropic contextual retrieval research):
 Run:
   python -m hibiscus.knowledge.rag.ingestion            # ingest all corpus
   python -m hibiscus.knowledge.rag.ingestion --file X   # ingest single file
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import hashlib

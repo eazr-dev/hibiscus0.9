@@ -24,6 +24,7 @@ prometheus_client metrics are backed by thread-safe atomic operations.
 
 If prometheus_client is not installed, all functions silently become no-ops
 so the application continues to run without instrumentation.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 
 from hibiscus.observability.logger import get_logger

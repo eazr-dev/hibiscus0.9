@@ -1,3 +1,6 @@
+<!-- Hibiscus v0.9 — EAZR AI Insurance Intelligence Engine -->
+<!-- Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved. -->
+
 # Self-Hosted DeepSeek Evaluation
 
 ## Current State (Phase 4)

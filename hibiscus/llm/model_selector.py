@@ -11,6 +11,7 @@ Task → Tier mapping:
                            tax computation, complex multi-step math
   Tier 3 (Claude Sonnet): low confidence escalation, distressed users,
                            API fallback
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from enum import Enum
 from typing import Optional

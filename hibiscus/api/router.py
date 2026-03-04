@@ -3,6 +3,7 @@ Hibiscus API Router
 ===================
 Aggregates all sub-routers into the main APIRouter.
 All routes mounted under /hibiscus/ prefix in main.py.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from fastapi import APIRouter
 

@@ -13,6 +13,7 @@ Usage:
 
     # Evaluate single test case
     result = await evaluator.run_test_case(test_case)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import json

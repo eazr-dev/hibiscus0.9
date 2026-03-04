@@ -8,6 +8,7 @@ Options:
     --url http://localhost:8001
     --dry-run  (load test cases, don't call API)
     --ci       (exit 1 if DQ < 0.80)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import argparse
 import asyncio

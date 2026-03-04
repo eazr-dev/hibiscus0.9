@@ -5,6 +5,7 @@ Takes the classified intent + agents_needed and creates a concrete execution pla
   [{agent, task, priority, parallel_group}]
 
 Agents in the same parallel_group can run concurrently.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 

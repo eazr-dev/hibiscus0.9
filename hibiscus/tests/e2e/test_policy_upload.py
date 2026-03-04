@@ -3,6 +3,7 @@ E2E tests: policy upload → analyze → follow-up multi-turn.
 
 Mocks botproject analysis call to return deterministic extraction data.
 Uses live Hibiscus container at port 8001.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 import httpx

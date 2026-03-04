@@ -6,6 +6,7 @@ Routes queries by complexity level:
 - L3/L4 (complex) → full agent pipeline (plan → dispatch → aggregate)
 
 Used by the conditional edge in graph.py after intent classification.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from hibiscus.orchestrator.state import HibiscusState
 

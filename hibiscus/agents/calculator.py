@@ -15,6 +15,7 @@ GROUND TRUTH RULE:
 All numbers come from deterministic formulas — NEVER from LLM guessing.
 DeepSeek R1 (Tier 2) is used because this involves multi-step calculations
 where chain-of-thought reasoning improves accuracy.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 import time
@@ -164,7 +165,7 @@ class CalculatorAgent(BaseAgent):
                     "results": calc_results,
                 },
                 follow_up_suggestions=self._build_follow_ups(calc_type),
-                eazr_products_relevant=self._check_eazr_relevance(calc_type, inputs, calc_results),
+                products_relevant=self._check_product_relevance(calc_type, inputs, calc_results),
             )
 
         except Exception as e:
@@ -727,7 +728,7 @@ DO NOT recompute or alter any numbers. Present what is calculated above.
             "Should I calculate something else related to your insurance?",
         ])
 
-    def _check_eazr_relevance(
+    def _check_product_relevance(
         self, calc_type: str, inputs: Dict[str, Any], results: Dict[str, Any]
     ) -> List[str]:
         """Check if EAZR's IPF or SVF products are relevant."""

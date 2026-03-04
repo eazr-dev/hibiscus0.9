@@ -3,6 +3,7 @@ Integration tests: RAG retrieval correctness.
 
 Tests that Qdrant semantic search returns relevant chunks for known queries.
 Requires Qdrant with insurance_knowledge collection seeded.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 import asyncio

@@ -2,6 +2,7 @@
 Tax Benefit Calculator Tool
 ============================
 Agent-callable tool wrapping knowledge/formulas/tax_benefit.py.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional
 

@@ -13,6 +13,7 @@ Source hierarchy:
 3. Practical implication for the user's policy
 
 L1/L2 query fast path — uses Tier 1 (DeepSeek V3.2) for speed.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time

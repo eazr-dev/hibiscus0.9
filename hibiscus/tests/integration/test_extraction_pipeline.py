@@ -3,6 +3,7 @@ Integration test for the native extraction pipeline.
 
 Tests the full flow: ProcessedDocument → classify → validate → score → gap analyze.
 Extraction step is mocked (requires LLM), but all other steps run for real.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 

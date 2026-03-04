@@ -20,6 +20,7 @@ BEHAVIOR:
 SPECIAL RULE FOR NUMBERS:
 Copay %, sub-limits, premiums, sum insured → MUST come from extraction or KG.
 If LLM-only → flag and don't present as specific numbers.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass

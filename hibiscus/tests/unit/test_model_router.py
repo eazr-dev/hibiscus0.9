@@ -2,6 +2,7 @@
 Unit Tests — Model Router
 ==========================
 Tests that correct LLM tier is selected for each task type.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 from hibiscus.llm.model_selector import select_tier, Tier

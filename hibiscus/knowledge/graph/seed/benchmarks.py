@@ -8,6 +8,7 @@ All premium figures are approximate annual premiums in INR for the stated covera
 Sources: IRDAI Annual Reports, public insurer data, industry averages.
 
 Run via: python -m hibiscus.knowledge.graph.seed
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
 

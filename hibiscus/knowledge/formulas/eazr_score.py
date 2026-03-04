@@ -14,6 +14,7 @@ Dimensions (weights vary by category):
 Grade mapping: A+(9-10), A(8-8.9), B+(7-7.9), B(6-6.9), C(5-5.9), D(<5)
 
 All scoring is deterministic — LLM only explains, never computes.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional

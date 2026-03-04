@@ -13,6 +13,7 @@ Usage:
     await register_all()
     search_fn = get_tool("search_insurance_knowledge")
     result = await search_fn(query="deductible")
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Callable, Dict, List, Optional
 
@@ -91,15 +92,6 @@ def register_all() -> None:
         _REGISTRY["compare_quotes"] = compare_quotes
     except Exception as e:
         errors.append(f"quote.compare: {e}")
-
-    # ── EAZR Existing API Tools ────────────────────────────────────
-    try:
-        from hibiscus.tools.existing_api.client import EAZRClient
-        client = EAZRClient()
-        _REGISTRY["get_policy_analysis"] = client.get_analysis
-        _REGISTRY["get_user_policies"] = client.get_user_policies
-    except Exception as e:
-        errors.append(f"existing_api.client: {e}")
 
     # Log results
     from hibiscus.observability.logger import get_logger

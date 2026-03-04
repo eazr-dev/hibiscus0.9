@@ -1,6 +1,7 @@
 """
 Base Extractor — shared LLM extraction logic for all policy types.
 Category-specific extractors inherit and customize.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

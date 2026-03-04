@@ -5,6 +5,7 @@ Fetch and update user insurance portfolio from PostgreSQL.
 Delegates to memory/layers/portfolio.py — uses graceful no-op pattern.
 
 Returns [] when PostgreSQL is unavailable (dev mode).
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 

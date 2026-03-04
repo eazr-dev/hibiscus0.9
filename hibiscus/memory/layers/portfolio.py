@@ -11,6 +11,7 @@ The portfolio is the source of truth for:
   - Renewal reminders
   - Total premium load
   - IPF / SVF eligibility assessment
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from datetime import date, datetime

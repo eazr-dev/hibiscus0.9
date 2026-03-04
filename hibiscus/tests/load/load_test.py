@@ -27,6 +27,7 @@ Arguments:
     --no-stream   Disable streaming and use standard JSON response (default: streaming on)
 
 No dependencies beyond httpx (already in pyproject.toml) and the Python stdlib.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 
 import argparse

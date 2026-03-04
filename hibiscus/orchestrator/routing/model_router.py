@@ -5,6 +5,7 @@ Selects the appropriate LLM tier based on task, complexity, confidence,
 and emotional state. Delegates to llm/model_selector.py for the mapping.
 
 This module provides the routing interface used by orchestrator nodes.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Optional
 

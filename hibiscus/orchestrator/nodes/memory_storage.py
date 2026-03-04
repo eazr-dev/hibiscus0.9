@@ -8,6 +8,7 @@ After generating a response, stores:
 
 All storage is fire-and-forget via asyncio.create_task() — returns immediately
 so the response is not delayed by memory I/O.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

@@ -14,6 +14,7 @@ Quick start:
         query_name="get_hdfc_life",
     )
     await close_kg()
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from hibiscus.knowledge.graph.client import kg_client, init_kg, close_kg, Neo4jClient
 from hibiscus.knowledge.graph.schema import create_schema

@@ -13,6 +13,7 @@ table in Phase 2 analytics queries.
 
 Health conditions are stored as **categories** only ("diabetes", "hypertension")
 — never as free-text verbatim data from the user.  This limits PII exposure.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Any, Dict, List, Optional

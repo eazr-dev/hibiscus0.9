@@ -9,6 +9,7 @@ Collections:
   hibiscus_analyses: EAZR analysis results (score, gaps, recommendations)
 
 Lifetime: permanent (user's document vault)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Any, Dict, List, Optional

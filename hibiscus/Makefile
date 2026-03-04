@@ -1,31 +1,30 @@
 # =============================================================
-# Hibiscus v5.0 — Developer Makefile
+# Hibiscus v0.9 — Developer Makefile
 # =============================================================
+# Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 
 .PHONY: dev dev-hibiscus down test test-unit test-integration eval \
         seed-kg seed-rag seed-all health-check logs costs metrics \
         refresh-kg refresh-rag eval-report
 
-COMPOSE_BASE = docker compose -f docker-compose.yml
-COMPOSE_ALL  = docker compose -f docker-compose.yml -f hibiscus/docker-compose.hibiscus.yml
+COMPOSE = docker compose
 
 # ── Development ──────────────────────────────────────────────────
 dev:
-	@echo "Starting EAZR + Hibiscus stack..."
-	$(COMPOSE_ALL) up -d
+	@echo "Starting Hibiscus stack..."
+	$(COMPOSE) up -d
 	@echo ""
 	@echo "Services:"
-	@echo "  EAZR API:      http://localhost:8000/docs"
 	@echo "  Hibiscus API:  http://localhost:8001/hibiscus/docs"
 	@echo "  Neo4j Browser: http://localhost:7474"
 	@echo "  Qdrant UI:     http://localhost:6333/dashboard"
 
-dev-hibiscus:
+dev-local:
 	@echo "Starting Hibiscus API locally (fast reload)..."
-	cd /app && uvicorn hibiscus.main:app --host 0.0.0.0 --port 8001 --reload
+	uvicorn hibiscus.main:app --host 0.0.0.0 --port 8001 --reload
 
 down:
-	$(COMPOSE_ALL) down
+	$(COMPOSE) down
 
 # ── Database Seeding ────────────────────────────────────────────
 seed-kg:
@@ -65,7 +64,7 @@ eval-report:
 
 # ── Monitoring ───────────────────────────────────────────────────
 logs:
-	$(COMPOSE_ALL) logs -f hibiscus-api
+	$(COMPOSE) logs -f hibiscus-api
 
 costs:
 	@echo "LLM cost summary (last 24h)..."

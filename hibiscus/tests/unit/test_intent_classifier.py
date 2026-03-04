@@ -3,6 +3,7 @@ Unit Tests — Intent Classifier
 ================================
 Tests keyword classification, complexity routing, and agent assignment.
 These tests use keyword rules only (no LLM call required).
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 from hibiscus.orchestrator.nodes.intent_classification import (

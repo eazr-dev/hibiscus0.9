@@ -7,6 +7,7 @@ LiteLLM-based tiered routing:
   Tier 3: Claude Sonnet — 5% of calls  (safety net / fallback)
 
 Fallback chain: DeepSeek V3.2 → DeepSeek R1 → Claude Sonnet
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Any, AsyncIterator, Dict, List, Optional

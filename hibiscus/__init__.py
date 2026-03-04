@@ -1,5 +1,6 @@
 """
 Hibiscus — EAZR AI Intelligence Engine
 =======================================
-Version: 5.0.0-alpha
+Version: 0.9.0
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """

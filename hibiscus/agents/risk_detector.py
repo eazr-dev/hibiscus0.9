@@ -15,6 +15,7 @@ CRITICAL RULES:
 - ALWAYS back each flag with the specific metric that triggered it
 - NEVER suggest "keep this policy" if clear red flags exist
 - ALWAYS recommend independent financial advisor review for major decisions
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time
@@ -281,7 +282,7 @@ class RiskDetectorAgent(BaseAgent):
                     "Should I recommend products to fill the identified coverage gaps?",
                     "Want me to calculate the tax implications of restructuring your portfolio?",
                 ],
-                eazr_products_relevant=self._check_eazr_relevance(risk_flags, gap_list),
+                products_relevant=self._check_product_relevance(risk_flags, gap_list),
             )
 
         except Exception as e:
@@ -612,7 +613,7 @@ CRITICAL:
 - Be honest about risk severity — do not downplay HIGH flags
 """
 
-    def _check_eazr_relevance(
+    def _check_product_relevance(
         self, risk_flags: List[Dict[str, Any]], gap_list: List[Dict[str, Any]]
     ) -> List[str]:
         """Check if EAZR SVF or IPF is relevant."""

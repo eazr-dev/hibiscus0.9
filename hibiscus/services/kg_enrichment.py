@@ -20,6 +20,7 @@ Usage:
     await kg_enrichment.start_flush_loop()
     # On shutdown:
     await kg_enrichment.stop()
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

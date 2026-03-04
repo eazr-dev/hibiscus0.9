@@ -9,6 +9,7 @@ Usage:
     await init_kg()
     results = await kg_client.query("MATCH (n:Insurer) RETURN n LIMIT 10")
     await close_kg()
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

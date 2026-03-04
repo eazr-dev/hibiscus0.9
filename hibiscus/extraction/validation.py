@@ -9,6 +9,7 @@ Checks:
 3. Format Validation — dates, currency, percentages in correct format
 4. Range Validation — values within reasonable ranges per category
 5. Confidence Scoring — weighted average using criticality map
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

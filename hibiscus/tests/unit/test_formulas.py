@@ -3,6 +3,7 @@ Unit Tests — Formula Files
 ===========================
 Tests deterministic financial formula functions.
 All formulas must be pure functions with no LLM calls, no I/O.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 

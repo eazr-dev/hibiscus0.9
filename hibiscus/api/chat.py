@@ -9,6 +9,7 @@ This is the primary interface between the frontend and the Hibiscus AI engine.
 Supports both:
 1. Standard JSON response (stream=false)
 2. Server-Sent Events streaming (stream=true)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time
@@ -130,7 +131,7 @@ async def chat(request: ChatRequest, http_request: Request) -> JSONResponse:
             confidence=final_state.get("confidence", 0.0),
             sources=sources,
             follow_up_suggestions=final_state.get("follow_up_suggestions", []),
-            eazr_products_relevant=final_state.get("eazr_products_relevant", []),
+            products_relevant=final_state.get("products_relevant", []),
             agents_invoked=final_state.get("agents_invoked", []),
             guardrail_results=final_state.get("guardrail_results", {}),
             latency_ms=total_latency_ms,
@@ -238,7 +239,7 @@ async def _stream_response(
                             "agents_invoked": [],
                             "latency_ms": total_latency_ms,
                             "follow_up_suggestions": cached.get("follow_up_suggestions", []),
-                            "eazr_products_relevant": [],
+                            "products_relevant": [],
                             "cache_hit": True,
                         },
                     ))
@@ -297,7 +298,7 @@ async def _stream_response(
                     "agents_invoked": [],
                     "latency_ms": total_latency_ms,
                     "follow_up_suggestions": [],
-                    "eazr_products_relevant": [],
+                    "products_relevant": [],
                     "cache_hit": False,
                 },
             ))
@@ -322,7 +323,7 @@ async def _stream_response(
                     "agents_invoked": final_state.get("agents_invoked", []),
                     "latency_ms": total_latency_ms,
                     "follow_up_suggestions": final_state.get("follow_up_suggestions", []),
-                    "eazr_products_relevant": final_state.get("eazr_products_relevant", []),
+                    "products_relevant": final_state.get("products_relevant", []),
                 },
             ))
 

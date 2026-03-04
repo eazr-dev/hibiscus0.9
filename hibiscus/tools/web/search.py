@@ -6,6 +6,7 @@ and real-time product comparisons.
 
 Falls back to empty results (gracefully) if Tavily is unavailable.
 All results are tagged with source URL and publication date.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import os
 from typing import Optional

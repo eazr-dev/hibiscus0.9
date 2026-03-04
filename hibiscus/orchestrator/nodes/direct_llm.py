@@ -6,6 +6,7 @@ Examples: "What is a deductible?", "How does copay work?"
 
 Skips the full agent pipeline for speed and cost.
 Still uses the hallucination and compliance guardrails.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from pathlib import Path

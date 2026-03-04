@@ -25,6 +25,7 @@ Insight types:
   fact        — objective facts ("company provides ₹5L group cover")
   history     — past events ("filed a claim in 2021, rejected")
   family      — family structure facts ("wife is diabetic, 2 kids")
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 import uuid

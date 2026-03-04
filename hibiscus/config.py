@@ -2,6 +2,7 @@
 Hibiscus Configuration
 ======================
 All settings via Pydantic BaseSettings — validates env vars at startup.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from functools import lru_cache
 from typing import Optional
@@ -19,7 +20,7 @@ class HibiscusSettings(BaseSettings):
 
     # ── Service Identity ────────────────────────────────────────────
     app_name: str = "hibiscus"
-    app_version: str = "5.0.0"
+    app_version: str = "0.9.0"
     hibiscus_env: str = Field(default="development", alias="HIBISCUS_ENV")
     hibiscus_port: int = Field(default=8001, alias="HIBISCUS_PORT")
     hibiscus_log_level: str = Field(default="INFO", alias="HIBISCUS_LOG_LEVEL")
@@ -45,11 +46,6 @@ class HibiscusSettings(BaseSettings):
     reasoning_max_tokens: int = 8192  # R1 needs more for chain-of-thought
     reasoning_timeout: int = 60       # R1 is slower
 
-    # ── EAZR Existing API ────────────────────────────────────────────
-    eazr_api_base: str = Field(default="http://localhost:8000", alias="EAZR_API_BASE")
-    eazr_api_timeout: int = 90        # Large PDFs take time
-    eazr_api_retries: int = 3
-
     # ── Redis (Session Memory — L1) ──────────────────────────────────
     redis_url: str = Field(default="redis://localhost:6379/1", alias="REDIS_URL")
     redis_session_ttl: int = 3600     # 1 hour session TTL
@@ -61,7 +57,7 @@ class HibiscusSettings(BaseSettings):
 
     # ── PostgreSQL (User Profile, Outcomes) ──────────────────────────
     postgresql_url: str = Field(
-        default="postgresql+asyncpg://eazr:eazr_secure_2024@localhost:5432/insurance_india",
+        default="postgresql+asyncpg://hibiscus:hibiscus_secure_2024@localhost:5432/insurance_india",
         alias="POSTGRESQL_URL"
     )
 
@@ -85,7 +81,7 @@ class HibiscusSettings(BaseSettings):
     tavily_api_key: str = Field(default="", alias="TAVILY_API_KEY")
 
     # ── Auth / Security ───────────────────────────────────────────────
-    # JWT secret shared with botproject. Empty string = dev mode (auth skipped).
+    # JWT secret for API authentication. Empty string = dev mode (auth skipped).
     jwt_secret: str = Field(default="", alias="JWT_SECRET")
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
 

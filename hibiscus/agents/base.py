@@ -9,6 +9,7 @@ Every agent:
 - Has confidence scoring
 - Handles timeouts and LLM failures gracefully
 - Never invents numbers — only presents what tools provide
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from abc import ABC, abstractmethod
@@ -31,7 +32,7 @@ class AgentResult:
         tokens_in: int = 0,
         tokens_out: int = 0,
         follow_up_suggestions: Optional[List[str]] = None,
-        eazr_products_relevant: Optional[List[str]] = None,
+        products_relevant: Optional[List[str]] = None,
         structured_data: Optional[Dict[str, Any]] = None,
     ):
         self.response = response
@@ -41,7 +42,7 @@ class AgentResult:
         self.tokens_in = tokens_in
         self.tokens_out = tokens_out
         self.follow_up_suggestions = follow_up_suggestions or []
-        self.eazr_products_relevant = eazr_products_relevant or []
+        self.products_relevant = products_relevant or []
         self.structured_data = structured_data or {}
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,7 +54,7 @@ class AgentResult:
             "tokens_in": self.tokens_in,
             "tokens_out": self.tokens_out,
             "follow_up_suggestions": self.follow_up_suggestions,
-            "eazr_products_relevant": self.eazr_products_relevant,
+            "products_relevant": self.products_relevant,
             "structured_data": self.structured_data,
         }
 

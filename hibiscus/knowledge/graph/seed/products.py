@@ -5,6 +5,7 @@ Product Seed Data
 All sum-insured figures in INR (raw), premium figures are annual approximations.
 
 Run via: python -m hibiscus.knowledge.graph.seed
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 
@@ -2977,6 +2978,16 @@ SET
   p.copay_structure     = $copay_structure,
   p.room_rent_limit     = $room_rent_limit,
   p.eazr_score          = $eazr_score,
+  p.uin                 = $uin,
+  p.product_scope       = $product_scope,
+  p.linked_type         = $linked_type,
+  p.par_type            = $par_type,
+  p.is_active           = $is_active,
+  p.launch_date         = $launch_date,
+  p.policy_summary      = $policy_summary,
+  p.source_url          = $source_url,
+  p.data_confidence     = $data_confidence,
+  p.source              = $source,
   p.updated_at          = datetime()
 RETURN p.name AS name
 """
@@ -3001,6 +3012,17 @@ async def seed_products(client: Neo4jClient) -> None:
         params = dict(p)
         # Neo4j can store lists of strings natively; dicts need to be stringified
         params["waiting_periods"] = str(p.get("waiting_periods", {}))
+        # Defaults for new fields not present in hardcoded products
+        params.setdefault("uin", None)
+        params.setdefault("product_scope", None)
+        params.setdefault("linked_type", None)
+        params.setdefault("par_type", None)
+        params.setdefault("is_active", True)
+        params.setdefault("launch_date", None)
+        params.setdefault("policy_summary", None)
+        params.setdefault("source_url", None)
+        params.setdefault("data_confidence", None)
+        params.setdefault("source", "manual")
         # Remove non-schema keys that we don't want in Product nodes
         for extra_key in [
             "restore_benefit", "multiplier_benefit", "wellness_benefits", "unlimited_restore",
@@ -3012,7 +3034,8 @@ async def seed_products(client: Neo4jClient) -> None:
             "lock_in_years", "annual_premium_above_2_5L_taxable_gains", "plan_options",
             "irr_approx", "note", "target_segment", "min_entry_age", "max_entry_age",
             "age_limit", "government_backed", "mandatory", "guaranteed_returns",
-            "digital_score", "chronic_management",
+            "digital_score", "chronic_management", "annual_health_checkup",
+            "no_claim_bonus", "restore_benefit",
         ]:
             params.pop(extra_key, None)
         product_params.append(params)

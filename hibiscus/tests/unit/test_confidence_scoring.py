@@ -3,6 +3,7 @@ Unit Tests — Confidence Scoring
 ================================
 Tests AgentResult confidence clamping, source weighting, and
 the confidence scoring behaviour across agents.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 from hibiscus.agents.base import AgentResult

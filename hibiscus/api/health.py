@@ -7,9 +7,9 @@ Checks all dependencies:
 - LLM providers (DeepSeek, Claude)
 - Redis (session memory)
 - MongoDB (document memory)
-- EAZR existing API (botproject)
-- Neo4j (KG — Phase 2)
-- Qdrant (RAG — Phase 2)
+- Neo4j (Knowledge Graph)
+- Qdrant (RAG vectors)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time
@@ -49,27 +49,6 @@ async def _check_mongodb() -> Dict[str, Any]:
         return {"status": "degraded", "reason": "in_memory_fallback"}
     except Exception as e:
         return {"status": "error", "error": str(e)}
-
-
-async def _check_eazr_api() -> Dict[str, Any]:
-    """Check EAZR botproject API connectivity."""
-    start = time.time()
-    try:
-        import httpx
-        async with httpx.AsyncClient(timeout=5) as client:
-            resp = await client.get(f"{settings.eazr_api_base}/health")
-            if resp.status_code == 200:
-                return {
-                    "status": "ok",
-                    "latency_ms": int((time.time() - start) * 1000),
-                    "eazr_api_base": settings.eazr_api_base,
-                }
-            return {
-                "status": "degraded",
-                "http_status": resp.status_code,
-            }
-    except Exception as e:
-        return {"status": "error", "error": str(e), "eazr_api_base": settings.eazr_api_base}
 
 
 async def _check_deepseek() -> Dict[str, Any]:
@@ -137,14 +116,13 @@ async def health() -> JSONResponse:
     results = await asyncio.gather(
         _check_redis(),
         _check_mongodb(),
-        _check_eazr_api(),
         _check_deepseek(),
         _check_anthropic(),
         _check_neo4j(),
         _check_qdrant(),
         return_exceptions=True,
     )
-    redis_result, mongo_result, eazr_result, ds_result, claude_result, neo4j_result, qdrant_result = results
+    redis_result, mongo_result, ds_result, claude_result, neo4j_result, qdrant_result = results
 
     # Handle exceptions from gather
     def safe_result(r, name):
@@ -155,15 +133,13 @@ async def health() -> JSONResponse:
     dependencies = {
         "redis": safe_result(redis_result, "redis"),
         "mongodb": safe_result(mongo_result, "mongodb"),
-        "eazr_api": safe_result(eazr_result, "eazr_api"),
         "deepseek": safe_result(ds_result, "deepseek"),
         "anthropic": safe_result(claude_result, "anthropic"),
         "neo4j": safe_result(neo4j_result, "neo4j"),
         "qdrant": safe_result(qdrant_result, "qdrant"),
     }
 
-    # Critical services: Redis and EAZR API are critical for Phase 1
-    critical = ["redis", "eazr_api"]
+    critical = ["redis"]
     critical_healthy = all(
         dependencies[k].get("status") in ("ok", "degraded")
         for k in critical
@@ -181,8 +157,10 @@ async def health() -> JSONResponse:
     total_latency_ms = int((time.time() - start) * 1000)
 
     response = {
-        "status": overall_status,
+        "engine": "Hibiscus",
         "version": settings.app_version,
+        "vendor": "EAZR Digipayments Pvt Ltd",
+        "status": overall_status,
         "environment": settings.hibiscus_env,
         "latency_ms": total_latency_ms,
         "dependencies": dependencies,

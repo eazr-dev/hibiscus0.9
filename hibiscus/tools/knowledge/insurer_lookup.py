@@ -10,6 +10,7 @@ lookup_insurer(name)                    — fuzzy match by name/alias
 get_insurer_benchmarks(insurer_id)      — CSR/ICR vs industry benchmarks
 list_insurers_by_category(category)     — all insurers in a category
 compare_insurers(names)                 — side-by-side comparison dict
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 

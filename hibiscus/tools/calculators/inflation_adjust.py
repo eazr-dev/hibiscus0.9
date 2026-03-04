@@ -2,6 +2,7 @@
 Inflation Adjustment Tool
 ==========================
 Agent-callable tool wrapping knowledge/formulas/inflation.py.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict
 

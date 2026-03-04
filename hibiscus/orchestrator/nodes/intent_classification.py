@@ -9,6 +9,7 @@ Classifies user message into:
 - agents_needed
 
 Uses keyword rules for fast classification, DeepSeek V3.2 as fallback.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import re

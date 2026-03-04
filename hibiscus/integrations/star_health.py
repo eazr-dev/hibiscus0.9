@@ -3,6 +3,7 @@ Star Health Mock Integration
 =============================
 Returns realistic data from KG seed data.
 Swap to live API when partnership is established.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Optional

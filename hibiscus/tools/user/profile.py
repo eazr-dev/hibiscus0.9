@@ -5,6 +5,7 @@ Fetch and update user profiles from PostgreSQL.
 Delegates to memory/layers/profile.py — uses same graceful no-op pattern.
 
 Returns None / False when PostgreSQL is unavailable (dev mode).
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional
 

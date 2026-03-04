@@ -1,4 +1,7 @@
-"""Life insurance extractor — 60 fields."""
+"""
+Life insurance extractor — 60 fields.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
+"""
 from hibiscus.extraction.extractors.base import BaseExtractor
 
 

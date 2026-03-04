@@ -17,6 +17,7 @@ Escalation Levels:
 Intent triggers:
   - "complaint", "not resolved", "ombudsman", "IRDAI complaint", "IGMS"
   - "my claim was rejected unfairly", "insurer not responding", "cheated"
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time

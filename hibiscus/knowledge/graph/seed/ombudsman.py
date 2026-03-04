@@ -13,6 +13,7 @@ Key rules:
 - Award within 3 months; binding on the insurer
 
 Run via: python -m hibiscus.knowledge.graph.seed
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
 

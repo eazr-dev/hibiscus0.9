@@ -10,6 +10,7 @@ Flow:
     → check_guardrails
     → store_memory
     → END
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver

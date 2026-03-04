@@ -9,6 +9,7 @@ comparison table.
 
 IMPORTANT: Premium figures are estimates from KG seed data.
 Always label as "estimated annual premium range" — never state as exact.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass, field

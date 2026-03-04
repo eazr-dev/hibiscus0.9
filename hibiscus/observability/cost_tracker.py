@@ -5,6 +5,7 @@ Tracks LLM token usage and cost per conversation.
 Board-level metric: cost per intelligent insurance conversation.
 
 INR exchange rate assumption: 1 USD = 85 INR
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from dataclasses import dataclass, field

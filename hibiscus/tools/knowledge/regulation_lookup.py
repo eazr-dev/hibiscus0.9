@@ -11,6 +11,7 @@ get_rights_for_situation(situation)         — get applicable rights/regs for a
 lookup_ombudsman_for_state(state)           — find ombudsman office by state
 get_consumer_rights_summary()              — full list of key policyholder rights
 search_regulations_by_category(category)   — all regulations in a category
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 

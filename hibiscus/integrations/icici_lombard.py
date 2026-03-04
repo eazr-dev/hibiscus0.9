@@ -2,6 +2,7 @@
 ICICI Lombard Mock Integration
 ================================
 Returns realistic data from KG seed data.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Optional

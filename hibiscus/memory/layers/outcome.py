@@ -18,6 +18,7 @@ This enables Phase 3/4 features:
   - "This recommendation has a 78% purchase rate for users like you"
   - Auto-detection of hallucinated advice (recommended product that doesn't exist)
   - Insurer ranking by actual claim settlement experience
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from datetime import datetime

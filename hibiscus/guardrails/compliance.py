@@ -14,6 +14,7 @@ IRDAI Disclaimer (inject on recommendations):
 "This information is provided for educational purposes only. EAZR is not a
 licensed insurance distributor. Please consult a licensed insurance advisor
 before making any insurance purchase decision."
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass

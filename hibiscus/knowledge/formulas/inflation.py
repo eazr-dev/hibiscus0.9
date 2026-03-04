@@ -5,6 +5,7 @@ Adjust monetary amounts for inflation over time.
 Used for projecting future coverage needs and real cost of insurance.
 
 NEVER invent inflation rates — always use stated assumptions.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass
 

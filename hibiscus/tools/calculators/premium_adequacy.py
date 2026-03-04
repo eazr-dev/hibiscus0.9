@@ -2,6 +2,7 @@
 Premium Adequacy Tool
 =====================
 Agent-callable tool wrapping knowledge/formulas/premium_adequacy.py.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, Optional
 

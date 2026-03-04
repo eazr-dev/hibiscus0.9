@@ -3,6 +3,7 @@ Agent Dispatch Node
 ===================
 Dispatches tasks to specialist agents according to the execution plan.
 Runs agents in parallel within each parallel_group, sequential across groups.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

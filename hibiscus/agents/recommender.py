@@ -16,6 +16,7 @@ RULES:
 - ALWAYS add IRDAI disclaimer
 - ALWAYS explain WHY each product is recommended
 - ALWAYS mention that comparison is based on available data
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time
@@ -280,7 +281,7 @@ class RecommenderAgent(BaseAgent):
                     "Should I calculate how much premium you'd typically pay for term insurance?",
                     "Want me to check what tax benefits these products offer?",
                 ],
-                eazr_products_relevant=self._check_ipf_relevance(merged_profile, policy_portfolio),
+                products_relevant=self._check_ipf_relevance(merged_profile, policy_portfolio),
             )
 
         except Exception as e:

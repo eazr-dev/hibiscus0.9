@@ -1,5 +1,6 @@
 """
 Unit tests for PolicyClassifier (Tier 1 + Tier 2 — no LLM needed).
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 

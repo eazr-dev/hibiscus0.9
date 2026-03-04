@@ -1,5 +1,6 @@
 """
 Unit tests for ValidationEngine — 5-check validation.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 

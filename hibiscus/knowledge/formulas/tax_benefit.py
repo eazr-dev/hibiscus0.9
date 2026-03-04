@@ -8,6 +8,7 @@ Sections:
 - 80D: Health insurance premium (max ₹25K/₹50K/₹1L depending on age)
 - 10(10D): Maturity proceeds exemption (conditions apply)
 - 80CCC: Pension fund (within 80C limit)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from dataclasses import dataclass
 from typing import Optional

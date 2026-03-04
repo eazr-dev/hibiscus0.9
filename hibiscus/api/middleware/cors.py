@@ -5,6 +5,7 @@ Configures Cross-Origin Resource Sharing for the Hibiscus API.
 
 In development: allows all origins.
 In production: restricts to EAZR frontend domains only.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -24,7 +25,6 @@ _PRODUCTION_ORIGINS = [
 _DEVELOPMENT_ORIGINS = [
     "http://localhost:3000",     # Next.js dev server
     "http://localhost:8080",     # Flutter web dev
-    "http://localhost:8000",     # Botproject
     "http://localhost:8001",     # Hibiscus dev
     "http://127.0.0.1:3000",
     "http://127.0.0.1:8080",

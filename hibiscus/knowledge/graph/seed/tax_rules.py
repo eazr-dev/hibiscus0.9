@@ -11,6 +11,7 @@ annuity taxation.
 
 All deduction limits in INR. Tax rules as of Financial Year 2024-25.
 Run via: python -m hibiscus.knowledge.graph.seed
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
 

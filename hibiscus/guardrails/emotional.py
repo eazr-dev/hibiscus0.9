@@ -7,6 +7,7 @@ Detects user's emotional state and adapts response tone:
 - neutral/curious/concerned → pass through unchanged
 
 This guard does NOT block responses. It modifies tone only.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass

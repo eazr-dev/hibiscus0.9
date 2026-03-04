@@ -13,6 +13,7 @@ Patterns masked:
 - Email address
 - Date of birth
 - Bank account number (heuristic)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass, field

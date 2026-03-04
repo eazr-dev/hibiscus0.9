@@ -8,6 +8,7 @@ Pattern follows renewal_tracker.py:
 - Module-level singleton
 - Async methods with graceful degradation
 - Returns formatted string for context injection
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from datetime import datetime

@@ -7,6 +7,7 @@ Key: session:{session_id}
 Lifetime: session duration (TTL from settings)
 
 This is the L1 memory — always retrieved for every request.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time

@@ -7,21 +7,24 @@ Run once at startup (idempotent — uses CREATE CONSTRAINT IF NOT EXISTS).
 
 Node types
 ----------
-(:Insurer)          — 30+ Indian insurers
-(:Product)          — 50+ insurance products
+(:Insurer)          — 60 Indian insurers
+(:Product)          — 1200+ insurance products (with UINs)
 (:Regulation)       — IRDAI circulars and rules
 (:Benchmark)        — Market benchmarks by category / age-group
 (:TaxRule)          — Sections 80C, 80D, 10(10D) etc.
 (:TPA)              — Third-Party Administrators
 (:OmbudsmanOffice)  — 17 IRDAI Ombudsman offices
+(:CSREntry)         — Claim Settlement Ratio time-series by FY
 
 Relationships
 -------------
 (:Insurer)-[:OFFERS]->(:Product)
+(:Insurer)-[:HAS_CSR]->(:CSREntry)
 (:Product)-[:GOVERNED_BY]->(:Regulation)
 (:Product)-[:BENCHMARKED_AGAINST]->(:Benchmark)
 (:Insurer)-[:USES_TPA]->(:TPA)
 (:Product)-[:COVERS {condition}]->(:TaxRule)   # e.g. COVERS 80D
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import List
 
@@ -51,6 +54,9 @@ _CONSTRAINTS: List[str] = [
 
     "CREATE CONSTRAINT tax_rule_section_unique IF NOT EXISTS "
     "FOR (n:TaxRule) REQUIRE (n.section, n.subsection) IS UNIQUE",
+
+    "CREATE CONSTRAINT csr_entry_unique IF NOT EXISTS "
+    "FOR (n:CSREntry) REQUIRE (n.insurer_name, n.financial_year, n.csr_type) IS UNIQUE",
 ]
 
 _INDEXES: List[str] = [
@@ -103,6 +109,20 @@ _INDEXES: List[str] = [
     # ── TaxRule ──────────────────────────────────────────────────────────
     "CREATE INDEX tax_rule_section IF NOT EXISTS "
     "FOR (n:TaxRule) ON (n.section)",
+
+    # ── Product UIN ────────────────────────────────────────────────────────
+    "CREATE INDEX product_uin IF NOT EXISTS "
+    "FOR (n:Product) ON (n.uin)",
+
+    "CREATE INDEX product_source IF NOT EXISTS "
+    "FOR (n:Product) ON (n.source)",
+
+    # ── CSREntry ───────────────────────────────────────────────────────────
+    "CREATE INDEX csr_insurer IF NOT EXISTS "
+    "FOR (n:CSREntry) ON (n.insurer_name)",
+
+    "CREATE INDEX csr_financial_year IF NOT EXISTS "
+    "FOR (n:CSREntry) ON (n.financial_year)",
 
     # ── OmbudsmanOffice ──────────────────────────────────────────────────
     "CREATE INDEX ombudsman_jurisdiction IF NOT EXISTS "
@@ -217,6 +237,10 @@ async def drop_schema(client: Neo4jClient) -> None:
         "DROP INDEX benchmark_metric IF EXISTS",
         "DROP INDEX tax_rule_section IF EXISTS",
         "DROP INDEX ombudsman_jurisdiction IF EXISTS",
+        "DROP INDEX product_uin IF EXISTS",
+        "DROP INDEX product_source IF EXISTS",
+        "DROP INDEX csr_insurer IF EXISTS",
+        "DROP INDEX csr_financial_year IF EXISTS",
         # Drop constraints
         "DROP CONSTRAINT insurer_name_unique IF EXISTS",
         "DROP CONSTRAINT product_name_unique IF EXISTS",
@@ -224,6 +248,7 @@ async def drop_schema(client: Neo4jClient) -> None:
         "DROP CONSTRAINT tpa_name_unique IF EXISTS",
         "DROP CONSTRAINT ombudsman_city_unique IF EXISTS",
         "DROP CONSTRAINT tax_rule_section_unique IF EXISTS",
+        "DROP CONSTRAINT csr_entry_unique IF EXISTS",
         # Delete all nodes and relationships
         "MATCH (n) DETACH DELETE n",
     ]

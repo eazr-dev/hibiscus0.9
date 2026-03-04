@@ -2,6 +2,7 @@
 E2E tests: claims assistance flow.
 
 Tests: cashless claim → reimbursement → distressed tone → disclaimer present.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 import httpx

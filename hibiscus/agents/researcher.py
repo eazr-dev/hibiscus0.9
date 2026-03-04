@@ -17,6 +17,7 @@ SOURCING RULES:
 - Web search results: cite URL and publication date
 - RAG corpus: note "As of last corpus update — may not reflect latest changes"
 - LLM reasoning alone: NEVER used for factual insurance data
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time

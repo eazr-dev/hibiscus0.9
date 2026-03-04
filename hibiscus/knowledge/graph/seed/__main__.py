@@ -16,6 +16,7 @@ This will:
 Requires:
   - Neo4j running (bolt://localhost:7687 by default)
   - NEO4J_PASSWORD set in .env or environment
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import sys

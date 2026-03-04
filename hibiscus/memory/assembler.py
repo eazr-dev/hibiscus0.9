@@ -14,6 +14,7 @@ ASSEMBLY PRIORITY ORDER (blueprint spec):
 
 TOKEN BUDGET:
 128K context - 4K system prompt - 2K tools - 4K response reserve = ~118K available
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 from typing import Any, Dict, List, Optional

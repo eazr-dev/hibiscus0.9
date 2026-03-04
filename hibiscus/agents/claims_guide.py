@@ -15,6 +15,7 @@ IRDAI Mandated Timelines (non-negotiable — cite these):
 - Investigation cases: 90 days maximum
 - Insurer grievance response: 15 days
 - Ombudsman approach: within 3 months of insurer rejection
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import time

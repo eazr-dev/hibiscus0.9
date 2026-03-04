@@ -10,6 +10,7 @@ lookup_product(name, insurer_name)        — find product by name (fuzzy)
 search_products(category, filters)        — search by category with filters
 compare_products(product_ids)             — side-by-side comparison
 get_product_by_insurer(insurer_name, cat) — list products from one insurer
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 

@@ -12,6 +12,7 @@ Warmup strategy:
 - Skip if already cached (idempotent — safe to call every restart)
 - Process in batches to avoid hammering the LLM API at startup
 - Log progress so we can track warmup coverage over time
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import hashlib

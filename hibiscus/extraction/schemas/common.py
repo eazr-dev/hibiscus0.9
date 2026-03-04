@@ -1,6 +1,7 @@
 """
 Common extraction types shared across all policy categories.
 Mirrors botproject's ConfidenceField pattern with Pydantic v2.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

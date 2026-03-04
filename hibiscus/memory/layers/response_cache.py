@@ -14,6 +14,7 @@ Cache key: hibiscus:resp_cache:{sha256(normalized_message)}
 TTL: 24h for educational facts (insurance definitions don't change daily)
 
 Impact: Repeat questions (e.g. "what is copay?") answered in <50ms vs ~15s.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import hashlib
 import json

@@ -35,6 +35,7 @@ Regulation tools:
     lookup_ombudsman_for_state(state)
     get_consumer_rights_summary()
     search_regulations_by_category(category)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from .insurer_lookup import (
     lookup_insurer,

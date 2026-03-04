@@ -12,6 +12,7 @@ Alert levels:
 Data sources:
 1. Policy portfolio (PostgreSQL via portfolio layer)
 2. Document memory extractions (MongoDB via document layer)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

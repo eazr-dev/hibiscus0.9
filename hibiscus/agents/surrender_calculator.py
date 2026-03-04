@@ -16,6 +16,7 @@ Answers questions like:
   - "Should I surrender my policy?"
   - "What will I get if I surrender now?"
   - "Is it better to keep my policy or take the money?"
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import json
 import re
@@ -243,7 +244,7 @@ class SurrenderCalculatorAgent(BaseAgent):
                     "Should I check if you qualify for a policy loan instead of surrendering?",
                     "Want me to compare what reinvesting the surrender value in a term + MF plan would yield?",
                 ],
-                eazr_products_relevant=["SVF"],  # Surrender Value Financing may be relevant
+                products_relevant=["SVF"],  # Surrender Value Financing may be relevant
             )
 
         except Exception as e:

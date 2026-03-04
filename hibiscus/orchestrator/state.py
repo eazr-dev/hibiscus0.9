@@ -6,6 +6,7 @@ in the LangGraph orchestration graph.
 
 Every field here is accessible by every node.
 Fields are populated progressively as the graph executes.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import operator
 from enum import Enum
@@ -77,7 +78,7 @@ class HibiscusState(TypedDict, total=False):
     confidence: float       # 0.0 - 1.0 (aggregated across all agents)
     sources: List[Dict[str, Any]]  # [{type, reference, confidence, page}]
     follow_up_suggestions: List[str]
-    eazr_products_relevant: List[str]  # IPF/SVF if applicable
+    products_relevant: List[str]  # IPF/SVF if applicable
 
     # ── METADATA ─────────────────────────────────────────────────────────
     total_tokens_in: int
@@ -132,7 +133,7 @@ def initial_state(
         confidence=0.0,
         sources=[],
         follow_up_suggestions=[],
-        eazr_products_relevant=[],
+        products_relevant=[],
         total_tokens_in=0,
         total_tokens_out=0,
         total_cost_usd=0.0,

@@ -24,6 +24,7 @@ Usage:
         TAX_RULES, seed_tax_rules,
         OMBUDSMAN_OFFICES, seed_ombudsman,
     )
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from hibiscus.knowledge.graph.client import Neo4jClient
 from hibiscus.observability.logger import get_logger
@@ -35,6 +36,7 @@ from .regulations import REGULATIONS, seed_regulations
 from .benchmarks import BENCHMARKS, seed_benchmarks
 from .tax_rules import TAX_RULES, seed_tax_rules
 from .ombudsman import OMBUDSMAN_OFFICES, seed_ombudsman
+from .botproject_seed import seed_from_botproject
 
 __all__ = [
     "INSURERS",
@@ -49,6 +51,7 @@ __all__ = [
     "seed_tax_rules",
     "OMBUDSMAN_OFFICES",
     "seed_ombudsman",
+    "seed_from_botproject",
     "seed_all",
 ]
 
@@ -77,6 +80,7 @@ async def seed_all(client: Neo4jClient) -> None:
         ("benchmarks", seed_benchmarks),
         ("tax_rules", seed_tax_rules),
         ("ombudsman", seed_ombudsman),
+        ("botproject", lambda c: seed_from_botproject(c)),
     ]
 
     logger.info("seed_all_start", seeder_count=len(seeders))

@@ -12,6 +12,7 @@ Algorithm:
 6. Default: English
 
 No LLM call. Pure computation. Microsecond latency.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from typing import Dict

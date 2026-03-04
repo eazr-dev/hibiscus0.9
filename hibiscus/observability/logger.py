@@ -7,6 +7,7 @@ Every log entry includes:
   request_id, session_id, user_id, timestamp, level, component,
   agent_name (if applicable), model_used, tokens_in, tokens_out,
   latency_ms, confidence, message
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import logging
 import sys

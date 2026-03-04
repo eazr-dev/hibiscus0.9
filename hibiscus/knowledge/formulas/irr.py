@@ -6,6 +6,7 @@ Newton-Raphson method for computing IRR of insurance policy cash flows.
 Used by SurrenderCalculator and Calculator agents to compare:
 - IRR of holding the policy vs surrendering
 - IRR vs FD rates (7.5%) vs Nifty 50 historical (12-14%)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Optional
 

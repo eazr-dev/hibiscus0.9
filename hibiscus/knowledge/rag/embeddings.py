@@ -21,6 +21,7 @@ Costs:
 
 IMPORTANT: Qdrant collection dimension = 1024 (bge-large-en-v1.5).
 If switching to OpenAI (1536 dims), recreate Qdrant collections.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import time

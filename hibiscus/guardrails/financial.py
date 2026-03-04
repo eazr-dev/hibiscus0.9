@@ -6,6 +6,7 @@ Validates financial numbers in responses for sanity:
 - Unit checking (Indian rupee format: ₹, lakhs/crores)
 - Consistency (premium-to-coverage ratio check)
 - Flags suspicious extraction (e.g., ₹50 premium for ₹50L coverage)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass

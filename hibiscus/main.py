@@ -1,10 +1,12 @@
 """
-Hibiscus — EAZR AI Intelligence Engine
-=======================================
-FastAPI application entry point.
+Hibiscus v0.9 — EAZR AI Insurance Intelligence Engine
+Module: main
+Purpose: FastAPI application entry point and lifespan management
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import os
+import sys
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -21,11 +23,23 @@ logger = get_logger(__name__)
 async def lifespan(app: FastAPI):
     """Application startup and shutdown."""
     configure_logging(settings.hibiscus_log_level)
+
+    # ── Startup banner ────────────────────────────────────────────
+    print(
+        "\n"
+        "╔══════════════════════════════════════════════════╗\n"
+        "║  Hibiscus v0.9 — EAZR AI Intelligence Engine    ║\n"
+        "║  12 Agents | 1,207 Products | 100 Regulations   ║\n"
+        "║  Copyright (c) 2026 EAZR Digipayments Pvt Ltd   ║\n"
+        "╚══════════════════════════════════════════════════╝\n",
+        file=sys.stderr,
+        flush=True,
+    )
+
     logger.info(
         "hibiscus_starting",
         version=settings.app_version,
         environment=settings.hibiscus_env,
-        eazr_api_base=settings.eazr_api_base,
     )
 
     # ── Initialize connections ──────────────────────────────────
@@ -73,15 +87,73 @@ async def lifespan(app: FastAPI):
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="Hibiscus — EAZR AI Intelligence Engine",
-        description="12-agent insurance AI operating system. DeepSeek-primary.",
+        title="Hibiscus v0.9 — EAZR AI Intelligence Engine",
+        description=(
+            "Hibiscus is EAZR's AI insurance intelligence engine — a 12-agent orchestration system "
+            "that provides policy analysis, product recommendations, claims guidance, tax advisory, "
+            "surrender value calculations, and portfolio optimization for Indian insurance consumers.\n\n"
+            "**Key capabilities:**\n"
+            "- Native PDF extraction (ABSORB pipeline) — classify, extract, validate, score, gap-analyze\n"
+            "- Knowledge Graph: 62 insurers, 1,207 products, 100 IRDAI regulations, 760 CSR benchmarks\n"
+            "- RAG: 847 chunks (IRDAI circulars, glossary, tax rules, claims processes)\n"
+            "- 6-layer memory: session, conversation, profile, portfolio, knowledge, document\n"
+            "- Streaming SSE for real-time token delivery\n\n"
+            "**Authentication:** Bearer JWT token (optional in dev mode)\n\n"
+            "**Rate limiting:** 60 requests/minute per IP\n\n"
+            "**LLM cost:** ~₹0.045/conversation average"
+        ),
         version=settings.app_version,
+        terms_of_service="https://eazr.in/terms",
+        contact={
+            "name": "EAZR AI Engineering",
+            "url": "https://eazr.in",
+            "email": "engineering@eazr.in",
+        },
+        license_info={
+            "name": "Proprietary",
+            "url": "https://eazr.in/license",
+        },
+        openapi_tags=[
+            {"name": "Chat", "description": "Conversational AI endpoint — streaming and non-streaming"},
+            {"name": "Analysis", "description": "Policy document analysis and scoring"},
+            {"name": "Portfolio", "description": "Portfolio breakdown and optimization"},
+            {"name": "Health", "description": "Service health, metrics, and dependency status"},
+            {"name": "WebSocket", "description": "Real-time bidirectional chat via WebSocket"},
+        ],
         default_response_class=ORJSONResponse,
         lifespan=lifespan,
         docs_url="/hibiscus/docs",
         redoc_url="/hibiscus/redoc",
         openapi_url="/hibiscus/openapi.json",
     )
+
+    # ── Custom OpenAPI schema with security ────────────────────────
+    def custom_openapi():
+        if app.openapi_schema:
+            return app.openapi_schema
+        from fastapi.openapi.utils import get_openapi
+        schema = get_openapi(
+            title=app.title,
+            version=app.version,
+            description=app.description,
+            routes=app.routes,
+            tags=app.openapi_tags,
+            contact=app.contact,
+            license_info=app.license_info,
+        )
+        schema["components"]["securitySchemes"] = {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+                "description": "JWT token. Optional in dev mode (empty JWT_SECRET = auth skipped).",
+            }
+        }
+        schema["security"] = [{"BearerAuth": []}]
+        app.openapi_schema = schema
+        return schema
+
+    app.openapi = custom_openapi
 
     # ── CORS ─────────────────────────────────────────────────────
     from hibiscus.api.middleware.cors import configure_cors

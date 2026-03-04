@@ -8,6 +8,7 @@ Functions
 ---------
 compare_products_table(product_names)   — side-by-side markdown table
 compare_products_summary(product_names) — structured comparison dict
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List
 

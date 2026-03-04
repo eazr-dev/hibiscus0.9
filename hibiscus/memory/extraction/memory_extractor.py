@@ -15,6 +15,7 @@ Design principles:
     dropped — never raises to the caller.
   - All extracted values go through the appropriate memory layer's validation
     before persistence; this module does not write to storage directly.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import asyncio
 import json

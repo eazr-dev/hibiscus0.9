@@ -2,6 +2,7 @@
 Opportunity Cost Calculator Tool
 =================================
 Agent-callable tool wrapping knowledge/formulas/opportunity_cost.py.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict
 

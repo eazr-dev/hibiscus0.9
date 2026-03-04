@@ -2,6 +2,7 @@
 Unit Tests — Guardrails
 ========================
 Tests hallucination detection, compliance checks, and financial validation.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 from hibiscus.guardrails.hallucination import check_hallucination

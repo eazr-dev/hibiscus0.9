@@ -9,6 +9,7 @@ Usage:
     integration = get_integration("Star Health")
     if integration:
         quote = await integration.get_quote(age=30, sum_insured=1000000)
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Dict, Optional
 

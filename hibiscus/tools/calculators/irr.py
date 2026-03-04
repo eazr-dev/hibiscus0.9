@@ -2,6 +2,7 @@
 IRR Calculator Tool
 ====================
 Agent-callable tool wrapping knowledge/formulas/irr.py.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from typing import Any, Dict, List, Optional
 

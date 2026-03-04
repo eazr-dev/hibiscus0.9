@@ -10,6 +10,7 @@ Methods:
 
 All amounts in INR. Inflation/discount rates as decimals.
 NEVER pass results to LLM without confidence attribution.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import math
 from dataclasses import dataclass, field

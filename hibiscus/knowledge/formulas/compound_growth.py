@@ -5,6 +5,7 @@ Time-value-of-money calculations for insurance and investment analysis.
 
 Used by: PortfolioOptimizer, TaxAdvisor, OpportunityCostCalculator.
 All values in INR. All rates as decimals (0.12 = 12%).
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import math
 from dataclasses import dataclass, field

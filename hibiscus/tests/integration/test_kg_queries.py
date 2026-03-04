@@ -3,6 +3,7 @@ Integration tests: Neo4j Knowledge Graph query correctness.
 
 Tests that KG tools return expected data for seeded insurers, products, regulations.
 Requires Neo4j running with seed data loaded via make seed-kg.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import pytest
 import asyncio

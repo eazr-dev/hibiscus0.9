@@ -4,6 +4,7 @@ EAZR Protection Score Calculator — native scoring using KG benchmarks.
 Absorbs botproject's protection_score_calculator.py and universal_scores.py.
 
 Output: EAZR Score 0-100 with component breakdown per category.
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 from __future__ import annotations
 

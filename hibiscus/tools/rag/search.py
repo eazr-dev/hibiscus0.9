@@ -16,6 +16,7 @@ Usage by agents:
     results = await search_insurance_knowledge("what is copay in health insurance")
     context = format_rag_context(results)
     # Pass context to LLM prompt
+Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 from typing import Any, Dict, List, Optional
