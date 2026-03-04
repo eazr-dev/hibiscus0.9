@@ -128,7 +128,7 @@ async def _do_store(state: HibiscusState, plog: PipelineLogger) -> None:
     # ── Trigger async memory extraction (L2-L4 updates) ───────────────────
     try:
         from hibiscus.memory.extraction.memory_extractor import schedule_extraction
-        messages = state.get("conversation_history", [])
+        messages = state.get("session_history", [])
         if not messages:
             messages = [
                 {"role": "user", "content": state.get("message", "")},

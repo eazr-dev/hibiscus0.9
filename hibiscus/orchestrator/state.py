@@ -7,24 +7,6 @@ import operator
 from enum import Enum
 from typing import Annotated, Any, Dict, List, Optional, TypedDict
 
-from pydantic import BaseModel, Field
-
-
-class AgentOutput(BaseModel):
-    """Structured output from a specialist agent."""
-    agent: str
-    success: bool
-    confidence: float = Field(default=0.0, ge=0.0, le=1.0)
-    response: str = ""
-    error: str = ""
-    latency_ms: int = 0
-    tokens_in: int = 0
-    tokens_out: int = 0
-    sources: List[Dict[str, Any]] = Field(default_factory=list)
-    structured_data: Dict[str, Any] = Field(default_factory=dict)
-    follow_up_suggestions: List[str] = Field(default_factory=list)
-    products_relevant: List[str] = Field(default_factory=list)
-
 
 class Complexity(str, Enum):
     L1 = "L1"  # Simple FAQ — direct LLM fast path
@@ -95,7 +77,7 @@ class HibiscusState(TypedDict, total=False):
     confidence: float       # 0.0 - 1.0 (aggregated across all agents)
     sources: List[Dict[str, Any]]  # [{type, reference, confidence, page}]
     follow_up_suggestions: List[str]
-    products_relevant: List[str]  # IPF/SVF if applicable
+    eazr_products_relevant: List[str]  # IPF/SVF if applicable
 
     # ── METADATA ─────────────────────────────────────────────────────────
     total_tokens_in: int
@@ -150,7 +132,7 @@ def initial_state(
         confidence=0.0,
         sources=[],
         follow_up_suggestions=[],
-        products_relevant=[],
+        eazr_products_relevant=[],
         total_tokens_in=0,
         total_tokens_out=0,
         total_cost_usd=0.0,

@@ -153,6 +153,42 @@ async def run(state: HibiscusState) -> dict:
         _fetch_outcome_followups(),
     )
 
+    # ── Apply context budget enforcement (12,000 chars total) ──────────
+    from hibiscus.memory.assembler import _LAYER_CHAR_LIMITS
+    import json as _json
+
+    def _estimate_chars(obj) -> int:
+        if obj is None:
+            return 0
+        if isinstance(obj, str):
+            return len(obj)
+        return len(_json.dumps(obj, default=str))
+
+    # Truncate list-type layers to their char budgets
+    def _truncate_list(items: list, max_chars: int) -> list:
+        total = 0
+        result = []
+        for item in items:
+            size = _estimate_chars(item)
+            if total + size > max_chars:
+                break
+            result.append(item)
+            total += size
+        return result
+
+    session_history = _truncate_list(
+        session_history, _LAYER_CHAR_LIMITS.get("session_history", 3000)
+    )
+    policy_portfolio = _truncate_list(
+        policy_portfolio, _LAYER_CHAR_LIMITS.get("policy_portfolio", 1500)
+    )
+    relevant_memories = _truncate_list(
+        relevant_memories, _LAYER_CHAR_LIMITS.get("knowledge_memories", 1500)
+    )
+    relevant_conversations = _truncate_list(
+        relevant_conversations, _LAYER_CHAR_LIMITS.get("conversation_history", 1200)
+    )
+
     latency_ms = int((time.time() - start) * 1000)
     plog.step_complete(
         "context_assembly",

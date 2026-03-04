@@ -3,6 +3,8 @@
 Memory database — PostgreSQL async session factory for profile and outcome persistence.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
+from typing import Optional
+
 import asyncpg
 
 from hibiscus.config import settings
@@ -10,7 +12,7 @@ from hibiscus.observability.logger import get_logger
 
 logger = get_logger(__name__)
 
-_pool: asyncpg.Pool | None = None
+_pool: Optional[asyncpg.Pool] = None
 
 
 def _pg_url() -> str:
@@ -24,7 +26,7 @@ def _pg_url() -> str:
     return url
 
 
-async def get_pool() -> asyncpg.Pool | None:
+async def get_pool() -> Optional[asyncpg.Pool]:
     """Return (or lazily create) the shared connection pool.
 
     Returns None when PostgreSQL is unavailable, allowing callers to degrade

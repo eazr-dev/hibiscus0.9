@@ -28,22 +28,9 @@ WORKDIR /app
 # Copy dependency files first (cache layer)
 COPY hibiscus/pyproject.toml /app/hibiscus/pyproject.toml
 
-# Install dependencies
+# Install dependencies from pyproject.toml
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir \
-        fastapi uvicorn[standard] python-multipart \
-        langgraph langchain langchain-core langchain-community langchain-text-splitters \
-        litellm openai anthropic \
-        httpx tenacity \
-        redis hiredis motor pymongo \
-        asyncpg sqlalchemy \
-        qdrant-client fastembed tiktoken \
-        neo4j \
-        pydantic pydantic-settings \
-        python-dotenv structlog orjson numpy python-dateutil \
-        tavily-python langsmith \
-        prometheus_client \
-        pdfplumber PyPDF2 pytesseract Pillow pdf2image
+    cd /app/hibiscus && pip install --no-cache-dir .
 
 # Pre-download fastembed model (BAAI/bge-large-en-v1.5) during build — cached in image
 # This avoids a ~2s model download on first request after container start

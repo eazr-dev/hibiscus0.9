@@ -3,10 +3,11 @@
 Unit tests: guardrails — compliance, hallucination, PII, emotional, financial checks.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
-import pytest
 from hibiscus.guardrails.hallucination import check_hallucination
 from hibiscus.guardrails.compliance import check_compliance
 from hibiscus.guardrails.financial import check_financial
+from hibiscus.guardrails.emotional import check_emotional
+from hibiscus.guardrails.pii import check_pii, mask_pii_for_logging
 
 
 class TestHallucinationGuard:
@@ -94,7 +95,7 @@ class TestComplianceGuard:
 class TestFinancialGuard:
     def test_normal_amounts_pass(self):
         result = check_financial(
-            "Your policy has a sum insured of ₹10 lakh and annual premium of ₹15,000."
+            "Your annual premium is ₹15,000 which is reasonable for your age group."
         )
         assert result.passed is True
 
@@ -112,3 +113,117 @@ class TestFinancialGuard:
             "Please upload your policy document so I can analyze it for you."
         )
         assert result.passed is True
+
+    def test_modified_response_present(self):
+        result = check_financial(
+            "Your policy has a sum insured of ₹10 lakh and annual premium of ₹15,000."
+        )
+        assert result.modified_response is not None
+
+    def test_irr_out_of_range_flagged(self):
+        result = check_financial(
+            "This ULIP has an IRR of 45% which is exceptional."
+        )
+        assert result.passed is False
+        assert any("IRR" in s for s in result.suspicious_numbers)
+
+
+class TestEmotionalGuard:
+    def test_neutral_passes_through(self):
+        result = check_emotional(
+            response="Your policy covers hospitalization up to ₹10 lakh.",
+            emotional_state="neutral",
+        )
+        assert result.passed is True
+        assert result.empathy_prefix == ""
+        assert result.escalate_to_claude is False
+
+    def test_distressed_gets_empathy_prefix(self):
+        result = check_emotional(
+            response="Here are the steps to file your claim.",
+            emotional_state="distressed",
+        )
+        assert result.empathy_prefix != ""
+        assert result.escalate_to_claude is True
+        assert result.modified_response is not None
+        assert result.modified_response.startswith(result.empathy_prefix)
+
+    def test_urgent_gets_empathy_and_escalation(self):
+        result = check_emotional(
+            response="You need to submit documents within 24 hours.",
+            emotional_state="urgent",
+        )
+        assert result.empathy_prefix != ""
+        assert result.escalate_to_claude is True
+
+    def test_frustrated_gets_empathy_prefix(self):
+        result = check_emotional(
+            response="We cannot process your request at this time.",
+            emotional_state="frustrated",
+        )
+        assert result.modified_response is not None
+        assert result.empathy_prefix != ""
+        # Frustrated responses get an empathy prefix
+        assert result.modified_response.startswith(result.empathy_prefix)
+
+    def test_curious_passes_unchanged(self):
+        result = check_emotional(
+            response="A deductible is the initial amount you pay before insurance coverage begins.",
+            emotional_state="curious",
+        )
+        assert result.passed is True
+        assert result.empathy_prefix == ""
+
+    def test_already_empathetic_no_double_prefix(self):
+        result = check_emotional(
+            response="I understand this is a difficult time. Here are the steps.",
+            emotional_state="distressed",
+        )
+        # Should not double the empathy prefix since response already has empathy
+        count = result.modified_response.lower().count("understand")
+        assert count <= 2  # Original + at most one prefix
+
+
+class TestPIIGuard:
+    def test_aadhaar_masked(self):
+        result = check_pii("My Aadhaar number is 1234 5678 9012.")
+        assert result.passed is False
+        assert "aadhaar" in [t.lower() for t in result.pii_types_found]
+        assert "1234 5678 9012" not in result.modified_response
+
+    def test_pan_masked(self):
+        result = check_pii("My PAN is ABCDE1234F and I need tax benefits.")
+        assert result.passed is False
+        assert "pan" in [t.lower() for t in result.pii_types_found]
+        assert "ABCDE1234F" not in result.modified_response
+
+    def test_phone_masked(self):
+        result = check_pii("Call me at +91 9876543210 for details.")
+        assert result.passed is False
+        assert any("mobile" in t.lower() or "phone" in t.lower() for t in result.pii_types_found)
+        assert "9876543210" not in result.modified_response
+
+    def test_email_masked(self):
+        result = check_pii("Send documents to user@example.com please.")
+        assert result.passed is False
+        assert "email" in [t.lower() for t in result.pii_types_found]
+        assert "user@example.com" not in result.modified_response
+
+    def test_no_pii_passes(self):
+        result = check_pii("What is the waiting period for pre-existing diseases?")
+        assert result.passed is True
+        assert len(result.pii_types_found) == 0
+
+    def test_multiple_pii_all_masked(self):
+        text = "My Aadhaar is 1234 5678 9012 and PAN is ABCDE1234F. Call 9876543210."
+        result = check_pii(text)
+        assert result.passed is False
+        assert len(result.pii_types_found) >= 2
+        assert "1234 5678 9012" not in result.modified_response
+        assert "ABCDE1234F" not in result.modified_response
+
+    def test_mask_pii_for_logging(self):
+        text = "User 9876543210 requested analysis for PAN ABCDE1234F"
+        masked = mask_pii_for_logging(text)
+        assert "9876543210" not in masked
+        assert "ABCDE1234F" not in masked

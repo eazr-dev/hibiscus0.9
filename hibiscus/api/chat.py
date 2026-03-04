@@ -94,7 +94,7 @@ async def chat(request: ChatRequest, http_request: Request) -> JSONResponse:
         total_latency_ms = int((time.time() - start_time) * 1000)
 
         # Get cost info
-        from hibiscus.observability.cost_tracker import finalize_conversation, get_conversation_cost
+        from hibiscus.observability.cost_tracker import get_conversation_cost
         conv_cost = get_conversation_cost(conversation_id)
         cost_inr = conv_cost.total_cost_inr if conv_cost else 0.0
 
@@ -124,7 +124,7 @@ async def chat(request: ChatRequest, http_request: Request) -> JSONResponse:
             confidence=final_state.get("confidence", 0.0),
             sources=sources,
             follow_up_suggestions=final_state.get("follow_up_suggestions", []),
-            products_relevant=final_state.get("products_relevant", []),
+            products_relevant=final_state.get("eazr_products_relevant", []),
             agents_invoked=final_state.get("agents_invoked", []),
             guardrail_results=final_state.get("guardrail_results", {}),
             latency_ms=total_latency_ms,
@@ -316,7 +316,7 @@ async def _stream_response(
                     "agents_invoked": final_state.get("agents_invoked", []),
                     "latency_ms": total_latency_ms,
                     "follow_up_suggestions": final_state.get("follow_up_suggestions", []),
-                    "products_relevant": final_state.get("products_relevant", []),
+                    "products_relevant": final_state.get("eazr_products_relevant", []),
                 },
             ))
 

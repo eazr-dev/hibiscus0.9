@@ -10,7 +10,14 @@ from hibiscus.observability.logger import PipelineLogger
 from hibiscus.orchestrator.state import HibiscusState
 
 _PROMPT_DIR = Path(__file__).parent.parent.parent / "llm" / "prompts"
-_SYSTEM_PROMPT = (_PROMPT_DIR / "system" / "hibiscus_core.txt").read_text()
+try:
+    _SYSTEM_PROMPT = (_PROMPT_DIR / "system" / "hibiscus_core.txt").read_text()
+except FileNotFoundError:
+    _SYSTEM_PROMPT = (
+        "You are Hibiscus, EAZR AI's insurance intelligence assistant for Indian consumers. "
+        "Provide accurate, helpful insurance guidance. Use Indian formats (₹, lakhs/crores, DD/MM/YYYY). "
+        "Include IRDAI disclaimers where appropriate."
+    )
 
 
 def _build_context_from_state(state: HibiscusState) -> str:
@@ -78,7 +85,7 @@ async def run(state: HibiscusState) -> dict:
     # different insurance categories don't share cached responses.
     user_id = state.get("user_id", "anon")
     cache_category = state.get("category", "general")
-    cache_key = f"{user_id}:{cache_category}:{message}"
+    cache_key = f"{user_id}:{cache_category}:{message.strip().lower()}"
 
     # Only serve from cache if there is no user-specific context in the prompt
     if use_cache and not context:

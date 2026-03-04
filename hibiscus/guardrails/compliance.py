@@ -5,7 +5,6 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import re
 from dataclasses import dataclass
-from typing import Optional
 
 
 IRDAI_DISCLAIMER = (
@@ -136,7 +135,7 @@ def check_compliance(
             )
             return ComplianceCheckResult(
                 passed=False,
-                reason=f"Response implies guaranteed claim settlement",
+                reason="Response implies guaranteed claim settlement",
                 modified_response=modified_response,
             )
 
@@ -184,6 +183,10 @@ def _soften_purchase_language(response: str) -> str:
         (r'\byou must buy\b', 'based on your profile, you may want to consider'),
         (r'\bpurchase this\b', 'this may suit your needs'),
         (r'\bbuy this policy\b', 'this policy may be suitable for your needs'),
+        (r'\bi recommend you buy\b', 'based on your profile, you may want to consider'),
+        (r'\bi suggest you buy\b', 'you might want to explore'),
+        (r'\byou need to buy\b', 'you may benefit from considering'),
+        (r'\byou have to buy\b', 'it may be worth considering'),
     ]
     for pattern, replacement in replacements:
         response = re.sub(pattern, replacement, response, flags=re.IGNORECASE)

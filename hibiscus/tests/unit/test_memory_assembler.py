@@ -3,7 +3,6 @@
 Unit tests: memory assembler — context merging across 6 memory layers.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
-import asyncio
 import pytest
 
 pytestmark = pytest.mark.asyncio
@@ -123,17 +122,17 @@ class TestAssembleContextGracefulFallback:
         assert elapsed < 10.0, f"assembler took too long: {elapsed:.1f}s"
 
 
-class TestTokenBudgetConstants:
-    """Verify TOKEN_BUDGET constants are sensible."""
+class TestLayerCharLimits:
+    """Verify _LAYER_CHAR_LIMITS constants are sensible."""
 
-    def test_token_budget_exists(self):
-        """TOKEN_BUDGET must be defined in assembler module."""
-        from hibiscus.memory.assembler import TOKEN_BUDGET
-        assert isinstance(TOKEN_BUDGET, dict)
+    def test_char_limits_exists(self):
+        """_LAYER_CHAR_LIMITS must be defined in assembler module."""
+        from hibiscus.memory.assembler import _LAYER_CHAR_LIMITS
+        assert isinstance(_LAYER_CHAR_LIMITS, dict)
 
     def test_all_budget_keys_present(self):
-        """All expected memory layers must have token budget allocations."""
-        from hibiscus.memory.assembler import TOKEN_BUDGET
+        """All expected memory layers must have char limit allocations."""
+        from hibiscus.memory.assembler import _LAYER_CHAR_LIMITS
         expected_keys = {
             "session_history",
             "document_context",
@@ -143,9 +142,9 @@ class TestTokenBudgetConstants:
             "conversation_history",
         }
         for key in expected_keys:
-            assert key in TOKEN_BUDGET, f"Missing TOKEN_BUDGET key: {key}"
+            assert key in _LAYER_CHAR_LIMITS, f"Missing _LAYER_CHAR_LIMITS key: {key}"
 
     def test_document_context_has_largest_budget(self):
-        """Document context deserves the largest token allocation."""
-        from hibiscus.memory.assembler import TOKEN_BUDGET
-        assert TOKEN_BUDGET["document_context"] >= TOKEN_BUDGET["session_history"]
+        """Document context deserves the largest char allocation."""
+        from hibiscus.memory.assembler import _LAYER_CHAR_LIMITS
+        assert _LAYER_CHAR_LIMITS["document_context"] >= _LAYER_CHAR_LIMITS["session_history"]

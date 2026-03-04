@@ -7,7 +7,6 @@ import time
 import uuid
 from typing import Any, Dict, List, Optional
 
-import openai
 from qdrant_client import AsyncQdrantClient
 from qdrant_client.http import models as qdrant_models
 
@@ -18,7 +17,7 @@ logger = get_logger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 COLLECTION_NAME = settings.qdrant_collection_insights
-VECTOR_DIM = 1536
+VECTOR_DIM = 1024  # BAAI/bge-large-en-v1.5
 VALID_INSIGHT_TYPES = {"preference", "concern", "fact", "history", "family"}
 
 # Recency weight: insights from the last 30 days get a +0.1 boost at scoring time
@@ -27,7 +26,7 @@ RECENCY_BOOST = 0.10
 
 # ── Client singletons ─────────────────────────────────────────────────────────
 _qdrant: Optional[AsyncQdrantClient] = None
-_openai_client: Optional[openai.AsyncOpenAI] = None
+_embedder = None  # fastembed TextEmbedding instance
 
 # ── In-memory fallback ────────────────────────────────────────────────────────
 _fallback_insights: List[Dict[str, Any]] = []
@@ -79,23 +78,25 @@ async def _get_qdrant() -> Optional[AsyncQdrantClient]:
     return _qdrant
 
 
-def _get_openai() -> openai.AsyncOpenAI:
-    global _openai_client
-    if _openai_client is None:
-        _openai_client = openai.AsyncOpenAI(api_key=settings.openai_api_key)
-    return _openai_client
+def _get_embedder():
+    """Lazily initialise fastembed TextEmbedding model."""
+    global _embedder
+    if _embedder is None:
+        from fastembed import TextEmbedding
+        _embedder = TextEmbedding(settings.embedding_model)
+    return _embedder
 
 
 async def _embed(text: str) -> Optional[List[float]]:
-    """Embed text using OpenAI text-embedding-3-small."""
-    if not settings.openai_api_key:
-        return None
+    """Embed text using fastembed BAAI/bge-large-en-v1.5."""
     try:
-        resp = await _get_openai().embeddings.create(
-            model=settings.embedding_model,
-            input=text[:8000],
+        embedder = _get_embedder()
+        import asyncio
+        loop = asyncio.get_event_loop()
+        vectors = await loop.run_in_executor(
+            None, lambda: list(embedder.embed([text[:8000]]))
         )
-        return resp.data[0].embedding
+        return vectors[0].tolist() if vectors else None
     except Exception as exc:
         logger.warning("knowledge_embed_failed", error=str(exc))
         return None

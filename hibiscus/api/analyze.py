@@ -5,9 +5,9 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 import uuid
+from typing import Optional
 
-from fastapi import APIRouter, Request
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter, File, Form, Request, UploadFile
 
 from hibiscus.api.schemas.analysis import AnalysisRequest, AnalysisResponse
 from hibiscus.api.schemas.common import Source
@@ -18,12 +18,24 @@ router = APIRouter()
 
 
 @router.post("/analyze", response_model=AnalysisResponse)
-async def analyze_document(request: AnalysisRequest, http_request: Request) -> AnalysisResponse:
+async def analyze_document(
+    http_request: Request,
+    file: Optional[UploadFile] = File(None),
+    user_id: Optional[str] = Form(None),
+    session_id: Optional[str] = Form(None),
+    document_id: Optional[str] = Form(None),
+    analysis_id: Optional[str] = Form(None),
+    request: Optional[AnalysisRequest] = None,
+) -> AnalysisResponse:
     """
-    Trigger a direct policy analysis for a stored document.
+    Trigger a policy analysis.
+
+    Accepts either:
+      - Multipart form with PDF file upload + form fields
+      - JSON body (AnalysisRequest) for stored document analysis
 
     Flow:
-      1. Load document from MongoDB (by document_id or analysis_id)
+      1. Load/extract document (from upload or MongoDB)
       2. Build HibiscusState with document_context pre-populated
       3. Run policy_analyzer agent directly
       4. Run guardrail_check on result
@@ -32,31 +44,59 @@ async def analyze_document(request: AnalysisRequest, http_request: Request) -> A
     start = time.time()
     request_id = getattr(http_request.state, "request_id", str(uuid.uuid4()))
 
+    # Resolve params from either multipart form or JSON body
+    _user_id = user_id or (request.user_id if request else "anonymous")
+    _session_id = session_id or (request.session_id if request else str(uuid.uuid4()))
+    _document_id = document_id or (request.document_id if request else None)
+    _analysis_id = analysis_id or (request.analysis_id if request else None)
+
     logger.info(
         "analyze_request",
         request_id=request_id,
-        user_id=request.user_id,
-        session_id=request.session_id,
-        document_id=request.document_id,
-        analysis_id=request.analysis_id,
+        user_id=_user_id,
+        session_id=_session_id,
+        document_id=_document_id,
+        analysis_id=_analysis_id,
+        has_file=file is not None,
     )
 
-    # ── Step 1: Load document from memory ─────────────────────────
+    # ── Step 1: Load document from upload or memory ─────────────────
     document_context = None
-    try:
-        from hibiscus.memory.layers.document import get_latest_document
-        doc = await get_latest_document(request.user_id)
-        if doc:
-            document_context = doc
-    except Exception as e:
-        logger.warning("analyze_doc_load_failed", error=str(e), request_id=request_id)
+
+    # If a file was uploaded, process it through the extraction pipeline
+    if file and file.filename:
+        try:
+            from hibiscus.extraction.processor import extract_text
+            from hibiscus.extraction.classifier import classify_document
+
+            file_bytes = await file.read()
+            extracted = extract_text(file_bytes, file.filename)
+            if extracted:
+                doc_type = classify_document(extracted)
+                document_context = {
+                    "doc_id": f"upload_{_user_id}_{int(time.time())}",
+                    "filename": file.filename,
+                    "extraction": extracted,
+                    "policy_type": doc_type,
+                }
+        except Exception as e:
+            logger.warning("analyze_upload_extract_failed", error=str(e), request_id=request_id)
+
+    if not document_context:
+        try:
+            from hibiscus.memory.layers.document import get_latest_document
+            doc = await get_latest_document(_user_id)
+            if doc:
+                document_context = doc
+        except Exception as e:
+            logger.warning("analyze_doc_load_failed", error=str(e), request_id=request_id)
 
     # ── Step 2: Build state ────────────────────────────────────────
     state = {
         "request_id": request_id,
-        "session_id": request.session_id,
-        "user_id": request.user_id,
-        "conversation_id": request.session_id,
+        "session_id": _session_id,
+        "user_id": _user_id,
+        "conversation_id": _session_id,
         "message": "Analyze this policy and provide a full EAZR assessment.",
         "intent": "analyze",
         "category": "",
@@ -85,7 +125,7 @@ async def analyze_document(request: AnalysisRequest, http_request: Request) -> A
         logger.error("analyze_agent_failed", error=str(e), request_id=request_id)
         latency_ms = int((time.time() - start) * 1000)
         return AnalysisResponse(
-            session_id=request.session_id,
+            session_id=_session_id,
             request_id=request_id,
             response="Unable to complete policy analysis. Please try again.",
             confidence=0.0,
@@ -146,8 +186,8 @@ async def analyze_document(request: AnalysisRequest, http_request: Request) -> A
             ))
 
     return AnalysisResponse(
-        document_id=request.document_id,
-        session_id=request.session_id,
+        document_id=_document_id,
+        session_id=_session_id,
         request_id=request_id,
         response=response_text,
         structured_data=structured_data,

@@ -40,7 +40,8 @@ async def run(args: argparse.Namespace) -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description="HibiscusBench Evaluation Runner")
     parser.add_argument("--category", default=None,
-                        choices=["health", "life", "motor", "travel", "adversarial", "cross"],
+                        choices=["health", "life", "motor", "travel", "adversarial", "cross",
+                                 "emotional", "pa", "ipf_svf"],
                         help="Run only this category")
     parser.add_argument("--url", default="http://localhost:8001",
                         help="Hibiscus API base URL")

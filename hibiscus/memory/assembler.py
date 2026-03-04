@@ -25,18 +25,6 @@ _LAYER_CHAR_LIMITS = {
     "conversation_history": 1200, # Past session context
 }
 
-# Max tokens to allocate per memory layer
-TOKEN_BUDGET = {
-    "session_history": 8000,      # ~40 turns at 200 tokens/turn
-    "document_context": 20000,    # Large extractions can be detailed
-    "user_profile": 500,
-    "policy_portfolio": 3000,
-    "knowledge_memories": 5000,
-    "conversation_history": 5000,
-    "outcome_memories": 2000,
-}
-
-
 async def assemble_context(
     user_id: str,
     session_id: str,
@@ -147,6 +135,20 @@ async def assemble_context(
             logger.warning("context_conversations_failed", user_id=user_id, error=str(e))
             return []
 
+    async def _fetch_outcomes() -> List:
+        try:
+            from hibiscus.memory.layers.outcome import get_user_outcomes
+            outcomes = await get_user_outcomes(user_id, limit=10)
+            logger.info(
+                "context_outcomes_loaded",
+                user_id=user_id,
+                outcome_count=len(outcomes),
+            )
+            return outcomes
+        except Exception as e:
+            logger.warning("context_outcomes_failed", user_id=user_id, error=str(e))
+            return []
+
     (
         session_history,
         document_context,
@@ -154,6 +156,7 @@ async def assemble_context(
         policy_portfolio,
         relevant_memories,
         relevant_conversations,
+        outcome_memories,
     ) = await asyncio.gather(
         _fetch_session(),
         _fetch_document(),
@@ -161,6 +164,7 @@ async def assemble_context(
         _fetch_portfolio(),
         _fetch_knowledge(),
         _fetch_conversations(),
+        _fetch_outcomes(),
     )
 
     context["session_history"] = session_history
@@ -169,6 +173,7 @@ async def assemble_context(
     context["policy_portfolio"] = policy_portfolio
     context["relevant_memories"] = relevant_memories
     context["relevant_conversations"] = relevant_conversations
+    context["outcome_memories"] = outcome_memories
 
     return context
 

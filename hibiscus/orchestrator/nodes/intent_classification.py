@@ -14,8 +14,14 @@ from hibiscus.orchestrator.state import HibiscusState
 
 # ── Prompt loading ──────────────────────────────────────────────────────────
 _PROMPT_DIR = Path(__file__).parent.parent.parent / "llm" / "prompts"
-_INTENT_PROMPT = (_PROMPT_DIR / "orchestrator" / "intent_classifier.txt").read_text()
-_SYSTEM_PROMPT = (_PROMPT_DIR / "system" / "hibiscus_core.txt").read_text()
+try:
+    _INTENT_PROMPT = (_PROMPT_DIR / "orchestrator" / "intent_classifier.txt").read_text()
+except FileNotFoundError:
+    _INTENT_PROMPT = "Classify the query into: category, intent, emotional_state, complexity, has_document. Return JSON."
+try:
+    _SYSTEM_PROMPT = (_PROMPT_DIR / "system" / "hibiscus_core.txt").read_text()
+except FileNotFoundError:
+    _SYSTEM_PROMPT = "You are the Hibiscus intent classifier. Return JSON only."
 
 
 # ── Fast keyword rules (no LLM needed for obvious cases) ───────────────────

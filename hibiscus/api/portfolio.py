@@ -8,7 +8,7 @@ from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from hibiscus.observability.logger import get_logger
 
@@ -51,12 +51,12 @@ class PortfolioResponse(BaseModel):
 
 # ── Endpoints ──────────────────────────────────────────────────────────────
 
-@router.get("/portfolio", response_model=PortfolioResponse)
+@router.get("/portfolio/{user_id}", response_model=PortfolioResponse)
 async def get_portfolio(user_id: str, http_request: Request) -> PortfolioResponse:
     """
     Fetch all insurance policies in a user's portfolio.
 
-    Query parameter: user_id (required)
+    Path parameter: user_id (required)
     Returns empty list with a note if PostgreSQL is unavailable.
     """
     # Prefer user_id from JWT state if available

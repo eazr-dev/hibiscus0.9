@@ -16,7 +16,7 @@ def route_by_complexity(state: HibiscusState) -> str:
     L4 (Deep research): Full pipeline with Tier 2 model.
     """
     complexity = state.get("complexity", "L1")
-    agents_needed = state.get("execution_plan", [])
+    agents_needed = state.get("agents_needed", [])
 
     # Fast path: L1/L2 with no specialized agents
     if complexity in ("L1", "L2") and not agents_needed:

@@ -3,10 +3,8 @@
 Centralized configuration — every setting validated at startup via Pydantic BaseSettings.
 Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
-import secrets
 from functools import lru_cache
-from typing import Optional
-from pydantic import Field, field_validator
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # ── Engine Identity (single source of truth — no hardcoded strings) ──
@@ -45,7 +43,7 @@ class HibiscusSettings(BaseSettings):
     deepseek_v3_model: str = "deepseek/deepseek-chat"        # Tier 1 — 80%
     deepseek_r1_model: str = "deepseek/deepseek-reasoner"    # Tier 2 — 15%
     claude_sonnet_model: str = "anthropic/claude-sonnet-4-5" # Tier 3 — 5%
-    embedding_model: str = "embedding-2"                     # GLM embeddings (primary)
+    embedding_model: str = "BAAI/bge-large-en-v1.5"           # Local fastembed (1024-dim)
 
     # ── LLM Config ──────────────────────────────────────────────────
     llm_temperature: float = Field(default=0.3, alias="LLM_TEMPERATURE")
@@ -89,10 +87,8 @@ class HibiscusSettings(BaseSettings):
     tavily_api_key: str = Field(default="", alias="TAVILY_API_KEY")
 
     # ── Auth / Security ───────────────────────────────────────────────
-    # JWT secret for API authentication. A random secret is generated at
-    # startup if none is provided — this ensures auth is NEVER silently
-    # disabled.  Set JWT_SECRET explicitly in .env for stable tokens across
-    # restarts.
+    # JWT auth is enabled when JWT_SECRET is explicitly set.
+    # When JWT_SECRET is unset, auth middleware passes through all requests.
     jwt_secret: str = Field(default="", alias="JWT_SECRET")
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
 
@@ -102,26 +98,10 @@ class HibiscusSettings(BaseSettings):
         alias="CORS_ALLOWED_ORIGINS",
     )
 
-    @field_validator("jwt_secret", mode="before")
-    @classmethod
-    def _ensure_jwt_secret(cls, v: str) -> str:
-        """Generate a random JWT secret if none is configured.
-
-        This prevents the dangerous situation where an empty secret silently
-        disables authentication.  The generated secret is ephemeral (lost on
-        restart), so production deployments MUST set JWT_SECRET in .env.
-        """
-        if not v or not v.strip():
-            import warnings
-            generated = secrets.token_urlsafe(32)
-            warnings.warn(
-                "JWT_SECRET is not set — a random ephemeral secret has been "
-                "generated. Set JWT_SECRET in .env for stable token validation "
-                "across restarts.",
-                stacklevel=2,
-            )
-            return generated
-        return v
+    @property
+    def jwt_auth_enabled(self) -> bool:
+        """JWT auth is enabled only when JWT_SECRET is explicitly set."""
+        return bool(self.jwt_secret and self.jwt_secret.strip())
 
     # ── Existing EAZR API (Node.js) ───────────────────────────────────
     existing_api_base_url: str = Field(

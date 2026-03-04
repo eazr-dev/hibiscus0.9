@@ -32,12 +32,16 @@ class JWTAuthMiddleware(BaseHTTPMiddleware):
     """
     JWT Bearer token validation middleware.
 
-    Every non-exempt request MUST carry a valid Bearer token.
-    The JWT_SECRET is always set (config generates a random one if missing),
-    so auth is never silently disabled.
+    When JWT_SECRET is unset, auth is skipped (pass-through).
+    When JWT_SECRET is set, every non-exempt request MUST carry a valid Bearer token.
     """
 
     async def dispatch(self, request: Request, call_next) -> Response:
+        # Skip auth entirely if JWT_SECRET is not configured
+        if not settings.jwt_auth_enabled:
+            request.state.user_id = request.headers.get("X-User-Id", "anonymous")
+            return await call_next(request)
+
         # Exempt paths (health, metrics, docs)
         path = request.url.path
         if path in _EXEMPT_PATHS or path.startswith(_EXEMPT_PREFIXES):

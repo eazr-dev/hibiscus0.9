@@ -42,8 +42,8 @@ class ConnectionRateLimiter:
         return True
 
 
-@router.websocket("/ws")
-async def websocket_chat(websocket: WebSocket):
+@router.websocket("/ws/{session_id}")
+async def websocket_chat(websocket: WebSocket, session_id: str = ""):
     """
     WebSocket endpoint for real-time streaming conversations.
 
@@ -52,7 +52,8 @@ async def websocket_chat(websocket: WebSocket):
     Rate limited to MAX_MESSAGES_PER_MINUTE messages per connection.
     """
     await websocket.accept()
-    session_id = str(uuid.uuid4())
+    if not session_id:
+        session_id = str(uuid.uuid4())
     rate_limiter = ConnectionRateLimiter()
     logger.info("websocket_connected", session_id=session_id)
 
@@ -120,14 +121,14 @@ async def _handle_message(
     try:
         from hibiscus.orchestrator.graph import hibiscus_graph
 
-        state = initial_state()
-        state.update({
-            "message": data.get("message", ""),
-            "user_id": data.get("user_id", "anonymous"),
-            "session_id": data.get("session_id", default_session_id),
-            "request_id": request_id,
-            "uploaded_files": data.get("uploaded_files", []),
-        })
+        state = initial_state(
+            user_id=data.get("user_id", "anonymous"),
+            session_id=data.get("session_id", default_session_id),
+            request_id=request_id,
+            conversation_id=data.get("session_id", default_session_id),
+            message=data.get("message", ""),
+            uploaded_files=data.get("uploaded_files", []),
+        )
 
         # Run the graph
         result = await hibiscus_graph.ainvoke(state)

@@ -101,7 +101,7 @@ async def run(state: HibiscusState) -> dict:
             "confidence": output.get("confidence", 0.0),
             "sources": sources,
             "follow_up_suggestions": output.get("follow_up_suggestions", []),
-            "products_relevant": output.get("products_relevant", []),
+            "eazr_products_relevant": output.get("products_relevant", []),
         }
 
     # Multiple agents → synthesize with LLM
@@ -150,10 +150,12 @@ async def run(state: HibiscusState) -> dict:
             completeness_ratio = len(successful) / total_agents
             avg_confidence *= completeness_ratio
 
-        # Merge sources from all agents
+        # Merge sources and products from all agents
         all_sources = []
+        all_products = []
         for o in agent_outputs:
             all_sources.extend(o.get("sources", []))
+            all_products.extend(o.get("products_relevant", []))
 
         latency_ms = int((time.time() - start) * 1000)
         plog.step_complete(
@@ -168,6 +170,7 @@ async def run(state: HibiscusState) -> dict:
             "confidence": avg_confidence,
             "sources": all_sources,
             "follow_up_suggestions": follow_ups,
+            "eazr_products_relevant": list(dict.fromkeys(all_products)),  # dedupe, preserve order
             "total_tokens_in": llm_response.get("tokens_in", 0),
             "total_tokens_out": llm_response.get("tokens_out", 0),
         }

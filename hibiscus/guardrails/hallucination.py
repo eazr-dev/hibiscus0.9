@@ -76,16 +76,6 @@ _UNCERTAINTY_PHRASES = [
     "i'd recommend checking",
 ]
 
-# ── Source type trust levels ───────────────────────────────────────────────
-_SOURCE_TRUST = {
-    "document_extraction": 0.90,
-    "knowledge_graph": 0.92,
-    "rag_retrieval": 0.75,
-    "web_search": 0.65,
-    "llm_reasoning": 0.45,
-}
-
-
 def check_hallucination(
     response: str,
     sources: List[Dict[str, Any]],
@@ -102,10 +92,12 @@ def check_hallucination(
     response_lower = response.lower()
 
     # ── Check 1: Confidence threshold ─────────────────────────────────────
-    if confidence < 0.30:
+    from hibiscus.config import settings as _settings
+    _low_threshold = _settings.confidence_threshold_low
+    if confidence < _low_threshold:
         return HallucinationCheckResult(
             passed=False,
-            reason=f"Response confidence too low ({confidence:.0%})",
+            reason=f"Response confidence too low ({confidence:.0%}, threshold {_low_threshold:.0%})",
             modified_response=_add_low_confidence_header(response),
             confidence_adjustment=-0.1,
         )

@@ -5,13 +5,10 @@ Copyright (c) 2026 EAZR Digipayments Pvt Ltd. All rights reserved.
 """
 import time
 import uuid
-from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-import openai
 from qdrant_client import AsyncQdrantClient
 from qdrant_client.http import models as qdrant_models
-from qdrant_client.http.exceptions import UnexpectedResponse
 
 from hibiscus.config import settings
 from hibiscus.observability.logger import get_logger
@@ -20,13 +17,13 @@ logger = get_logger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 COLLECTION_NAME = settings.qdrant_collection_conversations
-VECTOR_DIM = 1536                       # text-embedding-3-small
+VECTOR_DIM = 1024                       # BAAI/bge-large-en-v1.5
 CONVERSATION_TTL_DAYS = 90
 SUMMARY_MAX_MESSAGES = 20               # Last N messages used for summarisation
 
 # ── Client singletons ─────────────────────────────────────────────────────────
 _qdrant: Optional[AsyncQdrantClient] = None
-_openai: Optional[openai.AsyncOpenAI] = None
+_embedder = None  # fastembed TextEmbedding instance
 
 # ── In-memory fallback ────────────────────────────────────────────────────────
 _fallback_store: List[Dict[str, Any]] = []
@@ -75,26 +72,26 @@ async def _get_qdrant() -> Optional[AsyncQdrantClient]:
     return _qdrant
 
 
-def _get_openai() -> openai.AsyncOpenAI:
-    """Lazily initialise OpenAI client (used only for embeddings)."""
-    global _openai
-    if _openai is None:
-        _openai = openai.AsyncOpenAI(api_key=settings.openai_api_key)
-    return _openai
+def _get_embedder():
+    """Lazily initialise fastembed TextEmbedding model."""
+    global _embedder
+    if _embedder is None:
+        from fastembed import TextEmbedding
+        _embedder = TextEmbedding(settings.embedding_model)
+    return _embedder
 
 
 async def _embed(text: str) -> Optional[List[float]]:
-    """Generate a text embedding using OpenAI text-embedding-3-small."""
-    if not settings.openai_api_key:
-        logger.warning("embedding_skipped", reason="no_openai_key")
-        return None
+    """Generate a text embedding using fastembed BAAI/bge-large-en-v1.5."""
     try:
-        client = _get_openai()
-        response = await client.embeddings.create(
-            model=settings.embedding_model,
-            input=text[:8000],   # Guard against extremely long texts
+        embedder = _get_embedder()
+        # fastembed is synchronous; wrap in thread for async compatibility
+        import asyncio
+        loop = asyncio.get_event_loop()
+        vectors = await loop.run_in_executor(
+            None, lambda: list(embedder.embed([text[:8000]]))
         )
-        return response.data[0].embedding
+        return vectors[0].tolist() if vectors else None
     except Exception as exc:
         logger.warning("embedding_failed", error=str(exc))
         return None
@@ -314,7 +311,7 @@ async def extract_and_store_summary(
         result = await call_llm(
             messages=prompt_messages,
             tier="deepseek_v3",
-            purpose="conversation_summary",
+            agent="conversation_summary",
         )
         summary = result.get("content", "").strip()
         if not summary:

@@ -7,7 +7,7 @@ import time
 from typing import Any, AsyncIterator, Dict, List, Optional
 
 import litellm
-from litellm import acompletion, completion_cost
+from litellm import acompletion
 
 from hibiscus.config import settings
 from hibiscus.observability.logger import get_logger
@@ -56,7 +56,6 @@ async def call_llm(
     tier: str = "deepseek_v3",
     conversation_id: str = "unknown",
     agent: str = "unknown",
-    stream: bool = False,
     extra_kwargs: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
@@ -67,7 +66,6 @@ async def call_llm(
         tier: "deepseek_v3" | "deepseek_r1" | "claude_sonnet"
         conversation_id: For cost tracking
         agent: Agent name for logging
-        stream: Whether to stream (returns async generator)
         extra_kwargs: Additional LiteLLM kwargs
 
     Returns:
@@ -108,7 +106,6 @@ async def call_llm(
                 temperature=config["temperature"],
                 max_tokens=config["max_tokens"],
                 timeout=config["timeout"],
-                stream=stream,
             )
 
             latency_ms = int((time.time() - start) * 1000)
