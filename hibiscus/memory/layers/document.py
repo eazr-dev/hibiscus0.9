@@ -73,6 +73,10 @@ async def store_document(
     extraction: Optional[Dict[str, Any]] = None,
     extraction_confidence: float = 0.0,
     analysis_id: Optional[str] = None,
+    eazr_score: Optional[int] = None,
+    score_breakdown: Optional[Dict[str, Any]] = None,
+    gaps: Optional[list] = None,
+    validation: Optional[Dict[str, Any]] = None,
 ) -> str:
     """Store a document and its extraction in document memory."""
     doc = {
@@ -84,6 +88,10 @@ async def store_document(
         "extraction": extraction,
         "extraction_confidence": extraction_confidence,
         "analysis_id": analysis_id,
+        "eazr_score": eazr_score,
+        "score_breakdown": score_breakdown,
+        "gaps": gaps,
+        "validation": validation,
         "created_at": time.time(),
         "updated_at": time.time(),
     }

@@ -61,6 +61,7 @@ async def _do_store(state: HibiscusState, plog: PipelineLogger) -> None:
                     filename = (uploaded_files[0].get("filename") or "policy.pdf") if uploaded_files else "policy.pdf"
                     analysis_id = (uploaded_files[0].get("analysis_id")) if uploaded_files else None
                     doc_id = f"doc_{state['user_id']}_{int(time.time())}"
+                    structured = output.get("structured_data", {})
                     await store_document(
                         user_id=state["user_id"],
                         session_id=state["session_id"],
@@ -70,6 +71,10 @@ async def _do_store(state: HibiscusState, plog: PipelineLogger) -> None:
                         extraction=extraction,
                         extraction_confidence=output.get("confidence", 0.0),
                         analysis_id=analysis_id,
+                        eazr_score=structured.get("eazr_score"),
+                        score_breakdown=structured.get("score_breakdown"),
+                        gaps=structured.get("gaps"),
+                        validation=structured.get("validation"),
                     )
                 plog.step_start("document_analysis_stored")
             except Exception as e:

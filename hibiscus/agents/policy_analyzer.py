@@ -1,25 +1,25 @@
 """
 PolicyAnalyzer — Agent 1 (THE MOST CRITICAL AGENT)
 ====================================================
-Analyzes an uploaded insurance policy document.
-
-This is the core value proposition of EAZR:
-"I actually read your policy and can tell you exactly what you have."
+Analyzes an uploaded insurance policy document using NATIVE extraction.
 
 FLOW:
-1. Call extract_policy() → get structured data from EAZR's extraction engine
-2. Call calculate_score() → get EAZR Protection Score
-3. Call check_compliance() → get IRDAI compliance status
-4. Synthesize: strengths, weaknesses, gaps, red flags, recommendations
-5. Return with confidence scores per field and page references
+1. Get PDF data (from upload or cached)
+2. Process PDF → text with page markers (native)
+3. Classify policy type (native, 3-tier)
+4. Extract structured data (native, DeepSeek V3.2)
+5. Validate extraction (native, 5-check)
+6. Score (native, using KG benchmarks)
+7. Gap analysis (native)
+8. Synthesize response with LLM
+
+FALLBACK: If native extraction fails → fall back to botproject HTTP API.
 
 GROUND TRUTH RULE:
-Every number in the output comes from extraction or KG — NEVER from LLM imagination.
-If a field wasn't extracted, say "I couldn't find X in your document."
+Every number in the output comes from extraction (with page ref) or KG — NEVER LLM imagination.
 """
 import json
 import time
-from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from hibiscus.agents.base import BaseAgent, AgentResult
@@ -46,15 +46,21 @@ class PolicyAnalyzerAgent(BaseAgent):
         doc_context = state.get("document_context")
         message = state.get("message", "")
 
-        # ── Step 1: Get or extract policy data ─────────────────────────────
         extraction_data = None
         extraction_confidence = 0.0
-        sources = []
+        sources: List[Dict] = []
+        eazr_score = None
+        score_data: Dict = {}
+        gaps_data: List[Dict] = []
+        validation_data: Dict = {}
 
+        # ── Step 1: Use cached extraction if available ────────────────────
         if doc_context and doc_context.get("extraction"):
-            # Cached extraction from document memory
             extraction_data = doc_context["extraction"]
             extraction_confidence = doc_context.get("extraction_confidence", 0.85)
+            eazr_score = doc_context.get("eazr_score")
+            score_data = doc_context.get("score_breakdown", {})
+            gaps_data = doc_context.get("gaps", [])
             sources.append({
                 "type": "document_extraction",
                 "reference": f"Cached extraction: {doc_context.get('doc_id', 'unknown')}",
@@ -62,75 +68,47 @@ class PolicyAnalyzerAgent(BaseAgent):
             })
             plog.step_start("using_cached_extraction", doc_id=doc_context.get("doc_id", "?"))
 
+        # ── Step 2: Native extraction from uploaded PDF ───────────────────
         elif uploaded_files:
-            # Fresh extraction from uploaded files
-            doc_id = uploaded_files[0].get("doc_id") or uploaded_files[0].get("filename", "unknown")
-            plog.tool_call("extract_policy", f"Extracting: {doc_id}")
+            file_info = uploaded_files[0]
+            doc_id = file_info.get("doc_id") or file_info.get("filename", "unknown")
+            plog.step_start("native_extraction", doc_id=doc_id)
 
-            try:
-                from hibiscus.tools.existing_api.client import EAZRClient, HibiscusToolError
-                client = EAZRClient()
-                # Call the existing EAZR extraction API
-                file_info = uploaded_files[0]
-                if "analysis_id" in file_info:
-                    # Document already analyzed in botproject — fetch results
-                    analysis_result = await client.get_analysis(
-                        analysis_id=file_info["analysis_id"],
-                        user_id=state.get("user_id", ""),
-                    )
-                    # Botproject returns {policy: {...}, provider: {...}, ...}
-                    # Map to our extraction_data format
-                    if analysis_result.get("success") and analysis_result.get("policy"):
-                        bp_policy = analysis_result["policy"]
-                        bp_provider = analysis_result.get("provider", {})
-                        extraction_data = {
-                            "insurer": bp_policy.get("insuranceProvider", ""),
-                            "product_name": bp_policy.get("productName", bp_policy.get("policyNumber", "")),
-                            "policy_type": bp_policy.get("policyType", ""),
-                            "policy_number": bp_policy.get("policyNumber", ""),
-                            "policy_holder": bp_policy.get("policyHolderName", ""),
-                            "sum_insured": bp_policy.get("coverageAmount") or bp_policy.get("sumAssured", 0),
-                            "premium": bp_policy.get("premium", 0),
-                            "premium_frequency": bp_policy.get("premiumFrequency", "annual"),
-                            "start_date": bp_policy.get("startDate", ""),
-                            "end_date": bp_policy.get("endDate", ""),
-                            "status": bp_policy.get("status", ""),
-                            "copay": bp_policy.get("copay", "0%"),
-                            "csr": bp_provider.get("claimSettlementRatio", ""),
-                            "network_hospitals": bp_provider.get("networkSize", ""),
-                            "exclusions": analysis_result.get("exclusions", []),
-                            "gaps": analysis_result.get("gapAnalysis", []),
-                            "protection_score": analysis_result.get("protectionScore"),
-                            "sections": analysis_result.get("sections", []),
-                        }
-                    else:
-                        extraction_data = analysis_result.get("extracted_data", {}) or analysis_result.get("extractedData", {})
-                    extraction_confidence = 0.90
+            native_result = await self._native_extract(file_info, state, plog)
+
+            if native_result:
+                extraction_data = native_result["extraction"]
+                extraction_confidence = native_result.get("confidence", 0.90)
+                eazr_score = native_result.get("eazr_score")
+                score_data = native_result.get("score_breakdown", {})
+                gaps_data = native_result.get("gaps", [])
+                validation_data = native_result.get("validation", {})
+                sources.append({
+                    "type": "native_extraction",
+                    "reference": f"Native pipeline: {doc_id}",
+                    "confidence": extraction_confidence,
+                    "category": native_result.get("category", ""),
+                })
+            else:
+                # Fallback to botproject HTTP API
+                plog.warning("native_failed_trying_botproject")
+                fallback = await self._botproject_fallback(file_info, state, plog)
+                if fallback:
+                    extraction_data = fallback["extraction"]
+                    extraction_confidence = 0.85
                     sources.append({
-                        "type": "document_extraction",
-                        "reference": f"Analysis ID: {file_info['analysis_id']}",
-                        "confidence": extraction_confidence,
-                        "tool": "extract_policy",
+                        "type": "botproject_fallback",
+                        "reference": f"Botproject API: {doc_id}",
+                        "confidence": 0.85,
                     })
-                    plog.tool_result("extract_policy", success=True, latency_ms=0)
-                else:
-                    # No pre-analyzed doc — signal that extraction is needed
-                    plog.warning("no_analysis_id", files=len(uploaded_files))
-                    extraction_data = None
 
-            except Exception as e:
-                plog.error("extraction_failed", error=str(e))
-                extraction_data = None
-
-        # ── Handle case where no extracted data is available ───────────────
+        # ── Handle no data ────────────────────────────────────────────────
         if not extraction_data and not doc_context:
-            # Check if user is asking about a previously uploaded document
             if "what did i upload" in message.lower() or "my policy" in message.lower():
                 return AgentResult(
                     response=(
                         "I don't have a policy document on file for your current session. "
-                        "Please upload your insurance policy PDF and I'll analyze it for you. "
-                        "You can upload it using the attachment button."
+                        "Please upload your insurance policy PDF and I'll analyze it for you."
                     ),
                     confidence=0.95,
                     sources=[],
@@ -145,34 +123,15 @@ class PolicyAnalyzerAgent(BaseAgent):
                 sources=[],
             )
 
-        # ── Step 2: Get EAZR Protection Score ─────────────────────────────
-        eazr_score = None
-        score_data = {}
-        if extraction_data:
-            try:
-                from hibiscus.tools.existing_api.client import EAZRClient
-                client = EAZRClient()
-
-                if doc_context and doc_context.get("analysis_id"):
-                    score_result = await client.get_protection_score(
-                        analysis_id=doc_context["analysis_id"],
-                        user_id=state.get("user_id", ""),
-                    )
-                    eazr_score = score_result.get("eazr_score")
-                    score_data = score_result.get("score_breakdown", {})
-                    plog.tool_result("calculate_score", success=True, latency_ms=0)
-
-            except Exception as e:
-                plog.warning("score_fetch_failed", error=str(e))
-
-        # ── Step 3: Synthesize analysis with LLM ──────────────────────────
+        # ── Step 3: Synthesize analysis ───────────────────────────────────
         plog.step_start("synthesizing_analysis")
 
-        # Build prompt with ONLY extracted data (no invented numbers)
         synthesis_prompt = self._build_synthesis_prompt(
             extraction_data=extraction_data,
             eazr_score=eazr_score,
             score_data=score_data,
+            gaps_data=gaps_data,
+            validation_data=validation_data,
             message=message,
         )
 
@@ -189,12 +148,8 @@ class PolicyAnalyzerAgent(BaseAgent):
             )
 
             response_text = llm_response["content"]
-
-            # Compute overall confidence
             overall_confidence = self._compute_confidence(
-                extraction_data=extraction_data,
-                extraction_confidence=extraction_confidence,
-                eazr_score=eazr_score,
+                extraction_data, extraction_confidence, eazr_score,
             )
 
             latency_ms = int((time.time() - start) * 1000)
@@ -210,6 +165,8 @@ class PolicyAnalyzerAgent(BaseAgent):
                     "extraction": extraction_data,
                     "eazr_score": eazr_score,
                     "score_breakdown": score_data,
+                    "gaps": gaps_data,
+                    "validation": validation_data,
                 },
                 follow_up_suggestions=self._follow_ups(extraction_data),
                 eazr_products_relevant=self._check_ipf_svf_relevance(extraction_data),
@@ -217,44 +174,260 @@ class PolicyAnalyzerAgent(BaseAgent):
 
         except Exception as e:
             plog.error("synthesis_failed", error=str(e))
-            # Fallback: return raw extraction without synthesis
             return self._fallback_response(extraction_data, eazr_score, sources)
+
+    # ── Native Extraction Pipeline ──────────────────────────────────────
+
+    async def _native_extract(
+        self, file_info: Dict, state: HibiscusState, plog: PipelineLogger
+    ) -> Optional[Dict]:
+        """
+        Run the full native extraction pipeline:
+        PDF → text → classify → extract → validate → score → gaps
+        """
+        try:
+            from hibiscus.extraction.processor import document_processor
+            from hibiscus.extraction.classifier import policy_classifier
+            from hibiscus.extraction.validation import validation_engine
+            from hibiscus.extraction.scoring import scoring_engine
+            from hibiscus.extraction.gap_analysis import gap_analysis_engine
+
+            # Get PDF data
+            pdf_data = await self._get_pdf_data(file_info, state)
+            if not pdf_data:
+                plog.warning("no_pdf_data")
+                return None
+
+            # 1. Process PDF → text
+            plog.step_start("pdf_processing")
+            doc = await document_processor.process(
+                pdf_data, filename=file_info.get("filename"),
+            )
+            if doc.char_count < 200:
+                plog.warning("pdf_text_too_sparse", chars=doc.char_count)
+                return None
+            plog.step_complete("pdf_processing", pages=doc.total_pages, chars=doc.char_count)
+
+            # 2. Classify policy type
+            plog.step_start("classification")
+            classification = await policy_classifier.classify(doc.first_pages_text)
+            plog.step_complete(
+                "classification",
+                category=classification.category,
+                sub_type=classification.sub_type,
+                confidence=classification.confidence,
+                tier=classification.tier_used,
+            )
+
+            # 3. Extract structured data (LLM call)
+            plog.step_start("extraction")
+            extractor = self._get_extractor(classification.category)
+            extraction = await extractor.extract(doc, classification)
+            if not extraction:
+                plog.warning("extraction_empty")
+                return None
+            plog.step_complete("extraction", fields=len(extraction))
+
+            # 4. Validate extraction
+            plog.step_start("validation")
+            validation = await validation_engine.validate(extraction, classification.category)
+            plog.step_complete(
+                "validation",
+                score=validation.score,
+                confidence=validation.confidence,
+                errors=len(validation.errors),
+            )
+
+            # 5. Score
+            plog.step_start("scoring")
+            scoring = await scoring_engine.score(extraction, classification.category)
+            plog.step_complete(
+                "scoring",
+                eazr_score=scoring.eazr_score,
+                verdict=scoring.verdict,
+            )
+
+            # 6. Gap analysis
+            plog.step_start("gap_analysis")
+            gaps = await gap_analysis_engine.analyze(
+                extraction, scoring, classification.category,
+            )
+            plog.step_complete("gap_analysis", total_gaps=gaps.total_gaps)
+
+            # Build result
+            return {
+                "extraction": extraction,
+                "category": classification.category,
+                "sub_type": classification.sub_type,
+                "confidence": validation.weighted_confidence,
+                "eazr_score": scoring.eazr_score,
+                "score_breakdown": {
+                    "verdict": scoring.verdict,
+                    "verdict_color": scoring.verdict_color,
+                    "components": [
+                        {"name": c.name, "score": c.score, "weight": c.weight}
+                        for c in scoring.components
+                    ],
+                    "vfm_score": scoring.vfm_score,
+                    "zone_classification": scoring.zone_classification,
+                },
+                "gaps": [
+                    {
+                        "type": g.gap_type,
+                        "severity": g.severity,
+                        "category": g.category,
+                        "description": g.description,
+                        "impact": g.impact,
+                        "recommendation": g.recommendation,
+                        "estimated_cost": g.estimated_cost,
+                    }
+                    for g in gaps.gaps
+                ],
+                "validation": {
+                    "score": validation.score,
+                    "confidence": validation.confidence,
+                    "errors": len(validation.errors),
+                    "warnings": len(validation.warnings),
+                },
+            }
+
+        except Exception as e:
+            plog.error("native_extraction_failed", error=str(e))
+            return None
+
+    async def _get_pdf_data(self, file_info: Dict, state: HibiscusState) -> Optional[bytes]:
+        """Get PDF bytes from file_info."""
+        # Check for direct bytes
+        if "data" in file_info:
+            return file_info["data"]
+        if "content" in file_info:
+            data = file_info["content"]
+            if isinstance(data, bytes):
+                return data
+            if isinstance(data, str):
+                import base64
+                try:
+                    return base64.b64decode(data)
+                except Exception:
+                    return data.encode()
+
+        # Check for file path
+        if "path" in file_info:
+            try:
+                with open(file_info["path"], "rb") as f:
+                    return f.read()
+            except Exception:
+                pass
+
+        # Check for S3/URL
+        if "url" in file_info or "s3_key" in file_info:
+            # TODO: Download from S3/URL
+            pass
+
+        return None
+
+    def _get_extractor(self, category: str):
+        """Get the appropriate extractor for the category."""
+        from hibiscus.extraction.extractors.health import health_extractor
+        from hibiscus.extraction.extractors.life import life_extractor
+        from hibiscus.extraction.extractors.motor import motor_extractor
+        from hibiscus.extraction.extractors.travel import travel_extractor
+        from hibiscus.extraction.extractors.pa import pa_extractor
+
+        extractors = {
+            "health": health_extractor,
+            "life": life_extractor,
+            "motor": motor_extractor,
+            "travel": travel_extractor,
+            "pa": pa_extractor,
+        }
+        return extractors.get(category, health_extractor)
+
+    # ── Botproject Fallback ─────────────────────────────────────────────
+
+    async def _botproject_fallback(
+        self, file_info: Dict, state: HibiscusState, plog: PipelineLogger
+    ) -> Optional[Dict]:
+        """Fall back to botproject HTTP API for extraction."""
+        try:
+            from hibiscus.tools.existing_api.client import EAZRClient
+
+            client = EAZRClient()
+            if "analysis_id" in file_info:
+                analysis_result = await client.get_analysis(
+                    analysis_id=file_info["analysis_id"],
+                    user_id=state.get("user_id", ""),
+                )
+                if analysis_result.get("success") and analysis_result.get("policy"):
+                    bp_policy = analysis_result["policy"]
+                    bp_provider = analysis_result.get("provider", {})
+                    extraction = {
+                        "insurer": {"value": bp_policy.get("insuranceProvider", ""), "source_page": None, "confidence": 0.9},
+                        "product_name": {"value": bp_policy.get("productName", ""), "source_page": None, "confidence": 0.9},
+                        "policy_type": {"value": bp_policy.get("policyType", ""), "source_page": None, "confidence": 0.9},
+                        "policyNumber": {"value": bp_policy.get("policyNumber", ""), "source_page": None, "confidence": 0.9},
+                        "sumInsured": {"value": bp_policy.get("coverageAmount") or bp_policy.get("sumAssured", 0), "source_page": None, "confidence": 0.9},
+                        "totalPremium": {"value": bp_policy.get("premium", 0), "source_page": None, "confidence": 0.9},
+                        "policyPeriodStart": {"value": bp_policy.get("startDate", ""), "source_page": None, "confidence": 0.9},
+                        "policyPeriodEnd": {"value": bp_policy.get("endDate", ""), "source_page": None, "confidence": 0.9},
+                    }
+                    return {"extraction": extraction}
+            return None
+        except Exception as e:
+            plog.error("botproject_fallback_failed", error=str(e))
+            return None
+
+    # ── Synthesis ───────────────────────────────────────────────────────
 
     def _build_synthesis_prompt(
         self,
         extraction_data: Optional[Dict],
         eazr_score: Optional[int],
         score_data: Dict,
+        gaps_data: List[Dict],
+        validation_data: Dict,
         message: str,
     ) -> str:
-        """Build synthesis prompt using ONLY extracted data — no invented numbers."""
+        """Build synthesis prompt using ONLY extracted data."""
         if not extraction_data:
             return "No extraction data available. Ask user to upload their policy document."
 
-        # Serialize extraction data
-        extraction_text = json.dumps(extraction_data, indent=2, ensure_ascii=False)
+        extraction_text = json.dumps(extraction_data, indent=2, ensure_ascii=False, default=str)
         score_text = f"EAZR Protection Score: {eazr_score}/100" if eazr_score else "Score: Not yet calculated"
 
         if score_data:
-            score_breakdown = json.dumps(score_data, indent=2, ensure_ascii=False)
-            score_text += f"\nScore Breakdown:\n{score_breakdown}"
+            score_text += f"\nScore Breakdown:\n{json.dumps(score_data, indent=2, ensure_ascii=False, default=str)}"
+
+        gaps_text = ""
+        if gaps_data:
+            gaps_text = f"\n\nCOVERAGE GAPS IDENTIFIED ({len(gaps_data)} gaps):\n"
+            for g in gaps_data:
+                gaps_text += f"\n[{g.get('severity', '?')}] {g.get('category', '')}: {g.get('description', '')}"
+                if g.get("recommendation"):
+                    gaps_text += f"\n  → Recommendation: {g['recommendation']}"
+                if g.get("estimated_cost"):
+                    gaps_text += f" (est. ₹{g['estimated_cost']:,}/year)"
+
+        validation_text = ""
+        if validation_data:
+            validation_text = f"\n\nVALIDATION: Score {validation_data.get('score', '?')}/100, Confidence: {validation_data.get('confidence', '?')}"
 
         return f"""Analyze this insurance policy based on the EXTRACTED DATA below.
 
 USER'S QUESTION/REQUEST: {message}
 
-{score_text}
+{score_text}{validation_text}{gaps_text}
 
 EXTRACTED POLICY DATA (ground truth — cite page numbers when available):
 {extraction_text}
 
 INSTRUCTIONS:
 1. Every number you cite must come from the extracted data above
-2. If a field shows "not_found" or is missing → say "I couldn't find [field] in your document"
-3. Do NOT invent copay %, sub-limits, premiums, or sum insured values
-4. Use Indian format: ₹, lakhs/crores, DD/MM/YYYY dates
-5. Structure your response per the Policy Analyzer prompt format
-6. Include confidence indicators where appropriate
+2. For fields with source_page — cite as "(page X)" in your response
+3. If a field has confidence < 0.5 — caveat it: "This appears to be [value] but I'm not fully confident"
+4. If a field is null/not found → say "I couldn't find [field] in your document"
+5. Use Indian format: ₹, lakhs/crores, DD/MM/YYYY dates
+6. Include the coverage gaps analysis with severity levels
 7. End with IRDAI disclaimer
 
 CRITICAL: If user asked "what did I upload?" → summarize the policy in 2-3 sentences first."""
@@ -265,71 +438,98 @@ CRITICAL: If user asked "what did I upload?" → summarize the policy in 2-3 sen
         extraction_confidence: float,
         eazr_score: Optional[int],
     ) -> float:
-        """Compute overall response confidence."""
         if not extraction_data:
             return 0.3
 
-        # Start with extraction confidence
         confidence = extraction_confidence
-
-        # Boost if EAZR score available (means extraction was thorough)
         if eazr_score:
             confidence = min(confidence + 0.05, 0.95)
 
         # Check extraction completeness
-        key_fields = ["policy_type", "insurer", "sum_insured", "premium"]
-        found = sum(1 for f in key_fields if extraction_data.get(f))
-        completeness = found / len(key_fields)
+        key_fields = ["policyNumber", "insurerName", "sumInsured", "totalPremium",
+                       "policy_type", "insurer", "sum_insured", "premium"]
+        found = sum(
+            1 for f in key_fields
+            if extraction_data.get(f) and (
+                not isinstance(extraction_data[f], dict) or extraction_data[f].get("value")
+            )
+        )
+        completeness = found / max(len(key_fields), 1)
         confidence = confidence * 0.7 + completeness * 0.3
 
         return round(confidence, 2)
 
     def _follow_ups(self, extraction_data: Optional[Dict]) -> List[str]:
-        """Generate relevant follow-up suggestions."""
         base = [
             "Would you like me to compare this with similar policies in the market?",
             "Do you want an explanation of any specific clause or term?",
         ]
         if extraction_data:
-            policy_type = extraction_data.get("policy_type", "").lower()
-            if "life" in policy_type or "endowment" in policy_type or "ulip" in policy_type:
+            # Check policy type from either native or legacy format
+            policy_type = ""
+            pt_field = extraction_data.get("policyType") or extraction_data.get("policy_type")
+            if isinstance(pt_field, dict):
+                policy_type = str(pt_field.get("value", "")).lower()
+            elif pt_field:
+                policy_type = str(pt_field).lower()
+
+            if any(t in policy_type for t in ["life", "endowment", "ulip", "money back"]):
                 base.append("Should I calculate the surrender value of this policy?")
             elif "health" in policy_type:
                 base.append("Would you like guidance on how to file a cashless claim?")
         return base
 
     def _check_ipf_svf_relevance(self, extraction_data: Optional[Dict]) -> List[str]:
-        """Check if IPF or SVF products are relevant."""
         if not extraction_data:
             return []
         products = []
-        policy_type = extraction_data.get("policy_type", "").lower()
+
+        policy_type = ""
+        pt_field = extraction_data.get("policyType") or extraction_data.get("policy_type")
+        if isinstance(pt_field, dict):
+            policy_type = str(pt_field.get("value", "")).lower()
+        elif pt_field:
+            policy_type = str(pt_field).lower()
+
         if any(t in policy_type for t in ["life", "endowment", "ulip", "money back"]):
-            products.append("SVF")  # Surrender Value Financing
-        premium = extraction_data.get("annual_premium", 0)
-        if isinstance(premium, (int, float)) and premium > 50000:
-            products.append("IPF")  # Insurance Premium Financing
+            products.append("SVF")
+
+        premium_field = extraction_data.get("totalPremium") or extraction_data.get("premium")
+        premium = 0
+        if isinstance(premium_field, dict):
+            try:
+                premium = float(str(premium_field.get("value", 0)).replace(",", ""))
+            except (ValueError, TypeError):
+                pass
+        elif premium_field:
+            try:
+                premium = float(str(premium_field).replace(",", ""))
+            except (ValueError, TypeError):
+                pass
+
+        if premium > 50000:
+            products.append("IPF")
         return products
 
     def _fallback_response(
-        self,
-        extraction_data: Optional[Dict],
-        eazr_score: Optional[int],
-        sources: List,
+        self, extraction_data: Optional[Dict], eazr_score: Optional[int], sources: List,
     ) -> AgentResult:
-        """Minimal response when synthesis fails."""
         if extraction_data:
-            policy_type = extraction_data.get("policy_type", "insurance")
-            insurer = extraction_data.get("insurer", "your insurer")
-            sum_insured = extraction_data.get("sum_insured", "")
-            si_text = f" with sum insured of {self._format_currency(float(sum_insured))}" if sum_insured else ""
+            # Extract key info from either format
+            insurer_field = extraction_data.get("insurerName") or extraction_data.get("insurer")
+            insurer = ""
+            if isinstance(insurer_field, dict):
+                insurer = str(insurer_field.get("value", "your insurer"))
+            elif insurer_field:
+                insurer = str(insurer_field)
+
             score_text = f" Your EAZR Protection Score is **{eazr_score}/100**." if eazr_score else ""
 
             return AgentResult(
                 response=(
-                    f"I've analyzed your {policy_type} policy from {insurer}{si_text}.{score_text}\n\n"
+                    f"I've analyzed your policy from {insurer}.{score_text}\n\n"
                     "I encountered an issue generating the full analysis. "
-                    "Please ask me specific questions about your policy and I'll answer them directly."
+                    "Please ask me specific questions about your policy."
                 ),
                 confidence=0.70,
                 sources=sources,

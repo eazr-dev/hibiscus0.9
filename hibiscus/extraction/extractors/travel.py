@@ -1,0 +1,13 @@
+"""Travel insurance extractor — 71 fields."""
+from hibiscus.extraction.extractors.base import BaseExtractor
+
+
+class TravelExtractor(BaseExtractor):
+    category = "travel"
+    prompt_file = "travel.txt"
+    max_tokens = 4000
+    temperature = 0.0
+    timeout = 45
+
+
+travel_extractor = TravelExtractor()

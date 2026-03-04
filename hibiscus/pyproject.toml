@@ -68,6 +68,13 @@ dependencies = [
 
     # Prometheus metrics (optional — all helpers are no-ops if not installed)
     "prometheus_client>=0.21.0",
+
+    # PDF processing (native extraction pipeline)
+    "pdfplumber>=0.10.0",
+    "PyPDF2>=3.0.0",
+    "pytesseract>=0.3.10",
+    "Pillow>=10.0.0",
+    "pdf2image>=1.16.0",
 ]
 
 [project.optional-dependencies]

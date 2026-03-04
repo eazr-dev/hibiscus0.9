@@ -465,6 +465,56 @@ All files specified in the blueprint directory structure now exist:
 
 **Blueprint coverage: 100%** — All files in the directory structure (lines 243-960) now exist on disk.
 
+### ABSORB: Native Extraction Pipeline (2026-03-04)
+
+PolicyAnalyzer now runs a **native extraction pipeline** — zero HTTP dependency on botproject for intelligence. Botproject HTTP tools are kept as fallback.
+
+**Pipeline:** PDF → text (pdfplumber/PyPDF2/OCR) → classify (3-tier) → extract (DeepSeek V3.2 JSON mode) → validate (5-check) → score (EAZR Score + zone classification) → gap analysis → synthesize
+
+#### New Files Created
+| Component | File | Description |
+|-----------|------|-------------|
+| Document processor | `hibiscus/extraction/processor.py` | PDF → text with page markers, 3-tier fallback (pdfplumber → PyPDF2 → OCR) |
+| Policy classifier | `hibiscus/extraction/classifier.py` | 3-tier: UIN/regex (0.85-0.98) → weighted keywords (0.50-0.85) → LLM CoT (<0.50) |
+| Base extractor | `hibiscus/extraction/extractors/base.py` | LLM extraction with 3-tier JSON recovery |
+| Health extractor | `hibiscus/extraction/extractors/health.py` | 84 fields |
+| Life extractor | `hibiscus/extraction/extractors/life.py` | 60 fields |
+| Motor extractor | `hibiscus/extraction/extractors/motor.py` | 97 fields |
+| Travel extractor | `hibiscus/extraction/extractors/travel.py` | 71 fields |
+| PA extractor | `hibiscus/extraction/extractors/pa.py` | 54 fields |
+| Health prompt | `hibiscus/extraction/prompts/health.txt` | System prompt for LLM extraction |
+| Life prompt | `hibiscus/extraction/prompts/life.txt` | System prompt for LLM extraction |
+| Motor prompt | `hibiscus/extraction/prompts/motor.txt` | System prompt for LLM extraction |
+| Travel prompt | `hibiscus/extraction/prompts/travel.txt` | System prompt for LLM extraction |
+| PA prompt | `hibiscus/extraction/prompts/pa.txt` | System prompt for LLM extraction |
+| Common schemas | `hibiscus/extraction/schemas/common.py` | ExtractedField, criticality maps, CSR data, network hospitals |
+| Health schema | `hibiscus/extraction/schemas/health.py` | Pydantic model — 84 CF fields |
+| Life schema | `hibiscus/extraction/schemas/life.py` | Pydantic model — 60 CF fields |
+| Motor schema | `hibiscus/extraction/schemas/motor.py` | Pydantic model — 97 CF fields |
+| Travel schema | `hibiscus/extraction/schemas/travel.py` | Pydantic model — 71 CF fields |
+| PA schema | `hibiscus/extraction/schemas/pa.py` | Pydantic model — 54 CF fields |
+| Validation engine | `hibiscus/extraction/validation.py` | 5-check: evidence, logic, format, range, confidence |
+| Scoring engine | `hibiscus/extraction/scoring.py` | EAZR Score 0-100, per-category components, zone classification |
+| Gap analysis | `hibiscus/extraction/gap_analysis.py` | Per-category gap detection with severity, impact, recommendations |
+
+#### Modified Files
+| File | Change |
+|------|--------|
+| `agents/policy_analyzer.py` | Rewired to native pipeline: processor → classifier → extractor → validator → scorer → gap analyzer. Botproject HTTP as fallback. |
+| `memory/layers/document.py` | Added eazr_score, score_breakdown, gaps, validation kwargs to store_document() |
+| `orchestrator/nodes/memory_storage.py` | Passes new fields to store_document() |
+| `pyproject.toml` | Added pdfplumber, PyPDF2, pytesseract, Pillow, pdf2image |
+| `Dockerfile` | Added tesseract-ocr, poppler-utils system deps |
+
+#### Architecture
+- **366 total extraction fields** across 5 types (Health 84, Motor 97, Travel 71, Life 60, PA 54)
+- **ConfidenceField format**: Every extracted value = `{value, source_page, confidence}`
+- **Criticality weighting**: CRITICAL (3x), IMPORTANT (2x), STANDARD (1x)
+- **5-Check Validation**: Evidence grounding, cross-field logic, format, range, confidence scoring
+- **EAZR Score Components**: Health (Emergency 30%, Critical Illness 25%, Family 25%, Stability 20%), Motor (IDV 30%, Coverage 25%, Insurer 20%, Premium 15%, NCB 10%), Life (Coverage 35%, Value 25%, Insurer 20%, Riders 10%, Flexibility 10%)
+- **Zone Classification**: 4-zone (green/lightGreen/amber/red) for health features
+- **Gap Types**: COVERAGE_GAP, SUB_LIMIT_TRAP, MISSING_COVERAGE, OVERLAP, INFLATION_EROSION
+
 ## KEY FILE REFERENCES
 
 When building a specific component, re-read the relevant section of the blueprint:

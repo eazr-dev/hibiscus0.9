@@ -3,10 +3,12 @@ FROM python:3.12-slim
 LABEL maintainer="EAZR Engineering"
 LABEL description="Hibiscus v5.0 — AI Intelligence Engine"
 
-# System dependencies
+# System dependencies (including Tesseract for OCR fallback and poppler for pdf2image)
 RUN apt-get update && apt-get install -y \
     curl \
     build-essential \
+    tesseract-ocr \
+    poppler-utils \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -28,7 +30,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pydantic pydantic-settings \
         python-dotenv structlog orjson numpy python-dateutil \
         tavily-python langsmith \
-        prometheus_client
+        prometheus_client \
+        pdfplumber PyPDF2 pytesseract Pillow pdf2image
 
 # Pre-download fastembed model (BAAI/bge-large-en-v1.5) during build — cached in image
 # This avoids a ~2s model download on first request after container start
