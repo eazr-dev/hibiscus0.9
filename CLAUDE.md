@@ -76,14 +76,14 @@ Hibiscus v0.9 — standalone product. Phases 1-3 complete, Phase 4 scaffolded.
 ### Key Metrics (2026-03-04)
 | Metric | Value |
 |--------|-------|
-| HibiscusBench DQ | **0.841** (target 0.800) |
-| Test pass rate | **120/120 (100%)** |
+| HibiscusBench DQ | **0.847** (target 0.800) |
+| Test pass rate | **139/140 (99.3%)** |
 | Extraction tests | **118/118 (100%)** |
 | Avg cost/conversation | **₹0.045** (target <₹3) |
 | Streaming TTFT | **2.0s** |
 | KG Products | **1,207** (1,041 with UINs) |
 | KG Insurers | **62** |
-| RAG Corpus Entries | **750** (50 circulars, 500 glossary, 100 claims, 100 case law) |
+| RAG Chunks | **943** (across 12 corpus files) |
 
 ### Knowledge Graph (Neo4j, live-verified)
 | Node Type | Count |
