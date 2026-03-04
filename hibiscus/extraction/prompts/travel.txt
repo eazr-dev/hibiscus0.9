@@ -76,4 +76,45 @@ CONTACT:
 - primaryContactName, primaryContactPhone, primaryContactEmail
 - emergencyContactIndiaName, emergencyContactIndiaRelationship, emergencyContactIndiaPhone
 
+DOMAIN KNOWLEDGE REFERENCE (use to validate extractions, NOT to fill missing fields):
+
+SCHENGEN VISA REQUIREMENT:
+- Minimum €30,000 (approximately $33,000 / ₹27-28 lakh) medical coverage MANDATORY
+- Must cover emergency medical expenses including repatriation
+- Policy must be valid for entire Schengen stay + 15 days buffer
+- Must cover all 27 Schengen member states
+- Policy must be from insurer recognized by the respective embassy
+# VERIFY: Schengen requirement is well-established — €30,000 minimum
+
+COMMON TRAVEL INSURANCE COVERAGE CATEGORIES:
+1. Medical Emergency: hospitalization, OPD, dental emergency, medical evacuation, repatriation of remains
+2. Trip Protection: trip cancellation, trip interruption, trip curtailment, missed connection
+3. Baggage: baggage loss/damage, baggage delay, personal documents loss, passport loss
+4. Flight: flight delay, hijack distress
+5. Liability: personal liability, legal expenses
+6. Accident: accidental death, permanent disability
+7. Specialized: adventure sports, COVID treatment, pre-existing condition cover
+
+TYPICAL COVERAGE AMOUNTS (for validation):
+- Medical expenses: $50,000-$500,000 (standard: $100,000-250,000)
+- Trip cancellation: $1,000-$10,000 (or 100% of non-refundable trip costs)
+- Baggage loss: $500-$3,000 (per item limit usually $250-500)
+- Baggage delay: $100-$500 (trigger: typically 12 hours)
+- Flight delay: $100-$500 (trigger: typically 6-12 hours)
+- Personal liability: $50,000-$500,000
+- Accidental death: $25,000-$250,000
+# VERIFY: approximate ranges — actual amounts vary significantly by plan tier
+
+PRE-EXISTING CONDITION HANDLING:
+- Most standard policies: completely exclude PED
+- Premium plans: some cover PED with 50% copay after waiting period (typically 12 months for annual policies)
+- Senior citizen plans: may cover PED with higher copay (20-50%)
+- Key: look for explicit PED coverage clause — absence means exclusion
+- Emergency stabilization for PED: some policies cover initial stabilization even if PED excluded
+
+COVID-19 COVERAGE:
+- Most policies now cover COVID treatment as standard
+- Quarantine coverage: some policies cover quarantine hotel expenses ($50-150/day for 14 days)
+- Travel disruption due to COVID: varies widely by insurer
+
 Return ONLY JSON. No markdown.

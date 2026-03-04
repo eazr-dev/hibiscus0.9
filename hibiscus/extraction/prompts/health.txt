@@ -138,4 +138,71 @@ NETWORK & CLAIMS:
 - claimDocuments: Array of required documents
 - preAuthTurnaround: Pre-auth turnaround time
 
+DOMAIN KNOWLEDGE REFERENCE (use to validate extractions, NOT to fill missing fields):
+
+IRDAI STANDARDIZED EXCLUSION LIST I — 16 Permanent Exclusions:
+1. War, invasion, act of foreign enemy, hostilities
+2. Ionising radiation or contamination by radioactivity
+3. Nuclear weapons material
+4. Willful self-injury or attempted suicide
+5. Alcohol or drug/substance abuse/misuse/addiction/overdose
+6. Investigation/treatment related to change of gender
+7. Treatment arising from or traceable to pregnancy, childbirth (except ectopic pregnancy & medically necessary miscarriage/abortion)
+8. Naturopathy treatment
+9. Unproven/experimental treatment or devices
+10. Cosmetic or aesthetic treatment (unless required due to accident/burn/cancer reconstruction)
+11. Hazardous or adventure sports (unless declared and premium paid)
+12. Breach of law with criminal intent
+13. Treatment received outside India (unless specifically covered)
+14. Sterility and infertility
+15. Obesity/weight control (unless medically necessary for morbid obesity BMI>40)
+16. Sleep disorders and snoring (unless documented sleep apnea)
+
+IRDAI STANDARDIZED EXCLUSION LIST II — 17 Time-Bound Exclusions (standard 24-month waiting):
+1. Cataract, 2. Benign ENT disorders, 3. Benign prostate hypertrophy, 4. Dysfunctional uterine bleeding/Menorrhagia,
+5. Fibromyoma, 6. Hysterectomy for menorrhagia or fibromyoma, 7. Hernia (all types),
+8. Hydrocele, 9. Congenital internal diseases (diagnosed after 18), 10. Fistula in anus,
+11. Piles/Hemorrhoids, 12. Sinusitis and related disorders, 13. Calculus diseases (kidney/gall/bladder stones),
+14. Gastric/duodenal ulcers, 15. Gout and rheumatism, 16. Joint replacement (unless accident),
+17. Non-infective arthritis including osteoarthritis
+
+IRDAI EXCLUSION LIST III — 2-Year Waiting (Pre-Existing Diseases):
+All pre-existing diseases have standard 36-month (or 48-month for older policies) waiting period.
+# VERIFY: IRDAI 2024 master circular reduced PED waiting to 36 months standard — needs verification against source
+
+IRDAI EXCLUSION LIST IV — Specific Conditions:
+Includes: HIV/AIDS (unless acquired through blood transfusion/occupational), obesity treatment,
+substance rehabilitation, dental (unless accidental), external congenital defects, age-related macular degeneration.
+
+ROOM CATEGORIES (standard across Indian hospitals):
+General Ward → Semi-Private (2-sharing) → Private (single) → Single AC → Deluxe → Suite
+Typical daily room rent ranges:
+- Metro (Mumbai, Delhi, Bangalore, Chennai, Hyderabad): ₹3,000-15,000/day (Single AC: ₹8,000-15,000)
+- Tier 2 (Pune, Ahmedabad, Jaipur, Lucknow, Kochi): ₹2,000-8,000/day (Single AC: ₹4,000-8,000)
+- Tier 3 and rural: ₹1,000-5,000/day (Single AC: ₹2,000-5,000)
+# VERIFY: approximate ranges — needs verification against hospital rate cards
+
+COMMON SUB-LIMIT PATTERNS (to help identify sub-limits in documents):
+- Ambulance: ₹2,000-5,000 per hospitalization
+- Cataract: ₹40,000-80,000 per eye
+- Maternity (normal delivery): ₹25,000-50,000; C-section: ₹50,000-75,000
+- Joint replacement: ₹1.5L-3L per joint
+- ICU daily: ₹5,000-20,000/day or 1-2% of SI
+- Modern treatment (robotic surgery etc.): 25-50% of SI
+
+MORATORIUM PERIOD:
+- Old policies (issued before Oct 2020): 8-year moratorium
+- New policies (IRDAI 2024 guideline): 5-year moratorium period — after this, insurer cannot contest claims for non-disclosure except fraud
+# VERIFY: approximate — needs verification against IRDAI circular
+
+FREE LOOK PERIOD:
+- Offline purchase: 15 days from receipt of policy document
+- Online/distance purchase: 30 days from receipt of policy document
+
+PORTABILITY RULES:
+- Policyholder can port to another insurer without losing PED waiting period credit
+- Must apply 45-60 days before renewal date
+- New insurer must honor accumulated waiting period credit
+- No fresh waiting period for portability within same coverage level
+
 Return ONLY the JSON object. No markdown, no explanations.

@@ -43,3 +43,30 @@ RULES:
 4. Use Indian formats: ₹, lakhs/crores, DD/MM/YYYY
 5. Include IRDAI disclaimer at the end of recommendations
 6. Show confidence per key claim (via confidence indicators in text)
+
+EMBEDDED DOMAIN EXPERTISE — BENCHMARKS FOR COMPARISON:
+
+HEALTH POLICY BENCHMARKS (what "good" looks like):
+- Room rent: "No limit" or "Single AC room" is good. "1% of SI" or "₹5,000/day" is restrictive for metros.
+- Copay: 0% is ideal. 10% is acceptable for lower premiums. 20%+ is high — flag it.
+- Restoration: 100% automatic restoration is standard in modern policies. No restoration = significant gap.
+- Pre-hospitalization: 60 days is good, 30 days is standard. Post: 180 days is good, 60 days is minimum.
+- Waiting periods: Initial 30 days (standard), PED 36 months (standard, some still 48 — flag), specific 24 months (standard).
+- Day care: Must cover at least 400+ procedures. If limited list → gap.
+- Consumables: Explicit coverage is modern. Most traditional policies exclude consumables (10-15% of hospital bills).
+- Modern treatment: Should cover robotic surgery, stem cell etc. Check limit — 25-50% of SI is common.
+- Mental health: Mandatory per Mental Healthcare Act 2017 — if excluded, flag as non-compliant.
+
+LIFE POLICY BENCHMARKS:
+- Term: SA should be 10-15x annual income. Anything less → inadequate.
+- Premium/SA ratio: For term, should be <1% of SA (e.g., ₹10K premium for ₹1Cr SA). If >2% → expensive.
+- Endowment IRR: Typical 4-5.5%. Compare to FD (7%), PPF (7.1%), Nifty (12% CAGR).
+- ULIP charges: Total charge impact should be <4% (IRDAI norm). Check fund management charge ≤1.35%.
+- Riders: CI, waiver of premium, AD are useful. If no riders attached → gap.
+
+MOTOR POLICY BENCHMARKS:
+- IDV: Should be close to current market value. Under-insured if IDV < 80% of market value.
+- NCB: 50% after 5+ years. If 0% on old vehicle → possible prior claim not disclosed.
+- Zero dep: Essential for vehicles <5 years. Without it, depreciation reduces claim by 30-50%.
+- CPA: ₹15L mandatory. If missing → non-compliant.
+# VERIFY: approximate benchmarks — needs verification against current market data

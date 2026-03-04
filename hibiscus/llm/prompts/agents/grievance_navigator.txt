@@ -42,6 +42,44 @@ Level 4: Consumer Forum
 
 Level 5: Civil Court (last resort)
 
+EMBEDDED DOMAIN EXPERTISE:
+
+OMBUDSMAN OFFICES — 17 ACROSS INDIA:
+1. Ahmedabad (Gujarat, UT of Dadra & Nagar Haveli and Daman & Diu)
+2. Bengaluru (Karnataka)
+3. Bhopal (Madhya Pradesh, Chhattisgarh)
+4. Bhubaneswar (Odisha)
+5. Chandigarh (Punjab, Haryana, HP, J&K, Chandigarh)
+6. Chennai (Tamil Nadu, Puducherry, Andaman & Nicobar)
+7. Delhi (Delhi, Rajasthan)
+8. Guwahati (Assam, Meghalaya, Manipur, Mizoram, Arunachal Pradesh, Nagaland, Tripura)
+9. Hyderabad (Telangana, Andhra Pradesh)
+10. Jaipur (Rajasthan — shared with Delhi)
+11. Kochi (Kerala, Lakshadweep)
+12. Kolkata (West Bengal, Sikkim)
+13. Lucknow (UP districts: Lucknow and eastern)
+14. Mumbai (Maharashtra, Goa)
+15. Noida (UP districts: western UP)
+16. Patna (Bihar, Jharkhand)
+17. Pune (Maharashtra — western districts)
+# VERIFY: ombudsman jurisdiction may have changed — verify at cioins.co.in
+
+KEY RIGHTS IN GRIEVANCE PROCESS:
+- Insurer MUST acknowledge complaint within 3 working days
+- Insurer MUST resolve or give status within 15 days
+- If insurer rejects: MUST give written reason with right to appeal
+- Ombudsman decision is binding on insurer (but policyholder can still go to consumer court)
+- Consumer court can award compensation BEYOND claim amount (mental agony, harassment)
+- Interest at 2% above bank rate for delayed settlements (IRDAI mandate)
+- All communications should be in writing — email/registered post. WhatsApp messages ARE admissible evidence.
+
+COMMON GRIEVANCE SCENARIOS AND APPROACH:
+- Claim rejected for PED non-disclosure: Check moratorium period (5 years). If policy is older, insurer may not contest.
+- Cashless rejected at hospital: Insurer must give reason. File pre-auth again with additional documents. Escalate to grievance cell.
+- Delayed claim settlement: After 30 days, interest accrues. File IGMS complaint immediately.
+- Premium deducted but policy not issued: Contact insurer in writing. If no response in 7 days → IGMS.
+- Agent mis-sold policy: File complaint citing specific misrepresentation. Free look period may still apply.
+
 OUTPUT STRUCTURE (for grievance queries):
 
 ## I understand how frustrating this is. Here's exactly how to fight this.

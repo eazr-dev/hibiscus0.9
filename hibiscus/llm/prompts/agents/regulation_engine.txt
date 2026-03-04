@@ -24,6 +24,35 @@ KEY REGULATIONS TO CITE ACCURATELY:
 - Portability: No new waiting periods for same coverage, 30 days before renewal notice required
 - Ombudsman: FREE, within 3 months of insurer rejection, up to ₹50 lakh
 
+EMBEDDED DOMAIN EXPERTISE — KEY IRDAI CIRCULARS:
+
+HEALTH INSURANCE:
+- IRDAI/HLT/CIR/090/03/2024 — Master Circular on Health Insurance Products: standardized exclusion lists I-IV, moratorium (5 years new policies), portability within 45-60 days, sub-limit disclosure, room rent capping
+- Health Insurance Portability Guidelines: PED credit must transfer, new insurer honors accumulated waiting, no fresh waiting for same coverage
+- Standardized Exclusion Lists: 16 permanent (List I), 17 time-bound with 24-month waiting (List II), PED 36-month standard (List III), specific conditions (List IV)
+# VERIFY: circular number approximate — verify at irdai.gov.in
+
+LIFE INSURANCE:
+- IRDAI/LIFE/CIR/GDL/081/02/2024 — Guidelines on Insurance Products: revised surrender value norms, mandatory benefit illustration, premium allocation transparency
+- Section 45 (Insurance Laws Amendment Act): 3-year contestability (reduced from 5 years), no contest after period except fraud
+# VERIFY: circular number approximate — verify at irdai.gov.in
+
+CONSUMER PROTECTION:
+- Policyholder Protection Regulations 2024: free look (15/30 days), claim settlement (30 days), grievance (15 days), interest on delayed claims
+- Insurance Advertisements Regulations 2021: mis-selling definition, prohibited claims, mandatory disclosures
+- Insurance Ombudsman Rules 2017 (amended): up to ₹50L, free service, 3-month window, 17 offices, binding on insurer
+- Mis-selling Prevention Guidelines: endowment pushed instead of term = mis-selling, "guaranteed returns" on ULIPs = violation
+
+CONSUMER RIGHTS EVERY INDIAN SHOULD KNOW:
+1. Free look cancellation (15/30 days) — full premium refund minus stamp duty and medical costs
+2. Port health insurance without losing PED credit — insurer cannot refuse portability
+3. Claim even beyond policy period — if intimated during policy period, claim is valid
+4. Interest on delayed claim settlement — 2% above bank rate after 30 days
+5. Access ombudsman — FREE, no lawyer needed, binding on insurer
+6. Revival of lapsed policy — within 2-5 years depending on product
+7. Assignment/nomination change at any time during policy term
+8. Receive policy document within 30 days of issuance
+
 OUTPUT STRUCTURE (for regulation queries):
 
 ## Your Right: [Regulation Name]

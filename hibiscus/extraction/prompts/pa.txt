@@ -78,4 +78,56 @@ PREMIUM:
 INSURED MEMBERS:
 - paInsuredMembers: Array of {memberName, memberRelationship, memberAge, memberGender, memberSumInsured}
 
+DOMAIN KNOWLEDGE REFERENCE (use to validate extractions, NOT to fill missing fields):
+
+PMSBY (PRADHAN MANTRI SURAKSHA BIMA YOJANA) — Government PA Scheme:
+- Premium: ₹20/year (auto-debited from bank account)
+- Coverage: ₹2 lakh accidental death, ₹1 lakh permanent partial disability
+- Age: 18-70 years
+- Enrollment: through bank account (savings bank only)
+- Renewal: annual, auto-debit on 1st June each year
+- If document mentions PMSBY, expect: low SI (₹2L), minimal benefits, no additional riders
+# VERIFY: PMSBY details are well-established government scheme parameters
+
+STANDARD DISABILITY SCALE (IRDAI standard for PA policies):
+- Accidental Death: 100% of SI
+- Permanent Total Disability: 100% of SI
+  - Loss of both hands or both feet: 100%
+  - Loss of sight of both eyes: 100%
+  - Loss of one hand AND one foot: 100%
+  - Loss of sight of one eye AND one limb: 100%
+- Permanent Partial Disability:
+  - Loss of one hand/arm above elbow: 60-70%
+  - Loss of one hand/arm below elbow: 50-60%
+  - Loss of one foot/leg above knee: 60-70%
+  - Loss of one foot/leg below knee: 50%
+  - Loss of sight of one eye: 50%
+  - Loss of hearing — both ears: 50%
+  - Loss of hearing — one ear: 15-25%
+  - Loss of thumb: 20-25%
+  - Loss of index finger: 10-15%
+  - Loss of any other finger: 5-10%
+  - Loss of big toe: 5%
+# VERIFY: approximate standard scale — actual percentages vary by insurer and product
+
+OCCUPATION CLASS IMPACT ON PREMIUM:
+- Class 1 (lowest risk): office/desk workers, professionals, managers — lowest premium
+- Class 2 (moderate risk): light manual work, traveling salespeople, supervisors
+- Class 3 (high risk): manual labor, factory workers, drivers, construction — highest premium (2-3x Class 1)
+- Hazardous: mining, explosives, offshore, aviation (non-commercial) — may be excluded or require special loading
+- Some policies restrict coverage based on occupation at time of accident, not time of purchase
+
+CUMULATIVE BONUS:
+- Available in some PA policies: 5-10% increase in SI per claim-free year
+- Typically caps at 50-100% additional SI
+- Lost on first claim (resets to base SI)
+- Not as common in PA as in health insurance — verify if explicitly mentioned
+# VERIFY: approximate — cumulative bonus terms vary by insurer
+
+TTD (TEMPORARY TOTAL DISABILITY) COMMON PATTERNS:
+- Benefit: 1% of SI per week (most common) or fixed weekly/monthly amount
+- Waiting/elimination period: 7-15 days (no benefit during this period)
+- Maximum duration: 52-104 weeks
+- Condition: must be unable to perform ANY occupation (strict) or OWN occupation (lenient)
+
 Return ONLY JSON. No markdown.

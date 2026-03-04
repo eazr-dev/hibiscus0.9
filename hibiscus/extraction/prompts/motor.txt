@@ -78,4 +78,62 @@ SECTION 8 — EXCLUSIONS:
 - electricalAccessoriesExclusion, nonElectricalAccessoriesExclusion
 - biofuelKitExclusion, otherExclusions (array)
 
+DOMAIN KNOWLEDGE REFERENCE (use to validate extractions, NOT to fill missing fields):
+
+IRDAI DEPRECIATION SCHEDULE (for parts — used in non-zero-dep claims):
+- Rubber/Nylon/Plastic parts: 50% depreciation
+- Fiberglass components: 30% depreciation
+- Windshield glass: 0% depreciation (first claim only in some policies)
+- Metal body parts: 0% (new vehicles) to 15% (5+ year old vehicles)
+- Batteries: 50% depreciation
+- Air bags: 50% depreciation
+- Tyres/tubes: 50% depreciation
+# VERIFY: approximate — needs verification against IRDAI motor circular
+
+STANDARD IDV DEPRECIATION BY VEHICLE AGE (from ex-showroom price):
+- Less than 6 months: 5% depreciation
+- 6 months to 1 year: 15% depreciation
+- 1-2 years: 20% depreciation
+- 2-3 years: 30% depreciation
+- 3-4 years: 40% depreciation
+- 4-5 years: 50% depreciation
+- Beyond 5 years: IDV by mutual agreement between insurer and insured
+# VERIFY: approximate — needs verification against IRDAI IDV guidelines
+
+COMPULSORY PERSONAL ACCIDENT (CPA) COVER:
+- Private cars: ₹15 lakh mandatory (owner-driver)
+- Two-wheelers: ₹15 lakh mandatory (owner-driver)
+- CPA premium is separate from TP liability premium
+- CPA covers: accidental death + permanent total disability of owner while driving/mounting/dismounting
+- CPA exemption: only if owner already has equivalent PA cover from another policy
+# VERIFY: approximate — needs verification against IRDAI CPA circular 2019
+
+NO CLAIM BONUS (NCB) SLABS:
+- After 1 claim-free year: 20% discount on OD premium
+- After 2 claim-free years: 25%
+- After 3 claim-free years: 35%
+- After 4 claim-free years: 45%
+- After 5+ claim-free years: 50% (maximum)
+- NCB is earned by policyholder, NOT vehicle — transfers to new vehicle
+- NCB lost if claim made (unless NCB Protect add-on)
+- NCB can be transferred to spouse/family member in some cases
+
+THIRD PARTY (TP) PREMIUM (IRDAI-fixed for private vehicles, effective FY 2024-25):
+Private Car by engine capacity:
+- ≤1,000cc: ₹2,094/year
+- 1,000-1,500cc: ₹3,416/year
+- >1,500cc: ₹7,897/year
+Two-Wheeler by engine capacity:
+- ≤75cc: ₹538/year
+- 75-150cc: ₹714/year
+- 150-350cc: ₹1,366/year
+- >350cc: ₹2,804/year
+# VERIFY: approximate FY 2024-25 rates — needs verification against latest IRDAI TP premium order
+
+ZERO DEPRECIATION ADD-ON:
+- Typically adds 15-20% to OD premium
+- Covers full cost of replaced parts without depreciation deduction
+- Usually available for vehicles up to 5 years old (some insurers: 7 years)
+- Number of zero-dep claims: typically 1-2 per year depending on insurer
+
 Return ONLY JSON. No markdown.

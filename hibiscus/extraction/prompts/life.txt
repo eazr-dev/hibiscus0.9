@@ -82,4 +82,46 @@ EXCLUSIONS:
 CLAIMS:
 - claimSettlementRatio, claimProcess, insurerTollFree, claimEmail
 
+DOMAIN KNOWLEDGE REFERENCE (use to validate extractions, NOT to fill missing fields):
+
+GSV (GUARANTEED SURRENDER VALUE) FACTOR TABLE:
+- Year 1: 0% (no surrender value)
+- Year 2: 30% of premiums paid (excl. first year premium)
+- Year 3: ~35% of premiums paid
+- Year 4+: Increases gradually, typically 50-90% by policy end
+- Exact factors vary by policy term and premium paying term
+- SSV (Special Surrender Value) is usually higher than GSV — always check with insurer
+# VERIFY: approximate factors — actual GSV tables vary by insurer and product
+
+SECTION 45 — CONTESTABILITY PERIOD:
+- IRDAI 2024: Reduced to 3 years from date of commencement
+- Older policies (pre-2024 amendment): 5-year contestability
+- After contestability period: insurer cannot contest claims on grounds of misstatement/non-disclosure
+- Exception: fraud is always contestable regardless of period
+# VERIFY: Section 45 amendment timeline — needs verification against Insurance Laws (Amendment) Act
+
+COMMON ULIP CHARGE STRUCTURES (for validation):
+- Premium Allocation Charge: 2-5% of premium (lower in later years)
+- Fund Management Charge: max 1.35% per annum (IRDAI cap)
+- Policy Administration Charge: ₹250-500/month (flat or % of fund value)
+- Mortality Charges: age-based, deducted monthly via unit cancellation
+- Surrender/Discontinuance Charge: Year 1: max 6% or ₹6,000; Year 2: 4%/₹5,000; Year 3: 3%/₹4,000; Year 4: 2%/₹2,000; Year 5+: nil
+- IRDAI mandates: total charges must not exceed reduction in yield of 4% for 10-year policies
+# VERIFY: approximate — needs verification against IRDAI ULIP guidelines 2024
+
+BONUS RATES BY MAJOR INSURER (for validation):
+- LIC: ₹40-50 per ₹1,000 SA (simple reversionary bonus, varies by product)
+- HDFC Life: ₹30-45 per ₹1,000 SA
+- SBI Life: ₹35-48 per ₹1,000 SA
+- Max Life: ₹35-45 per ₹1,000 SA
+- Tata AIA: ₹30-40 per ₹1,000 SA
+# VERIFY: approximate FY 2024-25 — needs verification against insurer annual reports
+
+TAX IMPLICATIONS (for validation):
+- Section 80C: Premium deduction up to ₹1.5L/year; premium must be ≤10% of SA (post-2012 policies) for maturity to be tax-free
+- Section 10(10D): Maturity proceeds tax-free if annual premium ≤ ₹5L (Finance Act 2023 change)
+- ULIP exception: annual premium > ₹2.5L → maturity taxed as capital gains (Budget 2021)
+- Death benefit: always tax-free under Section 10(10D) regardless of premium amount
+- Surrender value: taxable as income if 80C deduction was claimed in earlier years
+
 Return ONLY JSON. No markdown.
